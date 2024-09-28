@@ -2,7 +2,7 @@ import { baseUrl } from 'app/sitemap'
 import { getBlogPosts } from 'app/blog/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  const allBlogs = await getBlogPosts()
 
   const itemsXml = allBlogs
     .sort((a, b) => {
@@ -27,9 +27,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>My Portfolio</title>
+        <title>silverbirder</title>
         <link>${baseUrl}</link>
-        <description>This is my portfolio RSS feed</description>
+        <description>This is silverbirder RSS feed</description>
         ${itemsXml}
     </channel>
   </rss>`
