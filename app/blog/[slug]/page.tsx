@@ -1,20 +1,21 @@
-import { notFound } from 'next/navigation'
-import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
-import { baseUrl } from 'app/sitemap'
+import { notFound } from "next/navigation";
+import { CustomMDX } from "app/components/mdx";
+import { formatDate, getBlogPosts } from "app/blog/utils";
+import { baseUrl } from "app/sitemap";
+import NotebookLine from "app/components/notebook-line";
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts()
+  const posts = getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
 export function generateMetadata({ params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug)
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
-    return
+    return;
   }
 
   const {
@@ -22,10 +23,10 @@ export function generateMetadata({ params }) {
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata;
   const ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -33,7 +34,7 @@ export function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
       images: [
@@ -43,30 +44,30 @@ export function generateMetadata({ params }) {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
 export default function Blog({ params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug)
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
-    <section>
+    <section className="notebook-content">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -76,23 +77,26 @@ export default function Blog({ params }) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'silverbirder',
+              "@type": "Person",
+              name: "silverbirder",
             },
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <NotebookLine>
+        <h1 className="font-semibold text-2xl tracking-tighter">
+          {post.metadata.title}
+        </h1>
+      </NotebookLine>
+      <NotebookLine>
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
-      </div>
-      <article className="prose">
+      </NotebookLine>
+      <NotebookLine>&nbsp;</NotebookLine>
+      <article>
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
+  );
 }
