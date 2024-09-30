@@ -1,37 +1,36 @@
-import { Link } from "next-view-transitions";
-import { formatDate, getBlogPosts } from "app/blog/utils";
-import NotebookLine from "./notebook-line";
+import { Link } from 'next-view-transitions'
+import { formatDate, getBlogPosts } from 'app/blog/utils'
 
 export function BlogPosts() {
-  const allBlogs = getBlogPosts();
+  const allBlogs = getBlogPosts()
 
   return (
-    <div className="notebook-blog-posts">
+    <div>
       {allBlogs
         .sort((a, b) => {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
           ) {
-            return -1;
+            return -1
           }
-          return 1;
+          return 1
         })
         .map((post) => (
           <Link
             key={post.slug}
-            className="block text-neutral-900 dark:text-neutral-100 hover:underline"
+            className="flex flex-col space-y-1 mb-4"
             href={`/blog/${post.slug}`}
           >
-            <NotebookLine>
-              <div className="flex flex-col md:flex-row md:items-center">
-                <span className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums mr-4">
-                  {formatDate(post.metadata.publishedAt, false)}
-                </span>
-                <span className="tracking-tight">{post.metadata.title}</span>
-              </div>
-            </NotebookLine>
+            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                {formatDate(post.metadata.publishedAt, false)}
+              </p>
+              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                {post.metadata.title}
+              </p>
+            </div>
           </Link>
         ))}
     </div>
-  );
+  )
 }
