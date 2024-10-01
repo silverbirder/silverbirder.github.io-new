@@ -58,8 +58,15 @@ export default function RootLayout({
           noto.className
         )}
       >
-        <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+        <body
+          className={cx(
+            "antialiased max-w-xl mx-4 mt-8 lg:mx-auto",
+            "bg-[linear-gradient(#e5e5e5_1px,transparent_1px)]",
+            "bg-[length:100%_1rem]",
+            "dark:bg-[linear-gradient(#333333_1px,transparent_1px)]"
+          )}
+        >
+          <main className="flex-auto min-w-0 mt-4 flex flex-col px-2 md:px-0">
             <Navbar />
             {children}
             <Footer />
