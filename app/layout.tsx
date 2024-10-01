@@ -53,20 +53,20 @@ export default function RootLayout({
     <ViewTransitions>
       <html
         lang="ja"
-        className={cx(
-          "text-black bg-white dark:text-white dark:bg-black",
-          noto.className
-        )}
+        className={cx("bg-amber-100 dark:bg-amber-900", noto.className)}
       >
         <body
           className={cx(
-            "antialiased max-w-xl mx-4 mt-8 lg:mx-auto",
+            "antialiased max-w-xl mx-auto p-4 min-h-screen",
+            "bg-white dark:bg-gray-800",
             "bg-[linear-gradient(#e5e5e5_1px,transparent_1px)]",
             "bg-[length:100%_1rem]",
-            "dark:bg-[linear-gradient(#333333_1px,transparent_1px)]"
+            "dark:bg-[linear-gradient(#333333_1px,transparent_1px)]",
+            "border border-gray-300 shadow-lg",
+            "dark:border-gray-600"
           )}
         >
-          <main className="flex-auto min-w-0 mt-4 flex flex-col px-2 md:px-0">
+          <main className="flex-auto flex flex-col">
             <Navbar />
             {children}
             <Footer />
