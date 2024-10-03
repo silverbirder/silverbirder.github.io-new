@@ -1,7 +1,7 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Zen_Kurenaido } from "next/font/google";
-import { Navbar } from "./components/nav";
+// import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ViewTransitions } from "next-view-transitions";
@@ -53,7 +53,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html
         lang="ja"
-        className={cx("bg-amber-100 dark:bg-amber-900", noto.className)}
+        className={cx("bg-gray-50 dark:bg-gray-900", noto.className)}
       >
         <body
           className={cx(
@@ -67,7 +67,6 @@ export default function RootLayout({
           )}
         >
           <main className="flex-auto flex flex-col">
-            <Navbar />
             {children}
             <Footer />
             <Analytics />
