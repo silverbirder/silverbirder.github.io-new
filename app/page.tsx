@@ -3,7 +3,7 @@
 import Spiral from "./components/char/spiral";
 import Link from "next/link";
 import { useState } from "react";
-import { Pencil, Wrench, Twitter, Github } from "lucide-react";
+import { Pencil, User, Twitter, Github } from "lucide-react";
 
 const StickyNote = ({ href, title, color, Icon }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -57,10 +57,10 @@ export default function Page() {
           Icon={Pencil}
         />
         <StickyNote
-          href="/artifacts"
-          title="成果物"
-          color="bg-green-200"
-          Icon={Wrench}
+          href="/about"
+          title="About Me"
+          color="bg-red-200"
+          Icon={User}
         />
         <StickyNote
           href="https://x.com/silverbirder"
