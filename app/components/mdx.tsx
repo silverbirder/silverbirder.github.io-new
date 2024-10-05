@@ -3,27 +3,10 @@ import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import React from "react";
+import remarkGfm from "remark-gfm";
 
-function Table({ data }) {
-  const headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  const rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
-
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
+function Table({ children }) {
+  return <table className="my-4">{children}</table>;
 }
 
 function CustomLink(props) {
@@ -144,7 +127,7 @@ const components = {
   Image: RoundedImage,
   a: CustomLink,
   pre: Pre,
-  Table,
+  table: Table,
   p: Paragraph,
   ol: OrderedList,
   ul: UnorderedList,
@@ -158,6 +141,11 @@ export function CustomMDX(props) {
   return (
     <MDXRemote
       {...props}
+      options={{
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
+      }}
       components={{ ...components, ...(props.components || {}) }}
     />
   );

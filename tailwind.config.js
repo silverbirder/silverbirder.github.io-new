@@ -50,6 +50,36 @@ module.exports = {
           5: "hsl(var(--chart-5))",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            thead: {
+              lineHeight: "2rem",
+              border: "none",
+              background: "var(--tw-prose-th-borders)",
+            },
+            tr: {
+              border: "none",
+            },
+            th: {
+              paddingTop: "0",
+              paddingBottom: "0",
+              lineHeight: "2rem",
+              border: "none",
+            },
+            tbody: {
+              lineHeight: "1rem",
+              border: "none",
+            },
+            td: {
+              paddingTop: "0",
+              paddingBottom: "0",
+              lineHeight: "1rem",
+              border: "none",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
