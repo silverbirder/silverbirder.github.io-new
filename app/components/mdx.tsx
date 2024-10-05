@@ -41,11 +41,23 @@ function CustomLink(props) {
     return <a {...props} />;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a
+      className="text-xs"
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    />
+  );
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return (
+    <Image
+      className={`rounded-lg object-contain h-48 md:h-64 lg:96`}
+      {...props}
+    />
+  );
 }
 
 function slugify(str) {
@@ -62,7 +74,7 @@ function slugify(str) {
 function createHeading(level) {
   const Heading = ({ children }) => {
     const slug = slugify(children);
-    const className = level <= 2 ? "leading-8 my-4" : "leading-4 my-4";
+    const className = level <= 2 ? "text-2xl my-4" : "text-xs my-4";
     return React.createElement(
       `h${level}`,
       { id: slug, className },
@@ -83,19 +95,23 @@ function createHeading(level) {
 }
 
 function Paragraph({ children }) {
-  return <p className="leading-4 my-0">{children}</p>;
+  return <p className="text-xs my-4">{children}</p>;
+}
+
+function OrderedList({ children }) {
+  return <ul className="text-xs my-0">{children}</ul>;
 }
 
 function UnorderedList({ children }) {
-  return <ul className="leading-4 my-0">{children}</ul>;
+  return <ul className="text-xs my-0">{children}</ul>;
 }
 
 function ListItem({ children }) {
-  return <li className="leading-4 my-0">{children}</li>;
+  return <li className="text-xs my-0">{children}</li>;
 }
 
 function Pre({ children }) {
-  return <pre className="my-4 py-4 leading-4">{children}</pre>;
+  return <pre className="my-4 py-4 text-xs">{children}</pre>;
 }
 
 function Code({ children, ...props }) {
@@ -116,6 +132,7 @@ const components = {
   pre: Pre,
   Table,
   p: Paragraph,
+  ol: OrderedList,
   ul: UnorderedList,
   li: ListItem,
   code: Code,
