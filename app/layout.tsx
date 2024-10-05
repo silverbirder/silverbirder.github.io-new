@@ -34,6 +34,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: [{ rel: "icon", url: "/favicon.svg" }],
+  keywords: ["silverbirder", "個人サイト", "ブログ", "Webエンジニア"],
 };
 
 const noto = Zen_Kurenaido({
@@ -52,6 +54,16 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="ja" className={cx("bg-gray-50", noto.className)}>
+        <head>
+          <head>
+            <link
+              rel="apple-touch-icon"
+              type="image/png"
+              href="/apple-touch-icon.png"
+            ></link>
+            <link rel="icon" type="image/png" href="/icon-192x192.png"></link>
+          </head>
+        </head>
         <body
           className={cx(
             "antialiased max-w-xl mx-auto p-4 min-h-screen",
