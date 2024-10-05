@@ -117,7 +117,21 @@ function Pre({ children }) {
 function Code({ children, ...props }) {
   const codeHTML = highlight(children);
 
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  return (
+    <code
+      className="leading-3"
+      dangerouslySetInnerHTML={{ __html: codeHTML }}
+      {...props}
+    />
+  );
+}
+
+function BlockQuote({ children }) {
+  return <blockquote className="my-4">{children}</blockquote>;
+}
+
+function HorizontalRule() {
+  return <hr className="h-4 mt-4 mb-0 border-dotted border-t-4" />;
 }
 
 const components = {
@@ -136,6 +150,8 @@ const components = {
   ul: UnorderedList,
   li: ListItem,
   code: Code,
+  blockquote: BlockQuote,
+  hr: HorizontalRule,
 };
 
 export function CustomMDX(props) {
