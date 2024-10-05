@@ -69,6 +69,7 @@ const __dirname = path.dirname(__filename);
         ""
       );
       content = content.replace(/layout=\"constrained\"\s*/g, "");
+      content = content.replace(/\.\.\/([^/]+)\/index.mdx/g, "./$1");
 
       console.log(`Copying ${file} to ${destinationFile}...`);
       await writeFile(destinationFile, content);
