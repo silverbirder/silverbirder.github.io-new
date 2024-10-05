@@ -51,19 +51,14 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html
-        lang="ja"
-        className={cx("bg-gray-50 dark:bg-gray-900", noto.className)}
-      >
+      <html lang="ja" className={cx("bg-gray-50", noto.className)}>
         <body
           className={cx(
             "antialiased max-w-xl mx-auto p-4 min-h-screen",
-            "bg-white dark:bg-gray-800",
+            "bg-white",
             "bg-[linear-gradient(#e5e5e5_1px,transparent_1px)]",
             "bg-[length:100%_1rem]",
-            "dark:bg-[linear-gradient(#333333_1px,transparent_1px)]",
-            "border border-gray-300 shadow-lg",
-            "dark:border-gray-600"
+            "border border-gray-300 shadow-lg"
           )}
         >
           <main className="flex-auto flex flex-col">
