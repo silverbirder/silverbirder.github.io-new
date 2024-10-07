@@ -60,9 +60,7 @@ function createHeading(level) {
   const Heading = ({ children }) => {
     const slug = slugify(children);
     const className =
-      level <= 2
-        ? "text-2xl font-bold text-primary my-4"
-        : "text-xs font-semibold text-primary my-4";
+      level <= 2 ? "text-2xl font-bold my-4" : "text-xs font-semibold my-4";
     return React.createElement(
       `h${level}`,
       { id: slug, className },
