@@ -20,10 +20,10 @@ function ArrowIcon() {
 export default function Footer() {
   return (
     <footer className="my-12">
-      <ul className="font-sm flex flex-col space-x-0 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0">
+      <ul className="font-sm flex flex-col space-x-0 text-muted-background md:flex-row md:space-x-4 md:space-y-0">
         <li>
           <Link
-            className="flex items-center transition-all hover:text-neutral-800 leading-4"
+            className="flex items-center transition-all leading-4"
             rel="noopener noreferrer"
             target="_blank"
             href="/rss"
@@ -34,7 +34,7 @@ export default function Footer() {
         </li>
         <li>
           <Link
-            className="flex items-center transition-all hover:text-neutral-800 leading-4"
+            className="flex items-center transition-all leading-4"
             rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/silverbirder"
@@ -44,7 +44,7 @@ export default function Footer() {
           </Link>
         </li>
       </ul>
-      <p className="mt-4 text-neutral-600 leading-4">
+      <p className="mt-4 text-muted-background leading-4">
         © {new Date().getFullYear()} silverbirder
       </p>
     </footer>

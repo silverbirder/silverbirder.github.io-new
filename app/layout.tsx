@@ -1,7 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Zen_Kurenaido } from "next/font/google";
-// import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ViewTransitions } from "next-view-transitions";
@@ -53,24 +52,22 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html lang="ja" className={cx("bg-gray-50", noto.className)}>
+      <html lang="ja" className={cx("bg-background", noto.className)}>
         <head>
-          <head>
-            <link
-              rel="apple-touch-icon"
-              type="image/png"
-              href="/apple-touch-icon.png"
-            ></link>
-            <link rel="icon" type="image/png" href="/icon-192x192.png"></link>
-          </head>
+          <link
+            rel="apple-touch-icon"
+            type="image/png"
+            href="/apple-touch-icon.png"
+          />
+          <link rel="icon" type="image/png" href="/icon-192x192.png" />
         </head>
         <body
           className={cx(
             "antialiased max-w-xl mx-auto p-4 min-h-screen",
             "bg-white",
-            "bg-[linear-gradient(#e5e5e5_1px,transparent_1px)]",
+            "bg-[linear-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]",
             "bg-[length:100%_1rem]",
-            "border border-gray-300 shadow-lg"
+            "shadow-lg"
           )}
         >
           <main className="flex-auto flex flex-col">

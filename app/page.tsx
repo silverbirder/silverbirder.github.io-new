@@ -1,7 +1,7 @@
 "use client";
 
 import Spiral from "./components/char/spiral";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useState } from "react";
 import { Pencil, User, Twitter, Github } from "lucide-react";
 
@@ -18,7 +18,7 @@ const StickyNote = ({ href, title, color, Icon }) => {
         p-2 shadow-md hover:shadow-lg
         flex flex-col items-center justify-center
         w-16 h-16 text-center
-        font-bold text-gray-800
+        font-bold text-foreground
         relative
       `}
       onMouseEnter={() => setIsHovered(true)}
@@ -41,11 +41,11 @@ export default function Page() {
           className="h-8 ml-4"
           startDelay={0.0}
           duration={3.0}
-          strokeColor="stroke-rose-500"
+          strokeColor="stroke-accent"
         />
       </div>
       <div className="mb-8 flex items-center">
-        <p className="leading-4">
+        <p className="leading-4 text-foreground">
           ようこそ！私は@silverbirderです。ウェブ開発と甘味が大好きなWebエンジニアです。
         </p>
       </div>
@@ -53,25 +53,25 @@ export default function Page() {
         <StickyNote
           href="/blog"
           title="ブログ"
-          color="bg-yellow-200"
+          color="bg-primary"
           Icon={Pencil}
         />
         <StickyNote
           href="/about"
           title="About Me"
-          color="bg-red-200"
+          color="bg-primary"
           Icon={User}
         />
         <StickyNote
           href="https://x.com/silverbirder"
           title="Twitter"
-          color="bg-blue-200"
+          color="bg-primary"
           Icon={Twitter}
         />
         <StickyNote
           href="https://github.com/silverbirder"
           title="GitHub"
-          color="bg-purple-200"
+          color="bg-primary"
           Icon={Github}
         />
       </div>

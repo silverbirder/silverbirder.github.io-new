@@ -14,19 +14,19 @@ function CustomLink(props) {
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props}>
+      <Link href={href} {...props} className="text-accent hover:underline">
         {props.children}
       </Link>
     );
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />;
+    return <a {...props} className="text-accent hover:underline" />;
   }
 
   return (
     <a
-      className="text-xs"
+      className="text-accent hover:underline text-xs"
       target="_blank"
       rel="noopener noreferrer"
       {...props}
@@ -35,10 +35,12 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
+  const { alt, ...restProps } = props;
   return (
     <Image
-      className={`rounded-lg object-contain h-48 md:h-64 lg:96`}
-      {...props}
+      alt={alt}
+      className="rounded-lg object-contain h-48 md:h-64 lg:96"
+      {...restProps}
     />
   );
 }
@@ -47,17 +49,20 @@ function slugify(str) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/&/g, "-and-") // Replace & with 'and'
-    .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
-    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-");
 }
 
 function createHeading(level) {
   const Heading = ({ children }) => {
     const slug = slugify(children);
-    const className = level <= 2 ? "text-2xl my-4" : "text-xs my-4";
+    const className =
+      level <= 2
+        ? "text-2xl font-bold text-primary my-4"
+        : "text-xs font-semibold text-primary my-4";
     return React.createElement(
       `h${level}`,
       { id: slug, className },
@@ -65,7 +70,7 @@ function createHeading(level) {
         React.createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: "anchor",
+          className: "anchor hover:text-accent",
         }),
       ],
       children
@@ -78,19 +83,19 @@ function createHeading(level) {
 }
 
 function Paragraph({ children }) {
-  return <p className="text-xs my-4">{children}</p>;
+  return <p className="text-foreground text-xs my-4">{children}</p>;
 }
 
 function OrderedList({ children }) {
-  return <ul className="text-xs my-0">{children}</ul>;
+  return <ol className="text-foreground text-xs my-0">{children}</ol>;
 }
 
 function UnorderedList({ children }) {
-  return <ul className="text-xs my-0">{children}</ul>;
+  return <ul className="text-foreground text-xs my-0">{children}</ul>;
 }
 
 function ListItem({ children }) {
-  return <li className="text-xs my-0">{children}</li>;
+  return <li className="text-foreground text-xs my-0">{children}</li>;
 }
 
 function Pre({ children }) {
@@ -110,11 +115,15 @@ function Code({ children, ...props }) {
 }
 
 function BlockQuote({ children }) {
-  return <blockquote className="my-4">{children}</blockquote>;
+  return (
+    <blockquote className="my-4 text-muted-foreground">{children}</blockquote>
+  );
 }
 
 function HorizontalRule() {
-  return <hr className="h-4 mt-4 mb-0 border-dotted border-t-4" />;
+  return (
+    <hr className="h-4 mt-4 mb-0 border-dotted border-t-4 border-border" />
+  );
 }
 
 const components = {
