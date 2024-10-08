@@ -61,15 +61,7 @@ export default function RootLayout({
           />
           <link rel="icon" type="image/png" href="/icon-192x192.png" />
         </head>
-        <body
-          className={cx(
-            "antialiased max-w-xl mx-auto p-4 min-h-screen",
-            "bg-white",
-            "bg-[linear-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]",
-            "bg-[length:100%_1rem]",
-            "shadow-lg"
-          )}
-        >
+        <body className={cx("antialiased max-w-4xl mx-auto p-4")}>
           <main className="flex-auto flex flex-col">
             {children}
             <Footer />

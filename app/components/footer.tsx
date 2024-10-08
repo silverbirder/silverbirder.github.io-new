@@ -20,7 +20,7 @@ function ArrowIcon() {
 export default function Footer() {
   return (
     <footer className="my-12">
-      <ul className="font-sm flex flex-col space-x-0 text-muted-background md:flex-row md:space-x-4 md:space-y-0">
+      <ul className="font-sm flex flex-row item-center gap-2 text-muted-background">
         <li>
           <Link
             className="flex items-center transition-all leading-4"
