@@ -71,10 +71,6 @@ export default function Page() {
           <p className="leading-4 text-foreground">
             ようこそ！私は@silverbirderです。ウェブ開発に関わるソフトウェアエンジニアです。
           </p>
-          <p className="leading-4 text-foreground">
-            このノートは、私についての情報や、技術的な知見、そして私の作品をまとめたものです。
-            以下の目次から、興味のある部分をご覧ください。
-          </p>
         </div>
         <TableOfContents />
       </div>

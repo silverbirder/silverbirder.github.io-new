@@ -86,7 +86,7 @@ export default function Blog({ params }) {
       />
       <NotebookLayout title={"ブログ"} pathname={"/blog"}>
         <div className="flex flex-col items-start mb-8 text-sm">
-          <h2 className="font-semibold text-xs leading-4">
+          <h2 className="font-semibold text-2xl leading-8">
             {post.metadata.title}
           </h2>
           <p className="self-end text-sm text-muted leading-4">

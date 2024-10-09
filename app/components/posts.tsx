@@ -41,33 +41,36 @@ export function BlogPosts({ allBlogs }: Props) {
   const filteredBlogs = selectedYear ? blogsByYear[selectedYear] : allBlogs;
 
   return (
-    <div className="flex">
-      <div className="flex flex-col border-r border-background">
-        {years.map((year) => (
-          <button
-            key={year}
-            className={`w-full mb-4 px-2 text-xs text-left  ${
-              selectedYear === year
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-primary hover:text-primary-foreground"
-            }`}
-            onClick={() => setSelectedYear(year === selectedYear ? null : year)}
-          >
-            {year}
-          </button>
-        ))}
+    <div className="flex flex-col md:flex-row">
+      <div className="mb-4 md:mb-0 md:mr-8">
+        <div className="flex flex-wrap md:flex-col gap-4">
+          {years.map((year) => (
+            <button
+              key={year}
+              className={`leading-4 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ease-in-out ${
+                selectedYear === year
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-secondary-foreground hover:bg-primary/90 hover:text-primary-foreground"
+              }`}
+              onClick={() =>
+                setSelectedYear(year === selectedYear ? null : year)
+              }
+            >
+              {year}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="flex-grow pl-4">
+      <div className="flex-grow">
         {filteredBlogs.map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col mb-4"
-            href={`/blog/${post.slug}`}
+            className="flex flex-col mb-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-200 ease-in-out"
+            href={`/blog/contents/${post.slug}`}
           >
-            <div className="flex flex-row">
-              <p className="text-foreground tracking-tight leading-4">
-                {post.metadata.title} - {formatDate(post.metadata.publishedAt)}
-              </p>
+            <div className="flex flex-col">
+              <h3 className="text-xs font-semibold">{post.metadata.title}</h3>
+              <p className="text-xs">{formatDate(post.metadata.publishedAt)}</p>
             </div>
           </Link>
         ))}

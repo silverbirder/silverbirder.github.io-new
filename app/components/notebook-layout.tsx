@@ -12,6 +12,20 @@ type Props = {
 };
 
 export const NotebookLayout = ({ title, pathname, children }: Props) => {
+  const getStokeColor = () => {
+    switch (pathname) {
+      case "/":
+        return "stroke-primary";
+      case "/me":
+        return "stroke-blue-500";
+      case "/blog":
+        return "stroke-green-500";
+      case "/portfolio":
+        return "stroke-yellow-500";
+      default:
+        return "stroke-gray-500";
+    }
+  };
   return (
     <section>
       <div className="mb-4 text-3xl font-semibold tracking-tighter leading-tight flex items-center">
@@ -24,7 +38,7 @@ export const NotebookLayout = ({ title, pathname, children }: Props) => {
           className="h-8 ml-4"
           startDelay={0.0}
           duration={3.0}
-          strokeColor="stroke-accent"
+          strokeColor={getStokeColor()}
         />
       </div>
       <div className="relative">
