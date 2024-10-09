@@ -3,6 +3,7 @@
 import Spiral from "@/components/char/spiral";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import { Notebook } from "@/components/notebook";
+import { Coffee } from "lucide-react";
 
 type Props = {
   title: string;
@@ -26,7 +27,12 @@ export const NotebookLayout = ({ title, pathname, children }: Props) => {
           strokeColor="stroke-accent"
         />
       </div>
-      <Notebook pathname={pathname}>{children}</Notebook>
+      <div className="relative">
+        <Notebook pathname={pathname}>{children}</Notebook>
+        <div className="absolute bottom-4 right-4 pointer-events-none">
+          <Coffee className="w-32 h-32 text-primary opacity-5" />
+        </div>
+      </div>
     </section>
   );
 };
