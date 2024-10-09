@@ -56,7 +56,7 @@ module.exports = {
             thead: {
               lineHeight: "2rem",
               border: "none",
-              background: "var(--tw-prose-th-borders)",
+              background: "hsl(var(--primary))",
             },
             tr: {
               border: "none",
@@ -66,6 +66,7 @@ module.exports = {
               paddingBottom: "0",
               lineHeight: "2rem",
               border: "none",
+              color: "hsl(var(--primary-foreground))",
             },
             tbody: {
               lineHeight: "1rem",

@@ -84,6 +84,7 @@ export const Notebook = ({ children, className, pathname }: Props) => {
           "antialiased mx-auto min-h-96",
           "bg-[linear-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]",
           "bg-[length:100%_1rem]",
+          "break-all",
           getBorderColor(),
           className
         )}

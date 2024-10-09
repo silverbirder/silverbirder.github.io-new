@@ -1,9 +1,9 @@
 import { Link } from "next-view-transitions";
-import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import React from "react";
 import remarkGfm from "remark-gfm";
+import { EnhancedImage } from "./enhanced-image";
 
 function Table({ children }) {
   return <table className="my-4">{children}</table>;
@@ -30,17 +30,6 @@ function CustomLink(props) {
       target="_blank"
       rel="noopener noreferrer"
       {...props}
-    />
-  );
-}
-
-function RoundedImage(props) {
-  const { alt, ...restProps } = props;
-  return (
-    <Image
-      alt={alt}
-      className="rounded-lg object-contain h-48 md:h-64 lg:96"
-      {...restProps}
     />
   );
 }
@@ -131,7 +120,7 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: RoundedImage,
+  Image: EnhancedImage,
   a: CustomLink,
   pre: Pre,
   table: Table,
