@@ -1,4 +1,6 @@
-import { BlogPosts } from "app/components/posts";
+import { NotebookLayout } from "@/components/notebook-layout";
+import { BlogPosts } from "@/components/posts";
+import { getBlogPosts } from "@/lib/blog";
 
 export const metadata = {
   title: "Blog",
@@ -6,10 +8,10 @@ export const metadata = {
 };
 
 export default function Page() {
+  const allBlogs = getBlogPosts();
   return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
-      <BlogPosts />
-    </section>
+    <NotebookLayout title={"ブログ"} pathname={"/blog"}>
+      <BlogPosts allBlogs={allBlogs} />
+    </NotebookLayout>
   );
 }

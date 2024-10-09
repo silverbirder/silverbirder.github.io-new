@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
-import { formatDate, getBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
+import { NotebookLayout } from "@/components/notebook-layout";
+import { getBlogPosts } from "@/lib/blog";
+import { formatDate } from "@/lib/utils";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -59,7 +61,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
+    <>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,17 +84,19 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="font-semibold text-2xl tracking-tighter leading-8 text-primary mb-4">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-muted leading-4">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
-      </div>
-      <article className="prose prose-primary max-w-none">
-        <CustomMDX source={post.content} />
-      </article>
-    </section>
+      <NotebookLayout title={"ブログ"} pathname={"/blog"}>
+        <div className="flex flex-col items-start mb-8 text-sm">
+          <h2 className="font-semibold text-xs leading-4">
+            {post.metadata.title}
+          </h2>
+          <p className="self-end text-sm text-muted leading-4">
+            {formatDate(post.metadata.publishedAt)}
+          </p>
+        </div>
+        <article className="prose max-w-none">
+          <CustomMDX source={post.content} />
+        </article>
+      </NotebookLayout>
+    </>
   );
 }

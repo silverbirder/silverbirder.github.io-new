@@ -56,7 +56,7 @@ table {
     --popover: 0 0% 93%; /* #EEEEEE */
     --popover-foreground: 214 18% 16%; /* #222831 */
     --primary: 185 100% 35%; /* #00ADB5 */
-    --primary-foreground: 0 0% 93%; /* #EEEEEE */
+    --primary-foreground: 185 0% 93%; /* #EEEEEE */
     --secondary: 217 13% 25%; /* #393E46 */
     --secondary-foreground: 0 0% 93%; /* #EEEEEE */
     --muted: 217 13% 25%; /* #393E46 */
