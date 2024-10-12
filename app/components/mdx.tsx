@@ -113,6 +113,10 @@ function HorizontalRule() {
   );
 }
 
+function Image(props) {
+  return <EnhancedImage {...props} className={"h-48 md:h-64 lg:h-96"} />;
+}
+
 const components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -120,7 +124,7 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: EnhancedImage,
+  Image: Image,
   a: CustomLink,
   pre: Pre,
   table: Table,

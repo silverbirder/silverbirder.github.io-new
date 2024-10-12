@@ -43,6 +43,17 @@ export default function Footer() {
             <p className="ml-2">github</p>
           </Link>
         </li>
+        <li>
+          <Link
+            className="flex items-center transition-all leading-4"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://x.com/silverbirder"
+          >
+            <ArrowIcon />
+            <p className="ml-2">twitter</p>
+          </Link>
+        </li>
       </ul>
       <p className="mt-4 text-muted-background leading-4">
         © {new Date().getFullYear()} silverbirder
