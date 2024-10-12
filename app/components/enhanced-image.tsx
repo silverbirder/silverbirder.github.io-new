@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 
 export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const toggleModal = useCallback(() => {
@@ -41,14 +42,24 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
   }, [isOpen, handleKeyDown, handleClickOutside]);
 
   const imageComponent = (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      className={`rounded-lg object-contain cursor-pointer mx-auto ${className}`}
-      onClick={toggleModal}
-    />
+    <div className="relative">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
+          <div className="w-full h-full bg-gray-300 rounded-lg" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`rounded-lg object-contain cursor-pointer mx-auto ${className}`}
+        onClick={toggleModal}
+        onLoad={() => {
+          setLoading(false);
+        }}
+      />
+    </div>
   );
 
   const modalContent = (
