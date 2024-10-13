@@ -42,12 +42,12 @@ export function BlogPosts({ allBlogs }: Props) {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="mb-4 md:mb-0 md:mr-8">
-        <div className="flex flex-wrap md:flex-col gap-4">
+      <div className="mb-6 md:mb-0 md:mr-8">
+        <div className="flex flex-wrap md:flex-col gap-6">
           {years.map((year) => (
             <button
               key={year}
-              className={`leading-4 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ease-in-out ${
+              className={`leading-6 px-2 rounded-full text-base font-medium transition-colors duration-200 ease-in-out ${
                 selectedYear === year
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-secondary-foreground hover:bg-primary/90 hover:text-primary-foreground"
@@ -65,12 +65,14 @@ export function BlogPosts({ allBlogs }: Props) {
         {filteredBlogs.map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col mb-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-200 ease-in-out"
+            className="flex flex-col mb-6 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-200 ease-in-out"
             href={`/blog/contents/${post.slug}`}
           >
             <div className="flex flex-col">
-              <h3 className="text-xs font-semibold">{post.metadata.title}</h3>
-              <p className="text-xs">{formatDate(post.metadata.publishedAt)}</p>
+              <p className="text-xs leading-6">
+                {formatDate(post.metadata.publishedAt)}
+              </p>
+              <h3 className="text-base font-semibold">{post.metadata.title}</h3>
             </div>
           </Link>
         ))}

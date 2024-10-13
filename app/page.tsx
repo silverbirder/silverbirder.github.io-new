@@ -35,20 +35,20 @@ const tocItems: TOCItem[] = [
 const TableOfContents = () => {
   return (
     <div className="max-w-2xl">
-      <div className="space-y-8">
+      <div className="space-y-6">
         {tocItems.map((item, index) => (
           <div key={index}>
-            <h2 className="text-xl font-semibold mb-4 flex items-center">
-              <item.icon className="w-8 h-8 mr-2" />
+            <h2 className="text-lg leading-[3rem] font-semibold flex items-center">
+              <item.icon className="w-6 h-6 mr-2" />
               {item.title}
             </h2>
             <div>
               {item.subItems.map((subItem, subIndex) => (
-                <div key={subIndex} className="mb-4 flex items-center">
-                  <div className="leading-4">
+                <div key={subIndex} className="mb-6 flex items-center">
+                  <div>
                     <Link
                       href={subItem.path}
-                      className="text-primary hover:underline leading-4"
+                      className="text-primary hover:underline leading-6"
                     >
                       {subItem.title}
                     </Link>
@@ -66,9 +66,9 @@ const TableOfContents = () => {
 export default function Page() {
   return (
     <NotebookLayout title={"ジブンノート"} pathname={"/"}>
-      <div className="space-y-8">
-        <div className="space-y-4">
-          <p className="leading-4 text-foreground">
+      <div className="space-y-6">
+        <div className="space-y-6">
+          <p className="leading-6 text-foreground">
             ようこそ！私は@silverbirderです。ウェブ開発に関わるソフトウェアエンジニアです。
           </p>
         </div>

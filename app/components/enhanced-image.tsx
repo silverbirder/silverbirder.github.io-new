@@ -53,7 +53,7 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
         alt={alt}
         width={width}
         height={height}
-        className={`rounded-lg object-contain cursor-pointer mx-auto ${className}`}
+        className={`rounded-lg object-contain cursor-pointer mx-auto my-6 ${className}`}
         onClick={toggleModal}
         onLoad={() => {
           setLoading(false);
@@ -66,7 +66,7 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div
         ref={modalRef}
-        className="bg-white p-4 rounded-lg max-w-4xl max-h-[90vh] overflow-auto relative"
+        className="bg-white p-6 rounded-lg max-w-4xl max-h-[90vh] overflow-auto relative"
       >
         <button
           onClick={toggleModal}
@@ -80,29 +80,29 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
           alt={alt ?? src}
           width={width}
           height={height}
-          className="object-contain mx-auto"
+          className="object-contain my-6 mx-auto"
         />
-        {alt && <p className="mt-2 text-center text-sm">{alt}</p>}
+        {alt && <p className="mt-6 text-center text-base">{alt}</p>}
       </div>
     </div>
   );
 
   return (
-    <figure className="my-4">
+    <figure className="my-6">
       {imageComponent}
       {isOpen && createPortal(modalContent, document.body)}
       <div className="flex flex-row gap-2 items-center justify-center">
         {alt && (
-          <figcaption className="my-0 text-center text-xs">{alt}</figcaption>
+          <figcaption className="my-0 text-center text-base">{alt}</figcaption>
         )}
         {href && (
           <a
             href={href}
-            className="h-4"
+            className="h-6"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ExternalLink size={16} />
+            <ExternalLink size={18} className="h-6" />
           </a>
         )}
       </div>

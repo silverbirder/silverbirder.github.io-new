@@ -23,7 +23,7 @@ export default function Footer() {
       <ul className="font-sm flex flex-row item-center gap-2 text-muted-background">
         <li>
           <Link
-            className="flex items-center transition-all leading-4"
+            className="flex items-center transition-all leading-6"
             rel="noopener noreferrer"
             target="_blank"
             href="/rss"
@@ -34,7 +34,7 @@ export default function Footer() {
         </li>
         <li>
           <Link
-            className="flex items-center transition-all leading-4"
+            className="flex items-center transition-all leading-6"
             rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/silverbirder"
@@ -45,7 +45,7 @@ export default function Footer() {
         </li>
         <li>
           <Link
-            className="flex items-center transition-all leading-4"
+            className="flex items-center transition-all leading-6"
             rel="noopener noreferrer"
             target="_blank"
             href="https://x.com/silverbirder"
@@ -55,7 +55,7 @@ export default function Footer() {
           </Link>
         </li>
       </ul>
-      <p className="mt-4 text-muted-background leading-4">
+      <p className="mt-4 text-muted-background leading-6">
         © {new Date().getFullYear()} silverbirder
       </p>
     </footer>

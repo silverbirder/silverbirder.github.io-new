@@ -54,7 +54,8 @@ module.exports = {
         DEFAULT: {
           css: {
             thead: {
-              lineHeight: "2rem",
+              fontSize: "1.125rem",
+              lineHeight: "3rem",
               border: "none",
               background: "hsl(var(--primary))",
             },
@@ -64,18 +65,19 @@ module.exports = {
             th: {
               paddingTop: "0",
               paddingBottom: "0",
-              lineHeight: "2rem",
+              lineHeight: "3rem",
               border: "none",
               color: "hsl(var(--primary-foreground))",
             },
             tbody: {
-              lineHeight: "1rem",
+              fontSize: "1rem",
+              lineHeight: "1.5rem",
               border: "none",
             },
             td: {
               paddingTop: "0",
               paddingBottom: "0",
-              lineHeight: "1rem",
+              lineHeight: "1.5rem",
               border: "none",
             },
           },

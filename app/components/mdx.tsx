@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { EnhancedImage } from "./enhanced-image";
 
 function Table({ children }) {
-  return <table className="my-4">{children}</table>;
+  return <table className="my-6">{children}</table>;
 }
 
 function CustomLink(props) {
@@ -26,7 +26,7 @@ function CustomLink(props) {
 
   return (
     <a
-      className="text-accent hover:underline text-xs"
+      className="text-accent hover:underline text-base"
       target="_blank"
       rel="noopener noreferrer"
       {...props}
@@ -49,19 +49,10 @@ function createHeading(level) {
   const Heading = ({ children }) => {
     const slug = slugify(children);
     const className =
-      level <= 2 ? "text-2xl font-bold my-4" : "text-xs font-semibold my-4";
-    return React.createElement(
-      `h${level}`,
-      { id: slug, className },
-      [
-        React.createElement("a", {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: "anchor hover:text-accent",
-        }),
-      ],
-      children
-    );
+      level <= 2
+        ? "text-xl leading-[3rem] font-bold mt-6 border-b-2 -mb-[2px] border-primary border-dashed"
+        : "text-lg leading-[3rem] font-bold mt-6 border-b -mb-[1px] border-primary border-dashed";
+    return React.createElement(`h${level}`, { id: slug, className }, children);
   };
 
   Heading.displayName = `Heading${level}`;
@@ -70,23 +61,23 @@ function createHeading(level) {
 }
 
 function Paragraph({ children }) {
-  return <p className="text-foreground text-xs my-4">{children}</p>;
+  return <p className="text-foreground text-base my-6">{children}</p>;
 }
 
 function OrderedList({ children }) {
-  return <ol className="text-foreground text-xs my-0">{children}</ol>;
+  return <ol className="text-foreground text-base my-0">{children}</ol>;
 }
 
 function UnorderedList({ children }) {
-  return <ul className="text-foreground text-xs my-0">{children}</ul>;
+  return <ul className="text-foreground text-base my-0">{children}</ul>;
 }
 
 function ListItem({ children }) {
-  return <li className="text-foreground text-xs my-0">{children}</li>;
+  return <li className="text-foreground text-base my-0">{children}</li>;
 }
 
 function Pre({ children }) {
-  return <pre className="my-4 py-4 text-xs">{children}</pre>;
+  return <pre className="my-6 py-6 text-xs leading-6">{children}</pre>;
 }
 
 function Code({ children, ...props }) {
@@ -94,7 +85,7 @@ function Code({ children, ...props }) {
 
   return (
     <code
-      className="leading-3"
+      className="text-xs leading-4"
       dangerouslySetInnerHTML={{ __html: codeHTML }}
       {...props}
     />
@@ -103,18 +94,18 @@ function Code({ children, ...props }) {
 
 function BlockQuote({ children }) {
   return (
-    <blockquote className="my-4 text-muted-foreground">{children}</blockquote>
+    <blockquote className="my-6 text-muted-foreground">{children}</blockquote>
   );
 }
 
 function HorizontalRule() {
   return (
-    <hr className="h-4 mt-4 mb-0 border-dotted border-t-4 border-border" />
+    <hr className="h-6 mt-6 mb-0 border-dotted border-t-6 border-border" />
   );
 }
 
 function Image(props) {
-  return <EnhancedImage {...props} className={"h-48 md:h-64 lg:h-96"} />;
+  return <EnhancedImage {...props} className={"h-48 md:h-60 lg:h-96"} />;
 }
 
 const components = {

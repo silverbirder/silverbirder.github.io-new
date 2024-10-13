@@ -80,10 +80,10 @@ export const Notebook = ({ children, className, pathname }: Props) => {
       </div>
       <div
         className={cx(
-          "bg-white shadow-lg p-4",
+          "bg-white shadow-lg p-6",
           "antialiased mx-auto min-h-96",
           "bg-[linear-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]",
-          "bg-[length:100%_1rem]",
+          "bg-[length:100%_1.5rem]",
           "break-all",
           getBorderColor(),
           className

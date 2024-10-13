@@ -45,7 +45,7 @@ export default async function Page() {
   const photos = (await getPngFilesWithSize()) ?? [];
   return (
     <NotebookLayout title={"自己紹介"} pathname={"/me"}>
-      <div className="relative mx-auto p-8">
+      <div className="relative mx-auto p-6">
         <SweetIcon
           icon={Coffee}
           color="text-brown-500"
@@ -66,10 +66,10 @@ export default async function Page() {
           color="text-yellow-500"
           style={{ bottom: "10%", right: "5%", transform: "rotate(-20deg)" }}
         />
-        <div className="space-y-8">
-          <div className="flex flex-col items-center space-y-4 border-b-2 -mb-[2px] border-dashed border-primary pb-8">
+        <div className="space-y-6">
+          <div className="flex flex-col items-center space-y-6 border-b-2 -mb-[2px] border-dashed border-primary pb-6">
             <div className="relative">
-              <Avatar className="w-32 h-32 border-4 border-primary bg-white">
+              <Avatar className="w-36 h-36 border-4 border-primary bg-white">
                 <AvatarImage src="/favicon.svg" alt="silverbirder" />
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>
@@ -78,18 +78,18 @@ export default async function Page() {
               </div>
             </div>
             <div className="text-center">
-              <h2 className="text-2xl font-bold">@silverbirder</h2>
-              <p className="text-xs text-foreground">
+              <h2 className="text-2xl leading-[3rem] font-bold">@silverbirder</h2>
+              <p className="text-base text-foreground">
                 Webソフトウェアエンジニア
               </p>
             </div>
           </div>
           <div>
-            <p className="text-xs">
+            <p className="text-base">
               Webのフロントエンド開発とテストが得意なソフトウェアエンジニアです。
               わくわくするWeb開発が楽しくて仕方がないです。
             </p>
-            <p className="text-xs">
+            <p className="text-base">
               穏やかな風景や音を体験したり、美味しいたべものを共有するのが好きです。
               下に私のお気に入りの写真を載せていますので、ぜひご覧ください。
             </p>
@@ -104,7 +104,7 @@ export default async function Page() {
               <CarouselContent>
                 {photos.map((photo, index) => (
                   <CarouselItem key={index}>
-                    <div className="relative h-64 flex items-center justify-center overflow-hidden">
+                    <div className="relative h-60 flex items-center justify-center overflow-hidden">
                       <EnhancedImage
                         src={photo.src}
                         alt={""}
@@ -117,18 +117,18 @@ export default async function Page() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="h-8 w-8 text-primary bg-primary-background border-primary" />
-              <CarouselNext className="h-8 w-8 text-primary bg-primary-background border-primary" />
+              <CarouselPrevious className="h-6 w-6 text-primary bg-primary-background border-primary" />
+              <CarouselNext className="h-6 w-6 text-primary bg-primary-background border-primary" />
             </Carousel>
           </div>
-          <div className="flex justify-center space-x-6 border-t-2 border-dashed border-primary pt-4">
+          <div className="flex justify-center space-x-6 border-t-2 border-dashed border-primary pt-6">
             <a
               href="https://github.com/silverbirder"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-primary hover:underline"
             >
-              <Github className="mr-2 w-8 h-8" />
+              <Github className="mr-2 w-6 h-6" />
             </a>
             <a
               href="https://x.com/silverbirder"
@@ -136,7 +136,7 @@ export default async function Page() {
               rel="noopener noreferrer"
               className="flex items-center text-primary hover:underline"
             >
-              <Twitter className="mr-2 w-8 h-8" />
+              <Twitter className="mr-2 w-6 h-6" />
             </a>
           </div>
         </div>

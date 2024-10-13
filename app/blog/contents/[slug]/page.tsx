@@ -85,11 +85,11 @@ export default function Blog({ params }) {
         }}
       />
       <NotebookLayout title={"ブログ"} pathname={"/blog"}>
-        <div className="flex flex-col items-start mb-8 text-sm">
-          <h2 className="font-semibold text-2xl leading-8">
+        <div className="flex flex-col items-start mb-6 leading-12">
+          <h2 className="font-semibold text-2xl leading-[3rem]">
             {post.metadata.title}
           </h2>
-          <p className="self-end text-sm text-muted leading-4">
+          <p className="self-end text-xs leading-6 text-muted">
             {formatDate(post.metadata.publishedAt)}
           </p>
         </div>
