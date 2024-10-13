@@ -1,4 +1,5 @@
 import "./global.css";
+import "highlight.js/styles/github-dark.css";
 import type { Metadata } from "next";
 import { Zen_Kurenaido } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";

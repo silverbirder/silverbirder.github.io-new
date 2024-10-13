@@ -1,9 +1,9 @@
 import { Link } from "next-view-transitions";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { highlight } from "sugar-high";
 import React from "react";
 import remarkGfm from "remark-gfm";
 import { EnhancedImage } from "./enhanced-image";
+import { EnhancedCode } from "./enhanced-code";
 
 function Table({ children }) {
   return <table className="my-6">{children}</table>;
@@ -80,18 +80,6 @@ function Pre({ children }) {
   return <pre className="my-6 py-6 text-xs leading-6">{children}</pre>;
 }
 
-function Code({ children, ...props }) {
-  const codeHTML = highlight(children);
-
-  return (
-    <code
-      className="text-xs leading-4"
-      dangerouslySetInnerHTML={{ __html: codeHTML }}
-      {...props}
-    />
-  );
-}
-
 function BlockQuote({ children }) {
   return (
     <blockquote className="my-6 text-muted-foreground">{children}</blockquote>
@@ -106,6 +94,10 @@ function HorizontalRule() {
 
 function Image(props) {
   return <EnhancedImage {...props} className={"h-48 md:h-60 lg:h-96"} />;
+}
+
+function Code(props) {
+  return <EnhancedCode {...props} />;
 }
 
 const components = {
