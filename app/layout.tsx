@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     siteName: "silverbirder",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: `/opengraph-image.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   robots: {
     index: true,
