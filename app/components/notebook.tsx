@@ -52,7 +52,7 @@ export const Notebook = ({ children, className, pathname }: Props) => {
 
   return (
     <div>
-      <div className="flex justify-start space-x-1">
+      <nav className="flex justify-start space-x-1">
         <Tab
           href="/"
           label="トップ"
@@ -77,7 +77,7 @@ export const Notebook = ({ children, className, pathname }: Props) => {
           color={"bg-yellow-500"}
           isActive={pathname === "/portfolio"}
         />
-      </div>
+      </nav>
       <div
         className={cx(
           "bg-white shadow-lg p-6",
