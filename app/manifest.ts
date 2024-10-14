@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "silverbirder",
     theme_color: "#fff",
     background_color: "#fff",
-    description: "Personal website of silverbirder.",
+    description: "@silverbirderのコジンノート",
     start_url: "/",
     display: "standalone",
     icons: [
