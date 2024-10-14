@@ -1,4 +1,3 @@
-import { baseUrl } from "@/sitemap";
 import { Link } from "next-view-transitions";
 
 function ArrowIcon() {
@@ -27,7 +26,8 @@ export default function Footer() {
             className="flex items-center transition-all leading-6"
             rel="noopener noreferrer"
             target="_blank"
-            href={`${baseUrl}/rss.xml`}
+            href={`/rss.xml`}
+            prefetch={false}
           >
             <ArrowIcon />
             <p className="ml-2">rss</p>
