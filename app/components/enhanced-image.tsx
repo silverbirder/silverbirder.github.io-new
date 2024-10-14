@@ -2,10 +2,17 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink, X, ZoomIn } from "lucide-react";
 import { createPortal } from "react-dom";
 
-export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
+export const EnhancedImage = ({
+  src,
+  alt,
+  href = "",
+  width,
+  height,
+  className,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const modalRef = useRef<HTMLDivElement | null>(null);
@@ -42,7 +49,7 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
   }, [isOpen, handleKeyDown, handleClickOutside]);
 
   const imageComponent = (
-    <div className="relative">
+    <div className="relative group">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
           <div className="w-full h-full bg-gray-300 rounded-lg" />
@@ -59,6 +66,10 @@ export const EnhancedImage = ({ src, alt, href, width, height, className }) => {
           setLoading(false);
         }}
       />
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        <ZoomIn className="text-white w-8 h-8" />
+        <span className="text-white text-sm ml-2">タップして拡大</span>
+      </div>
     </div>
   );
 

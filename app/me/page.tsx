@@ -78,7 +78,9 @@ export default async function Page() {
               </div>
             </div>
             <div className="text-center">
-              <h2 className="text-2xl leading-[3rem] font-bold">@silverbirder</h2>
+              <h2 className="text-2xl leading-[3rem] font-bold">
+                @silverbirder
+              </h2>
               <p className="text-base text-foreground">
                 Webソフトウェアエンジニア
               </p>
@@ -104,10 +106,10 @@ export default async function Page() {
               <CarouselContent>
                 {photos.map((photo, index) => (
                   <CarouselItem key={index}>
-                    <div className="relative h-60 flex items-center justify-center overflow-hidden">
+                    <div className="relative rounded-lg h-60 flex items-center justify-center overflow-hidden">
                       <EnhancedImage
                         src={photo.src}
-                        alt={""}
+                        alt=""
                         width={photo.width}
                         height={photo.height}
                         className="rounded-lg w-full h-full object-contain"
