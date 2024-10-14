@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import Image from "next/image";
 import { ExternalLink, X, ZoomIn } from "lucide-react";
 import { createPortal } from "react-dom";
 
@@ -14,7 +13,6 @@ export const EnhancedImage = ({
   className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const toggleModal = useCallback(() => {
@@ -50,21 +48,14 @@ export const EnhancedImage = ({
 
   const imageComponent = (
     <div className="relative group">
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
-          <div className="w-full h-full bg-gray-300 rounded-lg" />
-        </div>
-      )}
-      <Image
+      <img
         src={src}
         alt={alt}
         width={width}
         height={height}
         className={`rounded-lg object-contain cursor-pointer mx-auto my-6 ${className}`}
         onClick={toggleModal}
-        onLoad={() => {
-          setLoading(false);
-        }}
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         <ZoomIn className="text-white w-8 h-8" />
@@ -86,12 +77,13 @@ export const EnhancedImage = ({
         >
           <X size={24} />
         </button>
-        <Image
+        <img
           src={src}
           alt={alt ?? src}
           width={width}
           height={height}
           className="object-contain my-6 mx-auto"
+          loading="lazy"
         />
         {alt && <p className="mt-6 text-center text-base">{alt}</p>}
       </div>

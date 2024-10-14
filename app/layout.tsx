@@ -2,8 +2,6 @@ import "./global.css";
 import "highlight.js/styles/github-dark.css";
 import type { Metadata } from "next";
 import { Zen_Kurenaido } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
@@ -66,8 +64,6 @@ export default function RootLayout({
           <main className="flex-auto flex flex-col">
             {children}
             <Footer />
-            <Analytics />
-            <SpeedInsights />
           </main>
         </body>
       </html>

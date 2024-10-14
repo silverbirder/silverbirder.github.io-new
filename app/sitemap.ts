@@ -1,6 +1,6 @@
 import { getBlogPosts } from "@/lib/blog";
 
-export const baseUrl = "https://silverbirder.github.io";
+export const baseUrl = process.env.BASE_URL || "https://silverbirder.github.io";
 
 export default async function sitemap() {
   const blogs = getBlogPosts().map((post) => ({
