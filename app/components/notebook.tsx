@@ -19,7 +19,7 @@ const Tab = ({ href, label, color, isActive }: TabProps) => (
     className={cx(
       "px-2 py-1 rounded-t-lg transition-all duration-300",
       color,
-      isActive ? "font-bold shadow-lg" : "opacity-70 hover:opacity-100"
+      isActive ? "font-bold -mb-3 z-10" : "opacity-30 hover:opacity-100"
     )}
   >
     <Link
@@ -85,6 +85,7 @@ export const Notebook = ({ children, className, pathname }: Props) => {
           "bg-[linear-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]",
           "bg-[length:100%_1.5rem]",
           "break-all",
+          "rounded-tr-lg",
           getBorderColor(),
           className
         )}

@@ -26,7 +26,7 @@ const tocItems: TOCItem[] = [
     subItems: [{ page: 2, title: "技術ブログ", path: "/blog" }],
   },
   {
-    title: "採用担当の方",
+    title: "お仕事ご依頼・技術支援をご希望の方",
     icon: Briefcase,
     subItems: [{ page: 3, title: "ポートフォリオ", path: "/portfolio" }],
   },
@@ -38,7 +38,7 @@ const TableOfContents = () => {
       <div className="space-y-6">
         {tocItems.map((item, index) => (
           <div key={index}>
-            <h2 className="text-lg leading-[3rem] font-semibold flex items-center">
+            <h2 className="text-lg leading-[3rem] font-semibold flex flex-row items-center flex-wrap">
               <item.icon className="w-6 h-6 mr-2" />
               {item.title}
             </h2>
