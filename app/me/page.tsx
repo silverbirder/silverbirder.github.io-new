@@ -23,11 +23,11 @@ const SweetIcon = ({ icon: Icon, color, style }) => (
 );
 
 const StickerAvatar = () => (
-  <div className="relative w-32 h-32 transform rotate-12">
-    <div className="absolute inset-0 bg-primary rounded-full shadow-lg"></div>
-    <div className="absolute inset-0 bg-primary rounded-full shadow-inner animate-pulse"></div>
+  <div className="relative w-28 h-28 transform rotate-12">
+    <div className="absolute inset-0 bg-blue-500 rounded-full shadow-lg"></div>
+    <div className="absolute inset-0 bg-blue-500 rounded-full shadow-inner animate-pulse"></div>
     <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center overflow-hidden">
-      <Avatar className="w-28 h-28">
+      <Avatar className="w-24 h-24">
         <AvatarImage src="/favicon.svg" alt="silverbirder" />
         <AvatarFallback>S</AvatarFallback>
       </Avatar>
@@ -67,13 +67,13 @@ export default async function Page() {
           style={{ bottom: "10%", right: "5%", transform: "rotate(-20deg)" }}
         />
         <div className="space-y-6">
-          <div className="flex flex-col items-center space-y-6 border-b-2 -mb-[2px] border-dashed border-primary pb-6">
+          <div className="flex flex-col items-center space-y-6 pb-6">
             <div className="relative">
-              <Avatar className="w-36 h-36 border-4 border-primary bg-white">
+              <Avatar className="w-36 h-36 border-4 border-blue-500 bg-white">
                 <AvatarImage src="/favicon.svg" alt="silverbirder" />
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>
-              <div className="absolute -top-6 -right-10 text-primary font-bold text-2xl">
+              <div className="absolute -top-6 -right-10 text-blue-500 font-bold text-2xl">
                 <div className="[writing-mode:vertical-rl]">よろしくね！</div>
               </div>
             </div>
@@ -119,27 +119,34 @@ export default async function Page() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="h-6 w-6 text-primary bg-primary-background border-primary" />
-              <CarouselNext className="h-6 w-6 text-primary bg-primary-background border-primary" />
+              <CarouselPrevious className="h-6 w-6 text-blue-500 bg-white hover:bg-blue-500 border-blue-500" />
+              <CarouselNext className="h-6 w-6 text-blue-500 bg-white hover:bg-blue-500 border-blue-500" />
             </Carousel>
           </div>
-          <div className="flex justify-center space-x-6 border-t-2 border-dashed border-primary pt-6">
-            <a
-              href="https://github.com/silverbirder"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-primary hover:underline"
-            >
-              <Github className="mr-2 w-6 h-6" />
-            </a>
-            <a
-              href="https://x.com/silverbirder"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-primary hover:underline"
-            >
-              <Twitter className="mr-2 w-6 h-6" />
-            </a>
+          <div className="pt-6">
+            <h3 className="text-xl font-semibold leading-[3rem] text-center">
+              ふぉろーみー！
+            </h3>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://github.com/silverbirder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-blue-500 hover:underline"
+              >
+                <Github className="mr-2 w-6 h-6" />
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://x.com/silverbirder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-blue-500 hover:underline"
+              >
+                <Twitter className="mr-2 w-6 h-6" />
+                <span>Twitter</span>
+              </a>
+            </div>
           </div>
         </div>
         <div className="absolute -bottom-10 -left-10">

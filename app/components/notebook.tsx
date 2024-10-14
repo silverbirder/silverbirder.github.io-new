@@ -19,7 +19,7 @@ const Tab = ({ href, label, color, isActive }: TabProps) => (
     className={cx(
       "px-2 py-1 rounded-t-lg transition-all duration-300",
       color,
-      isActive ? "font-bold -mb-3 z-10" : "opacity-30 hover:opacity-100"
+      isActive ? "font-bold -mb-3 z-10" : "opacity-70 hover:opacity-100"
     )}
   >
     <Link

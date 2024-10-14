@@ -49,8 +49,8 @@ export function BlogPosts({ allBlogs }: Props) {
               key={year}
               className={`leading-6 px-2 rounded-full text-base font-medium transition-colors duration-200 ease-in-out ${
                 selectedYear === year
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-primary/90 hover:text-primary-foreground"
+                  ? "bg-green-500 text-white"
+                  : "bg-secondary text-secondary-foreground hover:bg-green-500 hover:text-white"
               }`}
               onClick={() =>
                 setSelectedYear(year === selectedYear ? null : year)
@@ -65,7 +65,7 @@ export function BlogPosts({ allBlogs }: Props) {
         {filteredBlogs.map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col mb-6 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-200 ease-in-out"
+            className="flex flex-col mb-6 rounded-lg hover:bg-green-500 hover:text-white transition-colors duration-200 ease-in-out"
             href={`/blog/contents/${post.slug}`}
           >
             <div className="flex flex-col">
