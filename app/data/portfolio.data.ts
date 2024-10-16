@@ -12,23 +12,34 @@ import {
   SiGooglebigquery,
   SiMysql,
   SiGit,
+  SiPlaywright,
+  SiFigma,
 } from "react-icons/si";
 
 export const topSkills = [
   {
     name: "React",
     icon: SiReact,
-    description: "メインの開発ライブラリとして使用",
   },
   {
     name: "Jest",
     icon: SiJest,
-    description: "ユニットテストに活用",
+  },
+  {
+    name: "Playwright",
+    icon: SiPlaywright,
   },
   {
     name: "Storybook",
     icon: SiStorybook,
-    description: "UIコンポーネント開発に利用",
+  },
+  {
+    name: "Figma",
+    icon: SiFigma,
+  },
+  {
+    name: "BigQuery",
+    icon: SiGooglebigquery,
   },
 ];
 
@@ -150,30 +161,42 @@ export const workExperiences = [
     company: "System Integration",
     description:
       "新卒でWebアプリ開発・保守・運用に従事。上流から下流工程まで経験。",
+    type: "fulltime",
   },
   {
     period: "2018/08 - 2021/12",
     company: "E-Commerce",
     description:
       "フルスタックエンジニアとして、大規模アプリのアーキテクチャとモダナイゼーションに貢献。",
+    type: "fulltime",
   },
   {
     period: "2022/01 - 2023/06",
     company: "Fintech",
     description:
       "フロントエンドエンジニアとして、プロダクト改修と新規開発に携わる。",
+    type: "fulltime",
   },
   {
     period: "2023/07 - 2023/11",
     company: "Restaurant",
     description:
       "業務委託で飲食店向けSaaSプロダクトのクロスプラットフォーム開発を担当。",
+    type: "contract",
   },
   {
     period: "2023/12 - 2024/01",
     company: "Food Delivery",
     description:
       "フルスタックエンジニアとして、宅食サービスのプロダクト開発を担当。",
+    type: "fulltime",
+  },
+  {
+    period: "2024/02 - 現在",
+    company: "Media",
+    description:
+      "フロントエンドエンジニアとして、メディア系サイトの開発を担当。",
+    type: "contract",
   },
 ];
 
@@ -241,9 +264,3 @@ export const notableContent = [
     description: "モバイルファーストアプローチの重要性と実践方法",
   },
 ];
-
-export const skillLevelDescriptions = {
-  beginner: "基本的な概念を理解し、簡単なタスクを遂行できる",
-  intermediate: "中程度の複雑さのプロジェクトを独力で遂行できる",
-  advanced: "複雑なプロジェクトをリードし、他者に指導できる",
-};
