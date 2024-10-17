@@ -5,6 +5,7 @@ import { Zen_Kurenaido } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -71,6 +72,7 @@ export default function RootLayout({
           <main className="flex-auto flex flex-col">
             {children}
             <Footer />
+            {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
           </main>
         </body>
       </html>
