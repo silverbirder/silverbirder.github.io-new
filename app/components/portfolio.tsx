@@ -151,9 +151,6 @@ export const Portfolio = () => {
                   </svg>
                 </span>
                 <div className="relative -top-6 left-6">
-                  <time className="block text-xs leading-6 text-gray-400">
-                    {exp.period}
-                  </time>
                   <h3 className="flex items-center text-base font-semibold text-gray-900">
                     {exp.company}
                   </h3>
@@ -243,11 +240,17 @@ export const Portfolio = () => {
           <h2 className="text-xl leading-[3rem] font-bold">注目のコンテンツ</h2>
           <div className="flex flex-col gap-6">
             {notableContent.map((content, index) => (
-              <div key={index} className="bg-yellow-100 flex flex-col p-6 rounded-lg">
+              <div
+                key={index}
+                className="bg-yellow-100 flex flex-col p-6 rounded-lg"
+              >
                 <h3 className="text-xl leading-[3rem] font-semibold">
                   {content.title}
                 </h3>
-                <Badge variant="secondary" className="mb-6 w-fit h-6 leading-6 py-0">
+                <Badge
+                  variant="secondary"
+                  className="mb-6 w-fit h-6 leading-6 py-0"
+                >
                   {content.type}
                 </Badge>
                 <p className="text-sm text-gray-600 mb-6 leading-6">
