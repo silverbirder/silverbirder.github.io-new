@@ -1,16 +1,7 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Github,
-  Twitter,
-  Coffee,
-  Code,
-  Car,
-  Candy,
-  ExternalLink,
-  Lightbulb,
-} from "lucide-react";
+import { Github, Twitter, ExternalLink, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -30,29 +21,9 @@ import {
 
 export const Portfolio = () => {
   return (
-    <div className="relative mx-auto p-6">
-      <SweetIcon
-        icon={Coffee}
-        color="text-brown-500"
-        style={{ top: "5%", left: "5%", transform: "rotate(15deg)" }}
-      />
-      <SweetIcon
-        icon={Candy}
-        color="text-pink-500"
-        style={{ top: "15%", right: "10%", transform: "rotate(-10deg)" }}
-      />
-      <SweetIcon
-        icon={Code}
-        color="text-blue-300"
-        style={{ bottom: "20%", left: "8%", transform: "rotate(5deg)" }}
-      />
-      <SweetIcon
-        icon={Car}
-        color="text-yellow-500"
-        style={{ bottom: "10%", right: "5%", transform: "rotate(-20deg)" }}
-      />
-      <div className="flex flex-col gap-6">
-        <section className="flex flex-col space-y-6 pb-6">
+    <div className="mx-auto p-6">
+      <div className="flex flex-col gap-12">
+        <section className="flex flex-col gap-6">
           <div className="flex items-center space-x-6">
             <Avatar className="w-12 h-12">
               <AvatarImage src="/favicon.svg" alt="@silverbirder" />
@@ -87,7 +58,7 @@ export const Portfolio = () => {
           </div>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="skills">
-              <AccordionTrigger className="text-lg leading-[3rem] font-semibold py-0">
+              <AccordionTrigger className="text-lg leading-[3rem] py-0">
                 経験技術一覧を表示
               </AccordionTrigger>
               <AccordionContent className="pb-6">
@@ -119,9 +90,9 @@ export const Portfolio = () => {
               <span className="text-sm leading-6">業務委託</span>
             </div>
           </div>
-          <div className="relative mt-12">
+          <div className="relative mt-12 flex flex-col gap-6">
             {workExperiences.map((exp, index) => (
-              <div key={index} className="mb-6 ml-6 relative">
+              <div key={index} className="ml-6 relative">
                 <div
                   className={`absolute -left-[9px] top-0 bottom-0 w-0.5 ${
                     exp.type === "fulltime" ? "bg-blue-500" : "bg-yellow-500"
@@ -223,9 +194,10 @@ export const Portfolio = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline text-base font-medium"
+                  className="text-blue-600 hover:underline text-base font-medium inline-flex items-center"
                 >
                   {project.name}
+                  <ExternalLink className="ml-1 w-3 h-3" />
                 </a>
                 <ul className="list-disc ml-6">
                   <li className="text-sm text-gray-600 leading-6">
@@ -237,7 +209,7 @@ export const Portfolio = () => {
           </ul>
         </section>
         <section>
-          <h2 className="text-xl leading-[3rem] font-bold">注目のコンテンツ</h2>
+          <h2 className="text-xl leading-[3rem] font-bold">過去の活動履歴</h2>
           <div className="flex flex-col gap-6">
             {notableContent.map((content, index) => (
               <div
@@ -323,9 +295,3 @@ export const Portfolio = () => {
     </div>
   );
 };
-
-const SweetIcon = ({ icon: Icon, color, style }) => (
-  <div className={`absolute ${color}`} style={style}>
-    <Icon className="w-6 h-6 opacity-30" />
-  </div>
-);

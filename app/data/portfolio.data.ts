@@ -1,4 +1,3 @@
-import { ArcticonsOpenaiChatgpt } from "@/components/_icons/arcticons";
 import {
   DeviconGitbook,
   DeviconGithubcodespaces,
@@ -164,7 +163,7 @@ export const skillCategories = [
   {
     name: "フロントエンド",
     skills: [
-      { name: "AMP", icon: LogosAmpIcon },
+      { name: "Accelerated Mobile Pages (AMP)", icon: LogosAmpIcon },
       { name: "Bootstrap", icon: LogosBootstrap },
       { name: "Electron", icon: LogosElectron },
       { name: "Figma", icon: LogosFigma },
@@ -181,6 +180,7 @@ export const skillCategories = [
       { name: "Progressive Web Apps (PWA)", icon: LogosPwa },
       { name: "Qwik", icon: LogosQwikIcon },
       { name: "React", icon: LogosReact },
+      { name: "React Native", icon: TablerBrandReactNative },
       { name: "Storybook", icon: LogosStorybookIcon },
       { name: "SWR", icon: LogosSwr },
       { name: "Turborepo", icon: LogosTurborepoIcon },
@@ -191,84 +191,83 @@ export const skillCategories = [
       { name: "Webpack", icon: LogosWebpack },
       { name: "Web Components", icon: LogosWebcomponents },
       { name: "emotion", icon: SkillIconsEmotionLight },
-      { name: "React Native", icon: TablerBrandReactNative },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "バックエンド",
     skills: [
       { name: "CakePHP", icon: LogosCakephpIcon },
-      { name: "Node.js", icon: LogosNodejsIcon },
-      { name: "Python", icon: LogosPython },
-      { name: "Flask", icon: LogosFlask },
       { name: "Django", icon: LogosDjangoIcon },
-      { name: "Express", icon: LogosExpress },
+      { name: "Express.js", icon: LogosExpress },
+      { name: "Flask", icon: LogosFlask },
       { name: "Go", icon: LogosGo },
       { name: "GraphQL", icon: LogosGraphql },
       { name: "Kotlin", icon: LogosKotlinIcon },
+      { name: "Laravel", icon: LogosLaravel },
+      { name: "Node.js", icon: LogosNodejsIcon },
       { name: "PHP", icon: LogosPhp },
+      { name: "Python", icon: LogosPython },
       { name: "Ruby on Rails", icon: LogosRails },
       { name: "Rust", icon: LogosRust },
-      { name: "Laravel", icon: LogosLaravel },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "インフラ・ミドルウェア",
     skills: [
-      { name: "Google Cloud Platform", icon: LogosGoogleCloudPlatform },
-      { name: "Docker", icon: LogosDockerIcon },
-      { name: "Kubernetes", icon: LogosKubernetes },
-      { name: "AWS", icon: LogosAws },
-      { name: "Nginx", icon: LogosNginx },
       { name: "Ansible", icon: LogosAnsible },
-      { name: "Terraform", icon: LogosTerraformIcon },
-      { name: "Apache", icon: LogosApache },
-      { name: "Memcached", icon: LogosMemcached },
+      { name: "Apache HTTP Server", icon: LogosApache },
+      { name: "Amazon Web Services (AWS)", icon: LogosAws },
       { name: "Digdag", icon: FileIconsDigdag },
+      { name: "Docker", icon: LogosDockerIcon },
       { name: "Fluentd", icon: SimpleIconsFluentd },
-      { name: "Varnish", icon: OriginalVarnish },
-    ],
+      { name: "Google Cloud Platform (GCP)", icon: LogosGoogleCloudPlatform },
+      { name: "Kubernetes", icon: LogosKubernetes },
+      { name: "Memcached", icon: LogosMemcached },
+      { name: "Nginx", icon: LogosNginx },
+      { name: "Terraform", icon: LogosTerraformIcon },
+      { name: "Varnish Cache", icon: OriginalVarnish },
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "データ",
     skills: [
-      { name: "BigQuery", icon: OriginalBigQuery },
-      { name: "MySQL", icon: LogosMysqlIcon },
-      { name: "MongoDB", icon: LogosMongodbIcon },
       { name: "Apache Beam", icon: OriginalApacheBeam },
-    ],
+      { name: "BigQuery", icon: OriginalBigQuery },
+      { name: "MongoDB", icon: LogosMongodbIcon },
+      { name: "MySQL", icon: LogosMysqlIcon },
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "テスト",
     skills: [
-      { name: "Jest", icon: LogosJest },
-      { name: "Playwright", icon: LogosPlaywright },
-      { name: "Vitest", icon: LogosVitest },
-      { name: "Pytest", icon: DeviconPytest },
-      { name: "Testing Library", icon: LogosTestingLibrary },
-      { name: "Selenium", icon: LogosSelenium },
       { name: "Cucumber", icon: LogosCucumber },
-      { name: "MSW", icon: LogosMsw },
+      { name: "Jest", icon: LogosJest },
+      { name: "Mock Service Worker (MSW)", icon: LogosMsw },
+      { name: "Playwright", icon: LogosPlaywright },
       { name: "Puppeteer", icon: LogosPuppeteer },
+      { name: "Pytest", icon: DeviconPytest },
+      { name: "Selenium", icon: LogosSelenium },
       { name: "SonarQube", icon: LogosSonarqube },
-    ],
+      { name: "Testing Library", icon: LogosTestingLibrary },
+      { name: "Vitest", icon: LogosVitest },
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "DevOps",
     skills: [
+      { name: "Argo", icon: LogosArgoIcon },
       { name: "Backstage", icon: SimpleIconsBackstage },
       { name: "CircleCI", icon: LogosCircleci },
       { name: "Datadog", icon: LogosDatadog },
       { name: "Dependabot", icon: LogosDependabot },
-      { name: "Open Policy Agent", icon: FileIconsOpenpolicyagent },
       { name: "GitHub Actions", icon: LogosGithubActions },
-      { name: "Argo", icon: LogosArgoIcon },
       { name: "Jenkins", icon: LogosJenkins },
       { name: "Lighthouse", icon: LogosLighthouse },
+      { name: "Open Policy Agent (OPA)", icon: FileIconsOpenpolicyagent },
       { name: "Rollbar", icon: LogosRollbarIcon },
       { name: "Sentry", icon: LogosSentryIcon },
       { name: "Snyk", icon: LogosSnyk },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "SaaS",
@@ -288,7 +287,7 @@ export const skillCategories = [
       { name: "Vercel", icon: LogosVercel },
       { name: "OpenAI", icon: LogosOpenaiIcon },
       { name: "Surge", icon: LogosSurge },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
     name: "エディタ",
@@ -300,19 +299,19 @@ export const skillCategories = [
       { name: "Eclipse", icon: LogosEclipseIcon },
       { name: "IntelliJ IDEA", icon: LogosIntellijIdea },
       { name: "Visual Studio Code", icon: LogosVisualStudioCode },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
-    name: "Development",
+    name: "開発ツール",
     skills: [
       { name: "FFmpeg", icon: LogosFfmpegIcon },
       { name: "Google Apps Script", icon: SimpleIconsGoogleappsscript },
       { name: "Postman", icon: LogosPostmanIcon },
       { name: "Swagger", icon: LogosSwagger },
-    ],
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
   {
-    name: "Business",
+    name: "ビジネス",
     skills: [
       { name: "Atlassian", icon: LogosAtlassian },
       { name: "Bitbucket", icon: LogosBitbucket },
@@ -323,32 +322,10 @@ export const skillCategories = [
       { name: "Obsidian", icon: LogosObsidianIcon },
       { name: "Rocket.Chat", icon: LogosRocketChatIcon },
       { name: "Slack", icon: LogosSlackIcon },
-    ],
-  },
-  {
-    name: "その他",
-    skills: [
-      {
-        name: "Google Tag Manager",
-        icon: LogosGoogleTagManager,
-      },
-      {
-        name: "Google Analytics",
-        icon: LogosGoogleAnalytics,
-      },
-      {
-        name: "Google Map",
-        icon: LogosGoogleMaps,
-      },
-      {
-        name: "ChatGPT",
-        icon: ArcticonsOpenaiChatgpt,
-      },
-      {
-        name: "Expo",
-        icon: LogosExpoIcon,
-      },
-    ],
+      { name: "Google Tag Manager", icon: LogosGoogleTagManager },
+      { name: "Google Analytics", icon: LogosGoogleAnalytics },
+      { name: "Google Maps", icon: LogosGoogleMaps },
+    ].sort((a, b) => a.name.localeCompare(b.name)),
   },
 ];
 
@@ -356,25 +333,25 @@ export const workExperiences = [
   {
     company: "System Integration",
     description:
-      "新卒でWebアプリ開発・保守・運用に従事。上流から下流工程まで経験。",
+      "新卒でWebアプリの開発、保守、運用に従事。設計からリリースまで一貫して経験を積む。",
     type: "fulltime",
   },
   {
     company: "E-Commerce",
     description:
-      "フルスタックエンジニアとして、大規模アプリのアーキテクチャとモダナイゼーションに貢献。",
+      "フルスタックエンジニアとして、大規模アプリケーションのアーキテクチャ設計とモダナイゼーションに貢献。",
     type: "fulltime",
   },
   {
     company: "Fintech",
     description:
-      "フロントエンドエンジニアとして、プロダクト改修と新規開発に携わる。",
+      "フロントエンドエンジニアとして、プロダクト改善および新機能の開発に携わる。",
     type: "fulltime",
   },
   {
     company: "Restaurant",
     description:
-      "業務委託で飲食店向けSaaSプロダクトのクロスプラットフォーム開発を担当。",
+      "フロントエンドエンジニアとして、SaaSプロダクトのクロスプラットフォーム開発に携わる。",
     type: "contract",
   },
   {
@@ -386,7 +363,7 @@ export const workExperiences = [
   {
     company: "Media",
     description:
-      "フロントエンドエンジニアとして、メディア系サイトの開発を担当。",
+      "フロントエンドエンジニアとして、メディアサイトの新規開発および改善に携わる。",
     type: "contract",
   },
 ];
@@ -499,7 +476,7 @@ export const notableContent = [
       "初めての技術選定を頼まれた時に大事だったのは俯瞰的・相対的な考え方だった",
     type: "Blog",
     link: "https://tech-blog.monotaro.com/entry/2021/06/03/090000",
-    description: "ワークフローエンジンの技術選定について",
+    description: "ワークフローエンジンの技術選定についてのブログ記事です。",
   },
   {
     title:
@@ -514,6 +491,6 @@ export const notableContent = [
     type: "Blog",
     link: "https://zenn.dev/silverbirder/articles/c3de04c9e6dd58",
     description:
-      "Webフロントエンドにおける機能・非機能・UI/UXの観点でのテストパターンガイドです。",
+      "Webフロントエンドにおける機能面、非機能面、そしてUI/UXの視点からのテストパターンガイドを紹介します。",
   },
 ];
