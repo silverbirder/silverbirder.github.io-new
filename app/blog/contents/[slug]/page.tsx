@@ -4,6 +4,7 @@ import { baseUrl } from "app/sitemap";
 import { NotebookLayout } from "@/components/notebook-layout";
 import { getBlogPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
+import dynamic from "next/dynamic";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -53,6 +54,10 @@ export function generateMetadata({ params }) {
   };
 }
 
+const DiscusNoSSR = dynamic(() => import("@/lib/discus"), {
+  ssr: false,
+});
+
 export default function Blog({ params }) {
   const post = getBlogPosts().find((post) => post.slug === params.slug);
 
@@ -97,6 +102,9 @@ export default function Blog({ params }) {
           <CustomMDX source={post.content} />
         </article>
       </NotebookLayout>
+      <div>
+        <DiscusNoSSR url={`${baseUrl}/blog/contents/${params.slug}/`} />
+      </div>
     </>
   );
 }

@@ -3,16 +3,16 @@
 import { useEffect } from "react";
 import Tracker from "@openreplay/tracker";
 
-const tracker = new Tracker({
-  projectKey: process.env.NEXT_PUBLIC_OPEN_REPLAY_PROJECT_KEY ?? "",
-});
-
 const Openreplay = () => {
+  const projectKey = process.env.NEXT_PUBLIC_OPEN_REPLAY_PROJECT_KEY ?? "";
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (projectKey && typeof window !== "undefined") {
+      const tracker = new Tracker({
+        projectKey,
+      });
       tracker.start();
     }
-  }, []);
+  }, [projectKey]);
 
   return null;
 };
