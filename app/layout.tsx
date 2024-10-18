@@ -6,6 +6,7 @@ import { ViewTransitions } from "next-view-transitions";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -52,6 +53,10 @@ const noto = Zen_Kurenaido({
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");
 
+const OpenReplayNoSSR = dynamic(() => import("@/lib/open-replay"), {
+  ssr: false,
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -73,6 +78,7 @@ export default function RootLayout({
             {children}
             <Footer />
             {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
+            <OpenReplayNoSSR />
           </main>
         </body>
       </html>
