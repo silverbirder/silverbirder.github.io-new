@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  basePath: process.env.GITHUB_PAGES_BASE_PATH || "",
+  assetPrefix: process.env.GITHUB_PAGES_BASE_PATH || "",
+};
 
 export default nextConfig;
