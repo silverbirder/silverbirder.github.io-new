@@ -11,6 +11,8 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { auth } from "@/server/better-auth";
+import { env } from "@/env";
+import { isAllowedEmail, parseAllowedEmails } from "@/server/allowed-users";
 
 /**
  * 1. CONTEXT
@@ -121,6 +123,13 @@ export const protectedProcedure = t.procedure
   .use(({ ctx, next }) => {
     if (!ctx.session?.user) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
+    }
+    const allowedEmails = parseAllowedEmails(env.ADMIN_ALLOWED_EMAILS);
+    if (
+      allowedEmails.length === 0 ||
+      !isAllowedEmail(ctx.session.user.email, allowedEmails)
+    ) {
+      throw new TRPCError({ code: "FORBIDDEN" });
     }
     return next({
       ctx: {

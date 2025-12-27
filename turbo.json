@@ -9,7 +9,8 @@
     "NODE_ENV",
     "PORT",
     "SKIP_ENV_VALIDATION",
-    "VERCEL_URL"
+    "VERCEL_URL",
+     "ADMIN_ALLOWED_EMAILS"
   ],
   "tasks": {
     "build": {

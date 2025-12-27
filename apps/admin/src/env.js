@@ -1,5 +1,5 @@
-import process from "node:process";
-
+/* eslint-env node */
+/* global process */
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
@@ -16,6 +16,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"]) 
       .default("development"),
+    ADMIN_ALLOWED_EMAILS: z.string(),
   },
 
   /**
@@ -36,6 +37,7 @@ export const env = createEnv({
     BETTER_AUTH_GITHUB_CLIENT_ID: process.env.BETTER_AUTH_GITHUB_CLIENT_ID,
     BETTER_AUTH_GITHUB_CLIENT_SECRET: process.env.BETTER_AUTH_GITHUB_CLIENT_SECRET,
     NODE_ENV: process.env.NODE_ENV,
+    ADMIN_ALLOWED_EMAILS: process.env.ADMIN_ALLOWED_EMAILS,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
