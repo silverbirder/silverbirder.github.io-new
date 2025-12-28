@@ -1,5 +1,4 @@
 import { type Metadata } from "next";
-import { type ReactNode } from "react";
 
 import { TRPCReactProvider } from "@/trpc/react";
 
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 type Props = Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>;
 
 export default function RootLayout({ children }: Props) {
