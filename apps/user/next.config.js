@@ -1,7 +1,8 @@
+import createNextIntlPlugin from "next-intl/plugin";
 import process from "node:process";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   assetPrefix: process.env.GITHUB_PAGES_BASE_PATH || "",
   basePath: process.env.GITHUB_PAGES_BASE_PATH || "",
   images: {
@@ -13,4 +14,6 @@ const nextConfig = {
   typedRoutes: true,
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
+export default withNextIntl(config);
