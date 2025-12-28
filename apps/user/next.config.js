@@ -3,6 +3,8 @@ import process from "node:process";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  reactCompiler: true,
+  typedRoutes: true,
   trailingSlash: true,
   images: {
     unoptimized: true,

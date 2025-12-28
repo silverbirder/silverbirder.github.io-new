@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/server/better-auth";
@@ -34,7 +35,7 @@ export default async function Home() {
                       });
                       if (!res.url)
                         throw new Error("No URL returned from signInSocial");
-                      redirect(res.url);
+                      redirect(res.url as Route);
                     }}
                   >
                     Sign in with Github

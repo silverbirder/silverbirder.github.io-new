@@ -4,8 +4,11 @@
  */
 import "./src/env.js";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+/** @type {import("next").NextConfig} */
+const config = {
+  output: "standalone",
+  reactCompiler: true,
+  typedRoutes: true,
+};
 
-export default nextConfig;
-
+export default config;
