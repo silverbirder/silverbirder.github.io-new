@@ -6,7 +6,8 @@
     "build": "storybook build",
     "check-types": "tsc --noEmit",
     "dev": "storybook dev",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest --run --project=storybook"
   },
   "dependencies": {
     "next": "16.0.10",
