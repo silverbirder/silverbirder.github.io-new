@@ -1,14 +1,14 @@
 {
   "name": "user",
   "version": "0.1.0",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --port 3000",
     "build": "next build",
-    "start": "next start",
+    "check-types": "next typegen && tsc --noEmit",
+    "dev": "next dev --port 3000",
     "lint": "eslint --max-warnings 0",
-    "check-types": "next typegen && tsc --noEmit"
+    "start": "next start"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
@@ -23,7 +23,7 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",
-    "vitest": "^4.0.15",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "vitest": "^4.0.15"
   }
 }
