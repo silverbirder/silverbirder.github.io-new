@@ -1,6 +1,8 @@
 import { type Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -12,11 +14,16 @@ type Props = Readonly<{
   children: React.ReactNode;
 }>;
 
-export default function RootLayout({ children }: Props) {
+export default async function RootLayout({ children }: Props) {
+  const messages = await getMessages();
   return (
     <html lang="ja">
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );

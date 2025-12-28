@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,10 +11,15 @@ type Props = Readonly<{
   children: React.ReactNode;
 }>;
 
-export default function RootLayout({ children }: Props) {
+export default async function RootLayout({ children }: Props) {
+  const messages = await getMessages();
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

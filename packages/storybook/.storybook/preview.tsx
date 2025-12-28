@@ -1,7 +1,15 @@
 import type { Preview } from "@storybook/nextjs-vite";
+import { NextIntlClientProvider } from "next-intl";
+import { jaMessages } from "@repo/message";
 
 const preview: Preview = {
-  decorators: [(Story) => <Story />],
+  decorators: [
+    (Story) => (
+      <NextIntlClientProvider locale="ja" messages={jaMessages}>
+        <Story />
+      </NextIntlClientProvider>
+    ),
+  ],
   parameters: {
     a11y: {
       // 'todo' - show a11y violations in the test UI only
