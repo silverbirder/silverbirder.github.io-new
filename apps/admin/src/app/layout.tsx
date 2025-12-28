@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { TRPCReactProvider } from "@/trpc/react";
 
@@ -9,9 +9,11 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: ReactNode }>) {
+type Props = Readonly<{
+  children: ReactNode;
+}>;
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
       <body>
