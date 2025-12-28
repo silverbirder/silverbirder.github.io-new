@@ -5,6 +5,7 @@
     "build": "turbo run build",
     "check-types": "turbo run check-types",
     "ci:fix": "pnpm lint:fix && pnpm format && pnpm check-types && pnpm test:fix",
+    "deps:up": "pnpm -r up",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "lint": "turbo run lint",

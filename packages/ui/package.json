@@ -11,20 +11,20 @@
     "test": "vitest --run"
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
     "@storybook/nextjs-vite": "^10.1.10",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.19.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "typescript": "5.9.2",
-    "vitest": "^4.0.15",
+    "vitest": "^4.0.16",
     "vitest-browser-react": "^2.0.2"
   }
 }
