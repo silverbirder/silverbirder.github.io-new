@@ -10,7 +10,7 @@
     "PORT",
     "SKIP_ENV_VALIDATION",
     "VERCEL_URL",
-     "ADMIN_ALLOWED_EMAILS"
+    "ADMIN_ALLOWED_EMAILS"
   ],
   "tasks": {
     "build": {
