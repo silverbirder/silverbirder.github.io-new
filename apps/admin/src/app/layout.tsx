@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { type ReactNode, type ReactElement } from "react";
+import { type ReactNode } from "react";
 
 import { TRPCReactProvider } from "@/trpc/react";
 
@@ -13,7 +13,7 @@ type Props = Readonly<{
   children: ReactNode;
 }>;
 
-export default function RootLayout({ children }: Props): ReactElement {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
       <body>
