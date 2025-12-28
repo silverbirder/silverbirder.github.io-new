@@ -1,8 +1,9 @@
-import { describe, expect, it, vi } from "vitest";
 import { composeStories } from "@storybook/nextjs-vite";
+import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import * as stories from "./button.stories";
+
 import { Button } from "./button";
+import * as stories from "./button.stories";
 
 const Stories = composeStories(stories);
 
@@ -21,15 +22,10 @@ describe("Button", () => {
     const appName = "TestApp";
     const alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
 
-    await render(
-      <Button appName={appName} className="test-class">
-        Click Me
-      </Button>,
-    );
+    await render(<Button appName={appName}>Click Me</Button>);
 
     const buttonElement = document.querySelector("button");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement).toHaveClass("test-class");
     expect(buttonElement).toHaveTextContent("Click Me");
 
     buttonElement?.click();

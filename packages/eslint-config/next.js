@@ -54,4 +54,16 @@ export const nextJsConfig = [
       "react/react-in-jsx-scope": "off",
     },
   },
+  {
+    files: ["**/*.spec.tsx", "**/*.stories.tsx"],
+    rules: {
+      "react/jsx-no-literals": "off",
+    },
+  },
+  {
+    files: ["**/src/**/opengraph-image.tsx"],
+    rules: {
+      "react/no-unknown-property": "off",
+    },
+  },
 ];

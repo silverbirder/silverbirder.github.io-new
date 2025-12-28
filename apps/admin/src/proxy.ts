@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { auth } from "@/server/better-auth";
 import { isAllowedEmail, parseAllowedEmails } from "@/server/allowed-users";
+import { auth } from "@/server/better-auth";
 
 const allowedEmails = parseAllowedEmails(process.env.ADMIN_ALLOWED_EMAILS);
 

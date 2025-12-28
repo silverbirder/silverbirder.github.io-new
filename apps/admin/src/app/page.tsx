@@ -1,10 +1,12 @@
 import type { Route } from "next";
+
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+
+import { env } from "@/env";
+import { isAllowedEmail, parseAllowedEmails } from "@/server/allowed-users";
 import { auth } from "@/server/better-auth";
 import { getSession } from "@/server/better-auth/server";
-import { parseAllowedEmails, isAllowedEmail } from "@/server/allowed-users";
-import { env } from "@/env";
 import { HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
@@ -29,8 +31,8 @@ export default async function Home() {
                       "use server";
                       const res = await auth.api.signInSocial({
                         body: {
-                          provider: "github",
                           callbackURL: "/",
+                          provider: "github",
                         },
                       });
                       if (!res.url)

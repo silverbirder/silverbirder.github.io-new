@@ -1,17 +1,13 @@
 import { ReactNode } from "react";
 
 type Props = {
-  children: ReactNode;
-  className?: string;
   appName: string;
+  children: ReactNode;
 };
 
-export const Button = ({ children, className, appName }: Props) => {
+export const Button = ({ appName, children }: Props) => {
   return (
-    <button
-      className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
-    >
+    <button onClick={() => alert(`Hello from your ${appName} app!`)}>
       {children}
     </button>
   );

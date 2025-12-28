@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/nextjs-vite";
-import { NextIntlClientProvider } from "next-intl";
+
 import { jaMessages } from "@repo/message";
+import { NextIntlClientProvider } from "next-intl";
 
 const preview: Preview = {
   decorators: [

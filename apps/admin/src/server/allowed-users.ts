@@ -5,7 +5,7 @@ export const parseAllowedEmails = (rawValue?: string) =>
     .filter(Boolean);
 
 export const isAllowedEmail = (
-  email: string | null | undefined,
+  email: null | string | undefined,
   allowedEmails: string[],
 ) => {
   if (!email) return false;
