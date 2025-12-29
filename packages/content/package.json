@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "markdownlint-cli2"
+    "lint": "markdownlint-cli2",
+    "migrate": "pnpm run migrate:mdx-to-md && pnpm run migrate:escape-frontmatter-quotes",
+    "migrate:escape-frontmatter-quotes": "node ./scripts/migrate/escape-frontmatter-quotes.mjs",
+    "migrate:mdx-to-md": "node ./scripts/migrate/mdx-to-md.mjs"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.17.0"
