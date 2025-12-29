@@ -2,12 +2,21 @@ import type { Preview } from "@storybook/nextjs-vite";
 
 import { jaMessages } from "@repo/message";
 import { NextIntlClientProvider } from "next-intl";
+import { Noto_Sans_JP } from "next/font/google";
+
+const notoSansJP = Noto_Sans_JP({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const preview: Preview = {
   decorators: [
     (Story) => (
       <NextIntlClientProvider locale="ja" messages={jaMessages}>
-        <Story />
+        <div className={notoSansJP.className}>
+          <Story />
+        </div>
       </NextIntlClientProvider>
     ),
   ],

@@ -47,6 +47,7 @@ export const config = [
     files: [
       "**/*.spec.tsx",
       "**/*.stories.tsx",
+      "**/.storybook/**/*.tsx",
       "**/src/components/common/**",
       "**/app/layout.tsx",
       "**/app/apple-icon.tsx",
