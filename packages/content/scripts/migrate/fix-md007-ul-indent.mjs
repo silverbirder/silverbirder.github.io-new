@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md007-ul-indent.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,91 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
-  }
-
-  return attributes;
-};
+const isUnorderedListItem = (line) => /^(\s*(?:>\s*)?)([-*+])\s+/.test(line);
+const isBlockquote = (line) => line.trimStart().startsWith(">");
 
 const transformContent = (content) => {
-  let changed = false;
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+  let inFence = false;
+  let lastListIndent = 0;
+  let lastWasList = false;
+  let lastOrderedIndent = null;
+  let pendingOrdered = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
-
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+  for (const line of lines) {
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      nextLines.push(line);
+      lastWasList = false;
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFence) {
+      nextLines.push(line);
+      continue;
+    }
 
-  return { content: transformed, changed };
+    const orderedMatch = line.match(/^(\s*)(\d+)\.\s+(.*)$/);
+    if (orderedMatch && !isBlockquote(line)) {
+      lastOrderedIndent = orderedMatch[1].length;
+      lastWasList = false;
+      pendingOrdered = true;
+      nextLines.push(line);
+      continue;
+    }
+
+    if (pendingOrdered && line.trim() === "") {
+      const nextNonEmpty = lines.slice(nextLines.length + 1).find((value) => value.trim() !== "");
+      if (nextNonEmpty && isUnorderedListItem(nextNonEmpty)) {
+        continue;
+      }
+    }
+
+    if (isUnorderedListItem(line)) {
+      if (isBlockquote(line)) {
+        nextLines.push(line);
+        lastWasList = true;
+        continue;
+      }
+      const match = line.match(/^(\s*)([-*+])\s+(.*)$/);
+      const indent = match ? match[1].length : 0;
+      let normalized = indent;
+
+      if (!lastWasList) {
+        if (lastOrderedIndent !== null) {
+          normalized = lastOrderedIndent + 4;
+        } else {
+          normalized = 0;
+        }
+      } else if (normalized > lastListIndent + 2) {
+        normalized = lastListIndent + 2;
+      }
+
+      if (normalized % 2 !== 0) {
+        normalized -= 1;
+      }
+
+      const rebuilt = `${" ".repeat(normalized)}${match[2]} ${match[3]}`;
+      nextLines.push(rebuilt);
+      lastListIndent = normalized;
+      lastWasList = true;
+      lastOrderedIndent = null;
+      pendingOrdered = false;
+      continue;
+    }
+
+    nextLines.push(line);
+    if (line.trim() !== "") {
+      lastWasList = false;
+      lastListIndent = 0;
+      lastOrderedIndent = null;
+      pendingOrdered = false;
+    }
+  }
+
+  const nextContent = nextLines.join("\n");
+  return { content: nextContent, changed: nextContent !== content };
 };
 
 let updated = 0;

@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md032-blanks-around-lists.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,103 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
+const isListItem = (line) => /^(\s*(?:>\s*)?)(?:[-*+]|\d+\.)\s+/.test(line);
+const isBlockquote = (line) => line.trimStart().startsWith(">");
+const isBlockquoteListItem = (line) =>
+  line.trimStart().startsWith(">") && /(?:[-*+]|\d+\.)\s+/.test(line);
+const getBlockquotePrefix = (line) => {
+  const match = line.match(/^(\s*>)/);
+  return match ? match[1] : ">";
+};
+const stripBlockquote = (line) => {
+  const match = line.match(/^(\s*> ?)+/);
+  if (!match) {
+    return { content: line, prefix: "" };
   }
-
-  return attributes;
+  return { content: line.slice(match[0].length), prefix: match[0] };
+};
+const getListIndent = (line) => {
+  const { content } = stripBlockquote(line);
+  const match = content.match(/^(\s*)(?:[-*+]|\d+\.)\s+/);
+  return match ? match[1].length : 0;
+};
+const getIndent = (line) => {
+  const { content } = stripBlockquote(line);
+  return content.match(/^\s*/)[0].length;
 };
 
 const transformContent = (content) => {
-  let changed = false;
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+  let inFence = false;
+  let inList = false;
+  let listIndent = 0;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
 
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      nextLines.push(line);
+      inList = false;
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFence) {
+      nextLines.push(line);
+      continue;
+    }
 
-  return { content: transformed, changed };
+    const listItem = isListItem(line);
+    const lineIsBlockquote = isBlockquote(line);
+    const lineIsBlockquoteList = isBlockquoteListItem(line);
+    const previous = nextLines[nextLines.length - 1] ?? "";
+    const previousIsBlockquote = isBlockquote(previous);
+
+    if (listItem && !inList) {
+      if (lineIsBlockquote || previousIsBlockquote) {
+        if (previous.trim() !== "" && previousIsBlockquote) {
+          nextLines.push(getBlockquotePrefix(previous));
+        }
+      } else if (previous.trim() !== "") {
+        nextLines.push("");
+      }
+      inList = true;
+      listIndent = getListIndent(line);
+      nextLines.push(line);
+      if (lineIsBlockquoteList) {
+        inList = false;
+        listIndent = 0;
+      }
+      continue;
+    }
+
+    if (!listItem && inList) {
+      const { content } = stripBlockquote(line);
+      const isContinuation =
+        content.trim() !== "" && getIndent(line) > listIndent;
+      if (isContinuation) {
+        nextLines.push(line);
+        continue;
+      }
+      if (lineIsBlockquote || previousIsBlockquote) {
+        if (previous.trim() !== "" && previousIsBlockquote) {
+          nextLines.push(getBlockquotePrefix(previous));
+        }
+      } else if (previous.trim() !== "") {
+        nextLines.push("");
+      }
+      inList = false;
+      listIndent = 0;
+      nextLines.push(line);
+      continue;
+    }
+
+    nextLines.push(line);
+  }
+
+  const nextContent = nextLines.join("\n");
+  return { content: nextContent, changed: nextContent !== content };
 };
 
 let updated = 0;

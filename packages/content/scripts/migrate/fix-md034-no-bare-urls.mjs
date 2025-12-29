@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md034-no-bare-urls.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,71 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
+const isUrlWrapped = (line, index) => {
+  const prev = line[index - 1];
+  if (prev === "<" || prev === "(") return true;
+  return false;
+};
 
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
+const replaceBareUrls = (line) => {
+  let inInlineCode = false;
+  let changed = false;
 
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
+  const parts = line.split(/(`+)/);
+  const result = parts.map((part) => {
+    if (part.startsWith("`")) {
+      inInlineCode = !inInlineCode;
+      return part;
     }
 
-    attributes[key] = value;
-  }
+    if (inInlineCode) return part;
 
-  return attributes;
+    return part.replace(/https?:\/\/[^\s<>()]+/g, (match, offset) => {
+      if (isUrlWrapped(part, offset)) return match;
+      changed = true;
+      return `<${match}>`;
+    });
+  });
+
+  return { line: result.join(""), changed };
 };
 
 const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
+  let inFence = false;
+  let inFrontmatter = false;
   let changed = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
 
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (i === 0 && line.trim() === "---") {
+      inFrontmatter = true;
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFrontmatter && line.trim() === "---") {
+      inFrontmatter = false;
+      continue;
+    }
 
-  return { content: transformed, changed };
+    if (inFrontmatter) continue;
+
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      continue;
+    }
+
+    if (inFence) continue;
+
+    const { line: nextLine, changed: lineChanged } = replaceBareUrls(line);
+    if (lineChanged) {
+      lines[i] = nextLine;
+      changed = true;
+    }
+  }
+
+  return { content: lines.join("\n"), changed };
 };
 
 let updated = 0;

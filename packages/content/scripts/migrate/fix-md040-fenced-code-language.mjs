@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md040-fenced-code-language.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,38 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
-  }
-
-  return attributes;
-};
-
 const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
+  let inFence = false;
+  let fenceMarker = "";
   let changed = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+    const match = line.match(/^(\s*)(```|~~~)(\s*)(\S*)\s*$/);
 
-    if (!src) return full;
+    if (!match) continue;
 
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
+    const marker = match[2];
+    const lang = match[4];
 
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (!inFence) {
+      fenceMarker = marker;
+      if (!lang) {
+        lines[i] = `${match[1]}${marker}text`;
+        changed = true;
+      }
+      inFence = true;
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (marker === fenceMarker) {
+      inFence = false;
+      fenceMarker = "";
+    }
+  }
 
-  return { content: transformed, changed };
+  return { content: lines.join("\n"), changed };
 };
 
 let updated = 0;

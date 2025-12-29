@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md012-no-multiple-blanks.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,37 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
+const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+  let inFence = false;
+  let previousBlank = false;
 
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
+  for (const line of lines) {
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      nextLines.push(line);
+      previousBlank = false;
+      continue;
     }
 
-    attributes[key] = value;
+    if (inFence) {
+      nextLines.push(line);
+      previousBlank = false;
+      continue;
+    }
+
+    const isBlank = line.trim() === "";
+    if (isBlank && previousBlank) {
+      continue;
+    }
+
+    nextLines.push(line);
+    previousBlank = isBlank;
   }
 
-  return attributes;
-};
-
-const transformContent = (content) => {
-  let changed = false;
-
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
-
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
-    }
-
-    return imageMarkdown;
-  });
-
-  return { content: transformed, changed };
+  const nextContent = nextLines.join("\n");
+  return { content: nextContent, changed: nextContent !== content };
 };
 
 let updated = 0;

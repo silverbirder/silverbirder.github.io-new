@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md009-no-trailing-spaces.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,29 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
+const normalizeLine = (line) => {
+  const match = line.match(/^(.*?)([ \t]+)$/);
+  if (!match) return line;
+  const trailing = match[2];
+  if (trailing.length === 2 && line.trim().length > 0) {
+    return match[1] + trailing;
   }
-
-  return attributes;
+  return match[1];
 };
 
 const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
   let changed = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
-
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+  for (let i = 0; i < lines.length; i += 1) {
+    const nextLine = normalizeLine(lines[i]);
+    if (nextLine !== lines[i]) {
+      lines[i] = nextLine;
+      changed = true;
     }
+  }
 
-    return imageMarkdown;
-  });
-
-  return { content: transformed, changed };
+  return { content: lines.join("\n"), changed };
 };
 
 let updated = 0;

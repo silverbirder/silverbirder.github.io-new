@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md033-no-inline-html.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,90 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
+const replaceInlineBold = (segment) =>
+  segment.replace(/<b>(.*?)<\/b>/g, "**$1**").replace(/<strong>(.*?)<\/strong>/g, "**$1**");
 
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
+const replaceInlineHtml = (segment, { inTableRow }) => {
+  let next = replaceInlineBold(segment);
+  next = next.replace(/<br\s*\/?>/gi, inTableRow ? " / " : "  \n");
+  next = next.replace(/<\/?b>/gi, "**");
+  next = next.replace(/<\/?s>/gi, "~~");
+  next = next.replace(/<\/?del>/gi, "~~");
+  return next;
+};
 
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
+const getIframeReplacement = (block) => {
+  const match = block.match(/src\s*=\s*["']([^"']+)["']/i);
+  if (!match) return "Embedded content";
+  return `[Embedded content](${match[1]})`;
+};
 
-    attributes[key] = value;
-  }
-
-  return attributes;
+const transformLine = (line, { inTableRow }) => {
+  const parts = line.split(/(`+)/);
+  let changed = false;
+  const next = parts.map((part, index) => {
+    if (part.startsWith("`")) return part;
+    const replaced = replaceInlineHtml(part, { inTableRow });
+    if (replaced !== part) changed = true;
+    return replaced;
+  });
+  return { line: next.join(""), changed };
 };
 
 const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+  let inFence = false;
   let changed = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
 
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      nextLines.push(line);
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFence) {
+      nextLines.push(line);
+      continue;
+    }
 
-  return { content: transformed, changed };
+    if (line.includes("<iframe")) {
+      let block = line;
+      let endIndex = i;
+      const hasEnd =
+        line.toLowerCase().includes("</iframe>") || line.includes("/>");
+      if (!hasEnd) {
+        while (endIndex + 1 < lines.length) {
+          endIndex += 1;
+          block += `\n${lines[endIndex]}`;
+          const nextLine = lines[endIndex];
+          if (nextLine.toLowerCase().includes("</iframe>") || nextLine.includes("/>")) {
+            break;
+          }
+        }
+      }
+      const replacement = getIframeReplacement(block);
+      nextLines.push(replacement);
+      if (replacement.trim() !== block.trim()) {
+        changed = true;
+      }
+      i = endIndex;
+      continue;
+    }
+
+    const inTableRow = line.includes("|");
+    const { line: nextLine, changed: lineChanged } = transformLine(line, { inTableRow });
+    if (lineChanged) {
+      changed = true;
+    }
+    nextLines.push(nextLine);
+  }
+
+  const nextContent = nextLines.join("\n");
+  return { content: nextContent, changed };
 };
 
 let updated = 0;

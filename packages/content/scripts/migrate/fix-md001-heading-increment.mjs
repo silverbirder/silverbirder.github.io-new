@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md001-heading-increment.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,38 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
-  }
-
-  return attributes;
-};
-
 const transformContent = (content) => {
+  const lines = content.split(/\r?\n/);
+  let inFence = false;
+  let previousHeading = 0;
   let changed = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
 
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFence) continue;
 
-  return { content: transformed, changed };
+    const match = line.match(/^(#{1,6})\s+(.*)$/);
+    if (!match) continue;
+
+    const level = match[1].length;
+    if (previousHeading > 0 && level > previousHeading + 1) {
+      const nextLevel = previousHeading + 1;
+      lines[i] = `${"#".repeat(nextLevel)} ${match[2]}`;
+      changed = true;
+      previousHeading = nextLevel;
+      continue;
+    }
+
+    previousHeading = level;
+  }
+
+  return { content: lines.join("\n"), changed };
 };
 
 let updated = 0;

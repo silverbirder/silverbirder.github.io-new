@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md022-blanks-around-headings.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,47 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
-  }
-
-  return attributes;
-};
+const isHeading = (line) => /^#{1,6}\s+/.test(line);
 
 const transformContent = (content) => {
-  let changed = false;
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+  let inFence = false;
 
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
 
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      nextLines.push(line);
+      continue;
     }
 
-    return imageMarkdown;
-  });
+    if (inFence) {
+      nextLines.push(line);
+      continue;
+    }
 
-  return { content: transformed, changed };
+    if (isHeading(line)) {
+      const prev = nextLines[nextLines.length - 1];
+      if (prev !== undefined && prev.trim() !== "") {
+        nextLines.push("");
+      }
+
+      nextLines.push(line);
+
+      const next = lines[i + 1];
+      if (next !== undefined && next.trim() !== "") {
+        nextLines.push("");
+      }
+      continue;
+    }
+
+    nextLines.push(line);
+  }
+
+  const nextContent = nextLines.join("\n");
+  return { content: nextContent, changed: nextContent !== content };
 };
 
 let updated = 0;

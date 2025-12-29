@@ -14,7 +14,7 @@ const usage = () => {
   // ASCII only
   console.log(
     [
-      "Usage: node ./scripts/migrate/mdx-image-to-markdown.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
+      "Usage: node ./scripts/migrate/fix-md047-single-trailing-newline.mjs [--src <dir>] [--dest <dir>] [--file <path>] [--files <paths>] [--overwrite] [--dry-run]",
       "",
       "Defaults:",
       "  --src  ./posts",
@@ -112,52 +112,9 @@ if (filteredFiles.length === 0) {
   process.exit(0);
 }
 
-const parseAttributes = (raw) => {
-  const attributes = {};
-  const pattern = /(\w+)\s*=\s*(\{[^}]*\}|"[^"]*"|'[^']*')/g;
-  let match;
-
-  while ((match = pattern.exec(raw)) !== null) {
-    const key = match[1];
-    let value = match[2];
-
-    if (value.startsWith("{")) {
-      value = value.slice(1, -1).trim();
-    } else if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    attributes[key] = value;
-  }
-
-  return attributes;
-};
-
-const transformContent = (content) => {
-  let changed = false;
-
-  const transformed = content.replace(/<Image\s+([\s\S]*?)\/>/g, (full, rawAttrs) => {
-    const attrs = parseAttributes(rawAttrs);
-    const src = attrs.src;
-
-    if (!src) return full;
-
-    const alt = attrs.alt ?? "";
-    const href = attrs.href;
-    const imageMarkdown = `![${alt}](${src})`;
-    changed = true;
-
-    if (href) {
-      return `[${imageMarkdown}](${href})`;
-    }
-
-    return imageMarkdown;
-  });
-
-  return { content: transformed, changed };
+const normalizeTrailingNewline = (content) => {
+  const withoutNewlines = content.replace(/\r?\n*$/, "");
+  return `${withoutNewlines}\n`;
 };
 
 let updated = 0;
@@ -185,7 +142,8 @@ for (const fileName of filteredFiles) {
   }
 
   const content = await readFile(srcPath, "utf8");
-  const { content: transformed, changed } = transformContent(content);
+  const normalized = normalizeTrailingNewline(content);
+  const changed = normalized !== content;
 
   if (!changed && srcPath === destPath) {
     console.log(`No change: ${path.relative(projectRoot, srcPath)}`);
@@ -198,7 +156,7 @@ for (const fileName of filteredFiles) {
     continue;
   }
 
-  await writeFile(destPath, transformed, "utf8");
+  await writeFile(destPath, normalized, "utf8");
   console.log(`Wrote: ${path.relative(projectRoot, destPath)}`);
   updated += 1;
 }
