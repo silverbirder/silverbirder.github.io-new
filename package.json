@@ -8,6 +8,7 @@
     "deps:up": "pnpm -r up",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "generate:feature": "turbo gen feature",
     "lint": "turbo run lint",
     "lint-staged": "lint-staged",
     "lint:fix": "turbo run lint -- --fix",
