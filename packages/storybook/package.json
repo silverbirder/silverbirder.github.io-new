@@ -5,7 +5,7 @@
   "scripts": {
     "build": "storybook build",
     "check-types": "tsc --noEmit",
-    "dev": "storybook dev",
+    "dev": "storybook dev --no-open",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest --run --project=storybook"
   },
