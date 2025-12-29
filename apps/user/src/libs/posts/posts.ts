@@ -1,10 +1,13 @@
 import { readdir } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 const contentDir = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../app/blog/contents/[slug]",
+  process.cwd(),
+  "..",
+  "..",
+  "packages",
+  "content",
+  "posts",
 );
 
 export const getPostSlugs = async () => {

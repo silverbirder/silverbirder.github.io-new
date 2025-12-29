@@ -1,0 +1,9 @@
+{
+  "globs": ["posts/**/*.md"],
+  "ignores": ["node_modules/**"],
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD041": false
+  }
+}

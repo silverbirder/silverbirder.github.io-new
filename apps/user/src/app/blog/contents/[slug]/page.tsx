@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getPostSlugs } from "@/libs";
 
 const loadPost = async (slug: string) => {
-  return import(`./${slug}.md`);
+  return import(`@repo/content/posts/${slug}.md`);
 };
 
 export async function generateStaticParams() {

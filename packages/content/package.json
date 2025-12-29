@@ -1,0 +1,12 @@
+{
+  "name": "@repo/content",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "markdownlint-cli2"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.17.0"
+  }
+}
