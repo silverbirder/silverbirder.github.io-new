@@ -32,6 +32,6 @@
     "migrate:mdx-to-md": "node ./scripts/migrate/mdx-to-md.mjs"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.17.0"
+    "markdownlint-cli2": "^0.17.2"
   }
 }
