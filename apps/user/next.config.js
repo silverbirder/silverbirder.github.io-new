@@ -1,3 +1,4 @@
+import createMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
 import process from "node:process";
 
@@ -14,6 +15,13 @@ const config = {
   typedRoutes: true,
 };
 
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"],
+  },
+});
+
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
-export default withNextIntl(config);
+export default withNextIntl(withMDX(config));
