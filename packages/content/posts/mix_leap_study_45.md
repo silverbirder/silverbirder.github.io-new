@@ -26,16 +26,16 @@ Google I/O では、WEB や Google が出しているガジェットなど様々
 
 <https://events.google.com/io/>
 
-※ [<https://yahoo-osaka.connpass.com/event/132601/]>(https://yahoo-osaka.connpass.com/event/132601/)
+※ [https://yahoo-osaka.connpass.com/event/132601/](https://yahoo-osaka.connpass.com/event/132601/)
 
 ## WWDC（Worldwide Developers Conference）とは
 
 Apple が毎年開発している、開発者向けイベントです。
 WWDC では、apple の新製品の紹介や新しい技術についての発表が行われています。
 
-[<https://developer.apple.com/wwdc19/]>(https://developer.apple.com/wwdc19/)
+[https://developer.apple.com/wwdc19/](https://developer.apple.com/wwdc19/)
 
-※ [<https://yahoo-osaka.connpass.com/event/132601/]>(https://yahoo-osaka.connpass.com/event/132601/)
+※ [https://yahoo-osaka.connpass.com/event/132601/](https://yahoo-osaka.connpass.com/event/132601/)
 
 ヤフーでは、google I/O と WWDC の両方に約 30 名の社員が参加したそうです。
 すごい数ですね。
@@ -89,7 +89,7 @@ ML Kit の発表があったそうです。
 
 また、59 言語に対応しているというすごい数です。
 
-[<https://firebase.google.com/docs/ml-kit/translation-language-support]>(https://firebase.google.com/docs/ml-kit/translation-language-support)
+[https://firebase.google.com/docs/ml-kit/translation-language-support](https://firebase.google.com/docs/ml-kit/translation-language-support)
 
 一部無料で使えるとのことで、こういうスタンスは本当に大好きです。
 <https://firebase.google.com/docs/ml-kit/android/translate-text>

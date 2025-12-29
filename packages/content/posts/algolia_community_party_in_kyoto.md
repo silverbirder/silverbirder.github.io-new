@@ -16,12 +16,12 @@ tags: ["Report", "Algolia", "Kyoto"]
 まずは下記サイトで、色々検索してみて下さい！
 
 - Algolia Community Sample
-  - [<https://community.algolia.com/instantsearch.js/v2/examples/e-commerce/]>(https://community.algolia.com/instantsearch.js/v2/examples/e-commerce/)
-  - [<https://community.algolia.com/instantsearch.js/v2/examples/tourism/]>(https://community.algolia.com/instantsearch.js/v2/examples/tourism/)
-  - [<https://community.algolia.com/instantsearch.js/v2/examples/media/]>(https://community.algolia.com/instantsearch.js/v2/examples/media/)
+  - [https://community.algolia.com/instantsearch.js/v2/examples/e-commerce/](https://community.algolia.com/instantsearch.js/v2/examples/e-commerce/)
+  - [https://community.algolia.com/instantsearch.js/v2/examples/tourism/](https://community.algolia.com/instantsearch.js/v2/examples/tourism/)
+  - [https://community.algolia.com/instantsearch.js/v2/examples/media/](https://community.algolia.com/instantsearch.js/v2/examples/media/)
 - 実際に Product として使われているサイト
-  - [<https://www.bringmeister.de/]>(https://www.bringmeister.de/)
-  - [<https://8tracks.com/explore/all]>(https://8tracks.com/explore/all)
+  - [https://www.bringmeister.de/](https://www.bringmeister.de/)
+  - [https://8tracks.com/explore/all](https://8tracks.com/explore/all)
 
 どれも**爆速**に結果が返ってきませんか !?
 これ、 実は**SaaS**で動いているんですよ ?

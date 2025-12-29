@@ -12,7 +12,7 @@ TypeScriptを使用している開発者であれば、コードにドキュメ�
 
 サンプルコードは、以下にあります。
 
-[<https://github.com/silverbirder/playground]>(https://github.com/silverbirder/playground/tree/main/node/doctest-sample-app)
+[https://github.com/silverbirder/playground](https://github.com/silverbirder/playground/tree/main/node/doctest-sample-app)
 
 ## Document Testingとは
 

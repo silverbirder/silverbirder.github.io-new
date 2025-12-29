@@ -14,9 +14,9 @@ firebase の勢いがすごい。あと now も多少人気で、now 信者の�
 
 ![frontend de kanpai novelty](https://res.cloudinary.com/silverbirder/image/upload/v1614429431/silver-birder.github.io/blog/frontend_de_kanpai_novelty.jpg)
 
-※ [<https://twitter.com/DeNACreators/status/1152199891860389888]>(https://twitter.com/DeNACreators/status/1152199891860389888)  
-※ [<https://twitter.com/antidotech/status/1152154690617872384]>(https://twitter.com/antidotech/status/1152154690617872384)  
-※ [<https://twitter.com/wanami3103/status/1152202843618603008]>(https://twitter.com/wanami3103/status/1152202843618603008)
+※ [https://twitter.com/DeNACreators/status/1152199891860389888](https://twitter.com/DeNACreators/status/1152199891860389888)  
+※ [https://twitter.com/antidotech/status/1152154690617872384](https://twitter.com/antidotech/status/1152154690617872384)  
+※ [https://twitter.com/wanami3103/status/1152202843618603008](https://twitter.com/wanami3103/status/1152202843618603008)
 
 <https://frokan.connpass.com/event/135584/>
 
@@ -24,7 +24,7 @@ firebase の勢いがすごい。あと now も多少人気で、now 信者の�
 
 > 「Frontend de KANPAI!」（以下、FROKAN）は、フロントエンドエンジニアやフロントエンドに興味がある人が集い、ドリンク片手にゆるく交流・技術交換ができるコミュニティを目指しています。
 
-※ [<https://frokan.connpass.com/event/135584/]>(https://frokan.connpass.com/event/135584/)
+※ [https://frokan.connpass.com/event/135584/](https://frokan.connpass.com/event/135584/)
 
 特徴的だったのが立食形式という点です。
 会場には多少の椅子が用意されているものの、ほとんどの人が立ってドリンクを持ちながら、登壇者のお話を聞いていました。
@@ -95,7 +95,7 @@ Google 翻訳を通すと
 
 ![Shape Detection API Demo](https://res.cloudinary.com/silverbirder/image/upload/v1614429340/silver-birder.github.io/blog/Shape_Detection_API_Demo.jpg)
 
-※ [<https://twitter.com/antidotech/status/1152180161413931008]>(https://twitter.com/antidotech/status/1152180161413931008)
+※ [https://twitter.com/antidotech/status/1152180161413931008](https://twitter.com/antidotech/status/1152180161413931008)
 
 ちなみに、Fugu という名前の由来は、
 「ネイティブな部分を操作することは色々な事ができるようになり夢が広がるが、使い所を誤ると危険なもの」という話から

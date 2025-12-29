@@ -27,7 +27,7 @@ Web アプリでも、Cache をテストする必要がありそうです。
 
 <https://github.com/ai/size-limit>
 
-[![<https://github.com/ai/size-limit]>(https://res.cloudinary.com/silverbirder/image/upload/v1614429908/silver-birder.github.io/blog/size-limit.png)](https://github.com/ai/size-limit)
+[![https://github.com/ai/size-limit](https://res.cloudinary.com/silverbirder/image/upload/v1614429908/silver-birder.github.io/blog/size-limit.png)](https://github.com/ai/size-limit)
 
 ## Complexity Test
 
@@ -74,7 +74,7 @@ Web アプリを、端から端まで (End To End: E2E)を検証します。
 
 不安定なテストのことを指します。これに対するアプローチ方法の１つに、Google 社の資料があります。
 
-[<https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf]>(https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf)
+[https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf](https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf)
 
 日本人がまとめて頂いたものが、次の資料です。
 <https://speakerdeck.com/nihonbuson/flakytests>
@@ -114,7 +114,7 @@ INFO, WARN, ERROR などがルールに基づいて使い分けされている�
 
 <https://github.com/stryker-mutator/stryker>
 
-[![<https://stryker-mutator.io/stryker/quickstart]>(https://res.cloudinary.com/silverbirder/image/upload/v1614429792/silver-birder.github.io/blog/stryker-mutator.gif)](https://stryker-mutator.io/stryker/quickstart)
+[![https://stryker-mutator.io/stryker/quickstart](https://res.cloudinary.com/silverbirder/image/upload/v1614429792/silver-birder.github.io/blog/stryker-mutator.gif)](https://stryker-mutator.io/stryker/quickstart)
 
 ## Chaos Test
 
@@ -165,7 +165,7 @@ lighthouse というツールで SEO スコアを見ることができるみた�
 
 <https://github.com/GoogleChrome/lighthouse-ci>
 
-[![<https://github.com/GoogleChrome/lighthouse-ci]>(https://res.cloudinary.com/silverbirder/image/upload/v1614429818/silver-birder.github.io/blog/lighthouse-ci.png)](https://github.com/GoogleChrome/lighthouse-ci)
+[![https://github.com/GoogleChrome/lighthouse-ci](https://res.cloudinary.com/silverbirder/image/upload/v1614429818/silver-birder.github.io/blog/lighthouse-ci.png)](https://github.com/GoogleChrome/lighthouse-ci)
 
 ## Smoke Test
 
@@ -227,7 +227,7 @@ Static Test は、Web アプリを動かさなくても検証できるテスト�
 Unit テストで、どこをテストできたかのカバレッジを見ることができます。
 感覚としては、全体の 8 割を満たしていれば良いかなと思います。
 
-[<https://jestjs.io/docs/en/cli.html#--coverageboolean]>(https://jestjs.io/docs/en/cli.html#--coverageboolean)
+[https://jestjs.io/docs/en/cli.html#--coverageboolean](https://jestjs.io/docs/en/cli.html#--coverageboolean)
 
 実際に動作している JS や CSS のカバレッジを収集することもできます。
 
@@ -241,7 +241,7 @@ Unit テストで、どこをテストできたかのカバレッジを見るこ
 
 <https://github.com/garris/BackstopJS>
 
-[![<https://github.com/garris/BackstopJS]>(https://res.cloudinary.com/silverbirder/image/upload/v1614429842/silver-birder.github.io/blog/BackstopJS.png)](https://github.com/garris/BackstopJS)
+[![https://github.com/garris/BackstopJS](https://res.cloudinary.com/silverbirder/image/upload/v1614429842/silver-birder.github.io/blog/BackstopJS.png)](https://github.com/garris/BackstopJS)
 
 ## 最後に
 

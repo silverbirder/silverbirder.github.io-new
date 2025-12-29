@@ -35,7 +35,7 @@ HTML と CSS とくれば、次は JS だと思い、JS を実行するエンジ
 
 > compiler is a computer program that translates computer code written in one programming language (the source language) into another language (the target language). The name "compiler" is primarily used for programs that translate source code from a high-level programming language to a lower level language (e.g. assembly language, object code, or machine code) to create an executable program.
 
-※ [<https://en.wikipedia.org/wiki/Compiler]>(https://en.wikipedia.org/wiki/Compiler)
+※ [https://en.wikipedia.org/wiki/Compiler](https://en.wikipedia.org/wiki/Compiler)
 
 に書かれている通り、あるコードを別のコードに変換するプログラムのことをコンパイラと指します。
 主に、高級言語(ex. javascript)から低級言語(ex. アセンブリ言語)への変換という意味でコンパイラが使われます。
@@ -84,7 +84,7 @@ ECMA-404, The JSON Data Interchange Format (pdf)
 ① 番の言語文法について知るために、ecmascript の BNF ってどれだろうなと調べていました。
 そうすると、私の調べた範囲では、次のページにたどり着きました。
 
-[<https://tc39.es/ecma262/#sec-grammar-summary]>(https://tc39.es/ecma262/#sec-grammar-summary)
+[https://tc39.es/ecma262/#sec-grammar-summary](https://tc39.es/ecma262/#sec-grammar-summary)
 
 これは、先程の[swc_ecma_parser](https://rustdoc.swc.rs/swc_ecma_parser/)のテストスイート対象[tc39/test262/test](https://github.com/tc39/test262/tree/main/test)であったので、あえて再構築する気になれず、自作は諦めました。
 
@@ -105,7 +105,7 @@ LLVM は、次の特徴があります。
 
 > LLVM is a set of compiler and toolchain technologies, which can be used to develop a front end for any programming language and a back end for any instruction set architecture. LLVM is designed around a language-independent intermediate representation (IR) that serves as a portable, high-level assembly language that can be optimized with a variety of transformations over multiple passes.
 
-※ [<https://en.wikipedia.org/wiki/LLVM]>(https://en.wikipedia.org/wiki/LLVM)
+※ [https://en.wikipedia.org/wiki/LLVM](https://en.wikipedia.org/wiki/LLVM)
 
 LLVM は、任意のフロントエンド言語(コンパイラという文脈でいう変換前の言語)から任意の命令セットアーキテクチャ(以下、ISA)バックエンドへ変換できます。
 また、非言語依存な中間言語(以下、IR)を中心として設計されています。
@@ -118,7 +118,7 @@ LLVM は、任意のフロントエンド言語(コンパイラという文脈�
 
 > 命令セットとは、あるマイクロプロセッサ（CPU/MPU）を動作させるための命令語の体系。プロセッサが直に解釈して実行できる機械語（マシン語）の仕様を定めたもの。
 
-※ [<https://e-words.jp/w/命令セット.html]>(https://e-words.jp/w/命令セット.html)
+※ [https://e-words.jp/w/命令セット.html](https://e-words.jp/w/命令セット.html)
 
 プロセッサを動作させるための命令は、例えば Load(LDR)と Store(STR)です。Load は、メモリからレジスタへセットし、Store は、その逆です。
 後で紹介する[Instruction(Builder)](https://thedan64.github.io/inkwell/inkwell/builder/struct.Builder.html)に一覧があります。
@@ -213,7 +213,7 @@ IR を Module,Function,Block,Instruction で区切って見ると、次の画像
 
 > LLVM programs are composed of Module’s, each of which is a translation unit of the input programs.
 
-※ [<https://llvm.org/docs/LangRef.html#module-structure]>(https://llvm.org/docs/LangRef.html#module-structure)
+※ [https://llvm.org/docs/LangRef.html#module-structure](https://llvm.org/docs/LangRef.html#module-structure)
 
 モジュールは、入力プログラムの変換単位になります。
 モジュールには、関数、グローバル変数、シンボルテーブルエントリを持ちます。
@@ -223,7 +223,7 @@ IR を Module,Function,Block,Instruction で区切って見ると、次の画像
 > LLVM function definitions consist of the “define” keyword.
 > A function definition contains a list of basic blocks.
 
-※ [<https://llvm.org/docs/LangRef.html#functions]>(https://llvm.org/docs/LangRef.html#functions)
+※ [https://llvm.org/docs/LangRef.html#functions](https://llvm.org/docs/LangRef.html#functions)
 
 関数は、複数のブロック(Block)を持ちます。
 
@@ -231,7 +231,7 @@ IR を Module,Function,Block,Instruction で区切って見ると、次の画像
 
 > Each basic block may optionally start with a label (giving the basic block a symbol table entry), contains a list of instructions, and ends with a terminator instruction (such as a branch or function return).
 
-※ [<https://llvm.org/docs/LangRef.html#functions]>(https://llvm.org/docs/LangRef.html#functions)
+※ [https://llvm.org/docs/LangRef.html#functions](https://llvm.org/docs/LangRef.html#functions)
 
 ブロックは、ラベルから始まり、複数の命令(Instruction)を持ちます。
 
@@ -239,7 +239,7 @@ IR を Module,Function,Block,Instruction で区切って見ると、次の画像
 
 > The LLVM instruction set consists of several different classifications of instructions: terminator instructions, binary instructions, bitwise binary instructions, memory instructions, and other instructions.
 
-※ [<https://llvm.org/docs/LangRef.html#instruction-reference]>(https://llvm.org/docs/LangRef.html#instruction-reference)
+※ [https://llvm.org/docs/LangRef.html#instruction-reference](https://llvm.org/docs/LangRef.html#instruction-reference)
 
 命令は、バイナリ命令やメモリ命令など、様々な命令があります。
 

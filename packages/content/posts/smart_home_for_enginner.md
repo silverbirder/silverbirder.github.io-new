@@ -59,13 +59,13 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Qmote S
 
-[<http://qblinks.com/ja]>(http://qblinks.com/ja)
+[http://qblinks.com/ja](http://qblinks.com/ja)
 
 ## スマート加湿器
 
 ### SwitchBot 加湿器
 
-[<https://www.switchbot.jp/copy-of-switchbot]>(https://www.switchbot.jp/copy-of-switchbot)
+[https://www.switchbot.jp/copy-of-switchbot](https://www.switchbot.jp/copy-of-switchbot)
 
 ## スマートプラグ
 
@@ -89,7 +89,7 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Light Strip Plus
 
-[<https://www2.meethue.com/ja-jp/p/hue-white-and-color-ambiance-lightstrip-plus-jp-base/7190155J8]>(https://www2.meethue.com/ja-jp/p/hue-white-and-color-ambiance-lightstrip-plus-jp-base/7190155J8)
+[https://www2.meethue.com/ja-jp/p/hue-white-and-color-ambiance-lightstrip-plus-jp-base/7190155J8](https://www2.meethue.com/ja-jp/p/hue-white-and-color-ambiance-lightstrip-plus-jp-base/7190155J8)
 
 ## スマートカメラ
 
@@ -147,7 +147,7 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Focals
 
-[<https://www.bynorth.com/focals]>(https://www.bynorth.com/focals)
+[https://www.bynorth.com/focals](https://www.bynorth.com/focals)
 
 ## スマートエナジーハブ
 

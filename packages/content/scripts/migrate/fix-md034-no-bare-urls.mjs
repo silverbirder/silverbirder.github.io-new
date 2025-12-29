@@ -114,7 +114,7 @@ if (filteredFiles.length === 0) {
 
 const isUrlWrapped = (line, index) => {
   const prev = line[index - 1];
-  if (prev === "<" || prev === "(") return true;
+  if (prev === "<" || prev === "(" || prev === "[") return true;
   return false;
 };
 

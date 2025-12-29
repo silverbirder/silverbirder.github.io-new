@@ -20,7 +20,7 @@ Kubernetes の生みの親である 3 人の内の 1 人の Joe Beda から、**
 
 > Joe Beda は、Kubernetes の co-founder（共同創設者/最初に開発した 3 人のうちの 1 人）/ 昨年 VMware に買収された Heptio の CTO / O'Reilly「Kubernetes: Up & Running」 (邦題「入門 Kubernetes」）の共著者で、現在も Kubernetes をリードしている 1 人です。今回は、Kubernetes のこれまでと未来についてお話いただきます。
 
-※ [<https://k8sjp.connpass.com/event/126207/]>(https://k8sjp.connpass.com/event/126207/)
+※ [https://k8sjp.connpass.com/event/126207/](https://k8sjp.connpass.com/event/126207/)
 
 Kubernetes の最初のコミッターで、超有名人。
 Google で働いていたときは、Kubernetes や Compute Engine を作っていたそうです。

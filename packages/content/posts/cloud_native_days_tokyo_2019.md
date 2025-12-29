@@ -26,7 +26,7 @@ tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
 次の図では、CNCF プロジェクトの 180 日間における Commit 数をグラフ化したものです。
 生みの親である Google が 1 位で independent(個人)が 2 番目、日本企業 Fujitsu が 6 位です。熱意が伝わってきますね。
 
-[![<https://www.stackalytics.com/cncf?date=180]>(https://res.cloudinary.com/silverbirder/image/upload/v1614429648/silver-birder.github.io/blog/stackalytics_cncf.png)](https://www.stackalytics.com/cncf?date=180)
+[![https://www.stackalytics.com/cncf?date=180](https://res.cloudinary.com/silverbirder/image/upload/v1614429648/silver-birder.github.io/blog/stackalytics_cncf.png)](https://www.stackalytics.com/cncf?date=180)
 ※ 2019/07/24 時点
 
 ただ、CNCF のメンバーとして日本企業は**17 社**しかないそうで、まだまだこれからといったところでしょうか。
@@ -47,7 +47,7 @@ tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
 
 > クラウドネイティブ技術は、パブリッククラウド、プライベートクラウド、ハイブリッドクラウドなどの近代的でダイナミックな環境において、スケーラブルなアプリケーションを構築および実行するための能力を組織にもたらします。 このアプローチの代表例に、コンテナ、サービスメッシュ、マイクロサービス、イミューダブルインフラストラクチャ、および宣言型 API があります。
 
-※ [<https://github.com/cncf/toc/blob/master/DEFINITION.md#日本語版]>(https://github.com/cncf/toc/blob/master/DEFINITION.md#日本語版)
+※ [https://github.com/cncf/toc/blob/master/DEFINITION.md#日本語版](https://github.com/cncf/toc/blob/master/DEFINITION.md#日本語版)
 
 「スケーラブルなアプリケーションを構築および実行」が重要です。これを実現する手段の１つに Kubernetes があります。
 「CloudNative = Kubernetes」ではなく、「CloudNative ∋ Kubernetes」という感じです。
@@ -214,7 +214,7 @@ Kubernetes でアプリケーションを構築すると、分散システムの
 
 こちらのサービスから作られたそうで、私も自前で何か作ってみようかなと思いました。
 
-[<https://www.wasdkeyboards.com/]>(https://www.wasdkeyboards.com/)
+[https://www.wasdkeyboards.com/](https://www.wasdkeyboards.com/)
 
 ## 最後に
 

@@ -63,11 +63,11 @@ Twitter の公式アカウントをフォローするのも良いです。
 
 例えば、私の場合は、次のアカウントをフォローしていたりします。
 
-- [<https://twitter.com/naltatis]>(https://twitter.com/naltatis)
+- [https://twitter.com/naltatis](https://twitter.com/naltatis)
   - Micro Frontends in Action の著者
-- [<https://twitter.com/tech_slideshare]>(https://twitter.com/tech_slideshare)
+- [https://twitter.com/tech_slideshare](https://twitter.com/tech_slideshare)
   - 日本における勉強会のスライド収集 Bot
-- [<https://twitter.com/wicg\_]>(https://twitter.com/wicg_)
+- [https://twitter.com/wicg\_](https://twitter.com/wicg_)
   - Web Incubator のコミュニティ
 
 ## UseCotlin
@@ -76,20 +76,20 @@ Twitter の公式アカウントをフォローするのも良いです。
 勉強会やカンファレンスが開催されると、Twitter で宣伝されることが多いため、こちらのツールで自動的にキャッチアップできます。
 また、日本だけではなく、世界各国のプレゼンテーションを知ることができます。
 
-- [<https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing]>(https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing)
+- [https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing)
 
 ## Medium
 
 Medium の有料会員です。Medium は、Tech 系の質の高い投稿が多く充実できます。
 無料会員だと、一日の閲覧回数に制限があるため、ちょっとストレスに感じ、有料会員になりました。
 
-- [<https://medium.com/]>(https://medium.com/)
+- [https://medium.com/](https://medium.com/)
 
 ## Hatena Blog
 
 今日のホットエントリを見て、何が流行りなのか、どういう分野に関心があるのかざっとななめ読みしています。
 
-- [<https://b.hatena.ne.jp/hotentry/it]>(https://b.hatena.ne.jp/hotentry/it)
+- [https://b.hatena.ne.jp/hotentry/it](https://b.hatena.ne.jp/hotentry/it)
 
 また、テクノロジだけではなく、総合分野を見ていたりします。
 

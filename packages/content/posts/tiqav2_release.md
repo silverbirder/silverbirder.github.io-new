@@ -25,7 +25,7 @@ tags: ["Artifact", "Learn", "Algolia", "Cloudinary"]
 
 画像を使って会話をするためのサービスとして、Tiqav があります。
 
-[<http://dev.tiqav.com/]>(http://dev.tiqav.com/)
+[http://dev.tiqav.com/](http://dev.tiqav.com/)
 
 現在は、サービス終了しています。
 Tiqav2 は、その Tiqav を参考にして作りました。

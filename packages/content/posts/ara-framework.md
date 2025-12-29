@@ -16,7 +16,7 @@ tags: ["Ara Framework", "Micro Frontends", "SSR", "Artifact"]
 
 > Build Micro-frontends easily using Airbnb Hypernova
 
-※ [<https://ara-framework.github.io/website/]>(https://ara-framework.github.io/website/)
+※ [https://ara-framework.github.io/website/](https://ara-framework.github.io/website/)
 
 Ara-Framework は、Airbnb が開発した Hypernova というフレームワークを使って、Micro Frontends を構築します。
 
@@ -24,7 +24,7 @@ Ara-Framework は、Airbnb が開発した Hypernova というフレームワー
 
 > A service for server-side rendering your JavaScript views
 
-※ [<https://github.com/airbnb/hypernova]>(https://github.com/airbnb/hypernova)
+※ [https://github.com/airbnb/hypernova](https://github.com/airbnb/hypernova)
 
 簡単に説明すると、Hypernova はデータを渡せばレンダリング結果(HTML)を返却してくれるライブラリです。
 これにより、データ構築とレンダリングを明確に分離することができるメリットがあります。
@@ -35,7 +35,7 @@ Ara-Framework のアーキテクチャ図は、次のようなものです。
 
 ![ara framework overview](https://res.cloudinary.com/silverbirder/image/upload/v1693362600/silver-birder.github.io/blog/1%2A43CBDwIZ8P2q_ZfGg_ktUQ.png)
 
-※ [<https://ara-framework.github.io/website/docs/nova-architecture]>(https://ara-framework.github.io/website/docs/nova-architecture)
+※ [https://ara-framework.github.io/website/docs/nova-architecture](https://ara-framework.github.io/website/docs/nova-architecture)
 
 構成要素は、次のとおりです。(↑ の公式ページにも説明があります)
 
@@ -129,7 +129,7 @@ npx express-generator -v hbs layout
 
 詳細は割愛しますが、次の HTML ファイル(hbs)を作成します。
 
-※ 詳しくはこちら [<https://ara-framework.github.io/website/docs/render-on-page]>(https://ara-framework.github.io/website/docs/render-on-page)
+※ 詳しくはこちら [https://ara-framework.github.io/website/docs/render-on-page](https://ara-framework.github.io/website/docs/render-on-page)
 
 layout/index.hbs
 

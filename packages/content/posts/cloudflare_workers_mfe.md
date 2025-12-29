@@ -25,7 +25,7 @@ ESI は、SSI と似たようなもので、サーバーサイド側でコンテ
 
 > EdgeWorkers は、世界中に分散配置された Akamai の Edge サーバー上で、カスタムしたプログラムコードを実行できるようになる新しいサービスです
 
-※ [<https://blogs.akamai.com/jp/2019/10/edgeworker.html]>(https://blogs.akamai.com/jp/2019/10/edgeworker.html)
+※ [https://blogs.akamai.com/jp/2019/10/edgeworker.html](https://blogs.akamai.com/jp/2019/10/edgeworker.html)
 
 要は、Edge Workers とは CDN が提供するプラットフォーム上で、プログラムコード、例えば Javascript などが実行できるサービスです。
 

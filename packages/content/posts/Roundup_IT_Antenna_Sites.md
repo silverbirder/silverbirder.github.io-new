@@ -57,7 +57,7 @@ LT の募集があったので、LT 応募するためのネタ探しをはじ�
 
 ## GoogleTrend
 
-[<https://trends.google.co.jp/trends/explore?q=python]>(https://trends.google.co.jp/trends/explore?q=python)
+[https://trends.google.co.jp/trends/explore?q=python](https://trends.google.co.jp/trends/explore?q=python)
 
 他にオススメありましたら教えて下さい。 😆
 

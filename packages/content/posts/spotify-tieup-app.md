@@ -15,7 +15,7 @@ Spotifyで音楽を聴いていると「**この曲、どこかで聞いたこ�
 
 ![タイアップ検索 デモ画像](http://res.cloudinary.com/silverbirder/image/upload/v1727178744/pvfrczj9b5ogw58ooulu.png)
 
-[<https://tie-track.vercel.app]>(https://tie-track.vercel.app)
+[https://tie-track.vercel.app](https://tie-track.vercel.app)
 
 この記事では、このアプリの**技術的な部分**について詳しく紹介します。
 

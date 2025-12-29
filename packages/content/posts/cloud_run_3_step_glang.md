@@ -9,7 +9,7 @@ tags: ["GCP", "Cloud Run", "Golang", "Deploy", "Scrap"]
 
 > Cloud Run is a managed compute platform that enables you to run stateless containers that are invocable via HTTP requests. Cloud Run is serverless
 
-※ [<https://cloud.google.com/run/]>(https://cloud.google.com/run/)
+※ [https://cloud.google.com/run/](https://cloud.google.com/run/)
 
 詳しくは割愛するが、Cloud Functions や App Engine と同じようなサーバーレスで動作するもの。
 コンテナを deploy するため、GKE から制御することもできる。
@@ -18,13 +18,13 @@ tags: ["GCP", "Cloud Run", "Golang", "Deploy", "Scrap"]
 
 ## デプロイしてみた
 
-[<https://cloud.google.com/run/docs/quickstarts/build-and-deploy]>(https://cloud.google.com/run/docs/quickstarts/build-and-deploy)
+[https://cloud.google.com/run/docs/quickstarts/build-and-deploy](https://cloud.google.com/run/docs/quickstarts/build-and-deploy)
 
 を参考に進めていく。
 
 ちなみに、動作環境は下記コンテナ内に行う。
 
-[<https://hub.docker.com/r/google/cloud-sdk]>(https://hub.docker.com/r/google/cloud-sdk)
+[https://hub.docker.com/r/google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk)
 
 ## step1. gcloud の各種設定
 

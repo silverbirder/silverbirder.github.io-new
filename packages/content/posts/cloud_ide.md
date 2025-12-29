@@ -19,7 +19,7 @@ DaaS の簡単な説明を引用しますと、次のとおりです。
 > DaaS はクラウドサービスの一種で、特定のソフトウェアを端末にインストールすることなく、ネットワークを通じて利用できるという特徴があります。
 > クラウド上にあるデスクトップ環境を呼び出して利用できるため、個人の PC はディスプレイとキーボードなど必要最低限の機能があれば良いので、テレワークをするために高いスペックの PC を用意する必要はありません。
 
-※ [<https://www.ascentech.co.jp/solution/column/daas.html]>(https://www.ascentech.co.jp/solution/column/daas.html)
+※ [https://www.ascentech.co.jp/solution/column/daas.html](https://www.ascentech.co.jp/solution/column/daas.html)
 
 例えば、クラウド上で開発環境(お気に入りのエディタ, プログラミング言語, 使い慣れたツール, etc)を構築して、そこにアクセスして仕事をするようになります。アクセス元は、私物の PC や会社から支給されている PC などが多いと思います。
 
@@ -52,15 +52,15 @@ Cloud Shell Editor や Gitpod は、OSS の **Theia** というものを使っ�
 
 これらの Cloud IDE は、ここ最近 Publickey でよく目にします。記事と投稿日時をまとめてみました。
 
-- [<https://www.publickey1.jp/blog/20/visual_studio_codeeclipse_theia_10vs_codeweb.html]>(https://www.publickey1.jp/blog/20/visual_studio_codeeclipse_theia_10vs_codeweb.html)
+- [https://www.publickey1.jp/blog/20/visual_studio_codeeclipse_theia_10vs_codeweb.html](https://www.publickey1.jp/blog/20/visual_studio_codeeclipse_theia_10vs_codeweb.html)
   - 2020 年 4 月 3 日 投稿
-- [<https://www.publickey1.jp/blog/20/githubwebidecodespacesgithub.html]>(https://www.publickey1.jp/blog/20/githubwebidecodespacesgithub.html)
+- [https://www.publickey1.jp/blog/20/githubwebidecodespacesgithub.html](https://www.publickey1.jp/blog/20/githubwebidecodespacesgithub.html)
   - 2020 年 5 月 7 日 投稿
-- [<https://www.publickey1.jp/blog/20/webidevisual_studio_codespaecsgithub_codespaces.html]>(https://www.publickey1.jp/blog/20/webidevisual_studio_codespaecsgithub_codespaces.html)
+- [https://www.publickey1.jp/blog/20/webidevisual_studio_codespaecsgithub_codespaces.html](https://www.publickey1.jp/blog/20/webidevisual_studio_codespaecsgithub_codespaces.html)
   - 2020 年 9 月 7 日 投稿
-- [<https://www.publickey1.jp/blog/20/githubgitlabwebidegitpodgithub_codespaces.html]>(https://www.publickey1.jp/blog/20/githubgitlabwebidegitpodgithub_codespaces.html)
+- [https://www.publickey1.jp/blog/20/githubgitlabwebidegitpodgithub_codespaces.html](https://www.publickey1.jp/blog/20/githubgitlabwebidegitpodgithub_codespaces.html)
   - 2020 年 9 月 11 日 投稿
-- [<https://www.publickey1.jp/blog/20/googlevscodeeclipse_theiagoogle_cloud_shell.html]>(https://www.publickey1.jp/blog/20/googlevscodeeclipse_theiagoogle_cloud_shell.html)
+- [https://www.publickey1.jp/blog/20/googlevscodeeclipse_theiagoogle_cloud_shell.html](https://www.publickey1.jp/blog/20/googlevscodeeclipse_theiagoogle_cloud_shell.html)
   - 2020 年 11 月 10 日 投稿
 
 稚拙な推測ですが、リモートワークが普及し、働く環境も変化したためかなと思っています。
@@ -72,7 +72,7 @@ Theia とは何か、Github の about より引用します。
 
 > Eclipse Theia is a cloud & desktop IDE framework implemented in TypeScript
 
-※ [<https://github.com/eclipse-theia/theia]>(https://github.com/eclipse-theia/theia)
+※ [https://github.com/eclipse-theia/theia](https://github.com/eclipse-theia/theia)
 
 この OSS の興味深いところの 1 つに、設計書が公開されているところです。
 
@@ -109,7 +109,7 @@ Gitpod は、.gitpod.yml というファイルで環境構築されます。
 
 また、様々な OSS を Gitpod で簡単に動作確認できます。
 
-[<https://contribute.dev/]>(https://contribute.dev/)
+[https://contribute.dev/](https://contribute.dev/)
 
 実際に Gitpod を使ってみると、確かに便利です。
 アクセス元の PC は、非力なノート PC でも良く、Github の Repository 毎に Gitpod のコンテナがあるため、相互に影響しません。

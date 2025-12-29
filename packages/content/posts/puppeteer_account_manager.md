@@ -93,7 +93,7 @@ Docker コンテナで動作できるようにしているので、ローカル�
 
 詳しくは、
 
-[<https://github.com/silverbirder/puppeteer-account-manager/blob/master/src/index.ts]>(https://github.com/silverbirder/puppeteer-account-manager/blob/master/src/index.ts) をご確認下さい。
+[https://github.com/silverbirder/puppeteer-account-manager/blob/master/src/index.ts](https://github.com/silverbirder/puppeteer-account-manager/blob/master/src/index.ts) をご確認下さい。
 
 ## どんな学びがあった
 
@@ -108,7 +108,7 @@ Web サービスが返す HTML は、いつもずっと変わらないことは�
 例えば、
 
 - ボタンやリンクをクリックしてページ遷移するのではなく、目的のページへ最短で直接遷移する
-  - [<https://medium.com/me]>(https://medium.com/me) とか。
+  - [https://medium.com/me](https://medium.com/me) とか。
 - submit ボタンをクリックするのではなく、エンターキーを入力する
 
 です。こうすることで、安定した自動化ができました。
