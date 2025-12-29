@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Noto_Sans_JP } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
 
@@ -10,6 +11,12 @@ export const metadata: Metadata = {
   title: "Create T3 App",
 };
 
+const notoSansJP = Noto_Sans_JP({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
 type Props = Readonly<{
   children: React.ReactNode;
 }>;
@@ -18,7 +25,7 @@ export default async function RootLayout({ children }: Props) {
   const messages = await getMessages();
   return (
     <html lang="ja">
-      <body>
+      <body className={notoSansJP.className}>
         <TRPCReactProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
