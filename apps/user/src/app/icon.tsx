@@ -8,7 +8,7 @@ export const contentType = "image/png";
 export const iconSizes = [32, 48, 72, 96, 144, 192, 512] as const;
 
 type Props = {
-  id: number | string;
+  id: Promise<number>;
 };
 
 export function generateImageMetadata() {
@@ -20,9 +20,7 @@ export function generateImageMetadata() {
 }
 
 export default async function Icon({ id }: Props) {
-  const size = typeof id === "number" ? id : Number(id);
-  const resolvedSize = Number.isFinite(size) ? size : iconSizes[0];
-  const logoSize = Math.max(1, Math.round(resolvedSize * 0.75));
+  const size = await id;
 
   const logo = await readFile(
     new URL("../../public/assets/logo.png", import.meta.url),
@@ -41,15 +39,15 @@ export default async function Icon({ id }: Props) {
     >
       <img
         alt="silverbirder"
-        height={logoSize}
+        height="100%"
         src={logoBase64}
         style={{ objectFit: "contain" }}
-        width={logoSize}
+        width="100%"
       />
     </div>,
     {
-      height: resolvedSize,
-      width: resolvedSize,
+      height: size,
+      width: size,
     },
   );
 }

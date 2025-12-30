@@ -24,7 +24,7 @@ describe("icon", () => {
   it("builds a png icon response", async () => {
     readFile.mockResolvedValue(Buffer.from([1, 2, 3]));
 
-    const result = await Icon({ id: 48 });
+    const result = await Icon({ id: Promise.resolve(48) });
 
     expect(contentType).toBe("image/png");
     expect(readFile).toHaveBeenCalledTimes(1);
@@ -37,6 +37,17 @@ describe("icon", () => {
     });
     expect(result).toEqual({
       args: [expect.anything(), { height: 48, width: 48 }],
+    });
+  });
+
+  it("uses the resolved id", async () => {
+    readFile.mockResolvedValue(Buffer.from([1, 2, 3]));
+
+    await Icon({ id: Promise.resolve(72) });
+
+    expect(ImageResponse).toHaveBeenCalledWith(expect.anything(), {
+      height: 72,
+      width: 72,
     });
   });
 
