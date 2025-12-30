@@ -6,8 +6,8 @@
   ],
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "$(capture).spec.ts, $(capture).test.ts",
-    "*.tsx": "$(capture).spec.tsx, $(capture).stories.tsx"
+    "*.ts": "$(capture).spec.ts",
+    "*.tsx": "$(capture).spec.tsx, $(capture).spec.ts, $(capture).stories.tsx"
   },
   "git.enableSmartCommit": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
