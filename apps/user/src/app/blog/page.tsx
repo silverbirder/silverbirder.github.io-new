@@ -13,11 +13,6 @@ const loadPostFrontmatter = async (slug: string) => {
   return frontmatter;
 };
 
-const toDateValue = (publishedAt: string) => {
-  const dateValue = Date.parse(publishedAt);
-  return Number.isNaN(dateValue) ? 0 : dateValue;
-};
-
 export const getPostList = async (
   loader: (
     slug: string,
@@ -25,22 +20,15 @@ export const getPostList = async (
 ) => {
   const slugs = await getPostSlugs();
   const posts = await Promise.all(
-    slugs.map(async (slug) => {
+    slugs.map(async ({ publishedAt, slug }) => {
       const frontmatter = await loader(slug);
       const title =
         typeof frontmatter.title === "string" ? frontmatter.title : slug;
-      const publishedAt =
-        typeof frontmatter.publishedAt === "string"
-          ? frontmatter.publishedAt
-          : "";
-
       return { publishedAt, slug, title } satisfies PostSummary;
     }),
   );
 
-  return posts
-    .filter((post) => post.publishedAt !== "")
-    .sort((a, b) => toDateValue(b.publishedAt) - toDateValue(a.publishedAt));
+  return posts;
 };
 
 export default async function Page() {

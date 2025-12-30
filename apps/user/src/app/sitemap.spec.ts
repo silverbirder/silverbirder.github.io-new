@@ -40,15 +40,18 @@ describe("sitemap", () => {
     process.env.GITHUB_PAGES_BASE_PATH = "/docs";
 
     const mockedGetPostSlugs = vi.mocked(getPostSlugs);
-    mockedGetPostSlugs.mockResolvedValue(["second-post", "first-post"]);
+    mockedGetPostSlugs.mockResolvedValue([
+      { publishedAt: "2025-01-01", slug: "second-post" },
+      { publishedAt: "2024-01-01", slug: "first-post" },
+    ]);
 
     const entries = await sitemap();
 
     expect(entries).toEqual([
       { url: "https://example.com/docs/" },
       { url: "https://example.com/docs/blog/" },
-      { url: "https://example.com/docs/blog/contents/first-post/" },
       { url: "https://example.com/docs/blog/contents/second-post/" },
+      { url: "https://example.com/docs/blog/contents/first-post/" },
     ]);
     expect(mockedGetPostSlugs).toHaveBeenCalledTimes(1);
   });

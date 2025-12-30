@@ -12,7 +12,10 @@ describe("generateStaticParams", () => {
   it("returns params for each slug", async () => {
     const mockedGetPostSlugs = vi.mocked(getPostSlugs);
 
-    mockedGetPostSlugs.mockResolvedValue(["20251027", "20251101"]);
+    mockedGetPostSlugs.mockResolvedValue([
+      { publishedAt: "2025-10-27", slug: "20251027" },
+      { publishedAt: "2025-11-01", slug: "20251101" },
+    ]);
 
     const params = await generateStaticParams();
 
