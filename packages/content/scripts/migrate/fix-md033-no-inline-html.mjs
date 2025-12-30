@@ -185,12 +185,6 @@ const repairInlineCodeLineBreaks = (lines) => {
   return { lines: repaired, changed };
 };
 
-const getIframeReplacement = (block) => {
-  const match = block.match(/src\s*=\s*["']([^"']+)["']/i);
-  if (!match) return "Embedded content";
-  return `[Embedded content](${match[1]})`;
-};
-
 const transformLine = (line, { inTableRow }) => {
   let changed = false;
   let cursor = 0;
@@ -271,24 +265,23 @@ const transformContent = (content) => {
     }
 
     if (line.includes("<iframe")) {
-      let block = line;
       let endIndex = i;
       const hasEnd =
         line.toLowerCase().includes("</iframe>") || line.includes("/>");
       if (!hasEnd) {
         while (endIndex + 1 < sourceLines.length) {
           endIndex += 1;
-          block += `\n${sourceLines[endIndex]}`;
           const nextLine = sourceLines[endIndex];
-          if (nextLine.toLowerCase().includes("</iframe>") || nextLine.includes("/>")) {
+          if (
+            nextLine.toLowerCase().includes("</iframe>") ||
+            nextLine.includes("/>")
+          ) {
             break;
           }
         }
       }
-      const replacement = getIframeReplacement(block);
-      nextLines.push(replacement);
-      if (replacement.trim() !== block.trim()) {
-        changed = true;
+      for (let j = i; j <= endIndex; j += 1) {
+        nextLines.push(sourceLines[j]);
       }
       i = endIndex;
       continue;

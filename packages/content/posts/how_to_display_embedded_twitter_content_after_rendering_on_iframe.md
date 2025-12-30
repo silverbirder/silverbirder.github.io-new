@@ -47,7 +47,16 @@ iframe.setAttribute("srcdoc", html);
 iframe で srcdoc を読み込んだ後、埋め込みたい Tweet の文字列だけが、チラっと見えてしまいます。
 下の例であれば、`npm init @‌open-wc now supports lit v2!` がチラっと見えるはずです。reload をしてみると分かります。
 
-[Embedded content](<<https://codesandbox.io/embed/display-embedded-twitter-content-5tx92y?fontsize=14&hidenavigation=1&theme=dark>)
+<iframe
+  src="<https://codesandbox.io/embed/display-embedded-twitter-content-5tx92y?fontsize=14&hidenavigation=1&theme=dark">
+  title="Embedded content: display-embedded-twitter-content"
+  loading="lazy"
+  width="100%"
+  height="500"
+  frameBorder="0"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 チラっと見えてしまうのを阻止したいです。
 
@@ -92,6 +101,15 @@ html は、`style`で隠しておきます。(手段は問いません)
 
 解決した結果が、こちらです。
 
-[Embedded content](<<https://codesandbox.io/embed/display-embedded-twitter-content-after-l6l3h7?fontsize=14&hidenavigation=1&theme=dark>)
+<iframe
+  src="<https://codesandbox.io/embed/display-embedded-twitter-content-after-l6l3h7?fontsize=14&hidenavigation=1&theme=dark">
+  title="Embedded content: display-embedded-twitter-content-after"
+  loading="lazy"
+  width="100%"
+  height="500"
+  frameBorder="0"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 `npm init @‌open-wc now supports lit v2!` のチラっとが見えなくなっているはずです。
