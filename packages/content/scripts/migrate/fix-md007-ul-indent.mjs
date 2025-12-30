@@ -122,9 +122,18 @@ const transformContent = (content) => {
   let lastListIndent = 0;
   let lastWasList = false;
   let lastOrderedIndent = null;
+  let lastOrderedParentIndent = null;
   let pendingOrdered = false;
 
-  for (const line of lines) {
+  const findNextNonEmptyIndex = (startIndex) => {
+    for (let j = startIndex; j < lines.length; j += 1) {
+      if (lines[j].trim() !== "") return j;
+    }
+    return -1;
+  };
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
     if (line.startsWith("```") || line.startsWith("~~~")) {
       inFence = !inFence;
       nextLines.push(line);
@@ -140,6 +149,9 @@ const transformContent = (content) => {
     const orderedMatch = line.match(/^(\s*)(\d+)\.\s+(.*)$/);
     if (orderedMatch && !isBlockquote(line)) {
       lastOrderedIndent = orderedMatch[1].length;
+      if (lastWasList) {
+        lastOrderedParentIndent = lastListIndent;
+      }
       lastWasList = false;
       pendingOrdered = true;
       nextLines.push(line);
@@ -165,7 +177,22 @@ const transformContent = (content) => {
 
       if (!lastWasList) {
         if (lastOrderedIndent !== null) {
-          normalized = lastOrderedIndent + 4;
+          if (lastOrderedParentIndent === null) {
+            normalized = lastOrderedIndent + 4;
+          } else {
+            normalized = indent;
+            const nextIndex = findNextNonEmptyIndex(i + 1);
+            if (nextIndex !== -1) {
+              const nextLine = lines[nextIndex];
+              if (isUnorderedListItem(nextLine) && !isBlockquote(nextLine)) {
+                const nextMatch = nextLine.match(/^(\s*)([-*+])\s+/);
+                const nextIndent = nextMatch ? nextMatch[1].length : 0;
+                if (nextIndent < indent) {
+                  normalized = Math.max(nextIndent - 2, 0);
+                }
+              }
+            }
+          }
         } else {
           normalized = 0;
         }
@@ -182,6 +209,7 @@ const transformContent = (content) => {
       lastListIndent = normalized;
       lastWasList = true;
       lastOrderedIndent = null;
+      lastOrderedParentIndent = null;
       pendingOrdered = false;
       continue;
     }
@@ -191,6 +219,7 @@ const transformContent = (content) => {
       lastWasList = false;
       lastListIndent = 0;
       lastOrderedIndent = null;
+      lastOrderedParentIndent = null;
       pendingOrdered = false;
     }
   }
