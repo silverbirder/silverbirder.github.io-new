@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 
 import { buildSitePath } from "@/libs";
 
+import { iconSizes } from "./icon";
+
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -9,18 +11,11 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     description: "@silverbirderのジブンノート",
     display: "standalone",
-    icons: [
-      {
-        sizes: "32x32",
-        src: buildSitePath("icon"),
-        type: "image/png",
-      },
-      {
-        sizes: "180x180",
-        src: buildSitePath("apple-icon"),
-        type: "image/png",
-      },
-    ],
+    icons: iconSizes.map((size) => ({
+      sizes: `${size}x${size}`,
+      src: buildSitePath(`icon/${size}`),
+      type: "image/png",
+    })),
     name: "silverbirder",
     scope: buildSitePath("/"),
     short_name: "silverbirder",

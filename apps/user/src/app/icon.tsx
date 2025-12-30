@@ -3,10 +3,27 @@ import { readFile } from "node:fs/promises";
 
 export const dynamic = "force-static";
 export const runtime = "nodejs";
-export const size = { height: 32, width: 32 };
 export const contentType = "image/png";
 
-export default async function Icon() {
+export const iconSizes = [32, 48, 72, 96, 144, 192, 512] as const;
+
+type Props = {
+  id: number | string;
+};
+
+export function generateImageMetadata() {
+  return iconSizes.map((size) => ({
+    contentType,
+    id: size,
+    size: { height: size, width: size },
+  }));
+}
+
+export default async function Icon({ id }: Props) {
+  const size = typeof id === "number" ? id : Number(id);
+  const resolvedSize = Number.isFinite(size) ? size : iconSizes[0];
+  const logoSize = Math.max(1, Math.round(resolvedSize * 0.75));
+
   const logo = await readFile(
     new URL("../../public/assets/logo.png", import.meta.url),
   );
@@ -24,12 +41,15 @@ export default async function Icon() {
     >
       <img
         alt="silverbirder"
-        height={24}
+        height={logoSize}
         src={logoBase64}
         style={{ objectFit: "contain" }}
-        width={24}
+        width={logoSize}
       />
     </div>,
-    size,
+    {
+      height: resolvedSize,
+      width: resolvedSize,
+    },
   );
 }

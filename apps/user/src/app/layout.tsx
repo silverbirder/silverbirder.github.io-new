@@ -6,8 +6,12 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import { buildSitePath, buildSiteUrl, getSiteMetadataBase } from "@/libs";
 
+const iconSizes = [32, 48, 72, 96, 144, 192, 512];
+const iconEntries = iconSizes.map((size) => ({
+  sizes: `${size}x${size}`,
+  url: buildSitePath(`icon/${size}`),
+}));
 const siteUrl = buildSiteUrl("");
-const iconPath = buildSitePath("icon");
 const appleIconPath = buildSitePath("apple-icon");
 const ogImageUrl = buildSiteUrl("opengraph-image");
 
@@ -26,7 +30,7 @@ export const metadata: Metadata = {
   },
   icons: {
     apple: [{ url: appleIconPath }],
-    icon: [{ url: iconPath }],
+    icon: iconEntries,
   },
   keywords: ["silverbirder", "個人サイト", "ブログ", "Webエンジニア"],
   metadataBase: getSiteMetadataBase(),

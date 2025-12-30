@@ -14,7 +14,7 @@ vi.mock("next/og", () => ({
   ImageResponse,
 }));
 
-import Icon, { contentType, size } from "./icon";
+import Icon, { contentType, generateImageMetadata, iconSizes } from "./icon";
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -24,15 +24,30 @@ describe("icon", () => {
   it("builds a png icon response", async () => {
     readFile.mockResolvedValue(Buffer.from([1, 2, 3]));
 
-    const result = await Icon();
+    const result = await Icon({ id: 48 });
 
     expect(contentType).toBe("image/png");
-    expect(size).toEqual({ height: 32, width: 32 });
     expect(readFile).toHaveBeenCalledTimes(1);
     expect(String(readFile.mock.calls[0]?.[0])).toContain(
       "/public/assets/logo.png",
     );
-    expect(ImageResponse).toHaveBeenCalledWith(expect.anything(), size);
-    expect(result).toEqual({ args: [expect.anything(), size] });
+    expect(ImageResponse).toHaveBeenCalledWith(expect.anything(), {
+      height: 48,
+      width: 48,
+    });
+    expect(result).toEqual({
+      args: [expect.anything(), { height: 48, width: 48 }],
+    });
+  });
+
+  it("returns icon metadata for all sizes", () => {
+    const metadata = generateImageMetadata();
+
+    expect(metadata).toHaveLength(iconSizes.length);
+    expect(metadata[0]).toEqual({
+      contentType,
+      id: iconSizes[0],
+      size: { height: iconSizes[0], width: iconSizes[0] },
+    });
   });
 });

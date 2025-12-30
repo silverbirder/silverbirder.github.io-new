@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
 
+import { iconSizes } from "./icon";
 import manifest from "./manifest";
 
 const originalBasePath = process.env.GITHUB_PAGES_BASE_PATH;
@@ -24,17 +25,12 @@ describe("manifest", () => {
 
     expect(result.start_url).toBe("/docs/");
     expect(result.scope).toBe("/docs/");
-    expect(result.icons).toEqual([
-      {
-        sizes: "32x32",
-        src: "/docs/icon",
+    expect(result.icons).toEqual(
+      iconSizes.map((size) => ({
+        sizes: `${size}x${size}`,
+        src: `/docs/icon/${size}`,
         type: "image/png",
-      },
-      {
-        sizes: "180x180",
-        src: "/docs/apple-icon",
-        type: "image/png",
-      },
-    ]);
+      })),
+    );
   });
 });
