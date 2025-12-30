@@ -64,9 +64,12 @@ v0を使えば、私でももう少しWebデザインが得意になれるので
 
 > - Line height (line spacing) to at least 1.5 times the font size;
 >
+>
 > - Spacing following paragraphs to at least 2 times the font size;
 >
+>
 > - Letter spacing (tracking) to at least 0.12 times the font size;
+>
 >
 > - Word spacing to at least 0.16 times the font size.
 
