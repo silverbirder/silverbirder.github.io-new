@@ -48,7 +48,7 @@ iframe で srcdoc を読み込んだ後、埋め込みたい Tweet の文字列�
 下の例であれば、`npm init @‌open-wc now supports lit v2!` がチラっと見えるはずです。reload をしてみると分かります。
 
 <iframe
-  src="<https://codesandbox.io/embed/display-embedded-twitter-content-5tx92y?fontsize=14&hidenavigation=1&theme=dark">
+  src="https://codesandbox.io/embed/display-embedded-twitter-content-5tx92y?fontsize=14&hidenavigation=1&theme=dark"
   title="Embedded content: display-embedded-twitter-content"
   loading="lazy"
   width="100%"
@@ -102,7 +102,7 @@ html は、`style`で隠しておきます。(手段は問いません)
 解決した結果が、こちらです。
 
 <iframe
-  src="<https://codesandbox.io/embed/display-embedded-twitter-content-after-l6l3h7?fontsize=14&hidenavigation=1&theme=dark">
+  src="https://codesandbox.io/embed/display-embedded-twitter-content-after-l6l3h7?fontsize=14&hidenavigation=1&theme=dark"
   title="Embedded content: display-embedded-twitter-content-after"
   loading="lazy"
   width="100%"

@@ -18,6 +18,20 @@ const config = {
 const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
   options: {
+    rehypePlugins: [
+      [
+        "rehype-raw",
+        {
+          passThrough: [
+            "mdxjsEsm",
+            "mdxFlowExpression",
+            "mdxTextExpression",
+            "mdxJsxFlowElement",
+            "mdxJsxTextElement",
+          ],
+        },
+      ],
+    ],
     remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
   },
 });
