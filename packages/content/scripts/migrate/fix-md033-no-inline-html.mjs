@@ -124,6 +124,67 @@ const replaceInlineHtml = (segment, { inTableRow }) => {
   return next;
 };
 
+const isListItem = (line) => /^(\s*(?:>\s*)?)(?:[-*+]|\d+\.)\s+/.test(line);
+
+const repairInlineCodeLineBreaks = (lines) => {
+  const repaired = [];
+  let inFence = false;
+  let changed = false;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      inFence = !inFence;
+      repaired.push(line);
+      continue;
+    }
+
+    if (inFence) {
+      repaired.push(line);
+      continue;
+    }
+
+    const trimmedLine = line.trimEnd();
+    const backtickCount = (line.match(/`/g) || []).length;
+    if (backtickCount % 2 === 1 && trimmedLine.endsWith("`")) {
+      const openIndex = line.lastIndexOf("`");
+      let j = i + 1;
+      while (j < lines.length && lines[j].trim() === "") {
+        j += 1;
+      }
+
+      if (j < lines.length) {
+        const nextLine = lines[j];
+        const closeIndex = nextLine.indexOf("`");
+        if (closeIndex !== -1 && nextLine.slice(0, closeIndex).trim() === "") {
+          const merged = `${line.slice(0, openIndex + 1)}<br />${nextLine.slice(closeIndex)}`;
+          repaired.push(merged);
+          changed = true;
+          let nextIndex = j;
+
+          if (isListItem(line)) {
+            let scan = j + 1;
+            while (scan < lines.length && lines[scan].trim() === "") {
+              scan += 1;
+            }
+            if (scan < lines.length && isListItem(lines[scan])) {
+              nextIndex = scan - 1;
+            }
+          }
+
+          i = nextIndex;
+          continue;
+        }
+      }
+    }
+
+    repaired.push(line);
+  }
+
+  return { lines: repaired, changed };
+};
+
 const getIframeReplacement = (block) => {
   const match = block.match(/src\s*=\s*["']([^"']+)["']/i);
   if (!match) return "Embedded content";
@@ -131,25 +192,72 @@ const getIframeReplacement = (block) => {
 };
 
 const transformLine = (line, { inTableRow }) => {
-  const parts = line.split(/(`+)/);
   let changed = false;
-  const next = parts.map((part, index) => {
-    if (part.startsWith("`")) return part;
-    const replaced = replaceInlineHtml(part, { inTableRow });
-    if (replaced !== part) changed = true;
+  let cursor = 0;
+  let output = "";
+
+  const applyReplace = (segment) => {
+    if (!segment) return "";
+    const replaced = replaceInlineHtml(segment, { inTableRow });
+    if (replaced !== segment) changed = true;
     return replaced;
-  });
-  return { line: next.join(""), changed };
+  };
+
+  while (cursor < line.length) {
+    const startTick = line.indexOf("`", cursor);
+    if (startTick === -1) {
+      output += applyReplace(line.slice(cursor));
+      break;
+    }
+
+    output += applyReplace(line.slice(cursor, startTick));
+
+    let tickCount = 1;
+    while (startTick + tickCount < line.length && line[startTick + tickCount] === "`") {
+      tickCount += 1;
+    }
+
+    let searchFrom = startTick + tickCount;
+    let endTick = -1;
+    while (searchFrom < line.length) {
+      const nextTick = line.indexOf("`", searchFrom);
+      if (nextTick === -1) break;
+
+      let runCount = 1;
+      while (nextTick + runCount < line.length && line[nextTick + runCount] === "`") {
+        runCount += 1;
+      }
+
+      if (runCount === tickCount) {
+        endTick = nextTick;
+        break;
+      }
+
+      searchFrom = nextTick + runCount;
+    }
+
+    if (endTick === -1) {
+      output += applyReplace(line.slice(startTick));
+      break;
+    }
+
+    output += line.slice(startTick, endTick + tickCount);
+    cursor = endTick + tickCount;
+  }
+
+  return { line: output, changed };
 };
 
 const transformContent = (content) => {
   const lines = content.split(/\r?\n/);
+  const repaired = repairInlineCodeLineBreaks(lines);
+  const sourceLines = repaired.lines;
   const nextLines = [];
   let inFence = false;
-  let changed = false;
+  let changed = repaired.changed;
 
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
+  for (let i = 0; i < sourceLines.length; i += 1) {
+    const line = sourceLines[i];
 
     if (line.startsWith("```") || line.startsWith("~~~")) {
       inFence = !inFence;
@@ -168,10 +276,10 @@ const transformContent = (content) => {
       const hasEnd =
         line.toLowerCase().includes("</iframe>") || line.includes("/>");
       if (!hasEnd) {
-        while (endIndex + 1 < lines.length) {
+        while (endIndex + 1 < sourceLines.length) {
           endIndex += 1;
-          block += `\n${lines[endIndex]}`;
-          const nextLine = lines[endIndex];
+          block += `\n${sourceLines[endIndex]}`;
+          const nextLine = sourceLines[endIndex];
           if (nextLine.toLowerCase().includes("</iframe>") || nextLine.includes("/>")) {
             break;
           }
