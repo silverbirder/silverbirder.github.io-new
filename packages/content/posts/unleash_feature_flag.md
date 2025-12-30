@@ -196,7 +196,7 @@ Unleash には、他にも以下に述べるような様々な機能が備わっ
 
 - 環境の追加
   - `development`や`production`以外にも、テストやステージング環境など、自由に環境を作成することができます。
-  - 詳細：<https://docs.getunleash.io/how-to/how-to-clone-environments>
+  - 詳細：https://docs.getunleash.io/how-to/how-to-clone-environments
 - Playground の利用
   - フィーチャーフラグの挙動を確認するための Playground が利用可能です。
   - アクセス URL：`https://<UNLEASH_URL>/playground`
@@ -204,7 +204,7 @@ Unleash には、他にも以下に述べるような様々な機能が備わっ
   - フロントエンドから Unleash サーバーへのアクセスを許可するための CORS 設定ができます。
 - フィーチャーフラグの承認フローの設定
   - フィーチャーフラグを有効化するための承認フローを設定することができます。
-  - 詳細：<https://docs.getunleash.io/reference/change-requests>
+  - 詳細：https://docs.getunleash.io/reference/change-requests
 
 ## まとめ
 

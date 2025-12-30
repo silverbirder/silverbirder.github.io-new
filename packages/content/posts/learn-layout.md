@@ -18,14 +18,14 @@ index: false
 
 サンプルページは、以下のURLにあります。
 
-- <https://learn-layout.vercel.app>
+- https://learn-layout.vercel.app
 
 [![サンプルページ](https://res.cloudinary.com/silverbirder/image/upload/v1753446196/silver-birder.github.io/blog/learn-layout-hero-laptop.png)](https://learn-layout.vercel.app)
 
 サンプルページのソースコードは、以下のリポジトリにあります。
 勉強のお供に、お手元にダウンロードしておいてください。
 
-- <https://github.com/silverbirder/learn-css>
+- https://github.com/silverbirder/learn-css
 
 HTMLとCSSのみで作成しているため、ブラウザさえあればすぐに動かすことができます。
 また、JavaScriptは一切使用していません。
@@ -121,7 +121,7 @@ HTMLをCSSでスタイリングする際、その要素をボックスモデル�
 ボックスモデルの説明は、以下の通りです。
 
 > ブラウザーのレンダリングエンジンは文書をレイアウトする際に、それぞれの要素を標準的な CSS 基本ボックスモデルに基づいた長方形のボックスとして表現します。 CSS はこれらのボックスの寸法、位置、プロパティ（色、背景、境界の幅など）を決定します。  
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model
 
 具体的な図は、以下の通りです。
 
@@ -165,19 +165,19 @@ HTML要素のブロック・インラインは、CSSのdisplayプロパティで
 まず、ブロック要素の仕様は、以下の通りです。
 
 > 既定では、**ブロック要素はインライン方向の空間をすべて消費する**ので、段落は広がり、包含ブロックの中で可能な限り大きくなります。ブロック要素に幅を設定した場合、段落が横に並ぶ空間があったとしても、**段落は下へ下へと配置されます**。それぞれは包含ブロックの先頭側の反対側から始まりますので、その書字方向で文章が始まる場所になります。  
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow
 
 ブロック要素は、下に下に配置され、横幅いっぱいに広がります。
 
 また、マージンの相殺という仕様もあります。
 
 > 仕様書では、ブロック要素間のマージンは相殺されると説明されています。つまり、**上マージンを持つ要素がに下マージンを持つ要素の直後に来た場合**、空間の合計はこれら 2 つのマージンの合計になるのではなく、**マージンが相殺**され、本質的には 2 つのマージンのうち**大きい方のマージン**と同じくらいの大きさになるということです。  
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow
 
 インラインの場合、以下の仕様があります。
 
 >.  インライン要素は、その特定の書字方向で文章が進む方向に次々と表示されます。インライン要素がボックスを持っていると考えることはあまりありませんが、 CSS のすべての要素と同様にボックスを持っています。これらのインラインボックスは、次から次へと配置されています。**すべてのボックスを含むブロックに十分な空間がない場合、ボックスは新しい行に分割されます**。生成された行は行ボックスと呼ばれています  
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow
 
 当たり前ですが、インライン要素は横いっぱいまで広がると、折り返して次の行に配置されます。
 
@@ -191,7 +191,7 @@ HTML要素のブロック・インラインは、CSSのdisplayプロパティで
 フレックスボックスレイアウトの説明は、以下の通りです。
 
 > CSS フレックスボックスレイアウト (CSS flexible box layout) は、ユーザーインターフェイスの設計に最適化された CSS ボックスモデルと、**一次元のアイテムのレイアウト**を定義します。フレックスレイアウトモデルでは、フレックスコンテナーの子は任意の方向にレイアウトすることができ、また使われていない空間を埋めるために伸長したり、あるいは親のあふれることを避けるために収縮したりと、**そのサイズを「伸縮」することができます**。子の水平方向と垂直方向の両方の整列を、容易に操作することが可能です。  
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_flexible_box_layout>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_flexible_box_layout
 
 フレックスボックスレイアウトの例は、以下の図の通りです。
 
@@ -229,9 +229,9 @@ CSSプロパティの flex-grow (フレックス成長率)、flex-shrink (フレ
 グリッドレイアウトの説明は、以下の通りです。
 
 > CSS グリッドレイアウト (Grid Layout) は、ウェブ用の 2 次元レイアウトシステムです。 コンテンツを行と列に整理することができ、複雑なレイアウトの作成を簡素化する多くの機能を提供します。  
-<https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Grids>
+https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Grids
 > グリッドとは、水平方向と垂直方向の線を集めたもので、デザイン要素を並べて表示することができます。 ページ間を移動するときに要素が跳び回ったり幅が変わったりしないようなデザインを作成するのに役立ちます。  
-<https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Grids#%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%A8%E3%81%AF>
+https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Grids#%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%A8%E3%81%AF
 
 グリッドの例としては、以下の図のように行・列を簡単に定義できます。
 
@@ -253,7 +253,7 @@ CSSプロパティの flex-grow (フレックス成長率)、flex-shrink (フレ
 重ね合わせコンテキストの説明は、以下の通りです。
 
 >.  重ね合わせコンテキスト (Stacking context) は、ビューポートまたはウェブページに面していると想定されるユーザーに対する**仮想的な Z 軸に沿って並べられた HTML 要素の三次元の概念化**です。 HTML 要素は、要素の属性に基づいてこの空間を優先度つきの順序で占有します
-<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_positioned_layout/Stacking_context>
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_positioned_layout/Stacking_context
 
 Z軸の高い位置が前面に表示され、Z軸の低い位置が背面に表示されます。  
 Z軸の同じ位置にある要素は、重なり順序を考慮する必要があります。z-indexで重なり順序を変更できます。
@@ -302,8 +302,8 @@ Z軸の同じ位置にある要素は、重なり順序を考慮する必要が�
 長くなりましたが、それではサンプルページのセクションを見ていきましょう。
 再掲ですが、サンプルページとリポジトリは以下のURLにあります。
 
-- <https://learn-layout.vercel.app>
-- <https://github.com/silverbirder/learn-css>
+- https://learn-layout.vercel.app
+- https://github.com/silverbirder/learn-css
 
 ### 共通変数
 

@@ -9,7 +9,7 @@ ArchUnit をというものを最近知りました。依存関係のテスト�
 
 ## ArchUnit
 
-<https://www.archunit.org/>
+https://www.archunit.org/
 
 > ArchUnit is a free, simple and extensible library for checking the architecture of your Java code using any plain Java unit test framework. That is, ArchUnit can check dependencies between packages and classes, layers and slices, check for cyclic dependencies and more. It does so by analyzing given Java bytecode, importing all classes into a Java code structure.
 
@@ -23,7 +23,7 @@ Java のアーキテクチャをテストできるライブラリで、パッケ
 ArchUnit は Java 製です。私は Typescript の ArchUnit がしたいです。
 そこで、良さげなライブラリを発見しました。
 
-<https://github.com/MaibornWolff/ts-arch>
+https://github.com/MaibornWolff/ts-arch
 
 特に拘りなく、アーキテクチャのテストができれば何でも良いかなと思います。
 極端な話、ソースコードを AST パースし、依存関係を抽出できれば自作できるんじゃないかと思います。
@@ -32,7 +32,7 @@ ArchUnit は Java 製です。私は Typescript の ArchUnit がしたいです�
 
 試したソースコードは、下記に置いています。ご参考下さい。
 
-<https://github.com/silverbirder/try-archunit>
+https://github.com/silverbirder/try-archunit
 
 全体のソースコードツリーは次の構成です。
 

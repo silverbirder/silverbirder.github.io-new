@@ -8,7 +8,7 @@ tags: ["Zalando Tailor", "Micro Frontends", "Lit Element", "Artifact"]
 Zalando 社が開発した Tailor を使って、サンプル Web アプリを Micro Frontends で構築してみました。Tailor はサーバーサイドで統合するアーキテクチャです。クライアントサイドは、Web Components で作られている Lit Element を使って統合しました。どういった内容か、ここに投稿しようと思います。
 
 作ったリポジトリは、下記に残しています。
-<https://github.com/silverbirder/micro-frontends-sample-code-4>
+https://github.com/silverbirder/micro-frontends-sample-code-4
 
 ## 全体構成
 
@@ -20,7 +20,7 @@ Zalando 社が開発した Tailor を使って、サンプル Web アプリを M
 
 ![image](https://res.cloudinary.com/silverbirder/image/upload/v1693364018/silver-birder.github.io/blog/68747470733a2f2f7261776769746875622e636f6d2f7a616c616e646f2f7461696c6f722f6d61737465722f6c6f676f2f7461696c6f722d6c6f676f2e737667.svg)
 
-<https://github.com/zalando/tailor>
+https://github.com/zalando/tailor
 
 > A streaming layout service for front-end microservices
 
@@ -140,7 +140,7 @@ package.json
 
 ![LitElement](https://res.cloudinary.com/silverbirder/image/upload/v1614430086/silver-birder.github.io/blog/LitElement.jpg)
 
-<https://lit-element.polymer-project.org/>
+https://lit-element.polymer-project.org/
 
 > LitElement
 > A simple base class for creating fast, lightweight web components
@@ -183,11 +183,11 @@ declare global {
 ```
 
 LitElement + Typescript では、open-testing を使ってテストすることができます。
-<https://github.com/PolymerLabs/lit-element-starter-ts/blob/master/src/test/my-element_test.ts>
+https://github.com/PolymerLabs/lit-element-starter-ts/blob/master/src/test/my-element_test.ts
 
 また、jest でもテストができるようです。
 
-<https://www.ninkovic.dev/blog/2020/testing-web-components-with-jest-and-lit-element>
+https://www.ninkovic.dev/blog/2020/testing-web-components-with-jest-and-lit-element
 
 ## DynamicRendering
 
@@ -197,11 +197,11 @@ LitElement + Typescript では、open-testing を使ってテストすること�
 『SEO ガー！』と SSR しなきゃと思う訳ですが、正直 SSR を考えたくないです。(ハイドレーションなんて無駄なロードをブラウザにさせたくない）
 次の記事のように、ボットのアクセスのみに、ダイナミックレンダリングした結果（SPA のレンダリング結果 HTML）を返すようにしたいです。
 
-<https://developers.google.com/search/docs/guides/dynamic-rendering?hl=ja>
+https://developers.google.com/search/docs/guides/dynamic-rendering?hl=ja
 
 技術的には、次のようなものを使えば良いです。
 
-<https://github.com/GoogleChrome/rendertron>
+https://github.com/GoogleChrome/rendertron
 
 function-renderer-proxy/src/renderer.ts
 
@@ -218,7 +218,7 @@ const result = await page.content() as string;  // Puppeteerのレンダリン�
 
 フラグメント同士は、CustomEvent を通して連携します。
 
-<https://developer.mozilla.org/ja/docs/Web/Guide/Events/Creating_and_triggering_events>
+https://developer.mozilla.org/ja/docs/Web/Guide/Events/Creating_and_triggering_events
 
 全て、この CustomEvent と AddEventListener を管理する EventHub(packages 名)を経由するようにします。(理想)
 
@@ -226,18 +226,18 @@ const result = await page.content() as string;  // Puppeteerのレンダリン�
 
 ページ全体のヒストリーは、HistoryNavigation(packages 名)で管理したいと考えています。(理想)
 
-<https://developer.mozilla.org/en-US/docs/Web/API/History_API>
+https://developer.mozilla.org/en-US/docs/Web/API/History_API
 
 また、ルーティングを制御する Web Components 向けライブラリ vaadin/router も便利そうだったので導入してみました。
 
-<https://vaadin.com/router>
+https://vaadin.com/router
 
 ## ShareModule
 
 LitElement のようなどこでも使っているライブラリは、共通化してバンドルサイズを縮めたいです。
 Webpack のようなバンドルツールには、External や DLLPlugin、ModuleFederation などの共通化機能があります。
 
-<https://webpack.js.org/concepts/module-federation/>
+https://webpack.js.org/concepts/module-federation/
 
 今回は、external を使っています。
 
@@ -321,11 +321,11 @@ API は、雑に GraphQL を採用しました。特に理由はありません�
 
 Skelton UI も使ってみたいなと思っていました。
 
-<https://material-ui.com/components/skeleton/>
+https://material-ui.com/components/skeleton/
 
 React を使わなくても、CSS の@keyframes を使えば良いでしょう。が、まあ使っていません。(笑)
 
-<https://developer.mozilla.org/ja/docs/Web/CSS/@keyframes>
+https://developer.mozilla.org/ja/docs/Web/CSS/@keyframes
 
 ## Rxjs
 
@@ -333,15 +333,15 @@ typescript の処理をリアクティブな雰囲気でコーディングした
 
 (リアクティブに詳しい人には、怒られそうな理由ですね...笑)
 
-<https://rxjs.dev/>
+https://rxjs.dev/
 
 ## 所感
 
 これまで、Podium、Ara-Framework, そして Tailor といった Micro Frontends に関わるサーバーサイド統合ライブラリを使ってみました。
 
-<https://silverbirder.github.io/blog/contents/microfrontends>
+https://silverbirder.github.io/blog/contents/microfrontends
 
-<https://silverbirder.github.io/blog/contents/ara-framework>
+https://silverbirder.github.io/blog/contents/ara-framework
 
 これらは、どれも考え方が良いなと思っています。
 Podium のフラグメントのインターフェース設計、Ara-Framework の Render とデータ取得の明確な分離、そして Tailor のストリーム統合です。

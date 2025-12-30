@@ -13,7 +13,7 @@ GCP 構築のシステム設計話と、その構築時に、ハマったこと�
 
 2020 年、最もダウンロードされたアプリが Facebook を抜いて**TikTok**が一位になったそうです。
 
-<https://gigazine.net/news/20210811-tiktok-overtakes-facebook/>
+https://gigazine.net/news/20210811-tiktok-overtakes-facebook/
 
 私も TikTok を利用しています。
 
@@ -23,7 +23,7 @@ GCP 構築のシステム設計話と、その構築時に、ハマったこと�
 
 ## tiktok-scraper
 
-<https://www.npmjs.com/package/tiktok-scraper>
+https://www.npmjs.com/package/tiktok-scraper
 
 > Scrape and download useful information from TikTok.
 > No login or password are required.
@@ -124,7 +124,7 @@ PubSub でワークフローを制御するよりも、Cloud Workflows の yaml 
 
 ただ、Cloud Workflows には、次のページに書いてあるとおり、いくつかの制限があります。
 
-<https://cloud.google.com/workflows/quotas?hl=ja>
+https://cloud.google.com/workflows/quotas?hl=ja
 
 特に困ったのが、全ての変数のメモリ合計が、**64kb** だということです。
 HTTP レスポンスの Body を変数保持する構成を取ると、そのサイズを考慮しなければいけません。
@@ -143,7 +143,7 @@ Web アプリには、バッチで収集した TikTok の動画を一覧表示�
 閲覧する TikTok 動画が多くなると、ページネーションが欲しくなりました。
 そこで、Firestore でページネーションの実現方法を調べてみると、次の資料を発見しました。
 
-<https://firebase.google.com/docs/firestore/query-data/query-cursors?hl=ja>
+https://firebase.google.com/docs/firestore/query-data/query-cursors?hl=ja
 
 これを見ると、ページネーションは、現在位置から ±1 ページの移動は簡単です。
 資料にあるサンプルコードのように、`startAfter`を使えばよいだけです。
@@ -171,7 +171,7 @@ return first.get().then((documentSnapshots) => {
 それよりも、`offset`メソッドがほしいところです。
 しかし、次の資料を発見し、諦めることになります。
 
-<https://firebase.google.com/docs/firestore/best-practices?hl=ja>
+https://firebase.google.com/docs/firestore/best-practices?hl=ja
 
 > オフセットは使用しないでください。その代わりにカーソルを使用します。オフセットを使用すると、スキップされたドキュメントがアプリケーションに返されなくなりますが、内部ではスキップされたドキュメントも引き続き取得されています。スキップされたドキュメントはクエリのレイテンシに影響し、このようなドキュメントの取得に必要な読み取りオペレーションは課金対象になります。
 
@@ -187,7 +187,7 @@ var next = db.collection("cities").orderBy("order").startAfter(50).limit(25);
 
 これだと、1 ページ 25 個のデータを表示するならば、3 ページ目(51~75)を取得できます。(`startAfter`は開始点を含めません)
 
-<https://cloud.google.com/nodejs/docs/reference/firestore/latest/firestore/query>
+https://cloud.google.com/nodejs/docs/reference/firestore/latest/firestore/query
 
 そもそも、ドキュメントベースの設計よりも、RDB の設計に慣れていた私は、
 Firestore よりも、Cloud SQL の方が扱いやすいと思いました。
@@ -198,14 +198,14 @@ Firestore よりも、Cloud SQL の方が扱いやすいと思いました。
 
 Cloud Run と PubSub の連携には、Eventac を使用します。
 
-<https://cloud.google.com/blog/ja/products/serverless/eventarc-unified-eventing-experience-google-cloud>
+https://cloud.google.com/blog/ja/products/serverless/eventarc-unified-eventing-experience-google-cloud
 
 > 昨年 10 月、60 を超える Google Cloud ソースから Cloud Run にイベントを送信できる新しいイベント機能、Eventarc を発表いたしました。Eventarc は、さまざまなソースから監査ログを読み取り、それらを CloudEvents 形式のイベントとして Cloud Run サービスに送信します。また、カスタム アプリケーションの Pub/Sub トピックからイベントを読み取ることもできます。
 
 この Eventarc のソースとして、Cloud Storage の Object.create をトリガーとして設計を考えていました。
 しかし、そのイベントをフィルタリングする選択肢は、2 つしかありません。
 
-<https://cloud.google.com/blog/ja/products/serverless/demystifying-event-filters-eventarc>
+https://cloud.google.com/blog/ja/products/serverless/demystifying-event-filters-eventarc
 
 できるのは、執筆時点(2021 年 8 月)で、次の 2 つです。
 
@@ -223,7 +223,7 @@ Specific resource は、特定の Obeject 名が Object.create された場合�
 
 Cloud Run で、5XX 系のエラーとなった場合、PubSub の再試行されます。
 
-<https://cloud.google.com/pubsub/docs/admin?hl=ja#using_retry_policies>
+https://cloud.google.com/pubsub/docs/admin?hl=ja#using_retry_policies
 
 何度も PubSub が実行されると、Cloud Run のコンピューティングリソースが消費され続けます。
 そうすると、課金が発生するので、対策が必要です。
@@ -234,11 +234,11 @@ Cloud Workflows は、あくまでワークフローの管理です。
 変数処理などは、基本的に使わず、ワークフローのタスクを連結するだけにした方が良いです。
 次の資料には、Cloud Workflows で使える標準機能です。
 
-<https://cloud.google.com/workflows/docs/reference/stdlib/overview>
+https://cloud.google.com/workflows/docs/reference/stdlib/overview
 
 ワークフローのタスクを並列処理する機能は、まだ実験段階なので、本番環境は使えないようです。
 
-<https://cloud.google.com/workflows/docs/reference/stdlib/experimental.executions/map>
+https://cloud.google.com/workflows/docs/reference/stdlib/experimental.executions/map
 
 ## 終わりに
 

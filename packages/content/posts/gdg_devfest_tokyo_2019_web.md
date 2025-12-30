@@ -15,13 +15,13 @@ GDG DevFest Tokyo 2019 というイベントに参加してきました。
 
 ![GDG DevFest Tokyo 2019 提灯](https://res.cloudinary.com/silverbirder/image/upload/v1614429118/silver-birder.github.io/blog/GDG_DevFest_Tokyo_2019_Lantern.jpg)
 
-<https://gdg-tokyo.connpass.com/event/137666/>
+https://gdg-tokyo.connpass.com/event/137666/
 
 ## GDG DevFest Tokyo 2019
 
 > DevFest は、Google Developer Group (GDG) コミュニティによって世界各地で開かれるデベロッパー向けイベントです。東京では、Android、Google Cloud Platform（GCP）、Web、Firebase、Machine Learning （ML）、Assistant、Flutter、Go といった様々な技術の最新情報や現場でのノウハウを一日で学べるコミュニティイベントとして開催しています。去年に引き続き 4 回目の開催となります。
 
-<https://tokyo.gdgjapan.org/devfest2019>
+https://tokyo.gdgjapan.org/devfest2019
 
 | 名称                                        | GDG DevFest Tokyo 2019                                                                                                                                                                                   |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ GDG DevFest Tokyo 2019 というイベントに参加してきました。
 
 > DevFests are community-led developer events hosted by Google Developer Groups around the globe. GDGs are focused on community building and learning about Google’s technologies.
 
-<https://devfest.withgoogle.com/>
+https://devfest.withgoogle.com/
 
 DevFests 自体は、グローバルで活動されている GDG がホストのイベントです。
 下の図は、**2019 年**の活動実績&予定です。全国各地で広く活発的に行われていることが分かると思います。
@@ -44,7 +44,7 @@ DevFests 自体は、グローバルで活動されている GDG がホストの
 
 また、コミュニティの Youtube のチャンネルもあります。
 
-<https://www.youtube.com/channel/UCXDc-ckqru8BgppXbCt0APw>
+https://www.youtube.com/channel/UCXDc-ckqru8BgppXbCt0APw
 
 動画には、文字起こしとして 英語(自動生成)だけでなく、 **英語(CC)** もあります。
 英語のリスニングが苦手な人でも、文字から理解できるようになっています。こういう配慮はさすがですね。
@@ -56,7 +56,7 @@ DevFests 自体は、グローバルで活動されている GDG がホストの
 
 > A global program to recognize individuals who are experts and thought leaders in one or more Google technologies. These professionals actively contribute and support the developer and startup ecosystems around the world, helping them build and launch highly innovative apps.
 
-<https://developers.google.com/community/experts>
+https://developers.google.com/community/experts
 
 GDE の人は、端的に言うと『Google のテクノロジを開発者やスタートアップ企業らに対して支援・啓蒙活動をしている Google 外の人』です。
 GDE になるためには、Google、Google パートナーからの紹介から入る必要があるそうです。
@@ -84,7 +84,7 @@ Speaker: 岩尾 エマ はるかさん
 
 こちらの記事が、今回の話のテーマとなります。
 
-<https://it.srad.jp/story/19/03/17/043207/>
+https://it.srad.jp/story/19/03/17/043207/
 
 岩尾 エマ はるかさんのお話は、おおよそ[Wiki](https://en.wikipedia.org/wiki/Emma_Haruka_Iwao)に記載があるとおりです。
 
@@ -118,7 +118,7 @@ Chrome Dev Summit(CDS) は、今まで以下のようなテーマが中心でし
 
 #### HTML isn't done
 
-<https://www.youtube.com/watch?v=ZFvPLrKZywA>
+https://www.youtube.com/watch?v=ZFvPLrKZywA
 
 HTML は、まだ成熟されたものではなく、まだまだ改善の余地があるという考えから、
 いくつかの改善提案の話が紹介されていました。
@@ -130,7 +130,7 @@ HTML は、まだ成熟されたものではなく、まだまだ改善の余地
 
 #### Next-generation web styling
 
-<https://www.youtube.com/watch?v=-oyeaIirVC0>
+https://www.youtube.com/watch?v=-oyeaIirVC0
 
 scroll-snap という機能は、スクロールの制御を CSS で実現しようとしています。
 従来は、Javascript でハックな技を駆使していましたが、不要となります。
@@ -140,7 +140,7 @@ scroll-snap という機能は、スクロールの制御を CSS で実現しよ
 
 SEO の話がありました。
 
-<https://www.suzukikenichi.com/blog/how-to-make-your-content-shine-on-google-search/>
+https://www.suzukikenichi.com/blog/how-to-make-your-content-shine-on-google-search/
 
 Googlebot が最新の Chromium ベースになったことで、Chrome でブラウザを動かすのと同じような振る舞いになるそうです。
 今までは、Chrome 41 ベースで Googlebot が動いていたため、新しい JavaScript 構文やブラウザ API を使えなかったそうです。
@@ -155,7 +155,7 @@ Googlebot が最新の Chromium ベースになったことで、Chrome でブ�
 
 以下の記事にある通り、Google は「遅い」と感じるページに警告を出してくれます。
 
-<https://jp.techcrunch.com/2019/11/12/2019-11-11-google-chrome-to-identify-and-label-slow-websites/>
+https://jp.techcrunch.com/2019/11/12/2019-11-11-google-chrome-to-identify-and-label-slow-websites/
 
 パフォーマンス計測ツールを活用することで、事前に確認しておきましょう。
 
@@ -165,11 +165,11 @@ Googlebot が最新の Chromium ベースになったことで、Chrome でブ�
 
 また、Javascript をシングルスレッドによる低パフォーマンスに対するアプローチ方法を紹介されていました。
 
-<https://www.youtube.com/watch?v=7Rrv9qFMWNM>
+https://www.youtube.com/watch?v=7Rrv9qFMWNM
 
 詳しくは、下記をご参考下さい。
 
-<https://medium.com/lazy-learning/my-summary-of-the-main-thread-is-overworked-underpaid-chrome-dev-summit-2019-cd65efdf1ce1>
+https://medium.com/lazy-learning/my-summary-of-the-main-thread-is-overworked-underpaid-chrome-dev-summit-2019-cd65efdf1ce1
 
 ## ネイティブアプリと Web アプリの差を埋めるには：Project Fugu とマルチスレッドプログラミング
 
@@ -185,7 +185,7 @@ Web アプリは、ブラウザ上で動作するのものです。ブラウザ�
 
 > Fugu’s mission is to close the capabilities gap with native to enable developers to build new experiences on the web while preserving everything that is great about the web.
 
-<https://www.chromium.org/teams/web-capabilities-fugu>
+https://www.chromium.org/teams/web-capabilities-fugu
 
 Project Fugu とは、ネイティブとのギャップを縮めるために、(Chrome)ブラウザからネイティブな部分を操作する試みのプロジェクトのことです。
 ネイティブ部分を操作するため、誤った使い方をするととても危険です。
@@ -193,7 +193,7 @@ Project Fugu とは、ネイティブとのギャップを縮めるために、(
 
 提案中の機能一覧は、下記のシートになります。
 
-<http://goo.gle/fugu-api-tracker>
+http://goo.gle/fugu-api-tracker
 
 この中には、例えば『Contact Picker API』というものがあります。
 名前の通り、ネイティブアプリに登録されている電話帳にアクセスできるようになります。
@@ -208,21 +208,21 @@ Project Fugu とは、ネイティブとのギャップを縮めるために、(
 
 > 60fps のフレームレートがなめらかなパフォーマンスの目標値であり、あるイベントに対して必要なすべての更新に与えられた時間は 16.7 ミリ秒です。
 
-<https://developer.mozilla.org/ja/docs/Tools/Performance/Frame_rate>
+https://developer.mozilla.org/ja/docs/Tools/Performance/Frame_rate
 
 1Task を実行するのに 16.7 ミリ秒を超えてしまうと、ガタガタした動作になってしまいます。
 そこで、Web Worker という技術で解決しようと考えました。
 
 > Web Worker は、ウェブコンテンツがスクリプトをバックグラウンドのスレッドで実行するためのシンプルな手段です。
 
-<https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API/Using_web_workers>
+https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API/Using_web_workers
 
 しかし、スレッド間のメッセージパッシングが複雑化してしまう問題があるそうです。
 その問題を、さらに解決するため、GoogleChromeLabs は、comlink なるライブラリを開発しました。
 
 > Comlink makes WebWorkers enjoyable. Comlink is a tiny library (1.1kB), that removes the mental barrier of thinking about postMessage and hides the fact that you are working with workers.
 
-<https://github.com/GoogleChromeLabs/comlink>
+https://github.com/GoogleChromeLabs/comlink
 
 Web Worker におけるメッセージパッシングの複雑さが comlink によって減少するそうです。
 
@@ -247,11 +247,11 @@ PWA は、Web アプリでありながら、ネイティブアプリにとても
 
 例えば、サンタトラッカーという Web アプリがとても良い例です。
 
-<https://santatracker.google.com/>
+https://santatracker.google.com/
 
 ソースコードも公開されており、PWA として良い参考例になります。
 
-<https://github.com/google/santa-tracker-web>
+https://github.com/google/santa-tracker-web
 
 この Web アプリを『ホーム画面に追加』し、その追加されたアプリを起動してみて下さい。
 ネイティブアプリと似たユーザー体験ができるはずです。
@@ -272,12 +272,12 @@ PWA をインストールしてもらう場合、Mini-infobar というもので
 
 > The mini-infobar is only meant as a helper, and it will go away in the future.
 
-<https://developers.google.com/web/fundamentals/app-install-banners/promoting-install-mobile>
+https://developers.google.com/web/fundamentals/app-install-banners/promoting-install-mobile
 
 ただ、既にネイティブアプリがある場合、PWA のインストール要求したくありません。
 そんなときは、『既にネイティブアプリをインストールしているかどうか』判断する仕組みが既にあるそうです。(origin trials)
 
-<https://web.dev/get-installed-related-apps/>
+https://web.dev/get-installed-related-apps/
 
 ### Desktop PWA
 
@@ -285,7 +285,7 @@ PWA をインストールしてもらう場合、Mini-infobar というもので
 
 先程紹介したサンタトラッカーは、Desktop PWA にも対応しています。
 
-<https://santatracker.google.com/>
+https://santatracker.google.com/
 
 アドレスバーにある+ボタンよりインストールできます。
 
@@ -293,7 +293,7 @@ PWA をインストールしてもらう場合、Mini-infobar というもので
 
 > Trusted Web Activity は、Android アプリ内で Chrome ブラウザを全画面で実行します。
 
-<https://developers-jp.googleblog.com/2019/03/trusted-web-activity.html>
+https://developers-jp.googleblog.com/2019/03/trusted-web-activity.html
 
 Android アプリでも、PWA が実現できるみたいです。
 
@@ -309,7 +309,7 @@ Android アプリでも、PWA が実現できるみたいです。
 
 TWA の開発には、次のライブラリが便利だそうです。
 
-<https://github.com/GoogleChromeLabs/llama-pack>
+https://github.com/GoogleChromeLabs/llama-pack
 
 ### Web Packaging
 
@@ -317,7 +317,7 @@ PWA や Destop PWA, TWA といったもので、様々なところから Web ア
 配布する手段が増えました。では、オフラインの場合はどうでしょうか。
 その場合は、Web Packaging の Web Bundles が使えます。
 
-<https://github.com/WICG/webpackage>
+https://github.com/WICG/webpackage
 
 Web Packaging には、大きく２つのものが含まれています。
 
@@ -326,11 +326,11 @@ Web Packaging には、大きく２つのものが含まれています。
 
 前者は、AMP ページの URL を google ホストから元のホストへ戻す際に有効だそうです。
 
-<https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/>
+https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/
 
 後者は、Web のアプリケーションを人まとまりにし、オフライン上で提供することができるそうです。
 
-<https://www.youtube.com/watch?v=xAujz66la3Y>
+https://www.youtube.com/watch?v=xAujz66la3Y
 
 ※ chrome canary フラグを有効化する必要あり
 

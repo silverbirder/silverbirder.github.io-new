@@ -33,7 +33,7 @@ index: false
 
 URLは以下です。
 
-<https://my-buy-items.vercel.app>
+https://my-buy-items.vercel.app
 
 このサービスは、投稿型で、Notionのように自由な書き方ができます。
 画像や埋め込みも可能です。

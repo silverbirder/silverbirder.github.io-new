@@ -16,7 +16,7 @@ index: false
 
 今回紹介する仕組みの核となるのが GitHub Actions の repository-dispatch トリガーです。
 
-<https://docs.github.com/ja/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-dispatch-event>
+https://docs.github.com/ja/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-dispatch-event
 
 このトリガーは、GitHub API を経由して、GitHub Actions のワークフローを起動することができます。そのため、次のように 異なるリポジトリでの GitHub Actions ワークフローを連携できます。
 
@@ -24,8 +24,8 @@ index: false
 
 repository-dispatch と create-pull-request は、次の GitHub Actions です。
 
-<https://github.com/peter-evans/repository-dispatch>
-<https://github.com/peter-evans/create-pull-request>
+https://github.com/peter-evans/repository-dispatch
+https://github.com/peter-evans/create-pull-request
 
 - respository-dispatch
   - repository-dispatch-event を dispatch する Action
@@ -54,7 +54,7 @@ schema ファイルから、型を生成したい(yarn codegen)こともある�
 
 git-auto-commit-action は、変更したファイルを git commit するだけの Action です。
 
-<https://github.com/stefanzweifel/git-auto-commit-action>
+https://github.com/stefanzweifel/git-auto-commit-action
 
 create-pull-request だけでも、自動 commit することができます。私は、次のケースで使用しました。
 
@@ -85,8 +85,8 @@ Figma のデザイントークンや、i18n のメッセージファイルを更
 
 例えば、vercel や chromatic の preview です。
 
-<https://vercel.com/docs/concepts/deployments/preview-deployments>
-<https://www.chromatic.com/docs/review>
+https://vercel.com/docs/concepts/deployments/preview-deployments
+https://www.chromatic.com/docs/review
 
 ## サンプルコード
 
@@ -190,19 +190,19 @@ not the [Bee Gees song](https://www.youtube.com/watch?v=I_izvAbhExY).
 
 ### GitHub Actions Bot の commit で、他のワークフローをトリガーできない
 
-<https://github.com/orgs/community/discussions/27028>
+https://github.com/orgs/community/discussions/27028
 
 token に、PAT を渡すように変更すれば解決します。
 
 他の解決策としては、workflow_run のトリガーを使えます。
 
-<https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows#workflow_run>
+https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows#workflow_run
 
 ただし、デフォルトブランチでのみ動作します。
 
 ### repository-dispatch の POST は、JSON で制限がある
 
-<https://github.com/peter-evans/repository-dispatch#client-payload>
+https://github.com/peter-evans/repository-dispatch#client-payload
 
 同期したいファイルを json に変換して、dispatch する event ペイロードに含めようと、当初考えていました。ただ、次の懸念があったため、却下しました。
 

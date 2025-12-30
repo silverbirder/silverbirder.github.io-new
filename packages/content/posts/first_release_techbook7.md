@@ -13,13 +13,13 @@ tags: ["Web Components", "Book"]
 コミックマーケットのエンジニア向けみたいなものです。
 詳しくは、下記のリンクを参照下さい。
 
-<https://techbookfest.org/event/tbf07>
+https://techbookfest.org/event/tbf07
 
 ## あなたは誰
 
 詳しくは、私のポートフォリオを参照下さい。
 
-<https://silverbirder.github.io/>
+https://silverbirder.github.io/
 
 Web アプリケーションが大好きなエンジニアです。
 今は、EC サイトのフロントエンドエンジニアをしています。
@@ -148,8 +148,8 @@ Web が大好きな私にとっては、Web Components という技術に興味�
 
 ## 技術書典 7
 
-<https://techbookfest.org/event/tbf07/circle/5117648689954816>
+https://techbookfest.org/event/tbf07/circle/5117648689954816
 
 ## Twitter 宣伝
 
-<https://twitter.com/silverbirder/status/1166171153875886080>
+https://twitter.com/silverbirder/status/1166171153875886080

@@ -10,7 +10,7 @@ index: false
 開発の背景やつまずき、乗り越えた工夫を振り返ります。
 ソースコードと署名なしの `.dmg` は GitHub に置いています。
 
-<https://github.com/silverbirder/vlog>
+https://github.com/silverbirder/vlog
 
 アプリの雰囲気が伝わるように、スクリーンショットを 2 枚載せておきます。
 

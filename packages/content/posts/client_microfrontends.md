@@ -9,7 +9,7 @@ tags: ["Micro Frontends", "Client Side", "Es Module", "Artifact"]
 
 本記事は、昨年の冬あたりから検証していた クライアントサイド統合での Micro Frontends について話そうと思います。検証したソースコードは、次のリポジトリにあります。
 
-<https://github.com/silverbirder/micro-frontends-sample-code-6>
+https://github.com/silverbirder/micro-frontends-sample-code-6
 
 ## 概要
 
@@ -51,7 +51,7 @@ Javascript(index.js)には、次の Module を含めようと考えていまし�
 Router は、アプリケーション全体の Routing を管理します。例えば、`/` は Top ページ、 `/s` は検索ページといった具合です。
 Router には、後ほど説明する WebComponents との相性が良い vaadin/router を使用しました。
 
-<https://vaadin.com/router>
+https://vaadin.com/router
 
 vaadin/router では、WebComponents を指定して Routing するため、指定された WebComponents は、Importer より取得します。
 

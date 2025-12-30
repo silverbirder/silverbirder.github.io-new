@@ -13,10 +13,10 @@ index: false
 
 レンダリングエンジンの処理工程は、次の記事が参考になります。
 
-- <https://web.dev/rendering-performance/>
-- <https://blog.leap-in.com/lets-learn-how-to-browser-works/>
-- <https://silver-birder.github.io/blog/contents/learning_browser_engine/>
-- <https://developer.chrome.com/blog/inside-browser-part3/>
+- https://web.dev/rendering-performance/
+- https://blog.leap-in.com/lets-learn-how-to-browser-works/
+- https://silver-birder.github.io/blog/contents/learning_browser_engine/
+- https://developer.chrome.com/blog/inside-browser-part3/
 
 ![レンダリングエンジンの工程](https://res.cloudinary.com/silverbirder/image/upload/v1656816689/silver-birder.github.io/blog/browser_rendering_process.jpg)
 
@@ -91,7 +91,7 @@ Performance タブには、様々な情報があります。
 
 ブラウザでアニメーションなど動きを出すときに、60fps を目標とすると良いです。
 
-<http://jankfree.org/> というサイトから引用します。
+http://jankfree.org/ というサイトから引用します。
 
 > Modern browsers try to refresh the content on screen in sync with a device's refresh rate. For most devices today, the screen will refresh 60 times a second, or 60Hz. If there is some motion on screen (such as scrolling, transitions, or animations) a browser should create 60 frames per second to match the refresh rate.
 
@@ -117,7 +117,7 @@ fps が少ないと、どうなるんでしょうか。ジャンクと呼ばれ�
 
 リフレッシュレートに、画面が追いついていないと、ジャンクと呼ばれる滑らかではない動作になってしまいます。これは、ユーザーへの悪い体験をさせてしまいます。
 
-<https://googlechrome.github.io/devtools-samples/jank/> が、まさにそのジャンクの体験ができます。
+https://googlechrome.github.io/devtools-samples/jank/ が、まさにそのジャンクの体験ができます。
 
 ## レイアウトスラッシング
 
@@ -127,7 +127,7 @@ JavaScript や CSS を書いていると、DOM を追加してレイアウトが
 次のサイトにある JavaScript の関数を使うと、そのときのレイアウト情報を計算する必要があり、レイアウトが強制的に再計算されます。これがレイアウトスラッシングと呼ばれます。
 レイアウトスラッシングは、FPS の低下につながります。
 
-- <https://gist.github.com/paulirish/5d52fb081b3570c81e3a>
+- https://gist.github.com/paulirish/5d52fb081b3570c81e3a
   - 例えば、clientWidth
 
 例を示しましょう。ボタン要素にスタイル変更し、clientWidth を参照したコードです。
@@ -188,11 +188,11 @@ DevTools の Performance タブから見ると、`forced reflow is likely a bott
 
 参考までに
 
-- <https://web.dev/avoid-large-complex-layouts-and-layout-thrashing/#avoid-forced-synchronous-layouts>
+- https://web.dev/avoid-large-complex-layouts-and-layout-thrashing/#avoid-forced-synchronous-layouts
 
 DEMO は、次のページにもあります。
 
-- <https://googlesamples.github.io/web-fundamentals/tools/chrome-devtools/rendering-tools/forcedsync.html>
+- https://googlesamples.github.io/web-fundamentals/tools/chrome-devtools/rendering-tools/forcedsync.html
 
 ## Paint と Composite
 
@@ -252,7 +252,7 @@ transform の場合、composite のみ発生しています。
 このように、composite のみで動く CSS プロパティを選ぶと、軽量になります。
 次のサイトには、CSS のどのプロパティがレイアウト・ペイント・コンポジットどれを更新するのか分かります。
 
-- <https://csstriggers.com/>
+- https://csstriggers.com/
 
 また、DevTools の Layers タブを開くと、ペイントのカウント回数やレイアウトが見れます。
 
@@ -273,5 +273,5 @@ transform の場合の Layers は、次の画像です。
 
 ## 参考
 
-- <https://gist.github.com/paulirish/5d52fb081b3570c81e3a>
-- <https://dev.opera.com/articles/efficient-javascript/>
+- https://gist.github.com/paulirish/5d52fb081b3570c81e3a
+- https://dev.opera.com/articles/efficient-javascript/

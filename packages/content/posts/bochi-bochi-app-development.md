@@ -9,7 +9,7 @@ tags: ["Artifact"]
 
 ![bochi-bochi top page](http://res.cloudinary.com/silverbirder/image/upload/v1707573620/akdswcwwxatnfemrbo4e.png)
 
-<https://bochi-bochi.vercel.app>
+https://bochi-bochi.vercel.app
 
 ## アプリの使い方
 
@@ -82,4 +82,4 @@ UI/UX デザインについてはまだ改善の余地がありますが、現�
 
 最後に、私は最近 Bluesky に登録しました。もし興味があれば、ぜひフォローしてください。
 
-<https://bsky.app/profile/silverbirder.bsky.social>
+https://bsky.app/profile/silverbirder.bsky.social

@@ -14,20 +14,20 @@ tags: ["Book", "Learn"]
 
 実際に販売する本は ↓ のものです。
 
-<https://techbookfest.org/event/tbf07/circle/5117648689954816>
+https://techbookfest.org/event/tbf07/circle/5117648689954816
 
 ## きっかけ
 
 大学時代の友人である castaneai くんが技術書典 6 で初執筆しました。
 
-<https://castaneai.hatenablog.com/entry/2019/04/24/093514>
+https://castaneai.hatenablog.com/entry/2019/04/24/093514
 
 castaneai くんの話を聞いていると、得られるメリット(実績、交流)が大きいことと、
 製本までのフローがそこまで難しくないことを知りました。
 そこから、私も参加しようと思えるようになりました。
 castaneai くんは、今回の技術書典 7 も参加するみたいです。興味がある方は是非お立ち寄りください。
 
-<https://techbookfest.org/event/tbf07/circle/5182251830607872>
+https://techbookfest.org/event/tbf07/circle/5182251830607872
 
 ## 何をするのか
 
@@ -50,7 +50,7 @@ castaneai くんは、今回の技術書典 7 も参加するみたいです。�
 文章を書き、本っぽい見た目にする必要があります。
 Re:VIEW Starter というツールを使うと、学習コストゼロで、良い感じの本が出来上がります。
 
-<https://kauplan.org/reviewstarter/>
+https://kauplan.org/reviewstarter/
 
 次のコマンド１つで本の PDF が作られます。
 
@@ -115,7 +115,7 @@ docker run --rm -v $PWD:/work kauplan/review2.5 /bin/bash -c "cd /work; rake pdf
 また、**GoogleDrive 上で PDF をレビュー**するのが便利です。
 直接文章にコメントできるので、オススメです。
 
-<https://twitter.com/silverbirder/status/1167314554205786112>
+https://twitter.com/silverbirder/status/1167314554205786112
 
 ## 1.5. 本のタイトル
 
@@ -142,7 +142,7 @@ docker run --rm -v $PWD:/work kauplan/review2.5 /bin/bash -c "cd /work; rake pdf
 
 表紙用のテンプレートがありますので、それを使います。
 
-<http://www.nikko-pc.com/offset/template/tonbo.html>
+http://www.nikko-pc.com/offset/template/tonbo.html
 
 **背表紙の幅はページ数によって変化します**。
 私は、70 ページほど予定していたので 4mm 幅で背表紙を描きました。
@@ -204,7 +204,7 @@ iPad, Magic Pencil は買って正解でした。
 | 本文はじまりのページ         | 1 ページ目                             |
 | 遊び紙                       | 有り, 上質 90kg/イエロー/前            |
 
-<https://jumpei-ikegami.hatenablog.com/entry/2018/10/21/084634>
+https://jumpei-ikegami.hatenablog.com/entry/2018/10/21/084634
 
 を参考にしました。
 
@@ -217,7 +217,7 @@ docker run --rm -v $PWD:/work kauplan/review2.5 /bin/bash -c "cd /work; rake pdf
 
 用紙についてこだわりたい方は、次のリンクにあるようにサンプルを手に入れると良いでしょう。
 
-<https://natuna.jp/marcket/10282/>
+https://natuna.jp/marcket/10282/
 
 ## 3. 販売準備
 
@@ -249,11 +249,11 @@ docker run --rm -v $PWD:/work kauplan/review2.5 /bin/bash -c "cd /work; rake pdf
 | スケッチブック                                                                                                                           | ダイソー   | 作業                 | -            | 不       |
 | ダンボールカッター                                                                                                                       | ダイソー   | 作業                 | -            | 不       |
 
-<https://note.mu/mochikoastech/n/nf484f114855c>
+https://note.mu/mochikoastech/n/nf484f114855c
 
-<https://blog.vtryo.me/entry/techbookfest5-preparation-of-journey#登壇ブログなどによる宣伝活動>
+https://blog.vtryo.me/entry/techbookfest5-preparation-of-journey#登壇ブログなどによる宣伝活動
 
-<https://note.mu/yagitch/n/nc796a0c2c796>
+https://note.mu/yagitch/n/nc796a0c2c796
 
 印刷する手段は 3 つあります。
 
@@ -268,7 +268,7 @@ docker run --rm -v $PWD:/work kauplan/review2.5 /bin/bash -c "cd /work; rake pdf
 
 ピクシブ社のサービスである Booth を利用しました。
 
-<https://booth.pm/ja>
+https://booth.pm/ja
 
 特に専門的な知識が必要なことがなく、本の PDF を登録するだけです。
 せっかく足を運んで会場に来て頂いた方のために、電子書籍と物理本の違いを出そうと考えました。
@@ -326,29 +326,29 @@ pixiv ID 登録しないとダウンロードできないので、ここが駄�
 
 Twitter で宣伝するために、16:9 の画像を用意したりもしました。
 
-<https://twitter.com/silverbirder/status/1172097536510676994>
+https://twitter.com/silverbirder/status/1172097536510676994
 
 ## 被チェック数と販売冊数
 
 被チェック数は、お客さんが気になる本をチェックした数になります。
 この数字から、印刷する冊数を決める大きな要因になります。
 
-<https://note.mu/yagitch/n/n2b5576363f4e>
+https://note.mu/yagitch/n/n2b5576363f4e
 
 恥ずかしい話になりますが、私は毎朝この数字を見ていました。（笑）
 
-<https://github.com/silverbirder/get-checked-number-for-techbook>
+https://github.com/silverbirder/get-checked-number-for-techbook
 
 被チェック数を定期的に取得する API をサクッと作って、CloudFunction で稼働させています。
 
-<https://twitter.com/silverbirder/status/1171178281380405248>
+https://twitter.com/silverbirder/status/1171178281380405248
 
 このようにどの時間やどの曜日にチェックされるのかがわかるようになります。
 
 今回、300 冊を印刷することにしました。間違いなく残ってしまうと思うので、
 とらのあなさんへ委託しようと考えています。
 
-<https://news.toranoana.jp/107460>
+https://news.toranoana.jp/107460
 
 残ってしまったいくつかの本は、お家に保存用として持ち帰ろうと考えています。（笑）
 
@@ -356,13 +356,13 @@ Twitter で宣伝するために、16:9 の画像を用意したりもしまし�
 
 公式ツイッターアカウントをフォローしておくと、なにかと便利です。
 
-<https://twitter.com/techbookfest>
+https://twitter.com/techbookfest
 
 ## Google カレンダー 登録
 
 技術書典のスケジュールが登録されている Google カレンダーを、ご自身のカレンダーにも登録することをオススメします。
 
-<https://twitter.com/techbookfest/status/1083948257095503872>
+https://twitter.com/techbookfest/status/1083948257095503872
 
 いつまでに何をしないといけないのか逆算できるので、知っておいたほうが良いです。
 

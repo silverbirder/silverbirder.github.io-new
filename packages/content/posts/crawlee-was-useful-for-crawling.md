@@ -17,7 +17,7 @@ Crawlee という OSS が便利だったので、共有します。
 
 ## Crawle
 
-<https://crawlee.dev/> より引用します。
+https://crawlee.dev/ より引用します。
 
 > Crawlee is a web scraping and browser automation library.
 > It helps you build reliable crawlers. Fast.
@@ -49,7 +49,7 @@ TypeScript のサポートがあります。
 また、Crawler はデフォルトで plain HTTP crawler である Cherrio を採用しています。
 必要に応じて、Playwright や Puppeteer を使うことができますし、Crawler の切り替えもインターフェースが揃っているため、簡単にできます。
 
-- <https://crawlee.dev/docs/quick-start#choose-your-crawler>
+- https://crawlee.dev/docs/quick-start#choose-your-crawler
 
 ### RequestQueue という仕組み
 
@@ -57,7 +57,7 @@ TypeScript のサポートがあります。
 リクエストは、RequestQueue というキューで管理され、自動的にクローラがアクセスしていきます。
 キューはユニークな URL で管理されるため、重複したアクセスはありません。
 
-- <https://crawlee.dev/api/core/class/RequestQueue>
+- https://crawlee.dev/api/core/class/RequestQueue
 
 この仕組みは、次のような簡単なコードで実現できます。
 
@@ -82,7 +82,7 @@ await crawler.run(["https://crawlee.dev"]);
 
 enqueueLinks には、様々なオプションがあります。
 
-- <https://crawlee.dev/api/core/function/enqueueLinks>
+- https://crawlee.dev/api/core/function/enqueueLinks
 
 例えば、リンクを globs でフィルタリングしたり、anchor のセレクタを指定できたりします。
 
@@ -90,7 +90,7 @@ enqueueLinks には、様々なオプションがあります。
 
 スクレイピングで手に入れたデータは、json で保存できます。
 
-- <https://crawlee.dev/docs/introduction/saving-data>
+- https://crawlee.dev/docs/introduction/saving-data
 
 例えば、リクエストした URL を集めたいときは、次のようなコードです。
 
@@ -112,4 +112,4 @@ await crawler.run(["https://crawlee.dev"]);
 
 Crawlee の SaaS として、Apify があります。これで気軽に試してみるのもありかもしれません。
 
-- <https://apify.com/>
+- https://apify.com/

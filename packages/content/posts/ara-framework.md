@@ -8,7 +8,7 @@ tags: ["Ara Framework", "Micro Frontends", "SSR", "Artifact"]
 みなさん、こんにちは。silverbirder です。
 私の最近の興味として、Micro Frontends があります。
 
-<https://silverbirder.github.io/blog/contents/microfrontends>
+https://silverbirder.github.io/blog/contents/microfrontends
 
 今、Ara-Framework というフレームワークを使った Micro Frontends のアプローチ方法を学んでいます。
 
@@ -61,7 +61,7 @@ Ara-Framework のアーキテクチャ図は、次のようなものです。
 ## Ara-Framework サンプルコード
 
 Ara-Framework を実際に使ってみました。サンプルコードは下記にあげています。
-<https://github.com/silverbirder/micro-frontends-sample-code-2>
+https://github.com/silverbirder/micro-frontends-sample-code-2
 
 package.json はこんな感じです。
 

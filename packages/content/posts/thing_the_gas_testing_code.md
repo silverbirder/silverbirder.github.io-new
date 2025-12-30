@@ -24,17 +24,17 @@ Google Apps Script(以下,GAS)でライブラリを公開しました。ライ�
 
 GAS をローカル環境で動かすことができる Clasp というコマンドラインツールが Google より公開されています。
 
-<https://github.com/google/clasp>
+https://github.com/google/clasp
 
 また、Clasp は Typescript をサポートしているため、型を中心としたコーディングが可能となりました。
 
-<https://www.npmjs.com/package/@types/google-apps-script>
+https://www.npmjs.com/package/@types/google-apps-script
 
 Typescript を選択すると、Interface 設計が容易になります。もちろん、`.gs` ファイルでも同様の事は実現できると思います。
 
 次に、Jest と呼ばれるテストツールを組み合わせることで、ローカル環境でテストが可能になります。
 
-<https://jestjs.io/docs/getting-started>
+https://jestjs.io/docs/getting-started
 
 ただ、単純にテストコードが書けません。
 例えば、カレンダーイベントを取得するテストをコーディングするとき、次のようなスクリプトを書いたとします。
@@ -101,12 +101,12 @@ calendar
 もちろん、プロダクトコードでは、`CalendarAppMock` ではなく、 `CalendarAppImpl` を使用すれば良いです。
 Mock で差し替えるオブジェクトが増えると、InversifyJS のような DI コンテナを検討してみると良いかもしれません。
 
-<https://github.com/inversify/InversifyJS>
+https://github.com/inversify/InversifyJS
 
 こうすることで、Jest によるテストが動作するようになります。  
 実際に、開発・公開したライブラリでも十分にテストをすることができました。
 
-<https://www.npmjs.com/package/@silverbirder/caat>
+https://www.npmjs.com/package/@silverbirder/caat
 
 ```shell
 CaAT $ npm run test -- --coverage
@@ -158,7 +158,7 @@ GAS を運用する方々には、是非ともテストコードを検討下さ�
 
 アジャイル開発で、かつ、Google Calendar で予定管理しているチームには是非とも使って頂きたいライブラリです。
 
-<https://github.com/silverbirder/caat>
+https://github.com/silverbirder/caat
 
 > CaAT is the Google Apps Script Library that Calculate the Assigned Time in Google Calendar.
 
@@ -171,4 +171,4 @@ GAS を運用する方々には、是非ともテストコードを検討下さ�
 
 実際にサンプルコードがあるので、ご参考下さい。
 
-<https://github.com/silverbirder/SampleCaat>
+https://github.com/silverbirder/SampleCaat

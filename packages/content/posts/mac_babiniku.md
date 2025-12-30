@@ -12,10 +12,10 @@ Hangouts Meet や Zoom といったビデオ会議ツールを使う機会が増
 
 そんな中、次の記事が流行りました。
 
-<https://level69.net/archives/26902>
+https://level69.net/archives/26902
 
 > バ美肉（バびにく）とは、バーチャル美少女受肉またはバーチャル美少女セルフ受肉の略語
-> <https://ja.wikipedia.org/wiki/バ美肉>
+> https://ja.wikipedia.org/wiki/バ美肉
 
 これにより、ビデオ会議(例は Zoom)で、次のようなバーチャル美少女 (になりきった私)が参加できるようになります。もちろん、声もボイスチェンジできます。
 
@@ -56,10 +56,10 @@ Output を soundflower (2ch)にしています。
 ## 仮想マイク
 
 仮想マイクは、Soundflower を使います。
-<https://github.com/mattingalls/Soundflower/tags>
+https://github.com/mattingalls/Soundflower/tags
 
 音声出力のルーティングを制御するために、LadioCast も使いました。
-<https://apps.apple.com/jp/app/ladiocast/id411213048?mt=12>
+https://apps.apple.com/jp/app/ladiocast/id411213048?mt=12
 
 LadioCast は、次のような設定にしました。
 
@@ -75,7 +75,7 @@ Input を soundflower (2ch)とし、Output を soundflower (64ch)としていま
 
 デスクトップで動かす場合は、3tene(ミテネ)を使いました。
 
-<https://3tene.com/>
+https://3tene.com/
 
 3tene は、特に設定は必要ありません。
 撮影前には、Web カメラとリップシンク(口の動きの同期)を起動しておきましょう。
@@ -87,15 +87,15 @@ Input を soundflower (2ch)とし、Output を soundflower (64ch)としていま
 肝心のキャラクターですが、3tene は VRM 形式でなければならないそうです。(よくわかっていません)  
 私は、次のサイトでダウンロードしました。
 
-<https://hub.vroid.com/>
+https://hub.vroid.com/
 
-<https://3d.nicovideo.jp/>
+https://3d.nicovideo.jp/
 
 ### Mobile: Reality
 
 モバイルで動かす場合は、Reality を使いました。
 
-<https://apps.apple.com/jp/app/reality-%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%96%E9%85%8D%E4%BF%A1%E3%82%A2%E3%83%97%E3%83%AA/id1404176564>
+https://apps.apple.com/jp/app/reality-%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%96%E9%85%8D%E4%BF%A1%E3%82%A2%E3%83%97%E3%83%AA/id1404176564
 
 Reality は、特に設定は必要ありません。
 好みのキャラクターをカスタマイズして簡単に作れます。
@@ -114,7 +114,7 @@ none は、私の iPhone デバイス名です。
 ## 仮想カメラ
 
 CamTwist という仮想カメラを使いました。
-<http://camtwiststudio.com/download/>
+http://camtwiststudio.com/download/
 
 CamTwist は、次のような設定にしました。
 
@@ -148,14 +148,14 @@ Zoom は、次のような設定にしました。
 
 ## 参考リンク
 
-<https://kumak1.hatenablog.com/entry/2018/09/27/234203>
+https://kumak1.hatenablog.com/entry/2018/09/27/234203
 
-<http://kuroyam.hatenablog.com/entry/2020/02/27/204246>
+http://kuroyam.hatenablog.com/entry/2020/02/27/204246
 
-<https://mzyy94.com/blog/2020/02/25/virtual-bishoujo-meeting/>
+https://mzyy94.com/blog/2020/02/25/virtual-bishoujo-meeting/
 
-<https://www.excite.co.jp/news/article/MoguraVR_voice-changer-pickup5/>
+https://www.excite.co.jp/news/article/MoguraVR_voice-changer-pickup5/
 
-<https://www.cg-method.com/entry/gachikoe/#Gachikoe>
+https://www.cg-method.com/entry/gachikoe/#Gachikoe
 
-<https://vtuberkaibougaku.site/2019/01/31/post-3176/>
+https://vtuberkaibougaku.site/2019/01/31/post-3176/

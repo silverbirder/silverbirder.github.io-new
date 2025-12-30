@@ -9,7 +9,7 @@ index: false
 ERNIE-ViLG というのが、"二次元キャラ" に強いという記事を目にしました。
 実際に使ってみようと、次のページで試したんですが、レスポンスがイマイチでした。
 
-- <https://huggingface.co/spaces/PaddlePaddle/ERNIE-ViLG>
+- https://huggingface.co/spaces/PaddlePaddle/ERNIE-ViLG
 
 そこで、[公式ページ](https://github.com/PaddlePaddle/PaddleHub/tree/develop/modules/image/text_to_image/ernie_vilg)を参考にして、ERNIE-ViLG を Google Colaboratory を書こうと思いました。
 

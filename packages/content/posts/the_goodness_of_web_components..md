@@ -9,7 +9,7 @@ Web Components を人にお勧めしたいんです。メリット・デメリ�
 
 ## Web Components is 何
 
-<https://www.webcomponents.org/specs> より引用します。
+https://www.webcomponents.org/specs より引用します。
 
 > Web components is a meta-specification made possible by four other specifications:  
 > The Custom Elements specification  

@@ -45,17 +45,17 @@ Tiqav2 は、大きく分けて 2 つの機能があります。
 
 検索する為には、全文検索サービスの Algolia を使います。
 
-<https://www.algolia.com/>
+https://www.algolia.com/
 
 Algolia に保存する情報は、主に 3 つです。画像 URL と拡張子、そしてテキストです。
 画像は画像変換&管理サービスの Cloudinary に保存します。保存後、Cloudinary より、画像 URL と拡張子が手に入ります。
 
-<https://cloudinary.com/>
+https://cloudinary.com/
 
 テキストは、Google Cloud Vision API へ画像を渡すことでテキストを抽出します。
 もちろん、手動でテキストを設定することもできます。
 
-<https://cloud.google.com/vision/>
+https://cloud.google.com/vision/
 
 ### 画像を検索&表示
 
@@ -68,7 +68,7 @@ Algolia に保存する情報は、主に 3 つです。画像 URL と拡張子�
 "gif", "png", "jpg", "bmp", "ico", "pdf", "tiff", "eps", "jpc", "jp2", "psd", "webp", "zip", "svg", "mp4", "webm", "wdp", "hpx", "djvu", "ai", "flif", "bpg", "miff", "tga", "heic"
 ```
 
-<https://cloudinary.com/documentation/image_transformations#supported_image_formats>
+https://cloudinary.com/documentation/image_transformations#supported_image_formats
 
 この画像を表示する機能を使うと、次のように Slack 上で画像を送信することができます。
 
@@ -76,7 +76,7 @@ Algolia に保存する情報は、主に 3 つです。画像 URL と拡張子�
 
 詳しい機能は、次のリポジトリをご確認下さい。
 
-<https://github.com/silverbirder/tiqav2>
+https://github.com/silverbirder/tiqav2
 
 ## SaaS は個人開発には最適
 
@@ -87,7 +87,7 @@ SaaS は、１つのことを上手くやってくれるし、個人の利用範
 ニッチなカスタマイズしたい要求がない限り、SaaS は大体の要望を叶えてくれます。
 どんな種類の SaaS があるか知りたい方は、↓ のサイトを見てみて下さい。参考になるはずです。
 
-<https://saasblocks.io/>
+https://saasblocks.io/
 
 **SaaS に面倒なことは任せて、プロダクトコードに集中する**ことは、私にとって、とても大切にしています。
 ちなみに今回のプロダクトコードは、CleanArchitecture + InversifyJS で作りました。

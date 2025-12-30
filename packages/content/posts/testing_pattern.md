@@ -19,13 +19,13 @@ Web アプリでは、様々な Cache が使われます。
 Cache は、便利な反面、使いすぎると、どこがどう Cache しているのか迷子になってしまいます。
 Web アプリでも、Cache をテストする必要がありそうです。
 
-<https://github.com/http-tests/cache-tests>
+https://github.com/http-tests/cache-tests
 
 ## Code Size Test
 
 大きなサイズの JS ライブラリを読み込むと、レスポンスタイムが悪化してしまいます。そこで、常にコードサイズを計測する必要があります。
 
-<https://github.com/ai/size-limit>
+https://github.com/ai/size-limit
 
 [![https://github.com/ai/size-limit](https://res.cloudinary.com/silverbirder/image/upload/v1614429908/silver-birder.github.io/blog/size-limit.png)](https://github.com/ai/size-limit)
 
@@ -34,13 +34,13 @@ Web アプリでも、Cache をテストする必要がありそうです。
 循環的複雑度(Cyclomatic complexity)は、制御文(if や for)の複雑さを計測します。
 複雑なコードは、バグの温床になりがちなので、極力シンプルなコードを心がけたいところです。
 
-<https://eslint.org/docs/rules/complexity>
+https://eslint.org/docs/rules/complexity
 
 ## Copy&Paste Test
 
 Copy&Paste は、DRY の原則に反するため、特別な理由がない限りは、してはいけません。Copy&Paste を検出するツールがあるみたいです。
 
-<https://github.com/kucherenko/jscpd>
+https://github.com/kucherenko/jscpd
 
 [![jscpd](https://res.cloudinary.com/silverbirder/image/upload/v1614429933/silver-birder.github.io/blog/jscpd.png)](https://github.com/kucherenko/jscpd)
 
@@ -50,7 +50,7 @@ Copy&Paste は、DRY の原則に反するため、特別な理由がない限�
 そのため、サポートするブラウザやプラットフォームの環境を準備しなければなりません。
 そういう環境を手軽に使えるサービスがあったりします。
 
-<https://github.com/browserstack>
+https://github.com/browserstack
 
 ## E2E Test
 
@@ -59,7 +59,7 @@ Web アプリを、端から端まで (End To End: E2E)を検証します。
 このテストは、不安定なテスト(よく失敗する)になりがちなので、安定稼働できるような取り組みが必要です。
 例えば、操作する処理の抽象化や、データ固定などです。
 
-<https://github.com/cypress-io/cypress>
+https://github.com/cypress-io/cypress
 
 ## Exception Test
 
@@ -77,7 +77,7 @@ Web アプリを、端から端まで (End To End: E2E)を検証します。
 [https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf](https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45880.pdf)
 
 日本人がまとめて頂いたものが、次の資料です。
-<https://speakerdeck.com/nihonbuson/flakytests>
+https://speakerdeck.com/nihonbuson/flakytests
 
 ## Integration Test
 
@@ -97,7 +97,7 @@ INFO, WARN, ERROR などがルールに基づいて使い分けされている�
 お猿さんがランダムにテストするような、モンキーテストです。
 テストのパターン網羅が難しい場合や、パターン網羅できているけどダメ押しで、このテストをします。
 
-<https://github.com/marmelab/gremlins.js/>
+https://github.com/marmelab/gremlins.js/
 
 [![gremlins.js](https://res.cloudinary.com/silverbirder/image/upload/v1614429752/silver-birder.github.io/blog/gremlins.gif)](https://github.com/marmelab/gremlins.js)
 
@@ -112,7 +112,7 @@ INFO, WARN, ERROR などがルールに基づいて使い分けされている�
 プロダクトコードを破壊することで、テストも壊れるかどうかを検証します。
 もし、プロダクトコードを壊しても、テストが成功してしまうと、それは正しくテストできていません。
 
-<https://github.com/stryker-mutator/stryker>
+https://github.com/stryker-mutator/stryker
 
 [![https://stryker-mutator.io/stryker/quickstart](https://res.cloudinary.com/silverbirder/image/upload/v1614429792/silver-birder.github.io/blog/stryker-mutator.gif)](https://stryker-mutator.io/stryker/quickstart)
 
@@ -120,7 +120,7 @@ INFO, WARN, ERROR などがルールに基づいて使い分けされている�
 
 障害を注入した際に、どういった動きになるのかを検証するテストです。
 
-<https://github.com/goldbergyoni/node-chaos-monkey>
+https://github.com/goldbergyoni/node-chaos-monkey
 
 ## Performance Test
 
@@ -128,13 +128,13 @@ INFO, WARN, ERROR などがルールに基づいて使い分けされている�
 CPU 使用率、メモリ使用率、レスポンスタイム、RPS など様々な指標があります。
 これらを計測し、SLO などの基準値を満たせているかを検証しておく必要があります。
 
-<https://github.com/bestiejs/benchmark.js/>
+https://github.com/bestiejs/benchmark.js/
 
 ## Property Based Test
 
 データを半自動生成し、テストをする手法です。
 
-<https://github.com/dubzzz/fast-check>
+https://github.com/dubzzz/fast-check
 
 ## Regression Test
 
@@ -163,7 +163,7 @@ npm audit fix
 Web アプリへ流入数を改善するためには、SEO は不可欠です。
 lighthouse というツールで SEO スコアを見ることができるみたいです。
 
-<https://github.com/GoogleChrome/lighthouse-ci>
+https://github.com/GoogleChrome/lighthouse-ci
 
 [![https://github.com/GoogleChrome/lighthouse-ci](https://res.cloudinary.com/silverbirder/image/upload/v1614429818/silver-birder.github.io/blog/lighthouse-ci.png)](https://github.com/GoogleChrome/lighthouse-ci)
 
@@ -181,7 +181,7 @@ Web アプリへリクエストし、そのレスポンスである HTML(スナ�
 この HTML が、変更前と比較して変化がないかの検証をするのが、Snapshot test です。
 リファクタリングなど、変化がない修正に対して有効です。
 
-<https://jestjs.io/docs/ja/snapshot-testing>
+https://jestjs.io/docs/ja/snapshot-testing
 
 ## Static Test
 
@@ -189,38 +189,38 @@ Static Test は、Web アプリを動かさなくても検証できるテスト�
 よくあるのが、Linter です。
 
 - HTML
-  <https://github.com/htmlhint/HTMLHint>
+  https://github.com/htmlhint/HTMLHint
 
 - CSS
 
-<https://github.com/CSSLint/csslint>
+https://github.com/CSSLint/csslint
 
 - JS
 
-<https://github.com/eslint/eslint>
+https://github.com/eslint/eslint
 
 - SVG
 
-<https://github.com/birjolaxew/svglint>
+https://github.com/birjolaxew/svglint
 
 - Commit
 
-<https://github.com/conventional-changelog/commitlint>
+https://github.com/conventional-changelog/commitlint
 
 - Docker
 
-<https://github.com/RedCoolBeans/dockerlint/>
+https://github.com/RedCoolBeans/dockerlint/
 
 これらは、プルリクエストで機械的に指摘する Danger との相性が良いです。
 
-<https://github.com/danger/danger>
+https://github.com/danger/danger
 
 ## Unit Test
 
 単一機能をテストする Unit Test があります。この Unit Test が全て PASS したら、
 他のテストを進めるのが一般的かなと思います。
 
-<https://github.com/facebook/jest>
+https://github.com/facebook/jest
 
 ### Code Coverage
 
@@ -231,15 +231,15 @@ Unit テストで、どこをテストできたかのカバレッジを見るこ
 
 実際に動作している JS や CSS のカバレッジを収集することもできます。
 
-<https://speakerdeck.com/pirosikick/puppeteerdeiranaicsswoxiao-su>
+https://speakerdeck.com/pirosikick/puppeteerdeiranaicsswoxiao-su
 
-<https://gist.github.com/silverbirder/71135913192fbca51a7e26924bd36b8b>
+https://gist.github.com/silverbirder/71135913192fbca51a7e26924bd36b8b
 
 ## Visual Regression Test
 
 見た目の変化を監視する必要があります。例えば、リンク切れとかがあれば、検出するべきです。
 
-<https://github.com/garris/BackstopJS>
+https://github.com/garris/BackstopJS
 
 [![https://github.com/garris/BackstopJS](https://res.cloudinary.com/silverbirder/image/upload/v1614429842/silver-birder.github.io/blog/BackstopJS.png)](https://github.com/garris/BackstopJS)
 

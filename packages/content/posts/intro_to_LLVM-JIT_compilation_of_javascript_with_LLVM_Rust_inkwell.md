@@ -14,7 +14,7 @@ LLVM の記事は数多くありますが、初心者向けの記事が少なく
 
 ソースコードは、こちらに置いています。
 
-<https://github.com/silverbirder/rustscript>
+https://github.com/silverbirder/rustscript
 
 ## 自己紹介
 
@@ -254,7 +254,6 @@ IR を Module,Function,Block,Instruction で区切って見ると、次の画像
   - Rust + inkwell [Kaleidoscope](https://github.com/TheDan64/inkwell/blob/master/examples/kaleidoscope)
 - LLVM リファレンス
   - [LLVM Language Reference Manual](https://llvm.org/docs/LangRef.html)
-
 
 ## LLVM をやってみよう
 

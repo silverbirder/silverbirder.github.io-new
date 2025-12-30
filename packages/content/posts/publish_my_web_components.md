@@ -7,8 +7,8 @@ tags: ["Web Components", "OEmbed", "OGP", "Artifact"]
 
 次の 2 つの Web Components を作成しました。
 
-- <https://www.webcomponents.org/element/Silver-birder/o-embed>
-- <https://www.webcomponents.org/element/Silver-birder/ogp-me>
+- https://www.webcomponents.org/element/Silver-birder/o-embed
+- https://www.webcomponents.org/element/Silver-birder/ogp-me
 
 ## 背景
 
@@ -18,11 +18,11 @@ iframely というサービスを使っていましたが、自前で作りた�
 
 ## o-embed
 
-<https://twitter.com/silverbirder/status/1475262255818473473>
+https://twitter.com/silverbirder/status/1475262255818473473
 
 ## ogp-me
 
-<https://silverbirder.github.io/blog/contents/intro_rocket/>
+https://silverbirder.github.io/blog/contents/intro_rocket/
 
 ## 終わりに
 

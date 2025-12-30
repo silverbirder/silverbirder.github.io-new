@@ -17,7 +17,7 @@ ChatGPTを使い続けていると、Webアプリケーションのフロント�
 
 - [Wireframing photo - Figma](https://www.figma.com/design/aYRsXAqHD2AQp2OHbrnDn1/Wireframing-in-Figma)
 - [silverbirder/figma-photo-sample-app-for-ai - GitHub](https://github.com/silverbirder/figma-photo-sample-app-for-ai)
-- <https://figma-photo-sample-app-for-ai.vercel.app>
+- https://figma-photo-sample-app-for-ai.vercel.app
 
 ## ChatGPTを使う前に
 

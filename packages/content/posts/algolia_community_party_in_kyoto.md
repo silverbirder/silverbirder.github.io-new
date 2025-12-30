@@ -5,7 +5,7 @@ summary: 'Algolia Community Party in 京都 - 2019年5月10日。こちらに参
 tags: ["Report", "Algolia", "Kyoto"]
 ---
 
-<https://algolia.connpass.com/event/128524/>
+https://algolia.connpass.com/event/128524/
 
 こちらに参加しましたので、ご報告までに記事を書こうと思います。
 
@@ -28,7 +28,7 @@ tags: ["Report", "Algolia", "Kyoto"]
 
 ## 概要
 
-<https://www.algolia.com/>
+https://www.algolia.com/
 
 > Products to accelerate search and discovery experiences across any device and platform.
 
@@ -40,16 +40,16 @@ Aloglia では、そういった全文検索に関わる機能を SaaS として
 使われているところでは、ブログサービスである[medium](https://medium.com/)や、オンライン決算処理である[Stripe のドキュメント](https://stripe.com/docs/api)がメジャーでしょうか。
 エンジニア向けとしては、[Docker Hub](https://hub.docker.com/)にも使われています。また、Firebase の公式でも使用事例として紹介されています。これは驚きですね。
 
-<https://firebase.google.com/docs/firestore/solutions/search?hl=ja>
+https://firebase.google.com/docs/firestore/solutions/search?hl=ja
 
 Algolia の会社としては、フランスから 2012 年よりスタートしました。
 ベンチャー企業であり、日本人のエンジニア募集もあるそうです。
 
 SaaS コミュニティ用のイベントがあるそうで、こちらに Algolia さんも登壇されています。
 
-<https://www.saastr.com/>
+https://www.saastr.com/
 
-<https://www.saastr.com/watch-the-saastr-masterclass-from-0-to-10m-in-arr-from-algolia-in-paris-video/>
+https://www.saastr.com/watch-the-saastr-masterclass-from-0-to-10m-in-arr-from-algolia-in-paris-video/
 
 ## どんな機能があるの
 
@@ -72,11 +72,11 @@ SaaS コミュニティ用のイベントがあるそうで、こちらに Algol
 
 ## どうやって使うの
 
-<https://github.com/algolia>
+https://github.com/algolia
 OSS としてライブラリを提供されています。
 手っ取り早く使いたいときは、instantsearch.js でしょうか。
 
-<https://community.algolia.com>
+https://community.algolia.com
 
 こちらも参考になるかと思います。
 
@@ -89,25 +89,25 @@ Algolia は、全文検索システムを構築せずとも、お手軽に使え
 
 その後、下記の記事で書いた通り OSS Gate の対象にもさせてもらいました。
 
-<https://tech-blog.monotaro.com/entry/2018/10/17/115442>
+https://tech-blog.monotaro.com/entry/2018/10/17/115442
 
 また、作りたいものリストに溜まっていたアプリを作る時間があったので、
 最近では、下記のような書籍管理を作りました。検索は Algolia を使っています。
 
-<https://github.com/silverbirder/book-store-vue>
+https://github.com/silverbirder/book-store-vue
 
 ## なぜ会場が、はてな株式会社なの
 
 はてなの社長である id:chris4403 さんが、[@shinodogg](https://twitter.com/shinodogg)と前職での知り合いだったからだそうです。
 
-<https://mackerel.io/ja/>
+https://mackerel.io/ja/
 
 はてなも、サーバー監視サービスである mackerel（鯖）を SaaS として提供しています。
 このお二方が、前職を離れてからも、同様の事業に携わっているということに、不思議な縁だな〜と思いました。
 
 会場では、ピザを提供して頂きました。美味しかったです！ごちそうさまでした！
 
-<https://twitter.com/silverbirder/status/1126841269097865216?s=20>
+https://twitter.com/silverbirder/status/1126841269097865216?s=20
 
 ## 最後に
 

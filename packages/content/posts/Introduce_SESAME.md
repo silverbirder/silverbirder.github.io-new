@@ -9,7 +9,7 @@ tags: ["SESAME", "IoT", "Life Hack"]
 
 ## SESAME(セサミ)って なに
 
-<https://jp.candyhouse.co/>
+https://jp.candyhouse.co/
 
 > あなたは家を出る時、何を持って出ますか？
 > 鍵、財布、そしてスマホ…？
@@ -90,7 +90,7 @@ tags: ["SESAME", "IoT", "Life Hack"]
 
 当初、白色のアダプターが来るのかと思ったのですが、黒色がきました。良いね！
 
-<https://youtu.be/6Bn8uYl0ans>
+https://youtu.be/6Bn8uYl0ans
 
 家の扉前から SESAME を使ってみた Bluetooth が繋がっている状態だと、スムーズにロック解除ができました ！わーい！
 

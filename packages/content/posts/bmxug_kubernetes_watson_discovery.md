@@ -8,7 +8,7 @@ tags: ["Report", "Osaka", "Kubernetes", "Watson Discovery", "Beginner", "BMXUG"]
 今回、k8s の体験を目的として参加したのですが、意外な収穫があったので、
 共有したく、記事を書くことにしました。hashtag はこちら [#bmxug](https://twitter.com/hashtag/bmxug)
 
-<https://bmxug.connpass.com/event/117966/>
+https://bmxug.connpass.com/event/117966/
 
 ## Watson Discovery
 

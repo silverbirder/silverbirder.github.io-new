@@ -15,7 +15,7 @@ index: false
 storybook-addon-range-controls というアドオンを開発しました。
 npmで公開しています。
 
-- <https://www.npmjs.com/package/storybook-addon-range-controls>
+- https://www.npmjs.com/package/storybook-addon-range-controls
 
 このアドオンは、端的にいうと Storybook上で、**コンポーネントの文字列・数値・配列の引数を、スライダーでデータ増減できるアドオン** です。
 作ろうと思ったきっかけは、StorybookのArgTypesでrangeの値を使って、**データ増減に伴うデザイン崩れをチェック** していたのですが、
@@ -23,24 +23,24 @@ npmで公開しています。
 
 デモは、以下のリンクで公開していますので、気になる方はぜひ触ってみてください。
 
-- <https://develop--689dd119bb72c220c0ddb738.chromatic.com>
+- https://develop--689dd119bb72c220c0ddb738.chromatic.com
 
 このアドオンを作るために、何をしたのかを振り返ります。
 
 実装したコードベースは、以下で公開していますので、よければご参考ください。
 
-- <https://github.com/silverbirder/storybook-addon-range-controls>
+- https://github.com/silverbirder/storybook-addon-range-controls
 
 ## アドオンキット
 
 まず、Storybookのアドオンってどうやって作るのか、作った経験がない私にはわからなかったので、
 以下のStorybookのドキュメントを読みました。
 
-- <https://storybook.js.org/docs/addons/writing-addons>
+- https://storybook.js.org/docs/addons/writing-addons
 
 読んでいると、以下のアドオンキットがあることに辿り着きました。
 
-- <https://github.com/storybookjs/addon-kit>
+- https://github.com/storybookjs/addon-kit
 
 これは、Storybookのアドオン開発に必要なものが最低限揃っていて、最初のとっかかりにはちょうどよかったです。
 
@@ -54,7 +54,7 @@ npmで公開しています。
 
 3つの種類についての説明は、以下の公式ページがわかりやすいです。
 
-- <https://storybook.js.org/docs/addons/addon-types>
+- https://storybook.js.org/docs/addons/addon-types
 
 今回、私がなんとなく想像していたのはパネルだったので、今回はパネルを使ってみることにしました。
 
@@ -64,7 +64,7 @@ npmで公開しています。
 
 アドオン開発には、さまざまなAPIが用意されており、公式のドキュメントが参考になります。
 
-- <https://storybook.js.org/docs/addons/addons-api>
+- https://storybook.js.org/docs/addons/addons-api
 
 例えば、表示しているStoryのparamtersやargsを取得するhooksなどがあります。
 以下は、私が利用したhooksのコード例です。
@@ -93,10 +93,10 @@ export const Panel = memo((props: Props) => {
 また、パネルのUI開発には、以下にあるように、コンポーネントやスタイルなどが用意されています。
 
 - コンポーネント一覧
-  - <https://github.com/storybookjs/storybook/blob/da8cf2095bfde31267c11652a5f18deb4c48e192/code/core/src/components/README.md>
+  - https://github.com/storybookjs/storybook/blob/da8cf2095bfde31267c11652a5f18deb4c48e192/code/core/src/components/README.md
   - emotionを使ってスタイルを書きます
 - スタイル一覧
-  - <https://github.com/storybookjs/storybook/blob/da8cf2095bfde31267c11652a5f18deb4c48e192/code/core/src/theming/README.md>
+  - https://github.com/storybookjs/storybook/blob/da8cf2095bfde31267c11652a5f18deb4c48e192/code/core/src/theming/README.md
   - ダークモードの対応も可能です
 
 上記のコンポーネントやスタイルにあるタイポグラフィやカラー、スペーシングなどを使うだけなので、
@@ -151,7 +151,7 @@ npmへの公開は、アドオンキットにあるGitHub Actionsの release.yml
 
 以下のURLにデモを公開しています。
 
-- <https://develop--689dd119bb72c220c0ddb738.chromatic.com>
+- https://develop--689dd119bb72c220c0ddb738.chromatic.com
 
 ## 困ったこと
 
@@ -159,7 +159,7 @@ npmへの公開は、アドオンキットにあるGitHub Actionsの release.yml
 
 以下のaddon-kitのissueにもあるように、ホットリロードがうまく動かないことがありました。
 
-- <https://github.com/storybookjs/addon-kit/issues/49>
+- https://github.com/storybookjs/addon-kit/issues/49
 
 そのため、開発中はコード修正してリロードを繰り返していました。ちょっと面倒でしたね。
 

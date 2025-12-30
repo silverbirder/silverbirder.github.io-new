@@ -7,8 +7,8 @@ tags: ["Web Components", "OEmbed", "Learn"]
 
 WebComponents で、oEmbed コンポーネントを開発し、公開しました。
 
-- <https://www.webcomponents.org/element/Silver-birder/o-embed>
-- <https://www.npmjs.com/package/@silverbirder/o-embed>
+- https://www.webcomponents.org/element/Silver-birder/o-embed
+- https://www.npmjs.com/package/@silverbirder/o-embed
 
 開発していく上で、学んだことを列挙しようと思います。
 

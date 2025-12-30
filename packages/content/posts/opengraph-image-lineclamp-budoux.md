@@ -18,7 +18,7 @@ index: false
 
 最もシンプルな方法として、`satori` の `lineClamp` 機能を使用する方法があります。
 
-- <https://github.com/vercel/satori#css>
+- https://github.com/vercel/satori#css
 
 この機能を使うと、簡単に複数行の表示と省略が可能です。
 また、省略時の文字をカスタマイズすることもできます。以下は、その実装例です。
@@ -85,7 +85,7 @@ export default async function Image() {
 `lineClamp` では改行位置が不自然になることがあります。
 そんなときに、日本語向けの `budoux` を使うと、適切な位置で改行できます。
 
-- <https://github.com/google/budoux>
+- https://github.com/google/budoux
 
 以下の方法で `budoux` を OGP 画像の生成に活用できます。
 改行位置を調整しながら、最大行数を超えた場合は `...` を追加して省略するようにしています。

@@ -20,18 +20,18 @@ vercel のキャッシュサーバを使う場合、vercel のアカウントが
 
 実際に試してみました。ソースコードは、次のリンクにあります。
 
-- <https://github.com/silverbirder/turborepo-with-selfhost-remote-cache>
+- https://github.com/silverbirder/turborepo-with-selfhost-remote-cache
 
 手元に Git clone して、README に従って動作確認できると思います。必要なソフトウェアは、Docker と Yarn です。
 
 ### キャッシュサーバの準備
 
 セルフホストする場合、キャッシュサーバを建てる必要があります。
-キャッシュサーバは、<https://github.com/fox1t/turborepo-remote-cache> を使うと良いです。
+キャッシュサーバは、https://github.com/fox1t/turborepo-remote-cache を使うと良いです。
 Docker イメージが公開されているので、それを使っても良いですし、自前で `docker build` しても良いです。
 
 - Docker イメージ
-  - <https://hub.docker.com/r/fox1t/turborepo-remote-cache>
+  - https://hub.docker.com/r/fox1t/turborepo-remote-cache
 
 キャッシュサーバには、最低でも次の 2 つを環境変数を設定する必要があります。
 

@@ -38,7 +38,7 @@ tags: ["Kubernetes"]
 
 > Kubectl is a command line interface for running commands against Kubernetes clusters
 
-※ <https://kubernetes.io/docs/reference/kubectl/overview/>
+※ https://kubernetes.io/docs/reference/kubectl/overview/
 
 kubernetes を操作するための CLI です。
 

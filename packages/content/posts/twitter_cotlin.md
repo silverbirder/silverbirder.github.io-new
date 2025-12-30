@@ -18,9 +18,9 @@ ks in tweet
 
 から、Cotlin という名前にしました。Android のアレに似ています。
 
-<https://github.com/silverbirder/Cotlin>
+https://github.com/silverbirder/Cotlin
 
-<https://www.npmjs.com/package/@silverbirder/cotlin>
+https://www.npmjs.com/package/@silverbirder/cotlin
 
 ## 動機
 
@@ -38,7 +38,7 @@ Tweet に記述したリンクは、全て[t.co](https://help.twitter.com/ja/usi
 この短縮 URL からオリジナル URL を手に入れるために、リダイレクトする必要があります。
 実際に作ってみると、次のような記事に書いたとおり、GAS で書くと、少し困ったことがありました。
 
-<https://silverbirder.github.io/blog/contents/gas_fetchall_redirect>
+https://silverbirder.github.io/blog/contents/gas_fetchall_redirect
 
 そこで、複数のリダイレクト URL へリクエストする処理を並列化するために、Golang で開発していました。
 
@@ -49,7 +49,7 @@ Tweet に記述したリンクは、全て[t.co](https://help.twitter.com/ja/usi
 毎日、プレゼンテーション資料を収集し、スプレットシートに記録するよう、自動化しました。  
 ※ 都合により、URL のリンクと Tweet のリンクのみ記載しています。
 
-<https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing>
+https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing
 
 次のような資料を発見できるようになりました。
 

@@ -10,11 +10,11 @@ tags: ["Apache Beam", "Kotlin", "Beginner", "Tutorial"]
 
 サンプルリポジトリは、下記に載せています。
 
-<https://github.com/silverbirder/apache-beam-kotlin-example/tree/master/src/main/kotlin>
+https://github.com/silverbirder/apache-beam-kotlin-example/tree/master/src/main/kotlin
 
 ## Apache Beam とは
 
-<https://www.st-hakky-blog.com/entry/2020/04/29/172220>
+https://www.st-hakky-blog.com/entry/2020/04/29/172220
 
 **Batch や Streaming を 1 つのパイプライン処理** として実現できるデータパイプライン、それが Apache Beam です。(Batch + Stream → Beam)
 

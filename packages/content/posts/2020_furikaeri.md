@@ -32,7 +32,7 @@ UseCotlin は、主に技術のインプットばかりで、アウトプット�
 
 （思いつきで）Twitter のフォロワーを増やしてみようと思い、Twitter の Follower を自動的に増やす仕組みを構築しました。2020 年 9 月ぐらいからはじめて、フォロワー 1000 人ぐらいだったものがもうすぐ 3000 人ぐらいになります。
 
-<https://twitter.com/silverbirder/status/1318861346327252993>
+https://twitter.com/silverbirder/status/1318861346327252993
 
 ## 生活
 

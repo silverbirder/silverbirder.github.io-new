@@ -49,11 +49,14 @@ iframe で srcdoc を読み込んだ後、埋め込みたい Tweet の文字列�
 
 <iframe
   src="https://codesandbox.io/embed/display-embedded-twitter-content-5tx92y?fontsize=14&hidenavigation=1&theme=dark"
-  title="Embedded content: display-embedded-twitter-content"
-  loading="lazy"
-  width="100%"
-  height="500"
-  frameBorder="0"
+  style={{
+    width: "100%",
+    height: "24rem",
+    border: "0",
+    borderRadius: "4px",
+    overflow: "hidden"
+  }}
+  title="Display embedded twitter content"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
@@ -64,7 +67,7 @@ iframe で srcdoc を読み込んだ後、埋め込みたい Tweet の文字列�
 
 埋め込みコンテンツの描画後イベント `rendered` というものがあります。これを使います。
 
-<https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/javascript-api>
+https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/javascript-api
 
 実装の順番は、次のとおりです。
 
@@ -103,11 +106,14 @@ html は、`style`で隠しておきます。(手段は問いません)
 
 <iframe
   src="https://codesandbox.io/embed/display-embedded-twitter-content-after-l6l3h7?fontsize=14&hidenavigation=1&theme=dark"
-  title="Embedded content: display-embedded-twitter-content-after"
-  loading="lazy"
-  width="100%"
-  height="500"
-  frameBorder="0"
+  style={{
+    width: "100%",
+    height: "24rem",
+    border: "0",
+    borderRadius: "4px",
+    overflow: "hidden"
+  }}
+  title="Display embedded twitter content after rendered event"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>

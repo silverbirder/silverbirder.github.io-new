@@ -15,7 +15,7 @@ Rails に、なかなか慣れない苦労がありました。ゆるく、言�
 Rails という新しく Web フレームワークを学ぶので、どういう思想で作られたのか知りたいなと思いました。
 そこで、下記のページをざっくり読んでみました。
 
-- <https://rubyonrails.org/doctrine>
+- https://rubyonrails.org/doctrine
 
 PoLS や CoC といった原則により、プログラマは余計な悩み事が減って良いな〜と思います。
 DB のテーブルのカラム名で、post_id なのか postId なのかなんてどうだって良いのは、とても同感です。

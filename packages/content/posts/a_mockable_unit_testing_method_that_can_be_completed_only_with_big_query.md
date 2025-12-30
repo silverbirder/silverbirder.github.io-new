@@ -32,7 +32,7 @@ xUnit は、ユニットテストのためのフレームワークです。
 
 > xUnit is the collective name for several unit testing frameworks that derive their structure and functionality from Smalltalk's SUnit.
 
-※ <https://en.wikipedia.org/wiki/XUnit>
+※ https://en.wikipedia.org/wiki/XUnit
 
 xUnit は、各プログラミング言語に影響を与えました。
 Java なら JUnit、Python なら unittest(厳密には JUnit から触発)のユニットテストができます。

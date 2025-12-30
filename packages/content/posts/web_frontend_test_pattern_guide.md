@@ -16,11 +16,11 @@ index: false
 
 参考となるコードは次のリポジトリに用意していますので、ぜひご参照ください。
 
-<https://github.com/silverbirder/react-todoMVC/>
+https://github.com/silverbirder/react-todoMVC/
 
 また、動作するアプリケーションを Vercel で公開しています。こちらも参考にしてください。
 
-<https://silverbirder-react-todo-mvc.vercel.app>
+https://silverbirder-react-todo-mvc.vercel.app
 
 コンポーネントの構造は以下の通りです。
 
@@ -225,7 +225,7 @@ describe("TodoItem", () => {
 
 インタラクションテストには、Storybook を利用すると便利です。
 
-<https://storybook.js.org/docs/react/writing-tests/interaction-testing>
+https://storybook.js.org/docs/react/writing-tests/interaction-testing
 
 従来はターミナルでインタラクション（クリックなど）のテストを行っていたと思いますが、Storybook を用いることで視覚的に確認しながらテストが作成できるため、非常に開発しやすくなります。
 
@@ -319,8 +319,8 @@ describe("play AddTwoTodosAndCheckOneScenario", () => {
 
 フロントエンドは、バックエンドとの通信を発生させることは多々あります。インテグレーションテストやユニットテストでは、API 通信をモックすることがよくあります。通信をインターセプトして、固定データを返却する mswjs/msw が有名です。また、固定データではなく、動的にデータを返却できる mswjs/data というものも便利なので紹介です。
 
-<https://github.com/mswjs/msw>
-<https://github.com/mswjs/data>
+https://github.com/mswjs/msw
+https://github.com/mswjs/data
 
 #### E2E テスト(システム)
 
@@ -436,7 +436,7 @@ npx cucumber-js
 
 React では、Profiler というツールが提供されており、これを Jest と組み合わせることで効果的にテストが可能です。
 
-<https://ja.reactjs.org/docs/profiler.html>
+https://ja.reactjs.org/docs/profiler.html
 
 例えば、TodoList の Todo が 100 個レンダリングされる場合の描画時間を、200ms 未満であることを確認するテストが作成できます。
 
@@ -484,8 +484,8 @@ describe("TodoList", () => {
 
 以下のリンクで Performance API および PerformanceLongTaskTiming に関する詳細情報を参照できます。
 
-- <https://developer.mozilla.org/ja/docs/Web/API/Performance_API>
-- <https://developer.mozilla.org/ja/docs/Web/API/PerformanceLongTaskTiming>
+- https://developer.mozilla.org/ja/docs/Web/API/Performance_API
+- https://developer.mozilla.org/ja/docs/Web/API/PerformanceLongTaskTiming
 
 具体的にテストコードを作成してみましょう。@playwright/test を利用してみます。
 
@@ -607,7 +607,7 @@ MemLab found 0 leak(s)
 
 フロントエンドでもカオスエンジニアリングテストが実施可能です。
 
-<https://www.npmjs.com/package/chaos-frontend-toolkit>
+https://www.npmjs.com/package/chaos-frontend-toolkit
 
 ブラウザの操作はユーザーによって多様です。例えば、以下のようなブラウザ操作が存在します。
 
@@ -654,7 +654,7 @@ export const Monkey: Story = {
 
 突然変異テストという手法が存在します。
 
-<https://stryker-mutator.io/>
+https://stryker-mutator.io/
 
 これは、フロントエンドという文脈ではありませんが、面白かったので紹介します。(笑)
 
@@ -704,13 +704,13 @@ UI/UX は、フロントエンド開発において、切っても切り離せ�
 見た目は、フロントエンド特有の非常に重要な要素です。レスポンシブデザイン、デスクトップ・モバイルのデバイス、Windows/Mac などの OS、ブラウザの外観に関する機能（ダークモード）など、見た目の変化をテストすることも重要です。
 ビジュアルリグレッションテストという手法を開発サイクルに取り入れましょう。Lost Pixel や Chromatic など、様々な手段があるので試してみてください。
 
-<https://storybook.js.org/docs/react/writing-tests/visual-testing>
+https://storybook.js.org/docs/react/writing-tests/visual-testing
 
 #### アクセシビリティ
 
 アクセシビリティについては、人の判断が必要なケースもありますが、機械的にチェックできる要素も存在します。キーボード操作のみで機能が正常に動作するか確認するためには、インタラクションテストが必要です。VoiceOver の対応状況はいかがでしょうか？さらに、画像の alt 属性は適切に設定されていますか？文章の表現については人の目で判断が必要ですが、少なくとも入力されているかどうかはチェックできます。
 
-<https://storybook.js.org/docs/react/writing-tests/accessibility-testing>
+https://storybook.js.org/docs/react/writing-tests/accessibility-testing
 
 ## その他
 

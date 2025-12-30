@@ -10,8 +10,8 @@ Google マイアクティビティの履歴をブラウザだけで分析した�
 この記事ではアプリの紹介は軽めに、ブラウザ完結のデータ基盤をどう構成したのかを中心に振り返ります。
 開発したアプリとソースコードは、以下になります。
 
-- <https://actviz.vercel.app>
-- <https://github.com/silverbirder/google-myactivity-visualization>
+- https://actviz.vercel.app
+- https://github.com/silverbirder/google-myactivity-visualization
 
 ## アプリのざっくり紹介
 
@@ -29,8 +29,8 @@ Google が保持している元データは [My Activity](https://myactivity.goo
 
 6年前に Chrome の検索履歴でワードクラウドを作ったときは、ブラウザの何かしらのStorageに入れていました。
 
-- <https://github.com/silverbirder/google-word-cloud>
-- <https://github.com/silverbirder/searchWordCloud>
+- https://github.com/silverbirder/google-word-cloud
+- https://github.com/silverbirder/searchWordCloud
 
 当時の実装はもう覚えていませんが（笑）、いまならブラウザだけでどこまでやれるのか試したくなりました。
 ブラウザにDBを持つという[素人が参院議員の議案賛否検索サイトを作ってみた - zenn](https://zenn.dev/midorisawa07/articles/7b6b24a46925fd)を読んでいたこともあり、

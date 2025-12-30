@@ -9,21 +9,21 @@ index: false
 こんにちは。[@silverbirder](https://x.com/silverbirder)です。
 最近、私のブログページを Qwik フレームワークで刷新しました。以下のリンクが、刷新したページになります。
 
-<https://silverbirder.github.io/blog/>
+https://silverbirder.github.io/blog/
 
 これで、私のブログページの刷新は 4 回目になります。この記事では、その過程で得た学びや経験を共有します。
 
 ちなみに、これまでの刷新に関する記事は、以下のリンクより確認できますので、よければご覧ください。
 
-<https://silverbirder.github.io/blog/tags/portfolio/>
+https://silverbirder.github.io/blog/tags/portfolio/
 
 GitHub のリリースタグも利用していますので、以下のリンクから過去のソースコードを参照できます。
 
-<https://github.com/silverbirder/silverbirder.github.io/tags>
+https://github.com/silverbirder/silverbirder.github.io/tags
 
 ソースコードも公開しているので、こちらもよければ参考にしてみてください。
 
-<https://github.com/silverbirder/silverbirder.github.io>
+https://github.com/silverbirder/silverbirder.github.io
 
 ## なぜ刷新したのか
 
@@ -75,7 +75,7 @@ Qwik はパフォーマンスを重視した Web フレームワークですが�
 
 元々は、Qwik というフレームワークのコンセプトを知り学びを深めようと考えていました。
 
-<https://qwik.builder.io/docs/concepts/think-qwik/>
+https://qwik.builder.io/docs/concepts/think-qwik/
 
 しかし、Qwik でブログ構築する過程で、フレームワーク自体ではなく、関連する技術やツールに興味関心が移りました。私の知る範囲でキャッチアップするよりも、こういった伸び代ある技術を学ぼうすることで、知らない技術を知る良い機会となりました。
 以下は、その中で学んだことです。
@@ -106,7 +106,7 @@ global.css を初めて 0 から書いてみましたし、タイポグラフィ
 
 OpenReplay というものを導入しました。
 
-<https://openreplay.com/>
+https://openreplay.com/
 
 これは、ユーザーの行動を監視するものです。
 実際の運用としては、トラブルシュートや UX 改善などに使えそうなものに思いました。
@@ -119,18 +119,18 @@ WebPush 通知もやってみたいと思いました。
 しかし、WebPush 通知するサーバー側の用意が必要と思うのですが、それを掛けるコストはなくしたいと思い、
 よく知られている OneSignal というものを入れてみました。
 
-<https://onesignal.com/>
+https://onesignal.com/
 
 通知をするときに、言語の選択や、通知を受け取るためのベストプラクティスが OneSignal に書いてあり、勉強になりました。
 
-<https://documentation.onesignal.com/docs/permission-requests#what-are-some-best-practices-around-web-push-prompting>
+https://documentation.onesignal.com/docs/permission-requests#what-are-some-best-practices-around-web-push-prompting
 
 #### Giscus
 
 Qwik を選ぶ前、技術調査をしていたときに Material for MkDocs というのを発見し、
 その中で、giscus というを見つけました。
 
-<https://giscus.app/ja>
+https://giscus.app/ja
 
 これは、GitHub の Discussions をブログに埋め込むことができます。これにより、ブログにコメントを残せるようになりました。
 

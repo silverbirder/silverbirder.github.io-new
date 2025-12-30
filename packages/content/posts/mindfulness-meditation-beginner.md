@@ -13,8 +13,8 @@ tags: ["Tips"]
 
 毎朝、仕事を始める前、Spotifyから選んだ以下のマインドフルネス瞑想のトラックに耳を傾けました。
 
-- <https://open.spotify.com/show/0ZnS3NDIWsZRxSd8xzvLPJ>
-- <https://open.spotify.com/show/34w345Ubyl30h8E2QJLqAH>
+- https://open.spotify.com/show/0ZnS3NDIWsZRxSd8xzvLPJ
+- https://open.spotify.com/show/34w345Ubyl30h8E2QJLqAH
 
 それぞれ約20分間のセッションで、ソファに座り、静かで落ち着いた環境を整えることからスタート。
 AirPodsを使って外界の音を遮断し、毛布をかけて暖かくしながら、瞑想に集中しました。

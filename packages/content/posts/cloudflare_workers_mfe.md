@@ -8,11 +8,11 @@ tags: ["Cloudflare Workers", "Edge Worker", "Micro Frontends"]
 今回、また Micro Frontends の構築を試みようと思います。構築パターンの内、サーバーサイド統合パターン、特にエッジサイド統合を試しました。
 その内容を紹介します。サンプルコードは、下記に残しています。
 
-<https://github.com/silverbirder/micro-frontends-sample-code-5/>
+https://github.com/silverbirder/micro-frontends-sample-code-5/
 
 ## Edge Side Include (ESI)って
 
-<https://www.w3.org/TR/esi-lang/>
+https://www.w3.org/TR/esi-lang/
 
 ESI は、SSI と似たようなもので、サーバーサイド側でコンテンツを挿入する仕組みの 1 つです。ESI の場合、挿入するコンテンツ(ページフラグメント)が Edge 側にあると理解しています。
 そのため、Edge キャッシュをコンテンツ毎に効かせれるメリットがあります。
@@ -57,7 +57,7 @@ JSON を返す URL は、/manifest.json と統一しています。
 
 また、Rust の WebAssembly を下記のようなテンプレートで組み込むことができます。
 
-<https://github.com/cloudflare/rustwasm-worker-template>
+https://github.com/cloudflare/rustwasm-worker-template
 
 特定の重い処理を Rust の WebAssembly で処理するようなフラグメントをページに混ぜることができます。
 
@@ -69,13 +69,13 @@ Cloudflare Workers は、任意のドメインで動かすことになります�
 例えば、ドメイン A 内に複数の Cloudflare Workers X と Y があったとすると、
 X から Y への通信ができないです。
 
-<https://community.cloudflare.com/t/issue-with-worker-to-worker-https-request/94472/37>
+https://community.cloudflare.com/t/issue-with-worker-to-worker-https-request/94472/37
 
 そのため、複数の Cloudflare Workers を使用する場合は 複数のドメインが必要になります。
 先程の例なら、ドメイン A に属する Cloudflare Workers X からドメイン B に属する Cloudflare Workers Y へ通信することができます。
 私は、freenom の tk ドメイン(無料)を複数購入しました。
 
-<https://freenom.com/>
+https://freenom.com/
 
 ## 直接 IP アドレスへリクエストできない
 
@@ -83,19 +83,19 @@ X から Y への通信ができないです。
 Cloudflare Workers をローカル開発する場合、[wrangler:dev](https://github.com/cloudflare/wrangler#-dev) というコマンドで検証します。
 検証中に、他の Cloudflare Workers の URL(localhost:XXXX)へアクセスしようとしても、直接 IP となるため失敗します。
 
-<https://support.cloudflare.com/hc/ja/articles/360029779472-Cloudflare-1XX-%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0#error1003>
+https://support.cloudflare.com/hc/ja/articles/360029779472-Cloudflare-1XX-%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0#error1003
 
 そのため、下記のようなサービスを使って、私は解決させました。
 
-<https://ngrok.com/>
+https://ngrok.com/
 
-<https://github.com/localtunnel/localtunnel>
+https://github.com/localtunnel/localtunnel
 
 ## Cloudflare Workers による制約が大きい
 
 Cloudflare のプラットフォーム上では、下記のランタイム API が使用できます。
 
-<https://developers.cloudflare.com/workers/runtime-apis>
+https://developers.cloudflare.com/workers/runtime-apis
 
 Cloudflare Workers の仕組みを把握していないのですが、この提供されている API 以外は、
 確か使えなかったような気がします。

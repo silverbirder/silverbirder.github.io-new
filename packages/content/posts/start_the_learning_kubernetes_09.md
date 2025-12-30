@@ -177,7 +177,7 @@ pi@raspi001:~/tmp $ k apply -f https://raw.githubusercontent.com/google/metallb/
 
 metallb と呼ばれるロードバランサを適用します。
 
-<https://metallb.universe.tf>
+https://metallb.universe.tf
 
 > MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 

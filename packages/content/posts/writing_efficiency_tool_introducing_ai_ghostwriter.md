@@ -9,7 +9,7 @@ tags: ["Chrome Extension", "ChatGPT", "AI", "Artifact"]
 文章作成が苦手な私は、AI が文章を代筆する「AI Ghostwriter」という Chrome の拡張機能を開発しました。今回は、この便利なツールの紹介をします。
 
 Chrome ウェブストアで公開しています。気になる方は、以下のリンクよりダウンロードしてください! 無料です!
-<https://chrome.google.com/webstore/detail/ai-ghostwriter/hpcokeldeijnfmbbbjkedhnedjjbjmoa>
+https://chrome.google.com/webstore/detail/ai-ghostwriter/hpcokeldeijnfmbbbjkedhnedjjbjmoa
 
 ## AI Ghostwriter って
 

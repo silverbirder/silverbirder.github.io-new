@@ -40,7 +40,7 @@ Web アプリケーション開発において、自動化テストは不可欠�
 
 テストツールとして、Gherkin を読み込みテストを実行できる Cucumber を使います。
 
-<https://cucumber.io/>
+https://cucumber.io/
 
 ### 例 Gherkin 形式のシナリオ
 
@@ -70,15 +70,15 @@ Feature: Online Store
 このシナリオは、Gherkin 形式で書いています。
 ファイル名は `*.feature` となります。Markdown でも記述できます。
 
-<https://github.com/cucumber/gherkin/blob/main/MARKDOWN_WITH_GHERKIN.md>
+https://github.com/cucumber/gherkin/blob/main/MARKDOWN_WITH_GHERKIN.md
 
 さらに、シナリオを日本語で書くこともできます。
 
-<https://cucumber.io/docs/gherkin/languages/>
+https://cucumber.io/docs/gherkin/languages/
 
 その他、Gherkin の書き方やプラクティスついて、以下を参照してください。
 
-<https://cucumber.io/docs/gherkin/>
+https://cucumber.io/docs/gherkin/
 
 次に、シナリオを満たすテストを書きましょう。以下が、シナリオを満たすテストコードです。
 先のシナリオの Given、When、Then が、以下のテストコードに対応してます。(Actor は無視して良いです)
@@ -167,7 +167,7 @@ Screenplay パターンは、ビジネスの用語をテストシナリオに取
 
 Screenplay には、以下の 5 つの要素が存在します。
 
-[![Five elements of the Screenplay Pattern - <https://serenity-js.org]>(https://res.cloudinary.com/silverbirder/image/upload/v1699704842/silver-birder.github.io/blog/serenity-js-screenplay-pattern.5eead28.1200.png)](https://serenity-js.org/handbook/design/screenplay-pattern/)
+[![Five elements of the Screenplay Pattern - https://serenity-js.org](https://res.cloudinary.com/silverbirder/image/upload/v1699704842/silver-birder.github.io/blog/serenity-js-screenplay-pattern.5eead28.1200.png)](https://serenity-js.org/handbook/design/screenplay-pattern/)
 
 5 つの要素について紹介します。
 
@@ -205,7 +205,7 @@ Screenplay には、以下の 5 つの要素が存在します。
 
 また、serenity-js では、Note と呼ばれる Actor が情報を記憶できる要素もあります。
 
-<https://serenity-js.org/api/core/class/TakeNotes/>
+https://serenity-js.org/api/core/class/TakeNotes/
 
 先ほどの online-store.steps.ts に、5 つの要素を実装した例を以下に紹介します。
 
@@ -316,7 +316,7 @@ defineParameterType({
 
 せっかくなので、シナリオのアンチパターンも紹介します。
 
-<https://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns>
+https://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns
 
 要約すると、以下のようなアンチパターンが存在します。
 

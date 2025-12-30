@@ -5,9 +5,9 @@ summary: 'https://gocon.jp こちらに参加してきましたので、ご報�
 tags: ["Report", "Go Conference", "Tokyo"]
 ---
 
-<https://gocon.connpass.com/event/124530/>
+https://gocon.connpass.com/event/124530/
 
-<https://gocon.jp/>
+https://gocon.jp/
 
 こちらに参加してきましたので、ご報告します！
 
@@ -29,11 +29,11 @@ tags: ["Report", "Go Conference", "Tokyo"]
 
 #### 今回
 
-<https://speakerdeck.com/moriyoshi/hacking-go-compiler-internals-2nd-season>
+https://speakerdeck.com/moriyoshi/hacking-go-compiler-internals-2nd-season
 
 #### 前回
 
-<https://www.slideshare.net/moriyoshi/hacking-go-compiler-internals-gocon-2014-autumn>
+https://www.slideshare.net/moriyoshi/hacking-go-compiler-internals-gocon-2014-autumn
 
 ### 感想
 
@@ -62,9 +62,9 @@ Go 言語でのアプリケーション開発で、特にコンテナを前提�
 
 ### 資料 (2)
 
-<https://speakerdeck.com/hgsgtk/design-considerations-for-container-based-go-application>
+https://speakerdeck.com/hgsgtk/design-considerations-for-container-based-go-application
 
-<https://www.redhat.com/ja/resources/cloud-native-container-design-whitepaper>
+https://www.redhat.com/ja/resources/cloud-native-container-design-whitepaper
 
 ### 感想 (2)
 
@@ -92,7 +92,7 @@ Tips は３つ紹介されていて、「Configuration」「Logging」「Moniter
 
 ### 資料 (3)
 
-<https://speakerdeck.com/sonatard/cpu-memory-and-go>
+https://speakerdeck.com/sonatard/cpu-memory-and-go
 
 ### 感想 (3)
 
@@ -130,4 +130,4 @@ Google Team である Katie Hockman の speaking が英語だったために、�
 実にもったいないと感じました。
 
 ※ 資料まとめ
-<https://engineer-fumi.hatenablog.com/entry/2019/05/18/172000>
+https://engineer-fumi.hatenablog.com/entry/2019/05/18/172000

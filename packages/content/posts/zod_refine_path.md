@@ -13,7 +13,7 @@ zod の refine を使っていたのですが、path の使い方を全く理解
 zod を使って、バリデーションロジックを書いていました。
 バリデーションで複数フィールドを参照する必要があったため、refine を使っていました。
 
-<https://github.com/colinhacks/zod#refine>
+https://github.com/colinhacks/zod#refine
 
 ## path
 
@@ -58,6 +58,6 @@ test("invalid", (t) => {
 
 stackblitz にも残しておきました。
 
-<https://stackblitz.com/edit/nodemon-fkzaw5?file=index.js>
+https://stackblitz.com/edit/nodemon-fkzaw5?file=index.js
 
 zod の github にある path の説明は、`appended to error path` と書いています。

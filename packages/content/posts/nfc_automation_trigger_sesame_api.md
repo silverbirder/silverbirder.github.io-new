@@ -15,7 +15,7 @@ tags: ["NFC", "SESAME", "IoT", "Life Hack"]
 
 > 狭義には Near field communication（NFC）の訳語。NFC は RFID（Radio Frequency IDentification）と呼ばれる無線通信による個体識別の技術の一種で、近距離の無線通信技術を統一化した世界共通の規格である。IC チップを内蔵した NFC タグを NFC のリーダ・ライタ機能を有する機器で読み取ったり書き込んだりする。
 
-※ <https://ja.wikipedia.org/wiki/近距離無線通信>
+※ https://ja.wikipedia.org/wiki/近距離無線通信
 
 有名なものとしては、[モバイル Suica](https://www.jreast.co.jp/mobilesuica/index.html/)でしょうか。AppleWatch がリーダ機として扱われます。
 
@@ -36,7 +36,7 @@ tags: ["NFC", "SESAME", "IoT", "Life Hack"]
 
 NFC Automation Trigger が作動！解錠！
 
-<https://twitter.com/silverbirder/status/1187016726363299840>
+https://twitter.com/silverbirder/status/1187016726363299840
 
 作成方法は、とっても**かんたん**です。iPhone 標準アプリ shortcut と、[NFC タグ(１枚 94 円)](https://www.amazon.co.jp/gp/product/B00GXSGL5G/)があれば誰でも作れます。もちろん、**[SESAME](https://www.amazon.co.jp/dp/B0787N1L3M)**が必要ですけどね（笑)。
 

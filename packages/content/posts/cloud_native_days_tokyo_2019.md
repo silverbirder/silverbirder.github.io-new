@@ -8,11 +8,11 @@ tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
 今回、東京で開催されました Cloud Native Days Tokyo 2019 に 2 日間とも参加してきましたので、報告しようと思います。
 セッション毎の報告というより、全体を通した感想を話そうかなと思います。
 
-<https://cloudnativedays.jp/cndt2019/>
+https://cloudnativedays.jp/cndt2019/
 
 リンクをまとめています。
 
-<https://qiita.com/zaki-lknr/items/1c26bb713aef9645f5e6>
+https://qiita.com/zaki-lknr/items/1c26bb713aef9645f5e6
 
 ## CNCF の利用率
 
@@ -31,17 +31,17 @@ tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
 
 ただ、CNCF のメンバーとして日本企業は**17 社**しかないそうで、まだまだこれからといったところでしょうか。
 
-<https://landscape.cncf.io/members>
+https://landscape.cncf.io/members
 
 さらには、Kubernetes から認定された日本企業ではまだないみたいです。残念です。
 
-<https://kubernetes.io/partners/#kcsp>
+https://kubernetes.io/partners/#kcsp
 
 今後は、次のようなカンファレンスが海外でもあるみたいです。ぜひ参加してみたいと思います。
 
-<https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/>
+https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/
 
-<https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/>
+https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/
 
 ## CloudNative とは
 
@@ -55,7 +55,7 @@ tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
 ただ、最近では Kubernetes を違う観点で考える人が増えてきたそうです。
 それが、二日目の Keynote で発表された北山さんのスライドにあります。
 
-<https://speakerdeck.com/shkitayama/change-the-game-change-the-world>
+https://speakerdeck.com/shkitayama/change-the-game-change-the-world
 
 Kubernetes は「platform のための platform」と言われるようになりました。
 これは、slide.No.9(Kubernetes is a platform)で見て分かる通りで、次のようなことがわかります。
@@ -81,7 +81,7 @@ Kubernetes は「platform のための platform」と言われるようになり
 CRD という言葉は様々なセッションで取り上げらていました。
 CRD と Operator については、下記をご参考下さい。
 
-<https://silverbirder.github.io/blog/contents/kubernetes_meetup_tokyo_19_osaka_satellite>
+https://silverbirder.github.io/blog/contents/kubernetes_meetup_tokyo_19_osaka_satellite
 
 Kubernetes を運用すると、既存のリソースだけでは物足りない所がでてくるそうです。
 そういう部分が「プラットフォームを利用するコスト」を大きくしてしまいます。
@@ -89,7 +89,7 @@ Kubernetes を運用すると、既存のリソースだけでは物足りない
 CRD、Operator が生まれました。
 ただ、独自に 1 から作るよりも、下記のサイトから使った方が効率的なときもあります。
 
-<https://operatorhub.io/>
+https://operatorhub.io/
 
 けど、結局は困ったとき、ソースコードを読むことになるので、それぐらいの能力がないと、
 運用を回せない気がします。
@@ -97,22 +97,22 @@ CRD、Operator が生まれました。
 zlab の ladicle さんの次のスライドがとてもわかりやすく、まとまっていました。
 これは貴重な資料ですね。
 
-<https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru>
+https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru
 
 ちなみに、独自に 1 から作ったケースがサイバーエージェントの山本さんの発表で、次のスライドです。
 
-<https://speakerdeck.com/mayuyamamoto/kuberneteskuo-zhang-woli-yong-sitazi-zuo-autoscalerdeshi-xian-surusutoresuhurinayun-yong-falseshi-jie>
+https://speakerdeck.com/mayuyamamoto/kuberneteskuo-zhang-woli-yong-sitazi-zuo-autoscalerdeshi-xian-surusutoresuhurinayun-yong-falseshi-jie
 
 同じくサイバーエージェントの青山さんがライブコーディングされていたリポジトリが次のものになります。
 
-<https://github.com/cloudnativejp/webserver-operator>
+https://github.com/cloudnativejp/webserver-operator
 
 ## Kubernetes は必要ですか
 
 Kubernetes を使うべきかの話が 2 日間でちらほらありました。
 次のような議論もあります。
 
-<https://www.atmarkit.co.jp/ait/articles/1907/23/news120.html>
+https://www.atmarkit.co.jp/ait/articles/1907/23/news120.html
 
 CloudNative なアプリケーション構築を目指す場合、どうしても Kubernetes を使う方向になりがちですよね。  
 今回参加したセッションの多くの企業では、Kubernetes を採用するための検討が下記のような感じでした。
@@ -127,7 +127,7 @@ CloudNative なアプリケーション構築を目指す場合、どうして�
 
 様々なセッションがあった中で、とても王道なステップを踏まれている企業がありました。それは、SoftbankPaymentService の鈴木さんの次のスライドです。
 
-<https://www.slideshare.net/JunyaSuzuki1/springpcf-cndt2019-osdt2019-keynote>
+https://www.slideshare.net/JunyaSuzuki1/springpcf-cndt2019-osdt2019-keynote
 
 企業に適した CloudNative 化だなと勉強になりました。  
 特に「運用を回すコストを考慮すると、Kubernetes ではなく PaaS を使う」 というポイントが好きです。
@@ -137,7 +137,7 @@ CloudNative なアプリケーション構築を目指す場合、どうして�
 耳にタコができるぐらい、この単語を聞きました。
 下記のサイトが参考になります。
 
-<https://qiita.com/yasuabe2613/items/3bff44e662c922083264#circuit-breaker>
+https://qiita.com/yasuabe2613/items/3bff44e662c922083264#circuit-breaker
 
 > 同期リクエストの先で一部のマイクロサービスに障害があると、クライアントやその先の「クライアントのクライアント」までブロッキングが波及することになりかねない。
 > この問題を、クライアントと実サービスの間に Circuit Breaker と呼ばれるプロキシを介在させて、実サービスの呼び出し失敗が一定基準を超えると、クライアントからのリクエストを即座にリジェクトさせて、ブロッキング連鎖を解消するパターン。
@@ -152,7 +152,7 @@ Kubernetes でアプリケーションを構築すると、分散システムの
 
 次の Wantedly さんのスライドが、私の中では話題になりました。
 
-<https://speakerdeck.com/potsbo/k8s-kubernetes-8-factors>
+https://speakerdeck.com/potsbo/k8s-kubernetes-8-factors
 
 要は、「アプリケーションとしての設計の考え方(twelve factor app)を、インフラ部分でも適用してみた」という感じです。
 どれも具体的なところまで説明されており、実際に Kubernetes を構築する際に役に立つものだと思います。
@@ -164,49 +164,49 @@ Kubernetes でアプリケーションを構築すると、分散システムの
 
 ## Chaos Engineering
 
-<https://speakerdeck.com/mahito/cndt-osdt-2019-2g1>
+https://speakerdeck.com/mahito/cndt-osdt-2019-2g1
 
 ## Docker
 
-<https://www.slideshare.net/AkihiroSuda/cndt-docker>
+https://www.slideshare.net/AkihiroSuda/cndt-docker
 
 ## Envoy
 
-<https://speakerdeck.com/taiki45/cloudnative-days-tokyo-2019-understanding-envoy>
+https://speakerdeck.com/taiki45/cloudnative-days-tokyo-2019-understanding-envoy
 
 ## Logging
 
-<https://speakerdeck.com/yosshi_/kubernetes-loggingru-men>
+https://speakerdeck.com/yosshi_/kubernetes-loggingru-men
 
 ## LinuxKernel
 
-<https://speakerdeck.com/tenforward/cndt2019>
+https://speakerdeck.com/tenforward/cndt2019
 
 ## Prometheus
 
-<https://speakerdeck.com/tokibi/prometheus-setup-with-long-term-storage>
+https://speakerdeck.com/tokibi/prometheus-setup-with-long-term-storage
 
 ## Sandbox
 
-<https://docs.google.com/presentation/d/1O9Q9E1hH6mBA5w8oDENnCYObZvij1-Dr_obvsY3X29k/edit>
+https://docs.google.com/presentation/d/1O9Q9E1hH6mBA5w8oDENnCYObZvij1-Dr_obvsY3X29k/edit
 
 ## Scheduler
 
-<https://speakerdeck.com/ytaka23/cloudnative-days-tokyo-2019>
+https://speakerdeck.com/ytaka23/cloudnative-days-tokyo-2019
 
 ## Spinnaker
 
-<https://speakerdeck.com/sansanbuildersbox/introduction-to-deployment-patterns-with-spinnaker:embed]9>
+https://speakerdeck.com/sansanbuildersbox/introduction-to-deployment-patterns-with-spinnaker:embed]9
 
 ## Istio
 
-<https://speakerdeck.com/dangossk/a-deep-dive-into-service-mesh-and-istio-cndt-2019>
+https://speakerdeck.com/dangossk/a-deep-dive-into-service-mesh-and-istio-cndt-2019
 
 ## その他
 
 サイバーエージェントさんより、エンジニアにとってとても嬉しいアイテムを頂きました。
 
-<https://twitter.com/ca_adtechstudio/status/1152080444445167616>
+https://twitter.com/ca_adtechstudio/status/1152080444445167616
 
 さっそく、キーボードにとりつけてみました。最高です！
 
@@ -222,7 +222,7 @@ CloudNative にどっぷり浸かった 2 日間でした。
 どの企業でも CloudNative を導入したことによる「つらみ」や「価値」を共有して頂いたおかげで、これから導入する人たち（私を含む）にとっては、有意義な時間でした。  
 全てのセッションを吸収できたわけではないですが、ここで記載したスライドだけでも理解を深めたいなと思います。
 
-<https://cloudnativedays.jp/cndk2019/>
+https://cloudnativedays.jp/cndk2019/
 
 今度は大阪で開催されるそうです。これも絶対参加したいなと思います！
 
@@ -231,7 +231,7 @@ CloudNative にどっぷり浸かった 2 日間でした。
 筆者は Web が大好きなエンジニアで、Kubernetes については理解が浅い人間です。主にフロントエンドに注力しています。  
 ただ、昨年の DeveloperBoost2018 で、サイバーエージェントの青山さんのセッションをうけて Kubernetes に興味を持ち始めました。
 
-<https://codezine.jp/article/detail/11291>
+https://codezine.jp/article/detail/11291
 
 青山さんは Kubernetes にとても詳しい方で、世代が近いせいか、私もこれぐらい夢中になれるものを見つけたいと感じるようになりました。  
 私は Web に関わるものなら何でも好きで、Kubernetes も含まれます。そこで、青山さん著作の[Kubernetes 完全ガイド](http://www.wasdkeyboards.com/index.php/products/printed-keycap-singles/custom-art-cherry-mx-keycaps.html)を全て実践することにしてみました。もちろん**お家 Kubernetes**でです。

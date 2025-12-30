@@ -33,10 +33,10 @@ EC サイトのような Web アプリケーションでは、様々な専門知
 
 さらに詳しく知りたい方は、次のページをご参考下さい。とてもわかりやすいです。
 
-<https://micro-frontends-japanese.org/>
+https://micro-frontends-japanese.org/
 
 また、次の書籍を読むと、
-<https://www.manning.com/books/micro-frontends-in-action>
+https://www.manning.com/books/micro-frontends-in-action
 
 > Amazon does not talk a lot about its internal development structure. However, there are reports that **the teams who run its e-commerce site have been working like this**for a long time. ...
 > **Micro frontends are indeed quite popular in the e-commerce** sector. **
@@ -121,7 +121,7 @@ apple, banana, orange という商品を検索するだけのサンプル Web �
 ![micro frontends sample overview](https://res.cloudinary.com/silverbirder/image/upload/v1588513402/micro-frontends-sample-code/micro_frontends_sample.jpg)
 
 サンプルコードは、ここに置いています。
-<https://github.com/silverbirder/micro-frontends-sample-code>
+https://github.com/silverbirder/micro-frontends-sample-code
 
 ## サービス
 
@@ -135,7 +135,7 @@ apple, banana, orange という商品を検索するだけのサンプル Web �
 
 Podium というライブラリを採用しました。
 
-<https://github.com/podium-lib/>
+https://github.com/podium-lib/
 
 これは、フロントエンドのサービスを簡単に統合できるようなライブラリになっています。
 Podium には大きく分けて 3 つの機能があります。
@@ -273,7 +273,7 @@ messageBus.subscribe("search", "search.word", (event) => {
 
 各サービスは、fly.io という PaaS へデプロイしています。
 
-<https://fly.io/>
+https://fly.io/
 
 CDN で SSR が実行できる **Edge Worker**を使用しています。
 これにより、SSR 結果をキャッシュし、高速にレスポンスを返却できます。
@@ -281,7 +281,7 @@ CDN で SSR が実行できる **Edge Worker**を使用しています。
 ただ、サンプル Web アプリでは、全くその力を引き出せていないです...
 
 ※ 参考記事
-<https://mizchi.hatenablog.com/entry/2019/02/21/235403>
+https://mizchi.hatenablog.com/entry/2019/02/21/235403
 
 ## サンプル Web アプリで分かったこと
 
@@ -294,12 +294,12 @@ CDN で SSR が実行できる **Edge Worker**を使用しています。
 例えば、次のリポジトリにある "shared_vendor_webpack_dll" のように、vendor ファイルを共有することで、
 javascript の size を減らすといった手段があります。
 
-<https://github.com/naltatis/micro-frontends-in-action-code>
+https://github.com/naltatis/micro-frontends-in-action-code
 
 また、次のリポジトリにある zalando tailor は、script load を streaming することで、
 全体の script load 完了時間を短縮するツールもあります。
 
-<https://github.com/zalando/tailor>
+https://github.com/zalando/tailor
 
 ## サービス内で技術スタックを選択できる
 
@@ -344,4 +344,4 @@ Micro Frontends は、このような**複雑化するフロントエンドに�
 
 ## 参考リンク
 
-<https://github.com/ChristianUlbrich/awesome-microfrontends>
+https://github.com/ChristianUlbrich/awesome-microfrontends

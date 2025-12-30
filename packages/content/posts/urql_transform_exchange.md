@@ -11,7 +11,7 @@ GraphQL クライアントの urql で、データ変換するのに、exchanges
 
 サンプルコードは、次のリポジトリに置いています。
 
-<https://github.com/silverbirder/urql-exchange-transform>
+https://github.com/silverbirder/urql-exchange-transform
 
 ## Exchanges
 

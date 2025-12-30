@@ -32,7 +32,7 @@ tags: ["IoT", "Life Hack"]
 
 ↓ スマートフォンから nature remo 経由で電気をつけてみます。
 
-<https://www.youtube.com/watch?v=_j-qXrxtsyU>
+https://www.youtube.com/watch?v=_j-qXrxtsyU
 
 ## オススメ２： Switch Bot
 
@@ -52,7 +52,7 @@ nature remo では制御できなかった物理ボタンに対応していま�
 
 ↓ スマートフォンから switch bot 経由でボタンを押しています。
 
-<https://www.youtube.com/watch?v=wkrPf-FuXFU>
+https://www.youtube.com/watch?v=wkrPf-FuXFU
 
 ## オススメ３： Google Home Mini
 
@@ -69,7 +69,7 @@ nature remo では制御できなかった物理ボタンに対応していま�
 
 ↓ google home mini から「ただいま」を言ってみる
 
-<https://www.youtube.com/watch?v=_XGMBIXC3pU>
+https://www.youtube.com/watch?v=_XGMBIXC3pU
 
 ## おわりに
 

@@ -19,7 +19,7 @@ DreamStudio.ai の SDK、 [stability-sdk](https://github.com/Stability-AI/stabil
 
 成果物は、次のリポジトリに置いています。
 
-- <https://github.com/silverbirder/stable-diffusion-API>
+- https://github.com/silverbirder/stable-diffusion-API
 
 ローカル環境でも、Docker コンテナでも、動きます。
 
@@ -39,7 +39,7 @@ Slack で使ってみると、こんな感じになりました。
 
 [stability-sdk](https://github.com/Stability-AI/stability-sdk)を使う前までは、自前で Stable Diffusion を動かす環境を用意しようと設計を考えました。設計の調査メモは、次のリンクにメモを残しています。
 
-- <https://zenn.dev/silverbirder/scraps/3842c715662551>
+- https://zenn.dev/silverbirder/scraps/3842c715662551
 
 具体的に、次のようなパターンを考えました。
 
@@ -71,7 +71,7 @@ API として、[stability-sdk](https://github.com/Stability-AI/stability-sdk) �
 ソースコードを読むと、gRPC を使っているため、別言語で SDK を書くのは比較的簡単だと思います。
 私は、Python でシュッと書けるので、flask と stability-sdk を使いました。
 
-- <https://github.com/silverbirder/stable-diffusion-API>
+- https://github.com/silverbirder/stable-diffusion-API
 
 ひとまず、Prompt だけを受け付ける超絶シンプルな API を書きました。
 [stability-sdk](https://github.com/Stability-AI/stability-sdk)は、様々パラメータがあるので、それも受け付けられるようにしようかなと思ったり、Midjourney の discord のボットのようなモノを書いても面白そうだなと思いました。

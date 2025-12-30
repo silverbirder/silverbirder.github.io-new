@@ -17,7 +17,7 @@ tags: ["Test", "Lint", "Performance"]
 > Million Lint is a VSCode extension that keeps your React website fast.
 We identify slow code and provide suggestions to fix it. It’s like ESLint, but for performance!
 
-※ <https://million.dev/blog/lint>
+※ https://million.dev/blog/lint
 
 VSCodeの拡張機能を使うそうです。
 

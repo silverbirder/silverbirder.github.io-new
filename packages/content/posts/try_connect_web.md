@@ -10,7 +10,7 @@ index: false
 
 サンプルコードは、次のリポジトリに置いています。
 
-- <https://github.com/silverbirder/playground/tree/main/node/connect-web-example/frontend>
+- https://github.com/silverbirder/playground/tree/main/node/connect-web-example/frontend
 
 ## 前置き: gRPC と connect-web の雑な理解
 
@@ -21,7 +21,7 @@ RPC (Remote Procedure Call) を実現するためのプロトコルとして、g
 そこで、Connect という gRPC 互換の HTTP API を構築するためのライブラリ群が開発されました。
 これのおかげで、プロキシを建てる必要がなく、ブラウザ側から gRPC を使うことが可能になります。
 
-- <https://connect.build/docs/introduction>
+- https://connect.build/docs/introduction
 
 上記ページに、バックエンドは connect-go、フロントエンドは connect-web という項目があります。
 connect-web は、ブラウザから RPC を動かすための小さなライブラリです。タイプセーフなライブラリなため、
@@ -43,7 +43,7 @@ connect-go は、go で Connect のサービスを作ることができます。
 gRPC で通信するためのスキーマ、ProtocolBuffer スキーマが必要です。
 これは、すでにあるものを使います。
 
-- <https://buf.build/bufbuild/eliza>
+- https://buf.build/bufbuild/eliza
 
 具体的には、次のようなスキーマです。
 

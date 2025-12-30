@@ -8,11 +8,11 @@ tags: ["Micro Frontends", "Learn"]
 Micro Frontends に関わる記事を 100 件以上読みました(参考記事に記載しています)。そこから得た Micro Frontends についてこの投稿に記録します。
 また、調査メモについて、次のリポジトリに残しています。
 
-<https://github.com/silverbirder/think-micro-frontends>
+https://github.com/silverbirder/think-micro-frontends
 
 ## 発端
 
-<https://www.thoughtworks.com/radar/techniques/micro-frontends>
+https://www.thoughtworks.com/radar/techniques/micro-frontends
 
 ## 実績企業
 
@@ -68,7 +68,7 @@ Micro Frontends に関わる記事を 100 件以上読みました(参考記事�
 
 ## 統合パターン
 
-<https://bluesoft.com/micro-frontends-the-missing-piece-of-the-puzzle-in-feature-teams/>
+https://bluesoft.com/micro-frontends-the-missing-piece-of-the-puzzle-in-feature-teams/
 
 | 統合               | 選択基準                                                                                                                    | 技術                                                                                                                               |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -81,9 +81,9 @@ Micro Frontends に関わる記事を 100 件以上読みました(参考記事�
 
 ## コミュニケーション
 
-<https://developer.mozilla.org/ja/docs/Web/API/CustomEvent>
+https://developer.mozilla.org/ja/docs/Web/API/CustomEvent
 
-<https://github.com/postaljs/postal.js>
+https://github.com/postaljs/postal.js
 
 ## データ共有
 
@@ -96,29 +96,29 @@ Micro Frontends に関わる記事を 100 件以上読みました(参考記事�
 
 - webpack
 
-<https://webpack.js.org/concepts/module-federation/>
+https://webpack.js.org/concepts/module-federation/
 
-<https://webpack.js.org/configuration/externals/>
+https://webpack.js.org/configuration/externals/
 
-<https://webpack.js.org/plugins/dll-plugin/>
+https://webpack.js.org/plugins/dll-plugin/
 
 ## ルーティング
 
 Vaddin router
 
-<https://vaadin.com/router>
+https://vaadin.com/router
 
 ## キャッシュ
 
-<https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API>
+https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API
 
-<https://developer.mozilla.org/ja/docs/Web/API/IndexedDB_API>
+https://developer.mozilla.org/ja/docs/Web/API/IndexedDB_API
 
 ## 認証
 
 - JWT
 
-<https://jwt.io/>
+https://jwt.io/
 
 ## 計測
 
@@ -149,11 +149,11 @@ Vaddin router
 
 コンポジションプロキシ。テンプレートを組み合わせる。
 
-<https://github.com/tes/compoxure>
+https://github.com/tes/compoxure
 
 ## アクセス履歴
 
-<https://developer.mozilla.org/ja/docs/Web/API/History_API>
+https://developer.mozilla.org/ja/docs/Web/API/History_API
 
 ## 分割ポリシー
 
@@ -189,7 +189,7 @@ Vaddin router
 
 ## 書籍
 
-<https://www.manning.com/books/micro-frontends-in-action>
+https://www.manning.com/books/micro-frontends-in-action
 
 ## 参考記事
 

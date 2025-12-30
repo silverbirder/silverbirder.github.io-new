@@ -10,11 +10,11 @@ Micro Frontends(以降、MFE)で組成するフラグメントを Web Components
 
 サンプルコードは、次のリポジトリにあります。
 
-- <https://github.com/silverbirder/playground/tree/main/node/web-components-is-api-for-micro-frontends>
+- https://github.com/silverbirder/playground/tree/main/node/web-components-is-api-for-micro-frontends
 
 ※ MFE については、以下のブログ記事をお読みください。
 
-<https://silverbirder.github.io/blog/contents/mfe/>
+https://silverbirder.github.io/blog/contents/mfe/
 
 ## 用語
 
@@ -182,7 +182,7 @@ export default App;
 
 Module Federation は、Webpack@5 から導入された機能です。
 
-- <https://webpack.js.org/concepts/module-federation/>
+- https://webpack.js.org/concepts/module-federation/
 
 > Each build acts as a container and also consumes other builds as containers. This way each build is able to access any other exposed module by loading it from its container.
 

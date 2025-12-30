@@ -14,7 +14,7 @@ Testcontainersは、コンテナを利用してテスト環境を構築し、簡
 
 以下のGitHubリポジトリで、今回紹介するコードを確認できます。
 
-- <https://github.com/silverbirder/testcontainers-nextjs>
+- https://github.com/silverbirder/testcontainers-nextjs
 
 ## 実装手順
 

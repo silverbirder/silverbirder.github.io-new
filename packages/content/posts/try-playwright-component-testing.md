@@ -8,7 +8,7 @@ tags: ["Test", "Playwright"]
 Playwright上で直接ブラウザ上のコンポーネントテストを実行できる「[Playwright Component Test](https://playwright.dev/docs/test-components)」（以下、playwright-ct）について知り、実際に試してみました。
 この記事では、その体験を共有します。実際に使用したリポジトリは下記の通りです。
 
-<https://github.com/silverbirder/react-todoMVC-2>
+https://github.com/silverbirder/react-todoMVC-2
 
 ## 準備
 

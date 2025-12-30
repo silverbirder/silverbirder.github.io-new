@@ -48,7 +48,7 @@ Cloud IDE は、クラウドにある統合開発環境(IDE)のことで、主�
 Cloud Shell Editor や Gitpod は、OSS の **Theia** というものを使っています。
 また、全体的に UI がとても似ていますよね。これは、次の記事でわかりやすく説明されていますので、ご興味があればお読みください。
 
-<https://qiita.com/monamour555/items/f93287c273a388261968>
+https://qiita.com/monamour555/items/f93287c273a388261968
 
 これらの Cloud IDE は、ここ最近 Publickey でよく目にします。記事と投稿日時をまとめてみました。
 
@@ -76,15 +76,15 @@ Theia とは何か、Github の about より引用します。
 
 この OSS の興味深いところの 1 つに、設計書が公開されているところです。
 
-<https://docs.google.com/document/d/1aodR1LJEF_zu7xBis2MjpHRyv7JKJzW7EWI9XRYCt48>
+https://docs.google.com/document/d/1aodR1LJEF_zu7xBis2MjpHRyv7JKJzW7EWI9XRYCt48
 
 Theia は、ローカルで動かすことができます。Web アプリだけじゃなく、ネイティブアプリ(Electron)もあります。
 
-<https://github.com/eclipse-theia/theia/blob/master/doc/Developing.md#quick-start>
+https://github.com/eclipse-theia/theia/blob/master/doc/Developing.md#quick-start
 
 また、Docker コンテナも公開されています。
 
-<https://github.com/theia-ide/theia-apps>
+https://github.com/theia-ide/theia-apps
 
 ベンダーニュートラルなので、VM インスタンスに Theia を入れて独自に運用するなど、ベンダーに依存しません。
 
@@ -92,7 +92,7 @@ Theia は、ローカルで動かすことができます。Web アプリだけ�
 
 個人的に、Gitpod を使いたいのですが無料だと月 50 時間までしか使えません。
 
-<https://www.gitpod.io/pricing/>
+https://www.gitpod.io/pricing/
 
 "Professional Open Source" というものを応募したところ、[Gitpod の組織](https://github.com/gitpod-io) へ招待頂き、公開リポジトリの無制限利用ができるようになりました。
 
@@ -100,12 +100,12 @@ Theia は、ローカルで動かすことができます。Web アプリだけ�
 
 Gitpod は、.gitpod.yml というファイルで環境構築されます。
 
-<https://www.gitpod.io/docs/configuration/>
+https://www.gitpod.io/docs/configuration/
 
 ベースとなる Docker イメージを指定して、必要なライブラリを事前にインストールできたりします。
 公式ブログに、Gitpod の完全ガイドがあります。
 
-<https://www.gitpod.io/blog/gitpodify/>
+https://www.gitpod.io/blog/gitpodify/
 
 また、様々な OSS を Gitpod で簡単に動作確認できます。
 

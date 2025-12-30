@@ -110,6 +110,6 @@ IDE やエディタでデバッグ設定することもできますが、こち�
 
 ## 参考
 
-- <https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger>
-- <https://nodejs.org/ja/docs/guides/debugging-getting-started/>
-- <https://jestjs.io/ja/docs/troubleshooting>
+- https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger
+- https://nodejs.org/ja/docs/guides/debugging-getting-started/
+- https://jestjs.io/ja/docs/troubleshooting

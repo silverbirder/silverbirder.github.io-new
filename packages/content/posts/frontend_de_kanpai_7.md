@@ -18,7 +18,7 @@ firebase の勢いがすごい。あと now も多少人気で、now 信者の�
 ※ [https://twitter.com/antidotech/status/1152154690617872384](https://twitter.com/antidotech/status/1152154690617872384)  
 ※ [https://twitter.com/wanami3103/status/1152202843618603008](https://twitter.com/wanami3103/status/1152202843618603008)
 
-<https://frokan.connpass.com/event/135584/>
+https://frokan.connpass.com/event/135584/
 
 ## イベント概要
 
@@ -36,7 +36,7 @@ firebase の勢いがすごい。あと now も多少人気で、now 信者の�
 
 ただ、翌日は少しつらかったです...。
 
-<https://twitter.com/silverbirder/status/1152348180643627008>
+https://twitter.com/silverbirder/status/1152348180643627008
 
 普段は、メモをがっつり書いて twitter に投稿している私ですが、
 今回は一切そのようなことをしていません。したがって、ほぼ記憶ベースでイベント内容を報告します。ご了承ください。
@@ -50,7 +50,7 @@ firebase の勢いがすごい。あと now も多少人気で、now 信者の�
 
 WebComponents に興味がある私は、この発表は気になっていました。
 
-<https://twitter.com/silverbirder/status/1149648900627693572>
+https://twitter.com/silverbirder/status/1149648900627693572
 
 内容をざっくり説明すると「CustomElements をプロダクトとして使っていたけど、つらみがあったので typescript で縛るようにしたよ」
 というものでした。CustomElements は Web 標準の技術ですが、react や vue のような prop による型縛りがありません。
@@ -67,7 +67,7 @@ Vanilla な JS で CustomElements を進めて行こうという経緯がある�
 
 ※ CustomElements っていろんなフレームワークで対応しているんですね。
 
-<https://custom-elements-everywhere.com/>
+https://custom-elements-everywhere.com/
 
 ## 実録フグ料理
 
@@ -78,7 +78,7 @@ Vanilla な JS で CustomElements を進めて行こうという経緯がある�
 
 Project Fugu というものがあります。
 
-<https://www.heise.de/developer/artikel/Google-Projekt-Fugu-Die-Macht-des-Kugelfisches-4255636.html>
+https://www.heise.de/developer/artikel/Google-Projekt-Fugu-Die-Macht-des-Kugelfisches-4255636.html
 
 > Unter dem Codenamen Fugu plant Google die Einführung zahlreicher Webschnittstellen in seinem Webbrowser Chrome, welche die Lücke zwischen Progressive Web Apps und ihren nativen Gegenstücken schließen wollen.
 
@@ -107,7 +107,7 @@ Google 翻訳を通すと
 
 ### 株式会社ディー・エヌ・エー feb19 さん
 
-<https://speakerdeck.com/feb19/xin-sii-api>
+https://speakerdeck.com/feb19/xin-sii-api
 
 いきなりポエムを語り始めた feb19 さん。
 「DeNA の人たちは、みんなこうなのか？」と面白く見ていました。

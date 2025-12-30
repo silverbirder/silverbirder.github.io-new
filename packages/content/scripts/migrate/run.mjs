@@ -14,7 +14,6 @@ const steps = [
   "fix-md001-heading-increment.mjs",
   "fix-md026-no-trailing-punctuation.mjs",
   "fix-md038-no-space-in-code.mjs",
-  "fix-md034-no-bare-urls.mjs",
   "fix-md009-no-trailing-spaces.mjs",
   "fix-md014-commands-show-output.mjs",
   "fix-md007-ul-indent.mjs",

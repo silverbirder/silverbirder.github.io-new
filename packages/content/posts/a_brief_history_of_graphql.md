@@ -11,14 +11,14 @@ GraphQL を業務で使い始めました。
 
 ## 参考資料
 
-<https://www.youtube.com/watch?v=VjHWkBr3tjI>
+https://www.youtube.com/watch?v=VjHWkBr3tjI
 
 GraphQL の共同開発者で、GraphQL Foundation エグゼクティブディレクターである Lee Byron さんから、GraphQL の歴史について、紹介されています。
 
 次の資料も参考になります。
 
-- <https://dev.to/tamerlang/a-brief-history-of-graphql-2jhd>
-- <https://levelup.gitconnected.com/what-is-graphql-87fc7687b042>
+- https://dev.to/tamerlang/a-brief-history-of-graphql-2jhd
+- https://levelup.gitconnected.com/what-is-graphql-87fc7687b042
 
 ## GraphQL が生まれる前
 
@@ -48,7 +48,7 @@ REST API で開発を進めていくと、次の 3 つの課題を抱えてし�
 
 複数のリクエストをする例が、次のページに書いています。
 
-- <https://www.howtographql.com/basics/1-graphql-is-the-better-rest/>
+- https://www.howtographql.com/basics/1-graphql-is-the-better-rest/
 
 例として、ユーザー情報、ユーザーが投稿したコンテンツ、ユーザーのフォロワーという 3 つの情報を取得するケースです。
 
@@ -94,8 +94,8 @@ REST API の 3 つの課題を、2022 年の今、改めて考えてみます。
 
 ### 参考リンク
 
-- <https://www.apollographql.com/blog/graphql/basics/why-use-graphql/>
-- <https://wundergraph.com/blog/why_not_use_graphql>
+- https://www.apollographql.com/blog/graphql/basics/why-use-graphql/
+- https://wundergraph.com/blog/why_not_use_graphql
 
 ## GraphQL の魅力
 

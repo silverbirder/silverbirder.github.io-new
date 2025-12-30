@@ -9,7 +9,7 @@ tags: ["IT", "Python", "PyConJP"]
 
 今年の 9 月に PyConJP 2019 が開催されます。
 
-<https://pycon.jp/2019/>
+https://pycon.jp/2019/
 
 LT の募集があったので、LT 応募するためのネタ探しをはじめました 😄
 
@@ -21,39 +21,39 @@ LT の募集があったので、LT 応募するためのネタ探しをはじ�
 
 ## Github
 
-<https://github.com/trending/python>
+https://github.com/trending/python
 
 ## PublicKey
 
-<https://www.publickey1.jp/mt6/mt-search.cgi?IncludeBlogs=2&tag=Python>
+https://www.publickey1.jp/mt6/mt-search.cgi?IncludeBlogs=2&tag=Python
 
 ## Dev.to
 
-<https://dev.to/t/python>
+https://dev.to/t/python
 
 ## Reddit
 
-<https://www.reddit.com/r/Python>
+https://www.reddit.com/r/Python
 
 ## Hacker News
 
-<https://hn.algolia.com/?query=python>
+https://hn.algolia.com/?query=python
 
 ## Qiita
 
-<https://qiita.com/tags/python>
+https://qiita.com/tags/python
 
 ## Hatena
 
-<https://b.hatena.ne.jp/search/tag?q=Python>
+https://b.hatena.ne.jp/search/tag?q=Python
 
 ## Medium
 
-<https://medium.com/tag/python>
+https://medium.com/tag/python
 
 ## Ubersuggest
 
-<https://app.neilpatel.com/jp/ubersuggest/overview?keyword=python>
+https://app.neilpatel.com/jp/ubersuggest/overview?keyword=python
 
 ## GoogleTrend
 
@@ -67,43 +67,43 @@ LT の募集があったので、LT 応募するためのネタ探しをはじ�
 
 ## Deepfacelab
 
-<https://github.com/iperov/DeepFaceLab>
+https://github.com/iperov/DeepFaceLab
 
 > DeepFaceLab is a tool that utilizes machine learning to replace faces in videos. Includes prebuilt ready to work standalone Windows 7,8,10 binary (look readme.md).
 
 ## Grumpy
 
-<https://github.com/google/grumpy>
+https://github.com/google/grumpy
 
 > Grumpy is a Python to Go source code transcompiler and runtime.
 
 ## Pyodide
 
-<https://github.com/iodide-project/pyodide>
+https://github.com/iodide-project/pyodide
 
 > The Python scientific stack, compiled to WebAssembly
 
 ## PyOxidizer
 
-<https://github.com/indygreg/PyOxidizer>
+https://github.com/indygreg/PyOxidizer
 
 > A modern Python application packaging and distribution tool
 
 ## Pyre
 
-<https://github.com/facebook/pyre-check>
+https://github.com/facebook/pyre-check
 
 > Performant type-checking for python.
 
 ## Pyxel
 
-<https://github.com/kitao/pyxel>
+https://github.com/kitao/pyxel
 
 > A retro game engine for Python
 
 ## ScrapydWeb
 
-<https://github.com/my8100/scrapydweb>
+https://github.com/my8100/scrapydweb
 
 > Web app for Scrapyd cluster management, Scrapy log analysis & visualization, Auto packaging, Timer tasks, Email notice, and Mobile UI
 

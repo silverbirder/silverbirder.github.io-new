@@ -9,12 +9,12 @@ tags: ["Report", "Kubernetes", "Tokyo", "Osaka"]
 Kubernetes の生みの親である 3 人の内の 1 人の Joe Beda から、**Kubernetes の歴史**の経緯について教えて頂きました。
 その話がとてもわかりやすく、なるほどなと思ったので、ぜひとも共有したいと思います。
 
-<https://k8sjp-osaka.connpass.com/event/131981/>
+https://k8sjp-osaka.connpass.com/event/131981/
 
 ※ 以降の内容は、私なりの解釈が入っており誤った認識かもしれません。ご了承下さい。
 発表の内容は全て Youtube にありますので、そちらが正しいものです。ご参考下さい。
 
-<https://www.youtube.com/watch?v=ETHGx8_Q-1k>
+https://www.youtube.com/watch?v=ETHGx8_Q-1k
 
 ## Who is Joe Beda
 
@@ -46,11 +46,11 @@ Joe さんは英語で話されてました。
 CPCAmerica(?)の田中さんが通訳をされていたのですが、ものすごくわかりやすかったです。感謝です！
 あと、記憶力はんぱねぇ...。
 
-<https://twitter.com/mumoshu/status/1134438272518635521?s=20>
+https://twitter.com/mumoshu/status/1134438272518635521?s=20
 
 ※ 以下、[@‏apstndb](https://twitter.com/apstndb) さんの要約 Tweet を参考にしました。神!!!
 
-<https://twitter.com/silverbirder/status/1134406467744804864?s=20>
+https://twitter.com/silverbirder/status/1134406467744804864?s=20
 
 ## kubernetes の歴史
 
@@ -96,23 +96,23 @@ Pod や Replication,Deployment など様々なリソースがあります。
 そこで、Custom Resource Definitions (CRD)です。
 なんだそれは...?
 
-<https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>
+https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
 
-<https://qiita.com/cvusk/items/773e222e0971a5391a51>
+https://qiita.com/cvusk/items/773e222e0971a5391a51
 
 要は、Pod や Deployment のようなリソースを独自に作ることができるのですね。おぉなんだそれ！
 独自に機能を作るためには、Custom Resource と Costom Controller が必要になり、両方をあわせて
 Operators というものが生まれました。
 
 例えば、下記のようなものがあります。
-<https://github.com/oracle/mysql-operator>
+https://github.com/oracle/mysql-operator
 
-<https://github.com/kubeflow/tf-operator>
+https://github.com/kubeflow/tf-operator
 
 Yahoo では、gimbal という OSS を使って Kubernetes を導入したみたいです。
-<https://github.com/heptio/gimbal>
+https://github.com/heptio/gimbal
 
-<https://techblog.yahoo.co.jp/advent-calendar-2018/oss-gimbal/>
+https://techblog.yahoo.co.jp/advent-calendar-2018/oss-gimbal/
 
 詳しくは分かりませんが、こういった拡張しやすい機能があるおかげでドンドン普及するのだなと勉強になりました。
 
@@ -120,37 +120,37 @@ Yahoo では、gimbal という OSS を使って Kubernetes を導入したみ�
 
 #### Q1. StatefulSets には今回触れられなかったが、どういう扱いなのか
 
-<https://twitter.com/apstndb/status/1134409892033261569?s=20>
+https://twitter.com/apstndb/status/1134409892033261569?s=20
 
 #### Q2. スケーラビリティに関して
 
-<https://twitter.com/apstndb/status/1134410827627487232?s=20>
+https://twitter.com/apstndb/status/1134410827627487232?s=20
 
 #### Q3. Kubernetes はなぜ etcd を使っているか
 
-<https://twitter.com/apstndb/status/1134411776009785345?s=20>
+https://twitter.com/apstndb/status/1134411776009785345?s=20
 
-<https://twitter.com/apstndb/status/1134412148237512705?s=20>
+https://twitter.com/apstndb/status/1134412148237512705?s=20
 
-<https://twitter.com/apstndb/status/1134412317439844352?s=20>
+https://twitter.com/apstndb/status/1134412317439844352?s=20
 
 #### Q4. Virtual Kubelet とか k3s みたいなエッジで活用する動きがコミュニティでは感じられるが、どう見ている
 
-<https://twitter.com/apstndb/status/1134413224839745536?s=20>
+https://twitter.com/apstndb/status/1134413224839745536?s=20
 
-<https://twitter.com/apstndb/status/1134413431316987904?s=20>
+https://twitter.com/apstndb/status/1134413431316987904?s=20
 
 #### そのほか
 
 参加者からの質問は、どれも鋭いものばかり。
 適度な質問をしたいなとつぶやきました...。届かなかったけど...。
-<https://twitter.com/silverbirder/status/1134412867988480000?s=20>
+https://twitter.com/silverbirder/status/1134412867988480000?s=20
 
 ## Osaka 会場
 
 会場提供は、株式会社 Aiming さんでした。
 
-<https://aiming-inc.com/ja/>
+https://aiming-inc.com/ja/
 
 会場場所は、グランフロント大阪タワー B の 18 階にありました。(高い!)
 今回使わさせて頂いた場所は、会議室でしょうか。

@@ -12,7 +12,7 @@ GraphQL 界隈だと、Code Generator が有名と思いますが、GraphQL Guil
 GraphQL Guild のエコシステムって便利だな〜って感じたことがあったので、紹介します。
 試したソースコードは、こちらにあります。
 
-- <https://github.com/silverbirder/playground/tree/main/node/supabase-graphql-guild-app>
+- https://github.com/silverbirder/playground/tree/main/node/supabase-graphql-guild-app
 
 ## GraphQL Schema をダウンロードできる
 
@@ -24,11 +24,11 @@ GraphQL Guild のエコシステムって便利だな〜って感じたことが
 git を扱うと、CI/CD のプロセスやいくつかの場面で、面倒なことがあります。
 そこで、GraphQL の SchemaURL を指定するだけで、Schema をダウンロードする機能が、`GraphQL CLI` にあります。
 
-- <https://www.graphql-cli.com/introduction>
+- https://www.graphql-cli.com/introduction
 
 具体的には、`GraphQL Config` を作成し、`graphql codegen` と実行します。
 
-- <https://the-guild.dev/graphql/config/docs>
+- https://the-guild.dev/graphql/config/docs
 
 Schema をダウンロードするために、GraphQL のエンドポイント URL を指定します。
 
@@ -77,7 +77,7 @@ export default graphqlConfig;
 GraphQL を利用する側としては、どのようなクエリが書けるか試せす場所が欲しくなります。
 サーバー側から GraphiQL を用意頂くでも全然良いのですが、`GraphQL Yoga` というものを使えば簡単にできます。
 
-- <https://the-guild.dev/graphql/yoga-server>
+- https://the-guild.dev/graphql/yoga-server
 
 `yarn add graphql-yoga` したあとに、先程の `graphql.config.ts` が存在すれば、`yarn yoga` するだけで GraphiQL が手に入ります！一切、サーブするコードを書いていません。最高でした。
 
@@ -85,7 +85,7 @@ GraphQL を利用する側としては、どのようなクエリが書けるか
 
 `GraphQL CLI` には、GraphQL 関連で便利な機能があります。
 
-- <https://github.com/Urigo/graphql-cli>
+- https://github.com/Urigo/graphql-cli
 
 具体的には、次の 3 つです。
 

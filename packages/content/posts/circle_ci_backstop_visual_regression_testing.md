@@ -7,7 +7,7 @@ tags: ["CircleCI", "BackstopJS", "Visual Regression Testing", "Puppeteer", "Test
 
 CircleCI と BackstopJS を組み合わせて、『継続的に Web ページの視覚的な変化を監視するツール』を作成しました。
 
-<https://github.com/silverbirder/silver-enigma>
+https://github.com/silverbirder/silver-enigma
 
 ## Motivation
 

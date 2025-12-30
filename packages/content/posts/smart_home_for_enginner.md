@@ -17,43 +17,43 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Nature Remo
 
-<https://nature.global/jp/nature-remo>
+https://nature.global/jp/nature-remo
 
 ## スマートスピーカー
 
 ### Google Home
 
-<https://store.google.com/product/google_home>
+https://store.google.com/product/google_home
 
 ## スマートロック
 
 ### SESAME
 
-<https://jp.candyhouse.co/>
+https://jp.candyhouse.co/
 
 ## スマートトラッカー
 
 ### Tile
 
-<https://thetileapp.jp/>
+https://thetileapp.jp/
 
 ## スマートタグ
 
 ### Qrio Smart Tag
 
-<https://qrio.me/smarttag/>
+https://qrio.me/smarttag/
 
 ## スマートスイッチ
 
 ### Switch Bot
 
-<https://www.switchbot.jp/>
+https://www.switchbot.jp/
 
 ## スマートトースター
 
 ### Toasteroid
 
-<https://www.kickstarter.com/projects/258723592/toasteroid-first-app-controlled-smart-image-toaste>
+https://www.kickstarter.com/projects/258723592/toasteroid-first-app-controlled-smart-image-toaste
 
 ## スマートボタン
 
@@ -71,19 +71,19 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### TP‐Link HS105
 
-<https://www.tp-link.com/jp/home-networking/smart-plug/hs105/>
+https://www.tp-link.com/jp/home-networking/smart-plug/hs105/
 
 ## スマートスケール
 
 ### Withings Body +
 
-<https://www.withings.com/jp/ja/body>
+https://www.withings.com/jp/ja/body
 
 ## スマートスリープ
 
 ### Withings Sleep
 
-<https://www.withings.com/jp/ja/sleep>
+https://www.withings.com/jp/ja/sleep
 
 ## スマートライト
 
@@ -95,53 +95,53 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Arlo Ultra
 
-<https://www.arlo.com/jp/products/arlo-ultra/default.aspx>
+https://www.arlo.com/jp/products/arlo-ultra/default.aspx
 
 ## スマート歯ブラシ
 
 ### Philips Sonicare
 
-<https://www.philips.co.jp/c-m-pe/electric-toothbrushes>
+https://www.philips.co.jp/c-m-pe/electric-toothbrushes
 
 ## スマートカーテン
 
 ### Mornin' Plus
 
-<https://mornin.jp/>
+https://mornin.jp/
 
 ### SwitchBot Curtain
 
-<https://www.rakunew.com/items/82929>
+https://www.rakunew.com/items/82929
 
 ## スマートエアモニター
 
 ### Awair
 
-<https://jp.getawair.com/>
+https://jp.getawair.com/
 
 ## スマートクリーナー
 
 ### iRobot
 
-<https://www.irobot-jp.com>
+https://www.irobot-jp.com
 
 ## スマートテレビ
 
 ### Chromecast
 
-<https://store.google.com/jp/product/chromecast>
+https://store.google.com/jp/product/chromecast
 
 ## スマートウォッチ
 
 ### Apple Watch
 
-<https://www.apple.com/jp/watch/>
+https://www.apple.com/jp/watch/
 
 ## スマートケトル
 
 ### iKettle
 
-<https://www.smarter.am/ikettle>
+https://www.smarter.am/ikettle
 
 ## スマートグラス
 
@@ -153,10 +153,10 @@ tags: ["IoT", "Life Hack", "Smart Home"]
 
 ### Nature Remo E
 
-<https://nature.global/jp/nature-remo-e>
+https://nature.global/jp/nature-remo-e
 
 ## Other
 
 ### 食宅便
 
-<https://shokutakubin.com/shop/default.aspx>
+https://shokutakubin.com/shop/default.aspx

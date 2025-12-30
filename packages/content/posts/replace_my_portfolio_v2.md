@@ -13,7 +13,7 @@ tags: ["Portfolio", "Artifact"]
 元々、私のポートフォリオページは、静的ページジェネレーターである Hugo を使って
 構築していました。
 
-<http://kohki.hatenablog.jp/entry/hugo-portfolio>
+http://kohki.hatenablog.jp/entry/hugo-portfolio
 
 こちらの記事を参考にして、Hugo でポートフォリオページを作りました。
 その当時、なぜポートフォリオを作ったのかというと、確か次の 3 つの思いがありました。
@@ -45,7 +45,7 @@ AMP を存分に使ったポートフォリオサイトを作成しました。�
 [AMP Optimizer](https://www.npmjs.com/package/@ampproject/toolbox-optimizer)を中心とした構成です。
 ソースコードは、下記のリポジトリにあります。
 
-<https://github.com/silverbirder/silverbirder.github.io>
+https://github.com/silverbirder/silverbirder.github.io
 
 ## 技術選択
 

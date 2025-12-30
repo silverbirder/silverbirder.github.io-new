@@ -17,7 +17,7 @@ GitHub Actionsのテストログは、[こちら](https://github.com/silverbirde
 
 ちなみに、過去にTestcontainersに関するブログ記事を書いていたので、そちらもよろしければお読みください。
 
-<https://zenn.dev/silverbirder/articles/bcf9ae9b496a15>
+https://zenn.dev/silverbirder/articles/bcf9ae9b496a15
 
 ## Testcontainersを使用する対象
 

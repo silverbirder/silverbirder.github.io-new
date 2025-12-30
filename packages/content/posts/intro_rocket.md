@@ -225,10 +225,10 @@ Modern Web と呼ばれる Web 標準技術の開発支援を行うプロジェ�
 
 Rocket の事例は、次のものがあります。
 
-- <https://modern-web.dev/>
-- <https://rocket.modern-web.dev/>
-- <https://open-wc.org/>
-- <https://apolloelements.dev/>
+- https://modern-web.dev/
+- https://rocket.modern-web.dev/
+- https://open-wc.org/
+- https://apolloelements.dev/
 
 Rocket は、技術的には、Eleventy という SSG の Wrapper になります。
 Eleventy は、Markdown を HTML へ変換してくれます。Rocket は、その Eleventy に Modern Web の技術(WebComponents,TestRunner,DevServer)を混ぜています。

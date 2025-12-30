@@ -10,11 +10,11 @@ tags: []
 
 過去の振り返りは、以下のリンクにまとめています。
 
-- 2020年: <https://silverbirder.github.io/blog/contents/2020_furikaeri/>
-- 2021年: <https://silverbirder.github.io/blog/contents/2021_furikaeri/>
-- 2022年: <https://silverbirder.github.io/blog/contents/2022_furikaeri/>
-- 2023年: <https://silverbirder.github.io/blog/contents/2023_furikaeri/>
-- 2024年: <https://silverbirder.github.io/blog/contents/2024_furikaeri/>
+- 2020年: https://silverbirder.github.io/blog/contents/2020_furikaeri/
+- 2021年: https://silverbirder.github.io/blog/contents/2021_furikaeri/
+- 2022年: https://silverbirder.github.io/blog/contents/2022_furikaeri/
+- 2023年: https://silverbirder.github.io/blog/contents/2023_furikaeri/
+- 2024年: https://silverbirder.github.io/blog/contents/2024_furikaeri/
 
 ## 滋賀へ引越し
 
@@ -41,7 +41,7 @@ tags: []
 今年の10月27日から、つい最近ではありますが、毎日ブログを投稿するようにしました。
 その理由や背景については、以下の記事で触れています。
 
-<https://silverbirder.github.io/blog/contents/20251207/>
+https://silverbirder.github.io/blog/contents/20251207/
 
 今のところ、55日連続で投稿できています。
 
@@ -84,20 +84,20 @@ Web において重要だと考えている「リンク・コピー・インタ�
 CSS に関しては、「苦手意識がある」という声をよく聞いていたこともあり、
 その当時にベターだと思っていた考え方や知識を、以下の記事にまとめています。
 
-<https://silverbirder.github.io/blog/contents/learn-layout/>
+https://silverbirder.github.io/blog/contents/learn-layout/
 
 個人開発では、以下のようなものを作ってきました。
 
 - かったものリスト
-  - <https://my-buy-items.vercel.app>
+  - https://my-buy-items.vercel.app
 - Storybook のデザイン崩れを確認できるアドオン
-  - <https://www.npmjs.com/package/storybook-addon-range-controls>
+  - https://www.npmjs.com/package/storybook-addon-range-controls
 - DuckDB WASM を使った Google Activity の可視化
-  - <https://actviz.vercel.app>
+  - https://actviz.vercel.app
 - Tauri で作った VLog アプリ
-  - <https://github.com/silverbirder/vlog>
+  - https://github.com/silverbirder/vlog
 - 現在開発中の、プロダクトへのリクエスト管理サービス「Fequest」
-  - <https://fequest.vercel.app>
+  - https://fequest.vercel.app
 
 どれも、それぞれでチャレンジしたいことに取り組めており、
 個人的にはとても満足しています。

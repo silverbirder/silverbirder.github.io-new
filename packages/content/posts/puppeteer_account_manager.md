@@ -10,7 +10,7 @@ Google や Github など、様々なサービスのプロフィール情報(画�
 
 リポジトリは、こちらです。
 
-<https://github.com/silverbirder/puppeteer-account-manager>
+https://github.com/silverbirder/puppeteer-account-manager
 
 ## なんで作ったの
 
@@ -24,7 +24,7 @@ Github や Twitter、Facebook など、Web サービスにはプロフィール�
 
 今回の面倒さは、Gravatar という Web サービスで解決できるかもしれません。
 
-<http://gravatar.com/>
+http://gravatar.com/
 
 このサービスは、グローバルなプロフィール画像を提供するサービスです。
 API 経由で、プロフィール画像を取得できます。
@@ -40,7 +40,7 @@ API 経由で、プロフィール画像を取得できます。
 
 そこで、Contentful という API ベースの CMS を使うことにしました。
 
-<https://www.contentful.com/>
+https://www.contentful.com/
 
 Contentful では、自由に項目を決めることができます。
 独自に作った項目 (画像や紹介文)を、API 経由で取得できるため、とても便利です。
@@ -51,13 +51,13 @@ Contentful では、自由に項目を決めることができます。
 Puppeteer と呼ばれる Chrome ブラウザを自動操作できるライブラリを使いました。
 Chrome ブラウザから、"各サービスへログインし、写真をアップロードする"処理を自動化しただけです。
 
-<https://github.com/puppeteer/puppeteer>
+https://github.com/puppeteer/puppeteer
 
 ## プロフィール画像を更新する API は、なかったの
 
 サービスによってはあります。例えば、Twitter には、次のようなプロフィール画像を更新する API があります。
 
-<https://developer.twitter.com/en/docs/accounts-and-users/manage-account-settings/api-reference/post-account-update_profile_image>
+https://developer.twitter.com/en/docs/accounts-and-users/manage-account-settings/api-reference/post-account-update_profile_image
 
 ただ、全てのサービスには、そのような API はありません。
 API を使って更新するのが正しい姿ですが、全サービスの実装方法の足並みを揃えるために、
@@ -72,7 +72,7 @@ Docker コンテナで動作できるようにしているので、ローカル�
 
 今後、パスワードの管理は、Keepass や Lastpass のようなサービスと連携したいと思っています。
 
-<https://github.com/keeweb/kdbxweb>
+https://github.com/keeweb/kdbxweb
 
 ## どのサービスが対応している
 
