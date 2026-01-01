@@ -73,6 +73,7 @@
 ## 追加メモ
 
 - ルートの `pnpm generate:feature` で新規 feature パッケージ生成。
+- 汎用的なものは `packages/util` に入れる。
 
 ## コンポーネント規約
 
