@@ -24,10 +24,10 @@ export default async function AppleIcon() {
     >
       <img
         alt="silverbirder"
-        height={120}
+        height="100%"
         src={logoBase64}
         style={{ objectFit: "contain" }}
-        width={120}
+        width="100%"
       />
     </div>,
     size,
