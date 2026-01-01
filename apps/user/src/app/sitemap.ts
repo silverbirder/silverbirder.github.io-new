@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { buildSiteUrl, getPostSlugs } from "@/libs";
+import { buildSiteUrl } from "@repo/util";
+
+import { getPostSlugs } from "@/libs";
 
 export const dynamic = "force-static";
 

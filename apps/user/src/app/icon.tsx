@@ -1,3 +1,4 @@
+import { iconSizes } from "@repo/metadata";
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 
@@ -5,7 +6,7 @@ export const dynamic = "force-static";
 export const runtime = "nodejs";
 export const contentType = "image/png";
 
-export const iconSizes = [32, 48, 72, 96, 144, 192, 512] as const;
+export { iconSizes };
 
 type Props = {
   id: Promise<number>;

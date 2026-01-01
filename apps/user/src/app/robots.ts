@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { buildSiteUrl, getSiteMetadataBase } from "@/libs";
+import { buildSiteUrl, getSiteMetadataBase } from "@repo/util";
 
 export const dynamic = "force-static";
 
