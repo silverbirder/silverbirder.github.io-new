@@ -1,3 +1,4 @@
+import { Prose } from "@repo/ui";
 import { notFound } from "next/navigation";
 
 import { getPostSlugs } from "@/libs";
@@ -17,9 +18,9 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
   try {
     const { default: Post } = await loadPost(slug);
     return (
-      <article>
+      <Prose>
         <Post />
-      </article>
+      </Prose>
     );
   } catch {
     notFound();
