@@ -4,9 +4,10 @@
   "private": true,
   "exports": {
     "./package.json": "./package.json",
-    "./*": "./src/*.tsx"
+    ".": "./src/index.ts"
   },
   "scripts": {
+    "chakra:snippet": "chakra snippet add --outdir src/chakra",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest --run"
@@ -20,6 +21,7 @@
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^3.30.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { createSiteMetadata } from "@repo/metadata";
-import { Provider } from "@repo/ui/provider";
+import { Provider } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Noto_Sans_JP } from "next/font/google";

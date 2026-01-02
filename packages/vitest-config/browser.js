@@ -12,6 +12,7 @@ const baseConfig = {
   plugins: [react(), nextjs({ dir: "../../apps/user" })],
   test: {
     include: ["src/**/*.spec.{ts,tsx}"],
+    passWithNoTests: true,
     setupFiles: ["@repo/vitest-config/setup"],
     browser: {
       enabled: true,

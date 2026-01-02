@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/nextjs-vite";
 
 import { jaMessages } from "@repo/message";
-import { Provider } from "@repo/ui/provider";
+import { Provider } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { Noto_Sans_JP } from "next/font/google";
 

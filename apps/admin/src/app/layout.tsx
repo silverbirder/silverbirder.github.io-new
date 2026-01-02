@@ -1,4 +1,4 @@
-import { Provider } from "@repo/ui/provider";
+import { Provider } from "@repo/ui";
 import { type Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
