@@ -1,3 +1,4 @@
+import { Provider } from "@repo/ui/provider";
 import { type Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -24,13 +25,15 @@ type Props = Readonly<{
 export default async function RootLayout({ children }: Props) {
   const messages = await getMessages();
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body className={notoSansJP.className}>
-        <TRPCReactProvider>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </TRPCReactProvider>
+        <Provider>
+          <TRPCReactProvider>
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </TRPCReactProvider>
+        </Provider>
       </body>
     </html>
   );

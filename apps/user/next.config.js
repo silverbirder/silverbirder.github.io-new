@@ -6,6 +6,9 @@ import process from "node:process";
 const config = {
   assetPrefix: process.env.GITHUB_PAGES_BASE_PATH || "",
   basePath: process.env.GITHUB_PAGES_BASE_PATH || "",
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
   images: {
     unoptimized: true,
   },

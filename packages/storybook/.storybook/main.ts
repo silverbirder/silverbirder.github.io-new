@@ -24,5 +24,27 @@ const config: StorybookConfig = {
     options: {},
   },
   stories: ["../../../packages/*/src/**/*.stories.tsx"],
+  viteFinal: async (config) => {
+    config.build ??= {};
+    config.build.rollupOptions ??= {};
+    config.build.chunkSizeWarningLimit = 2500;
+
+    const previousOnWarn = config.build.rollupOptions.onwarn;
+    config.build.rollupOptions.onwarn = (warning, warn) => {
+      if (
+        warning.code === "MODULE_LEVEL_DIRECTIVE" ||
+        warning.code === "SOURCEMAP_ERROR"
+      ) {
+        return;
+      }
+      if (previousOnWarn) {
+        previousOnWarn(warning, warn);
+        return;
+      }
+      warn(warning);
+    };
+
+    return config;
+  },
 };
 export default config;

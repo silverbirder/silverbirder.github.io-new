@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { createSiteMetadata } from "@repo/metadata";
+import { Provider } from "@repo/ui/provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Noto_Sans_JP } from "next/font/google";
@@ -20,11 +21,13 @@ type Props = Readonly<{
 export default async function RootLayout({ children }: Props) {
   const messages = await getMessages();
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body className={notoSansJP.className}>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <Provider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </Provider>
       </body>
     </html>
   );
