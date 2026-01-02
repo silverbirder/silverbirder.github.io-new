@@ -22,17 +22,15 @@ const withMDX = createMDX({
       [
         "rehype-raw",
         {
-          passThrough: [
-            "mdxjsEsm",
-            "mdxFlowExpression",
-            "mdxTextExpression",
-            "mdxJsxFlowElement",
-            "mdxJsxTextElement",
-          ],
+          passThrough: ["mdxjsEsm"],
         },
       ],
     ],
-    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
+    remarkPlugins: [
+      "remark-frontmatter",
+      "remark-mdx-frontmatter",
+      "remark-gfm",
+    ],
   },
 });
 
