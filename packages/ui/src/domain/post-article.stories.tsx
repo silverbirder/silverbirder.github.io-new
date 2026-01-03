@@ -10,7 +10,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const IdealState: Story = {
+export const Ideal: Story = {
   args: {
     children: (
       <>
@@ -29,13 +29,13 @@ export const IdealState: Story = {
   },
 };
 
-export const EmptyState: Story = {
+export const Empty: Story = {
   args: {
     children: null,
   },
 };
 
-export const ErrorState: Story = {
+export const Error: Story = {
   args: {
     children: (
       <p role="alert">We could not load this article. Please try again.</p>
@@ -43,7 +43,7 @@ export const ErrorState: Story = {
   },
 };
 
-export const PartialState: Story = {
+export const Partial: Story = {
   args: {
     children: (
       <>
@@ -54,7 +54,7 @@ export const PartialState: Story = {
   },
 };
 
-export const LoadingState: Story = {
+export const Loading: Story = {
   args: {
     children: <p aria-busy="true">Loading content...</p>,
   },

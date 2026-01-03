@@ -1,0 +1,34 @@
+import { Provider } from "@repo/ui";
+import { composeStories } from "@storybook/nextjs-vite";
+import { describe, expect, it } from "vitest";
+import { render } from "vitest-browser-react";
+
+import { NotebookProse } from "./notebook-prose";
+import * as stories from "./notebook-prose.stories";
+
+const Stories = composeStories(stories);
+
+describe("NotebookProse", () => {
+  it.each(Object.entries(Stories))("should render %s", async (_, Story) => {
+    const originalInnerHtml = document.body.innerHTML;
+
+    await Story.run();
+
+    await expect(document.body).toMatchScreenshot();
+
+    document.body.innerHTML = originalInnerHtml;
+  });
+
+  it("renders content", async () => {
+    await render(
+      <Provider>
+        <NotebookProse>
+          <h1>Notebook Layout</h1>
+        </NotebookProse>
+      </Provider>,
+    );
+
+    const heading = document.querySelector("h1");
+    expect(heading?.textContent ?? "").toContain("Notebook Layout");
+  });
+});

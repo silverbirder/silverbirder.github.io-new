@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { NotebookProse } from "../chakra/notebook-prose";
+import { NotebookProse } from "./notebook-prose";
 
 type Props = {
   children: ReactNode;

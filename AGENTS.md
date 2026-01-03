@@ -86,8 +86,8 @@
 
 - コンポーネント作成時は Storybook も必ず作成する。
 - Story は UI stack ごとに分け、以下の状態を用意する:
-  - Ideal State（理想ステート）
-  - Empty State（エンプティステート）
-  - Error State（エラーステート）
-  - Partial State（パーシャルステート）
-  - Loading State（ローディングステート）
+  - Ideal（理想ステート）
+  - Empty（エンプティステート）
+  - Error（エラーステート）
+  - Partial（パーシャルステート）
+  - Loading（ローディングステート）

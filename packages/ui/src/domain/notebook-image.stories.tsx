@@ -12,31 +12,31 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const IdealState: Story = {
+export const Ideal: Story = {
   args: {
     alt: "Notebook sample",
     src: PLACEHOLDER_SRC,
   },
 };
 
-export const EmptyState: Story = {
+export const Empty: Story = {
   render: () => <div />,
 };
 
-export const ErrorState: Story = {
+export const Error: Story = {
   args: {
     alt: "Missing image",
     src: "",
   },
 };
 
-export const PartialState: Story = {
+export const Partial: Story = {
   args: {
     alt: "No src placeholder",
   },
 };
 
-export const LoadingState: Story = {
+export const Loading: Story = {
   args: {
     alt: "Lazy image",
     loading: "lazy",
