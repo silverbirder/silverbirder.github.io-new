@@ -1,6 +1,10 @@
 import type { MDXComponents } from "mdx/types";
 
-const components: MDXComponents = {};
+import { NotebookImage } from "@repo/ui";
+
+const components = {
+  img: NotebookImage,
+} satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {
   return components;
