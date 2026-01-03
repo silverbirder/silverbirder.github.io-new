@@ -69,10 +69,12 @@ export const NotebookProse = chakra("div", {
     [inWhere("& code")]: {
       bg: "bg.muted",
       borderRadius: "md",
-      borderWidth: "1px",
-      fontSize: "0.925em",
+      borderWidth: "0",
+      fontFamily: "inherit",
+      fontSize: "1em",
       letterSpacing: "-0.01em",
       lineHeight: "inherit",
+      paddingBlock: "0",
       paddingInline: "0.25em",
     },
     [inWhere("& dd")]: {
@@ -157,12 +159,11 @@ export const NotebookProse = chakra("div", {
       boxShadow: "0 0 0 1px var(--shadow), 0 1px 0 1px var(--shadow)",
       color: "fg.muted",
       fontFamily: "inherit",
-      fontSize: "0.85em",
+      fontSize: "1em",
       lineHeight: "inherit",
-      paddingBottom: "0",
+      paddingBlock: "0",
       paddingInlineEnd: "0.35em",
       paddingInlineStart: "0.35em",
-      paddingTop: "0",
     },
     [inWhere("& li")]: {
       lineHeight: "var(--notebook-line-height)",
@@ -196,7 +197,7 @@ export const NotebookProse = chakra("div", {
     },
     [inWhere("& pre")]: {
       backgroundColor: "bg.muted",
-      borderRadius: "md",
+      fontFamily: "var(--chakra-fonts-mono)",
       fontSize: "0.9em",
       fontWeight: "400",
       lineHeight: "var(--notebook-line-height)",
@@ -211,6 +212,7 @@ export const NotebookProse = chakra("div", {
     [inWhere("& pre code")]: {
       bg: "transparent",
       borderWidth: "inherit",
+      fontFamily: "inherit",
       fontSize: "inherit",
       letterSpacing: "inherit",
       lineHeight: "inherit",
