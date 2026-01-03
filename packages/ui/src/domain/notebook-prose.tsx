@@ -275,8 +275,8 @@ export const NotebookProse = chakra("div", {
       paddingInlineStart: "0.4em",
     },
     [inWhere("& ul ul, ul ol, ol ul, ol ol")]: {
-      marginBottom: "2rem",
-      marginTop: "2rem",
+      marginBottom: "0",
+      marginTop: "0",
     },
     [inWhere("& video")]: {
       marginBottom: "2rem",
