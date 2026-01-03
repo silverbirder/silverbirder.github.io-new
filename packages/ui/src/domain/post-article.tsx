@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-import { Prose } from "../chakra/prose";
+import { NotebookProse } from "../chakra/notebook-prose";
 
 type Props = {
   children: ReactNode;
 };
 
 export const PostArticle = ({ children }: Props) => {
-  return <Prose>{children}</Prose>;
+  return <NotebookProse>{children}</NotebookProse>;
 };
