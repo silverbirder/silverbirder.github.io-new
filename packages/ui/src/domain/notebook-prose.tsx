@@ -144,8 +144,20 @@ export const NotebookProse = chakra("div", {
       marginTop: "2rem",
     },
     [inWhere("& hr")]: {
-      marginBottom: "2rem",
-      marginTop: "2rem",
+      border: "0",
+      height: "0",
+      marginBottom: "var(--notebook-line-height)",
+      marginTop: "var(--notebook-line-height)",
+      position: "relative",
+    },
+    [inWhere("& hr::after")]: {
+      borderTopColor: "border.muted",
+      borderTopStyle: "solid",
+      borderTopWidth: "1px",
+      content: '""',
+      insetInline: "0",
+      position: "absolute",
+      top: "0",
     },
     [inWhere("& img")]: {
       borderRadius: "lg",
@@ -222,6 +234,8 @@ export const NotebookProse = chakra("div", {
       fontWeight: "600",
     },
     [inWhere("& table")]: {
+      borderCollapse: "separate",
+      borderSpacing: "0",
       lineHeight: "var(--notebook-line-height)",
       marginBottom: "2rem",
       marginTop: "2rem",
@@ -230,10 +244,9 @@ export const NotebookProse = chakra("div", {
       width: "100%",
     },
     [inWhere("& tbody td, tfoot td")]: {
-      paddingBottom: "1rem",
+      paddingBlock: "calc(var(--notebook-line-height) / 2)",
       paddingInlineEnd: "1em",
       paddingInlineStart: "1em",
-      paddingTop: "1rem",
     },
     [inWhere("& tbody td:first-of-type, tfoot td:first-of-type")]: {
       paddingInlineStart: "0",
@@ -251,7 +264,7 @@ export const NotebookProse = chakra("div", {
     },
     [inWhere("& thead th")]: {
       fontWeight: "medium",
-      paddingBottom: "1rem",
+      paddingBlock: "calc(var(--notebook-line-height) / 2)",
       paddingInlineEnd: "1em",
       paddingInlineStart: "1em",
       textAlign: "start",
