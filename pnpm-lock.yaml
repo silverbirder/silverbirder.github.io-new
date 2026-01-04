@@ -41,6 +41,9 @@ importers:
       '@repo/admin-feature-sign-in':
         specifier: workspace:*
         version: link:../../packages/admin-feature-sign-in
+      '@repo/admin-feature-top':
+        specifier: workspace:*
+        version: link:../../packages/admin-feature-top
       '@repo/message':
         specifier: workspace:*
         version: link:../../packages/message

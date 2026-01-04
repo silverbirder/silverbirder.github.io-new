@@ -1,4 +1,3 @@
-import { jaMessages } from "@repo/message";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
@@ -27,6 +26,14 @@ const renderHome = async (session: Session) => {
       React.createElement(React.Fragment, null, children),
   }));
 
+  vi.doMock("@repo/admin-feature-top", () => ({
+    Top: ({ name }: { name?: null | string }) =>
+      React.createElement("div", {
+        "data-name": name ?? "",
+        "data-testid": "top",
+      }),
+  }));
+
   vi.doMock("next/headers", () => ({
     headers: vi.fn().mockResolvedValue(new Headers()),
   }));
@@ -41,22 +48,16 @@ const renderHome = async (session: Session) => {
 };
 
 describe("Home page", () => {
-  it("renders the signed-in message with the user name", async () => {
+  it("passes the user name to the feature component", async () => {
     const markup = await renderHome({ user: { name: "Sora" } });
-    const expected = jaMessages.admin.home.signedInAs.replace("{name}", "Sora");
 
-    expect(markup).toContain(jaMessages.admin.home.title);
-    expect(markup).toContain(expected);
-    expect(markup).toContain(jaMessages.admin.home.signOut);
+    expect(markup).toContain('data-testid="top"');
+    expect(markup).toContain('data-name="Sora"');
   });
 
-  it("falls back to unknown user when name and email are missing", async () => {
+  it("passes an empty name when name and email are missing", async () => {
     const markup = await renderHome({ user: {} });
-    const expected = jaMessages.admin.home.signedInAs.replace(
-      "{name}",
-      jaMessages.admin.home.unknownUser,
-    );
 
-    expect(markup).toContain(expected);
+    expect(markup).toContain('data-name=""');
   });
 });

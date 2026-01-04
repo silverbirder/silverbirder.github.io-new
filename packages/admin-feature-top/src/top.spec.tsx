@@ -18,11 +18,15 @@ describe("Top", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("renders provided children", async () => {
-    await renderWithProvider(<Top>Child content</Top>);
+  it("renders labels from messages", async () => {
+    await renderWithProvider(<Top name="Alice" onSignOut={async () => {}} />);
 
-    const element = document.querySelector("div");
-    expect(element).not.toBeNull();
-    expect(element?.textContent ?? "").toContain("Child content");
+    const title = document.querySelector("h1");
+    const signedInAs = document.querySelector("p");
+    const button = document.querySelector("button");
+
+    expect(title?.textContent ?? "").toContain("管理ホーム");
+    expect(signedInAs?.textContent ?? "").toContain("Alice");
+    expect(button?.textContent ?? "").toContain("サインアウト");
   });
 });

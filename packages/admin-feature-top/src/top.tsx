@@ -1,7 +1,28 @@
-import type { PropsWithChildren } from "react";
+"use client";
 
-type Props = PropsWithChildren;
+import { useTranslations } from "next-intl";
 
-export const Top = ({ children }: Props) => {
-  return <div>{children}</div>;
+type Props = {
+  name?: null | string;
+  onSignOut: () => Promise<void>;
+};
+
+export const Top = ({ name, onSignOut }: Props) => {
+  const t = useTranslations("admin.home");
+  const trimmedName = name?.trim();
+  const displayName = trimmedName ? trimmedName : t("unknownUser");
+  const signedInAs = t("signedInAs", { name: displayName });
+  return (
+    <main>
+      <section>
+        <header>
+          <h1>{t("title")}</h1>
+          <p>{signedInAs}</p>
+        </header>
+        <form>
+          <button formAction={onSignOut}>{t("signOut")}</button>
+        </form>
+      </section>
+    </main>
+  );
 };

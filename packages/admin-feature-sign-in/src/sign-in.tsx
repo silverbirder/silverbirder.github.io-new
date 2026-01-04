@@ -1,4 +1,6 @@
-import { jaMessages } from "@repo/message";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 type Props = {
   onSignIn?: (formData: FormData) => Promise<void> | void;
@@ -8,31 +10,30 @@ type Props = {
 
 type Status = "default" | "forbidden" | "missingAllowList";
 
-const messages = jaMessages.admin.signIn;
-
 export const SignIn = ({ onSignIn, onSignOut, status = "default" }: Props) => {
+  const t = useTranslations("admin.signIn");
   const errorMessage =
     status === "forbidden"
-      ? messages.errorForbidden
+      ? t("errorForbidden")
       : status === "missingAllowList"
-        ? messages.errorMissingAllowList
+        ? t("errorMissingAllowList")
         : null;
 
   return (
     <main>
       <section>
         <header>
-          <h1>{messages.title}</h1>
-          <p>{messages.description}</p>
+          <h1>{t("title")}</h1>
+          <p>{t("description")}</p>
         </header>
         {errorMessage && <p role="alert">{errorMessage}</p>}
         <form action={onSignIn}>
-          <button type="submit">{messages.action}</button>
+          <button type="submit">{t("action")}</button>
         </form>
-        <p>{messages.support}</p>
+        <p>{t("support")}</p>
         {onSignOut && (
           <form action={onSignOut}>
-            <button type="submit">{messages.signOut}</button>
+            <button type="submit">{t("signOut")}</button>
           </form>
         )}
       </section>

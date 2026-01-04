@@ -1,4 +1,4 @@
-import { jaMessages } from "@repo/message";
+import { Top } from "@repo/admin-feature-top";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -8,32 +8,17 @@ import { HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
   const session = await getSession();
-  const name =
-    session?.user?.name ??
-    session?.user?.email ??
-    jaMessages.admin.home.unknownUser;
-  const signedInAs = jaMessages.admin.home.signedInAs.replace("{name}", name);
+  const name = session?.user?.name ?? session?.user?.email;
+
+  const handleSignOut = async () => {
+    "use server";
+    await auth.api.signOut({ headers: await headers() });
+    redirect("/sign-in");
+  };
+
   return (
     <HydrateClient>
-      <main>
-        <section>
-          <header>
-            <h1>{jaMessages.admin.home.title}</h1>
-            <p>{signedInAs}</p>
-          </header>
-          <form>
-            <button
-              formAction={async () => {
-                "use server";
-                await auth.api.signOut({ headers: await headers() });
-                redirect("/sign-in");
-              }}
-            >
-              {jaMessages.admin.home.signOut}
-            </button>
-          </form>
-        </section>
-      </main>
+      <Top name={name} onSignOut={handleSignOut} />
     </HydrateClient>
   );
 }
