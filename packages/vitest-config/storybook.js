@@ -40,5 +40,3 @@ export const createStorybookConfig = ({
     },
   });
 };
-
-export default createStorybookConfig;

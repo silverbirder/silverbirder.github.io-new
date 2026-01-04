@@ -21,10 +21,10 @@ const normalizeSiteUrl = (siteUrl: string | undefined) => {
   return target.replace(/\/+$/, "");
 };
 
-export const getSiteBasePath = () =>
+const getSiteBasePath = () =>
   normalizeBasePath(process.env.GITHUB_PAGES_BASE_PATH);
 
-export const getSiteBaseUrl = () => {
+const getSiteBaseUrl = () => {
   const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
   const basePath = getSiteBasePath();
   return `${siteUrl}${basePath}/`;

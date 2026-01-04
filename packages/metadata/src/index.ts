@@ -7,20 +7,15 @@ export const iconSizes = [32, 48, 72, 96, 144, 192, 512] as const;
 export const siteName = "silverbirder";
 export const siteShortName = "silverbirder";
 export const siteDescription = "@silverbirderのジブンノート";
-export const siteCreator = "@silverbirder";
-export const siteCategory = "technology";
-export const siteKeywords = [
-  "silverbirder",
-  "個人サイト",
-  "ブログ",
-  "Webエンジニア",
-];
-export const siteLocale = "ja_JP";
+const siteCreator = "@silverbirder";
+const siteCategory = "technology";
+const siteKeywords = ["silverbirder", "個人サイト", "ブログ", "Webエンジニア"];
+const siteLocale = "ja_JP";
 export const siteThemeColor = "#0f172a";
 export const siteBackgroundColor = "#ffffff";
-export const siteReferrerPolicy = "origin-when-cross-origin" as const;
-export const siteManifestDisplay = "standalone" as const;
-export const siteTitleTemplate = `%s | ${siteName}`;
+const siteReferrerPolicy = "origin-when-cross-origin" as const;
+const siteManifestDisplay = "standalone" as const;
+const siteTitleTemplate = `%s | ${siteName}`;
 
 export const createSiteMetadata = (): Metadata => {
   const iconEntries = iconSizes.map((size) => ({

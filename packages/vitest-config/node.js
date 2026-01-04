@@ -20,4 +20,3 @@ const baseConfig = {
 export const createNodeConfig = (overrides = {}) =>
   defineConfig(mergeConfig(baseConfig, overrides));
 
-export default defineConfig(baseConfig);

@@ -31,4 +31,3 @@ const baseConfig = {
 export const createBrowserConfig = (overrides = {}) =>
   defineConfig(mergeConfig(baseConfig, overrides));
 
-export default defineConfig(baseConfig);
