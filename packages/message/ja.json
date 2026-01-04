@@ -4,7 +4,11 @@
       "title": "管理ホーム",
       "signedInAs": "{name} としてログイン中",
       "unknownUser": "不明なユーザー",
-      "signOut": "サインアウト"
+      "signOut": "サインアウト",
+      "postsTitle": "投稿一覧",
+      "postsLoading": "投稿一覧を読み込んでいます...",
+      "postsError": "投稿一覧の読み込みに失敗しました。",
+      "postsEmpty": "投稿が見つかりませんでした。"
     },
     "signIn": {
       "title": "管理画面サインイン",

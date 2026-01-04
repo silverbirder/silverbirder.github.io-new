@@ -8,6 +8,7 @@ type SessionUser = { email?: string; name?: string };
 
 const renderHome = async (session: Session) => {
   vi.resetModules();
+  const listPosts = vi.fn().mockResolvedValue(["2025-01-01-first-post.md"]);
 
   vi.doMock("@/server/better-auth/server", () => ({
     getSession: vi.fn().mockResolvedValue(session),
@@ -22,14 +23,20 @@ const renderHome = async (session: Session) => {
   }));
 
   vi.doMock("@/trpc/server", () => ({
+    api: {
+      github: {
+        list: listPosts,
+      },
+    },
     HydrateClient: ({ children }: { children: React.ReactNode }) =>
       React.createElement(React.Fragment, null, children),
   }));
 
   vi.doMock("@repo/admin-feature-top", () => ({
-    Top: ({ name }: { name?: null | string }) =>
+    Top: ({ name, posts }: { name?: null | string; posts: string[] }) =>
       React.createElement("div", {
         "data-name": name ?? "",
+        "data-posts": posts.join(","),
         "data-testid": "top",
       }),
   }));
@@ -59,5 +66,11 @@ describe("Home page", () => {
     const markup = await renderHome({ user: {} });
 
     expect(markup).toContain('data-name=""');
+  });
+
+  it("passes the fetched posts to the feature component", async () => {
+    const markup = await renderHome({ user: { name: "Sora" } });
+
+    expect(markup).toContain('data-posts="2025-01-01-first-post.md"');
   });
 });

@@ -5,13 +5,15 @@ import { useTranslations } from "next-intl";
 type Props = {
   name?: null | string;
   onSignOut: () => Promise<void>;
+  posts: string[];
 };
 
-export const Top = ({ name, onSignOut }: Props) => {
+export const Top = ({ name, onSignOut, posts }: Props) => {
   const t = useTranslations("admin.home");
   const trimmedName = name?.trim();
   const displayName = trimmedName ? trimmedName : t("unknownUser");
   const signedInAs = t("signedInAs", { name: displayName });
+
   return (
     <main>
       <section>
@@ -22,6 +24,14 @@ export const Top = ({ name, onSignOut }: Props) => {
         <form>
           <button formAction={onSignOut}>{t("signOut")}</button>
         </form>
+        <section>
+          <h2>{t("postsTitle")}</h2>
+          <ul>
+            {posts.map((post) => (
+              <li key={post}>{post}</li>
+            ))}
+          </ul>
+        </section>
       </section>
     </main>
   );

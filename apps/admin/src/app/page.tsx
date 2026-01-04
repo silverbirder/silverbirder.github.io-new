@@ -4,11 +4,12 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@/server/better-auth";
 import { getSession } from "@/server/better-auth/server";
-import { HydrateClient } from "@/trpc/server";
+import { api, HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
   const session = await getSession();
   const name = session?.user?.name ?? session?.user?.email;
+  const posts = await api.github.list();
 
   const handleSignOut = async () => {
     "use server";
@@ -18,7 +19,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <Top name={name} onSignOut={handleSignOut} />
+      <Top name={name} onSignOut={handleSignOut} posts={posts} />
     </HydrateClient>
   );
 }
