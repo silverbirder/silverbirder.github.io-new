@@ -1,64 +1,38 @@
-import type { Route } from "next";
-
+import { jaMessages } from "@repo/message";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { env } from "@/env";
-import { isAllowedEmail, parseAllowedEmails } from "@/server/allowed-users";
 import { auth } from "@/server/better-auth";
 import { getSession } from "@/server/better-auth/server";
 import { HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
   const session = await getSession();
-  const allowedEmails = parseAllowedEmails(env.ADMIN_ALLOWED_EMAILS);
-  const isAllowed =
-    !!session?.user && isAllowedEmail(session.user.email, allowedEmails);
+  const name =
+    session?.user?.name ??
+    session?.user?.email ??
+    jaMessages.admin.home.unknownUser;
+  const signedInAs = jaMessages.admin.home.signedInAs.replace("{name}", name);
   return (
     <HydrateClient>
       <main>
-        <div>
-          <div>
-            <div>
-              <p>{session && <span>Logged in as {session.user?.name}</span>}</p>
-              {session && !isAllowed && (
-                <p>このアカウントはアクセス権限がありません。</p>
-              )}
-              {!session ? (
-                <form>
-                  <button
-                    formAction={async () => {
-                      "use server";
-                      const res = await auth.api.signInSocial({
-                        body: {
-                          callbackURL: "/",
-                          provider: "github",
-                        },
-                      });
-                      if (!res.url)
-                        throw new Error("No URL returned from signInSocial");
-                      redirect(res.url as Route);
-                    }}
-                  >
-                    Sign in with Github
-                  </button>
-                </form>
-              ) : (
-                <form>
-                  <button
-                    formAction={async () => {
-                      "use server";
-                      await auth.api.signOut({ headers: await headers() });
-                      redirect("/");
-                    }}
-                  >
-                    Sign out
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
+        <section>
+          <header>
+            <h1>{jaMessages.admin.home.title}</h1>
+            <p>{signedInAs}</p>
+          </header>
+          <form>
+            <button
+              formAction={async () => {
+                "use server";
+                await auth.api.signOut({ headers: await headers() });
+                redirect("/sign-in");
+              }}
+            >
+              {jaMessages.admin.home.signOut}
+            </button>
+          </form>
+        </section>
       </main>
     </HydrateClient>
   );

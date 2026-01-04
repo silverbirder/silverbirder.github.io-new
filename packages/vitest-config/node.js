@@ -7,7 +7,7 @@ import { defineConfig, mergeConfig } from "vitest/config";
 const baseConfig = {
   test: {
     environment: "node",
-    include: ["src/**/*.spec.ts"],
+    include: ["src/**/*.spec.{ts,tsx}"],
     passWithNoTests: true,
   },
 };

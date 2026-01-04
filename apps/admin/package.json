@@ -12,6 +12,7 @@
     "test": "vitest --run"
   },
   "dependencies": {
+    "@repo/admin-feature-sign-in": "workspace:*",
     "@repo/message": "workspace:*",
     "@repo/ui": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",

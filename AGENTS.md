@@ -10,6 +10,7 @@
 
 - `apps/user`: Next.js (port 3000), next-intl, static export (`output: "export"`)
 - `apps/admin`: Next.js (port 3001), next-intl, tRPC, better-auth
+- `packages/message`: next-intl 用のメッセージ管理（原則、表示テキストはここに集約）
 - `packages/ui`: 共有 UI コンポーネント (Storybook 連携あり)
 - `packages/storybook`: Storybook 設定/テスト
 - `packages/*-config`: ESLint / TypeScript / Vitest の共有設定
@@ -70,6 +71,12 @@
 - ESLint / Prettier を使用。自動整形は `pnpm format`。
 - TypeScript は strict (共有 tsconfig を利用)。
 
+## 文言（メッセージ）管理
+
+- 画面に表示するテキスト（ボタン/見出し/説明/エラーメッセージ等）は、原則 `packages/message`（next-intl）で一元管理する。
+- アプリや UI コンポーネント内に表示文字列を直書きしない（例外: テスト内の説明文字、ログ用途などユーザー向けでないもの）。
+- 新しい文言を追加する場合は、まず `packages/message` にキーを追加し、各アプリからは next-intl 経由で参照する。
+
 ## 追加メモ
 
 - ルートの `pnpm generate:feature` で新規 feature パッケージ生成。
@@ -91,3 +98,14 @@
   - Error（エラーステート）
   - Partial（パーシャルステート）
   - Loading（ローディングステート）
+
+## MCP活用
+
+本リポジトリでは、開発効率向上のため MCP（Model Context Protocol）を積極的に活用します。
+
+### 利用時の注意
+
+- Playwright / Storybook MCP を使う場合は、事前にサーバーを起動する
+  - アプリ: `pnpm dev`
+  - Storybook（必要な場合）: `pnpm --filter @repo/storybook dev`
+- MCP で生成したコードも、本リポジトリのテスト方針・コーディング規約に従うこと

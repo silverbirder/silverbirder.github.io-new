@@ -6,7 +6,7 @@ import { auth } from "@/server/better-auth";
 const allowedEmails = parseAllowedEmails(process.env.ADMIN_ALLOWED_EMAILS);
 
 const isPublicPath = (pathname: string) => {
-  if (pathname === "/") return true;
+  if (pathname === "/sign-in") return true;
   if (pathname.startsWith("/api/auth")) return true;
   if (pathname.startsWith("/_next")) return true;
   if (pathname === "/favicon.ico") return true;
@@ -21,8 +21,23 @@ const redirectToHome = (req: NextRequest) => {
   return NextResponse.redirect(url);
 };
 
+const redirectToSignIn = (req: NextRequest) => {
+  const url = req.nextUrl.clone();
+  url.pathname = "/sign-in";
+  url.search = "";
+  return NextResponse.redirect(url);
+};
+
 export default async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  if (pathname === "/sign-in") {
+    const session = await auth.api.getSession({ headers: req.headers });
+    if (session?.user && isAllowedEmail(session.user.email, allowedEmails)) {
+      return redirectToHome(req);
+    }
+    return NextResponse.next();
+  }
 
   if (isPublicPath(pathname)) {
     return NextResponse.next();
@@ -30,7 +45,7 @@ export default async function proxy(req: NextRequest) {
 
   const session = await auth.api.getSession({ headers: req.headers });
   if (!session?.user) {
-    return redirectToHome(req);
+    return redirectToSignIn(req);
   }
 
   if (allowedEmails.length === 0) {
@@ -40,14 +55,14 @@ export default async function proxy(req: NextRequest) {
         { status: 403 },
       );
     }
-    return redirectToHome(req);
+    return redirectToSignIn(req);
   }
 
   if (!isAllowedEmail(session.user.email, allowedEmails)) {
     if (pathname.startsWith("/api/")) {
       return NextResponse.json({ error: "forbidden" }, { status: 403 });
     }
-    return redirectToHome(req);
+    return redirectToSignIn(req);
   }
 
   return NextResponse.next();
