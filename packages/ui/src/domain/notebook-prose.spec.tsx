@@ -1,8 +1,7 @@
-import { Provider } from "@repo/ui";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it } from "vitest";
-import { render } from "vitest-browser-react";
 
+import { renderWithProvider } from "../test-util";
 import { NotebookProse } from "./notebook-prose";
 import * as stories from "./notebook-prose.stories";
 
@@ -20,12 +19,10 @@ describe("NotebookProse", () => {
   });
 
   it("renders content", async () => {
-    await render(
-      <Provider>
-        <NotebookProse>
-          <h1>Notebook Layout</h1>
-        </NotebookProse>
-      </Provider>,
+    await renderWithProvider(
+      <NotebookProse>
+        <h1>Notebook Layout</h1>
+      </NotebookProse>,
     );
 
     const heading = document.querySelector("h1");

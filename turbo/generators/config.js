@@ -101,6 +101,18 @@ module.exports = function generator(plop) {
         },
         {
           type: "add",
+          path: plop.renderString(`${featureDir}/test-util/render.tsx`, answers),
+          templateFile: "templates/feature/test-util/render.tsx.hbs",
+          skipIfExists: true,
+        },
+        {
+          type: "add",
+          path: plop.renderString(`${featureDir}/test-util/index.ts`, answers),
+          templateFile: "templates/feature/test-util/index.ts.hbs",
+          skipIfExists: true,
+        },
+        {
+          type: "add",
           path: plop.renderString(indexPath, answers),
           templateFile: "templates/feature/index.ts.hbs",
           skipIfExists: true,

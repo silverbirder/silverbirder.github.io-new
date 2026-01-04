@@ -1,10 +1,9 @@
-import { jaMessages } from "@repo/message";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it } from "vitest";
-import { render } from "vitest-browser-react";
 
 import { SignIn } from "./sign-in";
 import * as stories from "./sign-in.stories";
+import { renderWithProvider } from "./test-util";
 
 const Stories = composeStories(stories);
 
@@ -20,18 +19,18 @@ describe("SignIn", () => {
   });
 
   it("shows the error message when provided", async () => {
-    await render(<SignIn status="forbidden" />);
+    await renderWithProvider(<SignIn status="forbidden" />);
 
     const alert = document.querySelector("[role='alert']");
     expect(alert?.textContent ?? "").not.toBe("");
   });
 
   it("renders the sign-out action when onSignOut is provided", async () => {
-    await render(<SignIn onSignOut={async () => {}} />);
+    await renderWithProvider(<SignIn onSignOut={async () => {}} />);
 
     const buttons = Array.from(document.querySelectorAll("button"));
-    const hasSignOut = buttons.some(
-      (node) => (node.textContent ?? "") === jaMessages.admin.signIn.signOut,
+    const hasSignOut = buttons.some((node) =>
+      (node.textContent ?? "").includes("サインアウト"),
     );
     expect(hasSignOut).toBe(true);
   });

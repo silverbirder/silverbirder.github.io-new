@@ -1,8 +1,7 @@
-import { Provider } from "@repo/ui";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it } from "vitest";
-import { render } from "vitest-browser-react";
 
+import { renderWithProvider } from "../test-util";
 import { NotebookImage } from "./notebook-image";
 import * as stories from "./notebook-image.stories";
 
@@ -20,10 +19,8 @@ describe("NotebookImage", () => {
   });
 
   it("renders an image with alt text", async () => {
-    await render(
-      <Provider>
-        <NotebookImage alt="Notebook sample" src="/test.png" />
-      </Provider>,
+    await renderWithProvider(
+      <NotebookImage alt="Notebook sample" src="/test.png" />,
     );
 
     const image = document.querySelector("img");

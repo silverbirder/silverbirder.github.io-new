@@ -1,9 +1,9 @@
 import { composeStories } from "@storybook/nextjs-vite";
-import { render } from "vitest-browser-react";
 import { describe, expect, it } from "vitest";
 
 import * as stories from "./{{kebabCase name}}.stories";
 import { {{pascalCase name}} } from "./{{kebabCase name}}";
+import { renderWithProvider } from "./test-util";
 
 const Stories = composeStories(stories);
 
@@ -19,7 +19,7 @@ describe("{{pascalCase name}}", () => {
   });
 
   it("renders provided children", async () => {
-    await render(
+    await renderWithProvider(
       <{{pascalCase name}}>Child content</{{pascalCase name}}>,
     );
 
