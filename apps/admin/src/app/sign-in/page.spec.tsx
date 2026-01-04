@@ -36,17 +36,12 @@ const loadPage = async ({
     getSession: vi.fn().mockResolvedValue(session),
   }));
 
-  vi.doMock("@/server/better-auth", () => ({
-    auth: {
-      api: {
-        signInSocial: vi.fn().mockResolvedValue({ url: "https://example.com" }),
-        signOut: vi.fn(),
-      },
-    },
+  vi.doMock("@/app/actions/sign-in", () => ({
+    handleSignIn: vi.fn(),
   }));
 
-  vi.doMock("next/headers", () => ({
-    headers: vi.fn().mockResolvedValue(new Headers()),
+  vi.doMock("@/app/actions/sign-out", () => ({
+    handleSignOut: vi.fn(),
   }));
 
   vi.doMock("next/navigation", () => ({

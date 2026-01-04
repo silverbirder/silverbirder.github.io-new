@@ -1,6 +1,8 @@
+import { TRPCError } from "@trpc/server";
 import { Octokit } from "octokit";
 
-import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import { auth } from "@/server/better-auth";
 
 type GitHubContentItem = {
   name: string;
@@ -13,8 +15,19 @@ const repositoryName = "silverbirder.github.io-new";
 const postsPath = "packages/content/posts";
 
 export const githubRouter = createTRPCRouter({
-  list: publicProcedure.query(async () => {
-    const octokit = new Octokit();
+  list: protectedProcedure.query(async ({ ctx }) => {
+    const { accessToken } = await auth.api.getAccessToken({
+      body: {
+        providerId: "github",
+      },
+      headers: ctx.headers,
+    });
+
+    if (!accessToken) {
+      throw new TRPCError({ code: "UNAUTHORIZED" });
+    }
+
+    const octokit = new Octokit({ auth: accessToken });
     const response = await octokit.request(
       "GET /repos/{owner}/{repo}/contents/{path}",
       {
