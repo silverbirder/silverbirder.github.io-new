@@ -24,7 +24,8 @@ describe("PostEditorLayout", () => {
         bodyValue=""
         onBodyChange={() => undefined}
         onTitleChange={() => undefined}
-        previewState={{ status: "empty" }}
+        previewContent={<p>Preview</p>}
+        previewIsLoading
         titleValue="Release notes"
       />,
     );
@@ -40,6 +41,6 @@ describe("PostEditorLayout", () => {
     expect(heading?.textContent ?? "").toContain("ブログ");
     expect(labels.some((label) => label.includes("タイトル"))).toBe(true);
     expect(labels.some((label) => label.includes("本文"))).toBe(true);
-    expect(preview?.textContent ?? "").toContain("Markdown");
+    expect(preview?.textContent ?? "").toContain("Preview");
   });
 });

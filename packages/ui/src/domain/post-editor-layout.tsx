@@ -7,19 +7,13 @@ import { useTranslations } from "next-intl";
 
 import { NotebookProse } from "./notebook-prose";
 
-type PostEditorPreviewState =
-  | { body: string; status: "raw" }
-  | { content: ReactNode; status: "ready" }
-  | { status: "empty" }
-  | { status: "error" }
-  | { status: "loading" };
-
 type Props = {
   bodyValue: string;
   isLoading?: boolean;
   onBodyChange: (value: string) => void;
   onTitleChange: (value: string) => void;
-  previewState: PostEditorPreviewState;
+  previewContent: null | ReactNode;
+  previewIsLoading?: boolean;
   titleValue: string;
 };
 
@@ -156,47 +150,17 @@ const Textarea = chakra("textarea", {
   },
 });
 
-const StatusText = chakra("p", {
-  base: {
-    fontSize: "0.95rem",
-    fontStyle: "italic",
-    margin: 0,
-  },
-});
-
-const PreviewRaw = chakra("pre", {
-  base: {
-    whiteSpace: "pre-wrap",
-  },
-});
-
 export const PostEditorLayout = ({
   bodyValue,
   isLoading = false,
   onBodyChange,
   onTitleChange,
-  previewState,
+  previewContent,
+  previewIsLoading,
   titleValue,
 }: Props) => {
   const t = useTranslations("admin.postEditor");
-  const isPreviewLoading = previewState.status === "loading";
-
-  const renderPreview = () => {
-    switch (previewState.status) {
-      case "empty":
-        return <StatusText>{t("previewEmpty")}</StatusText>;
-      case "error":
-        return <StatusText role="alert">{t("error")}</StatusText>;
-      case "loading":
-        return <StatusText>{t("loading")}</StatusText>;
-      case "raw":
-        return <PreviewRaw>{previewState.body}</PreviewRaw>;
-      case "ready":
-        return previewState.content;
-      default:
-        return null;
-    }
-  };
+  const isPreviewLoading = previewIsLoading ?? previewContent == null;
 
   return (
     <Main>
@@ -238,7 +202,7 @@ export const PostEditorLayout = ({
             aria-busy={isPreviewLoading}
             data-testid="post-editor-preview"
           >
-            {renderPreview()}
+            {previewContent ?? <p>{t("previewTitle")}</p>}
           </NotebookProse>
         </PreviewPanel>
       </EditorGrid>

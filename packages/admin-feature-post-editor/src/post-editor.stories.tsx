@@ -4,11 +4,20 @@ import React from "react";
 
 import { PostEditor } from "./post-editor";
 
+const defaultResolvePreview = async (source: string) => ({
+  compiledSource: `/*@jsxRuntime automatic @jsxImportSource react*/\nimport { jsx as _jsx } from "react/jsx-runtime";\nexport default function MDXContent(){return _jsx("p", { children: ${JSON.stringify(source || "preview")} });}`,
+  frontmatter: {},
+  scope: {},
+});
+
 type Props = React.ComponentProps<typeof PostEditor>;
 
 type Story = StoryObj<Props>;
 
 const meta = {
+  args: {
+    resolvePreview: defaultResolvePreview,
+  },
   component: PostEditor,
   title: "Feature/Admin/PostEditor",
 } satisfies Meta<typeof PostEditor>;

@@ -7,18 +7,16 @@ const meta = {
     bodyValue: "## Highlights\n\n- Clear structure\n- Short sections",
     onBodyChange: () => undefined,
     onTitleChange: () => undefined,
-    previewState: {
-      content: (
-        <>
-          <h2>Highlights</h2>
-          <ul>
-            <li>Clear structure</li>
-            <li>Short sections</li>
-          </ul>
-        </>
-      ),
-      status: "ready",
-    },
+    previewContent: (
+      <>
+        <h2>Highlights</h2>
+        <ul>
+          <li>Clear structure</li>
+          <li>Short sections</li>
+        </ul>
+      </>
+    ),
+    previewIsLoading: false,
     titleValue: "Release notes",
   },
   component: PostEditorLayout,
@@ -34,35 +32,28 @@ export const Ideal: Story = {};
 export const Empty: Story = {
   args: {
     bodyValue: "",
-    previewState: {
-      status: "empty",
-    },
+    previewContent: null,
     titleValue: "",
   },
 };
 
 export const Error: Story = {
   args: {
-    previewState: {
-      status: "error",
-    },
+    previewContent: <p role="alert">Failed to load preview</p>,
   },
 };
 
 export const Partial: Story = {
   args: {
     bodyValue: "",
-    previewState: {
-      status: "empty",
-    },
+    previewContent: null,
     titleValue: "Draft in progress",
   },
 };
 
 export const Loading: Story = {
   args: {
-    previewState: {
-      status: "loading",
-    },
+    previewContent: <p>Previous preview</p>,
+    previewIsLoading: true,
   },
 };
