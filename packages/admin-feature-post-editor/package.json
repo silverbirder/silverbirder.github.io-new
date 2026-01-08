@@ -16,7 +16,8 @@
     "@repo/ui": "workspace:*",
     "next": "16.1.0",
     "next-intl": "^4.7.0",
-    "next-mdx-remote-client": "^2.1.7"
+    "next-mdx-remote-client": "^2.1.7",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

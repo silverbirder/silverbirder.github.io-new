@@ -8,6 +8,9 @@ const renderPage = async () => {
   vi.doMock("@/app/actions/resolve-preview", () => ({
     resolvePreview: vi.fn(),
   }));
+  vi.doMock("@/app/actions/upload-image", () => ({
+    uploadImage: vi.fn(),
+  }));
 
   vi.doMock("@repo/admin-feature-post-editor", () => ({
     PostEditor: () =>

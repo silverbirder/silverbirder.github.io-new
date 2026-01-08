@@ -9,6 +9,9 @@ const defaultResolvePreview = async (source: string) => ({
   frontmatter: {},
   scope: {},
 });
+const defaultUploadImage = async () => ({
+  url: "https://res.cloudinary.com/demo/image/upload/sample.png",
+});
 
 type Props = React.ComponentProps<typeof PostEditor>;
 
@@ -17,6 +20,7 @@ type Story = StoryObj<Props>;
 const meta = {
   args: {
     resolvePreview: defaultResolvePreview,
+    uploadImage: defaultUploadImage,
   },
   component: PostEditor,
   title: "Feature/Admin/PostEditor",

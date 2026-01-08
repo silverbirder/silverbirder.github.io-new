@@ -1,3 +1,4 @@
+import { cloudinaryRouter } from "@/server/api/routers/cloudinary";
 import { githubRouter } from "@/server/api/routers/github";
 import { mdxRouter } from "@/server/api/routers/mdx";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
@@ -8,6 +9,7 @@ import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
+  cloudinary: cloudinaryRouter,
   github: githubRouter,
   mdx: mdxRouter,
 });

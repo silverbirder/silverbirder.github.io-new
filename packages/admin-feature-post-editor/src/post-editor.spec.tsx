@@ -13,6 +13,9 @@ describe("PostEditor", () => {
     frontmatter: {},
     scope: {},
   });
+  const uploadImage = async () => ({
+    url: "https://res.cloudinary.com/demo/image/upload/sample.png",
+  });
 
   it.each(Object.entries(Stories))("should %s snapshot", async (_, Story) => {
     const originalInnerHtml = document.body.innerHTML;
@@ -25,7 +28,9 @@ describe("PostEditor", () => {
   });
 
   it("renders labels and placeholders from messages", async () => {
-    await renderWithProvider(<PostEditor resolvePreview={resolvePreview} />);
+    await renderWithProvider(
+      <PostEditor resolvePreview={resolvePreview} uploadImage={uploadImage} />,
+    );
 
     const title = document.querySelector("h1");
     const labels = Array.from(document.querySelectorAll("label")).map(
@@ -50,7 +55,10 @@ describe("PostEditor", () => {
 
     try {
       await renderWithProvider(
-        <PostEditor resolvePreview={() => new Promise(() => undefined)} />,
+        <PostEditor
+          resolvePreview={() => new Promise(() => undefined)}
+          uploadImage={uploadImage}
+        />,
       );
 
       const bodyInput = document.querySelector(
@@ -68,6 +76,53 @@ describe("PostEditor", () => {
       expect(document.activeElement).toBe(bodyInput);
     } finally {
       vi.useRealTimers();
+    }
+  });
+
+  it("uploads dropped images and inserts markdown", async () => {
+    const uploadUrl =
+      "https://res.cloudinary.com/example/image/upload/sample.png";
+    const uploadMock = vi.fn().mockResolvedValue({ url: uploadUrl });
+
+    try {
+      await renderWithProvider(
+        <PostEditor resolvePreview={resolvePreview} uploadImage={uploadMock} />,
+      );
+
+      const dropzone = document.querySelector(
+        "[data-testid='post-editor-body-dropzone']",
+      );
+
+      expect(dropzone).not.toBeNull();
+
+      const file = new File(["dummy"], "sample-image.png", {
+        type: "image/png",
+      });
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      const dropEvent = new Event("drop", { bubbles: true }) as DragEvent;
+      Object.defineProperty(dropEvent, "dataTransfer", {
+        value: dataTransfer,
+      });
+
+      dropzone?.dispatchEvent(dropEvent);
+
+      await expect
+        .poll(() => {
+          const textarea = document.querySelector(
+            "textarea[name='body']",
+          ) as HTMLTextAreaElement | null;
+          return textarea?.value ?? "";
+        })
+        .toContain(uploadUrl);
+
+      expect(uploadMock).toHaveBeenCalledOnce();
+      const formData = uploadMock.mock.calls[0]?.[0] as FormData | undefined;
+      const uploadedFile = formData?.get("file");
+      expect(uploadedFile instanceof File).toBe(true);
+      expect((uploadedFile as File | null)?.name).toBe("sample-image.png");
+    } finally {
+      uploadMock.mockReset();
     }
   });
 });

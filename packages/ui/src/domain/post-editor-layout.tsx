@@ -1,6 +1,11 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type {
+  HTMLAttributes,
+  InputHTMLAttributes,
+  ReactNode,
+  Ref,
+} from "react";
 
 import { chakra } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
@@ -8,7 +13,15 @@ import { useTranslations } from "next-intl";
 import { NotebookProse } from "./notebook-prose";
 
 type Props = {
+  bodyDropzoneInputProps?: InputHTMLAttributes<HTMLInputElement> & {
+    ref?: Ref<HTMLInputElement>;
+  };
+  bodyDropzoneProps?: HTMLAttributes<HTMLDivElement> & {
+    ref?: Ref<HTMLDivElement>;
+  };
+  bodyTextareaRef?: Ref<HTMLTextAreaElement>;
   bodyValue: string;
+  isBodyDragActive?: boolean;
   isLoading?: boolean;
   onBodyChange: (value: string) => void;
   onTitleChange: (value: string) => void;
@@ -112,6 +125,13 @@ const FieldGroup = chakra("label", {
   },
 });
 
+const BodyDropzone = chakra("div", {
+  base: {
+    display: "flex",
+    flexDirection: "column",
+  },
+});
+
 const Input = chakra("input", {
   base: {
     _focusVisible: {
@@ -151,7 +171,11 @@ const Textarea = chakra("textarea", {
 });
 
 export const PostEditorLayout = ({
+  bodyDropzoneInputProps,
+  bodyDropzoneProps,
+  bodyTextareaRef,
   bodyValue,
+  isBodyDragActive = false,
   isLoading = false,
   onBodyChange,
   onTitleChange,
@@ -186,14 +210,24 @@ export const PostEditorLayout = ({
           </FieldGroup>
           <FieldGroup>
             {t("contentLabel")}
-            <Textarea
-              data-testid="post-editor-body"
-              disabled={isLoading}
-              name="body"
-              onChange={(event) => onBodyChange(event.target.value)}
-              placeholder={t("contentPlaceholder")}
-              value={bodyValue}
-            />
+            <BodyDropzone
+              {...bodyDropzoneProps}
+              data-testid="post-editor-body-dropzone"
+            >
+              {bodyDropzoneInputProps ? (
+                <input {...bodyDropzoneInputProps} hidden />
+              ) : null}
+              <Textarea
+                borderColor={isBodyDragActive ? "fg" : undefined}
+                data-testid="post-editor-body"
+                disabled={isLoading}
+                name="body"
+                onChange={(event) => onBodyChange(event.target.value)}
+                placeholder={t("contentPlaceholder")}
+                ref={bodyTextareaRef}
+                value={bodyValue}
+              />
+            </BodyDropzone>
           </FieldGroup>
         </EditorPanel>
         <PreviewPanel>
