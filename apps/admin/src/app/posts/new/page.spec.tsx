@@ -5,6 +5,10 @@ import { describe, expect, it, vi } from "vitest";
 const renderPage = async () => {
   vi.resetModules();
 
+  vi.doMock("@/app/actions/resolve-preview", () => ({
+    resolvePreview: vi.fn(),
+  }));
+
   vi.doMock("@repo/admin-feature-post-editor", () => ({
     PostEditor: () =>
       React.createElement("div", {

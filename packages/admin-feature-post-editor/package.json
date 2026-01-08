@@ -12,14 +12,14 @@
     "test": "vitest --run"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.30.0",
+    "@repo/message": "workspace:*",
     "@repo/ui": "workspace:*",
     "next": "16.1.0",
-    "next-intl": "^4.7.0"
+    "next-intl": "^4.7.0",
+    "next-mdx-remote-client": "^2.1.7"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/message": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
     "@storybook/nextjs-vite": "^10.1.11",

@@ -25,6 +25,7 @@
     "better-auth": "^1.4.10",
     "next": "16.1.0",
     "next-intl": "^4.7.0",
+    "next-mdx-remote-client": "^2.1.7",
     "octokit": "^4.1.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

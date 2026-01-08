@@ -1,1 +1,1 @@
-export * from "./post-editor";
+export { PostEditor } from "./post-editor";

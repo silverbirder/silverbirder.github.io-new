@@ -5,10 +5,18 @@ import { Provider } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { render } from "vitest-browser-react";
 
-export const renderWithProvider = (ui: ReactNode) => {
+type RenderWithProviderOptions = {
+  locale?: string;
+  messages?: typeof jaMessages;
+};
+
+export const renderWithProvider = (
+  ui: ReactNode,
+  { locale = "ja", messages = jaMessages }: RenderWithProviderOptions = {},
+) => {
   return render(
     <Provider>
-      <NextIntlClientProvider locale="ja" messages={jaMessages}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         {ui}
       </NextIntlClientProvider>
     </Provider>,
