@@ -8,11 +8,16 @@ import { useDropzone } from "react-dropzone";
 import { usePostEditorPresenter } from "./post-editor.presenter";
 
 type Props = {
+  resolveLinkTitles: (source: string) => Promise<string>;
   resolvePreview: (source: string) => Promise<SerializeResult>;
   uploadImage: (formData: FormData) => Promise<{ url: string }>;
 };
 
-export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
+export const PostEditor = ({
+  resolveLinkTitles,
+  resolvePreview,
+  uploadImage,
+}: Props) => {
   const {
     body,
     isPreviewLoading,
@@ -22,12 +27,21 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
     title,
   } = usePostEditorPresenter({ resolvePreview });
   const [isUploading, setIsUploading] = useState(false);
+  const [isResolvingLinks, setIsResolvingLinks] = useState(false);
   const bodyRef = useRef(body);
   const bodyTextareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
     bodyRef.current = body;
   }, [body]);
+
+  const handleBodyChange = useCallback(
+    (value: string) => {
+      bodyRef.current = value;
+      onBodyChange(value);
+    },
+    [onBodyChange],
+  );
 
   const uploadImageToCloudinary = useCallback(
     async (file: File) => {
@@ -65,7 +79,9 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
       const currentBody = bodyRef.current;
 
       if (!textarea) {
-        onBodyChange(`${currentBody}${currentBody ? "\n\n" : ""}${snippet}`);
+        handleBodyChange(
+          `${currentBody}${currentBody ? "\n\n" : ""}${snippet}`,
+        );
         return;
       }
 
@@ -79,7 +95,7 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
       const suffix = needsTrailingSpace ? "\n" : "";
       const nextBody = `${before}${prefix}${snippet}${suffix}${after}`;
 
-      onBodyChange(nextBody);
+      handleBodyChange(nextBody);
 
       requestAnimationFrame(() => {
         const cursor = before.length + prefix.length + snippet.length;
@@ -87,7 +103,7 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
         textarea.setSelectionRange(cursor, cursor);
       });
     },
-    [onBodyChange],
+    [handleBodyChange],
   );
 
   const handleDrop = useCallback(
@@ -132,6 +148,44 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
   );
   const { getInputProps, getRootProps, isDragActive } =
     useDropzone(dropzoneConfig);
+  const isBodyEmpty = body.trim().length === 0;
+
+  const handleResolveLinkTitles = useCallback(async () => {
+    if (isResolvingLinks || isBodyEmpty) {
+      return;
+    }
+
+    const currentBody = bodyRef.current;
+    if (currentBody.trim().length === 0) {
+      return;
+    }
+
+    const textarea = bodyTextareaRef.current;
+    const selectionStart = textarea?.selectionStart ?? null;
+    const selectionEnd = textarea?.selectionEnd ?? null;
+
+    setIsResolvingLinks(true);
+
+    try {
+      const resolved = await resolveLinkTitles(currentBody);
+      if (typeof resolved === "string" && resolved !== currentBody) {
+        handleBodyChange(resolved);
+      }
+    } catch {
+      // ignore resolve errors to avoid breaking the editor flow
+    } finally {
+      setIsResolvingLinks(false);
+      requestAnimationFrame(() => {
+        if (!textarea) {
+          return;
+        }
+        textarea.focus();
+        if (selectionStart !== null && selectionEnd !== null) {
+          textarea.setSelectionRange(selectionStart, selectionEnd);
+        }
+      });
+    }
+  }, [handleBodyChange, isBodyEmpty, isResolvingLinks, resolveLinkTitles]);
 
   return (
     <PostEditorLayout
@@ -140,8 +194,9 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
       bodyTextareaRef={bodyTextareaRef}
       bodyValue={body}
       isBodyDragActive={isDragActive}
-      isLoading={isUploading}
-      onBodyChange={onBodyChange}
+      isLoading={isUploading || isResolvingLinks}
+      onBodyChange={handleBodyChange}
+      onResolveLinkTitles={handleResolveLinkTitles}
       onTitleChange={onTitleChange}
       previewContent={
         previewSource && "compiledSource" in previewSource ? (
@@ -149,6 +204,8 @@ export const PostEditor = ({ resolvePreview, uploadImage }: Props) => {
         ) : null
       }
       previewIsLoading={isPreviewLoading}
+      resolveLinkTitlesDisabled={isBodyEmpty || isUploading || isResolvingLinks}
+      resolveLinkTitlesIsLoading={isResolvingLinks}
       titleValue={title}
     />
   );

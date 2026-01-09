@@ -8,6 +8,7 @@ import { renderWithProvider } from "./test-util";
 const Stories = composeStories(stories);
 
 describe("PostEditor", () => {
+  const resolveLinkTitles = async (source: string) => source;
   const resolvePreview = async (source: string) => ({
     compiledSource: `/*@jsxRuntime automatic @jsxImportSource react*/\nimport { jsx as _jsx } from "react/jsx-runtime";\nexport default function MDXContent(){return _jsx("p", { children: ${JSON.stringify(source)} });}`,
     frontmatter: {},
@@ -29,7 +30,11 @@ describe("PostEditor", () => {
 
   it("renders labels and placeholders from messages", async () => {
     await renderWithProvider(
-      <PostEditor resolvePreview={resolvePreview} uploadImage={uploadImage} />,
+      <PostEditor
+        resolveLinkTitles={resolveLinkTitles}
+        resolvePreview={resolvePreview}
+        uploadImage={uploadImage}
+      />,
     );
 
     const title = document.querySelector("h1");
@@ -56,6 +61,7 @@ describe("PostEditor", () => {
     try {
       await renderWithProvider(
         <PostEditor
+          resolveLinkTitles={resolveLinkTitles}
           resolvePreview={() => new Promise(() => undefined)}
           uploadImage={uploadImage}
         />,
@@ -86,7 +92,11 @@ describe("PostEditor", () => {
 
     try {
       await renderWithProvider(
-        <PostEditor resolvePreview={resolvePreview} uploadImage={uploadMock} />,
+        <PostEditor
+          resolveLinkTitles={resolveLinkTitles}
+          resolvePreview={resolvePreview}
+          uploadImage={uploadMock}
+        />,
       );
 
       const dropzone = document.querySelector(

@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { createCallerFactory } from "@/server/api/trpc";
 
@@ -40,6 +40,11 @@ import { mdxRouter } from "./mdx";
 const createCaller = createCallerFactory(mdxRouter);
 
 describe("mdxRouter.preview", () => {
+  afterEach(() => {
+    serialize.mockClear();
+    vi.unstubAllGlobals();
+  });
+
   it("serializes markdown content", async () => {
     serialize.mockResolvedValue({
       compiledSource: "<p>preview</p>",

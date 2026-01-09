@@ -29,6 +29,8 @@
       "titlePlaceholder": "記事タイトルを入力",
       "contentLabel": "本文 (Markdown)",
       "contentPlaceholder": "ここに Markdown を書いてください。",
+      "linkUpdateAction": "リンクテキスト更新",
+      "linkUpdateLoading": "リンクテキスト更新中...",
       "previewEmpty": "Markdown を入力するとプレビューが表示されます。",
       "loading": "エディターを準備しています...",
       "error": "プレビューの生成に失敗しました。"

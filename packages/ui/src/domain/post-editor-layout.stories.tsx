@@ -6,6 +6,7 @@ const meta = {
   args: {
     bodyValue: "## Highlights\n\n- Clear structure\n- Short sections",
     onBodyChange: () => undefined,
+    onResolveLinkTitles: () => undefined,
     onTitleChange: () => undefined,
     previewContent: (
       <>
@@ -55,5 +56,6 @@ export const Loading: Story = {
   args: {
     previewContent: <p>Previous preview</p>,
     previewIsLoading: true,
+    resolveLinkTitlesIsLoading: true,
   },
 };

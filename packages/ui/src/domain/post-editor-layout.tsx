@@ -24,9 +24,12 @@ type Props = {
   isBodyDragActive?: boolean;
   isLoading?: boolean;
   onBodyChange: (value: string) => void;
+  onResolveLinkTitles?: () => void;
   onTitleChange: (value: string) => void;
   previewContent: null | ReactNode;
   previewIsLoading?: boolean;
+  resolveLinkTitlesDisabled?: boolean;
+  resolveLinkTitlesIsLoading?: boolean;
   titleValue: string;
 };
 
@@ -59,6 +62,13 @@ const HeaderRow = chakra("div", {
   },
 });
 
+const HeaderActions = chakra("div", {
+  base: {
+    display: "flex",
+    gap: "0.75rem",
+  },
+});
+
 const Title = chakra("h1", {
   base: {
     fontSize: { base: "2rem", md: "2.5rem" },
@@ -72,6 +82,34 @@ const Description = chakra("p", {
     color: "fg.muted",
     fontSize: "md",
     maxWidth: "60ch",
+  },
+});
+
+const ActionButton = chakra("button", {
+  base: {
+    _disabled: {
+      cursor: "not-allowed",
+      opacity: 0.5,
+    },
+    _focusVisible: {
+      boxShadow: "0 0 0 2px var(--chakra-colors-border-muted)",
+      outline: "none",
+    },
+    _hover: {
+      background: "bg.muted",
+    },
+    alignItems: "center",
+    background: "bg",
+    borderColor: "border.muted",
+    borderRadius: "999px",
+    borderWidth: "1px",
+    color: "fg",
+    display: "inline-flex",
+    fontSize: "0.85rem",
+    fontWeight: "600",
+    paddingBlock: "0.4rem",
+    paddingInline: "1rem",
+    transition: "background 0.2s ease",
   },
 });
 
@@ -178,9 +216,12 @@ export const PostEditorLayout = ({
   isBodyDragActive = false,
   isLoading = false,
   onBodyChange,
+  onResolveLinkTitles,
   onTitleChange,
   previewContent,
   previewIsLoading,
+  resolveLinkTitlesDisabled = false,
+  resolveLinkTitlesIsLoading = false,
   titleValue,
 }: Props) => {
   const t = useTranslations("admin.postEditor");
@@ -191,6 +232,20 @@ export const PostEditorLayout = ({
       <Header>
         <HeaderRow>
           <Title>{t("title")}</Title>
+          {onResolveLinkTitles ? (
+            <HeaderActions>
+              <ActionButton
+                data-testid="post-editor-resolve-links"
+                disabled={resolveLinkTitlesDisabled}
+                onClick={onResolveLinkTitles}
+                type="button"
+              >
+                {resolveLinkTitlesIsLoading
+                  ? t("linkUpdateLoading")
+                  : t("linkUpdateAction")}
+              </ActionButton>
+            </HeaderActions>
+          ) : null}
         </HeaderRow>
         <Description>{t("description")}</Description>
       </Header>
