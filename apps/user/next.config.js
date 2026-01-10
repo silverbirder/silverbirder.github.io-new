@@ -2,6 +2,8 @@ import createMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
 import process from "node:process";
 
+import { env } from "./src/env.js";
+
 /** @type {import('next').NextConfig} */
 const config = {
   assetPrefix: process.env.GITHUB_PAGES_BASE_PATH || "",
@@ -38,5 +40,7 @@ const withMDX = createMDX({
 });
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+void env;
 
 export default withNextIntl(withMDX(config));

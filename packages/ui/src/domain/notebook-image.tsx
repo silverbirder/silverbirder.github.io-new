@@ -8,7 +8,7 @@ import { useCallback, useRef } from "react";
 type Props = ComponentPropsWithoutRef<"img">;
 
 export const NotebookImage = ({ onLoad, ...props }: Props) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLSpanElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
   const alignToGrid = useCallback(() => {
@@ -41,7 +41,7 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
   );
 
   return (
-    <div ref={wrapperRef}>
+    <chakra.span display="block" ref={wrapperRef}>
       <chakra.img
         alt={props.alt ?? ""}
         decoding={props.decoding ?? "async"}
@@ -53,6 +53,6 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
         width="100%"
         {...props}
       />
-    </div>
+    </chakra.span>
   );
 };

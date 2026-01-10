@@ -18,6 +18,14 @@ function inWhere<T extends string>(selector: T): T {
 
 export const NotebookProse = chakra("div", {
   base: {
+    "& .oembed-card": {
+      marginBottom: "2rem",
+      marginTop: "2rem",
+    },
+    "& .oembed-card iframe": {
+      maxWidth: "100%",
+      width: "100%",
+    },
     "--notebook-line-height": NOTEBOOK_LINE_HEIGHT,
     backgroundColor: "bg",
     backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} var(--notebook-line-height))`,

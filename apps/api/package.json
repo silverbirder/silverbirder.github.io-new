@@ -1,25 +1,30 @@
 {
-  "name": "@repo/metadata",
+  "name": "api",
   "version": "0.1.0",
   "private": true,
-  "exports": {
-    ".": "./src/index.ts"
-  },
+  "type": "module",
   "scripts": {
-    "check-types": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0",
+    "build": "next build",
+    "check-types": "next typegen && tsc --noEmit",
+    "dev": "next dev --port 3002",
+    "lint": "eslint --max-warnings 0",
+    "start": "next start",
     "test": "vitest --run"
   },
   "dependencies": {
-    "@repo/util": "workspace:*"
+    "iconv-lite": "^0.6.3",
+    "next": "16.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
     "@types/node": "^22.19.5",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
     "eslint": "^9.39.2",
-    "next": "16.1.0",
     "typescript": "5.9.2",
     "vitest": "^4.0.16"
   }

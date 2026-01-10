@@ -9,7 +9,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_OEMBED_API_URL: z.string().optional(),
   },
 
   /**
@@ -29,8 +29,8 @@ export const env = createEnv({
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     CLOUDINARY_FOLDER: process.env.CLOUDINARY_FOLDER,
     CLOUDINARY_URL: process.env.CLOUDINARY_URL,
+    NEXT_PUBLIC_OEMBED_API_URL: process.env.NEXT_PUBLIC_OEMBED_API_URL,
     NODE_ENV: process.env.NODE_ENV,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
    * Specify your server-side environment variables schema here. This way you can ensure the app

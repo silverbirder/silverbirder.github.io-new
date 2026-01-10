@@ -2,7 +2,7 @@ import { siteDescription, siteName } from "@repo/metadata";
 import { buildSiteUrl, toDate } from "@repo/util";
 import { Feed } from "feed";
 
-import { getPostSlugs } from "@/libs";
+import { getPostFrontmatter, getPostSlugs } from "@/libs";
 
 export const dynamic = "force-static";
 
@@ -14,8 +14,7 @@ export type RssItem = {
 };
 
 const loadPostFrontmatter = async (slug: string) => {
-  const { frontmatter } = await import(`@repo/content/posts/${slug}.md`);
-  return frontmatter;
+  return getPostFrontmatter(slug);
 };
 
 export const getRssItems = async (

@@ -63,6 +63,9 @@ describe("mdxRouter.preview", () => {
       options: {
         disableExports: true,
         disableImports: true,
+        mdxOptions: expect.objectContaining({
+          remarkPlugins: expect.any(Array),
+        }),
       },
       source: "# Preview",
     });

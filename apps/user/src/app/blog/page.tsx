@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getPostSlugs } from "@/libs";
+import { getPostFrontmatter, getPostSlugs } from "@/libs";
 
 type PostSummary = {
   publishedAt: string;
@@ -9,8 +9,7 @@ type PostSummary = {
 };
 
 const loadPostFrontmatter = async (slug: string) => {
-  const { frontmatter } = await import(`@repo/content/posts/${slug}.md`);
-  return frontmatter;
+  return getPostFrontmatter(slug);
 };
 
 export const getPostList = async (

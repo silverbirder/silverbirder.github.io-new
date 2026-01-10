@@ -10,6 +10,12 @@ const contentDir = path.resolve(
   "posts",
 );
 
+export type PostFrontmatter = {
+  publishedAt?: string;
+  summary?: string;
+  title?: string;
+};
+
 export type PostSlug = {
   publishedAt: string;
   slug: string;
@@ -52,25 +58,31 @@ export const getPostSlugs = async () => {
     .map(({ publishedAt, slug }) => ({ publishedAt, slug }));
 };
 
-const extractPublishedAt = (content: string) => {
-  const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) {
-    return null;
-  }
+export const getPostFrontmatter = async (
+  slug: string,
+): Promise<PostFrontmatter> => {
+  const content = await readFile(path.join(contentDir, `${slug}.md`), "utf8");
+  return {
+    publishedAt: extractFrontmatterValue(content, "publishedAt") ?? undefined,
+    summary: extractFrontmatterValue(content, "summary") ?? undefined,
+    title: extractFrontmatterValue(content, "title") ?? undefined,
+  };
+};
 
-  const frontmatter = match[1];
+const extractFrontmatterValue = (content: string, key: string) => {
+  const frontmatter = extractFrontmatterBlock(content);
   if (!frontmatter) {
     return null;
   }
 
   const line = frontmatter
     .split(/\r?\n/)
-    .find((entry) => entry.trim().startsWith("publishedAt:"));
+    .find((entry) => entry.trim().startsWith(`${key}:`));
   if (!line) {
     return null;
   }
 
-  const rawValue = line.replace(/^\s*publishedAt:\s*/, "").trim();
+  const rawValue = line.replace(new RegExp(`^\\s*${key}:\\s*`), "").trim();
   if (rawValue === "") {
     return null;
   }
@@ -81,6 +93,19 @@ const extractPublishedAt = (content: string) => {
   }
 
   return rawValue;
+};
+
+const extractFrontmatterBlock = (content: string) => {
+  const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) {
+    return null;
+  }
+
+  return match[1] ?? null;
+};
+
+const extractPublishedAt = (content: string) => {
+  return extractFrontmatterValue(content, "publishedAt");
 };
 
 const toDateValue = (publishedAt: string) => {
