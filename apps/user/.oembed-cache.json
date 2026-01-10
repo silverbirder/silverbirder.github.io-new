@@ -1,21 +1,21 @@
 {
   "entries": {
     "https://fequest-admin.vercel.app/": {
-      "fetchedAt": 1768050375330,
+      "fetchedAt": 1768047168538,
       "payload": {
         "description": "機能リクエスト・共有プラットフォームの管理",
         "favicon": "https://fequest-admin.vercel.app/icon/48",
         "hostname": "fequest-admin.vercel.app",
         "title": "Fequest Admin",
         "type": "link",
-        "url": "https://fequest-admin.vercel.app/sign-in?from=%2F"
+        "url": "https://fequest-admin.vercel.app/"
       }
     },
     "https://zokeifile.musabi.ac.jp/%E8%89%B2%E8%AA%BF/": {
-      "fetchedAt": 1768050375330,
+      "fetchedAt": 1768047188039,
       "payload": {
         "description": "造形ファイルは、武蔵野美術大学がインターネット上で公開している、美術とデザインに用いられる素材や道具についての用語や技法の情報を提供する知識モジュール群です。",
-        "favicon": "https://zokeifile.musabi.ac.jp/favicon.ico",
+        "favicon": "https://zokeifile.musabi.ac.jp/apple-touch-icon.png",
         "hostname": "zokeifile.musabi.ac.jp",
         "image": "https://zokeifile.musabi.ac.jp/facebook.png",
         "siteName": "武蔵野美術大学 造形ファイル",
@@ -25,46 +25,36 @@
       }
     },
     "https://tee-room.info/color/tone-v.html": {
-      "fetchedAt": 1768050375332,
+      "fetchedAt": 1768049149932,
       "payload": {
-        "description": "カラーコーディネート、ファッションイメージのサイト。イラストによる色彩/パーソナルカラー/ファッションイメージの解説をいたします。pccsトーンマップの各トーンサークル/vトーンにおける24色のトーン番号・PCCS記号・マンセル値・JIS色名・和洋色名・任意のRGB値やCMYK値などをご紹介するページです。",
-        "favicon": "https://tee-room.info/color/irouse-ci.png",
         "hostname": "tee-room.info",
-        "image": "https://tee-room.info/color/main-menu/logo.jpg",
         "title": "PCCS-tone/ビビッド・トーン - IROUSE/DATABASE・Color harmony",
         "type": "link",
         "url": "https://tee-room.info/color/tone-v.html"
       }
     },
     "https://tee-room.info/color/tone-p.html": {
-      "fetchedAt": 1768050375333,
+      "fetchedAt": 1768049149926,
       "payload": {
-        "description": "カラーコーディネート、ファッションイメージのサイト。イラストによる色彩/パーソナルカラー/ファッションイメージの解説をいたします。pccsトーンマップの各トーンサークル/pトーンにおける24色のトーン番号・PCCS記号・マンセル値・JIS色名・和洋色名・任意のRGB値やCMYK値などをご紹介するページです。",
-        "favicon": "https://tee-room.info/color/irouse-ci.png",
         "hostname": "tee-room.info",
-        "image": "https://tee-room.info/color/main-menu/logo.jpg",
         "title": "PCCS-tone/ペール・トーン - IROUSE/DATABASE・Color harmony",
         "type": "link",
         "url": "https://tee-room.info/color/tone-p.html"
       }
     },
     "https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Values/color_value/oklch": {
-      "fetchedAt": 1768050375333,
+      "fetchedAt": 1768049149918,
       "payload": {
-        "description": "oklch() 関数記法は、指定された色を Oklch 色空間で表現するものです。これは oklab() と同じ L 軸を持っていますが、極座標系の C （彩度）と H （色相）を使用します。",
-        "favicon": "https://developer.mozilla.org/favicon.ico",
         "hostname": "developer.mozilla.org",
-        "image": "https://developer.mozilla.org/mdn-social-share.d893525a4fb5fb1f67a2.png",
-        "siteName": "MDN Web Docs",
         "title": "oklch() - CSS | MDN",
         "type": "link",
         "url": "https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Values/color_value/oklch"
       }
     },
     "https://fequest.vercel.app/8": {
-      "fetchedAt": 1768050375334,
+      "fetchedAt": 1768046611511,
       "payload": {
-        "description": "ほしいとつくるを共有するプラットフォーム。\nユーザーがほしい機能をリクエストし、開発者がそれをつくるにつなげる、みんなでプロダクトを育てる場所です。",
+        "description": "ほしいとつくるを共有するプラットフォーム。\r\nユーザーがほしい機能をリクエストし、開発者がそれをつくるにつなげる、みんなでプロダクトを育てる場所です。",
         "favicon": "https://fequest.vercel.app/icon/48",
         "hostname": "fequest.vercel.app",
         "image": "https://fequest.vercel.app/8/opengraph-image",
@@ -74,7 +64,7 @@
       }
     },
     "https://fequest.vercel.app": {
-      "fetchedAt": 1768050375335,
+      "fetchedAt": 1768047190145,
       "payload": {
         "description": "ほしいとつくるを共有するプラットフォーム",
         "favicon": "https://fequest.vercel.app/icon/48",
@@ -82,7 +72,7 @@
         "image": "https://fequest.vercel.app/opengraph-image?6ba073823487e0c8",
         "title": "Fequest",
         "type": "link",
-        "url": "https://fequest.vercel.app/"
+        "url": "https://fequest.vercel.app"
       }
     },
     "https://www.ruum.me/shop/default.aspx": {
@@ -98,10 +88,10 @@
       }
     },
     "https://github.com/silverbirder/fequest": {
-      "fetchedAt": 1768050375335,
+      "fetchedAt": 1768047190866,
       "payload": {
         "description": "Contribute to silverbirder/fequest development by creating an account on GitHub.",
-        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "favicon": "https://github.com/fluidicon.png",
         "hostname": "github.com",
         "image": "https://opengraph.githubassets.com/7cdb367ac440b1fcbd55e6e51c028edd1f4543ee335d0c9459d5ad03ab70976a/silverbirder/fequest",
         "siteName": "GitHub",
@@ -111,9 +101,9 @@
       }
     },
     "https://storybook.js.org/docs/writing-tests/accessibility-testing": {
-      "fetchedAt": 1768050375673,
+      "fetchedAt": 1768047189476,
       "payload": {
-        "description": "Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It's open source and free.",
+        "description": "Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It&#x27;s open source and free.",
         "favicon": "https://storybook.js.org/icon.svg",
         "hostname": "storybook.js.org",
         "image": "https://storybook.js.org/opengraph-image.jpg?841db310ba5a3a1e",
@@ -124,8 +114,17 @@
       }
     },
     "https://www.satofull.jp/products/detail.php?product_id=1213874": {
-      "fetchedAt": 1768050376835,
-      "payload": null
+      "fetchedAt": 1768047751948,
+      "payload": {
+        "description": "ふるさと納税なら「さとふる」 | 福岡県大野城市 | 【大反響!】【1000g】博多本場もつ鍋　醤油味「2人前×5回分」。ふるさと納税のお申込み・お支払がインターネットで簡単に。初心者の方にも、制度や特産品をわかりやすくご紹介。寄付金控除額のシミュレーションも充実。",
+        "favicon": "https://www.satofull.jp/logo_icon.png",
+        "hostname": "www.satofull.jp",
+        "image": "https://www.satofull.jp/upload/save_image/289/028900064/1213874_01_1671533058.jpg",
+        "siteName": "さとふる",
+        "title": "【大反響!】【1000g】博多本場もつ鍋　醤油味「2人前×5回分」 | 福岡県大野城市 | ふるさと納税サイト「さとふる」",
+        "type": "link",
+        "url": "https://www.satofull.jp/products/detail.php?product_id=1213874"
+      }
     },
     "https://silverbirder.github.io/blog/contents/20251207/": {
       "fetchedAt": 1768050376854,
@@ -152,11 +151,10 @@
       }
     },
     "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/index.html": {
-      "fetchedAt": 1768050376854,
+      "fetchedAt": 1768048495637,
       "payload": {
         "favicon": "https://www.maff.go.jp/j/shared_new/shared/images/maff.ico",
         "hostname": "www.maff.go.jp",
-        "image": "https://www.maff.go.jp/j/shared_new/shared/images/logo_ci.gif",
         "title": "うちの郷土料理：農林水産省",
         "type": "link",
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/index.html"
@@ -225,7 +223,7 @@
       }
     },
     "https://www.youtube.com/watch?v=4E1J1un37Rw": {
-      "fetchedAt": 1768050377794,
+      "fetchedAt": 1768048509198,
       "payload": {
         "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/4E1J1un37Rw?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"シーラック㈱がんばれバリ勝男クン！編(グイッとひといき)\"></iframe>",
         "type": "oembed",
@@ -265,10 +263,10 @@
       }
     },
     "https://www.pref.shizuoka.jp/sangyoshigoto/nogyo/gakkotaiiku/1027662.html": {
-      "fetchedAt": 1768050377795,
+      "fetchedAt": 1768048509306,
       "payload": {
         "description": "静岡県公式ホームページ",
-        "favicon": "https://www.pref.shizuoka.jp/_template_/_site_/_default_/_res/favicon.ico",
+        "favicon": "https://www.pref.shizuoka.jp/_template_/_site_/_default_/_res/images/apple-touch-icon-precomposed.png",
         "hostname": "www.pref.shizuoka.jp",
         "image": "https://www.pref.shizuoka.jp/_template_/_site_/_default_/_res/images/sns/ogimage.png",
         "siteName": "静岡県公式ホームページ",
@@ -317,7 +315,7 @@
       }
     },
     "https://silverbirder.github.io/": {
-      "fetchedAt": 1768050378774,
+      "fetchedAt": 1768024544520,
       "payload": {
         "description": "@silverbirderのジブンノート",
         "favicon": "https://silverbirder.github.io/icon-192x192.png",
@@ -356,11 +354,14 @@
       }
     },
     "https://www.lg.com/jp/monitors/fhd-qhd/28mq780-b/": {
-      "fetchedAt": 1768050378790,
+      "fetchedAt": 1768047444416,
       "payload": {
-        "favicon": "https://www.lg.com/favicon.ico",
+        "description": "28MQ780-Bの製品情報。製品画像、レビュー、スペックなど詳しくはこちら。27.6インチ 16:18 DualUpモニター",
+        "favicon": "https://www.lg.com/etc.clientlibs/lge/clientlibs/clientlib-site/resources/images/favicons/apple-touch-icon.png",
         "hostname": "www.lg.com",
-        "title": "Access Denied",
+        "image": "https://www.lg.com/content/dam/channel/wcms/jp/images/monitor/28mq780-b_ajl_ejjp_jp_c/28MQ780-B_AJL_EJJP_JP_C-450x450.jpg",
+        "siteName": "LG JP",
+        "title": "27.6インチ 16:18 DualUpモニター - 28MQ780-B | LG JP",
         "type": "link",
         "url": "https://www.lg.com/jp/monitors/fhd-qhd/28mq780-b/"
       }
@@ -416,11 +417,19 @@
       }
     },
     "https://www.muji.com/jp/ja/store/cmdty/detail/4550512865797": {
-      "fetchedAt": 1768050378797,
-      "payload": null
+      "fetchedAt": 1768046105049,
+      "payload": {
+        "description": "業務用のかごは、丈夫で持ち運びしやすく汚れても水で洗えます。使わないときは重ねて収納できるため場所をとりません。普段使いのかごとしてとても便利です。マイバッグ・エコバッグ・トートバッグの通販なら無印良品　公式ネットストア。",
+        "hostname": "www.muji.com",
+        "image": "https://www.muji.com/public/media/img/item/4550512865797_org.jpg",
+        "siteName": "無印良品",
+        "title": "ポリプロピレン　買い物かご | 無印良品",
+        "type": "link",
+        "url": "https://www.muji.com/jp/ja/store/cmdty/detail/4550512865797"
+      }
     },
     "https://www.drinkmate.jp/products.php": {
-      "fetchedAt": 1768050378798,
+      "fetchedAt": 1768045840859,
       "payload": {
         "favicon": "https://www.drinkmate.jp/assets/img/favicon.png",
         "hostname": "www.drinkmate.jp",
@@ -431,10 +440,9 @@
       }
     },
     "https://www.pixela.co.jp/products/xit/": {
-      "fetchedAt": 1768050378799,
+      "fetchedAt": 1768046104691,
       "payload": {
         "description": "「Xit（サイト）」は見たものをシェアして、つながり、きらめきが交差するモーメントストリームサービス。テレビのライブ感、ネットの探索性、SNSの共感性、各メディアの強みを取り入れてテレビの新たな可能性を提案することが我々のミッションです。",
-        "favicon": "https://www.pixela.co.jp/favicon.ico",
         "hostname": "www.pixela.co.jp",
         "image": "https://www.pixela.co.jp/products/xit/common/img/ogp.jpg",
         "title": "Xit シェアして、つながり、きらめきが交差するモーメントストリームサービス | 株式会社ピクセラ",
@@ -468,23 +476,29 @@
       }
     },
     "https://www.brita.co.jp/%E8%A3%BD%E5%93%81%E4%B8%80%E8%A6%A7/%E3%83%9D%E3%83%83%E3%83%88%E5%9E%8B%E6%B5%84%E6%B0%B4%E5%99%A8/%E3%83%95%E3%83%AD%E3%83%BC": {
-      "fetchedAt": 1768050378800,
+      "fetchedAt": 1768046106151,
       "payload": {
         "description": "ブリタ タンク型浄水器 フロー：ウォーターサーバー代わりにもなる 大容量タイプ。BBQなどアウトドアにもおすすめ",
-        "favicon": "https://cdn.brita.net/.resources/images/android-icon-192x192.png",
+        "favicon": "https://cdn.brita.net/.resources/images/apple-icon-57x57.png",
         "hostname": "www.brita.co.jp",
-        "image": "https://www.brita.co.jp/.imaging/opt/w1200/h630/1626257445225/dam/jcr:cd5ac1a7-7116-4395-b02c-9d07d46b1095/flow_ogp.png",
+        "image": "https://www.brita.co.jp/.imaging/opt/w1200/h630/1626257444104/dam/jcr:cd5ac1a7-7116-4395-b02c-9d07d46b1095/flow_ogp.png",
         "title": "ブリタ タンク型浄水器 フロー | BRITA®",
         "type": "link",
         "url": "https://www.brita.co.jp/%E8%A3%BD%E5%93%81%E4%B8%80%E8%A6%A7/%E3%83%9D%E3%83%83%E3%83%88%E5%9E%8B%E6%B5%84%E6%B0%B4%E5%99%A8/%E3%83%95%E3%83%AD%E3%83%BC"
       }
     },
     "https://www.nitori-net.jp/ec/product/8500505s/": {
-      "fetchedAt": 1768050379059,
-      "payload": null
+      "fetchedAt": 1768046104651,
+      "payload": {
+        "favicon": "https://www.nitori-net.jp/ec/product/8500505s/assets/icons/NITORI_LOGO.svg",
+        "hostname": "www.nitori-net.jp",
+        "title": "ニトリネット【公式】　家具・インテリア通販",
+        "type": "link",
+        "url": "https://www.nitori-net.jp/ec/product/8500505s/"
+      }
     },
     "https://mytrex.jp/eye-air/": {
-      "fetchedAt": 1768050379096,
+      "fetchedAt": 1768045841382,
       "payload": {
         "description": "アイマスクに必要な“遮光”に加え、“フィット感”と“肌触り”までこだわった、睡眠用アイマスク。光をしっかりと遮断するための独自3D構造と低反発のクッションでやさしく包み込んでくれます。",
         "favicon": "https://mytrex.jp/wp-content/themes/mytrex/img/favicon/favicon.ico",
@@ -496,7 +510,7 @@
       }
     },
     "https://store.jp.square-enix.com/item/MW60297_4.html": {
-      "fetchedAt": 1768050379104,
+      "fetchedAt": 1768045842206,
       "payload": {
         "description": "かき氷やジュースにぴったり！中身の色でいろんな「スライム」にへんし～ん！できちゃ",
         "favicon": "https://store.jp.square-enix.com/client_info/SQEX_ESTORE/view/userweb/favicon.ico?timestamp=1764826813090",
@@ -509,20 +523,19 @@
       }
     },
     "https://livheart.jp/shopdetail/000000000904/": {
-      "fetchedAt": 1768050379153,
+      "fetchedAt": 1768046166243,
       "payload": {
-        "description": "���֤��Ĥ�������ǿ��Ϥ褯�ᤴ��������\n���ˤ��Τˤ�ե��åȤ���֥��ե��åȡ�\n\n���������о줷�ޤ�����\n\n���å����˼�곰����ǽ��ŷ���դΥơ��֥륯�å����Ǥ���\nɨ�ξ�˾褻�ƥơ��֥�Ȥ��ƻ��Ѥ��������ޤ���\n\n���ޡ��ȥե���䥿�֥�åȤ�����ư�©�Ĥ����ꡦ��\n�ơ��֥�򲼤ˤ��ơ����å��������Ȥ��ƻȤä��ꡦ��\n����ѥ��ȤʤΤǥ����ȥɥ���֤���ʤɤػ��äƤ������Ȥ��Ǥ���������\n\n�͡��ʥ�����ǥ��å���������򤪲ᤴ�����������ޤ�������\n\n��2022ǯ12��27�����4������ʸʬ�����ʲ��ꤷ�Ƥ���ޤ���\n�����ʲ���Τ�����\n\n&nbsp;\n",
-        "favicon": "https://livheart.jp/favicon.ico",
+        "description": "一番くつろげる場所で心地よく過ごしたい、\r\n心にも体にもフィットする「リラフィット」\r\n\r\n＊新色が登場しました！\r\n\r\nクッションに取り外し可能な天板付のテーブルクッションです。\r\n膝の上に乗せてテーブルとして使用いただけます。\r\n\r\nスマートフォンやタブレットを入れて一息ついたり・・\r\nテーブルを下にして、クッションや枕として使ったり・・\r\nコンパクトなのでアウトドアや車の中などへ持っていくことができて便利！\r\n\r\n様々なシーンでリラックスタイムをお過ごしいただけます・・♪\r\n\r\n＊2022年12月27日午後4時ご注文分より価格改定しております。\r\n　価格改定のご案内\r\n\r\n&amp;nbsp;",
         "hostname": "livheart.jp",
         "image": "https://makeshop-multi-images.akamaized.net/livheart3/itemimages/000000000904_35NUuiv.jpg",
         "siteName": "LIVHEART",
-        "title": "���ե��åȡ��ơ��֥륯�å����-LIVHEART",
+        "title": "リラフィット　テーブルクッション-LIVHEART",
         "type": "link",
         "url": "https://livheart.jp/shopdetail/000000000904/"
       }
     },
     "https://personal.canon.jp/product/printer/pixus/lineup/ts3730": {
-      "fetchedAt": 1768050379246,
+      "fetchedAt": 1768045842864,
       "payload": {
         "description": "インクジェットプリンター 「ピクサス TS3730」について紹介しているページです。",
         "favicon": "https://personal.canon.jp/-/media/Project/Canon/CanonJP/Website/shared/image/icon/favicon.png?sc_lang=ja-JP",
@@ -535,7 +548,7 @@
       }
     },
     "https://www3.nissan.co.jp/vehicles/new/dayz.html": {
-      "fetchedAt": 1768050379315,
+      "fetchedAt": 1768045843364,
       "payload": {
         "description": "日産デイズ（DAYZ）の公式サイト。「おでかけが、もっと楽しくなる軽。」をキャッチフレーズに進化した、日産デイズをご紹介します。プロパイロットをはじめ「360°セーフティアシスト（全方位運転支援システム）」による運転のしやすさと確かな安心をご確認いただけます。",
         "favicon": "https://libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/25.12.30.NISSAN-20/common-assets/img/favicon/favicon.png",
@@ -545,16 +558,6 @@
         "title": "日産：デイズ [ DAYZ ] 軽自動車 TOP",
         "type": "link",
         "url": "https://www3.nissan.co.jp/vehicles/new/dayz.html"
-      }
-    }
-  },
-  "version": 1
-}ckey1.jp/favicon.ico",
-        "hostname": "www.publickey1.jp",
-        "image": "https://www.publickey1.jp/2020/EXWO8zPU4AAphiW.jpg",
-        "title": "GitHub、WebIDEの「Codespaces」を発表。GitHubからワンクリックで開発環境へ。GitHub Satellite 2020",
-        "type": "link",
-        "url": "https://www.publickey1.jp/blog/20/githubwebidecodespacesgithub.html"
       }
     },
     "https://www.publickey1.jp/blog/20/webidevisual_studio_codespaecsgithub_codespaces.html": {
@@ -764,11 +767,11 @@
       }
     },
     "https://cloud.google.com/blog/ja/products/serverless/eventarc-unified-eventing-experience-google-cloud": {
-      "fetchedAt": 1768049953636,
+      "fetchedAt": 1768051082549,
       "payload": null
     },
     "https://cloud.google.com/blog/ja/products/serverless/demystifying-event-filters-eventarc": {
-      "fetchedAt": 1768049953637,
+      "fetchedAt": 1768051082549,
       "payload": null
     },
     "https://www.archunit.org/": {
@@ -811,7 +814,7 @@
       }
     },
     "https://docs.google.com/spreadsheets/d/1IaJOw9-GdoHhz3D0CzvJfFitrmEN8KpgIleer9rmxiw/edit?usp=sharing": {
-      "fetchedAt": 1768050373577,
+      "fetchedAt": 1768051077498,
       "payload": {
         "favicon": "https://ssl.gstatic.com/docs/spreadsheets/spreadsheets_2023q4.ico",
         "hostname": "docs.google.com",
@@ -1392,7 +1395,7 @@
       }
     },
     "https://www.contentful.com/": {
-      "fetchedAt": 1768050373494,
+      "fetchedAt": 1768051077495,
       "payload": {
         "description": "Contentful DXP uses AI-driven analytics to help you personalize, optimize, and create standout digital experiences at scale. Effortlessly.",
         "favicon": "https://www.contentful.com/favicon.ico",
@@ -1404,7 +1407,7 @@
       }
     },
     "https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app#advanced-parameters": {
-      "fetchedAt": 1768050373581,
+      "fetchedAt": 1768051077508,
       "payload": {
         "description": "Learn how to use Apps Script Class UrlFetchApp. Fetch resources and communicate with other hosts over the Internet.",
         "favicon": "https://www.gstatic.com/devrel-devsite/prod/v80d9a52eefe4eccd9a262cfbc94473a846b10e2b3115e0674427719fa6f74364/developers/images/favicon-new.png",
@@ -1417,7 +1420,7 @@
       }
     },
     "https://3tene.com/": {
-      "fetchedAt": 1768050373576,
+      "fetchedAt": 1768051077502,
       "payload": {
         "description": "3teneはVTuber向けのアプリケーションです。現在は3teneFREE、3tenePRO、3tenePRO+Live2Dを提供しております。3tene上でフェイストラッキング、リップシンクによりVRMファイルを動かすことが出来ます。またPRO版ではVRヘッドセットに対応し、全身の制御が可能となりました。",
         "favicon": "https://3tene.com/wp-content/uploads/common/free_icon.ico",
@@ -1430,7 +1433,7 @@
       }
     },
     "https://hub.vroid.com/": {
-      "fetchedAt": 1768050373580,
+      "fetchedAt": 1768051077502,
       "payload": {
         "description": "VRoid Hubは、3Dキャラクターのための投稿・共有プラットフォームです。モデルデータをアップロードするだけでキャラクターが活き活きとアニメーションするプロフィールページを作成でき、利用条件と共にモデルデータを配布することもできます。登録した3Dモデルは、VRoid Hubと連携した各種VR/ARプラットフォームや3Dコンテンツ上で利用可能です",
         "favicon": "https://hub.vroid.com/favicon.ico",
@@ -2439,19 +2442,6 @@
         "siteName": "X (formerly Twitter)",
         "type": "link",
         "url": "https://x.com/silverbirder/status/1149648900627693572"
-      }
-    },
-    "https://silverbirder.github.io/": {
-      "fetchedAt": 1768024544520,
-      "payload": {
-        "description": "@silverbirderのジブンノート",
-        "favicon": "https://silverbirder.github.io/icon-192x192.png",
-        "hostname": "silverbirder.github.io",
-        "image": "https://silverbirder.github.io/opengraph-image.png",
-        "siteName": "silverbirder",
-        "title": "silverbirder",
-        "type": "link",
-        "url": "https://silverbirder.github.io/"
       }
     },
     "https://custom-elements-everywhere.com/": {
@@ -3589,283 +3579,6 @@
         "url": "https://bmxug.connpass.com/event/117966/"
       }
     },
-    "https://www.pixela.co.jp/products/xit/": {
-      "fetchedAt": 1768046104691,
-      "payload": {
-        "description": "「Xit（サイト）」は見たものをシェアして、つながり、きらめきが交差するモーメントストリームサービス。テレビのライブ感、ネットの探索性、SNSの共感性、各メディアの強みを取り入れてテレビの新たな可能性を提案することが我々のミッションです。",
-        "hostname": "www.pixela.co.jp",
-        "image": "https://www.pixela.co.jp/products/xit/common/img/ogp.jpg",
-        "title": "Xit シェアして、つながり、きらめきが交差するモーメントストリームサービス | 株式会社ピクセラ",
-        "type": "link",
-        "url": "https://www.pixela.co.jp/products/xit/"
-      }
-    },
-    "https://www.drinkmate.jp/products.php": {
-      "fetchedAt": 1768045840859,
-      "payload": {
-        "favicon": "https://www.drinkmate.jp/assets/img/favicon.png",
-        "hostname": "www.drinkmate.jp",
-        "image": "https://www.drinkmate.jp/media/drink-logo.png",
-        "title": "drinkmate",
-        "type": "link",
-        "url": "https://www.drinkmate.jp/products.php"
-      }
-    },
-    "https://mytrex.jp/eye-air/": {
-      "fetchedAt": 1768045841382,
-      "payload": {
-        "description": "アイマスクに必要な“遮光”に加え、“フィット感”と“肌触り”までこだわった、睡眠用アイマスク。光をしっかりと遮断するための独自3D構造と低反発のクッションでやさしく包み込んでくれます。",
-        "favicon": "https://mytrex.jp/wp-content/themes/mytrex/img/favicon/favicon.ico",
-        "hostname": "mytrex.jp",
-        "image": "https://mytrex.jp/wp-content/uploads/2023/08/230818_13.jpg",
-        "title": "【公式】MYTREX Eye Air - 3Dスリープマスク - マイトレックス アイ エアー アイマスク",
-        "type": "link",
-        "url": "https://mytrex.jp/eye-air/"
-      }
-    },
-    "https://store.jp.square-enix.com/item/MW60297_4.html": {
-      "fetchedAt": 1768045842206,
-      "payload": {
-        "description": "かき氷やジュースにぴったり！中身の色でいろんな「スライム」にへんし～ん！できちゃ",
-        "favicon": "https://store.jp.square-enix.com/client_info/SQEX_ESTORE/view/userweb/favicon.ico?timestamp=1764826813090",
-        "hostname": "store.jp.square-enix.com",
-        "image": "https://store.jp.square-enix.com/client_info/SQEX_ESTORE/itemimage/MW60297_4/ITEM_IMAGE2.jpg",
-        "siteName": "スクウェア・エニックス e-STORE",
-        "title": "スマイルスライム  ゆらゆらグラス",
-        "type": "link",
-        "url": "https://store.jp.square-enix.com/item/MW60297_4.html"
-      }
-    },
-    "https://www.brita.co.jp/%E8%A3%BD%E5%93%81%E4%B8%80%E8%A6%A7/%E3%83%9D%E3%83%83%E3%83%88%E5%9E%8B%E6%B5%84%E6%B0%B4%E5%99%A8/%E3%83%95%E3%83%AD%E3%83%BC": {
-      "fetchedAt": 1768046106151,
-      "payload": {
-        "description": "ブリタ タンク型浄水器 フロー：ウォーターサーバー代わりにもなる 大容量タイプ。BBQなどアウトドアにもおすすめ",
-        "favicon": "https://cdn.brita.net/.resources/images/apple-icon-57x57.png",
-        "hostname": "www.brita.co.jp",
-        "image": "https://www.brita.co.jp/.imaging/opt/w1200/h630/1626257444104/dam/jcr:cd5ac1a7-7116-4395-b02c-9d07d46b1095/flow_ogp.png",
-        "title": "ブリタ タンク型浄水器 フロー | BRITA®",
-        "type": "link",
-        "url": "https://www.brita.co.jp/%E8%A3%BD%E5%93%81%E4%B8%80%E8%A6%A7/%E3%83%9D%E3%83%83%E3%83%88%E5%9E%8B%E6%B5%84%E6%B0%B4%E5%99%A8/%E3%83%95%E3%83%AD%E3%83%BC"
-      }
-    },
-    "https://livheart.jp/shopdetail/000000000904/": {
-      "fetchedAt": 1768046166243,
-      "payload": {
-        "description": "一番くつろげる場所で心地よく過ごしたい、\r\n心にも体にもフィットする「リラフィット」\r\n\r\n＊新色が登場しました！\r\n\r\nクッションに取り外し可能な天板付のテーブルクッションです。\r\n膝の上に乗せてテーブルとして使用いただけます。\r\n\r\nスマートフォンやタブレットを入れて一息ついたり・・\r\nテーブルを下にして、クッションや枕として使ったり・・\r\nコンパクトなのでアウトドアや車の中などへ持っていくことができて便利！\r\n\r\n様々なシーンでリラックスタイムをお過ごしいただけます・・♪\r\n\r\n＊2022年12月27日午後4時ご注文分より価格改定しております。\r\n　価格改定のご案内\r\n\r\n&amp;nbsp;",
-        "hostname": "livheart.jp",
-        "image": "https://makeshop-multi-images.akamaized.net/livheart3/itemimages/000000000904_35NUuiv.jpg",
-        "siteName": "LIVHEART",
-        "title": "リラフィット　テーブルクッション-LIVHEART",
-        "type": "link",
-        "url": "https://livheart.jp/shopdetail/000000000904/"
-      }
-    },
-    "https://personal.canon.jp/product/printer/pixus/lineup/ts3730": {
-      "fetchedAt": 1768045842864,
-      "payload": {
-        "description": "インクジェットプリンター 「ピクサス TS3730」について紹介しているページです。",
-        "favicon": "https://personal.canon.jp/-/media/Project/Canon/CanonJP/Website/shared/image/icon/favicon.png?sc_lang=ja-JP",
-        "hostname": "personal.canon.jp",
-        "image": "https://personal.canon.jp/-/media/Project/Canon/CanonJP/Website/shared/image/open-graph/og-logo-image.png?sc_lang=ja-JP",
-        "siteName": "Canon(Japan)",
-        "title": "TS3730",
-        "type": "link",
-        "url": "https://personal.canon.jp/product/printer/pixus/lineup/ts3730"
-      }
-    },
-    "https://www3.nissan.co.jp/vehicles/new/dayz.html": {
-      "fetchedAt": 1768045843364,
-      "payload": {
-        "description": "日産デイズ（DAYZ）の公式サイト。「おでかけが、もっと楽しくなる軽。」をキャッチフレーズに進化した、日産デイズをご紹介します。プロパイロットをはじめ「360°セーフティアシスト（全方位運転支援システム）」による運転のしやすさと確かな安心をご確認いただけます。",
-        "favicon": "https://libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/25.12.30.NISSAN-20/common-assets/img/favicon/favicon.png",
-        "hostname": "www3.nissan.co.jp",
-        "image": "https://www-asia.nissan-cdn.net/content/dam/Nissan/jp/vehicles/dayz/2309/og_image/dayz_2309_og.jpg",
-        "siteName": "Nissan",
-        "title": "日産：デイズ [ DAYZ ] 軽自動車 TOP",
-        "type": "link",
-        "url": "https://www3.nissan.co.jp/vehicles/new/dayz.html"
-      }
-    },
-    "https://www.muji.com/jp/ja/store/cmdty/detail/4550512865797": {
-      "fetchedAt": 1768046105049,
-      "payload": {
-        "description": "業務用のかごは、丈夫で持ち運びしやすく汚れても水で洗えます。使わないときは重ねて収納できるため場所をとりません。普段使いのかごとしてとても便利です。マイバッグ・エコバッグ・トートバッグの通販なら無印良品　公式ネットストア。",
-        "hostname": "www.muji.com",
-        "image": "https://www.muji.com/public/media/img/item/4550512865797_org.jpg",
-        "siteName": "無印良品",
-        "title": "ポリプロピレン　買い物かご | 無印良品",
-        "type": "link",
-        "url": "https://www.muji.com/jp/ja/store/cmdty/detail/4550512865797"
-      }
-    },
-    "https://www.nitori-net.jp/ec/product/8500505s/": {
-      "fetchedAt": 1768046104651,
-      "payload": {
-        "favicon": "https://www.nitori-net.jp/ec/product/8500505s/assets/icons/NITORI_LOGO.svg",
-        "hostname": "www.nitori-net.jp",
-        "title": "ニトリネット【公式】　家具・インテリア通販",
-        "type": "link",
-        "url": "https://www.nitori-net.jp/ec/product/8500505s/"
-      }
-    },
-    "https://fequest-admin.vercel.app/": {
-      "fetchedAt": 1768047168538,
-      "payload": {
-        "description": "機能リクエスト・共有プラットフォームの管理",
-        "favicon": "https://fequest-admin.vercel.app/icon/48",
-        "hostname": "fequest-admin.vercel.app",
-        "title": "Fequest Admin",
-        "type": "link",
-        "url": "https://fequest-admin.vercel.app/"
-      }
-    },
-    "https://fequest.vercel.app/8": {
-      "fetchedAt": 1768046611511,
-      "payload": {
-        "description": "ほしいとつくるを共有するプラットフォーム。\r\nユーザーがほしい機能をリクエストし、開発者がそれをつくるにつなげる、みんなでプロダクトを育てる場所です。",
-        "favicon": "https://fequest.vercel.app/icon/48",
-        "hostname": "fequest.vercel.app",
-        "image": "https://fequest.vercel.app/8/opengraph-image",
-        "title": "Fequest | Fequest",
-        "type": "link",
-        "url": "https://fequest.vercel.app/8"
-      }
-    },
-    "https://tee-room.info/color/tone-p.html": {
-      "fetchedAt": 1768049149926,
-      "payload": {
-        "hostname": "tee-room.info",
-        "title": "PCCS-tone/ペール・トーン - IROUSE/DATABASE・Color harmony",
-        "type": "link",
-        "url": "https://tee-room.info/color/tone-p.html"
-      }
-    },
-    "https://zokeifile.musabi.ac.jp/%E8%89%B2%E8%AA%BF/": {
-      "fetchedAt": 1768047188039,
-      "payload": {
-        "description": "造形ファイルは、武蔵野美術大学がインターネット上で公開している、美術とデザインに用いられる素材や道具についての用語や技法の情報を提供する知識モジュール群です。",
-        "favicon": "https://zokeifile.musabi.ac.jp/apple-touch-icon.png",
-        "hostname": "zokeifile.musabi.ac.jp",
-        "image": "https://zokeifile.musabi.ac.jp/facebook.png",
-        "siteName": "武蔵野美術大学 造形ファイル",
-        "title": "武蔵野美術大学 造形ファイル｜武蔵野美術大学による、美術とデザインの「素材・道具・技法」に関する情報提供サイト",
-        "type": "link",
-        "url": "https://zokeifile.musabi.ac.jp/%E8%89%B2%E8%AA%BF/"
-      }
-    },
-    "https://tee-room.info/color/tone-v.html": {
-      "fetchedAt": 1768049149932,
-      "payload": {
-        "hostname": "tee-room.info",
-        "title": "PCCS-tone/ビビッド・トーン - IROUSE/DATABASE・Color harmony",
-        "type": "link",
-        "url": "https://tee-room.info/color/tone-v.html"
-      }
-    },
-    "https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Values/color_value/oklch": {
-      "fetchedAt": 1768049149918,
-      "payload": {
-        "hostname": "developer.mozilla.org",
-        "title": "oklch() - CSS | MDN",
-        "type": "link",
-        "url": "https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Values/color_value/oklch"
-      }
-    },
-    "https://storybook.js.org/docs/writing-tests/accessibility-testing": {
-      "fetchedAt": 1768047189476,
-      "payload": {
-        "description": "Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It&#x27;s open source and free.",
-        "favicon": "https://storybook.js.org/icon.svg",
-        "hostname": "storybook.js.org",
-        "image": "https://storybook.js.org/opengraph-image.jpg?841db310ba5a3a1e",
-        "siteName": "Storybook",
-        "title": "Accessibility tests | Storybook docs",
-        "type": "link",
-        "url": "https://storybook.js.org/docs/writing-tests/accessibility-testing"
-      }
-    },
-    "https://fequest.vercel.app": {
-      "fetchedAt": 1768047190145,
-      "payload": {
-        "description": "ほしいとつくるを共有するプラットフォーム",
-        "favicon": "https://fequest.vercel.app/icon/48",
-        "hostname": "fequest.vercel.app",
-        "image": "https://fequest.vercel.app/opengraph-image?6ba073823487e0c8",
-        "title": "Fequest",
-        "type": "link",
-        "url": "https://fequest.vercel.app"
-      }
-    },
-    "https://github.com/silverbirder/fequest": {
-      "fetchedAt": 1768047190866,
-      "payload": {
-        "description": "Contribute to silverbirder/fequest development by creating an account on GitHub.",
-        "favicon": "https://github.com/fluidicon.png",
-        "hostname": "github.com",
-        "image": "https://opengraph.githubassets.com/7cdb367ac440b1fcbd55e6e51c028edd1f4543ee335d0c9459d5ad03ab70976a/silverbirder/fequest",
-        "siteName": "GitHub",
-        "title": "GitHub - silverbirder/fequest",
-        "type": "link",
-        "url": "https://github.com/silverbirder/fequest"
-      }
-    },
-    "https://www.lg.com/jp/monitors/fhd-qhd/28mq780-b/": {
-      "fetchedAt": 1768047444416,
-      "payload": {
-        "description": "28MQ780-Bの製品情報。製品画像、レビュー、スペックなど詳しくはこちら。27.6インチ 16:18 DualUpモニター",
-        "favicon": "https://www.lg.com/etc.clientlibs/lge/clientlibs/clientlib-site/resources/images/favicons/apple-touch-icon.png",
-        "hostname": "www.lg.com",
-        "image": "https://www.lg.com/content/dam/channel/wcms/jp/images/monitor/28mq780-b_ajl_ejjp_jp_c/28MQ780-B_AJL_EJJP_JP_C-450x450.jpg",
-        "siteName": "LG JP",
-        "title": "27.6インチ 16:18 DualUpモニター - 28MQ780-B | LG JP",
-        "type": "link",
-        "url": "https://www.lg.com/jp/monitors/fhd-qhd/28mq780-b/"
-      }
-    },
-    "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/index.html": {
-      "fetchedAt": 1768048495637,
-      "payload": {
-        "favicon": "https://www.maff.go.jp/j/shared_new/shared/images/maff.ico",
-        "hostname": "www.maff.go.jp",
-        "title": "うちの郷土料理：農林水産省",
-        "type": "link",
-        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/index.html"
-      }
-    },
-    "https://www.satofull.jp/products/detail.php?product_id=1213874": {
-      "fetchedAt": 1768047751948,
-      "payload": {
-        "description": "ふるさと納税なら「さとふる」 | 福岡県大野城市 | 【大反響!】【1000g】博多本場もつ鍋　醤油味「2人前×5回分」。ふるさと納税のお申込み・お支払がインターネットで簡単に。初心者の方にも、制度や特産品をわかりやすくご紹介。寄付金控除額のシミュレーションも充実。",
-        "favicon": "https://www.satofull.jp/logo_icon.png",
-        "hostname": "www.satofull.jp",
-        "image": "https://www.satofull.jp/upload/save_image/289/028900064/1213874_01_1671533058.jpg",
-        "siteName": "さとふる",
-        "title": "【大反響!】【1000g】博多本場もつ鍋　醤油味「2人前×5回分」 | 福岡県大野城市 | ふるさと納税サイト「さとふる」",
-        "type": "link",
-        "url": "https://www.satofull.jp/products/detail.php?product_id=1213874"
-      }
-    },
-    "https://www.youtube.com/watch?v=4E1J1un37Rw": {
-      "fetchedAt": 1768048509198,
-      "payload": {
-        "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/4E1J1un37Rw?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"シーラック㈱がんばれバリ勝男クン！編(グイッとひといき)\"></iframe>",
-        "type": "oembed",
-        "url": "https://www.youtube.com/watch?v=4E1J1un37Rw"
-      }
-    },
-    "https://www.pref.shizuoka.jp/sangyoshigoto/nogyo/gakkotaiiku/1027662.html": {
-      "fetchedAt": 1768048509306,
-      "payload": {
-        "description": "静岡県公式ホームページ",
-        "favicon": "https://www.pref.shizuoka.jp/_template_/_site_/_default_/_res/images/apple-touch-icon-precomposed.png",
-        "hostname": "www.pref.shizuoka.jp",
-        "image": "https://www.pref.shizuoka.jp/_template_/_site_/_default_/_res/images/sns/ogimage.png",
-        "siteName": "静岡県公式ホームページ",
-        "title": "かつお｜静岡県公式ホームページ",
-        "type": "link",
-        "url": "https://www.pref.shizuoka.jp/sangyoshigoto/nogyo/gakkotaiiku/1027662.html"
-      }
-    },
     "https://vercel.com/docs/concepts/deployments/preview-deployments\nhttps://www.chromatic.com/docs/review": {
       "fetchedAt": 1768048527370,
       "payload": {
@@ -4396,6 +4109,429 @@
         "title": "Janky Animation",
         "type": "link",
         "url": "https://googlechrome.github.io/devtools-samples/jank/"
+      }
+    },
+    "https://github.com/ai/size-limit": {
+      "fetchedAt": 1768051077452,
+      "payload": {
+        "description": "Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit. - ai/size-limit",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/2e23cc369bad3dc3ae7984a11c9b67553a9a1622e658a3626d5fae3a3d6b6e7f/ai/size-limit",
+        "siteName": "GitHub",
+        "title": "GitHub - ai/size-limit: Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit.",
+        "type": "link",
+        "url": "https://github.com/ai/size-limit"
+      }
+    },
+    "https://github.com/kucherenko/jscpd": {
+      "fetchedAt": 1768051077452,
+      "payload": {
+        "description": "Copy/paste detector for programming source code. Contribute to kucherenko/jscpd development by creating an account on GitHub.",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/b59e22fa18fc5c76302ffd7e907c5d1ab9ac97dd69527cbca471df7a6a95e5e5/kucherenko/jscpd",
+        "siteName": "GitHub",
+        "title": "GitHub - kucherenko/jscpd: Copy/paste detector for programming source code.",
+        "type": "link",
+        "url": "https://github.com/kucherenko/jscpd"
+      }
+    },
+    "https://eslint.org/docs/rules/complexity": {
+      "fetchedAt": 1768051077453,
+      "payload": {
+        "description": "A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.\n",
+        "favicon": "https://eslint.org/favicon.ico",
+        "hostname": "eslint.org",
+        "image": "https://eslint.org/og?title=complexity&summary=A%20pluggable%20and%20configurable%20linter%20tool%20for%20identifying%20and%20reporting%20on%20patterns%20in%20JavaScript.%20Maintain%20your%20code%20quality%20with%20ease.%0A&is_rule=true&recommended=false&fixable=&suggestions=",
+        "title": "complexity - ESLint - Pluggable JavaScript Linter",
+        "type": "link",
+        "url": "https://eslint.org/docs/latest/rules/complexity"
+      }
+    },
+    "https://qiita.com/kudota/items/b480610cc3f575a8ec6f": {
+      "fetchedAt": 1768051077456,
+      "payload": {
+        "description": "Zoom APIについて Zoomから提供されているAPIで、Zoomの様々な操作を行うことができます。 今回はその中でも、ミーティングの作成をAPIを使って行います。 その他できることはこちらご覧になれます https://marketplace.zoom.us/doc...",
+        "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico",
+        "hostname": "qiita.com",
+        "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkYyMTgwMjElMkYwYjgwNjYzYWUwODM5YWZiNDJlOTQ2MGRmYzIyY2NjZjY2MjFkZTRhJTJGeF9sYXJnZS5wbmclM0YxNjkwMjY4MTQ0P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz1hNjQ4YTgwNTAyNmJhYTZmNDg2OTdjMDU5MTQ1YTQyZg%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkZhNTJjMjY3Zjg1NzVlOGRmZWQzMThmZDQ5ODQ0NzY3ZDg0M2I5N2JjJTJGb3JpZ2luYWwuanBnJTNGMTQ5MDc1NzI1Nj9peGxpYj1yYi00LjAuMCZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz05ZTU2YmEwZTFmYjRmNzFjNTg5OGQ5ZTE3ODdlNjkwOQ%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D7615789c3048f2ff7806be16d1bbc041?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9Wm9vbSUyMEFQSSVFMyU4MSVBNyVFMyU4MyU5RiVFMyU4MyVCQyVFMyU4MyU4NiVFMyU4MiVBMyVFMyU4MyVCMyVFMyU4MiVCMCVFMyU4MSVBRSVFNCVCRCU5QyVFNiU4OCU5MCVFMyU4MiU5MkdBUyVFMyU4MSU4QiVFMyU4MiU4OSVFOCVBMSU4QyVFMyU4MSU4NiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTAzNDcxZDMyY2E4YWY2Y2Q0MDFlNzBjZDVkNTliMTAx&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBrdWRvdGEmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1lNzlkY2Q0ZGNmNTdhMDE1ZTk5NTQ2NjgwZDY3NDhhOQ&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=5qCq5byP5Lya56S-TElGVUxM&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=26017f88cb734c17dacb7feb50d8d876",
+        "siteName": "Qiita",
+        "title": "Zoom APIでミーティングの作成をGASから行う - Qiita",
+        "type": "link",
+        "url": "https://qiita.com/kudota/items/b480610cc3f575a8ec6f"
+      }
+    },
+    "http://gravatar.com/": {
+      "fetchedAt": 1768051077457,
+      "payload": {
+        "description": "Create a global avatar and profile image with Gravatar. Get a free one-page personal site to showcase your identity and connect across the web.",
+        "favicon": "https://gravatar.com/images/favicon-16x16.png",
+        "hostname": "gravatar.com",
+        "image": "https://gravatar.com/images/homepage/card-joe.png",
+        "title": "Your Free Avatar, Profile, and Link In Bio | Gravatar",
+        "type": "link",
+        "url": "https://gravatar.com/"
+      }
+    },
+    "https://github.com/silverbirder/puppeteer-account-manager": {
+      "fetchedAt": 1768051077457,
+      "payload": {
+        "description": "puppeteer-account-manager is a tool that get the profiles (photo, aboutMe, etc) from Contentful and updates the profile of each service. - silverbirder/puppeteer-account-manager",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/db13ba4a16473b483da5f29d21ee92c4e4631522ca2868bbd41321cc66599cf5/silverbirder/puppeteer-account-manager",
+        "siteName": "GitHub",
+        "title": "GitHub - silverbirder/puppeteer-account-manager: puppeteer-account-manager is a tool that get the profiles (photo, aboutMe, etc) from Contentful and updates the profile of each service.",
+        "type": "link",
+        "url": "https://github.com/silverbirder/puppeteer-account-manager"
+      }
+    },
+    "https://github.com/naltatis/micro-frontends-in-action-code": {
+      "fetchedAt": 1768051077480,
+      "payload": {
+        "description": "The Tractor Store - sample code from the book Micro Frontends in Action - naltatis/micro-frontends-in-action-code",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://repository-images.githubusercontent.com/212049157/d4428100-0085-11ea-84ff-d8e0896d802c",
+        "siteName": "GitHub",
+        "title": "GitHub - naltatis/micro-frontends-in-action-code: The Tractor Store - sample code from the book Micro Frontends in Action",
+        "type": "link",
+        "url": "https://github.com/naltatis/micro-frontends-in-action-code"
+      }
+    },
+    "https://github.com/silverbirder/zoom-meeting-creator": {
+      "fetchedAt": 1768051077481,
+      "payload": {
+        "description": "zoom-meeting-creator is a Google Apps Script for creating zoom meetings. - silverbirder/zoom-meeting-creator",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/a50f6eb10fb1cc6f50dc2cc6611fd1ad1d9688b98bcc06cbd2db8527291245a6/silverbirder/zoom-meeting-creator",
+        "siteName": "GitHub",
+        "title": "GitHub - silverbirder/zoom-meeting-creator: zoom-meeting-creator is a Google Apps Script for creating zoom meetings.",
+        "type": "link",
+        "url": "https://github.com/silverbirder/zoom-meeting-creator"
+      }
+    },
+    "https://github.com/podium-lib/": {
+      "fetchedAt": 1768051077494,
+      "payload": {
+        "description": "Easy server-side composition of microfrontends. Podium has 32 repositories available. Follow their code on GitHub.",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://avatars.githubusercontent.com/u/40788392?s=280&v=4",
+        "siteName": "GitHub",
+        "title": "Podium",
+        "type": "link",
+        "url": "https://github.com/podium-lib/"
+      }
+    },
+    "https://github.com/puppeteer/puppeteer": {
+      "fetchedAt": 1768051077495,
+      "payload": {
+        "description": "JavaScript API for Chrome and Firefox. Contribute to puppeteer/puppeteer development by creating an account on GitHub.",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/2886cb551ec1329af2c09da24f7349c6da03307eac3d9b691867843cd0058abd/puppeteer/puppeteer",
+        "siteName": "GitHub",
+        "title": "GitHub - puppeteer/puppeteer: JavaScript API for Chrome and Firefox",
+        "type": "link",
+        "url": "https://github.com/puppeteer/puppeteer"
+      }
+    },
+    "https://fly.io/": {
+      "fetchedAt": 1768051077498,
+      "payload": {
+        "favicon": "https://fly.io/phx/ui/images/favicon/favicon-32x32-803ad2058b86df3f8a9f8af1505a59d2.png?vsn=d",
+        "hostname": "fly.io",
+        "image": "https://fly.io/phx/images/new-home-hero-017530e15474786e3c428d4c739a9e2d.webp?vsn=d",
+        "title": "\n      Deploy app servers close to your users\n     · Fly\n    \n      \n    \n  \n    \n      \n    \n  \n    \n      \n    \n  ",
+        "type": "link",
+        "url": "https://fly.io/"
+      }
+    },
+    "https://micro-frontends-japanese.org/": {
+      "fetchedAt": 1768051077498,
+      "payload": {
+        "description": "モダンなWebアプリを異なるJavaScriptフレームワークを使う複数チームで開発するためのテクニック",
+        "favicon": "https://micro-frontends-japanese.org/favicon.ico",
+        "hostname": "micro-frontends-japanese.org",
+        "image": "https://micro-frontends-japanese.org/resources/monolith-frontback-microservices.png",
+        "siteName": "[翻訳記事]マイクロフロントエンド",
+        "title": "[翻訳記事]マイクロフロントエンド - マイクロサービスのフロントエンドへの応用",
+        "type": "link",
+        "url": "https://micro-frontends-japanese.org/"
+      }
+    },
+    "https://silverbirder.github.io/blog/contents/gas_fetchall_redirect": {
+      "fetchedAt": 1768051077501,
+      "payload": {
+        "description": "Google Apps Script (以下、GAS)で、困ったことがあったので備忘録として残しておこうと思います。",
+        "favicon": "https://silverbirder.github.io/favicon.svg",
+        "hostname": "silverbirder.github.io",
+        "image": "https://silverbirder.github.io/opengraph-image.png",
+        "title": "Google Apps Script で FetchAllとRedirctURL の組み合わせは悪い",
+        "type": "link",
+        "url": "https://silverbirder.github.io/blog/contents/gas_fetchall_redirect/"
+      }
+    },
+    "https://www.npmjs.com/package/@silverbirder/cotlin": {
+      "fetchedAt": 1768051077501,
+      "payload": {
+        "description": "Cotlin is tools that collect links in tweet by using the Twitter API(Search Tweets). Latest version: 1.1.0, last published: 6 years ago. Start using @silverbirder/cotlin in your project by running `npm i @silverbirder/cotlin`. There are no other projects in the npm registry using @silverbirder/cotlin.",
+        "favicon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png",
+        "hostname": "www.npmjs.com",
+        "image": "https://static-production.npmjs.com/338e4905a2684ca96e08c7780fc68412.png",
+        "siteName": "npm",
+        "title": "@silverbirder/cotlin",
+        "type": "link",
+        "url": "https://www.npmjs.com/package/@silverbirder/cotlin"
+      }
+    },
+    "https://level69.net/archives/26902": {
+      "fetchedAt": 1768051077502,
+      "payload": {
+        "description": "バ美肉でリモートしてるってあったのでZoomでもできるんじゃないかとやった記録 こんな感じです。 ©︎Kizuna AI 中身おっさんだろってツッコミはなしで話を進めます。 必要なもの FaceRig",
+        "favicon": "https://level69.net/wp-content/uploads/2020/04/siteicon-1.png",
+        "hostname": "level69.net",
+        "image": "https://level69.net/wp-content/uploads/2020/02/zoom01.jpg",
+        "siteName": "技術的な何か。",
+        "title": "Zoomでもバ美肉してみる。これちょっと楽しい。",
+        "type": "link",
+        "url": "https://level69.net/archives/26902"
+      }
+    },
+    "https://github.com/silverbirder/Cotlin": {
+      "fetchedAt": 1768051077503,
+      "payload": {
+        "description": "Cotlin is tools that collect links in tweet by using the Twitter API(Search Tweets) - silverbirder/Cotlin",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/9e011d8aba0c7f8e47c8dfe9948c69c8830fc308831b33b59d1847538440938a/silverbirder/Cotlin",
+        "siteName": "GitHub",
+        "title": "GitHub - silverbirder/Cotlin: Cotlin is tools that collect links in tweet by using the Twitter API(Search Tweets)",
+        "type": "link",
+        "url": "https://github.com/silverbirder/Cotlin"
+      }
+    },
+    "https://3d.nicovideo.jp/": {
+      "fetchedAt": 1768051077507,
+      "payload": {
+        "description": "3D投稿サービス「ニコニ立体」",
+        "favicon": "https://3d.nicovideo.jp/favicon.ico",
+        "hostname": "3d.nicovideo.jp",
+        "image": "https://3d.nicovideo.jp/images/ogp.png",
+        "siteName": "ニコニ立体",
+        "title": "ニコニ立体",
+        "type": "link",
+        "url": "https://3d.nicovideo.jp/"
+      }
+    },
+    "https://www.monotalk.xyz/blog/google-app-script-%E3%81%AE-urlfetchapp-%E3%81%AE-%E4%BE%8B%E5%A4%96%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/": {
+      "fetchedAt": 1768051077508,
+      "payload": {
+        "description": "\n    UrlFetchApp を使って、Http 通信を行うスクリプトを作っていたのですが、Http Response 200 以外のコード が返る場合は、例外がスローされており、どうハンドリングするべきか調べた結果を記載します。\n",
+        "favicon": "https://www.monotalk.xyz/static/img/favicon.ico",
+        "hostname": "www.monotalk.xyz",
+        "siteName": "Monotalk",
+        "title": "Google App Script の UrlFetchApp の 例外ハンドリングについて",
+        "type": "link",
+        "url": "https://www.monotalk.xyz/blog/google-app-script-%E3%81%AE-urlfetchapp-%E3%81%AE-%E4%BE%8B%E5%A4%96%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"
+      }
+    },
+    "https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets": {
+      "fetchedAt": 1768051077508,
+      "payload": {
+        "favicon": "https://abs.twimg.com/favicons/twitter.3.ico",
+        "hostname": "developer.x.com",
+        "image": "https://developer.x.com/content/dam/developer-twitter/x_sharing_card.png.twimg.768.png",
+        "title": "Standard search API",
+        "type": "link",
+        "url": "https://developer.x.com/en/docs/x-api/v1/tweets/search/api-reference/get-search-tweets"
+      }
+    },
+    "https://www.npmjs.com/package/@silverbirder/rminc": {
+      "fetchedAt": 1768051077511,
+      "payload": {
+        "description": "rMinc is the Google Apps Script Library that register Mail in Calendar. Latest version: 1.2.0, last published: 6 years ago. Start using @silverbirder/rminc in your project by running `npm i @silverbirder/rminc`. There are no other projects in the npm registry using @silverbirder/rminc.",
+        "favicon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png",
+        "hostname": "www.npmjs.com",
+        "image": "https://static-production.npmjs.com/338e4905a2684ca96e08c7780fc68412.png",
+        "siteName": "npm",
+        "title": "@silverbirder/rminc",
+        "type": "link",
+        "url": "https://www.npmjs.com/package/@silverbirder/rminc"
+      }
+    },
+    "https://silverbirder.github.io/blog/contents/intro_rocket/": {
+      "fetchedAt": 1768051078781,
+      "payload": {
+        "description": "Markdownでブログやドキュメントを書いていますか？執筆活動に集中したいのに、Markdownだけだとかゆいところに手が届かないもどかしさ、感じたことありませんか？そんな方に、MarkdownとWebComponentsがシームレスに統合できる静的サイトジェネレータ(以降、SSGと呼ぶ)、Rocketをおすすめします。",
+        "favicon": "https://silverbirder.github.io/favicon.svg",
+        "hostname": "silverbirder.github.io",
+        "image": "https://silverbirder.github.io/opengraph-image.png",
+        "title": "Markdownで執筆するなら、WebComponentsが使えるSSG、Rocketがオススメ！",
+        "type": "link",
+        "url": "https://silverbirder.github.io/blog/contents/intro_rocket/"
+      }
+    },
+    "https://twitter.com/silverbirder/status/1475262255818473473": {
+      "fetchedAt": 1768051078782,
+      "payload": {
+        "favicon": "https://abs.twimg.com/favicons/twitter.3.ico",
+        "hostname": "x.com",
+        "image": "https://abs-0.twimg.com/emoji/v2/svg/26a0.svg",
+        "siteName": "X (formerly Twitter)",
+        "type": "link",
+        "url": "https://x.com/silverbirder/status/1475262255818473473"
+      }
+    },
+    "https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/javascript-api": {
+      "fetchedAt": 1768051078794,
+      "payload": {
+        "favicon": "https://abs.twimg.com/favicons/twitter.3.ico",
+        "hostname": "developer.x.com",
+        "image": "https://developer.x.com/content/dam/developer-twitter/x_sharing_card.png.twimg.768.png",
+        "title": "Scripting: Events",
+        "type": "link",
+        "url": "https://developer.x.com/en/docs/x-for-websites/javascript-api/guides/javascript-api"
+      }
+    },
+    "https://silverbirder.github.io/blog/contents/mfe/": {
+      "fetchedAt": 1768051079020,
+      "payload": {
+        "description": "Micro Frontends とは?皆さん、**Micro Fronends**(以下、MFE)をご存知でしょうか。説明をざっくりしますと、Microservicesの考え方をフロントエンドまで拡張した考え方です。Microservicesは、バックエンド側で適用される事例をよく耳にしますが、フロントエンドでの適用事例は、あまり聞いたことがありません。",
+        "favicon": "https://silverbirder.github.io/favicon.svg",
+        "hostname": "silverbirder.github.io",
+        "image": "https://silverbirder.github.io/opengraph-image.png",
+        "title": "［覚書］ Micro Frontends",
+        "type": "link",
+        "url": "https://silverbirder.github.io/blog/contents/mfe/"
+      }
+    },
+    "https://www.webcomponents.org/specs より引用します。": {
+      "fetchedAt": 1768051080899,
+      "payload": {
+        "favicon": "https://www.webcomponents.org/assets/favicon-32x32.png",
+        "hostname": "www.webcomponents.org",
+        "image": "https://www.webcomponents.org/assets/logo-192x192.png",
+        "title": "webcomponents.org - Discuss & share web components",
+        "type": "link",
+        "url": "https://www.webcomponents.org/specs"
+      }
+    },
+    "http://kohki.hatenablog.jp/entry/hugo-portfolio": {
+      "fetchedAt": 1768051080942,
+      "payload": {
+        "description": "出来たもの Nakaji Kohki https://nkjzm.github.io/ [ urlの先の内容が変わって趣旨が伝わらなくならないようにするためのgif github.com はじめに 知り合いがGitHubにResume(職務経歴書)をまとめていて良さそうに見えた。 土曜日を1日使ってポートフォリオを公開してみた。",
+        "favicon": "https://kohki.hatenablog.jp/icon/link",
+        "hostname": "kohki.hatenablog.jp",
+        "image": "https://cdn.image.st-hatena.com/image/scale/76b995fe8a9a62b8963835c70f18e9c69574810a/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fs%2Fsplas_boomerang%2F20180610%2F20180610230627.gif",
+        "siteName": "プログラミングで世界を変える",
+        "title": "Hugo + GitHub Pagesでポートフォリオを作る - プログラミングで世界を変える",
+        "type": "link",
+        "url": "https://kohki.hatenablog.jp/entry/hugo-portfolio"
+      }
+    },
+    "https://github.com/silverbirder/silverbirder.github.io": {
+      "fetchedAt": 1768051080943,
+      "payload": {
+        "description": "my portfolio page. Contribute to silverbirder/silverbirder.github.io development by creating an account on GitHub.",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://repository-images.githubusercontent.com/171014922/f567849f-392b-4141-925f-024a8b50f95b",
+        "siteName": "GitHub",
+        "title": "GitHub - silverbirder/silverbirder.github.io: my portfolio page",
+        "type": "link",
+        "url": "https://github.com/silverbirder/silverbirder.github.io"
+      }
+    },
+    "https://cloud.google.com/workflows/quotas?hl=ja": {
+      "fetchedAt": 1768051082419,
+      "payload": {
+        "favicon": "https://www.gstatic.com/devrel-devsite/prod/v80d9a52eefe4eccd9a262cfbc94473a846b10e2b3115e0674427719fa6f74364/clouddocs/images/favicons/onecloud/favicon.ico",
+        "hostname": "docs.cloud.google.com",
+        "image": "https://docs.cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png?hl=ja",
+        "siteName": "Google Cloud Documentation",
+        "title": "割り当てと上限  |  Workflows  |  Google Cloud Documentation",
+        "type": "link",
+        "url": "https://docs.cloud.google.com/workflows/quotas?hl=ja"
+      }
+    },
+    "https://firebase.google.com/docs/firestore/query-data/query-cursors?hl=ja": {
+      "fetchedAt": 1768051082420,
+      "payload": {
+        "description": "クエリカーソルを使用して Cloud Firestore でデータをページ分けするためのガイド。",
+        "favicon": "https://www.gstatic.com/devrel-devsite/prod/v80d9a52eefe4eccd9a262cfbc94473a846b10e2b3115e0674427719fa6f74364/firebase/images/favicon.png",
+        "hostname": "firebase.google.com",
+        "image": "https://www.gstatic.com/devrel-devsite/prod/v80d9a52eefe4eccd9a262cfbc94473a846b10e2b3115e0674427719fa6f74364/firebase/images/lockup.svg",
+        "siteName": "Firebase",
+        "title": "クエリカーソルを使用してデータにページを設定する  |  Firestore  |  Firebase",
+        "type": "link",
+        "url": "https://firebase.google.com/docs/firestore/query-data/query-cursors?hl=ja"
+      }
+    },
+    "https://www.npmjs.com/package/tiktok-scraper": {
+      "fetchedAt": 1768051082421,
+      "payload": {
+        "description": "TikTok Scraper & Downloader. Scrape information from User, Trending and HashTag pages and download video posts. Latest version: 1.4.36, last published: 4 years ago. Start using tiktok-scraper in your project by running `npm i tiktok-scraper`. There are 40 other projects in the npm registry using tiktok-scraper.",
+        "favicon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png",
+        "hostname": "www.npmjs.com",
+        "image": "https://static-production.npmjs.com/338e4905a2684ca96e08c7780fc68412.png",
+        "siteName": "npm",
+        "title": "tiktok-scraper",
+        "type": "link",
+        "url": "https://www.npmjs.com/package/tiktok-scraper"
+      }
+    },
+    "https://gigazine.net/news/20210811-tiktok-overtakes-facebook/": {
+      "fetchedAt": 1768051082421,
+      "payload": {
+        "description": "2019年の時点で世界で最もダウンロードされたアプリはFacebook Messengerでしたが、新たな調査で、2019年には第4位だったTikTokが2020年には第1位に躍り出ていたことが判明しました。またアメリカとイギリスにおいて、TikTokの合計再生時間はYouTubeを超えたことも伝えられています。",
+        "favicon": "https://gigazine.net/apple-touch-icon.png",
+        "hostname": "gigazine.net",
+        "image": "https://i.gzn.jp/img/2021/08/11/tiktok-overtakes-facebook/00.jpg",
+        "siteName": "GIGAZINE",
+        "title": "ついにTikTokがFacebookを抜いて「世界で最もダウンロードされたアプリ」に",
+        "type": "link",
+        "url": "https://gigazine.net/news/20210811-tiktok-overtakes-facebook/"
+      }
+    },
+    "https://github.com/silverbirder/micro-frontends-sample-code-6": {
+      "fetchedAt": 1768051082535,
+      "payload": {
+        "description": "Contribute to silverbirder/micro-frontends-sample-code-6 development by creating an account on GitHub.",
+        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+        "hostname": "github.com",
+        "image": "https://opengraph.githubassets.com/99f0365446967555c6bf4674c3afc336cb6c28a1692511e7cd8990abdb9fd233/silverbirder/micro-frontends-sample-code-6",
+        "siteName": "GitHub",
+        "title": "GitHub - silverbirder/micro-frontends-sample-code-6",
+        "type": "link",
+        "url": "https://github.com/silverbirder/micro-frontends-sample-code-6"
+      }
+    },
+    "https://vaadin.com/router": {
+      "fetchedAt": 1768051082536,
+      "payload": {
+        "description": "Learn how to integrate and utilize React Router with Hilla for seamless routing.",
+        "favicon": "https://vaadin.com/favicon.ico",
+        "hostname": "vaadin.com",
+        "title": "How to use React Router in Hilla applications | Vaadin",
+        "type": "link",
+        "url": "https://vaadin.com/docs/latest/hilla/reference/react-router"
+      }
+    },
+    "https://webpack.js.org/concepts/module-federation/": {
+      "fetchedAt": 1768051083657,
+      "payload": {
+        "description": "webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.",
+        "favicon": "https://webpack.js.org/favicon.a3dd58d3142f7566.ico",
+        "hostname": "webpack.js.org",
+        "image": "https://webpack.js.org/icon-pwa-512x512.934507c816afbcdb.png",
+        "siteName": "webpack",
+        "title": "Module Federation | webpack",
+        "type": "link",
+        "url": "https://webpack.js.org/concepts/module-federation/"
       }
     }
   },
