@@ -4112,41 +4112,30 @@
       }
     },
     "https://github.com/ai/size-limit": {
-      "fetchedAt": 1768051077452,
+      "fetchedAt": 1768142346994,
       "payload": {
-        "description": "Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit. - ai/size-limit",
-        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
         "hostname": "github.com",
-        "image": "https://opengraph.githubassets.com/2e23cc369bad3dc3ae7984a11c9b67553a9a1622e658a3626d5fae3a3d6b6e7f/ai/size-limit",
-        "siteName": "GitHub",
         "title": "GitHub - ai/size-limit: Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit.",
         "type": "link",
         "url": "https://github.com/ai/size-limit"
       }
     },
     "https://github.com/kucherenko/jscpd": {
-      "fetchedAt": 1768051077452,
+      "fetchedAt": 1768142347027,
       "payload": {
-        "description": "Copy/paste detector for programming source code. Contribute to kucherenko/jscpd development by creating an account on GitHub.",
-        "favicon": "https://github.githubassets.com/favicons/favicon.svg",
         "hostname": "github.com",
-        "image": "https://opengraph.githubassets.com/b59e22fa18fc5c76302ffd7e907c5d1ab9ac97dd69527cbca471df7a6a95e5e5/kucherenko/jscpd",
-        "siteName": "GitHub",
         "title": "GitHub - kucherenko/jscpd: Copy/paste detector for programming source code.",
         "type": "link",
         "url": "https://github.com/kucherenko/jscpd"
       }
     },
     "https://eslint.org/docs/rules/complexity": {
-      "fetchedAt": 1768051077453,
+      "fetchedAt": 1768142346980,
       "payload": {
-        "description": "A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.\n",
-        "favicon": "https://eslint.org/favicon.ico",
         "hostname": "eslint.org",
-        "image": "https://eslint.org/og?title=complexity&summary=A%20pluggable%20and%20configurable%20linter%20tool%20for%20identifying%20and%20reporting%20on%20patterns%20in%20JavaScript.%20Maintain%20your%20code%20quality%20with%20ease.%0A&is_rule=true&recommended=false&fixable=&suggestions=",
         "title": "complexity - ESLint - Pluggable JavaScript Linter",
         "type": "link",
-        "url": "https://eslint.org/docs/latest/rules/complexity"
+        "url": "https://eslint.org/docs/rules/complexity"
       }
     },
     "https://qiita.com/kudota/items/b480610cc3f575a8ec6f": {

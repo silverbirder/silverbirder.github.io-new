@@ -154,48 +154,76 @@ const LinkPreviewCard = ({
   const displayTitle = title ?? displaySite ?? resolvedHostname;
 
   return (
-    <Card.Root variant="outline">
-      <Link
-        _hover={{ textDecoration: "none" }}
-        display="block"
-        href={url}
-        rel="noopener noreferrer nofollow"
-        target="_blank"
-        textDecoration="none"
+    <Link
+      _hover={{ textDecoration: "none" }}
+      display="block"
+      href={url}
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      textDecoration="none"
+    >
+      <Card.Root
+        bg="bg.muted"
+        borderWidth="0"
+        flexDirection="column"
+        overflow="hidden"
+        variant="outline"
       >
-        <Card.Body>
-          <HStack align="stretch" gap="4" justify="space-between">
-            <VStack align="start" flex="1" gap="1">
-              <Text color="fg" fontWeight="semibold" lineClamp={2}>
-                {displayTitle}
-              </Text>
-              {description ? (
-                <Text color="fg.muted" fontSize="sm" lineClamp={2}>
-                  {description}
-                </Text>
-              ) : null}
-              <HStack gap="2">
-                {favicon ? <Image alt="" boxSize="4" src={favicon} /> : null}
-                <Text color="fg.muted" fontSize="sm" lineClamp={1}>
-                  {displaySite}
-                </Text>
-              </HStack>
-            </VStack>
-            {image ? (
-              <Image
-                alt=""
-                borderRadius="md"
-                flexShrink={0}
-                maxH="120px"
-                objectFit="cover"
-                src={image}
-                width="160px"
-              />
+        {image ? (
+          <chakra.div height="12rem" width="100%">
+            <Image
+              alt=""
+              height="100%"
+              objectFit="contain"
+              src={image}
+              width="100%"
+            />
+          </chakra.div>
+        ) : null}
+        <Card.Body
+          display="flex"
+          flex="1"
+          flexDirection="column"
+          fontSize="sm"
+          gap="0"
+          lineHeight="var(--notebook-line-height)"
+          p="1rem"
+        >
+          <VStack align="start" gap="0">
+            <Card.Title
+              color="fg"
+              fontSize="sm"
+              fontWeight="semibold"
+              lineClamp={2}
+              lineHeight="inherit"
+            >
+              {displayTitle}
+            </Card.Title>
+            {description ? (
+              <Card.Description
+                color="fg.muted"
+                fontSize="sm"
+                lineClamp={2}
+                lineHeight="inherit"
+              >
+                {description}
+              </Card.Description>
             ) : null}
+          </VStack>
+          <HStack gap="0.5rem">
+            {favicon ? <Image alt="" boxSize="1rem" src={favicon} /> : null}
+            <Text
+              color="fg.muted"
+              fontSize="sm"
+              lineClamp={1}
+              lineHeight="inherit"
+            >
+              {displaySite}
+            </Text>
           </HStack>
         </Card.Body>
-      </Link>
-    </Card.Root>
+      </Card.Root>
+    </Link>
   );
 };
 

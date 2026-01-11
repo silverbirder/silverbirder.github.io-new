@@ -41,7 +41,11 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
   );
 
   return (
-    <chakra.span display="block" ref={wrapperRef}>
+    <chakra.span
+      display="block"
+      lineHeight="var(--notebook-line-height)"
+      ref={wrapperRef}
+    >
       <chakra.img
         alt={props.alt ?? ""}
         decoding={props.decoding ?? "async"}
