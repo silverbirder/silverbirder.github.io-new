@@ -78,5 +78,3 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
     notFound();
   }
 }
-
-export const dynamicParams = false;
