@@ -1,5 +1,5 @@
 export * from "./mdx-client-wrapper";
 export * from "./mdx-components";
+export * from "./notebook";
 export * from "./notebook-image";
-export * from "./notebook-prose";
 export * from "./post-editor-layout";

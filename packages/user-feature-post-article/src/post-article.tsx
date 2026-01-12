@@ -1,26 +1,25 @@
 import { Container } from "@chakra-ui/react";
-import { MdxClientWrapper, NotebookProse } from "@repo/ui";
+import { MdxClientWrapper, Notebook } from "@repo/ui";
 
 type Props = {
   compiledSource: string;
-  meta?: {
+  meta: {
     publishedAt?: string;
     tags?: string[];
     title?: string;
   };
 };
 
-export const PostArticle = ({ compiledSource }: Props) => {
+export const PostArticle = ({ compiledSource, meta }: Props) => {
   return (
-    <Container centerContent>
-      <NotebookProse
-        borderColor="border.muted"
-        borderWidth="1px"
-        px="2"
-        w="full"
+    <Container centerContent p="2">
+      <Notebook
+        publishedAt={meta.publishedAt}
+        tags={meta.tags}
+        title={meta.title}
       >
         <MdxClientWrapper compiledSource={compiledSource} />
-      </NotebookProse>
+      </Notebook>
     </Container>
   );
 };

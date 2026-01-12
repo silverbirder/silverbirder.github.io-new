@@ -55,14 +55,14 @@ const {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
 function _createMdxContent(props) {
   const _components = {
-    h1: "h1",
+    h2: "h2",
     p: "p",
     ..._provideComponents(),
     ...props.components
   };
   return _jsxs(_Fragment, {
-    children: [_jsx(_components.h1, {
-      children: "Hello"
+    children: [_jsx(_components.h2, {
+      children: "Overview"
     }), "\\n", _jsx(_components.p, {
       children: "This is a test."
     })]
@@ -156,29 +156,54 @@ type Story = StoryObj<typeof meta>;
 export const Ideal: Story = {
   args: {
     compiledSource: compiledSources.ideal,
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
   },
 };
 
 export const Empty: Story = {
   args: {
     compiledSource: compiledSources.empty,
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
   },
 };
 
 export const Error: Story = {
   args: {
     compiledSource: compiledSources.error,
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
   },
 };
 
 export const Partial: Story = {
   args: {
     compiledSource: compiledSources.partial,
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
   },
 };
 
 export const Loading: Story = {
   args: {
     compiledSource: compiledSources.loading,
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
   },
 };

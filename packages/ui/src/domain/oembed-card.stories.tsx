@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { NotebookProse } from "./notebook-prose";
+import { Notebook } from "./notebook";
 import { OembedCard } from "./oembed-card";
 
 const LINK_PAYLOAD = JSON.stringify({
@@ -32,9 +32,14 @@ const meta: Meta<typeof OembedCard> = {
   component: OembedCard,
   decorators: [
     (Story) => (
-      <NotebookProse>
+      <Notebook
+        publishedAt="2025-01-12"
+        tags={["oEmbed"]}
+        title="Oembed Preview"
+      >
+        <h2>Link preview</h2>
         <Story />
-      </NotebookProse>
+      </Notebook>
     ),
   ],
   title: "UI/Domain/OembedCard",

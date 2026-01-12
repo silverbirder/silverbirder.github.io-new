@@ -10,7 +10,7 @@ import type {
 import { chakra } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 
-import { NotebookProse } from "./notebook-prose";
+import { Notebook } from "./notebook";
 
 type Props = {
   bodyDropzoneInputProps?: InputHTMLAttributes<HTMLInputElement> & {
@@ -225,6 +225,8 @@ export const PostEditorLayout = ({
   titleValue,
 }: Props) => {
   const t = useTranslations("admin.postEditor");
+  const previewDate = "2025-01-12";
+  const previewTitle = titleValue || t("titlePlaceholder");
   const isPreviewLoading = previewIsLoading ?? previewContent == null;
 
   return (
@@ -287,12 +289,15 @@ export const PostEditorLayout = ({
         </EditorPanel>
         <PreviewPanel>
           <PanelTitle>{t("previewTitle")}</PanelTitle>
-          <NotebookProse
+          <Notebook
             aria-busy={isPreviewLoading}
             data-testid="post-editor-preview"
+            publishedAt={previewDate}
+            tags={[]}
+            title={previewTitle}
           >
             {previewContent ?? <p>{t("previewTitle")}</p>}
-          </NotebookProse>
+          </Notebook>
         </PreviewPanel>
       </EditorGrid>
     </Main>
