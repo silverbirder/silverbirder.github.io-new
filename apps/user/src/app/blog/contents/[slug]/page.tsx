@@ -3,14 +3,9 @@ import { serialize } from "next-mdx-remote-client/serialize";
 import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import rehypeRaw from "rehype-raw";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkGfm from "remark-gfm";
-import remarkMdx from "remark-mdx";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 import { getPostFrontmatter, getPostSlugs } from "@/libs";
-import { createRemarkOembed } from "@/libs/mdx/remark-oembed";
+import { createMdxOptions } from "@/libs/mdx/mdx-options";
 
 const contentDir = path.resolve(
   process.cwd(),
@@ -40,27 +35,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       options: {
         disableExports: true,
         disableImports: true,
-        mdxOptions: {
-          rehypePlugins: [
-            [
-              rehypeRaw,
-              {
-                passThrough: [
-                  "mdxjsEsm",
-                  "mdxJsxFlowElement",
-                  "mdxJsxTextElement",
-                ],
-              },
-            ],
-          ],
-          remarkPlugins: [
-            remarkFrontmatter,
-            remarkMdx,
-            remarkMdxFrontmatter,
-            remarkGfm,
-            createRemarkOembed,
-          ],
-        },
+        mdxOptions: createMdxOptions(),
       },
       source,
     });

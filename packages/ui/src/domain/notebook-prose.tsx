@@ -27,6 +27,11 @@ export const NotebookProse = chakra("div", {
       width: "100%",
     },
     "--notebook-line-height": NOTEBOOK_LINE_HEIGHT,
+    _dark: {
+      [inWhere("& pre code span")]: {
+        color: "var(--shiki-dark)",
+      },
+    },
     backgroundColor: "bg",
     backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} var(--notebook-line-height))`,
     backgroundPosition: "0 0",
@@ -229,6 +234,11 @@ export const NotebookProse = chakra("div", {
       paddingInlineStart: "2rem",
       paddingTop: "2rem",
     },
+    [inWhere("& pre [data-line]")]: {
+      display: "block",
+      minHeight: "1em",
+      paddingInlineEnd: "1rem",
+    },
     [inWhere("& pre code")]: {
       bg: "transparent",
       borderWidth: "inherit",
@@ -237,6 +247,9 @@ export const NotebookProse = chakra("div", {
       letterSpacing: "inherit",
       lineHeight: "inherit",
       padding: "0",
+    },
+    [inWhere("& pre code span")]: {
+      color: "var(--shiki-light)",
     },
     [inWhere("& strong")]: {
       fontWeight: "600",

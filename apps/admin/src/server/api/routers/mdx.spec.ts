@@ -1,3 +1,4 @@
+import rehypePrettyCode from "rehype-pretty-code";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { createCallerFactory } from "@/server/api/trpc";
@@ -64,6 +65,15 @@ describe("mdxRouter.preview", () => {
         disableExports: true,
         disableImports: true,
         mdxOptions: expect.objectContaining({
+          rehypePlugins: expect.arrayContaining([
+            [
+              rehypePrettyCode,
+              expect.objectContaining({
+                keepBackground: false,
+                theme: { dark: "github-dark", light: "github-light" },
+              }),
+            ],
+          ]),
           remarkPlugins: expect.any(Array),
         }),
       },
