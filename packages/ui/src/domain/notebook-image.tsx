@@ -48,6 +48,9 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
     >
       <chakra.img
         alt={props.alt ?? ""}
+        bg="bg.muted"
+        borderRadius="0"
+        boxShadow="none"
         decoding={props.decoding ?? "async"}
         display="block"
         height="auto"

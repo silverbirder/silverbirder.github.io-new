@@ -13,6 +13,7 @@ const contentDir = path.resolve(
 export type PostFrontmatter = {
   publishedAt?: string;
   summary?: string;
+  tags?: string[];
   title?: string;
 };
 
@@ -65,6 +66,7 @@ export const getPostFrontmatter = async (
   return {
     publishedAt: extractFrontmatterValue(content, "publishedAt") ?? undefined,
     summary: extractFrontmatterValue(content, "summary") ?? undefined,
+    tags: parseTags(extractFrontmatterValue(content, "tags")),
     title: extractFrontmatterValue(content, "title") ?? undefined,
   };
 };
@@ -93,6 +95,30 @@ const extractFrontmatterValue = (content: string, key: string) => {
   }
 
   return rawValue;
+};
+
+const parseTags = (value: null | string) => {
+  if (!value) {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+
+  const normalized =
+    trimmed.startsWith("[") && trimmed.endsWith("]")
+      ? trimmed.slice(1, -1)
+      : trimmed;
+
+  const tags = normalized
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter((tag) => tag.length > 0)
+    .map((tag) => tag.replace(/^['"]|['"]$/g, ""));
+
+  return tags.length > 0 ? tags : undefined;
 };
 
 const extractFrontmatterBlock = (content: string) => {

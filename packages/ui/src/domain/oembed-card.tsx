@@ -164,6 +164,7 @@ const LinkPreviewCard = ({
     >
       <Card.Root
         bg="bg.muted"
+        borderRadius="0"
         borderWidth="0"
         flexDirection="column"
         overflow="hidden"

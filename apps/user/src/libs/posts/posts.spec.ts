@@ -8,7 +8,7 @@ vi.mock("node:fs/promises", () => ({
   readFile,
 }));
 
-import { getPostSlugs } from ".";
+import { getPostFrontmatter, getPostSlugs } from ".";
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -51,5 +51,37 @@ title: 'Draft'
     ]);
     expect(readdir).toHaveBeenCalledTimes(1);
     expect(readFile).toHaveBeenCalledTimes(3);
+  });
+});
+
+describe("getPostFrontmatter", () => {
+  it("returns frontmatter with parsed tags", async () => {
+    readFile.mockResolvedValue(`---
+title: "Tagged post"
+publishedAt: "2025-01-01"
+summary: "Summary"
+tags: [nextjs, mdx]
+---`);
+
+    const frontmatter = await getPostFrontmatter("example");
+
+    expect(frontmatter).toEqual({
+      publishedAt: "2025-01-01",
+      summary: "Summary",
+      tags: ["nextjs", "mdx"],
+      title: "Tagged post",
+    });
+    expect(readFile).toHaveBeenCalledTimes(1);
+  });
+
+  it("returns undefined tags when frontmatter omits tags", async () => {
+    readFile.mockResolvedValue(`---
+title: "No tags"
+publishedAt: "2025-01-02"
+---`);
+
+    const frontmatter = await getPostFrontmatter("example");
+
+    expect(frontmatter.tags).toBeUndefined();
   });
 });

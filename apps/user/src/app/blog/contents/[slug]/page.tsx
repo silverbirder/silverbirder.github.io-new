@@ -9,7 +9,7 @@ import remarkGfm from "remark-gfm";
 import remarkMdx from "remark-mdx";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
-import { getPostSlugs } from "@/libs";
+import { getPostFrontmatter, getPostSlugs } from "@/libs";
 import { createRemarkOembed } from "@/libs/mdx/remark-oembed";
 
 const contentDir = path.resolve(
@@ -34,6 +34,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
   const { slug } = await props.params;
 
   try {
+    const frontmatter = await getPostFrontmatter(slug);
     const source = await loadPostSource(slug);
     const compiled = await serialize({
       options: {
@@ -67,7 +68,16 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       notFound();
     }
 
-    return <PostArticle compiledSource={compiled.compiledSource} />;
+    return (
+      <PostArticle
+        compiledSource={compiled.compiledSource}
+        meta={{
+          publishedAt: frontmatter.publishedAt,
+          tags: frontmatter.tags,
+          title: frontmatter.title,
+        }}
+      />
+    );
   } catch {
     notFound();
   }
