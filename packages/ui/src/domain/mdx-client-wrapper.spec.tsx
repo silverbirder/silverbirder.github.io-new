@@ -1,12 +1,12 @@
-import { mdxComponents } from "@repo/ui";
 import { MDXClient } from "next-mdx-remote-client";
 import { describe, expect, it } from "vitest";
 
-import { PostContent } from "./post-content";
+import { MdxClientWrapper } from "./mdx-client-wrapper";
+import { mdxComponents } from "./mdx-components";
 
-describe("PostContent", () => {
+describe("MdxClientWrapper", () => {
   it("passes compiledSource and components to MDXClient", () => {
-    const element = PostContent({ compiledSource: "<p>hello</p>" });
+    const element = MdxClientWrapper({ compiledSource: "<p>hello</p>" });
 
     expect(element.type).toBe(MDXClient);
     expect(element.props.compiledSource).toBe("<p>hello</p>");

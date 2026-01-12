@@ -1,7 +1,7 @@
 "use client";
 
-import { mdxComponents, PostEditorLayout } from "@repo/ui";
-import { MDXClient, SerializeResult } from "next-mdx-remote-client";
+import { MdxClientWrapper, PostEditorLayout } from "@repo/ui";
+import { SerializeResult } from "next-mdx-remote-client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
@@ -199,8 +199,10 @@ export const PostEditor = ({
       onResolveLinkTitles={handleResolveLinkTitles}
       onTitleChange={onTitleChange}
       previewContent={
-        previewSource && "compiledSource" in previewSource ? (
-          <MDXClient {...previewSource} components={mdxComponents} />
+        previewSource &&
+        "compiledSource" in previewSource &&
+        previewSource.compiledSource ? (
+          <MdxClientWrapper compiledSource={previewSource.compiledSource} />
         ) : null
       }
       previewIsLoading={isPreviewLoading}

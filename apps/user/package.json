@@ -17,6 +17,7 @@
     "@repo/content": "workspace:*",
     "@repo/metadata": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@repo/user-feature-post-article": "workspace:*",
     "@repo/util": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
     "feed": "^5.1.0",

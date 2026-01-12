@@ -1,4 +1,4 @@
-import { PostArticle } from "@repo/ui";
+import { PostArticle } from "@repo/user-feature-post-article";
 import { serialize } from "next-mdx-remote-client/serialize";
 import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
@@ -11,8 +11,6 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 import { getPostSlugs } from "@/libs";
 import { createRemarkOembed } from "@/libs/mdx/remark-oembed";
-
-import { PostContent } from "./post-content";
 
 const contentDir = path.resolve(
   process.cwd(),
@@ -69,11 +67,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       notFound();
     }
 
-    return (
-      <PostArticle>
-        <PostContent compiledSource={compiled.compiledSource} />
-      </PostArticle>
-    );
+    return <PostArticle compiledSource={compiled.compiledSource} />;
   } catch {
     notFound();
   }
