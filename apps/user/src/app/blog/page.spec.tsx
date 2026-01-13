@@ -30,8 +30,18 @@ describe("getPostList", () => {
     const posts = await getPostList(loader);
 
     expect(posts).toEqual([
-      { publishedAt: "2020-01-01", slug: "first", title: "Old title" },
-      { publishedAt: "2021-01-01", slug: "second", title: "New title" },
+      {
+        publishedAt: "2020-01-01",
+        slug: "first",
+        tags: [],
+        title: "Old title",
+      },
+      {
+        publishedAt: "2021-01-01",
+        slug: "second",
+        tags: [],
+        title: "New title",
+      },
     ]);
     expect(mockedGetPostSlugs).toHaveBeenCalledTimes(1);
     expect(loader).toHaveBeenNthCalledWith(1, "first");

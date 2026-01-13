@@ -28,7 +28,7 @@
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.2",
     "typescript": "5.9.2",
-    "vitest": "^4.0.16",
+    "vitest": "^4.0.17",
     "vitest-browser-react": "^2.0.2"
   },
   "peerDependencies": {

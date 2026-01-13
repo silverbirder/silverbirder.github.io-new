@@ -1,4 +1,19 @@
 {
+  "user": {
+    "blog": {
+      "title": "ブログ",
+      "latestHeading": "新着",
+      "empty": "投稿が見つかりませんでした。",
+      "filtersTitle": "絞り込み",
+      "filtersAll": "すべて",
+      "filtersYear": "年",
+      "filtersTag": "タグ",
+      "metaCount": "全 {count} 件",
+      "paginationLabel": "ページネーション",
+      "paginationPrev": "前へ",
+      "paginationNext": "次へ"
+    }
+  },
   "admin": {
     "home": {
       "title": "管理ホーム",
