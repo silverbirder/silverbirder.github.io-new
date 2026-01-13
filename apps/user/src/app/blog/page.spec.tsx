@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("@/libs", () => ({
+vi.mock("@/libs/posts/posts", () => ({
+  getPostFrontmatter: vi.fn(),
   getPostSlugs: vi.fn(),
 }));
 
-import { getPostSlugs } from "@/libs";
-
-import { getPostList } from "./page";
+import { getPostList } from "@/libs/posts/get-post-list";
+import { getPostSlugs } from "@/libs/posts/posts";
 
 describe("getPostList", () => {
   it("returns titles with publishedAt in the slug order", async () => {

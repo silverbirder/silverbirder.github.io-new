@@ -1,11 +1,30 @@
-import { Container } from "@chakra-ui/react";
-import { Notebook } from "@repo/ui";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
+
 import { composeStories } from "@storybook/nextjs-vite";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { PostArticle } from "./post-article";
 import * as stories from "./post-article.stories";
 import { renderWithProvider } from "./test-util";
+
+type NextLinkMockProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  children?: ReactNode;
+  href?: unknown;
+};
+
+vi.mock("next/link", () => {
+  const Link = ({ children, href, ...props }: NextLinkMockProps) => {
+    const resolvedHref =
+      typeof href === "string" ? href : href ? String(href) : "";
+    return (
+      <a href={resolvedHref ?? ""} {...props}>
+        {children}
+      </a>
+    );
+  };
+
+  return { __esModule: true, default: Link };
+});
 
 const Stories = composeStories(stories);
 
@@ -20,18 +39,37 @@ describe("PostArticle", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("wraps the article with container and notebook prose", () => {
-    const element = PostArticle({
-      compiledSource: "<p>hello</p>",
-      meta: {
-        publishedAt: "2025-01-02",
-        tags: ["Testing"],
-        title: "Test title",
-      },
-    });
+  it("wraps the article with post layout and notebook prose", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
 
-    expect(element.type).toBe(Container);
-    expect(element.props.children.type).toBe(Notebook);
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        filters={{
+          availableTags: ["Testing"],
+          availableYears: ["2025"],
+        }}
+        meta={{
+          publishedAt: "2025-01-02",
+          tags: ["Testing"],
+          title: "Test title",
+        }}
+      />,
+    );
+
+    expect(document.querySelector("nav")).not.toBeNull();
+    expect(document.body.textContent ?? "").toContain("絞り込み");
+    expect(document.body.textContent ?? "").toContain("Test title");
   });
 
   it("renders compiled source via provider wrapper", async () => {
@@ -63,6 +101,10 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        filters={{
+          availableTags: ["Testing"],
+          availableYears: ["2025"],
+        }}
         meta={{
           publishedAt: "2025-01-02",
           tags: ["Testing"],
@@ -104,6 +146,10 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        filters={{
+          availableTags: ["Chakra", "Design"],
+          availableYears: ["2025"],
+        }}
         meta={{
           publishedAt: "2025-01-02",
           tags: ["Chakra", "Design"],

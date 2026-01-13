@@ -1,10 +1,15 @@
 import { PostArticle } from "@repo/user-feature-post-article";
+import {
+  getAvailableTags,
+  getAvailableYears,
+  normalizePosts,
+} from "@repo/user-feature-posts";
 import { serialize } from "next-mdx-remote-client/serialize";
 import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import { getPostFrontmatter, getPostSlugs } from "@/libs";
+import { getPostFrontmatter, getPostList, getPostSlugs } from "@/libs";
 import { createMdxOptions } from "@/libs/mdx/mdx-options";
 
 const contentDir = path.resolve(
@@ -30,6 +35,10 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
 
   try {
     const frontmatter = await getPostFrontmatter(slug);
+    const postList = await getPostList();
+    const normalizedPosts = normalizePosts(postList);
+    const availableYears = getAvailableYears(normalizedPosts);
+    const availableTags = getAvailableTags(normalizedPosts);
     const source = await loadPostSource(slug);
     const compiled = await serialize({
       options: {
@@ -46,6 +55,10 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
     return (
       <PostArticle
         compiledSource={compiled.compiledSource}
+        filters={{
+          availableTags,
+          availableYears,
+        }}
         meta={{
           publishedAt: frontmatter.publishedAt,
           tags: frontmatter.tags,
