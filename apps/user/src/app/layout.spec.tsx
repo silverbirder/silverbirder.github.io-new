@@ -1,29 +1,35 @@
 import type { ReactNode } from "react";
 
-import { isValidElement } from "react";
+import React, { isValidElement } from "react";
 import { describe, expect, it, vi } from "vitest";
-
-const getMessages = vi.fn().mockResolvedValue({});
-
-vi.mock("next-intl", () => ({
-  NextIntlClientProvider: ({ children }: { children: ReactNode }) => (
-    <div data-provider="intl">{children}</div>
-  ),
-}));
-
-vi.mock("next-intl/server", () => ({
-  getMessages,
-}));
-
-vi.mock("next/font/google", () => ({
-  Noto_Sans_JP: () => ({ className: "noto-font" }),
-}));
-
-import RootLayout from "./layout";
 
 describe("RootLayout", () => {
   it("wraps children with intl provider and applies html and body attributes", async () => {
-    const element = await RootLayout({ children: <span>child</span> });
+    vi.resetModules();
+
+    const getMessages = vi.fn().mockResolvedValue({});
+
+    vi.doMock("@repo/ui", () => ({
+      Provider: ({ children }: { children: ReactNode }) =>
+        React.createElement("div", { "data-provider": "ui" }, children),
+    }));
+
+    vi.doMock("next-intl", () => ({
+      NextIntlClientProvider: ({ children }: { children: ReactNode }) => (
+        <div data-provider="intl">{children}</div>
+      ),
+    }));
+
+    vi.doMock("next-intl/server", () => ({
+      getMessages,
+    }));
+
+    vi.doMock("next/font/google", () => ({
+      Noto_Sans_JP: () => ({ className: "noto-font" }),
+    }));
+
+    const mod = await import("./layout");
+    const element = await mod.default({ children: <span>child</span> });
 
     expect(getMessages).toHaveBeenCalledTimes(1);
     expect(isValidElement(element)).toBe(true);
@@ -35,10 +41,19 @@ describe("RootLayout", () => {
     expect(bodyElement.type).toBe("body");
     expect(bodyElement.props.className).toBe("noto-font");
 
-    const providerElement = bodyElement.props.children;
+    const uiProviderElement = bodyElement.props.children;
 
-    expect(providerElement.type).toBe("div");
-    expect(providerElement.props["data-provider"]).toBe("intl");
-    expect(providerElement.props.children.type).toBe("span");
+    expect(uiProviderElement.type).toBe("div");
+    expect(uiProviderElement.props["data-provider"]).toBe("ui");
+
+    const intlProviderElement = uiProviderElement.props.children;
+
+    expect(intlProviderElement.type).toBe("div");
+    expect(intlProviderElement.props["data-provider"]).toBe("intl");
+
+    const viewTransitionElement = intlProviderElement.props.children;
+
+    expect(isValidElement(viewTransitionElement)).toBe(true);
+    expect(viewTransitionElement.props.children.type).toBe("span");
   });
 });

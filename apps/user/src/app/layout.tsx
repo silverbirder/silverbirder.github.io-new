@@ -5,6 +5,7 @@ import { Provider } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Noto_Sans_JP } from "next/font/google";
+import { ViewTransition } from "react";
 
 export const metadata: Metadata = createSiteMetadata();
 
@@ -25,7 +26,7 @@ export default async function RootLayout({ children }: Props) {
       <body className={notoSansJP.className}>
         <Provider>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <ViewTransition>{children}</ViewTransition>
           </NextIntlClientProvider>
         </Provider>
       </body>

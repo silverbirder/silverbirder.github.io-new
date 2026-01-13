@@ -3,7 +3,7 @@
 import type { PostLayoutRenderLink } from "@repo/ui";
 
 import { Box, Flex, Heading, Link, Stack, Text } from "@chakra-ui/react";
-import { PostLayout } from "@repo/ui";
+import { PostLayout, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -124,13 +124,13 @@ export const Posts = ({ posts }: Props) => {
           {pagination.items.map((post) => (
             <Box as="li" key={post.slug}>
               <Stack gap={1}>
-                <Link
+                <ViewTransitionLink
                   as={NextLink}
                   fontWeight="semibold"
                   href={`/blog/contents/${post.slug}`}
                 >
                   {post.title}
-                </Link>
+                </ViewTransitionLink>
                 <Text fontSize="sm">
                   {post.publishedAt}
                   {post.tags.length > 0 ? ` / ${post.tags.join(" , ")}` : ""}
@@ -144,14 +144,14 @@ export const Posts = ({ posts }: Props) => {
       {pagination.totalPages > 1 ? (
         <Box aria-label={t("paginationLabel")} mt={8}>
           <Flex align="center" gap={2} wrap="wrap">
-            <Link
+            <ViewTransitionLink
               aria-disabled={pagination.currentPage <= 1}
               as={NextLink}
               href={buildHref({ page: pagination.currentPage - 1 })}
               pointerEvents={pagination.currentPage <= 1 ? "none" : "auto"}
             >
               {t("paginationPrev")}
-            </Link>
+            </ViewTransitionLink>
 
             {paginationItems.map((item) => {
               if (item.type === "ellipsis") {
@@ -163,7 +163,7 @@ export const Posts = ({ posts }: Props) => {
               }
 
               return (
-                <Link
+                <ViewTransitionLink
                   as={NextLink}
                   fontWeight={item.isCurrent ? "bold" : "normal"}
                   href={buildHref({ page: item.page })}
@@ -171,11 +171,11 @@ export const Posts = ({ posts }: Props) => {
                   textDecoration={item.isCurrent ? "underline" : "none"}
                 >
                   {item.page}
-                </Link>
+                </ViewTransitionLink>
               );
             })}
 
-            <Link
+            <ViewTransitionLink
               aria-disabled={pagination.currentPage >= pagination.totalPages}
               as={NextLink}
               href={buildHref({ page: pagination.currentPage + 1 })}
@@ -186,7 +186,7 @@ export const Posts = ({ posts }: Props) => {
               }
             >
               {t("paginationNext")}
-            </Link>
+            </ViewTransitionLink>
           </Flex>
         </Box>
       ) : null}

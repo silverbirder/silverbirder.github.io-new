@@ -2,15 +2,9 @@
 
 import type { ReactNode } from "react";
 
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+
+import { ViewTransitionLink } from "./view-transition-link";
 
 export type PostLayoutRenderLink = (props: {
   children: ReactNode;
@@ -53,9 +47,9 @@ const defaultRenderLink: PostLayoutRenderLink = ({
   isActive,
 }) => {
   return (
-    <Link fontWeight={isActive ? "bold" : "normal"} href={href}>
+    <ViewTransitionLink fontWeight={isActive ? "bold" : "normal"} href={href}>
       {children}
-    </Link>
+    </ViewTransitionLink>
   );
 };
 

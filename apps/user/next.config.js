@@ -10,6 +10,7 @@ const config = {
   basePath: process.env.GITHUB_PAGES_BASE_PATH || "",
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
+    viewTransition: true,
   },
   images: {
     unoptimized: true,
