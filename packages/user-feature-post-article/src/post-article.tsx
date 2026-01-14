@@ -23,6 +23,10 @@ type Props = {
 export const PostArticle = ({ compiledSource, filters, meta }: Props) => {
   const t = useTranslations("user.blog");
 
+  const breadcrumb = meta.title
+    ? ([{ href: "/blog", label: t("title") }, { label: meta.title }] as const)
+    : ([{ label: t("title") }] as const);
+
   const buildHref = (input: {
     page?: null | number;
     tag?: null | string;
@@ -60,6 +64,7 @@ export const PostArticle = ({ compiledSource, filters, meta }: Props) => {
 
   return (
     <PostLayout
+      breadcrumb={[...breadcrumb]}
       sidebar={{
         availableTags: filters.availableTags,
         availableYears: filters.availableYears,

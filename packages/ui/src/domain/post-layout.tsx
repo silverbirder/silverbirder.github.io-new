@@ -1,8 +1,17 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
-import { Box, Container, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Breadcrumb,
+  Container,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import { Fragment } from "react";
 
 import { ViewTransitionLink } from "./view-transition-link";
 
@@ -10,7 +19,12 @@ export type PostLayoutRenderLink = (props: {
   children: ReactNode;
   href: string;
   isActive?: boolean;
-}) => ReactNode;
+}) => ReactElement;
+
+type PostLayoutBreadcrumbItem = {
+  href?: string;
+  label: ReactNode;
+};
 
 type PostLayoutHrefInput = {
   page?: null | number;
@@ -19,6 +33,7 @@ type PostLayoutHrefInput = {
 };
 
 type Props = {
+  breadcrumb?: PostLayoutBreadcrumbItem[];
   children: ReactNode;
   header?: ReactNode;
   sidebar: SidebarProps;
@@ -53,7 +68,12 @@ const defaultRenderLink: PostLayoutRenderLink = ({
   );
 };
 
-export const PostLayout = ({ children, header, sidebar }: Props) => {
+export const PostLayout = ({
+  breadcrumb,
+  children,
+  header,
+  sidebar,
+}: Props) => {
   const {
     availableTags,
     availableYears,
@@ -68,6 +88,32 @@ export const PostLayout = ({ children, header, sidebar }: Props) => {
 
   return (
     <Container maxW="6xl" py={10}>
+      {breadcrumb && breadcrumb.length > 0 ? (
+        <Breadcrumb.Root mb={4} size="sm">
+          <Breadcrumb.List>
+            {breadcrumb.map((item, index) => {
+              const isLast = index === breadcrumb.length - 1;
+              const href = item.href;
+              const label = item.label;
+
+              return (
+                <Fragment key={index}>
+                  <Breadcrumb.Item>
+                    {href && !isLast ? (
+                      resolvedRenderLink({ children: label, href })
+                    ) : (
+                      <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
+                    )}
+                  </Breadcrumb.Item>
+
+                  {!isLast ? <Breadcrumb.Separator /> : null}
+                </Fragment>
+              );
+            })}
+          </Breadcrumb.List>
+        </Breadcrumb.Root>
+      ) : null}
+
       {header}
 
       <Flex align="start" direction={{ base: "column", md: "row" }} gap={10}>

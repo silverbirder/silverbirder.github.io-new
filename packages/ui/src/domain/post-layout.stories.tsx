@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const baseArgs: Story["args"] = {
+  breadcrumb: [{ label: "Blog" }],
   children: (
     <Box>
       <Heading as="h2" size="md">

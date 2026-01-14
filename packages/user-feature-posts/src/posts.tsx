@@ -90,6 +90,7 @@ export const Posts = ({ posts }: Props) => {
 
   return (
     <PostLayout
+      breadcrumb={[{ label: t("title") }]}
       header={
         <Heading as="h1" mb={6} size="lg">
           {t("title")}

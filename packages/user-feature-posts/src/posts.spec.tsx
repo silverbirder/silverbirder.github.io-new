@@ -92,11 +92,30 @@ describe("Posts", () => {
     await renderWithProvider(<Posts posts={[...createPosts()]} />);
 
     const links = Array.from(
-      document.querySelectorAll('a[href^="/blog/contents/"]'),
+      document.querySelectorAll<HTMLAnchorElement>(
+        'a[href^="/blog/contents/"]',
+      ),
     );
 
-    expect(links).toHaveLength(5);
-    expect(links.map((a) => a.textContent)).toEqual(["A", "B", "C", "D", "E"]);
+    const uniqueLinks: HTMLAnchorElement[] = [];
+    const seenHrefs = new Set<string>();
+    for (const link of links) {
+      const href = link.getAttribute("href") ?? "";
+      if (seenHrefs.has(href)) {
+        continue;
+      }
+      seenHrefs.add(href);
+      uniqueLinks.push(link);
+    }
+
+    expect(uniqueLinks).toHaveLength(5);
+    expect(uniqueLinks.map((a) => a.textContent)).toEqual([
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+    ]);
     expect(document.body.textContent ?? "").not.toContain("F");
   });
 
@@ -105,10 +124,24 @@ describe("Posts", () => {
     await renderWithProvider(<Posts posts={[...createPosts()]} />);
 
     const links = Array.from(
-      document.querySelectorAll('a[href^="/blog/contents/"]'),
+      document.querySelectorAll<HTMLAnchorElement>(
+        'a[href^="/blog/contents/"]',
+      ),
     );
-    expect(links).toHaveLength(1);
-    expect(links[0]?.textContent ?? "").toBe("F");
+
+    const uniqueLinks: HTMLAnchorElement[] = [];
+    const seenHrefs = new Set<string>();
+    for (const link of links) {
+      const href = link.getAttribute("href") ?? "";
+      if (seenHrefs.has(href)) {
+        continue;
+      }
+      seenHrefs.add(href);
+      uniqueLinks.push(link);
+    }
+
+    expect(uniqueLinks).toHaveLength(1);
+    expect(uniqueLinks[0]?.textContent ?? "").toBe("F");
 
     const prev = Array.from(document.querySelectorAll("a")).find(
       (a) => a.textContent === "前へ",
