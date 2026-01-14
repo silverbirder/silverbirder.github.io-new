@@ -23,9 +23,18 @@ export const NotebookProse = chakra("div", {
       marginTop: "2rem",
     },
     "& .oembed-card iframe": {
+      display: "block",
       maxWidth: "100%",
       width: "100%",
     },
+    '& .oembed-card iframe[src*="youtube.com/embed"], & .oembed-card iframe[src*="youtube-nocookie.com/embed"]':
+      {
+        height: {
+          base: "14rem",
+          lg: "26rem",
+          md: "20rem",
+        },
+      },
     "--notebook-line-height": NOTEBOOK_LINE_HEIGHT,
     _dark: {
       [inWhere("& pre code span")]: {

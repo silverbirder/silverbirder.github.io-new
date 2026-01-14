@@ -73,4 +73,28 @@ describe("remark-oembed (admin)", () => {
     expect(node.type).toBe("paragraph");
     expect(globalThis.fetch).not.toHaveBeenCalled();
   });
+
+  it("skips Twitter/X status links", async () => {
+    const { createRemarkOembed } = await import("./remark-oembed");
+    const markdown =
+      "a\n\nhttps://x.com/silverbirder/status/1318861346327252993\n\nb";
+    const tree = {
+      children: [
+        createParagraph("a", 1),
+        createParagraph(
+          "https://x.com/silverbirder/status/1318861346327252993",
+          3,
+        ),
+        createParagraph("b", 5),
+      ],
+      type: "root",
+    };
+
+    const transform = createRemarkOembed();
+    await transform(tree, { value: markdown });
+
+    const node = tree.children[1] as { type?: string };
+    expect(node.type).toBe("paragraph");
+    expect(globalThis.fetch).not.toHaveBeenCalled();
+  });
 });

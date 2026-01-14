@@ -1,6 +1,14 @@
 import type { ComponentPropsWithoutRef, ComponentType } from "react";
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("./tweet-embed", () => {
+  return {
+    TweetEmbed: ({ id }: { id: string }) => (
+      <div data-embed="tweet" data-tweet-id={id} />
+    ),
+  };
+});
 
 import { renderWithProvider } from "../test-util";
 import { mdxComponents } from "./mdx-components";
@@ -45,5 +53,27 @@ describe("mdxComponents", () => {
     expect(links).toHaveLength(1);
     expect(links[0]?.getAttribute("href")).toBe("https://example.com");
     expect(links[0]?.getAttribute("target")).toBe("_blank");
+  });
+
+  it("replaces a Twitter/X status link with TweetEmbed", async () => {
+    const P = mdxComponents.p as unknown as ComponentType<
+      ComponentPropsWithoutRef<"p">
+    >;
+    const A = mdxComponents.a as unknown as ComponentType<
+      ComponentPropsWithoutRef<"a">
+    >;
+
+    const { container } = await renderWithProvider(
+      <P>
+        <A href="https://twitter.com/silverbirder/status/1318861346327252993">
+          https://twitter.com/silverbirder/status/1318861346327252993
+        </A>
+      </P>,
+    );
+
+    expect(container.querySelector("p")).toBeNull();
+    const embed = container.querySelector('[data-embed="tweet"]');
+    expect(embed).not.toBeNull();
+    expect(embed?.getAttribute("data-tweet-id")).toBe("1318861346327252993");
   });
 });

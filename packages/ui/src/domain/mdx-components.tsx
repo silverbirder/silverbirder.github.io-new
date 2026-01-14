@@ -11,6 +11,24 @@ import { Children, isValidElement } from "react";
 
 import { NotebookImage } from "./notebook-image";
 import { OembedCard } from "./oembed-card";
+import { TweetEmbed } from "./tweet-embed";
+
+const extractTweetId = (href?: string) => {
+  if (!href) {
+    return null;
+  }
+  try {
+    const url = new URL(href);
+    const hostname = url.hostname.replace(/^www\./, "");
+    if (hostname !== "twitter.com" && hostname !== "x.com") {
+      return null;
+    }
+    const match = url.pathname.match(/\/status\/(\d+)/);
+    return match?.[1] ?? null;
+  } catch {
+    return null;
+  }
+};
 
 const normalizeChildren = (children: ReactNode) => {
   return Children.toArray(children).filter((child) => {
@@ -51,6 +69,15 @@ const Anchor = ({
 
 const Paragraph = ({ children, ...props }: ComponentPropsWithoutRef<"p">) => {
   const onlyChild = getSingleElementChild(children);
+
+  if (onlyChild && onlyChild.type === Anchor) {
+    const tweetId = extractTweetId(
+      (onlyChild.props as undefined | { href?: string })?.href,
+    );
+    if (tweetId) {
+      return <TweetEmbed id={tweetId} />;
+    }
+  }
 
   if (
     onlyChild &&

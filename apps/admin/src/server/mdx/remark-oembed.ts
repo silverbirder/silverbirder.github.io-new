@@ -50,6 +50,19 @@ const isHttpUrl = (value: string) => {
   }
 };
 
+const isTweetStatusUrl = (rawUrl: string) => {
+  try {
+    const url = new URL(rawUrl);
+    const hostname = url.hostname.replace(/^www\./, "");
+    if (hostname !== "twitter.com" && hostname !== "x.com") {
+      return false;
+    }
+    return /\/status\/(\d+)/.test(url.pathname);
+  } catch {
+    return false;
+  }
+};
+
 const resolvePlainLink = (node: UnistNode) => {
   if (!Array.isArray(node.children) || node.children.length === 0) {
     return null;
@@ -236,6 +249,9 @@ export const createRemarkOembed = () => {
         }
         const url = resolvePlainLink(node as UnistNode);
         if (!url) {
+          return;
+        }
+        if (isTweetStatusUrl(url)) {
           return;
         }
         const source = typeof file?.value === "string" ? file.value : undefined;
