@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/nextjs-vite";
 
 import { jaMessages } from "@repo/message";
-import { Provider } from "@repo/ui";
+import { Provider } from "@repo/ui/chakra";
 import { NextIntlClientProvider } from "next-intl";
 
 const preview: Preview = {

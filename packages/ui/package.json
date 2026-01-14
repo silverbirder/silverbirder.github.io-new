@@ -4,7 +4,9 @@
   "private": true,
   "exports": {
     "./package.json": "./package.json",
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./chakra": "./src/chakra/index.ts",
+    "./domain": "./src/domain/index.ts"
   },
   "scripts": {
     "chakra:snippet": "chakra snippet add --outdir src/chakra",
