@@ -19,7 +19,7 @@ describe("Notebook", () => {
   });
 
   it("renders title, date, and tags", async () => {
-    await renderWithProvider(
+    const { container } = await renderWithProvider(
       <Notebook
         publishedAt="2025-01-02"
         tags={["Chakra", "Design"]}
@@ -29,12 +29,12 @@ describe("Notebook", () => {
       </Notebook>,
     );
 
-    const heading = document.querySelector("h1");
-    const time = document.querySelector("time");
+    const heading = container.querySelector("h1");
+    const time = container.querySelector("time");
 
     expect(heading?.textContent ?? "").toBe("Notebook Preview");
     expect(time?.textContent ?? "").toBe("2025/01/02");
-    expect(document.body.textContent ?? "").toContain("Chakra");
-    expect(document.body.textContent ?? "").toContain("Design");
+    expect(container.textContent ?? "").toContain("Chakra");
+    expect(container.textContent ?? "").toContain("Design");
   });
 });

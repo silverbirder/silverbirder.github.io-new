@@ -50,5 +50,10 @@
       "loading": "エディターを準備しています...",
       "error": "プレビューの生成に失敗しました。"
     }
+  },
+  "ui": {
+    "notebookImage": {
+      "openInNewTabAriaLabel": "別タブで開く"
+    }
   }
 }

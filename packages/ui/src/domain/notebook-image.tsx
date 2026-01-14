@@ -2,14 +2,22 @@
 
 import type { ComponentPropsWithoutRef } from "react";
 
-import { chakra } from "@chakra-ui/react";
+import { chakra, Icon } from "@chakra-ui/react";
+import { useTranslations } from "next-intl";
 import { useCallback, useRef } from "react";
+import { MdOpenInNew } from "react-icons/md";
 
-type Props = ComponentPropsWithoutRef<"img">;
+type Props = ComponentPropsWithoutRef<"img"> & {
+  linkHref?: string;
+};
 
-export const NotebookImage = ({ onLoad, ...props }: Props) => {
-  const wrapperRef = useRef<HTMLSpanElement>(null);
+export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
+  const t = useTranslations("ui.notebookImage");
+  const wrapperRef = useRef<HTMLElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+
+  const altText = alt?.trim();
+  const hasCaption = Boolean(altText) || Boolean(linkHref);
 
   const alignToGrid = useCallback(() => {
     const wrapper = wrapperRef.current;
@@ -41,13 +49,15 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
   );
 
   return (
-    <chakra.span
+    <chakra.figure
       display="block"
       lineHeight="var(--notebook-line-height)"
+      marginX={0}
+      marginY="2rem"
       ref={wrapperRef}
     >
       <chakra.img
-        alt={props.alt ?? ""}
+        alt={alt ?? ""}
         bg="bg.muted"
         borderRadius="0"
         boxShadow="none"
@@ -55,11 +65,44 @@ export const NotebookImage = ({ onLoad, ...props }: Props) => {
         display="block"
         height="auto"
         loading={props.loading ?? "lazy"}
+        marginY="0"
         onLoad={handleLoad}
         ref={setImgRef}
         width="100%"
         {...props}
       />
-    </chakra.span>
+
+      {hasCaption && (
+        <chakra.figcaption
+          color="fg.muted"
+          display="block"
+          fontSize="sm"
+          lineHeight="var(--notebook-line-height)"
+          margin={0}
+          textAlign="center"
+        >
+          <chakra.span
+            alignItems="center"
+            display="inline-flex"
+            gap="0.5rem"
+            justifyContent="center"
+          >
+            {altText && altText}
+            {linkHref && (
+              <chakra.a
+                aria-label={t("openInNewTabAriaLabel")}
+                href={linkHref}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Icon color="fg.muted" size="sm">
+                  <MdOpenInNew />
+                </Icon>
+              </chakra.a>
+            )}
+          </chakra.span>
+        </chakra.figcaption>
+      )}
+    </chakra.figure>
   );
 };
