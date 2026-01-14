@@ -3,7 +3,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { createCallerFactory } from "@/server/api/trpc";
 
 vi.mock("@/env", () => ({
-  env: { ADMIN_ALLOWED_EMAILS: "allowed@example.com" },
+  env: {
+    ADMIN_ALLOWED_EMAILS: "allowed@example.com",
+    CONTENT_GITHUB_BASE_BRANCH: "main",
+    CONTENT_GITHUB_REPOSITORY: "silverbirder/silverbirder.github.io-new",
+    CONTENT_POSTS_PATH: "packages/content/posts",
+  },
 }));
 
 const { getAccessToken } = vi.hoisted(() => ({
@@ -91,5 +96,42 @@ describe("githubRouter.list", () => {
     const result = await caller.list();
 
     expect(result).toEqual([]);
+  });
+});
+
+describe("githubRouter.createPullRequest", () => {
+  it("creates a branch, commits a file, and opens a pull request", async () => {
+    getAccessToken.mockResolvedValue({ accessToken: "test-token" });
+    requestMock = vi
+      .fn()
+      .mockResolvedValueOnce({ data: { object: { sha: "base-sha" } } })
+      .mockResolvedValueOnce({ data: {} })
+      .mockResolvedValueOnce({ data: {} })
+      .mockResolvedValueOnce({
+        data: { html_url: "https://example/pr/1", number: 1 },
+      });
+
+    const caller = createCaller({
+      headers: new Headers(),
+      session: { session: allowedSession, user: allowedUser },
+    });
+
+    const result = await caller.createPullRequest({
+      content: "# hello",
+      fileName: "20260114.md",
+      pullRequestBody: "body",
+      pullRequestTitle: "title",
+    });
+
+    expect(result.url).toBe("https://example/pr/1");
+    expect(result.number).toBe(1);
+    expect(result.filePath).toBe("packages/content/posts/20260114.md");
+    expect(requestMock).toHaveBeenCalled();
+
+    const calls = requestMock.mock.calls.map((call) => call[0]);
+    expect(calls).toContain("GET /repos/{owner}/{repo}/git/ref/{ref}");
+    expect(calls).toContain("POST /repos/{owner}/{repo}/git/refs");
+    expect(calls).toContain("PUT /repos/{owner}/{repo}/contents/{path}");
+    expect(calls).toContain("POST /repos/{owner}/{repo}/pulls");
   });
 });

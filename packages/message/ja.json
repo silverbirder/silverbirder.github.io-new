@@ -46,6 +46,9 @@
       "contentPlaceholder": "ここに Markdown を書いてください。",
       "linkUpdateAction": "リンクテキスト更新",
       "linkUpdateLoading": "リンクテキスト更新中...",
+      "createPullRequestAction": "Pull Request 作成",
+      "createPullRequestLoading": "Pull Request 作成中...",
+      "createPullRequestError": "Pull Request の作成に失敗しました。",
       "previewEmpty": "Markdown を入力するとプレビューが表示されます。",
       "loading": "エディターを準備しています...",
       "error": "プレビューの生成に失敗しました。"

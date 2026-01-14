@@ -29,6 +29,9 @@ export const env = createEnv({
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     CLOUDINARY_FOLDER: process.env.CLOUDINARY_FOLDER,
     CLOUDINARY_URL: process.env.CLOUDINARY_URL,
+    CONTENT_GITHUB_BASE_BRANCH: process.env.CONTENT_GITHUB_BASE_BRANCH,
+    CONTENT_GITHUB_REPOSITORY: process.env.CONTENT_GITHUB_REPOSITORY,
+    CONTENT_POSTS_PATH: process.env.CONTENT_POSTS_PATH,
     NEXT_PUBLIC_OEMBED_API_URL: process.env.NEXT_PUBLIC_OEMBED_API_URL,
     NODE_ENV: process.env.NODE_ENV,
   },
@@ -44,6 +47,11 @@ export const env = createEnv({
       process.env.NODE_ENV === "production" ? z.string() : z.string().optional(),
     CLOUDINARY_FOLDER: z.string().optional(),
     CLOUDINARY_URL: z.string(),
+    CONTENT_GITHUB_BASE_BRANCH: z.string().default("main"),
+    CONTENT_GITHUB_REPOSITORY: z
+      .string()
+      .default("silverbirder/silverbirder.github.io-new"),
+    CONTENT_POSTS_PATH: z.string().default("packages/content/posts"),
     NODE_ENV: z
       .enum(["development", "test", "production"]) 
       .default("development"),

@@ -1,12 +1,12 @@
-import { PostEditor } from "@repo/admin-feature-post-editor";
-
 import { resolveLinkTitles } from "@/app/actions/resolve-link-titles";
 import { resolvePreview } from "@/app/actions/resolve-preview";
 import { uploadImage } from "@/app/actions/upload-image";
 
+import { PostEditorWithPullRequest } from "./post-editor-with-pull-request";
+
 export default function Page() {
   return (
-    <PostEditor
+    <PostEditorWithPullRequest
       resolveLinkTitles={resolveLinkTitles}
       resolvePreview={resolvePreview}
       uploadImage={uploadImage}

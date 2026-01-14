@@ -22,6 +22,13 @@ const renderPage = async () => {
       }),
   }));
 
+  vi.doMock("./post-editor-with-pull-request", () => ({
+    PostEditorWithPullRequest: () =>
+      React.createElement("div", {
+        "data-testid": "post-editor",
+      }),
+  }));
+
   const mod = await import("./page");
   const element = await mod.default();
   return renderToStaticMarkup(element);

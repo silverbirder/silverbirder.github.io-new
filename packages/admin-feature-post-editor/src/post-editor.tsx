@@ -8,12 +8,19 @@ import { useDropzone } from "react-dropzone";
 import { usePostEditorPresenter } from "./post-editor.presenter";
 
 type Props = {
+  createPullRequestDisabled?: boolean;
+  onCreatePullRequest?: (draft: {
+    body: string;
+    title: string;
+  }) => Promise<void>;
   resolveLinkTitles: (source: string) => Promise<string>;
   resolvePreview: (source: string) => Promise<SerializeResult>;
   uploadImage: (formData: FormData) => Promise<{ url: string }>;
 };
 
 export const PostEditor = ({
+  createPullRequestDisabled,
+  onCreatePullRequest,
   resolveLinkTitles,
   resolvePreview,
   uploadImage,
@@ -28,6 +35,7 @@ export const PostEditor = ({
   } = usePostEditorPresenter({ resolvePreview });
   const [isUploading, setIsUploading] = useState(false);
   const [isResolvingLinks, setIsResolvingLinks] = useState(false);
+  const [isCreatingPullRequest, setIsCreatingPullRequest] = useState(false);
   const bodyRef = useRef(body);
   const bodyTextareaRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -150,6 +158,37 @@ export const PostEditor = ({
     useDropzone(dropzoneConfig);
   const isBodyEmpty = body.trim().length === 0;
 
+  const hasFrontmatter = useMemo(() => {
+    const trimmed = body.trimStart();
+    if (!trimmed.startsWith("---")) {
+      return false;
+    }
+    return /^---\n[\s\S]*?\n---\n/.test(trimmed);
+  }, [body]);
+
+  const createPullRequestIsDisabled =
+    createPullRequestDisabled === true ||
+    isBodyEmpty ||
+    (title.trim().length === 0 && !hasFrontmatter) ||
+    isUploading ||
+    isResolvingLinks ||
+    isCreatingPullRequest ||
+    !onCreatePullRequest;
+
+  const handleCreatePullRequest = useCallback(async () => {
+    if (!onCreatePullRequest || createPullRequestIsDisabled) {
+      return;
+    }
+
+    setIsCreatingPullRequest(true);
+
+    try {
+      await onCreatePullRequest({ body: bodyRef.current, title });
+    } finally {
+      setIsCreatingPullRequest(false);
+    }
+  }, [createPullRequestIsDisabled, onCreatePullRequest, title]);
+
   const handleResolveLinkTitles = useCallback(async () => {
     if (isResolvingLinks || isBodyEmpty) {
       return;
@@ -193,9 +232,14 @@ export const PostEditor = ({
       bodyDropzoneProps={getRootProps()}
       bodyTextareaRef={bodyTextareaRef}
       bodyValue={body}
+      createPullRequestDisabled={createPullRequestIsDisabled}
+      createPullRequestIsLoading={isCreatingPullRequest}
       isBodyDragActive={isDragActive}
-      isLoading={isUploading || isResolvingLinks}
+      isLoading={isUploading || isResolvingLinks || isCreatingPullRequest}
       onBodyChange={handleBodyChange}
+      onCreatePullRequest={
+        onCreatePullRequest ? handleCreatePullRequest : undefined
+      }
       onResolveLinkTitles={handleResolveLinkTitles}
       onTitleChange={onTitleChange}
       previewContent={

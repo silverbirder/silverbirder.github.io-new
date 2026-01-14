@@ -21,9 +21,12 @@ type Props = {
   };
   bodyTextareaRef?: Ref<HTMLTextAreaElement>;
   bodyValue: string;
+  createPullRequestDisabled?: boolean;
+  createPullRequestIsLoading?: boolean;
   isBodyDragActive?: boolean;
   isLoading?: boolean;
   onBodyChange: (value: string) => void;
+  onCreatePullRequest?: () => void;
   onResolveLinkTitles?: () => void;
   onTitleChange: (value: string) => void;
   previewContent: null | ReactNode;
@@ -213,9 +216,12 @@ export const PostEditorLayout = ({
   bodyDropzoneProps,
   bodyTextareaRef,
   bodyValue,
+  createPullRequestDisabled = false,
+  createPullRequestIsLoading = false,
   isBodyDragActive = false,
   isLoading = false,
   onBodyChange,
+  onCreatePullRequest,
   onResolveLinkTitles,
   onTitleChange,
   previewContent,
@@ -228,24 +234,40 @@ export const PostEditorLayout = ({
   const previewDate = "2025-01-12";
   const previewTitle = titleValue || t("titlePlaceholder");
   const isPreviewLoading = previewIsLoading ?? previewContent == null;
+  const hasHeaderActions =
+    Boolean(onResolveLinkTitles) || Boolean(onCreatePullRequest);
 
   return (
     <Main>
       <Header>
         <HeaderRow>
           <Title>{t("title")}</Title>
-          {onResolveLinkTitles ? (
+          {hasHeaderActions ? (
             <HeaderActions>
-              <ActionButton
-                data-testid="post-editor-resolve-links"
-                disabled={resolveLinkTitlesDisabled}
-                onClick={onResolveLinkTitles}
-                type="button"
-              >
-                {resolveLinkTitlesIsLoading
-                  ? t("linkUpdateLoading")
-                  : t("linkUpdateAction")}
-              </ActionButton>
+              {onCreatePullRequest ? (
+                <ActionButton
+                  data-testid="post-editor-create-pull-request"
+                  disabled={createPullRequestDisabled}
+                  onClick={onCreatePullRequest}
+                  type="button"
+                >
+                  {createPullRequestIsLoading
+                    ? t("createPullRequestLoading")
+                    : t("createPullRequestAction")}
+                </ActionButton>
+              ) : null}
+              {onResolveLinkTitles ? (
+                <ActionButton
+                  data-testid="post-editor-resolve-links"
+                  disabled={resolveLinkTitlesDisabled}
+                  onClick={onResolveLinkTitles}
+                  type="button"
+                >
+                  {resolveLinkTitlesIsLoading
+                    ? t("linkUpdateLoading")
+                    : t("linkUpdateAction")}
+                </ActionButton>
+              ) : null}
             </HeaderActions>
           ) : null}
         </HeaderRow>
