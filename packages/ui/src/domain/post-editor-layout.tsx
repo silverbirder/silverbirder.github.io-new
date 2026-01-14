@@ -203,7 +203,7 @@ const Textarea = chakra("textarea", {
     borderWidth: "1px",
     color: "fg",
     fontSize: "1rem",
-    minHeight: "18rem",
+    minHeight: "36rem",
     paddingBlock: "0.85rem",
     paddingInline: "0.9rem",
     resize: "vertical",
