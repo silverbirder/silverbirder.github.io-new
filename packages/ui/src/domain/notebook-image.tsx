@@ -53,7 +53,7 @@ export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
       display="block"
       lineHeight="var(--notebook-line-height)"
       marginX={0}
-      marginY="2rem"
+      marginY="var(--notebook-line-height)"
       ref={wrapperRef}
     >
       <chakra.img

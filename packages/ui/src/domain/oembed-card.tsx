@@ -171,7 +171,10 @@ const LinkPreviewCard = ({
         variant="outline"
       >
         {image ? (
-          <chakra.div height="12rem" width="100%">
+          <chakra.div
+            height="calc(var(--notebook-line-height) * 6)"
+            width="100%"
+          >
             <Image
               alt=""
               height="100%"
@@ -188,7 +191,7 @@ const LinkPreviewCard = ({
           fontSize="sm"
           gap="0"
           lineHeight="var(--notebook-line-height)"
-          p="1rem"
+          p="calc(var(--notebook-line-height) / 2)"
         >
           <VStack align="start" gap="0">
             <Card.Title

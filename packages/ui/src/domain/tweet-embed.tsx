@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 
 import { chakra } from "@chakra-ui/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   EmbeddedTweet,
   TweetNotFound,
@@ -17,18 +17,16 @@ type Props = {
   id: string;
 };
 
-const resolveNotebookLineHeightPx = () => {
+const resolveNotebookLineHeightPxFromElement = (element: HTMLElement) => {
   if (typeof window === "undefined") {
     return null;
   }
-  const rootFontSize = window.getComputedStyle(
-    document.documentElement,
-  ).fontSize;
-  const rootFontSizePx = Number.parseFloat(rootFontSize);
-  if (!Number.isFinite(rootFontSizePx) || rootFontSizePx <= 0) {
+  const value = window.getComputedStyle(element).lineHeight;
+  const px = Number.parseFloat(value);
+  if (!Number.isFinite(px) || px <= 0) {
     return null;
   }
-  return rootFontSizePx * 2;
+  return px;
 };
 
 const computePaddingToNextMultiple = (heightPx: number, unitPx: number) => {
@@ -51,14 +49,9 @@ export const TweetEmbed = ({
 
   const outerRef = useRef<HTMLDivElement | null>(null);
   const [paddingBottomPx, setPaddingBottomPx] = useState(0);
-
-  const notebookLineHeightPx = useMemo(() => resolveNotebookLineHeightPx(), []);
+  const paddingBottomPxRef = useRef(0);
 
   useEffect(() => {
-    if (!notebookLineHeightPx) {
-      return;
-    }
-
     const outer = outerRef.current;
     if (!outer) {
       return;
@@ -70,15 +63,26 @@ export const TweetEmbed = ({
         cancelAnimationFrame(rafId);
       }
       rafId = requestAnimationFrame(() => {
+        const notebookLineHeightPx =
+          resolveNotebookLineHeightPxFromElement(outer);
+        if (!notebookLineHeightPx) {
+          return;
+        }
         const measuredOuter = outer.getBoundingClientRect().height;
-        const measuredBase = Math.max(0, measuredOuter - paddingBottomPx);
+        const measuredBase = Math.max(
+          0,
+          measuredOuter - paddingBottomPxRef.current,
+        );
         const nextPadding = computePaddingToNextMultiple(
           measuredBase,
           notebookLineHeightPx,
         );
-        setPaddingBottomPx((prev) =>
-          Math.abs(prev - nextPadding) < 0.5 ? prev : nextPadding,
-        );
+        setPaddingBottomPx((prev) => {
+          const resolved =
+            Math.abs(prev - nextPadding) < 0.5 ? prev : nextPadding;
+          paddingBottomPxRef.current = resolved;
+          return resolved;
+        });
       });
     };
 
@@ -99,7 +103,7 @@ export const TweetEmbed = ({
       observer.disconnect();
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [notebookLineHeightPx, isLoading, error, data, paddingBottomPx]);
+  }, []);
 
   return (
     <chakra.div
@@ -107,6 +111,7 @@ export const TweetEmbed = ({
       data-embed="tweet"
       data-tweet-id={id}
       display="flow-root"
+      lineHeight="var(--notebook-line-height)"
       paddingBottom={paddingBottomPx ? `${paddingBottomPx}px` : undefined}
       ref={outerRef}
     >
