@@ -80,9 +80,9 @@ describe("buildRssXml", () => {
     expect(xml).toContain(
       "<link>https://example.com/docs/blog/contents/hello-world/</link>",
     );
-    expect(xml).toContain("<title>Hello &amp; World</title>");
+    expect(xml).toContain("<title><![CDATA[Hello & World]]></title>");
     expect(xml).toContain(
-      "<description>Fish &amp; Chips &lt;tasty&gt; &quot;yes&quot;</description>",
+      '<description><![CDATA[Fish & Chips <tasty> "yes"]]></description>',
     );
   });
 });

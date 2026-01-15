@@ -155,3 +155,22 @@ export const Loading: Story = {
     title: "Notebook Preview",
   },
 };
+
+export const WithNavigation: Story = {
+  args: {
+    children: bodyContent,
+    navigation: {
+      next: {
+        href: "/blog/contents/next-post",
+        title: "Next Post Title",
+      },
+      prev: {
+        href: "/blog/contents/prev-post",
+        title: "Previous Post Title",
+      },
+    },
+    publishedAt: "2025-01-12",
+    tags: ["Notebook", "UI"],
+    title: "Notebook Preview",
+  },
+};

@@ -57,6 +57,11 @@
   "ui": {
     "notebookImage": {
       "openInNewTabAriaLabel": "別タブで開く"
+    },
+    "notebook": {
+      "navigationLabel": "記事ナビゲーション",
+      "navigationPrev": "前のページ",
+      "navigationNext": "次のページ"
     }
   }
 }

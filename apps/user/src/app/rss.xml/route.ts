@@ -50,7 +50,7 @@ export const buildRssXml = (items: RssItem[]) => {
     copyright: siteName,
     description: siteDescription,
     feedLinks: {
-      rss2: buildSiteUrl("rss.xml"),
+      rss: buildSiteUrl("rss.xml"),
     },
     id: siteUrl,
     language: "ja",

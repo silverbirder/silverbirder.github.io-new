@@ -1,3 +1,5 @@
+import type { PostSummary } from "@repo/user-feature-posts";
+
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -20,6 +22,11 @@ export type PostFrontmatter = {
 export type PostSlug = {
   publishedAt: string;
   slug: string;
+};
+
+type AdjacentPosts = {
+  nextPost: null | PostSummary;
+  prevPost: null | PostSummary;
 };
 
 export const getPostSlugs = async () => {
@@ -137,4 +144,23 @@ const extractPublishedAt = (content: string) => {
 const toDateValue = (publishedAt: string) => {
   const dateValue = Date.parse(publishedAt);
   return Number.isNaN(dateValue) ? 0 : dateValue;
+};
+
+export const getAdjacentPosts = (
+  posts: PostSummary[],
+  slug: string,
+): AdjacentPosts => {
+  const currentIndex = posts.findIndex((post) => post.slug === slug);
+  if (currentIndex < 0) {
+    return { nextPost: null, prevPost: null };
+  }
+
+  const prevPost =
+    currentIndex > 0 ? (posts.at(currentIndex - 1) ?? null) : null;
+  const nextPost =
+    currentIndex < posts.length - 1
+      ? (posts.at(currentIndex + 1) ?? null)
+      : null;
+
+  return { nextPost, prevPost };
 };

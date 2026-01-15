@@ -1,10 +1,11 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const ImageResponse = vi.fn().mockImplementation(function (...args) {
-  return { args };
-});
-
-const readFile = vi.fn();
+const { ImageResponse, readFile } = vi.hoisted(() => ({
+  ImageResponse: vi.fn().mockImplementation(function (...args) {
+    return { args };
+  }),
+  readFile: vi.fn(),
+}));
 
 vi.mock("node:fs/promises", () => ({
   readFile,

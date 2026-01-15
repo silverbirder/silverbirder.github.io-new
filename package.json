@@ -15,6 +15,7 @@
     "lint-staged": "lint-staged",
     "lint:fix": "turbo run lint -- --fix",
     "prepare": "husky install",
+    "start": "turbo run start",
     "test": "turbo run test",
     "test:fix": "turbo run test -- --update"
   },

@@ -323,6 +323,9 @@ importers:
       serve:
         specifier: ^14.2.5
         version: 14.2.5
+      styled-jsx:
+        specifier: ^5.1.7
+        version: 5.1.7(react@19.2.3)
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -856,7 +859,7 @@ importers:
         version: 10.1.11(@vitest/browser-playwright@4.0.17)(@vitest/browser@4.0.17(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.17))(@vitest/runner@4.0.17)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(vitest@4.0.17)
       '@storybook/nextjs-vite':
         specifier: ^10.1.11
-        version: 10.1.11(@babel/core@7.28.6)(esbuild@0.27.2)(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+        version: 10.1.11(@babel/core@7.28.6)(esbuild@0.27.2)(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
       '@vitejs/plugin-react':
         specifier: ^5.1.2
         version: 5.1.2(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
@@ -868,7 +871,7 @@ importers:
         version: 1.57.0
       vite-plugin-storybook-nextjs:
         specifier: ^3.1.8
-        version: 3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+        version: 3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
       vitest:
         specifier: ^4.0.17
         version: 4.0.17(@types/node@25.0.8)(@vitest/browser-playwright@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
@@ -5879,6 +5882,19 @@ packages:
       babel-plugin-macros:
         optional: true
 
+  styled-jsx@5.1.7:
+    resolution: {integrity: sha512-HPLmEIYprxCeWDMLYiaaAhsV3yGfIlCqzuVOybE6fjF3SUJmH67nCoMDO+nAvHNHo46OfvpCNu4Rcue82dMNFg==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      babel-plugin-macros: '*'
+      react: '>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      babel-plugin-macros:
+        optional: true
+
   stylis@4.2.0:
     resolution: {integrity: sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==}
 
@@ -7317,14 +7333,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.2
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.6.3(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))':
-    dependencies:
-      glob: 11.1.0
-      react-docgen-typescript: 2.4.0(typescript@5.9.3)
-      vite: 7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)
-    optionalDependencies:
-      typescript: 5.9.3
-
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -8050,20 +8058,20 @@ snapshots:
       - supports-color
       - webpack
 
-  '@storybook/nextjs-vite@10.1.11(@babel/core@7.28.6)(esbuild@0.27.2)(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))':
+  '@storybook/nextjs-vite@10.1.11(@babel/core@7.28.6)(esbuild@0.27.2)(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@storybook/builder-vite': 10.1.11(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
-      '@storybook/react': 10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)
-      '@storybook/react-vite': 10.1.11(esbuild@0.27.2)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+      '@storybook/react': 10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)
+      '@storybook/react-vite': 10.1.11(esbuild@0.27.2)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
       next: 16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)
       react: 19.3.0-canary-5aec1b2a-20260110
       react-dom: 19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110)
       storybook: 10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)
       styled-jsx: 5.1.6(@babel/core@7.28.6)(react@19.3.0-canary-5aec1b2a-20260110)
       vite: 7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)
-      vite-plugin-storybook-nextjs: 3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+      vite-plugin-storybook-nextjs: 3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -8177,12 +8185,12 @@ snapshots:
       - typescript
       - webpack
 
-  '@storybook/react-vite@10.1.11(esbuild@0.27.2)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))':
+  '@storybook/react-vite@10.1.11(esbuild@0.27.2)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.6.3(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.6.3(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
       '@rollup/pluginutils': 5.3.0(rollup@4.55.1)
       '@storybook/builder-vite': 10.1.11(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
-      '@storybook/react': 10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)
+      '@storybook/react': 10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)
       empathic: 2.0.0
       magic-string: 0.30.21
       react: 19.3.0-canary-5aec1b2a-20260110
@@ -8213,7 +8221,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/react@10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)':
+  '@storybook/react@10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)':
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/react-dom-shim': 10.1.11(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))
@@ -8222,7 +8230,7 @@ snapshots:
       react-dom: 19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110)
       storybook: 10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - supports-color
 
@@ -12213,10 +12221,6 @@ snapshots:
     dependencies:
       typescript: 5.9.2
 
-  react-docgen-typescript@2.4.0(typescript@5.9.3):
-    dependencies:
-      typescript: 5.9.3
-
   react-docgen@8.0.2:
     dependencies:
       '@babel/core': 7.28.6
@@ -12915,6 +12919,11 @@ snapshots:
     optionalDependencies:
       '@babel/core': 7.28.6
 
+  styled-jsx@5.1.7(react@19.2.3):
+    dependencies:
+      client-only: 0.0.1
+      react: 19.2.3
+
   stylis@4.2.0: {}
 
   superjson@2.2.6:
@@ -12993,10 +13002,6 @@ snapshots:
   tsconfck@3.1.6(typescript@5.9.2):
     optionalDependencies:
       typescript: 5.9.2
-
-  tsconfck@3.1.6(typescript@5.9.3):
-    optionalDependencies:
-      typescript: 5.9.3
 
   tsconfig-paths@4.2.0:
     dependencies:
@@ -13282,7 +13287,7 @@ snapshots:
       - supports-color
       - typescript
 
-  vite-plugin-storybook-nextjs@3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)):
+  vite-plugin-storybook-nextjs@3.1.8(next@16.1.1(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110))(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@next/env': 16.0.0
       image-size: 2.0.2
@@ -13292,7 +13297,7 @@ snapshots:
       storybook: 10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.3.0-canary-5aec1b2a-20260110(react@19.3.0-canary-5aec1b2a-20260110))(react@19.3.0-canary-5aec1b2a-20260110)
       ts-dedent: 2.2.0
       vite: 7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)
-      vite-tsconfig-paths: 5.1.4(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
+      vite-tsconfig-paths: 5.1.4(typescript@5.9.2)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2))
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -13313,17 +13318,6 @@ snapshots:
       debug: 4.4.3
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.2)
-    optionalDependencies:
-      vite: 7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)):
-    dependencies:
-      debug: 4.4.3
-      globrex: 0.1.2
-      tsconfck: 3.1.6(typescript@5.9.3)
     optionalDependencies:
       vite: 7.3.1(@types/node@25.0.8)(jiti@2.6.1)(yaml@2.8.2)
     transitivePeerDependencies:
@@ -13362,7 +13356,7 @@ snapshots:
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
-      vitest: 4.0.17(@types/node@25.0.8)(@vitest/browser-playwright@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.17(@types/node@22.19.6)(@vitest/browser-playwright@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
     optionalDependencies:
       '@types/react': 19.2.2
       '@types/react-dom': 19.2.2(@types/react@19.2.2)

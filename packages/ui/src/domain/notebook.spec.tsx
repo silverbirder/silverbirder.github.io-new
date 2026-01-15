@@ -37,4 +37,28 @@ describe("Notebook", () => {
     expect(container.textContent ?? "").toContain("Chakra");
     expect(container.textContent ?? "").toContain("Design");
   });
+
+  it("renders previous/next navigation when provided", async () => {
+    const { container } = await renderWithProvider(
+      <Notebook
+        navigation={{
+          next: { href: "/blog/contents/next", title: "Next" },
+          prev: { href: "/blog/contents/prev", title: "Prev" },
+        }}
+      >
+        <p>Body copy.</p>
+      </Notebook>,
+    );
+
+    const nav = container.querySelector('nav[aria-label="記事ナビゲーション"]');
+    expect(nav).not.toBeNull();
+
+    const links = Array.from(
+      container.querySelectorAll('a[href^="/blog/contents/"]'),
+    );
+    expect(links.map((link) => link.getAttribute("href"))).toEqual([
+      "/blog/contents/prev",
+      "/blog/contents/next",
+    ]);
+  });
 });

@@ -9,8 +9,10 @@ import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import { getPostFrontmatter, getPostList, getPostSlugs } from "@/libs";
+import { getAdjacentPosts, getPostFrontmatter, getPostList } from "@/libs";
 import { createMdxOptions } from "@/libs/mdx/mdx-options";
+
+export { generateStaticParams } from "./static-params";
 
 const contentDir = path.resolve(
   process.cwd(),
@@ -24,11 +26,6 @@ const contentDir = path.resolve(
 const loadPostSource = async (slug: string) => {
   return readFile(path.join(contentDir, `${slug}.md`), "utf8");
 };
-
-export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.map(({ slug }) => ({ slug }));
-}
 
 export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
   const { slug } = await props.params;
@@ -52,6 +49,8 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       notFound();
     }
 
+    const { nextPost, prevPost } = getAdjacentPosts(normalizedPosts, slug);
+
     return (
       <PostArticle
         compiledSource={compiled.compiledSource}
@@ -63,6 +62,22 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
           publishedAt: frontmatter.publishedAt,
           tags: frontmatter.tags,
           title: frontmatter.title,
+        }}
+        navigation={{
+          next: nextPost
+            ? {
+                href: `/blog/contents/${nextPost.slug}`,
+                publishedAt: nextPost.publishedAt,
+                title: nextPost.title,
+              }
+            : undefined,
+          prev: prevPost
+            ? {
+                href: `/blog/contents/${prevPost.slug}`,
+                publishedAt: prevPost.publishedAt,
+                title: prevPost.title,
+              }
+            : undefined,
         }}
       />
     );

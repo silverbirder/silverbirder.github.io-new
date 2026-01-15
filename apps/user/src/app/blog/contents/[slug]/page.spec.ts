@@ -1,12 +1,16 @@
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("@/libs", () => ({
-  getPostSlugs: vi.fn(),
-}));
+vi.mock("@/libs", async () => {
+  const actual = await vi.importActual<typeof import("@/libs")>("@/libs");
+  return {
+    ...actual,
+    getPostSlugs: vi.fn(),
+  };
+});
 
 import { getPostSlugs } from "@/libs";
 
-import { generateStaticParams } from "./page";
+import { generateStaticParams } from "./static-params";
 
 describe("generateStaticParams", () => {
   it("returns params for each slug", async () => {

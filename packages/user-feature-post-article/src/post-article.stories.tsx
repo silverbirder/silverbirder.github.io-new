@@ -227,3 +227,28 @@ export const Loading: Story = {
     },
   },
 };
+
+export const WithNavigation: Story = {
+  args: {
+    compiledSource: compiledSources.ideal,
+    filters: {
+      availableTags: ["Chakra UI", "MDX", "Design"],
+      availableYears: ["2025"],
+    },
+    meta: {
+      publishedAt: "2025-01-12",
+      tags: ["Chakra UI", "MDX", "Design"],
+      title: "Notebook Prose with Chakra",
+    },
+    navigation: {
+      next: {
+        href: "/blog/contents/next-post",
+        title: "Next Post Title",
+      },
+      prev: {
+        href: "/blog/contents/prev-post",
+        title: "Previous Post Title",
+      },
+    },
+  },
+};

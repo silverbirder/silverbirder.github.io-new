@@ -18,9 +18,26 @@ type Props = {
     tags?: string[];
     title?: string;
   };
+  navigation?: {
+    next?: {
+      href: string;
+      publishedAt?: string;
+      title: string;
+    };
+    prev?: {
+      href: string;
+      publishedAt?: string;
+      title: string;
+    };
+  };
 };
 
-export const PostArticle = ({ compiledSource, filters, meta }: Props) => {
+export const PostArticle = ({
+  compiledSource,
+  filters,
+  meta,
+  navigation,
+}: Props) => {
   const t = useTranslations("user.blog");
 
   const breadcrumb = meta.title
@@ -81,6 +98,7 @@ export const PostArticle = ({ compiledSource, filters, meta }: Props) => {
       }}
     >
       <Notebook
+        navigation={navigation}
         publishedAt={meta.publishedAt}
         tags={meta.tags}
         title={meta.title}

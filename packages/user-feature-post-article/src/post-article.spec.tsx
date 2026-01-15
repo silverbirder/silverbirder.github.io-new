@@ -163,4 +163,40 @@ return {
     expect(document.body.textContent ?? "").toContain("Chakra");
     expect(document.body.textContent ?? "").toContain("Design");
   });
+
+  it("renders previous/next navigation when provided", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        filters={{
+          availableTags: [],
+          availableYears: [],
+        }}
+        meta={{
+          title: "Test title",
+        }}
+        navigation={{
+          next: { href: "/blog/contents/next", title: "Next" },
+          prev: { href: "/blog/contents/prev", title: "Prev" },
+        }}
+      />,
+    );
+
+    const nav = document.querySelector('nav[aria-label="記事ナビゲーション"]');
+    expect(nav).not.toBeNull();
+    expect(document.body.textContent ?? "").toContain("前のページ");
+    expect(document.body.textContent ?? "").toContain("次のページ");
+  });
 });

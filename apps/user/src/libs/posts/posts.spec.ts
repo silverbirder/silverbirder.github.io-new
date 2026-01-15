@@ -1,17 +1,72 @@
+import type { PostSummary } from "@repo/user-feature-posts";
+
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const readdir = vi.fn();
-const readFile = vi.fn();
+import { getAdjacentPosts, getPostFrontmatter, getPostSlugs } from ".";
+
+const { readdir, readFile } = vi.hoisted(() => ({
+  readdir: vi.fn(),
+  readFile: vi.fn(),
+}));
 
 vi.mock("node:fs/promises", () => ({
   readdir,
   readFile,
 }));
 
-import { getPostFrontmatter, getPostSlugs } from ".";
-
 afterEach(() => {
   vi.clearAllMocks();
+});
+
+describe("getAdjacentPosts", () => {
+  const posts: PostSummary[] = [
+    {
+      publishedAt: "2026-01-12",
+      slug: "first",
+      tags: [],
+      title: "First",
+    },
+    {
+      publishedAt: "2026-01-11",
+      slug: "second",
+      tags: [],
+      title: "Second",
+    },
+    {
+      publishedAt: "2026-01-10",
+      slug: "third",
+      tags: [],
+      title: "Third",
+    },
+  ];
+
+  it("returns previous and next posts when slug is in the middle", () => {
+    const result = getAdjacentPosts(posts, "second");
+
+    expect(result.prevPost?.slug).toBe("first");
+    expect(result.nextPost?.slug).toBe("third");
+  });
+
+  it("returns null for prevPost when slug is the first", () => {
+    const result = getAdjacentPosts(posts, "first");
+
+    expect(result.prevPost).toBeNull();
+    expect(result.nextPost?.slug).toBe("second");
+  });
+
+  it("returns null for nextPost when slug is the last", () => {
+    const result = getAdjacentPosts(posts, "third");
+
+    expect(result.prevPost?.slug).toBe("second");
+    expect(result.nextPost).toBeNull();
+  });
+
+  it("returns nulls when slug does not exist", () => {
+    const result = getAdjacentPosts(posts, "missing");
+
+    expect(result.prevPost).toBeNull();
+    expect(result.nextPost).toBeNull();
+  });
 });
 
 describe("getPostSlugs", () => {

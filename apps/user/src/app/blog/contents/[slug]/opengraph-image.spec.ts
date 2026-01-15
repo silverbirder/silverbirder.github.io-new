@@ -1,17 +1,17 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const ImageResponse = vi.fn().mockImplementation(function (...args) {
-  return { args };
-});
-
-const readFile = vi.fn();
-
-const getPostFrontmatter = vi.fn();
-const getPostSlugs = vi.fn();
-
-const notFound = vi.fn(() => {
-  throw new Error("NEXT_NOT_FOUND");
-});
+const { getPostFrontmatter, getPostSlugs, ImageResponse, notFound, readFile } =
+  vi.hoisted(() => ({
+    getPostFrontmatter: vi.fn(),
+    getPostSlugs: vi.fn(),
+    ImageResponse: vi.fn().mockImplementation(function (...args) {
+      return { args };
+    }),
+    notFound: vi.fn(() => {
+      throw new Error("NEXT_NOT_FOUND");
+    }),
+    readFile: vi.fn(),
+  }));
 
 vi.mock("node:fs/promises", () => ({
   readFile,
