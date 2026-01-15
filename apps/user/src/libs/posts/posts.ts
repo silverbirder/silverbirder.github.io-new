@@ -24,6 +24,17 @@ export type PostSlug = {
   slug: string;
 };
 
+export type RelatedPostItem = {
+  publishedAt?: string;
+  slug: string;
+  title: string;
+};
+
+export type RelatedPostsGroup = {
+  posts: RelatedPostItem[];
+  tag: string;
+};
+
 type AdjacentPosts = {
   nextPost: null | PostSummary;
   prevPost: null | PostSummary;
@@ -163,4 +174,47 @@ export const getAdjacentPosts = (
       : null;
 
   return { nextPost, prevPost };
+};
+
+export const getRelatedPostsByTags = (
+  posts: PostSummary[],
+  input: {
+    limit?: number;
+    slug: string;
+    tags?: string[];
+  },
+): RelatedPostsGroup[] => {
+  const limit = input.limit ?? 3;
+  if (limit <= 0) {
+    return [];
+  }
+
+  const uniqueTags = (() => {
+    const seen = new Set<string>();
+    const tags = input.tags ?? [];
+    return tags
+      .map((tag) => tag.trim())
+      .filter((tag) => tag.length > 0)
+      .filter((tag) => {
+        if (seen.has(tag)) {
+          return false;
+        }
+        seen.add(tag);
+        return true;
+      });
+  })();
+
+  return uniqueTags
+    .map((tag) => {
+      const related = posts
+        .filter((post) => post.slug !== input.slug && post.tags.includes(tag))
+        .slice(0, limit)
+        .map((post) => ({
+          publishedAt: post.publishedAt,
+          slug: post.slug,
+          title: post.title,
+        }));
+      return { posts: related, tag };
+    })
+    .filter((group) => group.posts.length > 0);
 };

@@ -164,6 +164,51 @@ return {
     expect(document.body.textContent ?? "").toContain("Design");
   });
 
+  it("renders related posts grouped by tag", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        filters={{
+          availableTags: ["TypeScript", "Design"],
+          availableYears: ["2025"],
+        }}
+        meta={{
+          title: "Test title",
+        }}
+        relatedPosts={[
+          {
+            posts: [
+              {
+                publishedAt: "2025-01-03",
+                slug: "typescript-post",
+                title: "TypeScript Post",
+              },
+            ],
+            tag: "TypeScript",
+          },
+        ]}
+      />,
+    );
+
+    expect(document.body.textContent ?? "").toContain("関連する記事");
+    expect(document.body.textContent ?? "").toContain(
+      "タグ「TypeScript」の新着",
+    );
+    expect(document.body.textContent ?? "").toContain("TypeScript Post");
+  });
+
   it("renders previous/next navigation when provided", () => {
     const compiledSource = `"use strict";
 const {jsx: _jsx} = arguments[0];

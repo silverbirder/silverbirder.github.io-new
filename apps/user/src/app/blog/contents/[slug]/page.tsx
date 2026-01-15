@@ -9,7 +9,12 @@ import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import { getAdjacentPosts, getPostFrontmatter, getPostList } from "@/libs";
+import {
+  getAdjacentPosts,
+  getPostFrontmatter,
+  getPostList,
+  getRelatedPostsByTags,
+} from "@/libs";
 import { createMdxOptions } from "@/libs/mdx/mdx-options";
 
 export { generateStaticParams } from "./static-params";
@@ -50,6 +55,10 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
     }
 
     const { nextPost, prevPost } = getAdjacentPosts(normalizedPosts, slug);
+    const relatedPosts = getRelatedPostsByTags(normalizedPosts, {
+      slug,
+      tags: frontmatter.tags,
+    });
 
     return (
       <PostArticle
@@ -79,6 +88,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
               }
             : undefined,
         }}
+        relatedPosts={relatedPosts}
       />
     );
   } catch {

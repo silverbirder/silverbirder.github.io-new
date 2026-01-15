@@ -9,6 +9,8 @@
       "filtersYear": "年",
       "filtersTag": "タグ",
       "metaCount": "全 {count} 件",
+      "relatedHeading": "関連する記事",
+      "relatedTagHeading": "タグ「{tag}」の新着",
       "paginationLabel": "ページネーション",
       "paginationPrev": "前へ",
       "paginationNext": "次へ"

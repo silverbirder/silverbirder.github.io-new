@@ -2,7 +2,12 @@ import type { PostSummary } from "@repo/user-feature-posts";
 
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { getAdjacentPosts, getPostFrontmatter, getPostSlugs } from ".";
+import {
+  getAdjacentPosts,
+  getPostFrontmatter,
+  getPostSlugs,
+  getRelatedPostsByTags,
+} from ".";
 
 const { readdir, readFile } = vi.hoisted(() => ({
   readdir: vi.fn(),
@@ -106,6 +111,107 @@ title: 'Draft'
     ]);
     expect(readdir).toHaveBeenCalledTimes(1);
     expect(readFile).toHaveBeenCalledTimes(3);
+  });
+});
+
+describe("getRelatedPostsByTags", () => {
+  const posts: PostSummary[] = [
+    {
+      publishedAt: "2026-01-12",
+      slug: "current",
+      tags: ["TypeScript", "Design"],
+      title: "Current",
+    },
+    {
+      publishedAt: "2026-01-11",
+      slug: "typescript-post",
+      tags: ["TypeScript"],
+      title: "TypeScript Post",
+    },
+    {
+      publishedAt: "2026-01-10",
+      slug: "design-post",
+      tags: ["Design"],
+      title: "Design Post",
+    },
+    {
+      publishedAt: "2026-01-09",
+      slug: "other-post",
+      tags: ["Other"],
+      title: "Other Post",
+    },
+  ];
+
+  it("returns related posts grouped by unique tags", () => {
+    const groups = getRelatedPostsByTags(posts, {
+      slug: "current",
+      tags: ["TypeScript", " Design ", "TypeScript", ""],
+    });
+
+    expect(groups).toEqual([
+      {
+        posts: [
+          {
+            publishedAt: "2026-01-11",
+            slug: "typescript-post",
+            title: "TypeScript Post",
+          },
+        ],
+        tag: "TypeScript",
+      },
+      {
+        posts: [
+          {
+            publishedAt: "2026-01-10",
+            slug: "design-post",
+            title: "Design Post",
+          },
+        ],
+        tag: "Design",
+      },
+    ]);
+  });
+
+  it("respects the limit and excludes the current post", () => {
+    const morePosts: PostSummary[] = [
+      ...posts,
+      {
+        publishedAt: "2026-01-08",
+        slug: "typescript-post-2",
+        tags: ["TypeScript"],
+        title: "TypeScript Post 2",
+      },
+      {
+        publishedAt: "2026-01-07",
+        slug: "typescript-post-3",
+        tags: ["TypeScript"],
+        title: "TypeScript Post 3",
+      },
+    ];
+
+    const groups = getRelatedPostsByTags(morePosts, {
+      limit: 2,
+      slug: "current",
+      tags: ["TypeScript"],
+    });
+
+    expect(groups).toEqual([
+      {
+        posts: [
+          {
+            publishedAt: "2026-01-11",
+            slug: "typescript-post",
+            title: "TypeScript Post",
+          },
+          {
+            publishedAt: "2026-01-08",
+            slug: "typescript-post-2",
+            title: "TypeScript Post 2",
+          },
+        ],
+        tag: "TypeScript",
+      },
+    ]);
   });
 });
 
