@@ -10,7 +10,6 @@ import type {
 import { Children, isValidElement } from "react";
 
 import { NotebookImage } from "./notebook-image";
-import { OembedCard } from "./oembed-card";
 import { TweetEmbed } from "./tweet-embed";
 
 const extractTweetId = (href?: string) => {
@@ -81,9 +80,7 @@ const Paragraph = ({ children, ...props }: ComponentPropsWithoutRef<"p">) => {
 
   if (
     onlyChild &&
-    (onlyChild.type === NotebookImage ||
-      onlyChild.type === OembedCard ||
-      onlyChild.type === Anchor)
+    (onlyChild.type === NotebookImage || onlyChild.type === Anchor)
   ) {
     return <>{children}</>;
   }
@@ -94,6 +91,5 @@ const Paragraph = ({ children, ...props }: ComponentPropsWithoutRef<"p">) => {
 export const mdxComponents = {
   a: Anchor,
   img: NotebookImage,
-  OembedCard,
   p: Paragraph,
 };

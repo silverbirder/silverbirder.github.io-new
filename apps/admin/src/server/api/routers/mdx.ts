@@ -1,11 +1,13 @@
+import { createRemarkLinkCardGuard } from "@repo/util";
 import { serialize } from "next-mdx-remote-client/serialize";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import remarkLinkCardPlus from "remark-link-card-plus";
 import remarkMdx from "remark-mdx";
 import { z } from "zod";
 
 import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
-import { createRemarkOembed } from "@/server/mdx/remark-oembed";
 
 export const mdxRouter = createTRPCRouter({
   preview: protectedProcedure
@@ -22,6 +24,16 @@ export const mdxRouter = createTRPCRouter({
           mdxOptions: {
             rehypePlugins: [
               [
+                rehypeRaw,
+                {
+                  passThrough: [
+                    "mdxjsEsm",
+                    "mdxJsxFlowElement",
+                    "mdxJsxTextElement",
+                  ],
+                },
+              ],
+              [
                 rehypePrettyCode,
                 {
                   keepBackground: false,
@@ -32,7 +44,15 @@ export const mdxRouter = createTRPCRouter({
                 },
               ],
             ],
-            remarkPlugins: [remarkGfm, remarkMdx, createRemarkOembed],
+            remarkPlugins: [
+              remarkGfm,
+              remarkMdx,
+              createRemarkLinkCardGuard,
+              [
+                remarkLinkCardPlus,
+                { cache: false, noThumbnail: false, shortenUrl: true },
+              ],
+            ],
           },
         },
         source: input.source,

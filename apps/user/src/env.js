@@ -4,12 +4,10 @@ import { z } from "zod";
 
 export const env = createEnv({
   client: {
-    NEXT_PUBLIC_OEMBED_API_URL: z.string().optional(),
     NEXT_PUBLIC_SITE_URL: z.string().optional(),
   },
   emptyStringAsUndefined: true,
   runtimeEnv: {
-    NEXT_PUBLIC_OEMBED_API_URL: process.env.NEXT_PUBLIC_OEMBED_API_URL,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NODE_ENV: process.env.NODE_ENV,
   },

@@ -17,6 +17,7 @@ const config = {
   },
   output: "export",
   reactCompiler: true,
+  staticPageGenerationTimeout: 3600,
   trailingSlash: true,
   typedRoutes: true,
 };

@@ -46,7 +46,6 @@ jobs:
       - name: Build user app (static export)
         env:
           GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}
-          NEXT_PUBLIC_OEMBED_API_URL: ${{ secrets.NEXT_PUBLIC_OEMBED_API_URL }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
 
@@ -81,7 +80,6 @@ jobs:
       - name: Build user app (static export)
         env:
           GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}/pr-${{ github.event.pull_request.number }}
-          NEXT_PUBLIC_OEMBED_API_URL: ${{ secrets.NEXT_PUBLIC_OEMBED_API_URL }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
 

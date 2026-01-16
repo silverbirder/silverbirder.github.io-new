@@ -9,7 +9,6 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_OEMBED_API_URL: z.string().optional(),
   },
 
   /**
@@ -32,7 +31,6 @@ export const env = createEnv({
     CONTENT_GITHUB_BASE_BRANCH: process.env.CONTENT_GITHUB_BASE_BRANCH,
     CONTENT_GITHUB_REPOSITORY: process.env.CONTENT_GITHUB_REPOSITORY,
     CONTENT_POSTS_PATH: process.env.CONTENT_POSTS_PATH,
-    NEXT_PUBLIC_OEMBED_API_URL: process.env.NEXT_PUBLIC_OEMBED_API_URL,
     NODE_ENV: process.env.NODE_ENV,
   },
   /**

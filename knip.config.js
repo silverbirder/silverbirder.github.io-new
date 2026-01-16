@@ -47,10 +47,6 @@ module.exports = {
       entry: appEntry,
       project: appProject,
     },
-    "apps/api": {
-      entry: appEntry,
-      project: appProject,
-    },
     "apps/user": {
       entry: [...appEntry, "src/mdx-components.tsx", "src/**/*.d.ts"],
       project: [...appProject, "src/**/*.d.ts"],
