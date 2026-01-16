@@ -1,4 +1,3 @@
-import { getLinkPreview } from "link-preview-js";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdx from "remark-mdx";
 import remarkParse from "remark-parse";
@@ -10,6 +9,8 @@ const LINK_FETCH_TIMEOUT_MS = 4000;
 const LINK_FETCH_CONCURRENCY = 4;
 const MAX_LINK_FETCH = 20;
 
+const USER_AGENT = "AdminLinkResolver/1.0";
+
 const isHttpUrl = (rawUrl: string) => {
   try {
     const parsed = new URL(rawUrl);
@@ -19,39 +20,89 @@ const isHttpUrl = (rawUrl: string) => {
   }
 };
 
-const getPreviewTitle = (preview: unknown) => {
-  if (!preview || typeof preview !== "object") {
-    return null;
-  }
+const decodeHtmlEntities = (value: string) => {
+  const named: Record<string, string> = {
+    amp: "&",
+    apos: "'",
+    gt: ">",
+    lt: "<",
+    nbsp: " ",
+    quot: '"',
+  };
 
-  if (!("title" in preview)) {
-    return null;
-  }
+  return value.replace(
+    /&(#x[0-9a-fA-F]+|#\d+|[a-zA-Z][a-zA-Z0-9]+);/g,
+    (match, key: string) => {
+      if (typeof key !== "string") {
+        return match;
+      }
 
-  const title = (preview as { title?: unknown }).title;
-  return typeof title === "string" ? title : null;
+      if (key.startsWith("#x") || key.startsWith("#X")) {
+        const codePoint = Number.parseInt(key.slice(2), 16);
+        return Number.isFinite(codePoint)
+          ? String.fromCodePoint(codePoint)
+          : match;
+      }
+
+      if (key.startsWith("#")) {
+        const codePoint = Number.parseInt(key.slice(1), 10);
+        return Number.isFinite(codePoint)
+          ? String.fromCodePoint(codePoint)
+          : match;
+      }
+
+      return Object.prototype.hasOwnProperty.call(named, key)
+        ? named[key]!
+        : match;
+    },
+  );
 };
 
-const resolveDocumentTitle = async (url: string) => {
+const normalizeTitle = (title: string) => {
+  const normalized = title.replace(/\s+/g, " ").trim();
+  return normalized.length > 0 ? normalized : null;
+};
+
+const extractHtmlTitle = (html: string) => {
+  const match = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html);
+  if (!match) {
+    return null;
+  }
+
+  const raw = match[1] ?? "";
+  return normalizeTitle(decodeHtmlEntities(raw));
+};
+
+const fetchHtmlTitle = async (url: string) => {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), LINK_FETCH_TIMEOUT_MS);
+
   try {
-    const preview = await getLinkPreview(url, {
-      followRedirects: "follow",
+    const response = await fetch(url, {
+      cache: "no-store",
       headers: {
-        "user-agent": "AdminLinkResolver/1.0",
+        accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+        "user-agent": USER_AGENT,
       },
-      timeout: LINK_FETCH_TIMEOUT_MS,
+      redirect: "follow",
+      signal: controller.signal,
     });
 
-    const title = getPreviewTitle(preview);
-    if (!title) {
+    if (!response.ok) {
       return null;
     }
 
-    const normalized = title.replace(/\s+/g, " ").trim();
-    return normalized.length > 0 ? normalized : null;
+    const html = await response.text();
+    return extractHtmlTitle(html);
   } catch {
     return null;
+  } finally {
+    clearTimeout(timer);
   }
+};
+
+const resolveDocumentTitle = async (url: string) => {
+  return fetchHtmlTitle(url);
 };
 
 const runWithConcurrency = async <Input, Output>(
