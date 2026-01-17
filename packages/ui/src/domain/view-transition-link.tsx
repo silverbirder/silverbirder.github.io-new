@@ -3,6 +3,7 @@
 import type { LinkProps } from "@chakra-ui/react";
 
 import { Link } from "@chakra-ui/react";
+import NextLink from "next/link";
 import * as React from "react";
 
 const ViewTransitionComponent = (
@@ -27,7 +28,15 @@ export const ViewTransitionLink = ({
   transitionUpdate,
   ...linkProps
 }: Props) => {
-  const link = <Link colorPalette={colorPalette} {...linkProps} />;
+  const { as: asProp = NextLink, href, ...restLinkProps } = linkProps;
+  const link = (
+    <Link
+      as={asProp}
+      colorPalette={colorPalette}
+      href={href}
+      {...restLinkProps}
+    />
+  );
 
   if (!ViewTransitionComponent) {
     return link;
