@@ -3,7 +3,6 @@
 import { Box, Breadcrumb, Heading, Stack, Text } from "@chakra-ui/react";
 import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
-import NextLink from "next/link";
 import { Fragment, type ReactNode } from "react";
 
 type BreadcrumbItem = {
@@ -103,7 +102,6 @@ export const PostArticle = ({
                     <Box as="li" key={`${group.tag}-${post.slug}`}>
                       <Stack gap={1}>
                         <ViewTransitionLink
-                          as={NextLink}
                           fontWeight="semibold"
                           href={`/blog/contents/${post.slug}`}
                         >

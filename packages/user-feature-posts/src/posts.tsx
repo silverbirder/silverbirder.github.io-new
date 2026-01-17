@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import { Badge, Box, Breadcrumb, Flex, Stack, Text } from "@chakra-ui/react";
 import { Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
-import NextLink from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Fragment } from "react";
 
@@ -35,11 +34,7 @@ type RenderLinkProps = {
 };
 
 const renderLink = ({ children, href, isActive }: RenderLinkProps) => (
-  <ViewTransitionLink
-    as={NextLink}
-    fontWeight={isActive ? "bold" : "normal"}
-    href={href}
-  >
+  <ViewTransitionLink fontWeight={isActive ? "bold" : "normal"} href={href}>
     {children}
   </ViewTransitionLink>
 );
@@ -135,7 +130,6 @@ export const Posts = ({ posts }: Props) => {
                 pl="calc(var(--notebook-line-height) / 2)"
               >
                 <ViewTransitionLink
-                  as={NextLink}
                   display="block"
                   fontSize="lg"
                   fontWeight="semibold"
@@ -192,7 +186,6 @@ export const Posts = ({ posts }: Props) => {
               <ViewTransitionLink
                 alignItems="center"
                 aria-disabled={pagination.currentPage <= 1}
-                as={NextLink}
                 display="inline-flex"
                 href={buildHref({ page: pagination.currentPage - 1 })}
                 lineHeight="var(--notebook-line-height)"
@@ -215,7 +208,6 @@ export const Posts = ({ posts }: Props) => {
                 return (
                   <ViewTransitionLink
                     alignItems="center"
-                    as={NextLink}
                     display="inline-flex"
                     fontWeight={item.isCurrent ? "bold" : "normal"}
                     href={buildHref({ page: item.page })}
@@ -230,7 +222,6 @@ export const Posts = ({ posts }: Props) => {
               <ViewTransitionLink
                 alignItems="center"
                 aria-disabled={pagination.currentPage >= pagination.totalPages}
-                as={NextLink}
                 display="inline-flex"
                 href={buildHref({ page: pagination.currentPage + 1 })}
                 lineHeight="var(--notebook-line-height)"
