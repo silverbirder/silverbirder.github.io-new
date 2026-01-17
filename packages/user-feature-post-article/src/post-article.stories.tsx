@@ -161,6 +161,8 @@ export const Ideal: Story = {
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
     },
+    navigation: {},
+    relatedPosts: [],
   },
 };
 
@@ -172,6 +174,8 @@ export const Empty: Story = {
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
     },
+    navigation: {},
+    relatedPosts: [],
   },
 };
 
@@ -183,6 +187,8 @@ export const Error: Story = {
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
     },
+    navigation: {},
+    relatedPosts: [],
   },
 };
 
@@ -194,6 +200,8 @@ export const Partial: Story = {
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
     },
+    navigation: {},
+    relatedPosts: [],
   },
 };
 
@@ -205,6 +213,8 @@ export const Loading: Story = {
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
     },
+    navigation: {},
+    relatedPosts: [],
   },
 };
 
@@ -219,12 +229,15 @@ export const WithNavigation: Story = {
     navigation: {
       next: {
         href: "/blog/contents/next-post",
+        publishedAt: "2025-01-13",
         title: "Next Post Title",
       },
       prev: {
         href: "/blog/contents/prev-post",
+        publishedAt: "2025-01-11",
         title: "Previous Post Title",
       },
     },
+    relatedPosts: [],
   },
 };

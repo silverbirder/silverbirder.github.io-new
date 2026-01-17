@@ -60,6 +60,8 @@ return {
           tags: ["Testing"],
           title: "Test title",
         }}
+        navigation={{}}
+        relatedPosts={[]}
       />,
     );
 
@@ -101,6 +103,8 @@ return {
           tags: ["Testing"],
           title: "Test title",
         }}
+        navigation={{}}
+        relatedPosts={[]}
       />,
     );
 
@@ -142,6 +146,8 @@ return {
           tags: ["Chakra", "Design"],
           title: "Test title",
         }}
+        navigation={{}}
+        relatedPosts={[]}
       />,
     );
 
@@ -168,8 +174,11 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          publishedAt: "",
+          tags: [],
           title: "Test title",
         }}
+        navigation={{}}
         relatedPosts={[
           {
             posts: [
@@ -209,12 +218,23 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          publishedAt: "",
+          tags: [],
           title: "Test title",
         }}
         navigation={{
-          next: { href: "/blog/contents/next", title: "Next" },
-          prev: { href: "/blog/contents/prev", title: "Prev" },
+          next: {
+            href: "/blog/contents/next",
+            publishedAt: "2025-01-03",
+            title: "Next",
+          },
+          prev: {
+            href: "/blog/contents/prev",
+            publishedAt: "2025-01-01",
+            title: "Prev",
+          },
         }}
+        relatedPosts={[]}
       />,
     );
 

@@ -58,27 +58,27 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       <PostArticle
         compiledSource={compiled.compiledSource}
         meta={{
-          publishedAt: frontmatter.publishedAt,
-          tags: frontmatter.tags,
-          title: frontmatter.title,
+          publishedAt: frontmatter.publishedAt ?? "",
+          tags: frontmatter.tags ?? [],
+          title: frontmatter.title ?? "",
         }}
         navigation={{
           next: nextPost
             ? {
                 href: `/blog/contents/${nextPost.slug}`,
-                publishedAt: nextPost.publishedAt,
+                publishedAt: nextPost.publishedAt ?? "",
                 title: nextPost.title,
               }
             : undefined,
           prev: prevPost
             ? {
                 href: `/blog/contents/${prevPost.slug}`,
-                publishedAt: prevPost.publishedAt,
+                publishedAt: prevPost.publishedAt ?? "",
                 title: prevPost.title,
               }
             : undefined,
         }}
-        relatedPosts={relatedPosts}
+        relatedPosts={relatedPosts ?? []}
       />
     );
   } catch {

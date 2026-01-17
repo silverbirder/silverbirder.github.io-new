@@ -14,23 +14,23 @@ type BreadcrumbItem = {
 type Props = {
   compiledSource: string;
   meta: {
-    publishedAt?: string;
-    tags?: string[];
-    title?: string;
+    publishedAt: string;
+    tags: string[];
+    title: string;
   };
-  navigation?: {
+  navigation: {
     next?: {
       href: string;
-      publishedAt?: string;
+      publishedAt: string;
       title: string;
     };
     prev?: {
       href: string;
-      publishedAt?: string;
+      publishedAt: string;
       title: string;
     };
   };
-  relatedPosts?: {
+  relatedPosts: {
     posts: {
       publishedAt?: string;
       slug: string;
@@ -48,60 +48,37 @@ export const PostArticle = ({
 }: Props) => {
   const t = useTranslations("user.blog");
 
-  const breadcrumb: BreadcrumbItem[] = meta.title
-    ? [{ href: "/blog", label: t("title") }, { label: meta.title }]
-    : [{ label: t("title") }];
+  const breadcrumb: BreadcrumbItem[] = [
+    { href: "/blog", label: t("title") },
+    { label: meta.title },
+  ];
 
-  const cleanedRelatedPosts =
-    relatedPosts
-      ?.map((group) => {
-        const tag = group.tag.trim();
-        if (!tag) {
-          return null;
-        }
-
-        const posts = group.posts.filter(
-          (post) => post.title.trim().length > 0,
-        );
-        if (posts.length === 0) {
-          return null;
-        }
-
-        return { posts, tag };
-      })
-      .filter((group): group is NonNullable<typeof group> => group !== null) ??
-    [];
+  const cleanedRelatedPosts = relatedPosts;
 
   return (
     <Box w="full">
-      {breadcrumb.length > 0 ? (
-        <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
-          <Breadcrumb.List>
-            {breadcrumb.map((item, index) => {
-              const isLast = index === breadcrumb.length - 1;
-              const href = item.href;
-              const label = item.label;
+      <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
+        <Breadcrumb.List>
+          {breadcrumb.map((item, index) => {
+            const isLast = index === breadcrumb.length - 1;
+            const href = item.href;
+            const label = item.label;
+            return (
+              <Fragment key={index}>
+                <Breadcrumb.Item>
+                  {href && !isLast ? (
+                    <ViewTransitionLink href={href}>{label}</ViewTransitionLink>
+                  ) : (
+                    <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
+                  )}
+                </Breadcrumb.Item>
 
-              return (
-                <Fragment key={index}>
-                  <Breadcrumb.Item>
-                    {href && !isLast ? (
-                      <ViewTransitionLink href={href}>
-                        {label}
-                      </ViewTransitionLink>
-                    ) : (
-                      <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
-                    )}
-                  </Breadcrumb.Item>
-
-                  {!isLast ? <Breadcrumb.Separator /> : null}
-                </Fragment>
-              );
-            })}
-          </Breadcrumb.List>
-        </Breadcrumb.Root>
-      ) : null}
-
+                {!isLast ? <Breadcrumb.Separator /> : null}
+              </Fragment>
+            );
+          })}
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
       <Notebook
         navigation={navigation}
         publishedAt={meta.publishedAt}
