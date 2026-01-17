@@ -8,6 +8,7 @@ const args = process.argv.slice(2);
 const steps = [
   "mdx-to-md.mjs",
   "mdx-image-to-markdown.mjs",
+  "add-summary-from-body.mjs",
   "escape-frontmatter-quotes.mjs",
   "fix-md036-no-emphasis-as-heading.mjs",
   "fix-md025-single-title.mjs",
