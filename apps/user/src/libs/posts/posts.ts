@@ -166,9 +166,9 @@ export const getAdjacentPosts = (
     return { nextPost: null, prevPost: null };
   }
 
-  const prevPost =
-    currentIndex > 0 ? (posts.at(currentIndex - 1) ?? null) : null;
   const nextPost =
+    currentIndex > 0 ? (posts.at(currentIndex - 1) ?? null) : null;
+  const prevPost =
     currentIndex < posts.length - 1
       ? (posts.at(currentIndex + 1) ?? null)
       : null;

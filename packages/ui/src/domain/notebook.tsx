@@ -88,47 +88,10 @@ export const Notebook = ({
           columns={{ base: 1, md: 2 }}
           rowGap="var(--notebook-line-height)"
         >
-          {navigation.prev && (
-            <Flex
-              direction="column"
-              gridColumn={{ base: "1 / -1", md: "1" }}
-              minW={0}
-              w="full"
-            >
-              <Text
-                as="div"
-                color="fg.muted"
-                fontSize="sm"
-                lineHeight="var(--notebook-line-height)"
-                m={0}
-                minH="var(--notebook-line-height)"
-              >
-                {t("navigationPrev")}
-              </Text>
-              <Box
-                lineHeight="var(--notebook-line-height)"
-                minH="calc(var(--notebook-line-height) * 2)"
-                mt={0}
-              >
-                <ViewTransitionLink
-                  _hover={{ color: "green.emphasized" }}
-                  color="green.fg"
-                  display="block"
-                  fontWeight="semibold"
-                  href={navigation.prev.href}
-                  lineClamp={2}
-                  lineHeight="var(--notebook-line-height)"
-                >
-                  {navigation.prev.title}
-                </ViewTransitionLink>
-              </Box>
-            </Flex>
-          )}
-
           {navigation.next && (
             <Flex
               direction="column"
-              gridColumn={{ base: "1 / -1", md: "2" }}
+              gridColumn={{ base: "1 / -1", md: "1" }}
               minW={0}
               w="full"
             >
@@ -157,6 +120,43 @@ export const Notebook = ({
                   lineHeight="var(--notebook-line-height)"
                 >
                   {navigation.next.title}
+                </ViewTransitionLink>
+              </Box>
+            </Flex>
+          )}
+
+          {navigation.prev && (
+            <Flex
+              direction="column"
+              gridColumn={{ base: "1 / -1", md: "2" }}
+              minW={0}
+              w="full"
+            >
+              <Text
+                as="div"
+                color="fg.muted"
+                fontSize="sm"
+                lineHeight="var(--notebook-line-height)"
+                m={0}
+                minH="var(--notebook-line-height)"
+              >
+                {t("navigationPrev")}
+              </Text>
+              <Box
+                lineHeight="var(--notebook-line-height)"
+                minH="calc(var(--notebook-line-height) * 2)"
+                mt={0}
+              >
+                <ViewTransitionLink
+                  _hover={{ color: "green.emphasized" }}
+                  color="green.fg"
+                  display="block"
+                  fontWeight="semibold"
+                  href={navigation.prev.href}
+                  lineClamp={2}
+                  lineHeight="var(--notebook-line-height)"
+                >
+                  {navigation.prev.title}
                 </ViewTransitionLink>
               </Box>
             </Flex>

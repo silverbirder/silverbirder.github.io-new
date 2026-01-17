@@ -48,22 +48,22 @@ describe("getAdjacentPosts", () => {
   it("returns previous and next posts when slug is in the middle", () => {
     const result = getAdjacentPosts(posts, "second");
 
-    expect(result.prevPost?.slug).toBe("first");
-    expect(result.nextPost?.slug).toBe("third");
+    expect(result.nextPost?.slug).toBe("first");
+    expect(result.prevPost?.slug).toBe("third");
   });
 
-  it("returns null for prevPost when slug is the first", () => {
+  it("returns null for nextPost when slug is the first", () => {
     const result = getAdjacentPosts(posts, "first");
 
-    expect(result.prevPost).toBeNull();
-    expect(result.nextPost?.slug).toBe("second");
+    expect(result.nextPost).toBeNull();
+    expect(result.prevPost?.slug).toBe("second");
   });
 
-  it("returns null for nextPost when slug is the last", () => {
+  it("returns null for prevPost when slug is the last", () => {
     const result = getAdjacentPosts(posts, "third");
 
-    expect(result.prevPost?.slug).toBe("second");
-    expect(result.nextPost).toBeNull();
+    expect(result.nextPost?.slug).toBe("second");
+    expect(result.prevPost).toBeNull();
   });
 
   it("returns nulls when slug does not exist", () => {
