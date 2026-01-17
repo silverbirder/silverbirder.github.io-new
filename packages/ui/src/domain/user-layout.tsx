@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 import { NOTEBOOK_LINE_HEIGHT } from "./notebook-prose";
 
@@ -12,12 +12,14 @@ type Props = {
 
 export const UserLayout = ({ children }: Props) => {
   return (
-    <Container
-      centerContent
-      maxW="6xl"
-      py={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
-    >
-      {children}
-    </Container>
+    <Box bg="bg.muted" minH="100dvh">
+      <Container
+        centerContent
+        maxW="6xl"
+        py={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
+      >
+        {children}
+      </Container>
+    </Box>
   );
 };

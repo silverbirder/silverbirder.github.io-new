@@ -60,24 +60,11 @@ export const Notebook = ({
     >
       {trimmedTitle && <Heading as="h1">{trimmedTitle}</Heading>}
       {trimmedPublishedAt && (
-        <time dateTime={trimmedPublishedAt}>
-          {formatPublishedDate(trimmedPublishedAt)}
-        </time>
-      )}
-      {cleanTags.length > 0 && (
-        <Stack direction="row">
-          {cleanTags.map((tag) => (
-            <Badge
-              colorPalette="green"
-              height="var(--notebook-line-height)"
-              key={tag}
-              size="sm"
-              variant="surface"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </Stack>
+        <Text as="div" textAlign="right">
+          <time dateTime={trimmedPublishedAt}>
+            {formatPublishedDate(trimmedPublishedAt)}
+          </time>
+        </Text>
       )}
       {children}
       {(navigation?.prev || navigation?.next) && (
@@ -162,6 +149,21 @@ export const Notebook = ({
             </Flex>
           )}
         </SimpleGrid>
+      )}
+      {cleanTags.length > 0 && (
+        <Stack direction="row">
+          {cleanTags.map((tag) => (
+            <Badge
+              colorPalette="green"
+              height="var(--notebook-line-height)"
+              key={tag}
+              size="sm"
+              variant="surface"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </Stack>
       )}
     </NotebookProse>
   );
