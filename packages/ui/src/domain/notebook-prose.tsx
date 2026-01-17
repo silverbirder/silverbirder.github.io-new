@@ -6,14 +6,31 @@ const TRAILING_PSEUDO_REGEX = /(::?[\w-]+(?:\([^)]*\))?)+$/;
 const EXCLUDE_CLASSNAME = ".not-prose";
 const NOTEBOOK_LINE_HEIGHT = "2rem";
 const NOTEBOOK_LINE_COLOR = "var(--chakra-colors-border-muted)";
-function inWhere<T extends string>(selector: T): T {
+function inWhere<T extends string>(
+  selector: T,
+  extraExclude?: string | string[],
+): T {
   const rebuiltSelector = selector.startsWith("& ")
     ? selector.slice(2)
     : selector;
   const match = selector.match(TRAILING_PSEUDO_REGEX);
   const pseudo = match ? match[0] : "";
   const base = match ? selector.slice(0, -match[0].length) : rebuiltSelector;
-  return `& :where(${base}):not(${EXCLUDE_CLASSNAME}, ${EXCLUDE_CLASSNAME} *)${pseudo}` as T;
+  const extraExclusions = Array.isArray(extraExclude)
+    ? extraExclude
+    : extraExclude
+      ? [extraExclude]
+      : [];
+  const extraExcludeSelectors = extraExclusions.flatMap((value) => [
+    value,
+    `${value} *`,
+  ]);
+  const excludeSelectors = [
+    EXCLUDE_CLASSNAME,
+    `${EXCLUDE_CLASSNAME} *`,
+    ...extraExcludeSelectors,
+  ].join(", ");
+  return `& :where(${base}):not(${excludeSelectors})${pseudo}` as T;
 }
 
 export const NotebookProse = chakra("div", {
@@ -34,6 +51,10 @@ export const NotebookProse = chakra("div", {
       flexWrap: "nowrap",
       height: "calc(var(--notebook-line-height) * 4)",
       overflow: "hidden",
+      textDecoration: "none",
+    },
+    "& .remark-link-card-plus__card:hover": {
+      color: "inherit",
       textDecoration: "none",
     },
     "& .remark-link-card-plus__container": {
@@ -142,7 +163,10 @@ export const NotebookProse = chakra("div", {
       marginBottom: "0",
       marginTop: "0",
     },
-    [inWhere("& a")]: {
+    [inWhere("& a", [
+      ".remark-link-card-plus__container",
+      ".remark-link-card-plus__card",
+    ])]: {
       color: "fg",
       fontWeight: "500",
       textDecoration: "underline",
@@ -336,6 +360,10 @@ export const NotebookProse = chakra("div", {
       fontWeight: "600",
     },
     [inWhere("& table")]: {
+      backgroundColor: "bg.muted",
+      backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} var(--notebook-line-height))`,
+      backgroundPosition: "0 0",
+      backgroundSize: "100% var(--notebook-line-height)",
       borderCollapse: "separate",
       borderSpacing: "0",
       lineHeight: "var(--notebook-line-height)",
@@ -351,31 +379,31 @@ export const NotebookProse = chakra("div", {
       paddingInlineStart: "1em",
     },
     [inWhere("& tbody td:first-of-type, tfoot td:first-of-type")]: {
-      paddingInlineStart: "0",
+      paddingInlineStart: "calc(var(--notebook-line-height) / 2)",
     },
     [inWhere("& tbody td:last-of-type, tfoot td:last-of-type")]: {
-      paddingInlineEnd: "0",
+      paddingInlineEnd: "calc(var(--notebook-line-height) / 2)",
     },
     [inWhere("& tbody tr")]: {
-      borderBottomColor: "border",
-      borderBottomWidth: "1px",
+      boxShadow: "inset 0 -1px var(--chakra-colors-border)",
     },
     [inWhere("& thead")]: {
-      borderBottomWidth: "1px",
       color: "fg",
     },
     [inWhere("& thead th")]: {
+      boxShadow: "inset 0 -1px var(--chakra-colors-border)",
       fontWeight: "medium",
-      paddingBlock: "calc(var(--notebook-line-height) / 2)",
+      height: "var(--notebook-line-height)",
+      paddingBlock: "0",
       paddingInlineEnd: "1em",
       paddingInlineStart: "1em",
       textAlign: "start",
     },
     [inWhere("& thead th:first-of-type")]: {
-      paddingInlineStart: "0",
+      paddingInlineStart: "calc(var(--notebook-line-height) / 2)",
     },
     [inWhere("& thead th:last-of-type")]: {
-      paddingInlineEnd: "0",
+      paddingInlineEnd: "calc(var(--notebook-line-height) / 2)",
     },
     [inWhere("& ul")]: {
       marginBottom: "var(--notebook-line-height)",
