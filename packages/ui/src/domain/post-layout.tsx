@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactElement, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import {
   Box,
@@ -11,15 +11,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { useTranslations } from "next-intl";
 import { Fragment } from "react";
 
 import { ViewTransitionLink } from "./view-transition-link";
-
-export type PostLayoutRenderLink = (props: {
-  children: ReactNode;
-  href: string;
-  isActive?: boolean;
-}) => ReactElement;
 
 type PostLayoutBreadcrumbItem = {
   href?: string;
@@ -39,34 +34,25 @@ type Props = {
   sidebar: SidebarProps;
 };
 
-type SidebarLabels = {
-  filtersAll: string;
-  filtersTag: string;
-  filtersTitle: string;
-  filtersYear: string;
+type RenderLinkProps = {
+  children: ReactNode;
+  href: string;
+  isActive?: boolean;
 };
 
 type SidebarProps = {
   availableTags: string[];
   availableYears: string[];
   buildHref: (input: PostLayoutHrefInput) => string;
-  labels: SidebarLabels;
-  renderLink?: PostLayoutRenderLink;
   selectedTag?: null | string;
   selectedYear?: null | string;
 };
 
-const defaultRenderLink: PostLayoutRenderLink = ({
-  children,
-  href,
-  isActive,
-}) => {
-  return (
-    <ViewTransitionLink fontWeight={isActive ? "bold" : "normal"} href={href}>
-      {children}
-    </ViewTransitionLink>
-  );
-};
+const renderLink = ({ children, href, isActive }: RenderLinkProps) => (
+  <ViewTransitionLink fontWeight={isActive ? "bold" : "normal"} href={href}>
+    {children}
+  </ViewTransitionLink>
+);
 
 export const PostLayout = ({
   breadcrumb,
@@ -74,17 +60,15 @@ export const PostLayout = ({
   header,
   sidebar,
 }: Props) => {
+  const t = useTranslations("user.blog");
+
   const {
     availableTags,
     availableYears,
     buildHref,
-    labels,
-    renderLink,
     selectedTag = null,
     selectedYear = null,
   } = sidebar;
-
-  const resolvedRenderLink = renderLink ?? defaultRenderLink;
 
   return (
     <Container maxW="6xl" py={10}>
@@ -100,7 +84,7 @@ export const PostLayout = ({
                 <Fragment key={index}>
                   <Breadcrumb.Item>
                     {href && !isLast ? (
-                      resolvedRenderLink({ children: label, href })
+                      renderLink({ children: label, href })
                     ) : (
                       <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
                     )}
@@ -123,18 +107,18 @@ export const PostLayout = ({
 
         <Box as="nav" flexShrink={0} w={{ base: "full", md: "260px" }}>
           <Heading as="h2" color="green.fg" mb={4} size="sm">
-            {labels.filtersTitle}
+            {t("filtersTitle")}
           </Heading>
 
           <Stack gap={6}>
             <Box>
               <Text color="green.fg" fontWeight="semibold" mb={2}>
-                {labels.filtersYear}
+                {t("filtersYear")}
               </Text>
               <Stack as="ul" gap={1} listStyleType="none" ps={0}>
                 <Box as="li">
-                  {resolvedRenderLink({
-                    children: labels.filtersAll,
+                  {renderLink({
+                    children: t("filtersAll"),
                     href: buildHref({ page: 1, year: null }),
                     isActive: !selectedYear,
                   })}
@@ -142,7 +126,7 @@ export const PostLayout = ({
 
                 {availableYears.map((year) => (
                   <Box as="li" key={year}>
-                    {resolvedRenderLink({
+                    {renderLink({
                       children: year,
                       href: buildHref({ page: 1, year }),
                       isActive: selectedYear === year,
@@ -154,12 +138,12 @@ export const PostLayout = ({
 
             <Box>
               <Text color="green.fg" fontWeight="semibold" mb={2}>
-                {labels.filtersTag}
+                {t("filtersTag")}
               </Text>
               <Stack as="ul" gap={1} listStyleType="none" ps={0}>
                 <Box as="li">
-                  {resolvedRenderLink({
-                    children: labels.filtersAll,
+                  {renderLink({
+                    children: t("filtersAll"),
                     href: buildHref({ page: 1, tag: null }),
                     isActive: !selectedTag,
                   })}
@@ -167,7 +151,7 @@ export const PostLayout = ({
 
                 {availableTags.map((tag) => (
                   <Box as="li" key={tag}>
-                    {resolvedRenderLink({
+                    {renderLink({
                       children: tag,
                       href: buildHref({ page: 1, tag }),
                       isActive: selectedTag === tag,

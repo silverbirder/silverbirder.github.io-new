@@ -38,12 +38,6 @@ const baseArgs: Story["args"] = {
       const query = params.toString();
       return query ? `/blog?${query}` : "/blog";
     },
-    labels: {
-      filtersAll: "All",
-      filtersTag: "Tag",
-      filtersTitle: "Filters",
-      filtersYear: "Year",
-    },
     selectedTag: null,
     selectedYear: null,
   },

@@ -1,8 +1,6 @@
 "use client";
 
-import type { PostLayoutRenderLink } from "@repo/ui";
-
-import { Box, Flex, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import { PostLayout, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
@@ -76,18 +74,6 @@ export const Posts = ({ posts }: Props) => {
     return query ? `/blog?${query}` : "/blog";
   };
 
-  const renderSidebarLink: PostLayoutRenderLink = ({
-    children,
-    href,
-    isActive,
-  }) => {
-    return (
-      <Link as={NextLink} fontWeight={isActive ? "bold" : "normal"} href={href}>
-        {children}
-      </Link>
-    );
-  };
-
   return (
     <PostLayout
       breadcrumb={[{ label: t("title") }]}
@@ -100,13 +86,6 @@ export const Posts = ({ posts }: Props) => {
         availableTags,
         availableYears,
         buildHref,
-        labels: {
-          filtersAll: t("filtersAll"),
-          filtersTag: t("filtersTag"),
-          filtersTitle: t("filtersTitle"),
-          filtersYear: t("filtersYear"),
-        },
-        renderLink: renderSidebarLink,
         selectedTag,
         selectedYear,
       }}

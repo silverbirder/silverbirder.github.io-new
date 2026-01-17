@@ -1,8 +1,6 @@
 "use client";
 
-import type { PostLayoutRenderLink } from "@repo/ui";
-
-import { Box, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import {
   MdxClientWrapper,
   Notebook,
@@ -81,18 +79,6 @@ export const PostArticle = ({
     return query ? `/blog?${query}` : "/blog";
   };
 
-  const renderSidebarLink: PostLayoutRenderLink = ({
-    children,
-    href,
-    isActive,
-  }) => {
-    return (
-      <Link as={NextLink} fontWeight={isActive ? "bold" : "normal"} href={href}>
-        {children}
-      </Link>
-    );
-  };
-
   const cleanedRelatedPosts =
     relatedPosts
       ?.map((group) => {
@@ -120,13 +106,6 @@ export const PostArticle = ({
         availableTags: filters.availableTags,
         availableYears: filters.availableYears,
         buildHref,
-        labels: {
-          filtersAll: t("filtersAll"),
-          filtersTag: t("filtersTag"),
-          filtersTitle: t("filtersTitle"),
-          filtersYear: t("filtersYear"),
-        },
-        renderLink: renderSidebarLink,
         selectedTag: null,
         selectedYear: null,
       }}

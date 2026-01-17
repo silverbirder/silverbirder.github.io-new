@@ -1,3 +1,4 @@
+import { jaMessages } from "@repo/message";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it } from "vitest";
 
@@ -21,7 +22,9 @@ describe("PostLayout", () => {
     await renderWithProvider(<Stories.Ideal />);
 
     expect(document.body.textContent ?? "").toContain("Main");
-    expect(document.body.textContent ?? "").toContain("Filters");
+    expect(document.body.textContent ?? "").toContain(
+      jaMessages.user.blog.filtersTitle,
+    );
     const blogLinks = Array.from(document.querySelectorAll('a[href^="/blog"]'));
     expect(blogLinks.length).toBeGreaterThan(0);
   });
