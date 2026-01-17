@@ -5,6 +5,7 @@ import {
   createSystem,
   defaultConfig,
   defineConfig,
+  Theme,
 } from "@chakra-ui/react";
 import { ThemeProvider, type ThemeProviderProps } from "next-themes";
 
@@ -17,7 +18,7 @@ export const Provider = ({ attribute, children, ...props }: Props) => {
   return (
     <ChakraProvider value={system}>
       <ThemeProvider attribute={attribute ?? "class"} {...props}>
-        {children}
+        <Theme colorPalette="green">{children}</Theme>
       </ThemeProvider>
     </ChakraProvider>
   );

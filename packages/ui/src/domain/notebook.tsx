@@ -54,6 +54,7 @@ export const Notebook = ({
     <NotebookProse
       borderColor="border.muted"
       borderWidth="1px"
+      colorPalette="green"
       px="2"
       w="full"
       {...notebookProps}
@@ -68,6 +69,7 @@ export const Notebook = ({
         <Stack direction="row">
           {cleanTags.map((tag) => (
             <Badge
+              colorPalette="green"
               height="var(--notebook-line-height)"
               key={tag}
               size="sm"
@@ -110,6 +112,8 @@ export const Notebook = ({
                 mt={0}
               >
                 <ViewTransitionLink
+                  _hover={{ color: "green.emphasized" }}
+                  color="green.fg"
                   display="block"
                   fontWeight="semibold"
                   href={navigation.prev.href}
@@ -145,6 +149,8 @@ export const Notebook = ({
                 mt={0}
               >
                 <ViewTransitionLink
+                  _hover={{ color: "green.emphasized" }}
+                  color="green.fg"
                   display="block"
                   fontWeight="semibold"
                   href={navigation.next.href}

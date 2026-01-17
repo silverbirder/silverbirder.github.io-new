@@ -22,11 +22,12 @@ type Props = LinkProps & {
 };
 
 export const ViewTransitionLink = ({
+  colorPalette = "green",
   transitionName,
   transitionUpdate,
   ...linkProps
 }: Props) => {
-  const link = <Link {...linkProps} />;
+  const link = <Link colorPalette={colorPalette} {...linkProps} />;
 
   if (!ViewTransitionComponent) {
     return link;

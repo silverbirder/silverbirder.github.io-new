@@ -90,12 +90,16 @@ export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
             {altText && altText}
             {linkHref && (
               <chakra.a
+                _hover={{
+                  color: "green.emphasized",
+                }}
                 aria-label={t("openInNewTabAriaLabel")}
+                color="green.fg"
                 href={linkHref}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <Icon color="fg.muted" size="sm">
+                <Icon color="green.fg" size="sm">
                   <MdOpenInNew />
                 </Icon>
               </chakra.a>

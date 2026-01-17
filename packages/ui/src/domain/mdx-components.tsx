@@ -1,5 +1,6 @@
 "use client";
 
+import type { LinkProps } from "@chakra-ui/react";
 import type {
   ComponentProps,
   ComponentPropsWithoutRef,
@@ -7,6 +8,7 @@ import type {
   ReactNode,
 } from "react";
 
+import { Link } from "@chakra-ui/react";
 import { Children, isValidElement } from "react";
 
 import { NotebookImage } from "./notebook-image";
@@ -46,9 +48,10 @@ const getSingleElementChild = (children: ReactNode): null | ReactElement => {
 
 const Anchor = ({
   children,
+  colorPalette = "green",
   href,
   ...props
-}: ComponentPropsWithoutRef<"a">) => {
+}: LinkProps) => {
   const onlyChild = getSingleElementChild(children);
 
   if (href && onlyChild && onlyChild.type === NotebookImage) {
@@ -60,9 +63,9 @@ const Anchor = ({
   }
 
   return (
-    <a href={href} {...props}>
+    <Link colorPalette={colorPalette} href={href} {...props}>
       {children}
-    </a>
+    </Link>
   );
 };
 

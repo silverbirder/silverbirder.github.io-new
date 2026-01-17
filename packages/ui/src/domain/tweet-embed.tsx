@@ -40,6 +40,21 @@ const computePaddingToNextMultiple = (heightPx: number, unitPx: number) => {
   return unitPx - remainder;
 };
 
+const TweetContainer = chakra("div", {
+  base: {
+    "& a": {
+      color: "green.fg",
+      textDecoration: "underline",
+      textDecorationColor: "green.muted",
+      textUnderlineOffset: "0.2em",
+    },
+    "& a:hover": {
+      color: "green.emphasized",
+      textDecorationColor: "green.emphasized",
+    },
+  },
+});
+
 export const TweetEmbed = ({
   apiUrl,
   fallback = <TweetSkeleton />,
@@ -106,7 +121,7 @@ export const TweetEmbed = ({
   }, []);
 
   return (
-    <chakra.div
+    <TweetContainer
       className="oembed-card not-prose"
       data-embed="tweet"
       data-tweet-id={id}
@@ -122,6 +137,6 @@ export const TweetEmbed = ({
       ) : (
         <EmbeddedTweet tweet={data} />
       )}
-    </chakra.div>
+    </TweetContainer>
   );
 };

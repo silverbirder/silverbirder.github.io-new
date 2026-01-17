@@ -74,6 +74,7 @@ const HeaderActions = chakra("div", {
 
 const Title = chakra("h1", {
   base: {
+    color: "green.fg",
     fontSize: { base: "2rem", md: "2.5rem" },
     fontWeight: "700",
     letterSpacing: "-0.02em",
@@ -95,18 +96,19 @@ const ActionButton = chakra("button", {
       opacity: 0.5,
     },
     _focusVisible: {
-      boxShadow: "0 0 0 2px var(--chakra-colors-border-muted)",
-      outline: "none",
+      outline: "2px solid",
+      outlineColor: "green.focusRing",
+      outlineOffset: "2px",
     },
     _hover: {
-      background: "bg.muted",
+      background: "green.muted",
     },
     alignItems: "center",
-    background: "bg",
-    borderColor: "border.muted",
+    background: "green.subtle",
+    borderColor: "green.muted",
     borderRadius: "999px",
     borderWidth: "1px",
-    color: "fg",
+    color: "green.fg",
     display: "inline-flex",
     fontSize: "0.85rem",
     fontWeight: "600",
@@ -127,7 +129,7 @@ const EditorGrid = chakra("div", {
 const EditorPanel = chakra("section", {
   base: {
     background: "bg",
-    borderColor: "border.muted",
+    borderColor: "green.muted",
     borderRadius: "1rem",
     borderWidth: "1px",
     display: "flex",
@@ -147,7 +149,7 @@ const PreviewPanel = chakra("section", {
 
 const PanelTitle = chakra("h2", {
   base: {
-    color: "fg.muted",
+    color: "green.fg",
     fontSize: "0.7rem",
     fontWeight: "700",
     letterSpacing: "0.2em",
@@ -176,11 +178,11 @@ const BodyDropzone = chakra("div", {
 const Input = chakra("input", {
   base: {
     _focusVisible: {
-      borderColor: "fg",
+      borderColor: "green.solid",
       outline: "none",
     },
     background: "bg",
-    borderColor: "border.muted",
+    borderColor: "green.muted",
     borderRadius: "0.75rem",
     borderWidth: "1px",
     color: "fg",
@@ -194,11 +196,11 @@ const Input = chakra("input", {
 const Textarea = chakra("textarea", {
   base: {
     _focusVisible: {
-      borderColor: "fg",
+      borderColor: "green.solid",
       outline: "none",
     },
     background: "bg",
-    borderColor: "border.muted",
+    borderColor: "green.muted",
     borderRadius: "0.75rem",
     borderWidth: "1px",
     color: "fg",

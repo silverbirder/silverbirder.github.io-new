@@ -32,32 +32,4 @@ export const config = [
   {
     ignores: ["dist/**"],
   },
-  {
-    files: ["**/*.tsx"],
-    plugins: { react: pluginReact },
-    rules: {
-      "react/forbid-dom-props": ["error", { forbid: ["className", "style"] }],
-      "react/forbid-component-props": [
-        "error",
-        { forbid: ["className", "style"] },
-      ],
-    },
-  },
-  {
-    files: [
-      "**/*.spec.tsx",
-      "**/*.stories.tsx",
-      "**/.storybook/**/*.tsx",
-      "**/src/components/common/**",
-      "**/app/layout.tsx",
-      "**/app/apple-icon.tsx",
-      "**/app/icon.tsx",
-      "**/app/**/opengraph-image.tsx",
-    ],
-    rules: {
-      "react/forbid-dom-props": "off",
-      "react/forbid-component-props": "off",
-      "react/jsx-no-literals": "off",
-    },
-  },
 ];

@@ -89,7 +89,7 @@ export const PostLayout = ({
   return (
     <Container maxW="6xl" py={10}>
       {breadcrumb && breadcrumb.length > 0 ? (
-        <Breadcrumb.Root mb={4} size="sm">
+        <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
           <Breadcrumb.List>
             {breadcrumb.map((item, index) => {
               const isLast = index === breadcrumb.length - 1;
@@ -122,13 +122,13 @@ export const PostLayout = ({
         </Box>
 
         <Box as="nav" flexShrink={0} w={{ base: "full", md: "260px" }}>
-          <Heading as="h2" mb={4} size="sm">
+          <Heading as="h2" color="green.fg" mb={4} size="sm">
             {labels.filtersTitle}
           </Heading>
 
           <Stack gap={6}>
             <Box>
-              <Text fontWeight="semibold" mb={2}>
+              <Text color="green.fg" fontWeight="semibold" mb={2}>
                 {labels.filtersYear}
               </Text>
               <Stack as="ul" gap={1} listStyleType="none" ps={0}>
@@ -153,7 +153,7 @@ export const PostLayout = ({
             </Box>
 
             <Box>
-              <Text fontWeight="semibold" mb={2}>
+              <Text color="green.fg" fontWeight="semibold" mb={2}>
                 {labels.filtersTag}
               </Text>
               <Stack as="ul" gap={1} listStyleType="none" ps={0}>
