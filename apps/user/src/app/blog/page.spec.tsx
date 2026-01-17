@@ -33,12 +33,14 @@ describe("getPostList", () => {
       {
         publishedAt: "2020-01-01",
         slug: "first",
+        summary: "",
         tags: [],
         title: "Old title",
       },
       {
         publishedAt: "2021-01-01",
         slug: "second",
+        summary: "",
         tags: [],
         title: "New title",
       },

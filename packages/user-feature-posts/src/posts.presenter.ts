@@ -1,6 +1,7 @@
 export type PostSummary = {
   publishedAt: string;
   slug: string;
+  summary: string;
   tags: string[];
   title: string;
 };

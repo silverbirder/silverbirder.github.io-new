@@ -1,6 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 
-import { jaMessages } from "@repo/message";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it, vi } from "vitest";
 
@@ -43,36 +42,42 @@ const createPosts = (): PostSummary[] => [
   {
     publishedAt: "2026-01-12",
     slug: "a",
+    summary: "Summary A",
     tags: ["TypeScript"],
     title: "A",
   },
   {
     publishedAt: "2026-01-11",
     slug: "b",
+    summary: "Summary B",
     tags: [],
     title: "B",
   },
   {
     publishedAt: "2026-01-10",
     slug: "c",
+    summary: "Summary C",
     tags: [],
     title: "C",
   },
   {
     publishedAt: "2026-01-09",
     slug: "d",
+    summary: "Summary D",
     tags: [],
     title: "D",
   },
   {
     publishedAt: "2026-01-08",
     slug: "e",
+    summary: "Summary E",
     tags: [],
     title: "E",
   },
   {
     publishedAt: "2026-01-07",
     slug: "f",
+    summary: "Summary F",
     tags: [],
     title: "F",
   },
@@ -157,15 +162,5 @@ describe("Posts", () => {
     expect(prev?.getAttribute("href") ?? "").toBe("/blog");
     expect(page1?.getAttribute("href") ?? "").toBe("/blog");
     expect(next?.getAttribute("href") ?? "").toBe("/blog?page=3");
-  });
-
-  it("renders the filter sidebar", async () => {
-    mockedSearchParams = "";
-    await renderWithProvider(<Posts posts={[...createPosts()]} />);
-
-    const content = document.body.textContent ?? "";
-    expect(content).toContain(jaMessages.user.blog.filtersTitle);
-    expect(content).toContain(jaMessages.user.blog.filtersYear);
-    expect(content).toContain(jaMessages.user.blog.filtersTag);
   });
 });

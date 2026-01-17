@@ -17,12 +17,14 @@ export const getPostList = async (
       const frontmatter = await loader(slug);
       const title =
         typeof frontmatter.title === "string" ? frontmatter.title : slug;
+      const summary =
+        typeof frontmatter.summary === "string" ? frontmatter.summary : "";
       const tags = Array.isArray(frontmatter.tags)
         ? frontmatter.tags.filter(
             (tag): tag is string => typeof tag === "string",
           )
         : [];
-      return { publishedAt, slug, tags, title } satisfies PostSummary;
+      return { publishedAt, slug, summary, tags, title } satisfies PostSummary;
     }),
   );
 
