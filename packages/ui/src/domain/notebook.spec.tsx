@@ -35,7 +35,7 @@ describe("Notebook", () => {
     const time = container.querySelector("time");
 
     expect(heading?.textContent ?? "").toBe("Notebook Preview");
-    expect(time?.textContent ?? "").toBe("2025. 01. 02.");
+    expect(time?.textContent ?? "").toBe("2025. 01. 02");
     expect(container.textContent ?? "").toContain("NO");
     expect(container.textContent ?? "").toContain("Chakra");
     expect(container.textContent ?? "").toContain("Design");

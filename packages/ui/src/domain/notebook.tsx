@@ -43,7 +43,7 @@ const formatNotebookDate = (value: string) => {
   if (formatted === value) {
     return value;
   }
-  return `${formatted.replaceAll("/", ". ")}.`;
+  return `${formatted.replaceAll("/", ". ")}`;
 };
 
 export const Notebook = ({
@@ -68,35 +68,36 @@ export const Notebook = ({
         align="flex-start"
         alignSelf="stretch"
         gap="0"
-        lineHeight={NOTEBOOK_LINE_HEIGHT}
         pt={NOTEBOOK_LINE_HEIGHT}
       >
         <VStack alignSelf="flex-end" gap="0" minW="12rem">
           <Flex
-            align="baseline"
+            align="flex-end"
             borderBottom="1px solid"
             borderColor="border"
             justify="space-between"
+            minH={NOTEBOOK_LINE_HEIGHT}
             pr={NOTEBOOK_LINE_HEIGHT}
             w="full"
           >
-            <Text as="span" fontSize="xs">
+            <Text as="span" fontSize="xs" lineHeight="1">
               {t("headerNo")}
             </Text>
-            <Text as="span" color="fg" fontSize="sm" fontWeight="semibold">
+            <Text as="span" fontSize="sm" lineHeight="1">
               {postNumberText}
             </Text>
           </Flex>
           <Flex
-            align="baseline"
+            align="flex-end"
             justify="space-between"
+            minH={NOTEBOOK_LINE_HEIGHT}
             pr={NOTEBOOK_LINE_HEIGHT}
             w="full"
           >
-            <Text as="span" fontSize="xs">
+            <Text as="span" fontSize="xs" lineHeight="1">
               {t("headerDate")}
             </Text>
-            <Text as="span" color="fg" fontSize="sm" fontWeight="semibold">
+            <Text as="span" fontSize="sm" lineHeight="1">
               <time dateTime={publishedAt}>{formattedPublishedAt}</time>
             </Text>
           </Flex>
@@ -115,8 +116,8 @@ export const Notebook = ({
         </Heading>
       </VStack>
       <NotebookProse
-        borderColor="border.muted"
-        borderWidth="1px"
+        borderTopColor="border"
+        borderTopWidth="1px"
         colorPalette="green"
         w="full"
         {...notebookProps}
@@ -153,10 +154,7 @@ export const Notebook = ({
                   mt={0}
                 >
                   <ViewTransitionLink
-                    _hover={{ color: "green.emphasized" }}
                     color="green.fg"
-                    display="block"
-                    fontWeight="semibold"
                     href={navigation.next.href}
                     lineClamp={2}
                     lineHeight="var(--notebook-line-height)"
@@ -189,10 +187,7 @@ export const Notebook = ({
                   mt={0}
                 >
                   <ViewTransitionLink
-                    _hover={{ color: "green.emphasized" }}
                     color="green.fg"
-                    display="block"
-                    fontWeight="semibold"
                     href={navigation.prev.href}
                     lineClamp={2}
                     lineHeight="var(--notebook-line-height)"

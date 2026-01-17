@@ -104,7 +104,6 @@ export const PostArticle = ({
                     <Box as="li" key={`${group.tag}-${post.slug}`}>
                       <Stack gap={1}>
                         <ViewTransitionLink
-                          fontWeight="semibold"
                           href={`/blog/contents/${post.slug}`}
                         >
                           {post.title}

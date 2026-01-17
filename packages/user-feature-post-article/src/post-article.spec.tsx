@@ -155,7 +155,7 @@ return {
     );
 
     const timeElement = document.querySelector("time");
-    expect(timeElement?.textContent ?? "").toBe("2025. 01. 02.");
+    expect(timeElement?.textContent ?? "").toBe("2025. 01. 02");
     expect(document.body.textContent ?? "").toContain("Chakra");
     expect(document.body.textContent ?? "").toContain("Design");
   });

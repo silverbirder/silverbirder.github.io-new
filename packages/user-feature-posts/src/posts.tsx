@@ -134,9 +134,6 @@ export const Posts = ({ posts }: Props) => {
                 pl="calc(var(--notebook-line-height) / 2)"
               >
                 <ViewTransitionLink
-                  display="block"
-                  fontSize="lg"
-                  fontWeight="semibold"
                   href={`/blog/contents/${post.slug}`}
                   lineClamp={2}
                   lineHeight="var(--notebook-line-height)"
@@ -188,9 +185,7 @@ export const Posts = ({ posts }: Props) => {
           >
             <Stack direction="row" gap={2} wrap="wrap">
               <ViewTransitionLink
-                alignItems="center"
                 aria-disabled={pagination.currentPage <= 1}
-                display="inline-flex"
                 href={buildHref({ page: pagination.currentPage - 1 })}
                 lineHeight="var(--notebook-line-height)"
                 pointerEvents={pagination.currentPage <= 1 ? "none" : "auto"}
@@ -211,8 +206,6 @@ export const Posts = ({ posts }: Props) => {
                 }
                 return (
                   <ViewTransitionLink
-                    alignItems="center"
-                    display="inline-flex"
                     fontWeight={item.isCurrent ? "bold" : "normal"}
                     href={buildHref({ page: item.page })}
                     key={item.page}
@@ -224,9 +217,7 @@ export const Posts = ({ posts }: Props) => {
                 );
               })}
               <ViewTransitionLink
-                alignItems="center"
                 aria-disabled={pagination.currentPage >= pagination.totalPages}
-                display="inline-flex"
                 href={buildHref({ page: pagination.currentPage + 1 })}
                 lineHeight="var(--notebook-line-height)"
                 pointerEvents={
