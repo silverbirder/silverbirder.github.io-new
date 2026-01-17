@@ -39,7 +39,7 @@ describe("PostArticle", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("wraps the article with post layout and notebook prose", () => {
+  it("renders the article with notebook prose", () => {
     const compiledSource = `"use strict";
 const {jsx: _jsx} = arguments[0];
 function MDXContent() {
@@ -55,10 +55,6 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
-        filters={{
-          availableTags: ["Testing"],
-          availableYears: ["2025"],
-        }}
         meta={{
           publishedAt: "2025-01-02",
           tags: ["Testing"],
@@ -67,8 +63,7 @@ return {
       />,
     );
 
-    expect(document.querySelector("nav")).not.toBeNull();
-    expect(document.body.textContent ?? "").toContain("絞り込み");
+    expect(document.body.textContent ?? "").not.toContain("絞り込み");
     expect(document.body.textContent ?? "").toContain("Test title");
   });
 
@@ -101,10 +96,6 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
-        filters={{
-          availableTags: ["Testing"],
-          availableYears: ["2025"],
-        }}
         meta={{
           publishedAt: "2025-01-02",
           tags: ["Testing"],
@@ -146,10 +137,6 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
-        filters={{
-          availableTags: ["Chakra", "Design"],
-          availableYears: ["2025"],
-        }}
         meta={{
           publishedAt: "2025-01-02",
           tags: ["Chakra", "Design"],
@@ -180,10 +167,6 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
-        filters={{
-          availableTags: ["TypeScript", "Design"],
-          availableYears: ["2025"],
-        }}
         meta={{
           title: "Test title",
         }}
@@ -225,10 +208,6 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
-        filters={{
-          availableTags: [],
-          availableYears: [],
-        }}
         meta={{
           title: "Test title",
         }}

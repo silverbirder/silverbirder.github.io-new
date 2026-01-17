@@ -156,10 +156,6 @@ type Story = StoryObj<typeof meta>;
 export const Ideal: Story = {
   args: {
     compiledSource: compiledSources.ideal,
-    filters: {
-      availableTags: ["Chakra UI", "MDX", "Design"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
@@ -171,10 +167,6 @@ export const Ideal: Story = {
 export const Empty: Story = {
   args: {
     compiledSource: compiledSources.empty,
-    filters: {
-      availableTags: ["Chakra UI", "MDX", "Design"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
@@ -186,10 +178,6 @@ export const Empty: Story = {
 export const Error: Story = {
   args: {
     compiledSource: compiledSources.error,
-    filters: {
-      availableTags: ["Chakra UI", "MDX", "Design"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
@@ -201,10 +189,6 @@ export const Error: Story = {
 export const Partial: Story = {
   args: {
     compiledSource: compiledSources.partial,
-    filters: {
-      availableTags: ["Chakra UI", "MDX"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
@@ -216,10 +200,6 @@ export const Partial: Story = {
 export const Loading: Story = {
   args: {
     compiledSource: compiledSources.loading,
-    filters: {
-      availableTags: ["Chakra UI"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
@@ -231,10 +211,6 @@ export const Loading: Story = {
 export const WithNavigation: Story = {
   args: {
     compiledSource: compiledSources.ideal,
-    filters: {
-      availableTags: ["Chakra UI", "MDX", "Design"],
-      availableYears: ["2025"],
-    },
     meta: {
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],

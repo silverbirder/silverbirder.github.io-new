@@ -6,6 +6,8 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("@repo/ui", () => ({
   Provider: ({ children }: { children: ReactNode }) =>
     React.createElement("div", { "data-provider": "ui" }, children),
+  UserLayout: ({ children }: { children: ReactNode }) =>
+    React.createElement("div", { "data-layout": "user" }, children),
 }));
 
 vi.mock("next-intl", () => ({
@@ -55,6 +57,9 @@ describe("RootLayout", () => {
     const viewTransitionElement = intlProviderElement.props.children;
 
     expect(isValidElement(viewTransitionElement)).toBe(true);
-    expect(viewTransitionElement.props.children.type).toBe("span");
+    expect(viewTransitionElement.props.children.type).toBe(ui.UserLayout);
+
+    const userLayoutElement = viewTransitionElement.props.children;
+    expect(userLayoutElement.props.children.type).toBe("span");
   });
 });

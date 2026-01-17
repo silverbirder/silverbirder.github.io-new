@@ -1,21 +1,18 @@
 "use client";
 
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
-import {
-  MdxClientWrapper,
-  Notebook,
-  PostLayout,
-  ViewTransitionLink,
-} from "@repo/ui";
+import { Box, Breadcrumb, Heading, Stack, Text } from "@chakra-ui/react";
+import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
+import { Fragment, type ReactNode } from "react";
+
+type BreadcrumbItem = {
+  href?: string;
+  label: ReactNode;
+};
 
 type Props = {
   compiledSource: string;
-  filters: {
-    availableTags: string[];
-    availableYears: string[];
-  };
   meta: {
     publishedAt?: string;
     tags?: string[];
@@ -45,39 +42,15 @@ type Props = {
 
 export const PostArticle = ({
   compiledSource,
-  filters,
   meta,
   navigation,
   relatedPosts,
 }: Props) => {
   const t = useTranslations("user.blog");
 
-  const breadcrumb = meta.title
-    ? ([{ href: "/blog", label: t("title") }, { label: meta.title }] as const)
-    : ([{ label: t("title") }] as const);
-
-  const buildHref = (input: {
-    page?: null | number;
-    tag?: null | string;
-    year?: null | string;
-  }) => {
-    const params = new URLSearchParams();
-
-    if (input.year) {
-      params.set("year", input.year);
-    }
-
-    if (input.tag) {
-      params.set("tag", input.tag);
-    }
-
-    if (input.page && input.page > 1) {
-      params.set("page", String(input.page));
-    }
-
-    const query = params.toString();
-    return query ? `/blog?${query}` : "/blog";
-  };
+  const breadcrumb: BreadcrumbItem[] = meta.title
+    ? [{ href: "/blog", label: t("title") }, { label: meta.title }]
+    : [{ label: t("title") }];
 
   const cleanedRelatedPosts =
     relatedPosts
@@ -100,16 +73,35 @@ export const PostArticle = ({
     [];
 
   return (
-    <PostLayout
-      breadcrumb={[...breadcrumb]}
-      sidebar={{
-        availableTags: filters.availableTags,
-        availableYears: filters.availableYears,
-        buildHref,
-        selectedTag: null,
-        selectedYear: null,
-      }}
-    >
+    <Box w="full">
+      {breadcrumb.length > 0 ? (
+        <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
+          <Breadcrumb.List>
+            {breadcrumb.map((item, index) => {
+              const isLast = index === breadcrumb.length - 1;
+              const href = item.href;
+              const label = item.label;
+
+              return (
+                <Fragment key={index}>
+                  <Breadcrumb.Item>
+                    {href && !isLast ? (
+                      <ViewTransitionLink href={href}>
+                        {label}
+                      </ViewTransitionLink>
+                    ) : (
+                      <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
+                    )}
+                  </Breadcrumb.Item>
+
+                  {!isLast ? <Breadcrumb.Separator /> : null}
+                </Fragment>
+              );
+            })}
+          </Breadcrumb.List>
+        </Breadcrumb.Root>
+      ) : null}
+
       <Notebook
         navigation={navigation}
         publishedAt={meta.publishedAt}
@@ -154,6 +146,6 @@ export const PostArticle = ({
           </Stack>
         </Box>
       )}
-    </PostLayout>
+    </Box>
   );
 };

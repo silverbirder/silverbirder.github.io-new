@@ -4,7 +4,7 @@ import { chakra } from "@chakra-ui/react";
 
 const TRAILING_PSEUDO_REGEX = /(::?[\w-]+(?:\([^)]*\))?)+$/;
 const EXCLUDE_CLASSNAME = ".not-prose";
-const NOTEBOOK_LINE_HEIGHT = "2rem";
+export const NOTEBOOK_LINE_HEIGHT = "2rem";
 const NOTEBOOK_LINE_COLOR = "var(--chakra-colors-border-muted)";
 const NOTEBOOK_MARGIN_LINE_COLOR = "var(--chakra-colors-blue-subtle)";
 function inWhere<T extends string>(
@@ -171,6 +171,7 @@ export const NotebookProse = chakra("div", {
     ])]: {
       color: "fg",
       fontWeight: "500",
+      overflowWrap: "anywhere",
       textDecoration: "underline",
       textDecorationColor: "border.muted",
       textDecorationThickness: "2px",
@@ -428,7 +429,6 @@ export const NotebookProse = chakra("div", {
       marginTop: "var(--notebook-line-height)",
     },
     lineHeight: "var(--notebook-line-height)",
-    maxWidth: "42rem",
     paddingBlock: "var(--notebook-line-height)",
     paddingInline: "var(--notebook-line-height)",
   },

@@ -1,5 +1,6 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 
+import { jaMessages } from "@repo/message";
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it, vi } from "vitest";
 
@@ -156,5 +157,15 @@ describe("Posts", () => {
     expect(prev?.getAttribute("href") ?? "").toBe("/blog");
     expect(page1?.getAttribute("href") ?? "").toBe("/blog");
     expect(next?.getAttribute("href") ?? "").toBe("/blog?page=3");
+  });
+
+  it("renders the filter sidebar", async () => {
+    mockedSearchParams = "";
+    await renderWithProvider(<Posts posts={[...createPosts()]} />);
+
+    const content = document.body.textContent ?? "";
+    expect(content).toContain(jaMessages.user.blog.filtersTitle);
+    expect(content).toContain(jaMessages.user.blog.filtersYear);
+    expect(content).toContain(jaMessages.user.blog.filtersTag);
   });
 });
