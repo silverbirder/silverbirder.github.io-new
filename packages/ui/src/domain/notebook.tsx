@@ -55,7 +55,6 @@ export const Notebook = ({
       borderColor="border.muted"
       borderWidth="1px"
       colorPalette="green"
-      px="2"
       w="full"
       {...notebookProps}
     >
