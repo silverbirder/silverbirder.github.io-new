@@ -2,7 +2,6 @@
   "user": {
     "blog": {
       "title": "ブログ",
-      "latestHeading": "新着",
       "empty": "投稿が見つかりませんでした。",
       "filtersTitle": "絞り込み",
       "filtersAll": "すべて",

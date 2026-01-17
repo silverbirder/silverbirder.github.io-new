@@ -102,31 +102,29 @@ export const Posts = ({ posts }: Props) => {
 
   return (
     <Box w="full">
-      {breadcrumb.length > 0 ? (
-        <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
-          <Breadcrumb.List>
-            {breadcrumb.map((item, index) => {
-              const isLast = index === breadcrumb.length - 1;
-              const href = item.href;
-              const label = item.label;
+      <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
+        <Breadcrumb.List>
+          {breadcrumb.map((item, index) => {
+            const isLast = index === breadcrumb.length - 1;
+            const href = item.href;
+            const label = item.label;
 
-              return (
-                <Fragment key={index}>
-                  <Breadcrumb.Item>
-                    {href && !isLast ? (
-                      renderLink({ children: label, href })
-                    ) : (
-                      <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
-                    )}
-                  </Breadcrumb.Item>
+            return (
+              <Fragment key={index}>
+                <Breadcrumb.Item>
+                  {href && !isLast ? (
+                    renderLink({ children: label, href })
+                  ) : (
+                    <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
+                  )}
+                </Breadcrumb.Item>
 
-                  {!isLast ? <Breadcrumb.Separator /> : null}
-                </Fragment>
-              );
-            })}
-          </Breadcrumb.List>
-        </Breadcrumb.Root>
-      ) : null}
+                {!isLast ? <Breadcrumb.Separator /> : null}
+              </Fragment>
+            );
+          })}
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
 
       <Heading as="h1" mb={6} size="lg">
         {t("title")}
@@ -134,9 +132,6 @@ export const Posts = ({ posts }: Props) => {
 
       <Flex align="start" direction={{ base: "column", md: "row" }} gap={10}>
         <Box flex="1" minW={0}>
-          <Heading as="h2" mb={2} size="md">
-            {t("latestHeading")}
-          </Heading>
           <Text fontSize="sm" mb={6}>
             {t("metaCount", { count: filteredPosts.length })}
           </Text>
