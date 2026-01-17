@@ -61,6 +61,8 @@
       "openInNewTabAriaLabel": "別タブで開く"
     },
     "notebook": {
+      "headerDate": "DATE",
+      "headerNo": "NO",
       "navigationLabel": "記事ナビゲーション",
       "navigationPrev": "前のページ",
       "navigationNext": "次のページ"

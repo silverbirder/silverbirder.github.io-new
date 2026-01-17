@@ -53,11 +53,17 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       slug,
       tags: frontmatter.tags,
     });
+    const currentIndex = normalizedPosts.findIndex(
+      (post) => post.slug === slug,
+    );
+    const postNumber =
+      currentIndex >= 0 ? normalizedPosts.length - currentIndex : undefined;
 
     return (
       <PostArticle
         compiledSource={compiled.compiledSource}
         meta={{
+          postNumber,
           publishedAt: frontmatter.publishedAt ?? "",
           tags: frontmatter.tags ?? [],
           title: frontmatter.title ?? "",

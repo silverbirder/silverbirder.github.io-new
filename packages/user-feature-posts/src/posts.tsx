@@ -115,11 +115,15 @@ export const Posts = ({ posts }: Props) => {
           })}
         </Breadcrumb.List>
       </Breadcrumb.Root>
-      <Notebook>
+      <Notebook navigation={{}} tags={[]} title={t("title")}>
         {pagination.items.length === 0 ? (
           <Text>{t("empty")}</Text>
         ) : (
-          <Stack className="not-prose" gap="var(--notebook-line-height)">
+          <Stack
+            className="not-prose"
+            gap="var(--notebook-line-height)"
+            py="var(--notebook-line-height)"
+          >
             {pagination.items.map((post) => (
               <Stack
                 borderLeftColor="green.border"

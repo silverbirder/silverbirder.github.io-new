@@ -429,7 +429,6 @@ export const NotebookProse = chakra("div", {
       marginTop: "var(--notebook-line-height)",
     },
     lineHeight: "var(--notebook-line-height)",
-    paddingBlock: "var(--notebook-line-height)",
     paddingInline: "var(--notebook-line-height)",
   },
   defaultVariants: {

@@ -316,6 +316,7 @@ export const PostEditorLayout = ({
           <Notebook
             aria-busy={isPreviewLoading}
             data-testid="post-editor-preview"
+            navigation={{}}
             publishedAt={previewDate}
             tags={[]}
             title={previewTitle}

@@ -21,6 +21,8 @@ describe("Notebook", () => {
   it("renders title, date, and tags", async () => {
     const { container } = await renderWithProvider(
       <Notebook
+        navigation={{}}
+        postNumber={1}
         publishedAt="2025-01-02"
         tags={["Chakra", "Design"]}
         title="Notebook Preview"
@@ -33,7 +35,8 @@ describe("Notebook", () => {
     const time = container.querySelector("time");
 
     expect(heading?.textContent ?? "").toBe("Notebook Preview");
-    expect(time?.textContent ?? "").toBe("2025/01/02");
+    expect(time?.textContent ?? "").toBe("2025. 01. 02.");
+    expect(container.textContent ?? "").toContain("NO");
     expect(container.textContent ?? "").toContain("Chakra");
     expect(container.textContent ?? "").toContain("Design");
   });
@@ -42,9 +45,19 @@ describe("Notebook", () => {
     const { container } = await renderWithProvider(
       <Notebook
         navigation={{
-          next: { href: "/blog/contents/next", title: "Next" },
-          prev: { href: "/blog/contents/prev", title: "Prev" },
+          next: {
+            href: "/blog/contents/next",
+            publishedAt: "2025-01-03",
+            title: "Next",
+          },
+          prev: {
+            href: "/blog/contents/prev",
+            publishedAt: "2025-01-01",
+            title: "Prev",
+          },
         }}
+        tags={[]}
+        title="Notebook Preview"
       >
         <p>Body copy.</p>
       </Notebook>,

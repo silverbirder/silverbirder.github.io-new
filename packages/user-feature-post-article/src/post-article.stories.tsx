@@ -157,6 +157,7 @@ export const Ideal: Story = {
   args: {
     compiledSource: compiledSources.ideal,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
@@ -170,6 +171,7 @@ export const Empty: Story = {
   args: {
     compiledSource: compiledSources.empty,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
@@ -183,6 +185,7 @@ export const Error: Story = {
   args: {
     compiledSource: compiledSources.error,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
@@ -196,6 +199,7 @@ export const Partial: Story = {
   args: {
     compiledSource: compiledSources.partial,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
@@ -209,6 +213,7 @@ export const Loading: Story = {
   args: {
     compiledSource: compiledSources.loading,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",
@@ -222,6 +227,7 @@ export const WithNavigation: Story = {
   args: {
     compiledSource: compiledSources.ideal,
     meta: {
+      postNumber: 12,
       publishedAt: "2025-01-12",
       tags: ["Chakra UI", "MDX", "Design"],
       title: "Notebook Prose with Chakra",

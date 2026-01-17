@@ -13,6 +13,7 @@ type BreadcrumbItem = {
 type Props = {
   compiledSource: string;
   meta: {
+    postNumber?: number;
     publishedAt: string;
     tags: string[];
     title: string;
@@ -80,6 +81,7 @@ export const PostArticle = ({
       </Breadcrumb.Root>
       <Notebook
         navigation={navigation}
+        postNumber={meta.postNumber}
         publishedAt={meta.publishedAt}
         tags={meta.tags}
         title={meta.title}

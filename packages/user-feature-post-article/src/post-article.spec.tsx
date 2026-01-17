@@ -56,6 +56,7 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          postNumber: 1,
           publishedAt: "2025-01-02",
           tags: ["Testing"],
           title: "Test title",
@@ -99,6 +100,7 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          postNumber: 1,
           publishedAt: "2025-01-02",
           tags: ["Testing"],
           title: "Test title",
@@ -142,6 +144,7 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          postNumber: 1,
           publishedAt: "2025-01-02",
           tags: ["Chakra", "Design"],
           title: "Test title",
@@ -152,7 +155,7 @@ return {
     );
 
     const timeElement = document.querySelector("time");
-    expect(timeElement?.textContent ?? "").toBe("2025/01/02");
+    expect(timeElement?.textContent ?? "").toBe("2025. 01. 02.");
     expect(document.body.textContent ?? "").toContain("Chakra");
     expect(document.body.textContent ?? "").toContain("Design");
   });
@@ -174,6 +177,7 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          postNumber: 1,
           publishedAt: "",
           tags: [],
           title: "Test title",
@@ -218,6 +222,7 @@ return {
       <PostArticle
         compiledSource={compiledSource}
         meta={{
+          postNumber: 1,
           publishedAt: "",
           tags: [],
           title: "Test title",

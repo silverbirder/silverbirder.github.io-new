@@ -113,6 +113,8 @@ const bodyContent = (
 export const Ideal: Story = {
   args: {
     children: bodyContent,
+    navigation: {},
+    postNumber: 12,
     publishedAt: "2025-01-12",
     tags: ["Notebook", "UI"],
     title: "Notebook Preview",
@@ -122,12 +124,17 @@ export const Ideal: Story = {
 export const Empty: Story = {
   args: {
     children: null,
+    navigation: {},
+    tags: [],
+    title: "Notebook Preview",
   },
 };
 
 export const Error: Story = {
   args: {
     children: <p role="alert">We could not load this entry.</p>,
+    navigation: {},
+    postNumber: 12,
     publishedAt: "2025-01-12",
     tags: ["Draft"],
     title: "Notebook Preview",
@@ -142,7 +149,10 @@ export const Partial: Story = {
         <p>Only the key takeaway for now.</p>
       </>
     ),
+    navigation: {},
+    postNumber: 12,
     publishedAt: "2025-01-12",
+    tags: [],
     title: "Notebook Preview",
   },
 };
@@ -150,6 +160,8 @@ export const Partial: Story = {
 export const Loading: Story = {
   args: {
     children: <p aria-busy="true">Loading notes...</p>,
+    navigation: {},
+    postNumber: 12,
     publishedAt: "2025-01-12",
     tags: ["Loading"],
     title: "Notebook Preview",
@@ -162,13 +174,16 @@ export const WithNavigation: Story = {
     navigation: {
       next: {
         href: "/blog/contents/next-post",
+        publishedAt: "2025-01-13",
         title: "Next Post Title",
       },
       prev: {
         href: "/blog/contents/prev-post",
+        publishedAt: "2025-01-11",
         title: "Previous Post Title",
       },
     },
+    postNumber: 12,
     publishedAt: "2025-01-12",
     tags: ["Notebook", "UI"],
     title: "Notebook Preview",
