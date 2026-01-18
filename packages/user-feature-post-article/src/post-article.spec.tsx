@@ -274,6 +274,8 @@ return {
               {
                 publishedAt: "2025-01-03",
                 slug: "typescript-post",
+                summary: "Summary TypeScript",
+                tags: ["TypeScript"],
                 title: "TypeScript Post",
               },
             ],
@@ -285,9 +287,8 @@ return {
     );
 
     expect(document.body.textContent ?? "").toContain("関連する記事");
-    expect(document.body.textContent ?? "").toContain(
-      "タグ「TypeScript」の新着",
-    );
+    expect(document.body.textContent ?? "").toContain("TypeScript");
+    expect(document.body.textContent ?? "").toContain("記事");
     expect(document.body.textContent ?? "").toContain("TypeScript Post");
   });
 

@@ -161,6 +161,8 @@ describe("getRelatedPostsByTags", () => {
           {
             publishedAt: "2026-01-11",
             slug: "typescript-post",
+            summary: "Summary TypeScript",
+            tags: ["TypeScript"],
             title: "TypeScript Post",
           },
         ],
@@ -171,6 +173,8 @@ describe("getRelatedPostsByTags", () => {
           {
             publishedAt: "2026-01-10",
             slug: "design-post",
+            summary: "Summary Design",
+            tags: ["Design"],
             title: "Design Post",
           },
         ],
@@ -210,11 +214,15 @@ describe("getRelatedPostsByTags", () => {
           {
             publishedAt: "2026-01-11",
             slug: "typescript-post",
+            summary: "Summary TypeScript",
+            tags: ["TypeScript"],
             title: "TypeScript Post",
           },
           {
             publishedAt: "2026-01-08",
             slug: "typescript-post-2",
+            summary: "Summary TypeScript 2",
+            tags: ["TypeScript"],
             title: "TypeScript Post 2",
           },
         ],

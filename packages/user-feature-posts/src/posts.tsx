@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Flex, Stack, Text } from "@chakra-ui/react";
-import { Notebook, Tag, ViewTransitionLink } from "@repo/ui";
+import { Box, Stack, Text } from "@chakra-ui/react";
+import { Notebook, NotebookPostItem, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
@@ -31,6 +31,7 @@ export const Posts = ({ posts }: Props) => {
   const currentPage = urlCurrentPage;
 
   const t = useTranslations("user.blog");
+  const metaSeparator = t("metaSeparator");
   const normalizedPosts = normalizePosts(posts);
   const filteredPosts = filterPosts(normalizedPosts, {
     tag: selectedTag,
@@ -71,7 +72,7 @@ export const Posts = ({ posts }: Props) => {
 
   return (
     <Box w="full">
-      <Notebook navigation={{}} tags={[]} title={t("title")}>
+      <Notebook navigation={{}} relatedPosts={[]} tags={[]} title={t("title")}>
         {pagination.items.length === 0 ? (
           <Text>{t("empty")}</Text>
         ) : (
@@ -81,48 +82,11 @@ export const Posts = ({ posts }: Props) => {
             py="var(--notebook-line-height)"
           >
             {pagination.items.map((post) => (
-              <Stack
-                borderLeftColor="green.border"
-                borderLeftWidth="2px"
-                gap={0}
+              <NotebookPostItem
                 key={post.slug}
-                lineHeight="var(--notebook-line-height)"
-                pl="calc(var(--notebook-line-height) / 2)"
-              >
-                <ViewTransitionLink
-                  href={`/blog/contents/${post.slug}`}
-                  lineClamp={2}
-                  lineHeight="var(--notebook-line-height)"
-                >
-                  {post.title}
-                </ViewTransitionLink>
-                {post.summary.trim().length > 0 && (
-                  <Text
-                    fontSize="sm"
-                    lineClamp={1}
-                    lineHeight="var(--notebook-line-height)"
-                  >
-                    {post.summary}
-                  </Text>
-                )}
-                <Flex
-                  align="center"
-                  columnGap={2}
-                  lineHeight="var(--notebook-line-height)"
-                  rowGap={0}
-                  wrap="wrap"
-                >
-                  <Text fontSize="sm" whiteSpace="nowrap">
-                    {post.publishedAt}
-                  </Text>
-                  {post.tags.length > 0 && (
-                    <Text fontSize="sm">{t("metaSeparator")}</Text>
-                  )}
-                  {post.tags.map((tag) => (
-                    <Tag key={tag} tag={tag} />
-                  ))}
-                </Flex>
-              </Stack>
+                metaSeparator={metaSeparator}
+                post={post}
+              />
             ))}
           </Stack>
         )}

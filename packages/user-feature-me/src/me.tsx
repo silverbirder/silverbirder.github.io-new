@@ -15,7 +15,7 @@ export const Me = ({ children }: Props) => {
 
   return (
     <Box w="full">
-      <Notebook navigation={{}} tags={[]} title={t("title")}>
+      <Notebook navigation={{}} relatedPosts={[]} tags={[]} title={t("title")}>
         <p>{t("lead")}</p>
         <p>{t("detail")}</p>
         {children}

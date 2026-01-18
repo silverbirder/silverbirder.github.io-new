@@ -318,6 +318,7 @@ export const PostEditorLayout = ({
             data-testid="post-editor-preview"
             navigation={{}}
             publishedAt={previewDate}
+            relatedPosts={[]}
             tags={[]}
             title={previewTitle}
           >

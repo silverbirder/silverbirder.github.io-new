@@ -17,6 +17,7 @@ import { formatPublishedDate } from "@repo/util";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
+import { NotebookPostItem } from "./notebook-post-item";
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
 import { ShareButtonBluesky } from "./share-button-bluesky";
 import { ShareButtonCopy } from "./share-button-copy";
@@ -60,9 +61,23 @@ type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   };
   postNumber?: number;
   publishedAt?: string;
+  relatedPosts: RelatedPostGroup[];
   share?: ShareSection;
   tags: string[];
   title: string;
+};
+
+type RelatedPost = {
+  publishedAt?: string;
+  slug: string;
+  summary: string;
+  tags: string[];
+  title: string;
+};
+
+type RelatedPostGroup = {
+  posts: RelatedPost[];
+  tag: string;
 };
 
 type ShareLabels = {
@@ -98,6 +113,7 @@ export const Notebook = ({
   navigation,
   postNumber,
   publishedAt,
+  relatedPosts,
   share,
   tags,
   title,
@@ -342,10 +358,10 @@ export const Notebook = ({
           <SimpleGrid
             aria-label={t("navigationLabel")}
             as="nav"
-            columnGap="var(--notebook-line-height)"
+            columnGap="0"
             columns={{ base: 1, md: 2 }}
             mb={NOTEBOOK_LINE_HEIGHT}
-            rowGap="var(--notebook-line-height)"
+            rowGap="0"
           >
             {navigation.next && (
               <Flex
@@ -402,6 +418,37 @@ export const Notebook = ({
               </Flex>
             )}
           </SimpleGrid>
+        )}
+        {relatedPosts.length > 0 && (
+          <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
+            <Heading as="h2">{t("relatedHeading")}</Heading>
+            <Stack gap={NOTEBOOK_LINE_HEIGHT}>
+              {relatedPosts.map((group) => (
+                <Stack
+                  as="section"
+                  className="not-prose"
+                  gap={NOTEBOOK_LINE_HEIGHT}
+                  key={group.tag}
+                >
+                  <Text
+                    color="fg"
+                    fontWeight="bold"
+                    lineHeight={NOTEBOOK_LINE_HEIGHT}
+                  >
+                    {t("relatedTagHeading", { tag: group.tag })}
+                  </Text>
+                  <Stack gap={NOTEBOOK_LINE_HEIGHT}>
+                    {group.posts.map((post) => (
+                      <NotebookPostItem
+                        key={`${group.tag}-${post.slug}`}
+                        post={post}
+                      />
+                    ))}
+                  </Stack>
+                </Stack>
+              ))}
+            </Stack>
+          </Box>
         )}
       </NotebookProse>
     </VStack>

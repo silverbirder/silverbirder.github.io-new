@@ -2,6 +2,7 @@ export * from "./mdx-client-wrapper";
 export * from "./mdx-components";
 export * from "./notebook";
 export * from "./notebook-image";
+export * from "./notebook-post-item";
 export * from "./post-editor-layout";
 export * from "./rss-button";
 export * from "./share-button-bluesky";

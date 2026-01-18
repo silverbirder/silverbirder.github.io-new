@@ -31,6 +31,7 @@ describe("Notebook", () => {
         navigation={{}}
         postNumber={1}
         publishedAt="2025-01-02"
+        relatedPosts={[]}
         tags={["Chakra", "Design"]}
         title="Notebook Preview"
       >
@@ -65,6 +66,7 @@ describe("Notebook", () => {
           ],
         }}
         navigation={{}}
+        relatedPosts={[]}
         share={{
           heading: "Share",
           labels: {
@@ -98,6 +100,37 @@ describe("Notebook", () => {
     expect(followLink).not.toBeNull();
   });
 
+  it("renders related posts grouped by heading", async () => {
+    const { container } = await renderWithProvider(
+      <Notebook
+        navigation={{}}
+        relatedPosts={[
+          {
+            posts: [
+              {
+                publishedAt: "2025-01-03",
+                slug: "typescript-post",
+                summary: "Summary TypeScript",
+                tags: ["TypeScript"],
+                title: "TypeScript Post",
+              },
+            ],
+            tag: "TypeScript",
+          },
+        ]}
+        tags={[]}
+        title="Notebook Preview"
+      >
+        <p>Body copy.</p>
+      </Notebook>,
+    );
+
+    expect(container.textContent ?? "").toContain("関連する記事");
+    expect(container.textContent ?? "").toContain("TypeScript");
+    expect(container.textContent ?? "").toContain("記事");
+    expect(container.textContent ?? "").toContain("TypeScript Post");
+  });
+
   it("renders previous/next navigation when provided", async () => {
     const { container } = await renderWithProvider(
       <Notebook
@@ -113,6 +146,7 @@ describe("Notebook", () => {
             title: "Prev",
           },
         }}
+        relatedPosts={[]}
         tags={[]}
         title="Notebook Preview"
       >
@@ -138,6 +172,7 @@ describe("Notebook", () => {
         navigation={{}}
         postNumber={1}
         publishedAt="2025-01-02"
+        relatedPosts={[]}
         tags={[]}
         title="Notebook Preview"
       >

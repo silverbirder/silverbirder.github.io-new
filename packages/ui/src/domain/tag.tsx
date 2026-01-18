@@ -32,7 +32,7 @@ export const Tag = ({ tag, ...linkProps }: Props) => {
       textDecoration="none"
       {...linkProps}
     >
-      <Icon size="sm">
+      <Icon boxSize="1em">
         <FaTag />
       </Icon>
       <chakra.span>{tag}</chakra.span>

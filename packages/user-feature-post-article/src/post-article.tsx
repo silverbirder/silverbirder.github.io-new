@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
-import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
+import { Box } from "@chakra-ui/react";
+import { MdxClientWrapper, Notebook } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { MdRssFeed } from "react-icons/md";
@@ -38,6 +38,8 @@ type Props = {
     posts: {
       publishedAt?: string;
       slug: string;
+      summary: string;
+      tags: string[];
       title: string;
     }[];
     tag: string;
@@ -54,7 +56,6 @@ export const PostArticle = ({
   shareUrl,
 }: Props) => {
   const t = useTranslations("user.blog");
-  const cleanedRelatedPosts = relatedPosts;
   const shareText = t("shareText", { title: meta.title });
   const share = {
     heading: t("shareHeading"),
@@ -126,46 +127,13 @@ export const PostArticle = ({
         navigation={navigation}
         postNumber={meta.postNumber}
         publishedAt={meta.publishedAt}
+        relatedPosts={relatedPosts}
         share={share}
         tags={meta.tags}
         title={meta.title}
       >
         <MdxClientWrapper compiledSource={compiledSource} />
       </Notebook>
-      {cleanedRelatedPosts.length > 0 && (
-        <Box as="section" mt={4}>
-          <Heading as="h2" mb={4} size="md">
-            {t("relatedHeading")}
-          </Heading>
-          <Stack gap={6}>
-            {cleanedRelatedPosts.map((group) => (
-              <Stack as="section" gap={2} key={group.tag}>
-                <Heading as="h3" size="sm">
-                  {t("relatedTagHeading", { tag: group.tag })}
-                </Heading>
-                <Stack as="ul" gap={2} listStyleType="none" ps={0}>
-                  {group.posts.map((post) => (
-                    <Box as="li" key={`${group.tag}-${post.slug}`}>
-                      <Stack gap={1}>
-                        <ViewTransitionLink
-                          href={`/blog/contents/${post.slug}`}
-                        >
-                          {post.title}
-                        </ViewTransitionLink>
-                        {post.publishedAt && (
-                          <Text color="fg.muted" fontSize="sm">
-                            {post.publishedAt}
-                          </Text>
-                        )}
-                      </Stack>
-                    </Box>
-                  ))}
-                </Stack>
-              </Stack>
-            ))}
-          </Stack>
-        </Box>
-      )}
     </Box>
   );
 };

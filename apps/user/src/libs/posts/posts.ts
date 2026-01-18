@@ -27,6 +27,8 @@ export type PostSlug = {
 export type RelatedPostItem = {
   publishedAt?: string;
   slug: string;
+  summary: string;
+  tags: string[];
   title: string;
 };
 
@@ -212,6 +214,8 @@ export const getRelatedPostsByTags = (
         .map((post) => ({
           publishedAt: post.publishedAt,
           slug: post.slug,
+          summary: post.summary,
+          tags: post.tags,
           title: post.title,
         }));
       return { posts: related, tag };
