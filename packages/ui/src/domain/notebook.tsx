@@ -160,7 +160,7 @@ export const Notebook = ({
         left={0}
         position="absolute"
         top={0}
-        zIndex={0}
+        zIndex={2}
       >
         {globalNavigationItems.map((item) => {
           const isActive =
