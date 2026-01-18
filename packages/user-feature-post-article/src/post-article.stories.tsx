@@ -145,6 +145,14 @@ return {
 `,
 };
 
+const followLinks = {
+  bluesky: "https://bsky.app/profile/example.bsky.social",
+  github: "https://github.com/example",
+  rss: "https://example.com/rss.xml",
+  threads: "https://www.threads.com/@example",
+  x: "https://x.com/example",
+};
+
 const meta = {
   component: PostArticle,
   title: "Feature/User/PostArticle",
@@ -156,6 +164,7 @@ type Story = StoryObj<typeof meta>;
 export const Ideal: Story = {
   args: {
     compiledSource: compiledSources.ideal,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -164,7 +173,6 @@ export const Ideal: Story = {
     },
     navigation: {},
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
@@ -172,6 +180,7 @@ export const Ideal: Story = {
 export const Empty: Story = {
   args: {
     compiledSource: compiledSources.empty,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -180,7 +189,6 @@ export const Empty: Story = {
     },
     navigation: {},
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
@@ -188,6 +196,7 @@ export const Empty: Story = {
 export const Error: Story = {
   args: {
     compiledSource: compiledSources.error,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -196,7 +205,6 @@ export const Error: Story = {
     },
     navigation: {},
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
@@ -204,6 +212,7 @@ export const Error: Story = {
 export const Partial: Story = {
   args: {
     compiledSource: compiledSources.partial,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -212,7 +221,6 @@ export const Partial: Story = {
     },
     navigation: {},
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
@@ -220,6 +228,7 @@ export const Partial: Story = {
 export const Loading: Story = {
   args: {
     compiledSource: compiledSources.loading,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -228,7 +237,6 @@ export const Loading: Story = {
     },
     navigation: {},
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
@@ -236,6 +244,7 @@ export const Loading: Story = {
 export const WithNavigation: Story = {
   args: {
     compiledSource: compiledSources.ideal,
+    followLinks,
     meta: {
       postNumber: 12,
       publishedAt: "2025-01-12",
@@ -255,7 +264,6 @@ export const WithNavigation: Story = {
       },
     },
     relatedPosts: [],
-    rssUrl: "https://example.com/rss.xml",
     shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };

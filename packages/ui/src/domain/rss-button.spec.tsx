@@ -21,7 +21,7 @@ describe("RssButton", () => {
   it("renders rss url as link href", async () => {
     const url = "https://example.com/rss.xml";
     const { container } = await renderWithProvider(
-      <RssButton label="RSSを購読" url={url} />,
+      <RssButton label="RSSをフォロー" url={url} />,
     );
 
     const link = container.querySelector("a");

@@ -1,10 +1,11 @@
 "use client";
 
-import { Button, Icon } from "@chakra-ui/react";
+import { Button, Icon, Portal, Tooltip } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { MdCheck, MdContentCopy } from "react-icons/md";
 
 type Props = {
+  copiedLabel: string;
   label: string;
   loading?: boolean;
   loadingText?: string;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export const ShareButtonCopy = ({
+  copiedLabel,
   label,
   loading,
   loadingText,
@@ -19,6 +21,7 @@ export const ShareButtonCopy = ({
 }: Props) => {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<null | number>(null);
+  const ariaLabel = loading && loadingText ? loadingText : label;
 
   const handleClick = async () => {
     const payload = url.trim();
@@ -31,7 +34,6 @@ export const ShareButtonCopy = ({
     }
 
     try {
-      await clipboard.writeText(payload);
       setCopied(true);
       if (timeoutRef.current) {
         window.clearTimeout(timeoutRef.current);
@@ -40,26 +42,60 @@ export const ShareButtonCopy = ({
         setCopied(false);
         timeoutRef.current = null;
       }, 2000);
+      await clipboard.writeText(payload);
     } catch {
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      setCopied(false);
       // ignore clipboard failures
     }
   };
 
   return (
-    <Button
-      _disabled={{ color: "gray.900", opacity: 1 }}
-      alignItems="center"
-      data-copied={copied ? "true" : "false"}
-      gap={2}
-      loading={loading}
-      loadingText={loadingText}
-      onClick={handleClick}
-      size="sm"
-      type="button"
-      variant="outline"
+    <Tooltip.Root
+      closeDelay={0}
+      lazyMount
+      open={copied}
+      openDelay={0}
+      positioning={{ placement: "top" }}
+      unmountOnExit
     >
-      <Icon size="sm">{copied ? <MdCheck /> : <MdContentCopy />}</Icon>
-      {label}
-    </Button>
+      <Tooltip.Trigger asChild>
+        <Button
+          _active={{ bg: "gray.700" }}
+          _disabled={{ opacity: 1 }}
+          _hover={{ bg: "gray.800" }}
+          alignItems="center"
+          aria-label={ariaLabel}
+          bg="gray.900"
+          borderRadius="full"
+          color="white"
+          data-copied={copied ? "true" : "false"}
+          h={9}
+          loading={loading}
+          minW={9}
+          onClick={handleClick}
+          p={0}
+          size="sm"
+          type="button"
+          variant="solid"
+          w={9}
+        >
+          <Icon size="sm">{copied ? <MdCheck /> : <MdContentCopy />}</Icon>
+        </Button>
+      </Tooltip.Trigger>
+      <Portal>
+        <Tooltip.Positioner>
+          <Tooltip.Content>
+            <Tooltip.Arrow>
+              <Tooltip.ArrowTip />
+            </Tooltip.Arrow>
+            {copiedLabel}
+          </Tooltip.Content>
+        </Tooltip.Positioner>
+      </Portal>
+    </Tooltip.Root>
   );
 };

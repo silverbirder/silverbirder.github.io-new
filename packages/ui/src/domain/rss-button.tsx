@@ -11,22 +11,31 @@ type Props = {
 };
 
 export const RssButton = ({ label, loading, loadingText, url }: Props) => {
+  const ariaLabel = loading && loadingText ? loadingText : label;
+
   return (
     <Button
-      _disabled={{ color: "gray.900", opacity: 1 }}
+      _active={{ bg: "#c95410" }}
+      _disabled={{ opacity: 1 }}
+      _hover={{ bg: "#e46514" }}
       alignItems="center"
+      aria-label={ariaLabel}
       asChild
-      gap={2}
+      bg="#f97316"
+      borderRadius="full"
+      color="white"
+      h={9}
       loading={loading}
-      loadingText={loadingText}
+      minW={9}
+      p={0}
       size="sm"
-      variant="outline"
+      variant="solid"
+      w={9}
     >
       <a href={url} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">
           <MdRssFeed />
         </Icon>
-        {label}
       </a>
     </Button>
   );

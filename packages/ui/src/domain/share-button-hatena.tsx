@@ -25,23 +25,31 @@ export const ShareButtonHatena = ({
   url,
 }: Props) => {
   const href = buildHatenaShareUrl(url, text);
+  const ariaLabel = loading && loadingText ? loadingText : label;
 
   return (
     <Button
-      _disabled={{ color: "gray.900", opacity: 1 }}
+      _active={{ bg: "#007dab" }}
+      _disabled={{ opacity: 1 }}
+      _hover={{ bg: "#0092c6" }}
       alignItems="center"
+      aria-label={ariaLabel}
       asChild
-      gap={2}
+      bg="#00a4de"
+      borderRadius="full"
+      color="white"
+      h={9}
       loading={loading}
-      loadingText={loadingText}
+      minW={9}
+      p={0}
       size="sm"
-      variant="outline"
+      variant="solid"
+      w={9}
     >
       <a href={href} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">
           <SiHatenabookmark />
         </Icon>
-        {label}
       </a>
     </Button>
   );

@@ -108,6 +108,13 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
     });
     const shareUrl = buildSiteUrl(`blog/contents/${slug}/`);
     const rssUrl = buildSiteUrl("rss.xml");
+    const followLinks = {
+      bluesky: "https://bsky.app/profile/silverbirder.bsky.social",
+      github: "https://github.com/silverbirder",
+      rss: rssUrl,
+      threads: "https://www.threads.com/@silverbirder",
+      x: "https://x.com/silverbirder",
+    };
     const currentIndex = normalizedPosts.findIndex(
       (post) => post.slug === slug,
     );
@@ -117,6 +124,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
     return (
       <PostArticle
         compiledSource={compiled.compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber,
           publishedAt: frontmatter.publishedAt ?? "",
@@ -140,7 +148,6 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
             : undefined,
         }}
         relatedPosts={relatedPosts ?? []}
-        rssUrl={rssUrl}
         shareUrl={shareUrl}
       />
     );

@@ -1,23 +1,33 @@
 "use client";
 
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import {
   MdxClientWrapper,
   Notebook,
-  RssButton,
   ShareButtonBluesky,
   ShareButtonCopy,
   ShareButtonFacebook,
   ShareButtonHatena,
   ShareButtonLine,
-  ShareButtonPocket,
+  ShareButtonThreads,
+  ShareButtonWeb,
   ShareButtonX,
   ViewTransitionLink,
 } from "@repo/ui";
 import { useTranslations } from "next-intl";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { MdRssFeed } from "react-icons/md";
+import { SiBluesky, SiThreads } from "react-icons/si";
 
 type Props = {
   compiledSource: string;
+  followLinks: {
+    bluesky: string;
+    github: string;
+    rss: string;
+    threads: string;
+    x: string;
+  };
   meta: {
     postNumber?: number;
     publishedAt: string;
@@ -44,21 +54,62 @@ type Props = {
     }[];
     tag: string;
   }[];
-  rssUrl: string;
   shareUrl: string;
 };
 
 export const PostArticle = ({
   compiledSource,
+  followLinks,
   meta,
   navigation,
   relatedPosts,
-  rssUrl,
   shareUrl,
 }: Props) => {
   const t = useTranslations("user.blog");
   const cleanedRelatedPosts = relatedPosts;
   const shareText = t("shareText", { title: meta.title });
+  const followItems = [
+    {
+      active: "#1f1f1f",
+      bg: "#000000",
+      hover: "#111111",
+      href: followLinks.x,
+      icon: <FaXTwitter />,
+      label: t("followXLabel"),
+    },
+    {
+      active: "#0059c7",
+      bg: "#007bff",
+      hover: "#0068e6",
+      href: followLinks.bluesky,
+      icon: <SiBluesky />,
+      label: t("followBlueskyLabel"),
+    },
+    {
+      active: "#191c20",
+      bg: "#24292f",
+      hover: "#1f2328",
+      href: followLinks.github,
+      icon: <FaGithub />,
+      label: t("followGithubLabel"),
+    },
+    {
+      active: "#2a2a2a",
+      bg: "#101010",
+      hover: "#1a1a1a",
+      href: followLinks.threads,
+      icon: <SiThreads />,
+      label: t("followThreadsLabel"),
+    },
+    {
+      active: "#c95410",
+      bg: "#f97316",
+      hover: "#e46514",
+      href: followLinks.rss,
+      icon: <MdRssFeed />,
+      label: t("followRssLabel"),
+    },
+  ];
 
   return (
     <Box w="full">
@@ -75,12 +126,7 @@ export const PostArticle = ({
         <Heading as="h2" mb={3} size="sm">
           {t("shareHeading")}
         </Heading>
-        <Stack
-          align="start"
-          direction={{ base: "column", sm: "row" }}
-          flexWrap="wrap"
-          gap={2}
-        >
+        <Stack align="start" direction="row" flexWrap="wrap" gap={2}>
           <ShareButtonX
             label={t("shareXLabel")}
             text={shareText}
@@ -106,20 +152,51 @@ export const PostArticle = ({
             text={shareText}
             url={shareUrl}
           />
-          <ShareButtonPocket
-            label={t("sharePocketLabel")}
+          <ShareButtonThreads
+            label={t("shareThreadsLabel")}
             text={shareText}
             url={shareUrl}
           />
-          <ShareButtonCopy label={t("shareCopyLabel")} url={shareUrl} />
+          <ShareButtonWeb
+            label={t("shareWebLabel")}
+            text={shareText}
+            url={shareUrl}
+          />
+          <ShareButtonCopy
+            copiedLabel={t("shareCopyCopied")}
+            label={t("shareCopyLabel")}
+            url={shareUrl}
+          />
         </Stack>
       </Box>
       <Box as="section" mt={4}>
         <Heading as="h2" mb={3} size="sm">
-          {t("rssHeading")}
+          {t("followHeading")}
         </Heading>
-        <Stack align="start" direction="row" gap={2}>
-          <RssButton label={t("rssLabel")} url={rssUrl} />
+        <Stack align="start" direction="row" flexWrap="wrap" gap={2}>
+          {followItems.map((item) => (
+            <Button
+              _active={{ bg: item.active }}
+              _hover={{ bg: item.hover }}
+              alignItems="center"
+              aria-label={item.label}
+              asChild
+              bg={item.bg}
+              borderRadius="full"
+              color="white"
+              h={9}
+              key={item.label}
+              minW={9}
+              p={0}
+              size="sm"
+              variant="solid"
+              w={9}
+            >
+              <a href={item.href} rel="noopener noreferrer" target="_blank">
+                <Icon size="sm">{item.icon}</Icon>
+              </a>
+            </Button>
+          ))}
         </Stack>
       </Box>
       {cleanedRelatedPosts.length > 0 && (

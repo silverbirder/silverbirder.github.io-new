@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Icon } from "@chakra-ui/react";
-import { FaXTwitter } from "react-icons/fa6";
+import { MdShare } from "react-icons/md";
 
 type Props = {
   label: string;
@@ -11,46 +11,55 @@ type Props = {
   url: string;
 };
 
-const buildXShareUrl = (url: string, text: string) => {
-  const encodedUrl = encodeURIComponent(url);
-  const encodedText = encodeURIComponent(text);
-  return `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
-};
-
-export const ShareButtonX = ({
+export const ShareButtonWeb = ({
   label,
   loading,
   loadingText,
   text,
   url,
 }: Props) => {
-  const href = buildXShareUrl(url, text);
   const ariaLabel = loading && loadingText ? loadingText : label;
+
+  const handleClick = async () => {
+    const payload = url.trim();
+    if (!payload || typeof navigator === "undefined") {
+      return;
+    }
+
+    if (!navigator.share) {
+      return;
+    }
+
+    try {
+      await navigator.share({ text, url: payload });
+    } catch {
+      // ignore share failures
+    }
+  };
 
   return (
     <Button
-      _active={{ bg: "#1f1f1f" }}
+      _active={{ bg: "#334155" }}
       _disabled={{ opacity: 1 }}
-      _hover={{ bg: "#111111" }}
+      _hover={{ bg: "#1e293b" }}
       alignItems="center"
       aria-label={ariaLabel}
-      asChild
-      bg="#000000"
+      bg="#0f172a"
       borderRadius="full"
       color="white"
       h={9}
       loading={loading}
       minW={9}
+      onClick={handleClick}
       p={0}
       size="sm"
+      type="button"
       variant="solid"
       w={9}
     >
-      <a href={href} rel="noopener noreferrer" target="_blank">
-        <Icon size="sm">
-          <FaXTwitter />
-        </Icon>
-      </a>
+      <Icon size="sm">
+        <MdShare />
+      </Icon>
     </Button>
   );
 };

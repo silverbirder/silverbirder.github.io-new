@@ -35,12 +35,50 @@ describe("ShareButtonCopy", () => {
 
     const url = "https://example.com/blog/contents/test/";
     const { container } = await renderWithProvider(
-      <ShareButtonCopy label="リンクをコピー" url={url} />,
+      <ShareButtonCopy
+        copiedLabel="コピーしました"
+        label="リンクをコピー"
+        url={url}
+      />,
     );
 
     const button = container.querySelector("button");
     button?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
 
     expect(writeText).toHaveBeenCalledWith(url);
+  });
+
+  it("shows tooltip state after copy and hides it after timeout", async () => {
+    vi.useFakeTimers();
+
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    setClipboard(writeText);
+
+    const url = "https://example.com/blog/contents/test/";
+    const { container } = await renderWithProvider(
+      <ShareButtonCopy
+        copiedLabel="コピーしました"
+        label="リンクをコピー"
+        url={url}
+      />,
+    );
+
+    const button = container.querySelector("button");
+    button?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+
+    expect(writeText).toHaveBeenCalledWith(url);
+
+    const clipboardPromise = writeText.mock.results[0]?.value;
+    if (clipboardPromise) {
+      await clipboardPromise;
+    }
+    await Promise.resolve();
+
+    expect(button?.getAttribute("data-copied")).toBe("true");
+
+    vi.advanceTimersByTime(2000);
+    await Promise.resolve();
+
+    expect(button?.getAttribute("data-copied")).toBe("false");
   });
 });

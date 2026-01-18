@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { ShareButtonPocket } from "./share-button-pocket";
+import { ShareButtonThreads } from "./share-button-threads";
 
 const meta = {
-  component: ShareButtonPocket,
-  title: "UI/Domain/ShareButtonPocket",
-} satisfies Meta<typeof ShareButtonPocket>;
+  component: ShareButtonThreads,
+  title: "UI/Domain/ShareButtonThreads",
+} satisfies Meta<typeof ShareButtonThreads>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Ideal: Story = {
   args: {
-    label: "Pocketに保存",
+    label: "Threadsでシェア",
     text: "Notebook Prose",
     url: "https://example.com/blog/contents/notebook-prose/",
   },
@@ -29,7 +29,7 @@ export const Empty: Story = {
 
 export const Error: Story = {
   args: {
-    label: "Pocketに保存",
+    label: "Threadsでシェア",
     text: "Broken URL",
     url: "not-a-url",
   },
@@ -37,7 +37,7 @@ export const Error: Story = {
 
 export const Partial: Story = {
   args: {
-    label: "Pocketに保存",
+    label: "Threadsでシェア",
     text: "",
     url: "https://example.com/blog/contents/notebook-prose/",
   },
@@ -45,7 +45,7 @@ export const Partial: Story = {
 
 export const Loading: Story = {
   args: {
-    label: "Pocketに保存",
+    label: "Threadsでシェア",
     loading: true,
     loadingText: "準備中",
     text: "Notebook Prose",

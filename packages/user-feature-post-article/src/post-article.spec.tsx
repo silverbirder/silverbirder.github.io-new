@@ -27,6 +27,13 @@ vi.mock("next/link", () => {
 });
 
 const Stories = composeStories(stories);
+const followLinks = {
+  bluesky: "https://bsky.app/profile/example.bsky.social",
+  github: "https://github.com/example",
+  rss: "https://example.com/rss.xml",
+  threads: "https://www.threads.com/@example",
+  x: "https://x.com/example",
+};
 
 describe("PostArticle", () => {
   it.each(Object.entries(Stories))("should %s snapshot", async (_, Story) => {
@@ -55,6 +62,7 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "2025-01-02",
@@ -63,7 +71,6 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );
@@ -101,6 +108,7 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "2025-01-02",
@@ -109,7 +117,6 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );
@@ -134,6 +141,7 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "2025-01-02",
@@ -142,22 +150,50 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
     const bodyText = document.body.textContent ?? "";
-    expect(bodyText).toContain("シェア");
-    expect(bodyText).toContain("Xでシェア");
-    expect(bodyText).toContain("Blueskyでシェア");
-    expect(bodyText).toContain("はてなでシェア");
-    expect(bodyText).toContain("LINEでシェア");
-    expect(bodyText).toContain("Facebookでシェア");
-    expect(bodyText).toContain("Pocketに保存");
-    expect(bodyText).toContain("リンクをコピー");
-    expect(bodyText).toContain("RSS");
-    expect(bodyText).toContain("RSSを購読");
+    expect(bodyText).toContain("シェアする");
+    expect(bodyText).toContain("フォローする");
+    expect(document.querySelector('a[aria-label="Xでシェア"]')).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Blueskyでシェア"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="はてなでシェア"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="LINEでシェア"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Facebookでシェア"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Threadsでシェア"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('button[aria-label="デバイスで共有"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('button[aria-label="リンクをコピー"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Xをフォロー"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Blueskyをフォロー"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="GitHubをフォロー"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="Threadsをフォロー"]'),
+    ).not.toBeNull();
+    expect(
+      document.querySelector('a[aria-label="RSSをフォロー"]'),
+    ).not.toBeNull();
   });
 
   it("renders the published date and tags", async () => {
@@ -189,6 +225,7 @@ return {
     await renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "2025-01-02",
@@ -197,7 +234,6 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );
@@ -224,6 +260,7 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "",
@@ -243,7 +280,6 @@ return {
             tag: "TypeScript",
           },
         ]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );
@@ -271,6 +307,7 @@ return {
     renderWithProvider(
       <PostArticle
         compiledSource={compiledSource}
+        followLinks={followLinks}
         meta={{
           postNumber: 1,
           publishedAt: "",
@@ -290,7 +327,6 @@ return {
           },
         }}
         relatedPosts={[]}
-        rssUrl="https://example.com/rss.xml"
         shareUrl="https://example.com/blog/contents/test/"
       />,
     );

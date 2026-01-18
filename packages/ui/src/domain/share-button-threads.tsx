@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Icon } from "@chakra-ui/react";
-import { FaXTwitter } from "react-icons/fa6";
+import { SiThreads } from "react-icons/si";
 
 type Props = {
   label: string;
@@ -11,31 +11,40 @@ type Props = {
   url: string;
 };
 
-const buildXShareUrl = (url: string, text: string) => {
-  const encodedUrl = encodeURIComponent(url);
-  const encodedText = encodeURIComponent(text);
-  return `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+const buildThreadsShareUrl = (url: string, text: string) => {
+  const trimmedText = text.trim();
+  const trimmedUrl = url.trim();
+  const params: string[] = [];
+  if (trimmedText) {
+    params.push(`text=${encodeURIComponent(trimmedText)}`);
+  }
+  if (trimmedUrl) {
+    params.push(`url=${encodeURIComponent(trimmedUrl)}`);
+  }
+  return params.length > 0
+    ? `https://www.threads.net/intent/post?${params.join("&")}`
+    : "https://www.threads.net/intent/post";
 };
 
-export const ShareButtonX = ({
+export const ShareButtonThreads = ({
   label,
   loading,
   loadingText,
   text,
   url,
 }: Props) => {
-  const href = buildXShareUrl(url, text);
+  const href = buildThreadsShareUrl(url, text);
   const ariaLabel = loading && loadingText ? loadingText : label;
 
   return (
     <Button
-      _active={{ bg: "#1f1f1f" }}
+      _active={{ bg: "#2a2a2a" }}
       _disabled={{ opacity: 1 }}
-      _hover={{ bg: "#111111" }}
+      _hover={{ bg: "#1a1a1a" }}
       alignItems="center"
       aria-label={ariaLabel}
       asChild
-      bg="#000000"
+      bg="#101010"
       borderRadius="full"
       color="white"
       h={9}
@@ -48,7 +57,7 @@ export const ShareButtonX = ({
     >
       <a href={href} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">
-          <FaXTwitter />
+          <SiThreads />
         </Icon>
       </a>
     </Button>
