@@ -114,17 +114,17 @@ export const Notebook = ({
   const actionButtonSize = "var(--notebook-line-height)";
   const globalNavigationItems = [
     {
-      bg: "blue.50",
+      bg: "blue.subtle",
       href: "/",
       label: t("globalNavigationTop"),
     },
     {
-      bg: "yellow.50",
+      bg: "yellow.subtle",
       href: "/me",
       label: t("globalNavigationMe"),
     },
     {
-      bg: "pink.50",
+      bg: "pink.subtle",
       href: "/blog",
       label: t("globalNavigationBlog"),
     },
@@ -161,16 +161,16 @@ export const Notebook = ({
               bg={item.bg}
               borderRadius="none"
               color="fg.muted"
+              fontSize="xs"
               h={`calc(${NOTEBOOK_LINE_HEIGHT} * 1)`}
               href={item.href}
               key={item.href}
-              minW={`calc(${NOTEBOOK_LINE_HEIGHT} * 3)`}
               position="relative"
               px={2}
               textAlign="center"
               top={isActive ? -4 : `calc(${NOTEBOOK_LINE_HEIGHT} * -1)`}
               transition="transform 160ms ease, height 160ms ease"
-              w={`calc(${NOTEBOOK_LINE_HEIGHT} * 3)`}
+              w={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
             >
               {item.label}
             </ViewTransitionLink>
