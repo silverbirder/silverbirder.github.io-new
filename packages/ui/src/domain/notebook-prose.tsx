@@ -43,7 +43,7 @@ export const NotebookProse = chakra("div", {
     "& .remark-link-card-plus__card": {
       backgroundColor: "bg",
       borderColor: "border.muted",
-      borderRadius: "xl",
+      borderRadius: "none",
       borderStyle: "solid",
       borderWidth: "1px",
       color: "inherit",

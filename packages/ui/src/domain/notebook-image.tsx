@@ -11,6 +11,9 @@ type Props = ComponentPropsWithoutRef<"img"> & {
   linkHref?: string;
 };
 
+const NOTEBOOK_IMAGE_MAX_LINES = 20;
+const NOTEBOOK_IMAGE_MAX_HEIGHT = `calc(var(--notebook-line-height) * ${NOTEBOOK_IMAGE_MAX_LINES})`;
+
 export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
   const t = useTranslations("ui.notebookImage");
   const wrapperRef = useRef<HTMLElement>(null);
@@ -65,10 +68,13 @@ export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
         display="block"
         height="auto"
         loading={props.loading ?? "lazy"}
+        marginX="auto"
         marginY="0"
+        maxHeight={NOTEBOOK_IMAGE_MAX_HEIGHT}
+        maxWidth="100%"
         onLoad={handleLoad}
         ref={setImgRef}
-        width="100%"
+        width="auto"
         {...props}
       />
 

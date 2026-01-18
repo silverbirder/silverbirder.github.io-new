@@ -1,4 +1,8 @@
-import type { ComponentPropsWithoutRef, ComponentType } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  ComponentType,
+  CSSProperties,
+} from "react";
 
 import { composeStories } from "@storybook/nextjs-vite";
 import { describe, expect, it } from "vitest";
@@ -31,6 +35,27 @@ describe("NotebookImage", () => {
 
     const captionText = container.querySelector("figcaption span");
     expect(captionText?.textContent).toBe("Notebook sample");
+  });
+
+  it("sets max height as a multiple of the notebook line height", async () => {
+    const { container } = await renderWithProvider(
+      <div style={{ "--notebook-line-height": "2rem" } as CSSProperties}>
+        <NotebookImage alt="Notebook sample" src="/test.png" />
+      </div>,
+    );
+
+    const figure = container.querySelector("figure");
+    const image = container.querySelector("img");
+
+    const lineHeight = Number.parseFloat(
+      getComputedStyle(figure as HTMLElement).lineHeight,
+    );
+    const maxHeight = Number.parseFloat(
+      getComputedStyle(image as HTMLImageElement).maxHeight,
+    );
+
+    expect(Number.isFinite(lineHeight)).toBe(true);
+    expect(maxHeight).toBeCloseTo(lineHeight * 20, 3);
   });
 
   it("renders an open-in-new-tab link when linkHref is provided", async () => {
