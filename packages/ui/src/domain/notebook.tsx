@@ -255,9 +255,14 @@ export const Notebook = ({
       >
         {children}
         {tags.length > 0 && (
-          <Stack direction="row" flexWrap="wrap" mb={NOTEBOOK_LINE_HEIGHT}>
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            gap={0}
+            mb={NOTEBOOK_LINE_HEIGHT}
+          >
             {tags.map((tag) => (
-              <Tag key={tag} tag={tag} />
+              <Tag key={tag} mr={2} tag={tag} />
             ))}
           </Stack>
         )}
