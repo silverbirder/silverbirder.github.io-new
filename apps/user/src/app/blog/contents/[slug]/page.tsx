@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+
+import { siteDescription, siteName } from "@repo/metadata";
 import { PostArticle } from "@repo/user-feature-post-article";
 import { normalizePosts } from "@repo/user-feature-posts";
+import { buildSiteUrl } from "@repo/util";
 import { serialize } from "next-mdx-remote-client/serialize";
 import { notFound } from "next/navigation";
 import { readFile } from "node:fs/promises";
@@ -14,6 +18,55 @@ import {
 import { createMdxOptions } from "@/libs/mdx/mdx-options";
 
 export { generateStaticParams } from "./static-params";
+
+const ogImageUrl = buildSiteUrl("opengraph-image");
+
+export async function generateMetadata(
+  props: PageProps<"/blog/contents/[slug]">,
+): Promise<Metadata> {
+  const { slug } = await props.params;
+
+  try {
+    const frontmatter = await getPostFrontmatter(slug);
+    const title = frontmatter.title ?? siteName;
+    const description = frontmatter.summary ?? siteDescription;
+    const canonical = buildSiteUrl(`blog/contents/${slug}/`);
+    const tags = frontmatter.tags?.length ? frontmatter.tags : undefined;
+
+    return {
+      alternates: {
+        canonical,
+      },
+      description,
+      keywords: tags ?? [siteName, "ブログ", "記事"],
+      openGraph: {
+        description,
+        images: [
+          {
+            alt: title,
+            height: 630,
+            url: ogImageUrl,
+            width: 1200,
+          },
+        ],
+        publishedTime: frontmatter.publishedAt,
+        siteName,
+        tags,
+        title,
+        type: "article",
+        url: canonical,
+      },
+      title,
+      twitter: {
+        description,
+        images: [ogImageUrl],
+        title,
+      },
+    };
+  } catch {
+    notFound();
+  }
+}
 
 const contentDir = path.resolve(
   process.cwd(),

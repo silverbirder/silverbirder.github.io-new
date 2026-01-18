@@ -1,5 +1,14 @@
 import { describe, expect, it, vi } from "vitest";
 
+vi.mock("@repo/util", async () => {
+  const actual =
+    await vi.importActual<typeof import("@repo/util")>("@repo/util");
+  return {
+    ...actual,
+    buildSiteUrl: vi.fn((pathname: string) => `url:${pathname}`),
+  };
+});
+
 vi.mock("@/libs/posts/posts", () => ({
   getPostFrontmatter: vi.fn(),
   getPostSlugs: vi.fn(),
@@ -7,6 +16,8 @@ vi.mock("@/libs/posts/posts", () => ({
 
 import { getPostList } from "@/libs/posts/get-post-list";
 import { getPostSlugs } from "@/libs/posts/posts";
+
+import { metadata } from "./page";
 
 describe("getPostList", () => {
   it("returns titles with publishedAt in the slug order", async () => {
@@ -48,5 +59,23 @@ describe("getPostList", () => {
     expect(mockedGetPostSlugs).toHaveBeenCalledTimes(1);
     expect(loader).toHaveBeenNthCalledWith(1, "first");
     expect(loader).toHaveBeenNthCalledWith(2, "second");
+  });
+});
+
+describe("metadata", () => {
+  it("defines metadata for the blog index page", () => {
+    expect(metadata.title).toBe("ブログ");
+    expect(metadata.description).toBe(
+      "silverbirder のブログ記事一覧。技術や日々の学びをまとめています。",
+    );
+    expect(metadata.alternates?.canonical).toBe("url:blog/");
+    expect(metadata.openGraph).toMatchObject({
+      title: "ブログ",
+      type: "website",
+      url: "url:blog/",
+    });
+    expect(metadata.twitter).toMatchObject({
+      title: "ブログ",
+    });
   });
 });

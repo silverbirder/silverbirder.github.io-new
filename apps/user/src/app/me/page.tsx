@@ -1,4 +1,42 @@
+import type { Metadata } from "next";
+
+import { siteName } from "@repo/metadata";
 import { Me } from "@repo/user-feature-me";
+import { buildSiteUrl } from "@repo/util";
+
+const title = "自己紹介";
+const description = `${siteName} のプロフィールと活動内容をまとめたページです。`;
+const canonical = buildSiteUrl("me/");
+const ogImageUrl = buildSiteUrl("opengraph-image");
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical,
+  },
+  description,
+  keywords: [siteName, "自己紹介", "プロフィール", "経歴", "活動"],
+  openGraph: {
+    description,
+    images: [
+      {
+        alt: siteName,
+        height: 630,
+        url: ogImageUrl,
+        width: 1200,
+      },
+    ],
+    siteName,
+    title,
+    type: "website",
+    url: canonical,
+  },
+  title,
+  twitter: {
+    description,
+    images: [ogImageUrl],
+    title,
+  },
+};
 
 export default function Page() {
   return <Me />;
