@@ -8,7 +8,5 @@ describe("Page", () => {
     const element = Page();
 
     expect(isValidElement(element)).toBe(true);
-    expect(element.type).toBe("div");
-    expect(element.props.children).toBe("HELLO WORLD");
   });
 });

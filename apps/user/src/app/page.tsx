@@ -1,3 +1,5 @@
+import { Top } from "@repo/user-feature-top";
+
 export default function Page() {
-  return <div>HELLO WORLD</div>;
+  return <Top />;
 }

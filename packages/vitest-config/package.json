@@ -9,7 +9,7 @@
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/browser-playwright": "^4.0.17",
     "playwright": "~1.57.0",
-    "vite-plugin-storybook-nextjs": "^3.1.8",
+    "vite-plugin-storybook-nextjs": "^3.1.9",
     "vitest": "^4.0.17",
     "vitest-browser-react": "^2.0.2"
   },
