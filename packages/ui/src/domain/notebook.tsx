@@ -3,7 +3,6 @@
 import type { ComponentProps, ReactNode } from "react";
 
 import {
-  Badge,
   Box,
   Button,
   Flex,
@@ -27,6 +26,7 @@ import { ShareButtonLine } from "./share-button-line";
 import { ShareButtonThreads } from "./share-button-threads";
 import { ShareButtonWeb } from "./share-button-web";
 import { ShareButtonX } from "./share-button-x";
+import { Tag } from "./tag";
 import { ViewTransitionLink } from "./view-transition-link";
 
 type FollowItem = {
@@ -239,17 +239,9 @@ export const Notebook = ({
       >
         {children}
         {tags.length > 0 && (
-          <Stack direction="row" mb={NOTEBOOK_LINE_HEIGHT}>
+          <Stack direction="row" flexWrap="wrap" mb={NOTEBOOK_LINE_HEIGHT}>
             {tags.map((tag) => (
-              <Badge
-                colorPalette="green"
-                height="var(--notebook-line-height)"
-                key={tag}
-                size="sm"
-                variant="surface"
-              >
-                {tag}
-              </Badge>
+              <Tag key={tag} tag={tag} />
             ))}
           </Stack>
         )}

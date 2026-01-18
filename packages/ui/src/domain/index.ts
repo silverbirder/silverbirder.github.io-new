@@ -12,5 +12,6 @@ export * from "./share-button-line";
 export * from "./share-button-threads";
 export * from "./share-button-web";
 export * from "./share-button-x";
+export * from "./tag";
 export * from "./user-layout";
 export * from "./view-transition-link";

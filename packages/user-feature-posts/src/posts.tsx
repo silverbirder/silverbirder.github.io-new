@@ -1,7 +1,7 @@
 "use client";
 
-import { Badge, Box, Flex, Stack, Text } from "@chakra-ui/react";
-import { Notebook, ViewTransitionLink } from "@repo/ui";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
+import { Notebook, Tag, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
@@ -119,14 +119,7 @@ export const Posts = ({ posts }: Props) => {
                     <Text fontSize="sm">{t("metaSeparator")}</Text>
                   )}
                   {post.tags.map((tag) => (
-                    <Badge
-                      height="var(--notebook-line-height)"
-                      key={tag}
-                      size="sm"
-                      variant="subtle"
-                    >
-                      {tag}
-                    </Badge>
+                    <Tag key={tag} tag={tag} />
                   ))}
                 </Flex>
               </Stack>
