@@ -18,11 +18,14 @@ describe("Me", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("renders provided children", async () => {
+  it("renders the notebook copy and children", async () => {
     await renderWithProvider(<Me>Child content</Me>);
 
-    const element = document.querySelector("div");
-    expect(element).not.toBeNull();
-    expect(element?.textContent ?? "").toContain("Child content");
+    const textContent = document.body.textContent ?? "";
+    expect(textContent).toContain(
+      "プロフィールや活動内容をまとめる予定のページです。",
+    );
+    expect(textContent).toContain("内容は後日追加します。");
+    expect(textContent).toContain("Child content");
   });
 });

@@ -57,9 +57,12 @@ describe("RootLayout", () => {
     const viewTransitionElement = intlProviderElement.props.children;
 
     expect(isValidElement(viewTransitionElement)).toBe(true);
-    expect(viewTransitionElement.props.children.type).toBe(ui.UserLayout);
+    expect(viewTransitionElement.props.children.type).toBe(React.Suspense);
 
-    const userLayoutElement = viewTransitionElement.props.children;
+    const suspenseElement = viewTransitionElement.props.children;
+    expect(suspenseElement.props.children.type).toBe(ui.UserLayout);
+
+    const userLayoutElement = suspenseElement.props.children;
     expect(userLayoutElement.props.children.type).toBe("span");
   });
 });

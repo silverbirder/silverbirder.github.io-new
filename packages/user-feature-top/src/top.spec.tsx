@@ -18,11 +18,14 @@ describe("Top", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("renders provided children", async () => {
+  it("renders the notebook copy and children", async () => {
     await renderWithProvider(<Top>Child content</Top>);
 
-    const element = document.querySelector("div");
-    expect(element).not.toBeNull();
-    expect(element?.textContent ?? "").toContain("Child content");
+    const textContent = document.body.textContent ?? "";
+    expect(textContent).toContain(
+      "ノートブック風のレイアウトを試験的に適用しています。",
+    );
+    expect(textContent).toContain("このページは準備中です。");
+    expect(textContent).toContain("Child content");
   });
 });

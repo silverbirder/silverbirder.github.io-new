@@ -689,6 +689,9 @@ importers:
 
   packages/user-feature-me:
     dependencies:
+      '@chakra-ui/react':
+        specifier: ^3.31.0
+        version: 3.31.0(@emotion/react@11.14.0(@types/react@19.2.2)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@repo/message':
         specifier: workspace:*
         version: link:../message
@@ -851,6 +854,9 @@ importers:
 
   packages/user-feature-top:
     dependencies:
+      '@chakra-ui/react':
+        specifier: ^3.31.0
+        version: 3.31.0(@emotion/react@11.14.0(@types/react@19.2.2)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@repo/message':
         specifier: workspace:*
         version: link:../message

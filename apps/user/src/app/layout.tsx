@@ -5,7 +5,7 @@ import { Provider, UserLayout } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Noto_Sans_JP } from "next/font/google";
-import { ViewTransition } from "react";
+import { Suspense, ViewTransition } from "react";
 
 export const metadata: Metadata = createSiteMetadata();
 
@@ -27,7 +27,9 @@ export default async function RootLayout({ children }: Props) {
         <Provider>
           <NextIntlClientProvider messages={messages}>
             <ViewTransition>
-              <UserLayout>{children}</UserLayout>
+              <Suspense fallback={null}>
+                <UserLayout>{children}</UserLayout>
+              </Suspense>
             </ViewTransition>
           </NextIntlClientProvider>
         </Provider>

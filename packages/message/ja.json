@@ -14,6 +14,16 @@
       "paginationLabel": "ページネーション",
       "paginationPrev": "前へ",
       "paginationNext": "次へ"
+    },
+    "top": {
+      "title": "トップ",
+      "lead": "ノートブック風のレイアウトを試験的に適用しています。",
+      "detail": "このページは準備中です。"
+    },
+    "me": {
+      "title": "自己紹介",
+      "lead": "プロフィールや活動内容をまとめる予定のページです。",
+      "detail": "内容は後日追加します。"
     }
   },
   "admin": {
