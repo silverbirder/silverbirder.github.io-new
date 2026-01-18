@@ -4,11 +4,13 @@ import { Button, Icon } from "@chakra-ui/react";
 import { SiBluesky } from "react-icons/si";
 
 type Props = {
+  height?: number | string;
   label: string;
   loading?: boolean;
   loadingText?: string;
   text: string;
   url: string;
+  width?: number | string;
 };
 
 const buildBlueskyShareUrl = (url: string, text: string) => {
@@ -19,14 +21,18 @@ const buildBlueskyShareUrl = (url: string, text: string) => {
 };
 
 export const ShareButtonBluesky = ({
+  height,
   label,
   loading,
   loadingText,
   text,
   url,
+  width,
 }: Props) => {
   const href = buildBlueskyShareUrl(url, text);
   const ariaLabel = loading && loadingText ? loadingText : label;
+  const buttonHeight = height ?? 9;
+  const buttonWidth = width ?? 9;
 
   return (
     <Button
@@ -39,13 +45,13 @@ export const ShareButtonBluesky = ({
       bg="#007bff"
       borderRadius="full"
       color="white"
-      h={9}
+      h={buttonHeight}
       loading={loading}
-      minW={9}
+      minW={buttonWidth}
       p={0}
       size="sm"
       variant="solid"
-      w={9}
+      w={buttonWidth}
     >
       <a href={href} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">

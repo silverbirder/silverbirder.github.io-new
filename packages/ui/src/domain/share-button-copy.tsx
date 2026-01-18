@@ -6,22 +6,28 @@ import { MdCheck, MdContentCopy } from "react-icons/md";
 
 type Props = {
   copiedLabel: string;
+  height?: number | string;
   label: string;
   loading?: boolean;
   loadingText?: string;
   url: string;
+  width?: number | string;
 };
 
 export const ShareButtonCopy = ({
   copiedLabel,
+  height,
   label,
   loading,
   loadingText,
   url,
+  width,
 }: Props) => {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<null | number>(null);
   const ariaLabel = loading && loadingText ? loadingText : label;
+  const buttonHeight = height ?? 9;
+  const buttonWidth = width ?? 9;
 
   const handleClick = async () => {
     const payload = url.trim();
@@ -73,15 +79,15 @@ export const ShareButtonCopy = ({
           borderRadius="full"
           color="white"
           data-copied={copied ? "true" : "false"}
-          h={9}
+          h={buttonHeight}
           loading={loading}
-          minW={9}
+          minW={buttonWidth}
           onClick={handleClick}
           p={0}
           size="sm"
           type="button"
           variant="solid"
-          w={9}
+          w={buttonWidth}
         >
           <Icon size="sm">{copied ? <MdCheck /> : <MdContentCopy />}</Icon>
         </Button>

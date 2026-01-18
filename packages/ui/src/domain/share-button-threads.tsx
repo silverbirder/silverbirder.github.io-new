@@ -4,11 +4,13 @@ import { Button, Icon } from "@chakra-ui/react";
 import { SiThreads } from "react-icons/si";
 
 type Props = {
+  height?: number | string;
   label: string;
   loading?: boolean;
   loadingText?: string;
   text: string;
   url: string;
+  width?: number | string;
 };
 
 const buildThreadsShareUrl = (url: string, text: string) => {
@@ -27,14 +29,18 @@ const buildThreadsShareUrl = (url: string, text: string) => {
 };
 
 export const ShareButtonThreads = ({
+  height,
   label,
   loading,
   loadingText,
   text,
   url,
+  width,
 }: Props) => {
   const href = buildThreadsShareUrl(url, text);
   const ariaLabel = loading && loadingText ? loadingText : label;
+  const buttonHeight = height ?? 9;
+  const buttonWidth = width ?? 9;
 
   return (
     <Button
@@ -47,13 +53,13 @@ export const ShareButtonThreads = ({
       bg="#101010"
       borderRadius="full"
       color="white"
-      h={9}
+      h={buttonHeight}
       loading={loading}
-      minW={9}
+      minW={buttonWidth}
       p={0}
       size="sm"
       variant="solid"
-      w={9}
+      w={buttonWidth}
     >
       <a href={href} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">

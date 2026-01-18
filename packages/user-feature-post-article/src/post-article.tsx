@@ -1,19 +1,7 @@
 "use client";
 
-import { Box, Button, Heading, Icon, Stack, Text } from "@chakra-ui/react";
-import {
-  MdxClientWrapper,
-  Notebook,
-  ShareButtonBluesky,
-  ShareButtonCopy,
-  ShareButtonFacebook,
-  ShareButtonHatena,
-  ShareButtonLine,
-  ShareButtonThreads,
-  ShareButtonWeb,
-  ShareButtonX,
-  ViewTransitionLink,
-} from "@repo/ui";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { MdRssFeed } from "react-icons/md";
@@ -68,6 +56,22 @@ export const PostArticle = ({
   const t = useTranslations("user.blog");
   const cleanedRelatedPosts = relatedPosts;
   const shareText = t("shareText", { title: meta.title });
+  const share = {
+    heading: t("shareHeading"),
+    labels: {
+      bluesky: t("shareBlueskyLabel"),
+      copy: t("shareCopyLabel"),
+      copyCopied: t("shareCopyCopied"),
+      facebook: t("shareFacebookLabel"),
+      hatena: t("shareHatenaLabel"),
+      line: t("shareLineLabel"),
+      threads: t("shareThreadsLabel"),
+      web: t("shareWebLabel"),
+      x: t("shareXLabel"),
+    },
+    text: shareText,
+    url: shareUrl,
+  };
   const followItems = [
     {
       active: "#1f1f1f",
@@ -110,95 +114,24 @@ export const PostArticle = ({
       label: t("followRssLabel"),
     },
   ];
+  const follow = {
+    heading: t("followHeading"),
+    items: followItems,
+  };
 
   return (
     <Box w="full">
       <Notebook
+        follow={follow}
         navigation={navigation}
         postNumber={meta.postNumber}
         publishedAt={meta.publishedAt}
+        share={share}
         tags={meta.tags}
         title={meta.title}
       >
         <MdxClientWrapper compiledSource={compiledSource} />
       </Notebook>
-      <Box as="section" mt={6}>
-        <Heading as="h2" mb={3} size="sm">
-          {t("shareHeading")}
-        </Heading>
-        <Stack align="start" direction="row" flexWrap="wrap" gap={2}>
-          <ShareButtonX
-            label={t("shareXLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonBluesky
-            label={t("shareBlueskyLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonHatena
-            label={t("shareHatenaLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonLine
-            label={t("shareLineLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonFacebook
-            label={t("shareFacebookLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonThreads
-            label={t("shareThreadsLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonWeb
-            label={t("shareWebLabel")}
-            text={shareText}
-            url={shareUrl}
-          />
-          <ShareButtonCopy
-            copiedLabel={t("shareCopyCopied")}
-            label={t("shareCopyLabel")}
-            url={shareUrl}
-          />
-        </Stack>
-      </Box>
-      <Box as="section" mt={4}>
-        <Heading as="h2" mb={3} size="sm">
-          {t("followHeading")}
-        </Heading>
-        <Stack align="start" direction="row" flexWrap="wrap" gap={2}>
-          {followItems.map((item) => (
-            <Button
-              _active={{ bg: item.active }}
-              _hover={{ bg: item.hover }}
-              alignItems="center"
-              aria-label={item.label}
-              asChild
-              bg={item.bg}
-              borderRadius="full"
-              color="white"
-              h={9}
-              key={item.label}
-              minW={9}
-              p={0}
-              size="sm"
-              variant="solid"
-              w={9}
-            >
-              <a href={item.href} rel="noopener noreferrer" target="_blank">
-                <Icon size="sm">{item.icon}</Icon>
-              </a>
-            </Button>
-          ))}
-        </Stack>
-      </Box>
       {cleanedRelatedPosts.length > 0 && (
         <Box as="section" mt={4}>
           <Heading as="h2" mb={4} size="md">

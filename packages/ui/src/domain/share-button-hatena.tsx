@@ -4,11 +4,13 @@ import { Button, Icon } from "@chakra-ui/react";
 import { SiHatenabookmark } from "react-icons/si";
 
 type Props = {
+  height?: number | string;
   label: string;
   loading?: boolean;
   loadingText?: string;
   text: string;
   url: string;
+  width?: number | string;
 };
 
 const buildHatenaShareUrl = (url: string, text: string) => {
@@ -18,14 +20,18 @@ const buildHatenaShareUrl = (url: string, text: string) => {
 };
 
 export const ShareButtonHatena = ({
+  height,
   label,
   loading,
   loadingText,
   text,
   url,
+  width,
 }: Props) => {
   const href = buildHatenaShareUrl(url, text);
   const ariaLabel = loading && loadingText ? loadingText : label;
+  const buttonHeight = height ?? 9;
+  const buttonWidth = width ?? 9;
 
   return (
     <Button
@@ -38,13 +44,13 @@ export const ShareButtonHatena = ({
       bg="#00a4de"
       borderRadius="full"
       color="white"
-      h={9}
+      h={buttonHeight}
       loading={loading}
-      minW={9}
+      minW={buttonWidth}
       p={0}
       size="sm"
       variant="solid"
-      w={9}
+      w={buttonWidth}
     >
       <a href={href} rel="noopener noreferrer" target="_blank">
         <Icon size="sm">

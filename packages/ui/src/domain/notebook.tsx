@@ -5,8 +5,10 @@ import type { ComponentProps, ReactNode } from "react";
 import {
   Badge,
   Box,
+  Button,
   Flex,
   Heading,
+  Icon,
   SimpleGrid,
   Stack,
   Text,
@@ -17,10 +19,33 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
+import { ShareButtonBluesky } from "./share-button-bluesky";
+import { ShareButtonCopy } from "./share-button-copy";
+import { ShareButtonFacebook } from "./share-button-facebook";
+import { ShareButtonHatena } from "./share-button-hatena";
+import { ShareButtonLine } from "./share-button-line";
+import { ShareButtonThreads } from "./share-button-threads";
+import { ShareButtonWeb } from "./share-button-web";
+import { ShareButtonX } from "./share-button-x";
 import { ViewTransitionLink } from "./view-transition-link";
+
+type FollowItem = {
+  active: string;
+  bg: string;
+  hover: string;
+  href: string;
+  icon: ReactNode;
+  label: string;
+};
+
+type FollowSection = {
+  heading: string;
+  items: FollowItem[];
+};
 
 type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   children: ReactNode;
+  follow?: FollowSection;
   navigation: {
     next?: {
       href: string;
@@ -35,8 +60,28 @@ type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   };
   postNumber?: number;
   publishedAt?: string;
+  share?: ShareSection;
   tags: string[];
   title: string;
+};
+
+type ShareLabels = {
+  bluesky: string;
+  copy: string;
+  copyCopied: string;
+  facebook: string;
+  hatena: string;
+  line: string;
+  threads: string;
+  web: string;
+  x: string;
+};
+
+type ShareSection = {
+  heading: string;
+  labels: ShareLabels;
+  text: string;
+  url: string;
 };
 
 const formatNotebookDate = (value: string) => {
@@ -49,9 +94,11 @@ const formatNotebookDate = (value: string) => {
 
 export const Notebook = ({
   children,
+  follow,
   navigation,
   postNumber,
   publishedAt,
+  share,
   tags,
   title,
   ...notebookProps
@@ -64,6 +111,7 @@ export const Notebook = ({
     : undefined;
   const postNumberText =
     postNumber !== undefined ? String(postNumber) : undefined;
+  const actionButtonSize = "var(--notebook-line-height)";
   const globalNavigationItems = [
     {
       bg: "blue.50",
@@ -190,12 +238,121 @@ export const Notebook = ({
         {...notebookProps}
       >
         {children}
+        {tags.length > 0 && (
+          <Stack direction="row" mb={NOTEBOOK_LINE_HEIGHT}>
+            {tags.map((tag) => (
+              <Badge
+                colorPalette="green"
+                height="var(--notebook-line-height)"
+                key={tag}
+                size="sm"
+                variant="surface"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </Stack>
+        )}
+        {share && (
+          <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
+            <Heading as="h2">{share.heading}</Heading>
+            <Stack align="start" direction="row" flexWrap="wrap">
+              <ShareButtonX
+                height={actionButtonSize}
+                label={share.labels.x}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonBluesky
+                height={actionButtonSize}
+                label={share.labels.bluesky}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonHatena
+                height={actionButtonSize}
+                label={share.labels.hatena}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonLine
+                height={actionButtonSize}
+                label={share.labels.line}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonFacebook
+                height={actionButtonSize}
+                label={share.labels.facebook}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonThreads
+                height={actionButtonSize}
+                label={share.labels.threads}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonWeb
+                height={actionButtonSize}
+                label={share.labels.web}
+                text={share.text}
+                url={share.url}
+                width={actionButtonSize}
+              />
+              <ShareButtonCopy
+                copiedLabel={share.labels.copyCopied}
+                height={actionButtonSize}
+                label={share.labels.copy}
+                url={share.url}
+                width={actionButtonSize}
+              />
+            </Stack>
+          </Box>
+        )}
+        {follow && follow.items.length > 0 && (
+          <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
+            <Heading as="h2">{follow.heading}</Heading>
+            <Stack align="start" direction="row" flexWrap="wrap">
+              {follow.items.map((item) => (
+                <Button
+                  _active={{ bg: item.active }}
+                  _hover={{ bg: item.hover }}
+                  alignItems="center"
+                  aria-label={item.label}
+                  asChild
+                  bg={item.bg}
+                  borderRadius="full"
+                  color="white"
+                  h={actionButtonSize}
+                  key={item.label}
+                  minW={actionButtonSize}
+                  p={0}
+                  size="sm"
+                  variant="solid"
+                  w={actionButtonSize}
+                >
+                  <a href={item.href} rel="noopener noreferrer" target="_blank">
+                    <Icon size="sm">{item.icon}</Icon>
+                  </a>
+                </Button>
+              ))}
+            </Stack>
+          </Box>
+        )}
         {(navigation?.prev || navigation?.next) && (
           <SimpleGrid
             aria-label={t("navigationLabel")}
             as="nav"
             columnGap="var(--notebook-line-height)"
             columns={{ base: 1, md: 2 }}
+            mb={NOTEBOOK_LINE_HEIGHT}
             rowGap="var(--notebook-line-height)"
           >
             {navigation.next && (
@@ -205,19 +362,13 @@ export const Notebook = ({
                 minW={0}
                 w="full"
               >
-                <Text
-                  as="div"
-                  color="fg.muted"
-                  fontSize="sm"
-                  lineHeight="var(--notebook-line-height)"
-                  m={0}
-                  minH="var(--notebook-line-height)"
-                >
-                  {t("navigationNext")}
-                </Text>
+                <Heading as="h2">{t("navigationNext")}</Heading>
                 <Box
                   lineHeight="var(--notebook-line-height)"
-                  minH="calc(var(--notebook-line-height) * 2)"
+                  minH={{
+                    base: 0,
+                    md: "calc(var(--notebook-line-height) * 2)",
+                  }}
                   mt={0}
                 >
                   <ViewTransitionLink
@@ -238,19 +389,13 @@ export const Notebook = ({
                 minW={0}
                 w="full"
               >
-                <Text
-                  as="div"
-                  color="fg.muted"
-                  fontSize="sm"
-                  lineHeight="var(--notebook-line-height)"
-                  m={0}
-                  minH="var(--notebook-line-height)"
-                >
-                  {t("navigationPrev")}
-                </Text>
+                <Heading as="h2">{t("navigationPrev")}</Heading>
                 <Box
                   lineHeight="var(--notebook-line-height)"
-                  minH="calc(var(--notebook-line-height) * 2)"
+                  minH={{
+                    base: 0,
+                    md: "calc(var(--notebook-line-height) * 2)",
+                  }}
                   mt={0}
                 >
                   <ViewTransitionLink
@@ -265,21 +410,6 @@ export const Notebook = ({
               </Flex>
             )}
           </SimpleGrid>
-        )}
-        {tags.length > 0 && (
-          <Stack direction="row">
-            {tags.map((tag) => (
-              <Badge
-                colorPalette="green"
-                height="var(--notebook-line-height)"
-                key={tag}
-                size="sm"
-                variant="surface"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </Stack>
         )}
       </NotebookProse>
     </VStack>

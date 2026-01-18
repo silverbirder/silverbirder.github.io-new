@@ -4,21 +4,27 @@ import { Button, Icon } from "@chakra-ui/react";
 import { MdShare } from "react-icons/md";
 
 type Props = {
+  height?: number | string;
   label: string;
   loading?: boolean;
   loadingText?: string;
   text: string;
   url: string;
+  width?: number | string;
 };
 
 export const ShareButtonWeb = ({
+  height,
   label,
   loading,
   loadingText,
   text,
   url,
+  width,
 }: Props) => {
   const ariaLabel = loading && loadingText ? loadingText : label;
+  const buttonHeight = height ?? 9;
+  const buttonWidth = width ?? 9;
 
   const handleClick = async () => {
     const payload = url.trim();
@@ -47,15 +53,15 @@ export const ShareButtonWeb = ({
       bg="#0f172a"
       borderRadius="full"
       color="white"
-      h={9}
+      h={buttonHeight}
       loading={loading}
-      minW={9}
+      minW={buttonWidth}
       onClick={handleClick}
       p={0}
       size="sm"
       type="button"
       variant="solid"
-      w={9}
+      w={buttonWidth}
     >
       <Icon size="sm">
         <MdShare />

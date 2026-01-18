@@ -1,4 +1,5 @@
 import { composeStories } from "@storybook/nextjs-vite";
+import { FaXTwitter } from "react-icons/fa6";
 import { describe, expect, it, vi } from "vitest";
 
 import { renderWithProvider } from "../test-util";
@@ -45,6 +46,56 @@ describe("Notebook", () => {
     expect(container.textContent ?? "").toContain("NO");
     expect(container.textContent ?? "").toContain("Chakra");
     expect(container.textContent ?? "").toContain("Design");
+  });
+
+  it("renders share and follow sections when provided", async () => {
+    const { container } = await renderWithProvider(
+      <Notebook
+        follow={{
+          heading: "Follow",
+          items: [
+            {
+              active: "#000000",
+              bg: "#111111",
+              hover: "#222222",
+              href: "https://example.com",
+              icon: <FaXTwitter />,
+              label: "Xをフォロー",
+            },
+          ],
+        }}
+        navigation={{}}
+        share={{
+          heading: "Share",
+          labels: {
+            bluesky: "Blueskyでシェア",
+            copy: "リンクをコピー",
+            copyCopied: "コピーしました",
+            facebook: "Facebookでシェア",
+            hatena: "はてなでシェア",
+            line: "LINEでシェア",
+            threads: "Threadsでシェア",
+            web: "デバイスで共有",
+            x: "Xでシェア",
+          },
+          text: "Share text",
+          url: "https://example.com",
+        }}
+        tags={[]}
+        title="Notebook Preview"
+      >
+        <p>Body copy.</p>
+      </Notebook>,
+    );
+
+    expect(container.textContent ?? "").toContain("Share");
+    expect(container.textContent ?? "").toContain("Follow");
+
+    const shareLink = container.querySelector('a[aria-label="Xでシェア"]');
+    const followLink = container.querySelector('a[aria-label="Xをフォロー"]');
+
+    expect(shareLink).not.toBeNull();
+    expect(followLink).not.toBeNull();
   });
 
   it("renders previous/next navigation when provided", async () => {
