@@ -164,6 +164,8 @@ export const Ideal: Story = {
     },
     navigation: {},
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
 
@@ -178,6 +180,8 @@ export const Empty: Story = {
     },
     navigation: {},
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
 
@@ -192,6 +196,8 @@ export const Error: Story = {
     },
     navigation: {},
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
 
@@ -206,6 +212,8 @@ export const Partial: Story = {
     },
     navigation: {},
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
 
@@ -220,6 +228,8 @@ export const Loading: Story = {
     },
     navigation: {},
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };
 
@@ -245,5 +255,7 @@ export const WithNavigation: Story = {
       },
     },
     relatedPosts: [],
+    rssUrl: "https://example.com/rss.xml",
+    shareUrl: "https://example.com/blog/contents/notebook-prose/",
   },
 };

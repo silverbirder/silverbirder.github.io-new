@@ -106,6 +106,8 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
       slug,
       tags: frontmatter.tags,
     });
+    const shareUrl = buildSiteUrl(`blog/contents/${slug}/`);
+    const rssUrl = buildSiteUrl("rss.xml");
     const currentIndex = normalizedPosts.findIndex(
       (post) => post.slug === slug,
     );
@@ -138,6 +140,8 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
             : undefined,
         }}
         relatedPosts={relatedPosts ?? []}
+        rssUrl={rssUrl}
+        shareUrl={shareUrl}
       />
     );
   } catch {

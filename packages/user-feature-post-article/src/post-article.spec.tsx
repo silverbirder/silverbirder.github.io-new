@@ -63,6 +63,8 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
@@ -107,11 +109,55 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
     const paragraph = document.querySelector("p");
     expect(paragraph?.textContent ?? "").toContain("Body copy.");
+  });
+
+  it("renders share buttons", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        meta={{
+          postNumber: 1,
+          publishedAt: "2025-01-02",
+          tags: ["Testing"],
+          title: "Test title",
+        }}
+        navigation={{}}
+        relatedPosts={[]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
+      />,
+    );
+
+    const bodyText = document.body.textContent ?? "";
+    expect(bodyText).toContain("シェア");
+    expect(bodyText).toContain("Xでシェア");
+    expect(bodyText).toContain("Blueskyでシェア");
+    expect(bodyText).toContain("はてなでシェア");
+    expect(bodyText).toContain("LINEでシェア");
+    expect(bodyText).toContain("Facebookでシェア");
+    expect(bodyText).toContain("Pocketに保存");
+    expect(bodyText).toContain("リンクをコピー");
+    expect(bodyText).toContain("RSS");
+    expect(bodyText).toContain("RSSを購読");
   });
 
   it("renders the published date and tags", async () => {
@@ -151,6 +197,8 @@ return {
         }}
         navigation={{}}
         relatedPosts={[]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
@@ -195,6 +243,8 @@ return {
             tag: "TypeScript",
           },
         ]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
@@ -240,6 +290,8 @@ return {
           },
         }}
         relatedPosts={[]}
+        rssUrl="https://example.com/rss.xml"
+        shareUrl="https://example.com/blog/contents/test/"
       />,
     );
 
