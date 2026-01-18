@@ -1,9 +1,15 @@
 import { composeStories } from "@storybook/nextjs-vite";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { renderWithProvider } from "../test-util";
 import { Notebook } from "./notebook";
 import * as stories from "./notebook.stories";
+
+vi.mock("next/navigation", () => {
+  return {
+    usePathname: () => "/",
+  };
+});
 
 const Stories = composeStories(stories);
 
@@ -73,5 +79,29 @@ describe("Notebook", () => {
       "/blog/contents/next/",
       "/blog/contents/prev/",
     ]);
+  });
+
+  it("renders global navigation sticky tabs", async () => {
+    const { container } = await renderWithProvider(
+      <Notebook
+        navigation={{}}
+        postNumber={1}
+        publishedAt="2025-01-02"
+        tags={[]}
+        title="Notebook Preview"
+      >
+        <p>Body copy.</p>
+      </Notebook>,
+    );
+
+    const nav = container.querySelector(
+      'nav[aria-label="グローバルナビゲーション"]',
+    );
+    expect(nav).not.toBeNull();
+
+    const labels = Array.from(nav?.querySelectorAll("a") ?? []).map(
+      (link) => link.textContent,
+    );
+    expect(labels).toEqual(["トップ", "自己紹介", "ブログ"]);
   });
 });

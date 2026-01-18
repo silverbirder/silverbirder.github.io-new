@@ -16,7 +16,7 @@ export const UserLayout = ({ children }: Props) => {
       <Container
         centerContent
         maxW="6xl"
-        py={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
+        py={`calc(${NOTEBOOK_LINE_HEIGHT} * 1.5)`}
       >
         {children}
       </Container>

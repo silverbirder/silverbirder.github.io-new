@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { formatPublishedDate } from "@repo/util";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
 import { ViewTransitionLink } from "./view-transition-link";
@@ -56,19 +57,85 @@ export const Notebook = ({
   ...notebookProps
 }: Props) => {
   const t = useTranslations("ui.notebook");
+  const pathname = usePathname();
 
   const formattedPublishedAt = publishedAt
     ? formatNotebookDate(publishedAt)
     : undefined;
   const postNumberText =
     postNumber !== undefined ? String(postNumber) : undefined;
+  const globalNavigationItems = [
+    {
+      bg: "blue.50",
+      href: "/",
+      label: t("globalNavigationTop"),
+    },
+    {
+      bg: "yellow.50",
+      href: "/me",
+      label: t("globalNavigationMe"),
+    },
+    {
+      bg: "pink.50",
+      href: "/blog",
+      label: t("globalNavigationBlog"),
+    },
+  ];
   return (
-    <VStack bg="bg" gap="0">
+    <VStack
+      bg="bg"
+      boxShadow="0 -2px 6px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06)"
+      gap="0"
+      overflow="visible"
+      position="relative"
+    >
+      <Flex
+        aria-label={t("globalNavigationLabel")}
+        as="nav"
+        gap={2}
+        left={0}
+        position="absolute"
+        top={0}
+        zIndex={0}
+      >
+        {globalNavigationItems.map((item) => {
+          const isActive =
+            item.href === "/"
+              ? pathname === "/"
+              : pathname?.startsWith(item.href);
+          return (
+            <ViewTransitionLink
+              _hover={{
+                height: `calc(${NOTEBOOK_LINE_HEIGHT} + 4px)`,
+                textDecoration: "none",
+                transform: "translateY(-4px)",
+              }}
+              bg={item.bg}
+              borderRadius="none"
+              color="fg.muted"
+              h={`calc(${NOTEBOOK_LINE_HEIGHT} * 1)`}
+              href={item.href}
+              key={item.href}
+              minW={`calc(${NOTEBOOK_LINE_HEIGHT} * 3)`}
+              position="relative"
+              px={2}
+              textAlign="center"
+              top={isActive ? -4 : `calc(${NOTEBOOK_LINE_HEIGHT} * -1)`}
+              transition="transform 160ms ease, height 160ms ease"
+              w={`calc(${NOTEBOOK_LINE_HEIGHT} * 3)`}
+            >
+              {item.label}
+            </ViewTransitionLink>
+          );
+        })}
+      </Flex>
       <VStack
         align="flex-start"
         alignSelf="stretch"
         gap="0"
+        position="relative"
         pt={NOTEBOOK_LINE_HEIGHT}
+        zIndex={1}
       >
         <VStack alignSelf="flex-end" gap="0" minW="12rem">
           <Flex

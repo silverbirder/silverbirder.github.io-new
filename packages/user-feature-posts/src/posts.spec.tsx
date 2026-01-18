@@ -32,6 +32,7 @@ let mockedSearchParams = "";
 
 vi.mock("next/navigation", () => {
   return {
+    usePathname: () => "/blog",
     useSearchParams: () => new URLSearchParams(mockedSearchParams),
   };
 });

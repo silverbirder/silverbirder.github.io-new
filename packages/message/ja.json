@@ -63,6 +63,10 @@
     "notebook": {
       "headerDate": "DATE",
       "headerNo": "NO",
+      "globalNavigationLabel": "グローバルナビゲーション",
+      "globalNavigationTop": "トップ",
+      "globalNavigationMe": "自己紹介",
+      "globalNavigationBlog": "ブログ",
       "navigationLabel": "記事ナビゲーション",
       "navigationPrev": "前のページ",
       "navigationNext": "次のページ"

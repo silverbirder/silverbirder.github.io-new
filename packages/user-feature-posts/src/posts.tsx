@@ -1,12 +1,9 @@
 "use client";
 
-import type { ReactNode } from "react";
-
-import { Badge, Box, Breadcrumb, Flex, Stack, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { Fragment } from "react";
 
 import {
   filterPosts,
@@ -18,26 +15,9 @@ import {
 
 const ELLIPSIS = "…";
 
-type BreadcrumbItem = {
-  href?: string;
-  label: ReactNode;
-};
-
 type Props = {
   posts: PostSummary[];
 };
-
-type RenderLinkProps = {
-  children: ReactNode;
-  href: string;
-  isActive?: boolean;
-};
-
-const renderLink = ({ children, href, isActive }: RenderLinkProps) => (
-  <ViewTransitionLink fontWeight={isActive ? "bold" : "normal"} href={href}>
-    {children}
-  </ViewTransitionLink>
-);
 
 export const Posts = ({ posts }: Props) => {
   const searchParams = useSearchParams();
@@ -89,32 +69,8 @@ export const Posts = ({ posts }: Props) => {
     return query ? `/blog?${query}` : "/blog";
   };
 
-  const breadcrumb: BreadcrumbItem[] = [{ label: t("title") }];
-
   return (
     <Box w="full">
-      <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
-        <Breadcrumb.List>
-          {breadcrumb.map((item, index) => {
-            const isLast = index === breadcrumb.length - 1;
-            const href = item.href;
-            const label = item.label;
-            return (
-              <Fragment key={index}>
-                <Breadcrumb.Item>
-                  {href && !isLast ? (
-                    renderLink({ children: label, href })
-                  ) : (
-                    <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
-                  )}
-                </Breadcrumb.Item>
-
-                {!isLast ? <Breadcrumb.Separator /> : null}
-              </Fragment>
-            );
-          })}
-        </Breadcrumb.List>
-      </Breadcrumb.Root>
       <Notebook navigation={{}} tags={[]} title={t("title")}>
         {pagination.items.length === 0 ? (
           <Text>{t("empty")}</Text>

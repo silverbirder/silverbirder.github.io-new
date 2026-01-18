@@ -1,14 +1,8 @@
 "use client";
 
-import { Box, Breadcrumb, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
-import { Fragment, type ReactNode } from "react";
-
-type BreadcrumbItem = {
-  href?: string;
-  label: ReactNode;
-};
 
 type Props = {
   compiledSource: string;
@@ -47,38 +41,10 @@ export const PostArticle = ({
   relatedPosts,
 }: Props) => {
   const t = useTranslations("user.blog");
-
-  const breadcrumb: BreadcrumbItem[] = [
-    { href: "/blog", label: t("title") },
-    { label: meta.title },
-  ];
-
   const cleanedRelatedPosts = relatedPosts;
 
   return (
     <Box w="full">
-      <Breadcrumb.Root colorPalette="green" mb={4} size="sm">
-        <Breadcrumb.List>
-          {breadcrumb.map((item, index) => {
-            const isLast = index === breadcrumb.length - 1;
-            const href = item.href;
-            const label = item.label;
-            return (
-              <Fragment key={index}>
-                <Breadcrumb.Item>
-                  {href && !isLast ? (
-                    <ViewTransitionLink href={href}>{label}</ViewTransitionLink>
-                  ) : (
-                    <Breadcrumb.CurrentLink>{label}</Breadcrumb.CurrentLink>
-                  )}
-                </Breadcrumb.Item>
-
-                {!isLast ? <Breadcrumb.Separator /> : null}
-              </Fragment>
-            );
-          })}
-        </Breadcrumb.List>
-      </Breadcrumb.Root>
       <Notebook
         navigation={navigation}
         postNumber={meta.postNumber}
