@@ -6,7 +6,6 @@ const TRAILING_PSEUDO_REGEX = /(::?[\w-]+(?:\([^)]*\))?)+$/;
 const EXCLUDE_CLASSNAME = ".not-prose";
 export const NOTEBOOK_LINE_HEIGHT = "2rem";
 const NOTEBOOK_LINE_COLOR = "var(--chakra-colors-border-muted)";
-const NOTEBOOK_MARGIN_LINE_COLOR = "var(--chakra-colors-blue-subtle)";
 function inWhere<T extends string>(
   selector: T,
   extraExclude?: string | string[],
@@ -130,16 +129,15 @@ export const NotebookProse = chakra("div", {
       color: "inherit",
     },
     "--notebook-line-height": NOTEBOOK_LINE_HEIGHT,
-    "--notebook-margin-line-color": NOTEBOOK_MARGIN_LINE_COLOR,
     _dark: {
       [inWhere("& pre code span")]: {
         color: "var(--shiki-dark)",
       },
     },
     backgroundColor: "bg",
-    backgroundImage: `linear-gradient(to right, transparent 0, transparent calc((var(--notebook-line-height) / 2) - 1px), var(--notebook-margin-line-color) calc((var(--notebook-line-height) / 2) - 1px), var(--notebook-margin-line-color) calc(var(--notebook-line-height) / 2), transparent calc(var(--notebook-line-height) / 2)), repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} var(--notebook-line-height))`,
-    backgroundPosition: "0 0, 0 0",
-    backgroundSize: "100% 100%, 100% var(--notebook-line-height)",
+    backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} calc(var(--notebook-line-height) - 1px), ${NOTEBOOK_LINE_COLOR} var(--notebook-line-height))`,
+    backgroundPosition: "0 0",
+    backgroundSize: "100% var(--notebook-line-height)",
     color: "fg.muted",
     fontSize: "sm",
     [inWhere("& :is(h1,h2,h3,h4,h5,hr) + *")]: {
