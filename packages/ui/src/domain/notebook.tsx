@@ -233,25 +233,67 @@ export const Notebook = ({
             </Text>
           </Flex>
         </VStack>
-        <Heading
-          as="h1"
-          borderTopColor="border"
-          borderTopWidth="1px"
-          color="fg"
-          lineHeight={NOTEBOOK_LINE_HEIGHT}
-          p={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
-          w="full"
-        >
-          {title}
-        </Heading>
+        <Box position="relative" w="full">
+          <Heading
+            as="h1"
+            borderBottomColor="border"
+            borderBottomWidth="1px"
+            borderTopColor="border"
+            borderTopWidth="1px"
+            color="fg"
+            lineHeight={NOTEBOOK_LINE_HEIGHT}
+            p={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
+            w="full"
+          >
+            {title}
+          </Heading>
+          <Box
+            backgroundImage="repeating-linear-gradient(to right, var(--chakra-colors-border) 0 2px, transparent 2px 128px)"
+            bottom={"-6px"}
+            height={"6px"} // 長い棒
+            left={0}
+            position="absolute"
+            width="full"
+          />
+          <svg
+            style={{
+              bottom: "-3px",
+              height: "3px", // 短い棒
+              left: 0,
+              position: "absolute",
+              width: "100%",
+            }}
+          >
+            <defs>
+              <pattern
+                height="3"
+                id="dash-bottom-rounded"
+                patternUnits="userSpaceOnUse"
+                width="16"
+              >
+                <path
+                  d="
+                    M 0 0
+                    H 2
+                    V 2
+                    A 1 1 0 0 1 1 3
+                    A 1 1 0 0 1 0 2
+                    Z
+                  "
+                  fill="var(--chakra-colors-border)"
+                />
+              </pattern>
+            </defs>
+            {/* SVG 全体を覆う矩形 */}
+            <rect
+              fill="url(#dash-bottom-rounded)" // pattern を参照して描画
+              height="100%" // SVG の縦幅いっぱい
+              width="100%" // SVG の横幅いっぱい
+            />
+          </svg>
+        </Box>
       </VStack>
-      <NotebookProse
-        borderTopColor="border"
-        borderTopWidth="1px"
-        colorPalette="green"
-        w="full"
-        {...notebookProps}
-      >
+      <NotebookProse colorPalette="green" w="full" {...notebookProps}>
         {children}
         {tags.length > 0 && (
           <Stack
