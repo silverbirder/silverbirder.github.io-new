@@ -238,7 +238,6 @@ export const Notebook = ({
           borderTopColor="border"
           borderTopWidth="1px"
           color="fg"
-          lineClamp={2}
           lineHeight={NOTEBOOK_LINE_HEIGHT}
           p={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
           w="full"

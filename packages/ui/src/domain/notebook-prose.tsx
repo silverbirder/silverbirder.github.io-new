@@ -124,7 +124,7 @@ export const NotebookProse = chakra("div", {
     "& .remark-link-card-plus__title": {
       color: "fg",
       fontWeight: "600",
-      lineClamp: 2,
+      lineClamp: 1,
     },
     "& .remark-link-card-plus__url": {
       color: "inherit",
