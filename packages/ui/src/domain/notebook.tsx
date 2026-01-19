@@ -247,14 +247,42 @@ export const Notebook = ({
           >
             {title}
           </Heading>
-          <Box
-            backgroundImage="repeating-linear-gradient(to right, var(--chakra-colors-border) 0 2px, transparent 2px 128px)"
-            bottom={"-6px"}
-            height={"6px"} // 長い棒
-            left={0}
-            position="absolute"
-            width="full"
-          />
+          <svg
+            style={{
+              bottom: "-6px",
+              height: "6px", // 長い棒
+              left: 0,
+              position: "absolute",
+              width: "100%",
+            }}
+          >
+            <defs>
+              <pattern
+                height="6"
+                id="dash-bottom-rounded-6"
+                patternUnits="userSpaceOnUse"
+                width="128"
+              >
+                <path
+                  d="
+                    M 0 0          
+                    H 2            
+                    V 5            
+                    A 1 1 0 0 1 1 6  
+                    A 1 1 0 0 1 0 5  
+                    Z              
+                  "
+                  fill="var(--chakra-colors-border)"
+                />
+              </pattern>
+            </defs>
+            {/* SVG 全体をパターンで塗る */}
+            <rect
+              fill="url(#dash-bottom-rounded-6)"
+              height="100%"
+              width="100%"
+            />
+          </svg>
           <svg
             style={{
               bottom: "-3px",
