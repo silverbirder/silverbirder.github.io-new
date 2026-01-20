@@ -2,7 +2,7 @@
 title: 'アカウント画像一括更新ツールを作ったので、紹介と学びについて'
 publishedAt: '2020-06-04'
 summary: 'GoogleやGithubなど、様々なサービスのプロフィール情報(画像, etc)を一括更新するツール、puppeteer-account-manager を開発しました。開発の目的や、開発から得た知見を紹介します。'
-tags: ["Artifact", "Learn"]
+tags: ["成果物"]
 ---
 
 Google や Github など、様々なサービスのプロフィール情報(画像, etc)を一括更新するツール、puppeteer-account-manager を開発しました。

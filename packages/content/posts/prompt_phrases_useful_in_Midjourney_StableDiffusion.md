@@ -2,7 +2,7 @@
 title: 'Midjourney, StableDiffusion で役立つPrompt フレーズ集'
 publishedAt: '2022-08-28'
 summary: 'Midjourney や StableDiffusion を使っていると、どういうフレーズを使えばよいかわからなくなります。そこで、フレーズ集を作って、Prompt で役立てたいなと思っています。'
-tags: ["Midjourney", "Stable Diffusion", "AI", "Scrap"]
+tags: ["AI", "クローリング"]
 index: false
 ---
 

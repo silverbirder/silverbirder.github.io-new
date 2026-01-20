@@ -2,7 +2,7 @@
 title: 'v0と協業した個人サイトリニューアル'
 publishedAt: '2024-10-24'
 summary: '5回目となる個人サイトのリニューアルを行いました。個人サイトは自由にカスタマイズできるため、私にとっての練習場でもあります。今回はリニューアルの背景や目的について紹介します。'
-tags: ["Portfolio", "Artifact"]
+tags: ["成果物"]
 ---
 
 5回目となる個人サイトのリニューアルを行いました。  
@@ -63,8 +63,11 @@ v0を使えば、私でももう少しWebデザインが得意になれるので
 参考にしたのは、W3Cのテキストスペーシングに関するガイドラインです。
 
 > - Line height (line spacing) to at least 1.5 times the font size;
+>
 > - Spacing following paragraphs to at least 2 times the font size;
+>
 > - Letter spacing (tracking) to at least 0.12 times the font size;
+>
 > - Word spacing to at least 0.16 times the font size.
 
 ※ [Understanding Success Criterion 1.4.12: Text Spacing | WAI | W3C](https://www.w3.org/WAI/WCAG21/Understanding/text-spacing)

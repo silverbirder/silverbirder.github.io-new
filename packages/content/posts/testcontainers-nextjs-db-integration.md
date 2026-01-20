@@ -2,7 +2,7 @@
 title: 'Testcontainersを用いたNext.jsとDBの結合テスト'
 publishedAt: '2024-03-25'
 summary: 'Testcontainers というものを知りました。Testcontainersは、コンテナを利用してテスト環境を構築し、簡単に統合テストを行うことができるツールです。この便利なツールを用いて、Next.jsとデータベース(DB)を組み合わせた結合テストを実施しました。使い捨て可能なエンドツーエンド(E2E)テストの実装が可能で、とても良い結果を得ることができました。'
-tags: ["Test", "Testcontainers"]
+tags: ["テスト"]
 index: false
 ---
 

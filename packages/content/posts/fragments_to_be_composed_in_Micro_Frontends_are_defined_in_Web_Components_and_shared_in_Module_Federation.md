@@ -2,7 +2,7 @@
 title: 'Micro Frontendsで組成するフラグメントをWeb Componentsで定義してModule Federationで共有する'
 publishedAt: '2022-05-28'
 summary: 'Micro Frontends(以降、MFE)で組成するフラグメントを Web Components で定義して Module Federation で共有する方法を、ざっくり紹介します。'
-tags: ["Web Components", "Module Federation", "Micro Frontends", "Artifact"]
+tags: ["フロントエンド", "成果物"]
 index: false
 ---
 

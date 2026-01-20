@@ -2,7 +2,7 @@
 title: 'CI/CDのDaggerで、GithubActionsとCircleCIにシュッと連携してみた'
 publishedAt: '2022-08-23'
 summary: '前々から気になっていた、CI/CD の非ベンダーロックインな Dagger というツールを試してみました。本記事では、試した内容について共有しようと思います。'
-tags: ["Dagger", "CI", "CD", "GitHub Actions", "CircleCI", "DevOps", "Scrap"]
+tags: ["バックエンド", "DevOps", "クローリング"]
 index: false
 ---
 

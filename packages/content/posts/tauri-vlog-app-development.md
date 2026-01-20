@@ -2,7 +2,7 @@
 title: 'Tauri でつくる自分用 VLog アプリ開発記'
 publishedAt: '2025-10-04'
 summary: 'Tauri で Mac 向けの VLog 録画アプリを作り、技術選定から録画方式、PiP 実装までの試行錯誤を整理しました。ソースコードや配布ファイルも紹介します。'
-tags: ["Artifact"]
+tags: ["成果物"]
 index: false
 ---
 

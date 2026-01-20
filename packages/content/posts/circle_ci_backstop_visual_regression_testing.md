@@ -2,7 +2,7 @@
 title: 'CircleCI + BackstopJS (Puppeteer) でビジュアルリグレッションテストを継続的に監視する'
 publishedAt: '2019-11-15'
 summary: 'CircleCIとBackstopJSを組み合わせて、『継続的にWebページの視覚的な変化を監視するツール』を作成しました。'
-tags: ["CircleCI", "BackstopJS", "Visual Regression Testing", "Puppeteer", "Test"]
+tags: ["DevOps", "テスト"]
 ---
 
 CircleCI と BackstopJS を組み合わせて、『継続的に Web ページの視覚的な変化を監視するツール』を作成しました。

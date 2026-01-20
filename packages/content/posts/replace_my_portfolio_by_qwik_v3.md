@@ -2,7 +2,7 @@
 title: 'Qwikでブログページを刷新して学んだこと'
 publishedAt: '2023-10-23'
 summary: 'こんにちは。@silverbirderです。最近、私のブログページを Qwik フレームワークで刷新しました。以下のリンクが、刷新したページになります。'
-tags: ["Portfolio", "Artifact", "Qwik"]
+tags: ["成果物", "フロントエンド"]
 index: false
 ---
 

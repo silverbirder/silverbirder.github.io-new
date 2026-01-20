@@ -2,7 +2,7 @@
 title: 'TwitterにあるLinkを収集するツール Cotlin で、世界中のプレゼンテーション資料を知ろう'
 publishedAt: '2020-03-15'
 summary: 'Twitterに投稿されているLinkを収集するツール Cotlin を作りました。Collect links in tweet から、Cotlinという名前にしました。Androidのアレに似ています。'
-tags: ["Artifact", "Learn", "Twitter", "Google Apps Script", "Clasp"]
+tags: ["成果物", "サービス", "Google"]
 ---
 
 Twitter に投稿されている Link を収集するツール Cotlin を作りました。

@@ -2,7 +2,7 @@
 title: '一足遅れて Kubernetes を学び始める - 16. コンポーネント -'
 publishedAt: '2019-06-10'
 summary: '前回 一足遅れて Kubernetes を学び始める - 15. セキュリティ -では、RBACによる権限について学習しました。今回は最後にKubernetesのコンポーネントについて学習します。'
-tags: ["Kubernetes"]
+tags: ["クラウドインフラ"]
 ---
 
 ## ストーリー

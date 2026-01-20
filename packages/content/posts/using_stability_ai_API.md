@@ -2,7 +2,7 @@
 title: 'Stable Diffusion API 開発'
 publishedAt: '2022-09-03'
 summary: 'Stable Diffusion は、文章を渡すと画像を生成してくれる AI で OSS です。これを自前で動かそうとすると、GPU が必要になります。'
-tags: ["Stable Diffusion", "API", "AI", "Artifact"]
+tags: ["AI", "バックエンド", "成果物"]
 index: false
 ---
 

@@ -30,7 +30,8 @@
     "migrate:fix-md045": "node ./scripts/migrate/fix-md045-no-alt-text.mjs",
     "migrate:fix-md047": "node ./scripts/migrate/fix-md047-single-trailing-newline.mjs",
     "migrate:mdx-image-to-markdown": "node ./scripts/migrate/mdx-image-to-markdown.mjs",
-    "migrate:mdx-to-md": "node ./scripts/migrate/mdx-to-md.mjs"
+    "migrate:mdx-to-md": "node ./scripts/migrate/mdx-to-md.mjs",
+    "migrate:normalize-tags": "node ./scripts/migrate/normalize-tags.mjs"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.17.2"

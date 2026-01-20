@@ -2,7 +2,7 @@
 title: 'DuckDB WASMとOPFSでGoogleマイアクティビティをブラウザ完結で可視化してみた'
 publishedAt: '2025-09-17'
 summary: 'DuckDB WASMとOrigin Private File System (OPFS) を組み合わせ、Google マイアクティビティの履歴をブラウザ内に閉じたまま扱えるようにしたときの設計と学びを整理しました。'
-tags: ["DuckDB", "OPFS"]
+tags: ["開発ツール", "ブラウザ"]
 index: false
 ---
 

@@ -2,7 +2,7 @@
 title: 'Google Apps Script で FetchAllとRedirctURL の組み合わせは悪い'
 publishedAt: '2020-02-24'
 summary: 'Google Apps Script (以下、GAS)で、困ったことがあったので備忘録として残しておこうと思います。'
-tags: ["Google Apps Script", "Learn"]
+tags: ["Google"]
 ---
 
 Google Apps Script (以下、GAS)で、困ったことがあったので備忘録として残しておこうと思います。

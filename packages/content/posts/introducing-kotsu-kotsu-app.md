@@ -2,7 +2,7 @@
 title: '自由フォーマットでこつこつ記録して可視化するアプリを作った'
 publishedAt: '2024-05-25'
 summary: '何でもこつこつ記録して可視化できるWebアプリ、こつこつを作りました！'
-tags: ["Artifact"]
+tags: ["成果物"]
 index: false
 ---
 

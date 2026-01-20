@@ -2,7 +2,7 @@
 title: 'JavaScriptのdebuggerを使ってデバッグしよう (Browser/Node.js/Jest)'
 publishedAt: '2022-07-09'
 summary: 'JavaScript の標準機能 `debugger` を使って、デバッグをしましょう。標準機能なので、React などのライブラリでも使えます。'
-tags: ["JavaScript", "Debugger"]
+tags: ["フロントエンド", "開発ツール"]
 index: false
 ---
 

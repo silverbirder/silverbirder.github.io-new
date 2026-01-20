@@ -2,7 +2,7 @@
 title: '【増枠】Frontend de KANPAI! 7 - Going on 令和 - 2019年7月19日参加レポート'
 publishedAt: '2019-07-20'
 summary: '今回はDeNAさん主催のFrontendのイベントに参加してきましたので、報告しようと思います。hashtagはこちら frokan イベント概要 「Frontend de KANPAI!」（以下、FROKAN）は、フロントエンドエンジニアやフロントエンドに興味がある人が集い、ドリンク片手にゆるく交流・技術交換ができるコミュニティを目指しています。'
-tags: ["Report", "Frontend", "Tokyo"]
+tags: ["レポート", "フロントエンド"]
 ---
 
 今回は DeNA さん主催の Frontend のイベントに参加してきましたので、

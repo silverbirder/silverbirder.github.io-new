@@ -2,7 +2,7 @@
 title: '技術書典7 で「はじめてのWeb Components入門」を初出版します！'
 publishedAt: '2019-08-30'
 summary: 'この度、初めて書籍を出版することになりました！「はじめてのWeb Components入門」本を技術書典7で販売します。'
-tags: ["Web Components", "Book"]
+tags: ["フロントエンド", "書籍レビュー"]
 ---
 
 この度、初めて書籍を出版することになりました！

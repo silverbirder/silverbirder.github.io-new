@@ -2,7 +2,7 @@
 title: 'Docker Image に 構造化テスト container-structure-test を試してみた'
 publishedAt: '2024-03-29'
 summary: 'Dockerイメージ内の構造や設定が期待通りかどうかを検証する `container-structure-test` を知りました。container-structure-test GitHub リポジトリ。せっかくなので、試してみました。'
-tags: ["Test", "Docker"]
+tags: ["テスト", "クラウドインフラ"]
 index: false
 ---
 

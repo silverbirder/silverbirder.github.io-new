@@ -2,7 +2,7 @@
 title: 'connect-webやってみた'
 publishedAt: '2022-08-20'
 summary: 'connect-web の記事が、はてブでトレンドになっていました。気になったので、試してみました。サンプルコードは、次のリポジトリに置いています。'
-tags: ["gRPC", "React", "Scrap"]
+tags: ["バックエンド", "フロントエンド", "クローリング"]
 index: false
 ---
 

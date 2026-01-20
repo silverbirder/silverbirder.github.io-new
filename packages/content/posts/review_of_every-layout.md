@@ -2,7 +2,7 @@
 title: "Every Layoutを読みました"
 publishedAt: "2024-11-16"
 summary: "先日、『Every Layout - モジュラーなレスポンシブデザインを実現するCSS設計論』を読みました。CSS設計に関する深い洞察が詰まった一冊で、多くの学びを得られました。本記事では、その中で特に印象に残ったポイントを紹介します。"
-tags: ["Review", "CSS"]
+tags: ["書籍レビュー", "フロントエンド"]
 index: false
 ---
 

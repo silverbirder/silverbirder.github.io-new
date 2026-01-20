@@ -2,7 +2,7 @@
 title: '「マイクロフロントエンド」を読みました'
 publishedAt: '2022-11-13'
 summary: 'DAZN の Luca Mezzalira さんが書かれたマイクロフロントエンドを読みました。簡単な書籍レビューを残しておこうかなと思います。'
-tags: ["Micro Frontends", "Review"]
+tags: ["フロントエンド", "書籍レビュー"]
 ---
 
 DAZN の Luca Mezzalira さんが書かれた[マイクロフロントエンド](https://www.oreilly.co.jp/books/9784814400027/) を読みました。簡単な書籍レビューを残しておこうかなと思います。

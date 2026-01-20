@@ -2,7 +2,7 @@
 title: 'ObsidianでiPhoneからGit Commitする'
 publishedAt: '2022-10-18'
 summary: 'WikiWikiWeb というコンセプトが好きで、そのコンセプトが含まれている Obsidian や Scrapbox が好きです。Obsidian には、obsidian-gitという Git 連携のプラグインがあります。こちらには、デスクトップだけでなく、モバイルからでも Git Commit できるようになりました。'
-tags: ["Obsidian", "Git", "iPhone", "Scrap"]
+tags: ["開発ツール", "クローリング"]
 index: false
 ---
 

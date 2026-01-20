@@ -29,6 +29,7 @@ const steps = [
   "fix-md012-no-multiple-blanks.mjs",
   "fix-md045-no-alt-text.mjs",
   "fix-md047-single-trailing-newline.mjs",
+  "normalize-tags.mjs",
 ];
 
 let exitCode = 0;

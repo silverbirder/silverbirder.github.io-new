@@ -2,7 +2,7 @@
 title: 'GraphQLの歴史'
 publishedAt: '2022-07-30'
 summary: 'GraphQL を業務で使い始めました。いつものように、GraphQL の歴史が気になったので、調べてみました。'
-tags: ["GraphQL", "History"]
+tags: ["バックエンド"]
 index: false
 ---
 

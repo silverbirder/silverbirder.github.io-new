@@ -2,7 +2,7 @@
 title: 'TypescriptでArchUnitしてみた'
 publishedAt: '2020-11-28'
 summary: 'ArchUnitをというものを最近知りました。依存関係のテストができるそうです。さっそく試してみたいと思いますので、その備忘録として残しておきます。'
-tags: ["Typescript", "Unit Test", "Arch Unit", "Test", "Clean Architecture"]
+tags: ["フロントエンド", "テスト", "バックエンド"]
 ---
 
 ArchUnit をというものを最近知りました。依存関係のテストができるそうです。さっそく試してみたいと思いますので、その備忘録として残しておきます。

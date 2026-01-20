@@ -2,7 +2,7 @@
 title: '【増枠】Mix Leap Study 45 - Google I/O、WWDCまとめて報告会！ 2019年6月15日参加レポート'
 publishedAt: '2019-06-27'
 summary: '今回は、ヤフー株式会社主催の下記セミナーに参加してきました。Google/Appleどちらも大好きで、けど海外カンファレンスにいけなかった私にとって、今回の報告会は**新鮮な内容**ばかりでした。その内容を記事に書こうと思います。'
-tags: ["Report", "Mix Leap Study", "Google I/O", "WWDC", "Osaka"]
+tags: ["レポート", "Google"]
 ---
 
 今回は、ヤフー株式会社主催の下記セミナーに参加してきました。

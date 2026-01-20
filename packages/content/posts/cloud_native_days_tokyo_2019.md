@@ -2,7 +2,7 @@
 title: 'Cloud Native Days Tokyo 2019 -2019年7月22-23日参加レポート'
 publishedAt: '2019-07-27'
 summary: '今回、東京で開催されましたCloud Native Days Tokyo 2019に2日間とも参加してきましたので、報告しようと思います。セッション毎の報告というより、全体を通した感想を話そうかなと思います。'
-tags: ["Report", "Cloud Native Days", "Tokyo", "Kubernetes"]
+tags: ["レポート", "クラウドインフラ"]
 ---
 
 今回、東京で開催されました Cloud Native Days Tokyo 2019 に 2 日間とも参加してきましたので、報告しようと思います。

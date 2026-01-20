@@ -2,7 +2,7 @@
 title: 'Testcontainersで実現する、使い捨て結合テスト環境構築とテスト実施'
 publishedAt: '2025-01-03'
 summary: 'みなさん、Testcontainersをご存知ですか？Testcontainersは、Dockerコンテナを利用して実際のサービスを統合テストで手軽に使用できるオープンソースのライブラリです。今回、Testcontainersを使って、GitHub Actions上でRails API、MySQL、Next.jsをDockerコンテナとして起動させ、複数のテストシナリオを独立してテストすることができました。以下はその概要図です。本記事では、このテストについての解説と学びを紹介したいと思います。'
-tags: ["Test"]
+tags: ["テスト"]
 ---
 
 みなさん、Testcontainersをご存知ですか？

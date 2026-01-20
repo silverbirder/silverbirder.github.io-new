@@ -2,7 +2,7 @@
 title: 'Ara-Framework で Micro Frontends with SSR'
 publishedAt: '2020-08-23'
 summary: 'みなさん、こんにちは。silverbirder です。、Micro Frontends があります。今、Ara-Frameworkというフレームワークを使った Micro Frontends のアプローチ方法を学んでいます。'
-tags: ["Ara Framework", "Micro Frontends", "SSR", "Artifact"]
+tags: ["バックエンド", "フロントエンド", "成果物"]
 ---
 
 みなさん、こんにちは。silverbirder です。

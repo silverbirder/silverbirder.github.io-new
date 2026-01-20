@@ -2,7 +2,7 @@
 title: 'ライティングの効率化ツール：AI Ghostwriterの紹介'
 publishedAt: '2023-07-17'
 summary: '最近、ビアードパパの焼きチーズケーキシューにハマっている silverbirder です。文章作成が苦手な私は、AI が文章を代筆する「AI Ghostwriter」という Chrome の拡張機能を開発しました。今回は、この便利なツールの紹介をします。'
-tags: ["Chrome Extension", "ChatGPT", "AI", "Artifact"]
+tags: ["ブラウザ", "AI", "成果物"]
 ---
 
 最近、ビアードパパの焼きチーズケーキシューにハマっている silverbirder です。

@@ -2,7 +2,7 @@
 title: 'WebComponentsでoEmbedのコンポーネントを開発して、学んだこと'
 publishedAt: '2022-03-25'
 summary: 'WebComponents で、oEmbed コンポーネントを開発し、公開しました。開発していく上で、学んだことを列挙しようと思います。'
-tags: ["Web Components", "OEmbed", "Learn"]
+tags: ["フロントエンド", "ブラウザ"]
 ---
 
 WebComponents で、oEmbed コンポーネントを開発し、公開しました。

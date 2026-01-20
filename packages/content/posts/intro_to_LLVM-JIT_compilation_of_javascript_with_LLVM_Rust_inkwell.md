@@ -2,7 +2,7 @@
 title: 'LLVM入門 - javascriptをLLVM(Rust:inkwell)でJITコンパイルするまで'
 publishedAt: '2021-09-04'
 summary: 'コンパイラ基盤であるLLVMについて、全く知識がない私が、javascriptソースコードをパースしLLVMでコンパイルできるようになりました。LLVMの記事は数多くありますが、初心者向けの記事が少なく感じたため、本記事では、できる限り分かりやすくLLVMについて紹介できる記事を書こうと思います。ソースコードは、こちらに置いています。'
-tags: ["LLVM", "Javascript", "Rust", "Inkwell", "JIT", "Survey"]
+tags: ["開発ツール", "フロントエンド", "Rust"]
 index: false
 ---
 

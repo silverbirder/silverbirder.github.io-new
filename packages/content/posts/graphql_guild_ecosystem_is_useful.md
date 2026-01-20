@@ -2,7 +2,7 @@
 title: 'GraphQL Guildのエコシステムって便利だね'
 publishedAt: '2022-10-15'
 summary: 'GraphQL Guild ってご存知ですか？GraphQL 界隈だと、Code Generator が有名と思いますが'
-tags: ["GraphQL", "Survey"]
+tags: ["バックエンド"]
 index: false
 ---
 

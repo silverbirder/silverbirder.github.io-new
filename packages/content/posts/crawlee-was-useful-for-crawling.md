@@ -2,7 +2,7 @@
 title: 'クローリングをシュッとやるのに、Crawleeが便利だった'
 publishedAt: '2022-09-14'
 summary: 'スクレイピングしたいときって、あると思います。Crawlee という OSS が便利だったので、共有します。'
-tags: ["Crawlee", "Crawler", "Survey"]
+tags: ["クローリング"]
 index: false
 ---
 

@@ -2,7 +2,7 @@
 title: 'Webフロントエンドにおける網羅的テストパターンガイド'
 publishedAt: '2023-04-28'
 summary: 'こんにちは、テストが好きなsilverbirderと申します。Webフロントエンドのテストは実施していますか？ユニットテストやビジュアルリグレッションテストは広く知られていると思います。しかし、パフォーマンステストのためのテストコードはありますか？また、カオスエンジニアリングテストやアクセシビリティテストはありますか？'
-tags: ["Frontend", "Test", "React", "Jest", "Storybook", "Cucumber", "Playwright", "Performance"]
+tags: ["フロントエンド", "テスト"]
 index: false
 ---
 

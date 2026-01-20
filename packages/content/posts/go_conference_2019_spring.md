@@ -2,7 +2,7 @@
 title: 'Go Conference 2019 Spring - 2019年5月18日 参加レポート'
 publishedAt: '2019-05-21'
 summary: 'https://gocon.jp こちらに参加してきましたので、ご報告します！'
-tags: ["Report", "Go Conference", "Tokyo"]
+tags: ["レポート"]
 ---
 
 https://gocon.connpass.com/event/124530/

@@ -2,7 +2,7 @@
 title: '一足遅れて Kubernetes を学び始める - 11. config&storage その2 -'
 publishedAt: '2019-05-27'
 summary: '前回 一足遅れて Kubernetes を学び始める - 10. config&storage その1 -では、configについて学習しました。今回は、storageを学びます。'
-tags: ["Kubernetes"]
+tags: ["クラウドインフラ"]
 ---
 
 ## ストーリー

@@ -2,7 +2,7 @@
 title: 'OEmbedとOGPのWebComponentsを作ったので、自分のブログサイトに使う'
 publishedAt: '2022-04-11'
 summary: '次の 2 つの Web Components を作成しました。背景 自分のブログで、埋め込みコンテンツを表示したいな〜って思ってました。iframely というサービスを使っていましたが、自前で作りたいなというモチベーションが生まれました。そこで、OEmbed と OGP の表示ができるように、Web Components を独自に作成しました。'
-tags: ["Web Components", "OEmbed", "OGP", "Artifact"]
+tags: ["フロントエンド", "ブラウザ", "成果物"]
 ---
 
 次の 2 つの Web Components を作成しました。

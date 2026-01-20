@@ -2,7 +2,7 @@
 title: 'zodのrefineにあるpathにハマった'
 publishedAt: '2023-01-07'
 summary: 'zodのrefineを使っていたのですが、pathの使い方を全く理解できておらず、小一時間ほどハマってしまったことがあったので、備忘録として残しておきます。'
-tags: ["zod", "Scrap"]
+tags: ["JavaScript", "クローリング"]
 index: false
 ---
 
