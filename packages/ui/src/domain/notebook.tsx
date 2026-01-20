@@ -131,17 +131,17 @@ export const Notebook = ({
   const actionButtonSize = "var(--notebook-line-height)";
   const globalNavigationItems = [
     {
-      bg: "blue.subtle",
+      bg: "green.subtle",
       href: "/",
       label: t("globalNavigationTop"),
     },
     {
-      bg: "yellow.subtle",
+      bg: "green.subtle",
       href: "/me",
       label: t("globalNavigationMe"),
     },
     {
-      bg: "pink.subtle",
+      bg: "green.subtle",
       href: "/blog",
       label: t("globalNavigationBlog"),
     },
@@ -456,6 +456,17 @@ export const Notebook = ({
           </Box>
         )}
       </NotebookProse>
+      <Box
+        borderTopColor="border"
+        borderTopWidth="1px"
+        height={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+        w="full"
+      >
+        <Box position="relative" w="full">
+          <NotebookDash height={6} patternWidth={128} />
+          <NotebookDash height={3} patternWidth={16} />
+        </Box>
+      </Box>
     </VStack>
   );
 };

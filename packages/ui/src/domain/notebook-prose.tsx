@@ -128,6 +128,16 @@ export const NotebookProse = chakra("div", {
     "& .remark-link-card-plus__url": {
       color: "inherit",
     },
+    // 最後の行の下線が見えるようにする（とりあえず）
+    "&::after": {
+      backgroundColor: "bg",
+      bottom: 0,
+      content: '""',
+      height: "var(--notebook-line-height)",
+      insetInlineEnd: 0,
+      insetInlineStart: 0,
+      position: "absolute",
+    },
     "--notebook-line-height": NOTEBOOK_LINE_HEIGHT,
     _dark: {
       [inWhere("& pre code span")]: {
@@ -428,6 +438,7 @@ export const NotebookProse = chakra("div", {
     },
     lineHeight: "var(--notebook-line-height)",
     paddingInline: "var(--notebook-line-height)",
+    position: "relative",
   },
   defaultVariants: {
     size: "md",
