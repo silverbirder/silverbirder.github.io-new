@@ -457,9 +457,17 @@ export const Notebook = ({
         )}
       </NotebookProse>
       <Box
-        borderTopColor="border"
-        borderTopWidth="1px"
+        _before={{
+          background: "var(--chakra-colors-border)",
+          content: '""',
+          height: "1px",
+          left: 0,
+          position: "absolute",
+          right: 0,
+          top: "-1px",
+        }}
         height={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+        position="relative"
         w="full"
       >
         <Box position="relative" w="full">

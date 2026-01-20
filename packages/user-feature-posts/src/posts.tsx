@@ -94,7 +94,7 @@ export const Posts = ({ posts }: Props) => {
           <Box
             aria-label={t("paginationLabel")}
             className="not-prose"
-            mt={"var(--notebook-line-height)"}
+            my={"var(--notebook-line-height)"}
           >
             <Stack direction="row" gap={2} wrap="wrap">
               <ViewTransitionLink
