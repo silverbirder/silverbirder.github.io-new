@@ -1,12 +1,14 @@
 "use client";
 
-import { Box, Stack, Text } from "@chakra-ui/react";
-import { Notebook, NotebookPostItem, ViewTransitionLink } from "@repo/ui";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { Notebook, NotebookPostItem, Tag, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 import {
   filterPosts,
+  getAvailableTags,
+  getAvailableYears,
   getPaginationItems,
   normalizePosts,
   paginatePosts,
@@ -33,6 +35,8 @@ export const Posts = ({ posts }: Props) => {
   const t = useTranslations("user.blog");
   const metaSeparator = t("metaSeparator");
   const normalizedPosts = normalizePosts(posts);
+  const availableYears = getAvailableYears(normalizedPosts);
+  const availableTags = getAvailableTags(normalizedPosts);
   const filteredPosts = filterPosts(normalizedPosts, {
     tag: selectedTag,
     year: selectedYear,
@@ -90,11 +94,11 @@ export const Posts = ({ posts }: Props) => {
             ))}
           </Stack>
         )}
-        {pagination.totalPages > 1 ? (
+        {pagination.totalPages > 1 && (
           <Box
             aria-label={t("paginationLabel")}
             className="not-prose"
-            my={"var(--notebook-line-height)"}
+            pb={"var(--notebook-line-height)"}
           >
             <Stack direction="row" gap={2} wrap="wrap">
               <ViewTransitionLink
@@ -143,7 +147,30 @@ export const Posts = ({ posts }: Props) => {
               </ViewTransitionLink>
             </Stack>
           </Box>
-        ) : null}
+        )}
+        {(availableYears.length > 0 || availableTags.length > 0) && (
+          <Box pb={"var(--notebook-line-height)"}>
+            <Heading as="h2">{t("filtersTitle")}</Heading>
+            {availableYears.length > 0 && (
+              <Box>
+                <Stack direction="row" gap={0} wrap="wrap">
+                  {availableYears.map((year) => (
+                    <Tag iconType="year" key={year} mr={2} tag={year} />
+                  ))}
+                </Stack>
+              </Box>
+            )}
+            {availableTags.length > 0 && (
+              <Box>
+                <Stack direction="row" gap={0} wrap="wrap">
+                  {availableTags.map((tag) => (
+                    <Tag key={tag} mr={2} tag={tag} />
+                  ))}
+                </Stack>
+              </Box>
+            )}
+          </Box>
+        )}
       </Notebook>
     </Box>
   );
