@@ -25,7 +25,7 @@ export const Tag = ({ iconType = "tag", tag, ...linkProps }: Props) => {
 
   return (
     <ViewTransitionLink
-      _hover={{ bg: "bg", textDecoration: "none" }}
+      _hover={{ bg: "transparent", textDecoration: "none" }}
       alignItems="center"
       aria-label={iconType === "year" ? `Filter by year ${tag}` : undefined}
       color="green.fg"
