@@ -124,6 +124,7 @@ export const PostArticle = ({
     <Box w="full">
       <Notebook
         follow={follow}
+        isBackToBlog={true}
         navigation={navigation}
         postNumber={meta.postNumber}
         publishedAt={meta.publishedAt}

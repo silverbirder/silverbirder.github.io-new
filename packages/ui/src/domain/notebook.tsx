@@ -48,6 +48,7 @@ type FollowSection = {
 type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   children: ReactNode;
   follow?: FollowSection;
+  isBackToBlog?: boolean;
   navigation: {
     next?: {
       href: string;
@@ -111,6 +112,7 @@ const formatNotebookDate = (value: string) => {
 export const Notebook = ({
   children,
   follow,
+  isBackToBlog,
   navigation,
   postNumber,
   publishedAt,
@@ -453,6 +455,17 @@ export const Notebook = ({
                 </Stack>
               ))}
             </Stack>
+          </Box>
+        )}
+        {isBackToBlog && (
+          <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
+            <ViewTransitionLink
+              color="green.fg"
+              href="/blog"
+              lineHeight="var(--notebook-line-height)"
+            >
+              {t("backToBlog")}
+            </ViewTransitionLink>
           </Box>
         )}
       </NotebookProse>

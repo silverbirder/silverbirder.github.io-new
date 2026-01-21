@@ -94,7 +94,8 @@
       "relatedTagHeading": "タグ「{tag}」の記事",
       "navigationLabel": "記事ナビゲーション",
       "navigationPrev": "前のページ",
-      "navigationNext": "次のページ"
+      "navigationNext": "次のページ",
+      "backToBlog": "← ブログ一覧へ"
     }
   }
 }
