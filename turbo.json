@@ -17,7 +17,8 @@
     "ADMIN_ALLOWED_EMAILS",
     "CONTENT_GITHUB_BASE_BRANCH",
     "CONTENT_GITHUB_REPOSITORY",
-    "CONTENT_POSTS_PATH"
+    "CONTENT_POSTS_PATH",
+    "IS_TEST"
   ],
   "tasks": {
     "build": {

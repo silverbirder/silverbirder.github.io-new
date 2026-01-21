@@ -28,6 +28,7 @@ import { ShareButtonLine } from "./share-button-line";
 import { ShareButtonThreads } from "./share-button-threads";
 import { ShareButtonWeb } from "./share-button-web";
 import { ShareButtonX } from "./share-button-x";
+import { Spiral } from "./spiral";
 import { Tag } from "./tag";
 import { ViewTransitionLink } from "./view-transition-link";
 
@@ -486,6 +487,19 @@ export const Notebook = ({
         <Box position="relative" w="full">
           <NotebookDash height={6} patternWidth={128} />
           <NotebookDash height={3} patternWidth={16} />
+        </Box>
+        <Box
+          alignItems="center"
+          bottom="0"
+          display="flex"
+          h={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+          justifyContent="center"
+          overflow="hidden"
+          position="absolute"
+          right={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
+          w={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+        >
+          <Spiral strokeColor="green.muted" />
         </Box>
       </Box>
     </VStack>
