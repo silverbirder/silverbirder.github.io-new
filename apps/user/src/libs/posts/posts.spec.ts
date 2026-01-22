@@ -262,4 +262,28 @@ publishedAt: "2025-01-02"
 
     expect(frontmatter.tags).toBeUndefined();
   });
+
+  it("parses index: false as false", async () => {
+    readFile.mockResolvedValue(`---
+title: "No tags"
+publishedAt: "2025-01-02"
+index: false
+---`);
+
+    const frontmatter = await getPostFrontmatter("example");
+
+    expect(frontmatter.index).toBe(false);
+  });
+
+  it("parses index: true as true", async () => {
+    readFile.mockResolvedValue(`---
+title: "No tags"
+publishedAt: "2025-01-02"
+index: true
+---`);
+
+    const frontmatter = await getPostFrontmatter("example");
+
+    expect(frontmatter.index).toBe(true);
+  });
 });

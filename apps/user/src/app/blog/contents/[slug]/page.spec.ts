@@ -47,6 +47,7 @@ describe("generateMetadata", () => {
     const mockedGetPostFrontmatter = vi.mocked(getPostFrontmatter);
 
     mockedGetPostFrontmatter.mockResolvedValue({
+      index: false,
       publishedAt: "2025-10-27",
       summary: "要約テキスト",
       tags: ["TagA", "TagB"],
@@ -70,5 +71,6 @@ describe("generateMetadata", () => {
     expect(metadata.twitter).toMatchObject({
       title: "記事タイトル",
     });
+    expect(metadata.robots).toEqual({ index: false });
   });
 });

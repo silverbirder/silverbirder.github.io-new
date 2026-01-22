@@ -13,6 +13,7 @@ const contentDir = path.resolve(
 );
 
 export type PostFrontmatter = {
+  index?: boolean;
   publishedAt?: string;
   summary?: string;
   tags?: string[];
@@ -84,6 +85,7 @@ export const getPostFrontmatter = async (
 ): Promise<PostFrontmatter> => {
   const content = await readFile(path.join(contentDir, `${slug}.md`), "utf8");
   return {
+    index: parseIndex(extractFrontmatterValue(content, "index")),
     publishedAt: extractFrontmatterValue(content, "publishedAt") ?? undefined,
     summary: extractFrontmatterValue(content, "summary") ?? undefined,
     tags: parseTags(extractFrontmatterValue(content, "tags")),
@@ -139,6 +141,14 @@ const parseTags = (value: null | string) => {
     .map((tag) => tag.replace(/^['"]|['"]$/g, ""));
 
   return tags.length > 0 ? tags : undefined;
+};
+
+const parseIndex = (value: null | string): boolean | undefined => {
+  if (!value) return undefined;
+  const trimmed = value.trim().toLowerCase();
+  if (trimmed === "") return true;
+  if (trimmed === "false") return false;
+  return true;
 };
 
 const extractFrontmatterBlock = (content: string) => {

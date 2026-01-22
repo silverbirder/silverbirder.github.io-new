@@ -56,6 +56,9 @@ export async function generateMetadata(
         type: "article",
         url: canonical,
       },
+      robots: {
+        index: frontmatter.index === false ? false : true,
+      },
       title,
       twitter: {
         description,
