@@ -27,8 +27,7 @@ export const ShareButtonWeb = ({
   const buttonWidth = width ?? 9;
 
   const handleClick = async () => {
-    const payload = url.trim();
-    if (!payload || typeof navigator === "undefined") {
+    if (!url || typeof navigator === "undefined") {
       return;
     }
 
@@ -37,7 +36,7 @@ export const ShareButtonWeb = ({
     }
 
     try {
-      await navigator.share({ text, url: payload });
+      await navigator.share({ text, url });
     } catch {
       // ignore share failures
     }

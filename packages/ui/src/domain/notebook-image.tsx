@@ -19,7 +19,7 @@ export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
   const wrapperRef = useRef<HTMLElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
-  const altText = alt?.trim();
+  const altText = alt;
   const hasCaption = Boolean(altText) || Boolean(linkHref);
 
   const alignToGrid = useCallback(() => {

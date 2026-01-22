@@ -1,7 +1,7 @@
 export const parseAllowedEmails = (rawValue?: string) =>
   (rawValue ?? "")
     .split(",")
-    .map((value) => value.trim().toLowerCase())
+    .map((value) => value.toLowerCase())
     .filter(Boolean);
 
 export const isAllowedEmail = (

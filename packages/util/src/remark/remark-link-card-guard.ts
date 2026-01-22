@@ -59,7 +59,7 @@ export const createRemarkLinkCardGuard = () => {
         return;
       }
       const text = resolveTextValue(node);
-      if (!text || text.trim() !== url) {
+      if (!text || text !== url) {
         return;
       }
       replaceLinkText(node, "tweet");

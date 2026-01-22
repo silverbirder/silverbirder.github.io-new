@@ -5,19 +5,18 @@ const normalizeBasePath = (basePath: string | undefined) => {
     return "";
   }
 
-  const trimmed = basePath.trim();
-  if (trimmed === "/") {
+  if (basePath === "/") {
     return "";
   }
 
-  const withoutTrailingSlash = trimmed.replace(/\/+$/, "");
+  const withoutTrailingSlash = basePath.replace(/\/+$/, "");
   return withoutTrailingSlash.startsWith("/")
     ? withoutTrailingSlash
     : `/${withoutTrailingSlash}`;
 };
 
 const normalizeSiteUrl = (siteUrl: string | undefined) => {
-  const target = siteUrl?.trim() || DEFAULT_SITE_URL;
+  const target = siteUrl || DEFAULT_SITE_URL;
   return target.replace(/\/+$/, "");
 };
 

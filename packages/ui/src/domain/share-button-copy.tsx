@@ -30,8 +30,7 @@ export const ShareButtonCopy = ({
   const buttonWidth = width ?? 9;
 
   const handleClick = async () => {
-    const payload = url.trim();
-    if (!payload || typeof navigator === "undefined") {
+    if (!url || typeof navigator === "undefined") {
       return;
     }
     const { clipboard } = navigator;
@@ -48,7 +47,7 @@ export const ShareButtonCopy = ({
         setCopied(false);
         timeoutRef.current = null;
       }, 2000);
-      await clipboard.writeText(payload);
+      await clipboard.writeText(url);
     } catch {
       if (timeoutRef.current) {
         window.clearTimeout(timeoutRef.current);

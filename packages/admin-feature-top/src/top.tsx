@@ -10,8 +10,7 @@ type Props = {
 
 export const Top = ({ name, onSignOut, posts }: Props) => {
   const t = useTranslations("admin.home");
-  const trimmedName = name?.trim();
-  const displayName = trimmedName ? trimmedName : t("unknownUser");
+  const displayName = name ? name : t("unknownUser");
   const signedInAs = t("signedInAs", { name: displayName });
 
   return (

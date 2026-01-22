@@ -101,22 +101,23 @@ const extractFrontmatterValue = (content: string, key: string) => {
 
   const line = frontmatter
     .split(/\r?\n/)
-    .find((entry) => entry.trim().startsWith(`${key}:`));
+    .find((entry) => entry.startsWith(`${key}:`));
   if (!line) {
     return null;
   }
 
-  const rawValue = line.replace(new RegExp(`^\\s*${key}:\\s*`), "").trim();
-  if (rawValue === "") {
+  const rawValue = line.replace(new RegExp(`^\\s*${key}:\\s*`), "");
+  const raw = rawValue.replace(/^\s+|\s+$/g, "");
+  if (raw === "") {
     return null;
   }
 
-  const quote = rawValue.charAt(0);
-  if ((quote === "'" || quote === '"') && rawValue.endsWith(quote)) {
-    return rawValue.slice(1, -1);
+  const quote = raw.charAt(0);
+  if ((quote === "'" || quote === '"') && raw.endsWith(quote)) {
+    return raw.slice(1, -1);
   }
 
-  return rawValue;
+  return raw;
 };
 
 const parseTags = (value: null | string) => {
@@ -124,7 +125,7 @@ const parseTags = (value: null | string) => {
     return undefined;
   }
 
-  const trimmed = value.trim();
+  const trimmed = value.replace(/^\s+|\s+$/g, "");
   if (!trimmed) {
     return undefined;
   }
@@ -136,16 +137,15 @@ const parseTags = (value: null | string) => {
 
   const tags = normalized
     .split(",")
-    .map((tag) => tag.trim())
-    .filter((tag) => tag.length > 0)
-    .map((tag) => tag.replace(/^['"]|['"]$/g, ""));
+    .map((tag) => tag.replace(/^['"]|['"]$/g, "").replace(/^\s+|\s+$/g, ""))
+    .filter((tag) => tag.length > 0);
 
   return tags.length > 0 ? tags : undefined;
 };
 
 const parseIndex = (value: null | string): boolean | undefined => {
   if (!value) return undefined;
-  const trimmed = value.trim().toLowerCase();
+  const trimmed = value.replace(/^\s+|\s+$/g, "").toLowerCase();
   if (trimmed === "") return true;
   if (trimmed === "false") return false;
   return true;
@@ -205,7 +205,7 @@ export const getRelatedPostsByTags = (
     const seen = new Set<string>();
     const tags = input.tags ?? [];
     return tags
-      .map((tag) => tag.trim())
+      .map((tag) => tag.replace(/^\s+|\s+$/g, ""))
       .filter((tag) => tag.length > 0)
       .filter((tag) => {
         if (seen.has(tag)) {

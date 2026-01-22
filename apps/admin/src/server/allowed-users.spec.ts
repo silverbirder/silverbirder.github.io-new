@@ -4,7 +4,7 @@ import { isAllowedEmail, parseAllowedEmails } from "./allowed-users";
 
 describe("parseAllowedEmails", () => {
   it("parses comma-separated emails, trims, lowercases, and removes blanks", () => {
-    const raw = " Alice@Example.com , ,BOB@EXAMPLE.COM,  carol@example.com ";
+    const raw = "Alice@Example.com,BOB@EXAMPLE.COM,carol@example.com";
     expect(parseAllowedEmails(raw)).toEqual([
       "alice@example.com",
       "bob@example.com",

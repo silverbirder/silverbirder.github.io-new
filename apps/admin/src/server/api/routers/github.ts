@@ -26,17 +26,13 @@ const parseRepository = (repository: string) => {
 };
 
 const normalizeMarkdownFileName = (fileName: string) => {
-  const trimmed = fileName.trim();
-  if (trimmed.length === 0) {
-    throw new TRPCError({ code: "BAD_REQUEST", message: "fileName is empty." });
-  }
-  if (trimmed.includes("/") || trimmed.includes("\\")) {
+  if (fileName.includes("/") || fileName.includes("\\")) {
     throw new TRPCError({
       code: "BAD_REQUEST",
       message: "fileName must not contain path separators.",
     });
   }
-  return trimmed.toLowerCase().endsWith(".md") ? trimmed : `${trimmed}.md`;
+  return fileName.toLowerCase().endsWith(".md") ? fileName : `${fileName}.md`;
 };
 
 const buildBranchName = (fileName: string) => {
@@ -124,8 +120,8 @@ export const githubRouter = createTRPCRouter({
         repo,
       });
 
-      const prTitle = input.pullRequestTitle?.trim()
-        ? input.pullRequestTitle.trim()
+      const prTitle = input.pullRequestTitle
+        ? input.pullRequestTitle
         : `docs: add ${normalizedFileName}`;
       const prResponse = await octokit.request(
         "POST /repos/{owner}/{repo}/pulls",

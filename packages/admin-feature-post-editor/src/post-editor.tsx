@@ -69,7 +69,7 @@ export const PostEditor = ({
 
   const normalizeAltText = useCallback((fileName: string) => {
     const trimmed = fileName.replace(/\.[^.]+$/, "");
-    const replaced = trimmed.replace(/[-_]+/g, " ").trim();
+    const replaced = trimmed.replace(/[-_]+/g, " ");
     return replaced.length > 0 ? replaced : "image";
   }, []);
 
@@ -156,7 +156,7 @@ export const PostEditor = ({
   );
   const { getInputProps, getRootProps, isDragActive } =
     useDropzone(dropzoneConfig);
-  const isBodyEmpty = body.trim().length === 0;
+  const isBodyEmpty = body.length === 0;
 
   const hasFrontmatter = useMemo(() => {
     const trimmed = body.trimStart();
@@ -169,7 +169,7 @@ export const PostEditor = ({
   const createPullRequestIsDisabled =
     createPullRequestDisabled === true ||
     isBodyEmpty ||
-    (title.trim().length === 0 && !hasFrontmatter) ||
+    (title.length === 0 && !hasFrontmatter) ||
     isUploading ||
     isResolvingLinks ||
     isCreatingPullRequest ||
@@ -195,7 +195,7 @@ export const PostEditor = ({
     }
 
     const currentBody = bodyRef.current;
-    if (currentBody.trim().length === 0) {
+    if (currentBody.length === 0) {
       return;
     }
 

@@ -14,14 +14,12 @@ type Props = {
 };
 
 const buildThreadsShareUrl = (url: string, text: string) => {
-  const trimmedText = text.trim();
-  const trimmedUrl = url.trim();
   const params: string[] = [];
-  if (trimmedText) {
-    params.push(`text=${encodeURIComponent(trimmedText)}`);
+  if (text) {
+    params.push(`text=${encodeURIComponent(text)}`);
   }
-  if (trimmedUrl) {
-    params.push(`url=${encodeURIComponent(trimmedUrl)}`);
+  if (url) {
+    params.push(`url=${encodeURIComponent(url)}`);
   }
   return params.length > 0
     ? `https://www.threads.net/intent/post?${params.join("&")}`

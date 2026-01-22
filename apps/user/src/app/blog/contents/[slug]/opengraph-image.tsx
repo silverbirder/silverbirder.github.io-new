@@ -45,7 +45,7 @@ const truncateToWidth = (text: string, maxWidth: number) => {
 };
 
 const buildTitleLines = async (title: string) => {
-  const cleanTitle = title.trim();
+  const cleanTitle = title;
   if (!cleanTitle) return [] as string[];
 
   const maxLines = 3;
@@ -162,7 +162,7 @@ export default async function OpenGraphImage(props: {
     notFound();
   }
 
-  if (!title.trim()) {
+  if (!title) {
     notFound();
   }
 

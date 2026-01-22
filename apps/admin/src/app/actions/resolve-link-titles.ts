@@ -59,7 +59,7 @@ const decodeHtmlEntities = (value: string) => {
 };
 
 const normalizeTitle = (title: string) => {
-  const normalized = title.replace(/\s+/g, " ").trim();
+  const normalized = title.replace(/\s+/g, " ");
   return normalized.length > 0 ? normalized : null;
 };
 

@@ -33,7 +33,7 @@ const extractTweetId = (href?: string) => {
 
 const normalizeChildren = (children: ReactNode) => {
   return Children.toArray(children).filter((child) => {
-    if (typeof child === "string") return child.trim().length > 0;
+    if (typeof child === "string") return child.length > 0;
     if (typeof child === "boolean") return false;
     return child != null;
   });

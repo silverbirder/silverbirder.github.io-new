@@ -59,9 +59,9 @@ const buildMarkdown = (draft: { body: string; title: string }, date: Date) => {
     return draft.body.trimStart();
   }
 
-  const title = escapeYamlSingleQuotedString(draft.title.trim());
+  const title = escapeYamlSingleQuotedString(draft.title);
   const publishedAt = formatDate(date);
-  const body = draft.body.trim();
+  const body = draft.body;
 
   return `---\ntitle: '${title}'\npublishedAt: '${publishedAt}'\nsummary: ''\ntags: []\nindex: false\n---\n\n${body}\n`;
 };
@@ -92,8 +92,7 @@ export const PostEditorWithPullRequest = ({
           const result = await createPullRequestMutation.mutateAsync({
             content,
             fileName,
-            pullRequestTitle:
-              draft.title.trim().length > 0 ? draft.title : undefined,
+            pullRequestTitle: draft.title.length > 0 ? draft.title : undefined,
           });
 
           if (result.url) {
