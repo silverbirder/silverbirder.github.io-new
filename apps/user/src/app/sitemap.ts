@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     { url: buildSiteUrl("") },
+    { url: buildSiteUrl("me/") },
     { url: buildSiteUrl("blog/") },
     ...slugs.map(({ slug }) => ({
       url: buildSiteUrl(`blog/contents/${slug}/`),

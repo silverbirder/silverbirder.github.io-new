@@ -49,6 +49,7 @@ describe("sitemap", () => {
 
     expect(entries).toEqual([
       { url: "https://example.com/docs/" },
+      { url: "https://example.com/docs/me/" },
       { url: "https://example.com/docs/blog/" },
       { url: "https://example.com/docs/blog/contents/second-post/" },
       { url: "https://example.com/docs/blog/contents/first-post/" },
