@@ -77,23 +77,51 @@ export const Posts = ({ posts }: Props) => {
   return (
     <Box w="full">
       <Notebook navigation={{}} relatedPosts={[]} tags={[]} title={t("title")}>
-        {pagination.items.length === 0 ? (
-          <Text>{t("empty")}</Text>
-        ) : (
-          <Stack
-            className="not-prose"
-            gap="var(--notebook-line-height)"
-            py="var(--notebook-line-height)"
-          >
-            {pagination.items.map((post) => (
+        <Stack
+          className="not-prose"
+          gap="var(--notebook-line-height)"
+          py="var(--notebook-line-height)"
+        >
+          {(selectedYear || selectedTag) && (
+            <Stack direction="row" gap={0} wrap="wrap">
+              {selectedYear && (
+                <Tag
+                  href={buildHref({ page: null, year: null })}
+                  iconType="year"
+                  isSelected
+                  mr={2}
+                  tag={selectedYear}
+                />
+              )}
+              {selectedTag && (
+                <Tag
+                  href={buildHref({ page: null, tag: null })}
+                  isSelected
+                  mr={2}
+                  tag={selectedTag}
+                />
+              )}
+            </Stack>
+          )}
+          {pagination.items.length === 0 ? (
+            <Text>{t("empty")}</Text>
+          ) : (
+            pagination.items.map((post) => (
               <NotebookPostItem
+                buildTagHref={(tag) =>
+                  buildHref({
+                    page: null,
+                    tag: selectedTag === tag ? null : tag,
+                  })
+                }
                 key={post.slug}
                 metaSeparator={metaSeparator}
                 post={post}
+                selectedTag={selectedTag}
               />
-            ))}
-          </Stack>
-        )}
+            ))
+          )}
+        </Stack>
         {pagination.totalPages > 1 && (
           <Box
             aria-label={t("paginationLabel")}
@@ -156,7 +184,10 @@ export const Posts = ({ posts }: Props) => {
                 <Stack direction="row" gap={0} wrap="wrap">
                   {availableYears.map((year) => (
                     <Tag
-                      href={buildHref({ page: null, year })}
+                      href={buildHref({
+                        page: null,
+                        year: selectedYear === year ? null : year,
+                      })}
                       iconType="year"
                       isSelected={selectedYear === year}
                       key={year}
@@ -172,7 +203,10 @@ export const Posts = ({ posts }: Props) => {
                 <Stack direction="row" gap={0} wrap="wrap">
                   {availableTags.map((tag) => (
                     <Tag
-                      href={buildHref({ page: null, tag })}
+                      href={buildHref({
+                        page: null,
+                        tag: selectedTag === tag ? null : tag,
+                      })}
                       isSelected={selectedTag === tag}
                       key={tag}
                       mr={2}

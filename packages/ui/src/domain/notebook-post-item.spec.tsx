@@ -42,4 +42,28 @@ describe("NotebookPostItem", () => {
     expect(container.textContent ?? "").toContain("Related Post");
     expect(container.textContent ?? "").toContain("2025-01-03");
   });
+
+  it("links tags with provided href and marks selected tag", async () => {
+    const { container } = await renderWithProvider(
+      <NotebookPostItem
+        buildTagHref={(tag) => `/blog?year=2024&tag=${tag}`}
+        post={{
+          publishedAt: "2024-12-31",
+          slug: "tagged-post",
+          summary: "Tag summary",
+          tags: ["Notebook", "UI"],
+          title: "Tagged Post",
+        }}
+        selectedTag="UI"
+      />,
+    );
+
+    const selectedLink = container.querySelector('a[aria-current="page"]');
+    const notebookLink = container.querySelector('a[href*="tag=Notebook"]');
+
+    expect(notebookLink).not.toBeNull();
+    expect(notebookLink?.getAttribute("href")).toContain("year=2024");
+    expect(selectedLink?.getAttribute("href")).toContain("year=2024");
+    expect(selectedLink?.getAttribute("href")).toContain("tag=UI");
+  });
 });

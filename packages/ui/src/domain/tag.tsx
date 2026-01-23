@@ -2,8 +2,8 @@
 
 import type { ComponentProps } from "react";
 
-import { chakra, Icon } from "@chakra-ui/react";
-import { FaCalendarDays, FaTag } from "react-icons/fa6";
+import { Box, chakra, Icon } from "@chakra-ui/react";
+import { FaCalendarDays, FaPlus, FaTag, FaXmark } from "react-icons/fa6";
 
 import { ViewTransitionLink } from "./view-transition-link";
 
@@ -25,28 +25,42 @@ export const Tag = ({
   ...linkProps
 }: Props) => {
   const IconComponent = iconType === "year" ? FaCalendarDays : FaTag;
+  const RightIcon = isSelected ? FaXmark : FaPlus;
   const resolvedHref =
     href ?? (iconType === "year" ? buildYearHref(tag) : buildTagHref(tag));
 
   return (
-    <ViewTransitionLink
-      _hover={{ bg: "transparent", textDecoration: "none" }}
+    <Box
       alignItems="center"
-      aria-label={iconType === "year" ? `Filter by year ${tag}` : undefined}
-      color="green.fg"
       display="inline-flex"
-      fontSize="xs"
-      fontWeight={isSelected ? "700" : "600"}
-      gap={"0.5"}
-      height="calc(var(--notebook-line-height) * 1)"
-      href={resolvedHref}
+      height="var(--notebook-line-height)"
       justifyContent="center"
-      textDecoration={isSelected ? "underline" : "none"}
-      aria-current={isSelected ? "page" : undefined}
-      {...linkProps}
     >
-      <Icon aria-hidden as={IconComponent} boxSize="1em" />
-      <chakra.span>{tag}</chakra.span>
-    </ViewTransitionLink>
+      <ViewTransitionLink
+        alignItems="center"
+        aria-current={isSelected ? "page" : undefined}
+        aria-label={iconType === "year" ? `Filter by year ${tag}` : undefined}
+        bg={isSelected ? "green.fg" : "green.subtle"}
+        borderRadius="full"
+        color={isSelected ? "green.contrast" : "green.fg"}
+        display="inline-flex"
+        fontSize="xs"
+        fontWeight={"600"}
+        gap="1"
+        height="calc(var(--notebook-line-height) * 0.75)"
+        href={resolvedHref}
+        justifyContent="center"
+        lineHeight="1"
+        px={2}
+        textDecoration={"none"}
+        {...linkProps}
+      >
+        <Box alignItems="center" display="inline-flex" gap="0.5">
+          <Icon aria-hidden as={IconComponent} boxSize="1em" />
+          <chakra.span>{tag}</chakra.span>
+        </Box>
+        <Icon aria-hidden as={RightIcon} boxSize="1em" />
+      </ViewTransitionLink>
+    </Box>
   );
 };

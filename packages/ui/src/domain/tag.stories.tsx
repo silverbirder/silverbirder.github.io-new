@@ -31,6 +31,7 @@ export const Error: Story = {
 
 export const Partial: Story = {
   args: {
+    isSelected: true,
     tag: "UI",
   },
 };

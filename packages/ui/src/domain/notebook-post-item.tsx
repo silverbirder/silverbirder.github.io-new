@@ -16,11 +16,18 @@ type NotebookPost = {
 };
 
 type Props = {
+  buildTagHref?: (tag: string) => string;
   metaSeparator?: ReactNode;
   post: NotebookPost;
+  selectedTag?: null | string;
 };
 
-export const NotebookPostItem = ({ metaSeparator, post }: Props) => {
+export const NotebookPostItem = ({
+  buildTagHref,
+  metaSeparator,
+  post,
+  selectedTag,
+}: Props) => {
   const summary = post.summary;
   const tags = post.tags;
   const showSummary = summary && summary.length > 0;
@@ -69,7 +76,16 @@ export const NotebookPostItem = ({ metaSeparator, post }: Props) => {
           {showMetaSeparator ? (
             <Text fontSize="sm">{metaSeparator}</Text>
           ) : null}
-          {showTags ? tags.map((tag) => <Tag key={tag} tag={tag} />) : null}
+          {showTags
+            ? tags.map((tag) => (
+                <Tag
+                  href={buildTagHref ? buildTagHref(tag) : undefined}
+                  isSelected={selectedTag === tag}
+                  key={tag}
+                  tag={tag}
+                />
+              ))
+            : null}
         </Flex>
       ) : null}
     </Stack>
