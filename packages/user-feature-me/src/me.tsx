@@ -64,13 +64,18 @@ export const Me = ({ followLinks }: Props) => {
                   <Avatar.Fallback name={t("name")} />
                 </Avatar.Root>
                 <Box
+                  alignItems="flex-start"
+                  display="flex"
                   fontSize="2xs"
+                  lineHeight="1.2"
                   position="absolute"
-                  right="-25px"
+                  right="-30px"
                   top="-30px"
-                  writingMode="vertical-rl"
                 >
-                  {t("greeting")}
+                  <Box mt="0.6rem" writingMode="vertical-rl">
+                    {t("greetingSecond")}
+                  </Box>
+                  <Box writingMode="vertical-rl">{t("greetingFirst")}</Box>
                 </Box>
               </Box>
               <VStack gap={0} textAlign="center">
