@@ -6,6 +6,13 @@ import * as stories from "./me.stories";
 import { renderWithProvider } from "./test-util";
 
 const Stories = composeStories(stories);
+const followLinks = {
+  bluesky: "https://example.com/bluesky",
+  github: "https://example.com/github",
+  rss: "https://example.com/rss.xml",
+  threads: "https://example.com/threads",
+  x: "https://example.com/x",
+};
 
 describe("Me", () => {
   it.each(Object.entries(Stories))("should %s snapshot", async (_, Story) => {
@@ -18,14 +25,16 @@ describe("Me", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("renders the notebook copy and children", async () => {
-    await renderWithProvider(<Me>Child content</Me>);
+  it("renders the profile copy", async () => {
+    await renderWithProvider(<Me followLinks={followLinks} />);
 
     const textContent = document.body.textContent ?? "";
     expect(textContent).toContain(
-      "プロフィールや活動内容をまとめる予定のページです。",
+      "Webのフロントエンド開発とテストが得意なソフトウェアエンジニアです。",
     );
-    expect(textContent).toContain("内容は後日追加します。");
-    expect(textContent).toContain("Child content");
+    expect(textContent).toContain(
+      "穏やかな風景や音を体験したり、美味しいたべものを共有するのが好きです。",
+    );
+    expect(textContent).toContain("フォローしてね！");
   });
 });

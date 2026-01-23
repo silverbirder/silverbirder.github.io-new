@@ -35,8 +35,18 @@
     },
     "me": {
       "title": "自己紹介",
-      "lead": "プロフィールや活動内容をまとめる予定のページです。",
-      "detail": "内容は後日追加します。"
+      "name": "silverbirder",
+      "handle": "@silverbirder",
+      "role": "Webソフトウェアエンジニア",
+      "greeting": "よろしくね！",
+      "leadFirst": "Webのフロントエンド開発とテストが得意なソフトウェアエンジニアです。",
+      "leadSecond": "わくわくするWeb開発が楽しくて仕方がないです。",
+      "detailFirst": "穏やかな風景や音を体験したり、美味しいたべものを共有するのが好きです。",
+      "detailSecond": "私のお気に入りの写真を<link>コルクボード</link>に載せていますので、よければご覧ください。",
+      "detailThird": "私の個人開発で作ったWebアプリの一覧は<servicesLink>こちら</servicesLink>にまとめています。",
+      "photoAlt": "お気に入りの写真",
+      "photoMoreLabel": "写真をもっとみる",
+      "followHeading": "フォローしてね！"
     }
   },
   "admin": {

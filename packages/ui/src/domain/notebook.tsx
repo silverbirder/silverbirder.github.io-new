@@ -17,6 +17,8 @@ import { formatPublishedDate } from "@repo/util";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
+import type { FollowSection } from "./follow";
+
 import { NotebookDash } from "./notebook-dash";
 import { NotebookPostItem } from "./notebook-post-item";
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
@@ -31,20 +33,6 @@ import { ShareButtonX } from "./share-button-x";
 import { Spiral } from "./spiral";
 import { Tag } from "./tag";
 import { ViewTransitionLink } from "./view-transition-link";
-
-type FollowItem = {
-  active: string;
-  bg: string;
-  hover: string;
-  href: string;
-  icon: ReactNode;
-  label: string;
-};
-
-type FollowSection = {
-  heading: string;
-  items: FollowItem[];
-};
 
 type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   children: ReactNode;
@@ -334,8 +322,15 @@ export const Notebook = ({
         )}
         {follow && follow.items.length > 0 && (
           <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
-            <Heading as="h2">{follow.heading}</Heading>
-            <Stack align="start" direction="row" flexWrap="wrap">
+            <Heading as="h2" textAlign="center">
+              {follow.heading}
+            </Heading>
+            <Stack
+              align="center"
+              direction="row"
+              flexWrap="wrap"
+              justify="center"
+            >
               {follow.items.map((item) => (
                 <Button
                   _active={{ bg: item.active }}

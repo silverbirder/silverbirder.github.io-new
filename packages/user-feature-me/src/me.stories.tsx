@@ -10,4 +10,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    followLinks: {
+      bluesky: "https://bsky.app/profile/silverbirder.bsky.social",
+      github: "https://github.com/silverbirder",
+      rss: "https://example.com/rss.xml",
+      threads: "https://www.threads.com/@silverbirder",
+      x: "https://x.com/silverbirder",
+    },
+  },
+};

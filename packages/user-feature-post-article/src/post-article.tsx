@@ -1,21 +1,17 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import { MdxClientWrapper, Notebook } from "@repo/ui";
+import {
+  createFollowSection,
+  type FollowLinks,
+  MdxClientWrapper,
+  Notebook,
+} from "@repo/ui";
 import { useTranslations } from "next-intl";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
-import { MdRssFeed } from "react-icons/md";
-import { SiBluesky, SiThreads } from "react-icons/si";
 
 type Props = {
   compiledSource: string;
-  followLinks: {
-    bluesky: string;
-    github: string;
-    rss: string;
-    threads: string;
-    x: string;
-  };
+  followLinks: FollowLinks;
   meta: {
     postNumber?: number;
     publishedAt: string;
@@ -73,52 +69,17 @@ export const PostArticle = ({
     text: shareText,
     url: shareUrl,
   };
-  const followItems = [
-    {
-      active: "#1f1f1f",
-      bg: "#000000",
-      hover: "#111111",
-      href: followLinks.x,
-      icon: <FaXTwitter />,
-      label: t("followXLabel"),
+  const follow = createFollowSection({
+    labels: {
+      bluesky: t("followBlueskyLabel"),
+      github: t("followGithubLabel"),
+      heading: t("followHeading"),
+      rss: t("followRssLabel"),
+      threads: t("followThreadsLabel"),
+      x: t("followXLabel"),
     },
-    {
-      active: "#0059c7",
-      bg: "#007bff",
-      hover: "#0068e6",
-      href: followLinks.bluesky,
-      icon: <SiBluesky />,
-      label: t("followBlueskyLabel"),
-    },
-    {
-      active: "#191c20",
-      bg: "#24292f",
-      hover: "#1f2328",
-      href: followLinks.github,
-      icon: <FaGithub />,
-      label: t("followGithubLabel"),
-    },
-    {
-      active: "#2a2a2a",
-      bg: "#101010",
-      hover: "#1a1a1a",
-      href: followLinks.threads,
-      icon: <SiThreads />,
-      label: t("followThreadsLabel"),
-    },
-    {
-      active: "#c95410",
-      bg: "#f97316",
-      hover: "#e46514",
-      href: followLinks.rss,
-      icon: <MdRssFeed />,
-      label: t("followRssLabel"),
-    },
-  ];
-  const follow = {
-    heading: t("followHeading"),
-    items: followItems,
-  };
+    links: followLinks,
+  });
 
   return (
     <Box w="full">

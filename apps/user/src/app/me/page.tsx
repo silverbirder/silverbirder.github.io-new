@@ -39,5 +39,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Me />;
+  const rssUrl = buildSiteUrl("rss.xml");
+  const followLinks = {
+    bluesky: "https://bsky.app/profile/silverbirder.bsky.social",
+    github: "https://github.com/silverbirder",
+    rss: rssUrl,
+    threads: "https://www.threads.com/@silverbirder",
+    x: "https://x.com/silverbirder",
+  };
+
+  return <Me followLinks={followLinks} />;
 }
