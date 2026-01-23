@@ -137,7 +137,10 @@ const parseTags = (value: null | string) => {
 
   const tags = normalized
     .split(",")
-    .map((tag) => tag.replace(/^['"]|['"]$/g, "").replace(/^\s+|\s+$/g, ""))
+    .map((tag) => {
+      const cleaned = tag.replace(/^\s+|\s+$/g, "");
+      return cleaned.replace(/^['"]+|['"]+$/g, "").replace(/^\s+|\s+$/g, "");
+    })
     .filter((tag) => tag.length > 0);
 
   return tags.length > 0 ? tags : undefined;

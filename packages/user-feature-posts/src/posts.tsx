@@ -155,7 +155,14 @@ export const Posts = ({ posts }: Props) => {
               <Box>
                 <Stack direction="row" gap={0} wrap="wrap">
                   {availableYears.map((year) => (
-                    <Tag iconType="year" key={year} mr={2} tag={year} />
+                    <Tag
+                      href={buildHref({ page: null, year })}
+                      iconType="year"
+                      isSelected={selectedYear === year}
+                      key={year}
+                      mr={2}
+                      tag={year}
+                    />
                   ))}
                 </Stack>
               </Box>
@@ -164,7 +171,13 @@ export const Posts = ({ posts }: Props) => {
               <Box>
                 <Stack direction="row" gap={0} wrap="wrap">
                   {availableTags.map((tag) => (
-                    <Tag key={tag} mr={2} tag={tag} />
+                    <Tag
+                      href={buildHref({ page: null, tag })}
+                      isSelected={selectedTag === tag}
+                      key={tag}
+                      mr={2}
+                      tag={tag}
+                    />
                   ))}
                 </Stack>
               </Box>

@@ -28,4 +28,25 @@ describe("Tag", () => {
       `/blog/?tag=${encodeURIComponent(tag)}`,
     );
   });
+
+  it("uses provided href when passed", async () => {
+    const tag = "Design System";
+    const href = "/blog/?tag=Design%20System&year=2025";
+    const { container } = await renderWithProvider(
+      <Tag href={href} tag={tag} />,
+    );
+
+    const link = container.querySelector("a");
+    expect(link?.getAttribute("href")).toBe(href);
+  });
+
+  it("marks selected tags with aria-current", async () => {
+    const tag = "Selected";
+    const { container } = await renderWithProvider(
+      <Tag isSelected tag={tag} />,
+    );
+
+    const link = container.querySelector("a");
+    expect(link?.getAttribute("aria-current")).toBe("page");
+  });
 });

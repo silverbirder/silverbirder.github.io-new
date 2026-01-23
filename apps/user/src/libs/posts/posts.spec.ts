@@ -252,6 +252,18 @@ tags: [nextjs, mdx]
     expect(readFile).toHaveBeenCalledTimes(1);
   });
 
+  it("strips stray quotes from tag values", async () => {
+    readFile.mockResolvedValue(`---
+title: "Quoted tags"
+publishedAt: "2025-01-03"
+tags: ["AI, "Design System", "  Frontend  "]
+---`);
+
+    const frontmatter = await getPostFrontmatter("example");
+
+    expect(frontmatter.tags).toEqual(["AI", "Design System", "Frontend"]);
+  });
+
   it("returns undefined tags when frontmatter omits tags", async () => {
     readFile.mockResolvedValue(`---
 title: "No tags"

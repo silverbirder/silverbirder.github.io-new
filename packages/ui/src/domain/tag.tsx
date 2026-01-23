@@ -7,11 +7,9 @@ import { FaCalendarDays, FaTag } from "react-icons/fa6";
 
 import { ViewTransitionLink } from "./view-transition-link";
 
-type Props = Omit<
-  ComponentProps<typeof ViewTransitionLink>,
-  "children" | "href"
-> & {
+type Props = Omit<ComponentProps<typeof ViewTransitionLink>, "children"> & {
   iconType?: "tag" | "year";
+  isSelected?: boolean;
   tag: string;
 };
 
@@ -19,9 +17,16 @@ const buildTagHref = (tag: string) => `/blog?tag=${encodeURIComponent(tag)}`;
 const buildYearHref = (year: string) =>
   `/blog?year=${encodeURIComponent(year)}`;
 
-export const Tag = ({ iconType = "tag", tag, ...linkProps }: Props) => {
+export const Tag = ({
+  href,
+  iconType = "tag",
+  isSelected = false,
+  tag,
+  ...linkProps
+}: Props) => {
   const IconComponent = iconType === "year" ? FaCalendarDays : FaTag;
-  const href = iconType === "year" ? buildYearHref(tag) : buildTagHref(tag);
+  const resolvedHref =
+    href ?? (iconType === "year" ? buildYearHref(tag) : buildTagHref(tag));
 
   return (
     <ViewTransitionLink
@@ -31,12 +36,13 @@ export const Tag = ({ iconType = "tag", tag, ...linkProps }: Props) => {
       color="green.fg"
       display="inline-flex"
       fontSize="xs"
-      fontWeight="600"
+      fontWeight={isSelected ? "700" : "600"}
       gap={"0.5"}
       height="calc(var(--notebook-line-height) * 1)"
-      href={href}
+      href={resolvedHref}
       justifyContent="center"
-      textDecoration="none"
+      textDecoration={isSelected ? "underline" : "none"}
+      aria-current={isSelected ? "page" : undefined}
       {...linkProps}
     >
       <Icon aria-hidden as={IconComponent} boxSize="1em" />
