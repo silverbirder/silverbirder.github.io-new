@@ -15,6 +15,7 @@ import {
   Notebook,
   NotebookImage,
 } from "@repo/ui";
+import { buildSitePath } from "@repo/util";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -60,7 +61,10 @@ export const Me = ({ followLinks }: Props) => {
                   shape="full"
                   size="2xl"
                 >
-                  <Avatar.Image alt={t("name")} src="/assets/logo.png" />
+                  <Avatar.Image
+                    alt={t("name")}
+                    src={`${buildSitePath(`assets/logo.png`)}`}
+                  />
                   <Avatar.Fallback name={t("name")} />
                 </Avatar.Root>
                 <Box
