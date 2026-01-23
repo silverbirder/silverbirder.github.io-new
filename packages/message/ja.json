@@ -47,7 +47,36 @@
       "detailThird": "私の個人開発で作ったWebアプリの一覧は<servicesLink>こちら</servicesLink>にまとめています。",
       "photoAlt": "お気に入りの写真",
       "photoMoreLabel": "写真をもっとみる",
-      "followHeading": "フォローしてね！"
+      "followHeading": "フォローしてね！",
+      "workHeading": "職歴",
+      "workLegendFulltime": "正社員",
+      "workLegendContract": "業務委託",
+      "workExperiences": {
+        "systemIntegration": {
+          "company": "System Integration",
+          "description": "新卒でWebアプリの開発、保守、運用に従事。設計からリリースまで一貫して経験を積む。"
+        },
+        "eCommerce": {
+          "company": "E-Commerce",
+          "description": "フルスタックエンジニアとして、大規模アプリケーションのアーキテクチャ設計とモダナイゼーションに貢献。"
+        },
+        "fintech": {
+          "company": "Fintech",
+          "description": "フロントエンドエンジニアとして、プロダクト改善および新機能の開発に携わる。"
+        },
+        "restaurant": {
+          "company": "Restaurant",
+          "description": "フロントエンドエンジニアとして、SaaSプロダクトのクロスプラットフォーム開発に携わる。"
+        },
+        "foodDelivery": {
+          "company": "Food Delivery",
+          "description": "フルスタックエンジニアとして、宅食サービスのプロダクト開発を担当。"
+        },
+        "media": {
+          "company": "Media",
+          "description": "フロントエンドエンジニアとして、メディアサイトの新規開発および改善に携わる。"
+        }
+      }
     }
   },
   "admin": {

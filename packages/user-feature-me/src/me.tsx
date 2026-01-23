@@ -19,6 +19,8 @@ import { buildSitePath } from "@repo/util";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+import { WorkExperienceTimeline } from "./work-experience-timeline";
+
 type Props = {
   followLinks: FollowLinks;
 };
@@ -125,6 +127,7 @@ export const Me = ({ followLinks }: Props) => {
                 })}
               </Text>
             </Stack>
+            <WorkExperienceTimeline />
           </Stack>
         </Box>
       </Notebook>
