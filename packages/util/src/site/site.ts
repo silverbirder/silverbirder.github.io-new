@@ -21,7 +21,7 @@ const normalizeSiteUrl = (siteUrl: string | undefined) => {
 };
 
 const getSiteBasePath = () =>
-  normalizeBasePath(process.env.GITHUB_PAGES_BASE_PATH);
+  normalizeBasePath(process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH);
 
 const getSiteBaseUrl = () => {
   const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);

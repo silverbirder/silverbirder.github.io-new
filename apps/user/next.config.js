@@ -6,8 +6,8 @@ import { env } from "./src/env.js";
 
 /** @type {import('next').NextConfig} */
 const config = {
-  assetPrefix: process.env.GITHUB_PAGES_BASE_PATH || "",
-  basePath: process.env.GITHUB_PAGES_BASE_PATH || "",
+  assetPrefix: process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH || "",
+  basePath: process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH || "",
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
     viewTransition: true,

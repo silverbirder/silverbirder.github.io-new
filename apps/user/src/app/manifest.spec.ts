@@ -3,13 +3,13 @@ import { afterEach, describe, expect, it } from "vitest";
 import { iconSizes } from "./icon";
 import manifest from "./manifest";
 
-const originalBasePath = process.env.GITHUB_PAGES_BASE_PATH;
+const originalBasePath = process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
 
 const restoreEnv = () => {
   if (originalBasePath === undefined) {
-    delete process.env.GITHUB_PAGES_BASE_PATH;
+    delete process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
   } else {
-    process.env.GITHUB_PAGES_BASE_PATH = originalBasePath;
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = originalBasePath;
   }
 };
 
@@ -19,7 +19,7 @@ afterEach(() => {
 
 describe("manifest", () => {
   it("scopes the manifest paths to the base path", () => {
-    process.env.GITHUB_PAGES_BASE_PATH = "/docs";
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = "/docs";
 
     const result = manifest();
 

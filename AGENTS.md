@@ -47,7 +47,7 @@
 - `apps/admin/.env.example` を `.env` にコピーして設定。
 - `apps/admin/src/env.js` のスキーマに合わせる。
 - `SKIP_ENV_VALIDATION=1` で Next.js の env 検証をスキップ可能。
-- `apps/user` は `GITHUB_PAGES_BASE_PATH` で `basePath/assetPrefix` を設定。
+- `apps/user` は `NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH` で `basePath/assetPrefix` を設定。
 - 追加/変更する env は `turbo.json` の `globalEnv` も更新する。
 
 ## テスト方針

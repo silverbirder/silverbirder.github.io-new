@@ -17,7 +17,7 @@ concurrency:
 
 env:
   NODE_VERSION: "24.12.0"
-  GITHUB_PAGES_BASE_PATH: "/silverbirder.github.io-new"
+  NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH: "/silverbirder.github.io-new"
 
   # GitHub Pages is served from the gh-pages branch.
   GH_PAGES_BRANCH: "gh-pages"
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build user app (static export)
         env:
-          GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}
+          NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH: ${{ env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
 
@@ -79,7 +79,7 @@ jobs:
 
       - name: Build user app (static export)
         env:
-          GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}/pr-${{ github.event.pull_request.number }}
+          NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH: ${{ env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH }}/pr-${{ github.event.pull_request.number }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
 

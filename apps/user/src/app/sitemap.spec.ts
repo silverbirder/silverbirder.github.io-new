@@ -13,7 +13,7 @@ vi.mock("@/libs", async (importOriginal) => {
 });
 
 const originalSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-const originalBasePath = process.env.GITHUB_PAGES_BASE_PATH;
+const originalBasePath = process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
 
 const restoreEnv = () => {
   if (originalSiteUrl === undefined) {
@@ -23,9 +23,9 @@ const restoreEnv = () => {
   }
 
   if (originalBasePath === undefined) {
-    delete process.env.GITHUB_PAGES_BASE_PATH;
+    delete process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
   } else {
-    process.env.GITHUB_PAGES_BASE_PATH = originalBasePath;
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = originalBasePath;
   }
 };
 
@@ -37,7 +37,7 @@ afterEach(() => {
 describe("sitemap", () => {
   it("returns urls with the base path applied", async () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://example.com";
-    process.env.GITHUB_PAGES_BASE_PATH = "/docs";
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = "/docs";
 
     const mockedGetPostSlugs = vi.mocked(getPostSlugs);
     mockedGetPostSlugs.mockResolvedValue([

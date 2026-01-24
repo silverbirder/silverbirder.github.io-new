@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { buildSitePath, buildSiteUrl, getSiteMetadataBase } from "./site";
 
 const originalSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-const originalBasePath = process.env.GITHUB_PAGES_BASE_PATH;
+const originalBasePath = process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
 
 const restoreEnv = () => {
   if (originalSiteUrl === undefined) {
@@ -13,9 +13,9 @@ const restoreEnv = () => {
   }
 
   if (originalBasePath === undefined) {
-    delete process.env.GITHUB_PAGES_BASE_PATH;
+    delete process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
   } else {
-    process.env.GITHUB_PAGES_BASE_PATH = originalBasePath;
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = originalBasePath;
   }
 };
 
@@ -26,7 +26,7 @@ afterEach(() => {
 describe("getSiteMetadataBase", () => {
   it("uses the default site url when env is not set", () => {
     delete process.env.NEXT_PUBLIC_SITE_URL;
-    delete process.env.GITHUB_PAGES_BASE_PATH;
+    delete process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH;
 
     const metadataBase = getSiteMetadataBase();
 
@@ -35,7 +35,7 @@ describe("getSiteMetadataBase", () => {
 
   it("combines site url and base path", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://example.com/";
-    process.env.GITHUB_PAGES_BASE_PATH = "docs";
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = "docs";
 
     const metadataBase = getSiteMetadataBase();
 
@@ -46,7 +46,7 @@ describe("getSiteMetadataBase", () => {
 describe("buildSiteUrl", () => {
   it("builds an absolute url with base path", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://example.com";
-    process.env.GITHUB_PAGES_BASE_PATH = "/docs";
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = "/docs";
 
     const url = buildSiteUrl("sitemap.xml");
 
@@ -56,7 +56,7 @@ describe("buildSiteUrl", () => {
 
 describe("buildSitePath", () => {
   it("builds a scoped path for basePath", () => {
-    process.env.GITHUB_PAGES_BASE_PATH = "/docs";
+    process.env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH = "/docs";
 
     const path = buildSitePath("/");
 
