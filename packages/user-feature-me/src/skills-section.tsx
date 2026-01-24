@@ -5,7 +5,6 @@ import {
   Heading,
   HStack,
   Image,
-  SimpleGrid,
   Stack,
   Text,
   VStack,
@@ -25,19 +24,7 @@ type TechIconProps = {
 
 const TechIcon = ({ skill }: TechIconProps) => {
   return (
-    <VStack
-      alignItems="flex-start"
-      bg="green.contrast"
-      borderColor="green.solid"
-      borderRadius="md"
-      borderStyle="solid"
-      borderWidth="1px"
-      boxSizing="border-box"
-      className="not-prose"
-      gap={`var(--notebook-line-height)`}
-      h={`calc(var(--notebook-line-height) * 6)`}
-      p={`var(--notebook-line-height)`}
-    >
+    <VStack alignItems="flex-start" className="not-prose" gap={0} p={0}>
       <HStack gap={2}>
         <Box
           height="var(--notebook-line-height)"
@@ -45,9 +32,21 @@ const TechIcon = ({ skill }: TechIconProps) => {
         >
           <Image alt={skill.name} my={0} src={skill.iconSrc} />
         </Box>
-        <Text>{skill.name}</Text>
+        <Text
+          color="fg"
+          fontWeight="bold"
+          lineHeight="var(--notebook-line-height)"
+        >
+          {skill.name}
+        </Text>
       </HStack>
-      <Text>{skill.description}</Text>
+      <Text
+        color="fg.muted"
+        fontSize="sm"
+        lineHeight="var(--notebook-line-height)"
+      >
+        {skill.description}
+      </Text>
     </VStack>
   );
 };
@@ -115,14 +114,15 @@ export const SkillsSection = () => {
       <Heading as="h2" lineHeight="var(--notebook-line-height)">
         {t("skills.heading")}
       </Heading>
-      <SimpleGrid
-        columns={{ base: 1, md: 2 }}
+      <VStack
+        alignItems="flex-start"
         gap={`var(--notebook-line-height)`}
+        w="full"
       >
         {topSkills.map((skill) => (
           <TechIcon key={skill.key} skill={skill} />
         ))}
-      </SimpleGrid>
+      </VStack>
     </Stack>
   );
 };
