@@ -16,13 +16,13 @@ import { useTranslations } from "next-intl";
 import NextImage from "next/image";
 import Link from "next/link";
 
+import { ArtifactsSection } from "./artifacts";
 import { WorkExperienceTimeline } from "./work-experience-timeline";
 
 type Props = {
   followLinks: FollowLinks;
 };
 const photoMoreLink = "https://silverbirder-cork-board.vercel.app";
-const servicesLink = "https://sites.google.com/view/silverbirders-services";
 const featuredPhotoUrl =
   "https://res.cloudinary.com/silverbirder/image/upload/v1729856266/silver-birder.github.io/my-photo/photo-38.png";
 const featuredPhotoLineCount = 10;
@@ -145,23 +145,9 @@ export const Me = ({ followLinks }: Props) => {
                   {t("photoAlt")}
                 </Text>
               </Box>
-              <Text my={0}>
-                {t.rich("detailThird", {
-                  servicesLink: (chunks) => (
-                    <ChakraLink asChild color="green.fg">
-                      <Link
-                        href={servicesLink}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        {chunks}
-                      </Link>
-                    </ChakraLink>
-                  ),
-                })}
-              </Text>
             </Stack>
             <WorkExperienceTimeline />
+            <ArtifactsSection />
           </Stack>
         </Box>
       </Notebook>
