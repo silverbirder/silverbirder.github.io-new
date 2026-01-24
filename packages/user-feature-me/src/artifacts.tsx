@@ -206,11 +206,7 @@ export const ArtifactsSection = () => {
                 justifyContent="center"
               >
                 <Badge
-                  bg="green.contrast"
-                  borderColor="green.fg"
-                  borderStyle="solid"
-                  borderWidth="1px"
-                  color="green.fg"
+                  colorPalette="green"
                   height="calc(var(--notebook-line-height) * 0.75)"
                   lineHeight="1"
                   size="sm"
