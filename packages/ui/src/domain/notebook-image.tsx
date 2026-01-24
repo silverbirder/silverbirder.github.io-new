@@ -2,10 +2,12 @@
 
 import type { ComponentPropsWithoutRef } from "react";
 
-import { chakra, Icon } from "@chakra-ui/react";
+import { chakra } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { useCallback, useRef } from "react";
-import { MdOpenInNew } from "react-icons/md";
+// removed unused MdOpenInNew icon
+
+import { Link as DomainLink } from "./link";
 
 type Props = ComponentPropsWithoutRef<"img"> & {
   linkHref?: string;
@@ -90,25 +92,19 @@ export const NotebookImage = ({ alt, linkHref, onLoad, ...props }: Props) => {
           <chakra.span
             alignItems="center"
             display="inline-flex"
-            gap="0.5rem"
             justifyContent="center"
           >
-            {altText && altText}
-            {linkHref && (
-              <chakra.a
-                _hover={{
-                  color: "green.emphasized",
-                }}
+            {linkHref ? (
+              <DomainLink
                 aria-label={t("openInNewTabAriaLabel")}
-                color="green.fg"
                 href={linkHref}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <Icon color="green.fg" size="sm">
-                  <MdOpenInNew />
-                </Icon>
-              </chakra.a>
+                {altText && <chakra.span>{altText}</chakra.span>}
+              </DomainLink>
+            ) : (
+              altText && altText
             )}
           </chakra.span>
         </chakra.figcaption>

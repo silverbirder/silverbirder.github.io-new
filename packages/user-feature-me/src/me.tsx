@@ -3,18 +3,21 @@
 import {
   Avatar,
   Box,
-  Link as ChakraLink,
   Heading,
   Image,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { createFollowSection, type FollowLinks, Notebook } from "@repo/ui";
+import {
+  createFollowSection,
+  type FollowLinks,
+  Link,
+  Notebook,
+} from "@repo/ui";
 import { buildSitePath } from "@repo/util";
 import { useTranslations } from "next-intl";
 import NextImage from "next/image";
-import Link from "next/link";
 
 import { ArtifactsSection } from "./artifacts";
 import { SkillsSection } from "./skills-section";
@@ -98,15 +101,13 @@ export const Me = ({ followLinks }: Props) => {
               <Text my={0}>
                 {t.rich("detailSecond", {
                   link: (chunks) => (
-                    <ChakraLink asChild color="green.fg">
-                      <Link
-                        href={photoMoreLink}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        {chunks}
-                      </Link>
-                    </ChakraLink>
+                    <Link
+                      href={photoMoreLink}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {chunks}
+                    </Link>
                   ),
                 })}
               </Text>

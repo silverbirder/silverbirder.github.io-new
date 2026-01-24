@@ -8,9 +8,10 @@ import type {
   ReactNode,
 } from "react";
 
-import { Link } from "@chakra-ui/react";
+import { Link as ChakraLink } from "@chakra-ui/react";
 import { Children, isValidElement } from "react";
 
+import { Link as DomainLink } from "./link";
 import { NotebookImage } from "./notebook-image";
 import { TweetEmbed } from "./tweet-embed";
 
@@ -46,12 +47,7 @@ const getSingleElementChild = (children: ReactNode): null | ReactElement => {
   return isValidElement(child) ? child : null;
 };
 
-const Anchor = ({
-  children,
-  colorPalette = "green",
-  href,
-  ...props
-}: LinkProps) => {
+const Anchor = ({ children, href, ...props }: LinkProps) => {
   const onlyChild = getSingleElementChild(children);
 
   if (href && onlyChild && onlyChild.type === NotebookImage) {
@@ -62,10 +58,23 @@ const Anchor = ({
     return <NotebookImage {...imageElement.props} linkHref={href} />;
   }
 
+  const className = (props as { className?: string }).className ?? "";
+  const isRemarkCard =
+    /remark-link-card/.test(className) ||
+    /remark-link-card-plus/.test(className);
+
+  if (isRemarkCard) {
+    return (
+      <ChakraLink href={href} {...props}>
+        {children}
+      </ChakraLink>
+    );
+  }
+
   return (
-    <Link colorPalette={colorPalette} href={href} {...props}>
+    <DomainLink href={href} {...props}>
       {children}
-    </Link>
+    </DomainLink>
   );
 };
 

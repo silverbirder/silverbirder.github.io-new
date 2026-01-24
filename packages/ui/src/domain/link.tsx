@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 import { Link as ChakraLink, Icon } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { useEffect, useState } from "react";
+import {} from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 type Props = LinkProps & {
@@ -29,16 +29,10 @@ const isExternalHref = (href: string, origin: string) => {
 };
 
 export const Link = ({ children, href, ...linkProps }: Props) => {
-  const [isExternal, setIsExternal] = useState(false);
-
-  useEffect(() => {
-    if (!href || typeof href !== "string" || typeof window === "undefined") {
-      setIsExternal(false);
-      return;
-    }
-
-    setIsExternal(isExternalHref(href, window.location.origin));
-  }, [href]);
+  const isExternal =
+    href && typeof href === "string" && typeof window !== "undefined"
+      ? isExternalHref(href, window.location.origin)
+      : false;
 
   const resolvedRel =
     isExternal && !linkProps.rel ? "noopener noreferrer" : linkProps.rel;
@@ -50,6 +44,7 @@ export const Link = ({ children, href, ...linkProps }: Props) => {
   return (
     <ChakraLink
       color={"green.fg"}
+      gap={0.5}
       href={href}
       rel={resolvedRel}
       target={resolvedTarget}
@@ -58,7 +53,7 @@ export const Link = ({ children, href, ...linkProps }: Props) => {
     >
       {children}
       {isExternal ? (
-        <Icon aria-hidden as={FaArrowUpRightFromSquare} fontSize="xs" ms={1} />
+        <Icon aria-hidden as={FaArrowUpRightFromSquare} fontSize="xs" />
       ) : null}
     </ChakraLink>
   );

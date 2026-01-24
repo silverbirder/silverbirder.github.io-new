@@ -210,7 +210,7 @@ export const ArtifactsSection = () => {
                   height="calc(var(--notebook-line-height) * 0.75)"
                   lineHeight="1"
                   size="sm"
-                  variant="solid"
+                  variant="outline"
                 >
                   {content.type}
                 </Badge>
