@@ -1,6 +1,15 @@
 "use client";
 
-import { Box, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Heading,
+  HStack,
+  Image,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { Link } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import NextImage from "next/image";
@@ -63,6 +72,40 @@ export const ArtifactsSection = () => {
       },
     ],
   } as const;
+  const notableContent = [
+    {
+      description: t(
+        "artifacts.notableContent.items.cleanArchitecture.description",
+      ),
+      link: "https://www.slideshare.net/slideshow/ss-150331504/150331504",
+      title: t("artifacts.notableContent.items.cleanArchitecture.title"),
+      type: t("artifacts.notableContent.items.cleanArchitecture.type"),
+    },
+    {
+      description: t(
+        "artifacts.notableContent.items.techSelection.description",
+      ),
+      link: "https://tech-blog.monotaro.com/entry/2021/06/03/090000",
+      title: t("artifacts.notableContent.items.techSelection.title"),
+      type: t("artifacts.notableContent.items.techSelection.type"),
+    },
+    {
+      description: t(
+        "artifacts.notableContent.items.layeredArchitecture.description",
+      ),
+      link: "https://zenn.dev/moneyforward/articles/e97dd1c0412071",
+      title: t("artifacts.notableContent.items.layeredArchitecture.title"),
+      type: t("artifacts.notableContent.items.layeredArchitecture.type"),
+    },
+    {
+      description: t(
+        "artifacts.notableContent.items.testPatternGuide.description",
+      ),
+      link: "https://zenn.dev/silverbirder/articles/c3de04c9e6dd58",
+      title: t("artifacts.notableContent.items.testPatternGuide.title"),
+      type: t("artifacts.notableContent.items.testPatternGuide.type"),
+    },
+  ] as const;
 
   return (
     <Stack gap={0} maxW="34rem" mx="auto" w="full">
@@ -129,6 +172,58 @@ export const ArtifactsSection = () => {
               <Text as="li">{project.description}</Text>
             </Stack>
           </Box>
+        ))}
+      </Stack>
+      <Heading
+        as="h2"
+        lineHeight="var(--notebook-line-height)"
+        mb={`var(--notebook-line-height)`}
+      >
+        {t("artifacts.notableContent.heading")}
+      </Heading>
+      <Stack gap={`var(--notebook-line-height)`}>
+        {notableContent.map((content) => (
+          <VStack
+            alignItems="flex-start"
+            bg="green.subtle"
+            borderRadius="md"
+            gap={0}
+            key={content.link}
+            m={0}
+            p={`var(--notebook-line-height)`}
+          >
+            <Text color="fg" fontWeight="bold" my={0}>
+              {content.title}
+            </Text>
+            <Text color="fg.muted" fontSize="sm" my={0}>
+              {content.description}
+            </Text>
+            <HStack justifyContent="space-between" w="full">
+              <Box
+                alignItems="center"
+                display="inline-flex"
+                height="var(--notebook-line-height)"
+                justifyContent="center"
+              >
+                <Badge
+                  bg="green.contrast"
+                  borderColor="green.fg"
+                  borderStyle="solid"
+                  borderWidth="1px"
+                  color="green.fg"
+                  height="calc(var(--notebook-line-height) * 0.75)"
+                  lineHeight="1"
+                  size="sm"
+                  variant="solid"
+                >
+                  {content.type}
+                </Badge>
+              </Box>
+              <Link href={content.link}>
+                {t("artifacts.notableContent.moreLabel")}
+              </Link>
+            </HStack>
+          </VStack>
         ))}
       </Stack>
     </Stack>

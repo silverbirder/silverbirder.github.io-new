@@ -41,6 +41,7 @@ describe("ArtifactsSection", () => {
     expect(textContent).toContain("書籍");
     expect(textContent).toContain("Webサービス");
     expect(textContent).toContain("GitHubプロジェクト");
+    expect(textContent).toContain("過去の活動履歴");
   });
 
   it("renders artifacts content", async () => {
@@ -50,5 +51,8 @@ describe("ArtifactsSection", () => {
     expect(textContent).toContain("はじめてのWeb Components入門");
     expect(textContent).toContain("個人開発で開発したWebサービス一覧");
     expect(textContent).toContain("o-embed");
+    expect(textContent).toContain(
+      "大規模フロントエンドのクリーンアーキテクチャ化",
+    );
   });
 });

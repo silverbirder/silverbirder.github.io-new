@@ -57,6 +57,32 @@
         "webServicesLinkLabel": "個人開発で開発したWebサービス一覧",
         "webServicesLink": "https://sites.google.com/view/silverbirders-services",
         "githubHeading": "GitHubプロジェクト",
+        "notableContent": {
+          "heading": "過去の活動履歴",
+          "moreLabel": "詳細を見る",
+          "items": {
+            "cleanArchitecture": {
+              "title": "大規模フロントエンドのクリーンアーキテクチャ化",
+              "type": "Presentation",
+              "description": "Developers Boost KANSAI (2019.6.15 @Osaka) の発表資料です。"
+            },
+            "techSelection": {
+              "title": "初めての技術選定を頼まれた時に大事だったのは俯瞰的・相対的な考え方だった",
+              "type": "Blog",
+              "description": "ワークフローエンジンの技術選定についてのブログ記事です。"
+            },
+            "layeredArchitecture": {
+              "title": "Webフロントエンド再設計: レイヤードアーキテクチャの導入 ~ 高品質なコードを実現するために ~",
+              "type": "Blog",
+              "description": "WebフロントエンドにFeature-Sliced Designというレイヤードアーキテクチャを導入した話です。"
+            },
+            "testPatternGuide": {
+              "title": "Webフロントエンドにおける網羅的テストパターンガイド",
+              "type": "Blog",
+              "description": "Webフロントエンドにおける機能面、非機能面、そしてUI/UXの視点からのテストパターンガイドを紹介します。"
+            }
+          }
+        },
         "books": {
           "introWebComponents": {
             "title": "はじめてのWeb Components入門"
