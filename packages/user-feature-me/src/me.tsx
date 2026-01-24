@@ -17,6 +17,7 @@ import NextImage from "next/image";
 import Link from "next/link";
 
 import { ArtifactsSection } from "./artifacts";
+import { SkillsSection } from "./skills-section";
 import { WorkExperienceTimeline } from "./work-experience-timeline";
 
 type Props = {
@@ -148,6 +149,7 @@ export const Me = ({ followLinks }: Props) => {
             </Stack>
             <WorkExperienceTimeline />
             <ArtifactsSection />
+            <SkillsSection />
           </Stack>
         </Box>
       </Notebook>

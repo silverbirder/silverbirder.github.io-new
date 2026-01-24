@@ -123,6 +123,35 @@
           }
         }
       },
+      "skills": {
+        "heading": "お気に入りの技術",
+        "items": {
+          "react": {
+            "name": "React",
+            "description": "一番使い慣れたコンポーネントベースのライブラリ"
+          },
+          "jest": {
+            "name": "Jest",
+            "description": "愛用しているテストフレームワーク"
+          },
+          "playwright": {
+            "name": "Playwright",
+            "description": "E2Eテストと言えばこれ"
+          },
+          "storybook": {
+            "name": "Storybook",
+            "description": "UIカタログ兼コンポーネント開発環境として重宝"
+          },
+          "figma": {
+            "name": "Figma",
+            "description": "デザイナーとの協業に欠かせないツール"
+          },
+          "testcontainers": {
+            "name": "Testcontainers",
+            "description": "E2Eテスト環境の構築に必須"
+          }
+        }
+      },
       "workExperiences": {
         "systemIntegration": {
           "company": "System Integration",
