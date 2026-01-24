@@ -1,5 +1,21 @@
 import { composeStories } from "@storybook/nextjs-vite";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("next/image", () => ({
+  __esModule: true,
+  default: ({
+    alt,
+    src,
+    ...props
+  }: {
+    alt?: string;
+    src: string | { src: string };
+  }) => {
+    const resolvedSrc = typeof src === "string" ? src : src.src;
+    // Use a plain img tag for tests to avoid Next.js runtime requirements.
+    return <img alt={alt} src={resolvedSrc} {...props} />;
+  },
+}));
 
 import { Me } from "./me";
 import * as stories from "./me.stories";

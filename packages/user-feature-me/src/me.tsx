@@ -5,18 +5,15 @@ import {
   Box,
   Link as ChakraLink,
   Heading,
+  Image,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import {
-  createFollowSection,
-  type FollowLinks,
-  Notebook,
-  NotebookImage,
-} from "@repo/ui";
+import { createFollowSection, type FollowLinks, Notebook } from "@repo/ui";
 import { buildSitePath } from "@repo/util";
 import { useTranslations } from "next-intl";
+import NextImage from "next/image";
 import Link from "next/link";
 
 import { WorkExperienceTimeline } from "./work-experience-timeline";
@@ -28,6 +25,8 @@ const photoMoreLink = "https://silverbirder-cork-board.vercel.app";
 const servicesLink = "https://sites.google.com/view/silverbirders-services";
 const featuredPhotoUrl =
   "https://res.cloudinary.com/silverbirder/image/upload/v1729856266/silver-birder.github.io/my-photo/photo-38.png";
+const featuredPhotoLineCount = 10;
+const featuredPhotoLineCountMobile = 7;
 
 export const Me = ({ followLinks }: Props) => {
   const t = useTranslations("user.me");
@@ -110,7 +109,42 @@ export const Me = ({ followLinks }: Props) => {
                   ),
                 })}
               </Text>
-              <NotebookImage alt={t("photoAlt")} src={featuredPhotoUrl} />
+              <Box
+                as="figure"
+                lineHeight="var(--notebook-line-height)"
+                marginX={0}
+                marginY="var(--notebook-line-height)"
+              >
+                <Image
+                  asChild
+                  borderRadius="0"
+                  display="block"
+                  h={{
+                    base: `calc(var(--notebook-line-height) * ${featuredPhotoLineCountMobile})`,
+                    md: `calc(var(--notebook-line-height) * ${featuredPhotoLineCount})`,
+                  }}
+                  marginX="auto"
+                  marginY="0"
+                  maxWidth="100%"
+                >
+                  <NextImage
+                    alt={t("photoAlt")}
+                    height={750}
+                    loading="lazy"
+                    sizes="(min-width: 48em) 34rem, 100vw"
+                    src={featuredPhotoUrl}
+                    width={1000}
+                  />
+                </Image>
+                <Text
+                  as="figcaption"
+                  color="fg.muted"
+                  lineHeight="var(--notebook-line-height)"
+                  textAlign="center"
+                >
+                  {t("photoAlt")}
+                </Text>
+              </Box>
               <Text my={0}>
                 {t.rich("detailThird", {
                   servicesLink: (chunks) => (
