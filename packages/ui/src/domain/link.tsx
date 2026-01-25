@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 
 import { Link as ChakraLink, Icon } from "@chakra-ui/react";
 import NextLink from "next/link";
-import {} from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 type Props = LinkProps & {
@@ -44,7 +43,7 @@ export const Link = ({ children, href, ...linkProps }: Props) => {
   return (
     <ChakraLink
       color={"green.fg"}
-      gap={0.5}
+      display="inline"
       href={href}
       rel={resolvedRel}
       target={resolvedTarget}
@@ -53,7 +52,7 @@ export const Link = ({ children, href, ...linkProps }: Props) => {
     >
       {children}
       {isExternal ? (
-        <Icon aria-hidden as={FaArrowUpRightFromSquare} fontSize="xs" />
+        <Icon aria-hidden as={FaArrowUpRightFromSquare} mx={0.5} pb={0.5} />
       ) : null}
     </ChakraLink>
   );
