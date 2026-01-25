@@ -188,6 +188,6 @@ describe("Notebook", () => {
     const labels = Array.from(nav?.querySelectorAll("a") ?? []).map(
       (link) => link.textContent,
     );
-    expect(labels).toEqual(["トップ", "自己紹介", "ブログ"]);
+    expect(labels).toEqual(["ホーム", "自己紹介", "ブログ"]);
   });
 });

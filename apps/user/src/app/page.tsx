@@ -4,9 +4,9 @@ import { siteName } from "@repo/metadata";
 import { Top } from "@repo/user-feature-top";
 import { buildSiteUrl } from "@repo/util";
 
-const title = "トップ";
+const title = "ホーム";
 const description =
-  "silverbirder のトップページ。ノートブック風レイアウトでプロフィールやブログへの導線をまとめています。";
+  "silverbirder のホームページ。ノートブック風レイアウトでプロフィールやブログへの導線をまとめています。";
 const canonical = buildSiteUrl("");
 const ogImageUrl = buildSiteUrl("opengraph-image");
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical,
   },
   description,
-  keywords: [siteName, "トップ", "個人サイト", "ブログ", "プロフィール"],
+  keywords: [siteName, "ホーム", "個人サイト", "ブログ", "プロフィール"],
   openGraph: {
     description,
     images: [

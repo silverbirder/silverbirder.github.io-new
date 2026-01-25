@@ -29,9 +29,22 @@
       "paginationNext": "次へ"
     },
     "top": {
-      "title": "トップ",
-      "lead": "ノートブック風のレイアウトを試験的に適用しています。",
-      "detail": "このページは準備中です。"
+      "title": "ホーム",
+      "welcome": "ようこそ、silverbirder のホームページへ！",
+      "toc": {
+        "firstTime": {
+          "title": "初めての方",
+          "items": {
+            "me": "自己紹介へ"
+          }
+        },
+        "reader": {
+          "title": "読者の方",
+          "items": {
+            "blog": "ブログへ"
+          }
+        }
+      }
     },
     "me": {
       "title": "自己紹介",
@@ -228,7 +241,7 @@
       "headerDate": "DATE",
       "headerNo": "NO.",
       "globalNavigationLabel": "グローバルナビゲーション",
-      "globalNavigationTop": "トップ",
+      "globalNavigationTop": "ホーム",
       "globalNavigationMe": "自己紹介",
       "globalNavigationBlog": "ブログ",
       "relatedHeading": "関連する記事",

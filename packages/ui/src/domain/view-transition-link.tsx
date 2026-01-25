@@ -32,6 +32,7 @@ export const ViewTransitionLink = ({
   const link = (
     <Link
       as={asProp}
+      color={"green.fg"}
       colorPalette={colorPalette}
       href={href}
       {...restLinkProps}

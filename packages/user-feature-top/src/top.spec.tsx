@@ -19,13 +19,13 @@ describe("Top", () => {
   });
 
   it("renders the notebook copy and children", async () => {
-    await renderWithProvider(<Top>Child content</Top>);
+    await renderWithProvider(<Top />);
 
     const textContent = document.body.textContent ?? "";
-    expect(textContent).toContain(
-      "ノートブック風のレイアウトを試験的に適用しています。",
-    );
-    expect(textContent).toContain("このページは準備中です。");
-    expect(textContent).toContain("Child content");
+    expect(textContent).toContain("ようこそ、silverbirder のホームページへ！");
+    expect(textContent).toContain("初めての方");
+    expect(textContent).toContain("自己紹介");
+    expect(textContent).toContain("読者の方");
+    expect(textContent).toContain("ブログ");
   });
 });
