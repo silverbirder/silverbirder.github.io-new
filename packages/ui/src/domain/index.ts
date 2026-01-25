@@ -1,3 +1,4 @@
+export * from "./disqus";
 export * from "./follow";
 export * from "./link";
 export * from "./mdx-client-wrapper";

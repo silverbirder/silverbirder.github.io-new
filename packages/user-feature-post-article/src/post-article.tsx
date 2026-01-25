@@ -10,6 +10,10 @@ import {
 import { useTranslations } from "next-intl";
 
 type Props = {
+  comments?: {
+    shortname: string;
+    url: string;
+  };
   compiledSource: string;
   followLinks: FollowLinks;
   meta: {
@@ -44,6 +48,7 @@ type Props = {
 };
 
 export const PostArticle = ({
+  comments,
   compiledSource,
   followLinks,
   meta,
@@ -84,6 +89,7 @@ export const PostArticle = ({
   return (
     <Box w="full">
       <Notebook
+        comments={comments}
         follow={follow}
         isBackToBlog={true}
         navigation={navigation}

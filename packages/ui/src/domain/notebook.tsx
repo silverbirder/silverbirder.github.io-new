@@ -19,6 +19,7 @@ import { usePathname } from "next/navigation";
 
 import type { FollowSection } from "./follow";
 
+import { Disqus } from "./disqus";
 import { NotebookDash } from "./notebook-dash";
 import { NotebookPostItem } from "./notebook-post-item";
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
@@ -36,6 +37,10 @@ import { ViewTransitionLink } from "./view-transition-link";
 
 type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
   children: ReactNode;
+  comments?: {
+    shortname: string;
+    url: string;
+  };
   follow?: FollowSection;
   isBackToBlog?: boolean;
   navigation: {
@@ -100,6 +105,7 @@ const formatNotebookDate = (value: string) => {
 
 export const Notebook = ({
   children,
+  comments,
   follow,
   isBackToBlog,
   navigation,
@@ -259,8 +265,15 @@ export const Notebook = ({
         )}
         {share && (
           <Box as="section" mb={NOTEBOOK_LINE_HEIGHT}>
-            <Heading as="h2">{share.heading}</Heading>
-            <Stack align="start" direction="row" flexWrap="wrap">
+            <Heading as="h2" textAlign="center">
+              {share.heading}
+            </Heading>
+            <Stack
+              align="center"
+              direction="row"
+              flexWrap="wrap"
+              justify="center"
+            >
               <ShareButtonX
                 height={actionButtonSize}
                 label={share.labels.x}
@@ -463,6 +476,9 @@ export const Notebook = ({
               {t("backToBlog")}
             </ViewTransitionLink>
           </Box>
+        )}
+        {comments && (
+          <Disqus shortname={comments.shortname} url={comments.url} />
         )}
       </NotebookProse>
       <Box
