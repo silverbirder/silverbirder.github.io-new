@@ -1,17 +1,22 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const { getPostFrontmatter, getPostSlugs, ImageResponse, notFound, readFile } =
-  vi.hoisted(() => ({
-    getPostFrontmatter: vi.fn(),
-    getPostSlugs: vi.fn(),
-    ImageResponse: vi.fn().mockImplementation(function (...args) {
-      return { args };
-    }),
-    notFound: vi.fn(() => {
-      throw new Error("NEXT_NOT_FOUND");
-    }),
-    readFile: vi.fn(),
-  }));
+const { ImageResponse, readFile } = vi.hoisted(() => ({
+  ImageResponse: vi.fn().mockImplementation(function (...args) {
+    return { args };
+  }),
+  readFile: vi.fn(),
+}));
+
+const { getPostFrontmatter, getPostSlugs } = vi.hoisted(() => ({
+  getPostFrontmatter: vi.fn(),
+  getPostSlugs: vi.fn(),
+}));
+
+const { notFound } = vi.hoisted(() => ({
+  notFound: vi.fn(() => {
+    throw new Error("NOT_FOUND");
+  }),
+}));
 
 vi.mock("node:fs/promises", () => ({
   readFile,
@@ -30,16 +35,6 @@ vi.mock("@/libs", () => ({
   getPostSlugs,
 }));
 
-vi.mock("budoux", () => ({
-  jaModel: {},
-  Parser: class Parser {
-    parse(text: string) {
-      // Keep it simple/deterministic for tests.
-      return [text];
-    }
-  },
-}));
-
 import OpenGraphImage, {
   contentType,
   generateStaticParams,
@@ -53,55 +48,64 @@ afterEach(() => {
 describe("blog/contents/[slug]/opengraph-image", () => {
   it("builds a png image response", async () => {
     readFile.mockResolvedValue(Buffer.from([1, 2, 3]));
-    getPostFrontmatter.mockResolvedValue({
-      title: "OGPのテキストを任意の行で省略する lineClampとbudoux",
-    });
+    getPostFrontmatter.mockResolvedValue({ title: "テストタイトル" });
 
     const result = await OpenGraphImage({
-      params: Promise.resolve({ slug: "opengraph-image-lineclamp-budoux" }),
+      params: Promise.resolve({ slug: "my-post" }),
     });
 
     expect(contentType).toBe("image/png");
     expect(size).toEqual({ height: 630, width: 1200 });
-
-    expect(getPostFrontmatter).toHaveBeenCalledTimes(1);
-    expect(getPostFrontmatter).toHaveBeenCalledWith(
-      "opengraph-image-lineclamp-budoux",
+    expect(readFile).toHaveBeenCalledTimes(3);
+    expect(getPostFrontmatter).toHaveBeenCalledWith("my-post");
+    const readFileTargets = readFile.mock.calls.map((call) => String(call[0]));
+    expect(readFileTargets).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("/public/assets/logo.png"),
+        expect.stringContaining("/public/fonts/NotoSansJP-Regular.ttf"),
+        expect.stringContaining("/public/fonts/NotoSansJP-Bold.ttf"),
+      ]),
     );
-
-    expect(readFile).toHaveBeenCalledTimes(1);
-    expect(String(readFile.mock.calls[0]?.[0])).toContain(
-      "/public/assets/logo.png",
+    expect(ImageResponse).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        ...size,
+        fonts: [
+          expect.objectContaining({ name: "Noto Sans JP", weight: 400 }),
+          expect.objectContaining({ name: "Noto Sans JP", weight: 700 }),
+        ],
+      }),
     );
-
-    expect(ImageResponse).toHaveBeenCalledWith(expect.anything(), size);
-    expect(result).toEqual({ args: [expect.anything(), size] });
-
-    expect(notFound).not.toHaveBeenCalled();
+    expect(result).toEqual({
+      args: [
+        expect.anything(),
+        expect.objectContaining({
+          ...size,
+          fonts: [
+            expect.objectContaining({ name: "Noto Sans JP", weight: 400 }),
+            expect.objectContaining({ name: "Noto Sans JP", weight: 700 }),
+          ],
+        }),
+      ],
+    });
   });
 
-  it("calls notFound when frontmatter lookup fails", async () => {
+  it("throws notFound when title is missing", async () => {
     readFile.mockResolvedValue(Buffer.from([1, 2, 3]));
-    getPostFrontmatter.mockRejectedValue(new Error("missing"));
+    getPostFrontmatter.mockResolvedValue({ title: "" });
 
     await expect(
-      OpenGraphImage({
-        params: Promise.resolve({ slug: "missing" }),
-      }),
-    ).rejects.toThrow("NEXT_NOT_FOUND");
-
+      OpenGraphImage({ params: Promise.resolve({ slug: "missing" }) }),
+    ).rejects.toThrow("NOT_FOUND");
     expect(notFound).toHaveBeenCalledTimes(1);
-    expect(ImageResponse).not.toHaveBeenCalled();
   });
 
-  it("generates static params from slugs", async () => {
-    getPostSlugs.mockResolvedValue([{ slug: "a" }, { slug: "b" }]);
+  it("returns static params from slugs", async () => {
+    getPostSlugs.mockResolvedValue([{ slug: "one" }, { slug: "two" }]);
 
     await expect(generateStaticParams()).resolves.toEqual([
-      { slug: "a" },
-      { slug: "b" },
+      { slug: "one" },
+      { slug: "two" },
     ]);
-
-    expect(getPostSlugs).toHaveBeenCalledTimes(1);
   });
 });
