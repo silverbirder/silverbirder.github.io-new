@@ -19,12 +19,11 @@ import { createMdxOptions } from "@/libs/mdx/mdx-options";
 
 export { generateStaticParams } from "./static-params";
 
-const ogImageUrl = buildSiteUrl("opengraph-image");
-
 export async function generateMetadata(
   props: PageProps<"/blog/contents/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
+  const ogImageUrl = buildSiteUrl(`blog/contents/${slug}/opengraph-image`);
 
   try {
     const frontmatter = await getPostFrontmatter(slug);
