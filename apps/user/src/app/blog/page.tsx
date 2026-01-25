@@ -7,7 +7,7 @@ import { buildSiteUrl } from "@repo/util";
 import { getPostList } from "@/libs";
 
 const title = "ブログ";
-const description = `${siteName} のブログ記事一覧。技術や日々の学びをまとめています。`;
+const description = `${siteName}のブログ記事一覧。技術や日々の学びをまとめています。`;
 const canonical = buildSiteUrl("blog/");
 const ogImageUrl = buildSiteUrl("opengraph-image");
 

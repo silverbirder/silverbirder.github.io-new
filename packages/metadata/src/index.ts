@@ -4,15 +4,22 @@ import { buildSitePath, buildSiteUrl, getSiteMetadataBase } from "@repo/util";
 
 export const iconSizes = [32, 48, 72, 96, 144, 192, 512] as const;
 
-export const siteName = "silverbirder";
-export const siteShortName = "silverbirder";
-export const siteDescription = "@silverbirderのジブンノート";
-const siteCreator = "@silverbirder";
+export const siteName = "ジブンノート";
+export const siteShortName = "ノート";
+export const siteDescription = "silverbirderのジブンノート";
+const siteCreator = "silverbirder";
 const siteCategory = "technology";
-const siteKeywords = ["silverbirder", "個人サイト", "ブログ", "Webエンジニア"];
+const siteKeywords = [
+  "silverbirder",
+  "ジブンノート",
+  "ブログ",
+  "Web",
+  "IT",
+  "日常",
+];
 const siteLocale = "ja_JP";
-export const siteThemeColor = "#0f172a";
-export const siteBackgroundColor = "#ffffff";
+export const siteThemeColor = "#116932";
+export const siteBackgroundColor = "#f4f4f5";
 const siteReferrerPolicy = "origin-when-cross-origin" as const;
 const siteManifestDisplay = "standalone" as const;
 const siteTitleTemplate = `%s | ${siteName}`;

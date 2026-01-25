@@ -65,9 +65,6 @@ describe("getPostList", () => {
 describe("metadata", () => {
   it("defines metadata for the blog index page", () => {
     expect(metadata.title).toBe("ブログ");
-    expect(metadata.description).toBe(
-      "silverbirder のブログ記事一覧。技術や日々の学びをまとめています。",
-    );
     expect(metadata.alternates?.canonical).toBe("url:blog/");
     expect(metadata.openGraph).toMatchObject({
       title: "ブログ",

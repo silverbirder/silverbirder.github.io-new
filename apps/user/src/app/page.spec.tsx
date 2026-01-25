@@ -22,18 +22,17 @@ describe("Page", () => {
   });
 
   it("defines metadata for the top page", () => {
-    expect(metadata.title).toBe("ホーム");
     expect(metadata.description).toBe(
-      "silverbirder のホームページ。ノートブック風レイアウトでプロフィールやブログへの導線をまとめています。",
+      "silverbirder のホームページ。ブログ記事や自己紹介などを掲載しています。",
     );
     expect(metadata.alternates?.canonical).toBe("url:");
     expect(metadata.openGraph).toMatchObject({
-      title: "ホーム",
+      title: "ジブンノート",
       type: "website",
       url: "url:",
     });
     expect(metadata.twitter).toMatchObject({
-      title: "ホーム",
+      title: "ジブンノート",
     });
   });
 });

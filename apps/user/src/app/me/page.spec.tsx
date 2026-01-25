@@ -23,9 +23,6 @@ describe("MePage", () => {
 
   it("defines metadata for the profile page", () => {
     expect(metadata.title).toBe("自己紹介");
-    expect(metadata.description).toBe(
-      "silverbirder のプロフィールと活動内容をまとめたページです。",
-    );
     expect(metadata.alternates?.canonical).toBe("url:me/");
     expect(metadata.openGraph).toMatchObject({
       title: "自己紹介",

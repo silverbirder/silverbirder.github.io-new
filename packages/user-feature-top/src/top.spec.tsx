@@ -22,7 +22,7 @@ describe("Top", () => {
     await renderWithProvider(<Top />);
 
     const textContent = document.body.textContent ?? "";
-    expect(textContent).toContain("ようこそ、silverbirder のホームページへ！");
+    expect(textContent).toContain("ようこそ、silverbirder のジブンノートへ！");
     expect(textContent).toContain("初めての方");
     expect(textContent).toContain("自己紹介");
     expect(textContent).toContain("読者の方");

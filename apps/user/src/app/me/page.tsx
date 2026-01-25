@@ -5,7 +5,7 @@ import { Me } from "@repo/user-feature-me";
 import { buildSiteUrl } from "@repo/util";
 
 const title = "自己紹介";
-const description = `${siteName} のプロフィールと活動内容をまとめたページです。`;
+const description = `${siteName}についての紹介ページ。職歴や成果物、お気に入りの技術などを掲載しています。`;
 const canonical = buildSiteUrl("me/");
 const ogImageUrl = buildSiteUrl("opengraph-image");
 
@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     canonical,
   },
   description,
-  keywords: [siteName, "自己紹介", "プロフィール", "経歴", "活動"],
+  keywords: [
+    siteName,
+    "自己紹介",
+    "プロフィール",
+    "職歴",
+    "成果物",
+    "お気に入りの技術",
+  ],
   openGraph: {
     description,
     images: [

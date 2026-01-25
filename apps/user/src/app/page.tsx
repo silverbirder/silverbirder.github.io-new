@@ -4,9 +4,9 @@ import { siteName } from "@repo/metadata";
 import { Top } from "@repo/user-feature-top";
 import { buildSiteUrl } from "@repo/util";
 
-const title = "ホーム";
+const title = "ジブンノート";
 const description =
-  "silverbirder のホームページ。ノートブック風レイアウトでプロフィールやブログへの導線をまとめています。";
+  "silverbirder のホームページ。ブログ記事や自己紹介などを掲載しています。";
 const canonical = buildSiteUrl("");
 const ogImageUrl = buildSiteUrl("opengraph-image");
 
