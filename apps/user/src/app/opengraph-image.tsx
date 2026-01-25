@@ -13,6 +13,12 @@ export default async function OpenGraphImage() {
   const logo = await readFile(
     new URL("../../public/assets/logo.png", import.meta.url),
   );
+  const notoSansJpRegular = await readFile(
+    new URL("../../public/fonts/NotoSansJP-Regular.ttf", import.meta.url),
+  );
+  const notoSansJpBold = await readFile(
+    new URL("../../public/fonts/NotoSansJP-Bold.ttf", import.meta.url),
+  );
   const logoBase64 = `data:image/png;base64,${logo.toString("base64")}`;
 
   return new ImageResponse(
@@ -25,6 +31,7 @@ export default async function OpenGraphImage() {
         border: `${NOTEBOOK_LINE_HEIGHT}px solid ${siteThemeColor}`,
         display: "flex",
         flexDirection: "column",
+        fontFamily: '"Noto Sans JP"',
         gap: `${NOTEBOOK_LINE_HEIGHT}px`,
         height: "100%",
         justifyContent: "flex-start",
@@ -49,7 +56,8 @@ export default async function OpenGraphImage() {
           color: "#52525b",
           fontSize: "72px",
           fontWeight: 700,
-          height: `${NOTEBOOK_LINE_HEIGHT * 3}px`,
+          height: `${NOTEBOOK_LINE_HEIGHT * 2}px`,
+          lineHeight: 1,
           textAlign: "center",
         }}
       >
@@ -61,12 +69,29 @@ export default async function OpenGraphImage() {
           fontSize: "36px",
           fontWeight: 400,
           height: `${NOTEBOOK_LINE_HEIGHT}px`,
+          lineHeight: 1,
           textAlign: "center",
         }}
       >
         silverbirder
       </p>
     </div>,
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          data: notoSansJpRegular,
+          name: "Noto Sans JP",
+          style: "normal",
+          weight: 400,
+        },
+        {
+          data: notoSansJpBold,
+          name: "Noto Sans JP",
+          style: "normal",
+          weight: 700,
+        },
+      ],
+    },
   );
 }

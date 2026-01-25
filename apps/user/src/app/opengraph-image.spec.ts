@@ -29,11 +29,36 @@ describe("opengraph-image", () => {
 
     expect(contentType).toBe("image/png");
     expect(size).toEqual({ height: 630, width: 1200 });
-    expect(readFile).toHaveBeenCalledTimes(1);
-    expect(String(readFile.mock.calls[0]?.[0])).toContain(
-      "/public/assets/logo.png",
+    expect(readFile).toHaveBeenCalledTimes(3);
+    const readFileTargets = readFile.mock.calls.map((call) => String(call[0]));
+    expect(readFileTargets).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("/public/assets/logo.png"),
+        expect.stringContaining("/public/fonts/NotoSansJP-Regular.ttf"),
+        expect.stringContaining("/public/fonts/NotoSansJP-Bold.ttf"),
+      ]),
     );
-    expect(ImageResponse).toHaveBeenCalledWith(expect.anything(), size);
-    expect(result).toEqual({ args: [expect.anything(), size] });
+    expect(ImageResponse).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        ...size,
+        fonts: [
+          expect.objectContaining({ name: "Noto Sans JP", weight: 400 }),
+          expect.objectContaining({ name: "Noto Sans JP", weight: 700 }),
+        ],
+      }),
+    );
+    expect(result).toEqual({
+      args: [
+        expect.anything(),
+        expect.objectContaining({
+          ...size,
+          fonts: [
+            expect.objectContaining({ name: "Noto Sans JP", weight: 400 }),
+            expect.objectContaining({ name: "Noto Sans JP", weight: 700 }),
+          ],
+        }),
+      ],
+    });
   });
 });
