@@ -196,6 +196,40 @@ return {
     ).not.toBeNull();
   });
 
+  it("renders scroll progress bar", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        followLinks={followLinks}
+        meta={{
+          postNumber: 1,
+          publishedAt: "2025-01-02",
+          tags: ["Testing"],
+          title: "Test title",
+        }}
+        navigation={{}}
+        relatedPosts={[]}
+        shareUrl="https://example.com/blog/contents/test/"
+      />,
+    );
+
+    expect(
+      document.querySelector('[data-testid="scroll-progress-bar"]'),
+    ).not.toBeNull();
+  });
+
   it("renders the published date and tags", async () => {
     const compiledSource = `"use strict";
 const {jsx: _jsx} = arguments[0];

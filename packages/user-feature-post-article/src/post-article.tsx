@@ -6,6 +6,7 @@ import {
   type FollowLinks,
   MdxClientWrapper,
   Notebook,
+  ScrollProgressBar,
 } from "@repo/ui";
 import { useTranslations } from "next-intl";
 
@@ -88,6 +89,7 @@ export const PostArticle = ({
 
   return (
     <Box w="full">
+      <ScrollProgressBar />
       <Notebook
         comments={comments}
         follow={follow}

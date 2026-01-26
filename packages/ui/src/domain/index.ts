@@ -8,6 +8,7 @@ export * from "./notebook-image";
 export * from "./notebook-post-item";
 export * from "./post-editor-layout";
 export * from "./rss-button";
+export * from "./scroll-progress-bar";
 export * from "./share-button-bluesky";
 export * from "./share-button-copy";
 export * from "./share-button-facebook";
