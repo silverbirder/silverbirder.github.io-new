@@ -13,7 +13,7 @@ export const contentType = "image/png";
 const NOTEBOOK_LINE_HEIGHT = 32; // 2rem
 const NOTEBOOK_LINE_COLOR = "#f4f4f5"; // var(--chakra-colors-border-muted)
 
-const FONT_SIZE = 48;
+const FONT_SIZE = 40;
 const MAX_LINES = 3;
 const CONTENT_WIDTH = size.width - NOTEBOOK_LINE_HEIGHT * 2;
 const AVERAGE_CHAR_WIDTH = FONT_SIZE;
@@ -87,7 +87,8 @@ export default async function OpenGraphImage(props: {
           display: "flex",
           flex: 1,
           flexDirection: "column",
-          gap: `${NOTEBOOK_LINE_HEIGHT}px`,
+          gap: 0,
+          justifyContent: "flex-start",
         }}
       >
         <img
