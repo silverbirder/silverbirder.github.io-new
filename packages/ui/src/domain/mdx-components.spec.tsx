@@ -76,4 +76,22 @@ describe("mdxComponents", () => {
     expect(embed).not.toBeNull();
     expect(embed?.getAttribute("data-tweet-id")).toBe("1318861346327252993");
   });
+
+  it("keeps heading anchor links unstyled and internal", async () => {
+    const A = mdxComponents.a as unknown as ComponentType<
+      ComponentPropsWithoutRef<"a">
+    >;
+
+    const { container } = await renderWithProvider(
+      <A className="mdx-heading-anchor" href="#heading">
+        Heading
+      </A>,
+    );
+
+    const link = container.querySelector("a");
+    expect(link?.getAttribute("href")).toBe("#heading");
+    expect(link?.getAttribute("target")).toBeNull();
+    expect(link?.getAttribute("class")).toContain("mdx-heading-anchor");
+    expect(container.querySelector("svg")).toBeNull();
+  });
 });

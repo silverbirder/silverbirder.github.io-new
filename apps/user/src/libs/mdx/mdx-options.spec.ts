@@ -1,4 +1,6 @@
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 import { describe, expect, it } from "vitest";
 
 import { createMdxOptions } from "./mdx-options";
@@ -36,5 +38,30 @@ describe("createMdxOptions", () => {
         };
 
     expect(prettyCodeOptions?.filterMetaString).toBeUndefined();
+  });
+
+  it("adds heading anchors with stable ids", () => {
+    const options = createMdxOptions();
+
+    const slugEntry = options.rehypePlugins.find(
+      (plugin) => plugin === rehypeSlug,
+    );
+    const autolinkEntry = options.rehypePlugins.find(
+      (plugin) => Array.isArray(plugin) && plugin[0] === rehypeAutolinkHeadings,
+    ) as
+      | [
+          typeof rehypeAutolinkHeadings,
+          { behavior?: string; properties?: { className?: string[] } },
+        ]
+      | undefined;
+
+    expect(slugEntry).toBe(rehypeSlug);
+    expect(autolinkEntry).toBeDefined();
+    expect(autolinkEntry?.[1]).toEqual(
+      expect.objectContaining({
+        behavior: "wrap",
+        properties: { className: ["mdx-heading-anchor"] },
+      }),
+    );
   });
 });

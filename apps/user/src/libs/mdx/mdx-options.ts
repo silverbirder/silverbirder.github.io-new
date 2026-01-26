@@ -1,8 +1,10 @@
 import type { Pluggable } from "unified";
 
 import { createRemarkLinkCardGuard } from "@repo/util";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkLinkCardPlus from "remark-link-card-plus";
@@ -20,6 +22,16 @@ export const createMdxOptions = (): MdxOptions => ({
       rehypeRaw,
       {
         passThrough: ["mdxjsEsm", "mdxJsxFlowElement", "mdxJsxTextElement"],
+      },
+    ],
+    rehypeSlug,
+    [
+      rehypeAutolinkHeadings,
+      {
+        behavior: "wrap",
+        properties: {
+          className: ["mdx-heading-anchor"],
+        },
       },
     ],
     [

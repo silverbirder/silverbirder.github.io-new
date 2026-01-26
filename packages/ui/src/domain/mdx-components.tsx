@@ -14,6 +14,7 @@ import { Children, isValidElement } from "react";
 import { Link as DomainLink } from "./link";
 import { NotebookImage } from "./notebook-image";
 import { TweetEmbed } from "./tweet-embed";
+import { ViewTransitionLink } from "./view-transition-link";
 
 const extractTweetId = (href?: string) => {
   if (!href) {
@@ -68,6 +69,20 @@ const Anchor = ({ children, href, ...props }: LinkProps) => {
       <ChakraLink href={href} {...props}>
         {children}
       </ChakraLink>
+    );
+  }
+
+  if (className.includes("mdx-heading-anchor")) {
+    return (
+      <ViewTransitionLink
+        _hover={{ textDecoration: "none" }}
+        color="inherit"
+        href={href}
+        textDecoration="none"
+        {...props}
+      >
+        {children}
+      </ViewTransitionLink>
     );
   }
 

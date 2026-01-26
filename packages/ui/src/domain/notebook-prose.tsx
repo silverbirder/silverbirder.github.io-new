@@ -140,6 +140,15 @@ export const NotebookProse = chakra("div", {
     backgroundSize: "100% var(--notebook-line-height)",
     color: "fg.muted",
     fontSize: "sm",
+    [inWhere("& .mdx-heading-anchor::after")]: {
+      content: '"#"',
+      opacity: 0,
+      transition: "opacity 0.15s ease",
+    },
+    [inWhere("& :is(h1, h2, h3, h4, h5, h6):hover .mdx-heading-anchor::after")]:
+      {
+        opacity: 1,
+      },
     [inWhere("& :is(h1,h2,h3,h4,h5,hr) + *")]: {
       marginTop: "0",
     },

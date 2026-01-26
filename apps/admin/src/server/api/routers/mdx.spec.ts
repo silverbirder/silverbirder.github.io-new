@@ -1,4 +1,6 @@
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { createCallerFactory } from "@/server/api/trpc";
@@ -66,6 +68,14 @@ describe("mdxRouter.preview", () => {
         disableImports: true,
         mdxOptions: expect.objectContaining({
           rehypePlugins: expect.arrayContaining([
+            rehypeSlug,
+            [
+              rehypeAutolinkHeadings,
+              expect.objectContaining({
+                behavior: "wrap",
+                properties: { className: ["mdx-heading-anchor"] },
+              }),
+            ],
             [
               rehypePrettyCode,
               expect.objectContaining({

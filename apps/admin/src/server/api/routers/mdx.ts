@@ -1,7 +1,9 @@
 import { createRemarkLinkCardGuard } from "@repo/util";
 import { serialize } from "next-mdx-remote-client/serialize";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkLinkCardPlus from "remark-link-card-plus";
 import remarkMdx from "remark-mdx";
@@ -31,6 +33,14 @@ export const mdxRouter = createTRPCRouter({
                     "mdxJsxFlowElement",
                     "mdxJsxTextElement",
                   ],
+                },
+              ],
+              rehypeSlug,
+              [
+                rehypeAutolinkHeadings,
+                {
+                  behavior: "wrap",
+                  properties: { className: ["mdx-heading-anchor"] },
                 },
               ],
               [
