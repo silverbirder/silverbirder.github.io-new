@@ -118,6 +118,7 @@ export const WorkExperienceTimeline = () => {
             <Timeline.Item key={experience.company}>
               <Timeline.Connector>
                 <Timeline.Separator
+                  bg="border.muted"
                   insetInline="calc(var(--notebook-line-height) / 2)"
                   transform="translateY(4px)"
                 />

@@ -19,7 +19,18 @@ describe("Top", () => {
   });
 
   it("renders the notebook copy and children", async () => {
-    await renderWithProvider(<Top />);
+    await renderWithProvider(
+      <Top
+        timelineItems={[
+          {
+            compiledSource: "",
+            date: "2026-01-26",
+            key: "timeline-1",
+            type: "bookmark",
+          },
+        ]}
+      />,
+    );
 
     const textContent = document.body.textContent ?? "";
     expect(textContent).toContain("ようこそ、silverbirder のジブンノートへ！");
@@ -27,5 +38,7 @@ describe("Top", () => {
     expect(textContent).toContain("自己紹介");
     expect(textContent).toContain("読者の方");
     expect(textContent).toContain("ブログ");
+    expect(textContent).toContain("タイムライン");
+    expect(textContent).toContain("2026-01-26");
   });
 });

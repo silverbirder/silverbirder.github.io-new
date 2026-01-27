@@ -4,6 +4,8 @@ import { siteName } from "@repo/metadata";
 import { Top } from "@repo/user-feature-top";
 import { buildSiteUrl } from "@repo/util";
 
+import { getTimelineList } from "@/libs";
+
 const title = "ジブンノート";
 const description =
   "silverbirder のホームページ。ブログ記事や自己紹介などを掲載しています。";
@@ -39,6 +41,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <Top />;
+export default async function Page() {
+  const timelineItems = await getTimelineList();
+  return <Top timelineItems={timelineItems} />;
 }

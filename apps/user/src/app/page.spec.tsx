@@ -11,11 +11,15 @@ vi.mock("@repo/util", async () => {
   };
 });
 
+vi.mock("@/libs", () => ({
+  getTimelineList: vi.fn().mockResolvedValue([]),
+}));
+
 import Page, { metadata } from "./page";
 
 describe("Page", () => {
-  it("renders the top feature entry", () => {
-    const element = Page();
+  it("renders the top feature entry", async () => {
+    const element = await Page();
 
     expect(isValidElement(element)).toBe(true);
     expect(element.type).toBe(Top);

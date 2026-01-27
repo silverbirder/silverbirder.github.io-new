@@ -1,8 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("@repo/util", () => ({
-  buildSiteUrl: vi.fn((pathname: string) => `url:${pathname}`),
-}));
+vi.mock("@repo/util", async () => {
+  const actual =
+    await vi.importActual<typeof import("@repo/util")>("@repo/util");
+  return {
+    ...actual,
+    buildSiteUrl: vi.fn((pathname: string) => `url:${pathname}`),
+  };
+});
 
 vi.mock("@repo/user-feature-posts", () => ({
   normalizePosts: vi.fn((posts) => posts),

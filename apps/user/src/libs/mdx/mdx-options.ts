@@ -16,44 +16,53 @@ type MdxOptions = {
   remarkPlugins: Pluggable[];
 };
 
-export const createMdxOptions = (): MdxOptions => ({
-  rehypePlugins: [
-    [
-      rehypeRaw,
-      {
-        passThrough: ["mdxjsEsm", "mdxJsxFlowElement", "mdxJsxTextElement"],
-      },
-    ],
-    rehypeSlug,
-    [
-      rehypeAutolinkHeadings,
-      {
-        behavior: "wrap",
-        properties: {
-          className: ["mdx-heading-anchor"],
-        },
-      },
-    ],
-    [
-      rehypePrettyCode,
-      {
-        keepBackground: false,
-        theme: {
-          dark: "github-dark",
-          light: "github-light",
-        },
-      },
-    ],
+const rehypePlugins: Pluggable[] = [
+  [
+    rehypeRaw,
+    {
+      passThrough: ["mdxjsEsm", "mdxJsxFlowElement", "mdxJsxTextElement"],
+    },
   ],
-  remarkPlugins: [
+  rehypeSlug,
+  [
+    rehypeAutolinkHeadings,
+    {
+      behavior: "wrap",
+      properties: {
+        className: ["mdx-heading-anchor"],
+      },
+    },
+  ],
+  [
+    rehypePrettyCode,
+    {
+      keepBackground: false,
+      theme: {
+        dark: "github-dark",
+        light: "github-light",
+      },
+    },
+  ],
+];
+
+const baseRemarkPlugins: Pluggable[] = [
+  remarkGfm,
+  createRemarkLinkCardGuard,
+  [remarkLinkCardPlus, { cache: false, noThumbnail: false, shortenUrl: true }],
+];
+
+const createOptions = (remarkPlugins: Pluggable[]): MdxOptions => ({
+  rehypePlugins,
+  remarkPlugins,
+});
+
+export const createMdxOptions = (): MdxOptions =>
+  createOptions([
     remarkFrontmatter,
     remarkMdx,
     remarkMdxFrontmatter,
-    remarkGfm,
-    createRemarkLinkCardGuard,
-    [
-      remarkLinkCardPlus,
-      { cache: false, noThumbnail: false, shortenUrl: true },
-    ],
-  ],
-});
+    ...baseRemarkPlugins,
+  ]);
+
+export const createMarkdownOptions = (): MdxOptions =>
+  createOptions([remarkFrontmatter, ...baseRemarkPlugins]);

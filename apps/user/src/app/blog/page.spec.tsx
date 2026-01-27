@@ -14,6 +14,15 @@ vi.mock("@/libs/posts/posts", () => ({
   getPostSlugs: vi.fn(),
 }));
 
+vi.mock("@/libs", async () => {
+  const actual = await vi.importActual<
+    typeof import("@/libs/posts/get-post-list")
+  >("@/libs/posts/get-post-list");
+  return {
+    getPostList: actual.getPostList,
+  };
+});
+
 import { getPostList } from "@/libs/posts/get-post-list";
 import { getPostSlugs } from "@/libs/posts/posts";
 
