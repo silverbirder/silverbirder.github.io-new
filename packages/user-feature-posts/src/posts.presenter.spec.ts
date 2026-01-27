@@ -53,6 +53,20 @@ const basePosts: PostSummary[] = [
   },
 ];
 
+const paginationPosts: PostSummary[] = Array.from(
+  { length: 11 },
+  (_, index) => {
+    const day = String(index + 1).padStart(2, "0");
+    return {
+      publishedAt: `2025-01-${day}`,
+      slug: `post-${index + 1}`,
+      summary: `Summary ${index + 1}`,
+      tags: [],
+      title: `Title ${index + 1}`,
+    };
+  },
+);
+
 describe("posts presenter", () => {
   it("getAvailableYears returns unique years desc", () => {
     expect(getAvailableYears(basePosts)).toEqual(["2026", "2025"]);
@@ -78,12 +92,16 @@ describe("posts presenter", () => {
     ).toEqual(["e", "f"]);
   });
 
-  it("paginatePosts uses page size 5", () => {
-    const page1 = paginatePosts(basePosts, 1);
-    const page2 = paginatePosts(basePosts, 2);
+  it("paginatePosts uses page size 10", () => {
+    const page1 = paginatePosts(paginationPosts, 1);
 
     expect(page1.totalPages).toBe(2);
-    expect(page1.items).toHaveLength(5);
+    expect(page1.items).toHaveLength(10);
+  });
+
+  it("paginatePosts returns remaining items on the last page", () => {
+    const page2 = paginatePosts(paginationPosts, 2);
+
     expect(page2.items).toHaveLength(1);
   });
 });

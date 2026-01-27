@@ -16,7 +16,7 @@ type PaginationItem =
   | { isCurrent: boolean; page: number; type: "page" }
   | { key: string; type: "ellipsis" };
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 10;
 
 const toDateValue = (publishedAt: string) => {
   const dateValue = Date.parse(publishedAt);

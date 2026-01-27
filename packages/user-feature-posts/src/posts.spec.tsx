@@ -94,7 +94,7 @@ describe("Posts", () => {
     document.body.innerHTML = originalInnerHtml;
   });
 
-  it("renders 5 posts per page in descending order", async () => {
+  it("renders up to 10 posts per page in descending order", async () => {
     mockedSearchParams = "";
     await renderWithProvider(<Posts posts={[...createPosts()]} />);
 
@@ -115,18 +115,18 @@ describe("Posts", () => {
       uniqueLinks.push(link);
     }
 
-    expect(uniqueLinks).toHaveLength(5);
+    expect(uniqueLinks).toHaveLength(6);
     expect(uniqueLinks.map((a) => a.textContent)).toEqual([
       "A",
       "B",
       "C",
       "D",
       "E",
+      "F",
     ]);
-    expect(document.body.textContent ?? "").not.toContain("F");
   });
 
-  it("renders page 2 items and pagination hrefs", async () => {
+  it("falls back to page 1 when requesting page 2 within 10 items", async () => {
     mockedSearchParams = "page=2";
     await renderWithProvider(<Posts posts={[...createPosts()]} />);
 
@@ -147,8 +147,15 @@ describe("Posts", () => {
       uniqueLinks.push(link);
     }
 
-    expect(uniqueLinks).toHaveLength(1);
-    expect(uniqueLinks[0]?.textContent ?? "").toBe("F");
+    expect(uniqueLinks).toHaveLength(6);
+    expect(uniqueLinks.map((a) => a.textContent)).toEqual([
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+    ]);
 
     const prev = Array.from(document.querySelectorAll("a")).find(
       (a) => a.textContent === "前へ",
@@ -160,8 +167,8 @@ describe("Posts", () => {
       (a) => a.textContent === "1",
     );
 
-    expect(prev?.getAttribute("href") ?? "").toBe("/blog");
-    expect(page1?.getAttribute("href") ?? "").toBe("/blog");
-    expect(next?.getAttribute("href") ?? "").toBe("/blog?page=3");
+    expect(prev).toBeUndefined();
+    expect(page1).toBeUndefined();
+    expect(next).toBeUndefined();
   });
 });
