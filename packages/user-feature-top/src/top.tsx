@@ -1,6 +1,14 @@
 "use client";
 
-import { Box, Heading, Icon, Text, Timeline, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  HStack,
+  Icon,
+  Text,
+  Timeline,
+  VStack,
+} from "@chakra-ui/react";
 import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { NOTEBOOK_LINE_HEIGHT } from "@repo/ui";
 import { useTranslations } from "next-intl";
@@ -8,34 +16,22 @@ import { FaBookmark, FaCommentDots, FaShareNodes } from "react-icons/fa6";
 
 import type { TimelineItem } from "./timeline";
 
+type BlogSummary = {
+  latestPublishedAt: string;
+  totalCount: number;
+};
+
 type Props = {
+  blogSummary: BlogSummary;
   timelineItems?: TimelineItem[];
 };
 
-export const Top = ({ timelineItems = [] }: Props) => {
+export const Top = ({ blogSummary, timelineItems = [] }: Props) => {
   const t = useTranslations("user.top");
-  const tocItems = [
-    {
-      key: "first-time",
-      links: [
-        {
-          href: "/me",
-          label: t("toc.firstTime.items.me"),
-        },
-      ],
-      title: t("toc.firstTime.title"),
-    },
-    {
-      key: "reader",
-      links: [
-        {
-          href: "/blog",
-          label: t("toc.reader.items.blog"),
-        },
-      ],
-      title: t("toc.reader.title"),
-    },
-  ];
+  const blogStatsLabel = t("toc.reader.items.blogStats", {
+    latestDate: blogSummary.latestPublishedAt,
+    totalCount: blogSummary.totalCount,
+  });
   const timelineIconMap = {
     bookmark: FaBookmark,
     share: FaShareNodes,
@@ -47,22 +43,37 @@ export const Top = ({ timelineItems = [] }: Props) => {
       <Notebook navigation={{}} relatedPosts={[]} tags={[]} title={t("title")}>
         <VStack alignItems="flex-start" gap={0}>
           <Text mb={0}>{t("welcome")}</Text>
-          {tocItems.map((item) => (
-            <Box key={item.key}>
-              <Heading as="h2">{item.title}</Heading>
-              <VStack alignItems="flex-start" gap={0}>
-                {item.links.map((link) => (
-                  <ViewTransitionLink
-                    href={link.href}
-                    key={link.href}
-                    lineHeight="var(--notebook-line-height)"
-                  >
-                    {link.label}
-                  </ViewTransitionLink>
-                ))}
-              </VStack>
-            </Box>
-          ))}
+          <Box>
+            <Heading as="h2">{t("toc.firstTime.title")}</Heading>
+            <VStack alignItems="flex-start" gap={0}>
+              <ViewTransitionLink
+                href="/me"
+                lineHeight="var(--notebook-line-height)"
+              >
+                {t("toc.firstTime.items.me")}
+              </ViewTransitionLink>
+            </VStack>
+          </Box>
+          <Box>
+            <Heading as="h2">{t("toc.reader.title")}</Heading>
+            <VStack alignItems="flex-start" gap={0}>
+              <HStack alignItems="baseline" gap={0}>
+                <ViewTransitionLink
+                  href="/blog"
+                  lineHeight="var(--notebook-line-height)"
+                >
+                  {t("toc.reader.items.blog")}
+                </ViewTransitionLink>
+                <Text
+                  lineHeight="var(--notebook-line-height)"
+                  my={0}
+                  textStyle="2xs"
+                >
+                  {blogStatsLabel}
+                </Text>
+              </HStack>
+            </VStack>
+          </Box>
           <Box my={NOTEBOOK_LINE_HEIGHT}>
             <Heading as="h2" mt={0}>
               {t("timeline.heading")}

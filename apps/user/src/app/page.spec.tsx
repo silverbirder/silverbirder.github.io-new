@@ -12,6 +12,7 @@ vi.mock("@repo/util", async () => {
 });
 
 vi.mock("@/libs", () => ({
+  getPostList: vi.fn().mockResolvedValue([]),
   getTimelineList: vi.fn().mockResolvedValue([]),
 }));
 

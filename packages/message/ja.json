@@ -41,7 +41,8 @@
         "reader": {
           "title": "読者の方",
           "items": {
-            "blog": "ブログへ"
+            "blog": "ブログへ",
+            "blogStats": "（ 最新更新: {latestDate} / 記事数: {totalCount} ）"
           }
         }
       },

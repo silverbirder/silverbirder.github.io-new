@@ -19,8 +19,13 @@ describe("Top", () => {
   });
 
   it("renders the notebook copy and children", async () => {
+    const blogSummary = {
+      latestPublishedAt: "2026-01-27",
+      totalCount: 123,
+    };
     await renderWithProvider(
       <Top
+        blogSummary={blogSummary}
         timelineItems={[
           {
             compiledSource: "",
@@ -38,6 +43,8 @@ describe("Top", () => {
     expect(textContent).toContain("自己紹介");
     expect(textContent).toContain("読者の方");
     expect(textContent).toContain("ブログ");
+    expect(textContent).toContain("最新更新: 2026-01-27");
+    expect(textContent).toContain("記事数: 123");
     expect(textContent).toContain("タイムライン");
     expect(textContent).toContain("2026-01-26");
   });

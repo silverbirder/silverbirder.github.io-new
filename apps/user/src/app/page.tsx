@@ -4,7 +4,7 @@ import { siteName } from "@repo/metadata";
 import { Top } from "@repo/user-feature-top";
 import { buildSiteUrl } from "@repo/util";
 
-import { getTimelineList } from "@/libs";
+import { getPostList, getTimelineList } from "@/libs";
 
 const title = "ジブンノート";
 const description =
@@ -41,7 +41,20 @@ export const metadata: Metadata = {
   },
 };
 
+const buildBlogSummary = (posts: { publishedAt: string }[]) => {
+  const latestPublishedAt = posts[0]?.publishedAt ?? "";
+  return {
+    latestPublishedAt,
+    totalCount: posts.length,
+  };
+};
+
 export default async function Page() {
-  const timelineItems = await getTimelineList();
-  return <Top timelineItems={timelineItems} />;
+  const [timelineItems, posts] = await Promise.all([
+    getTimelineList(),
+    getPostList(),
+  ]);
+  const blogSummary = buildBlogSummary(posts);
+
+  return <Top blogSummary={blogSummary} timelineItems={timelineItems} />;
 }
