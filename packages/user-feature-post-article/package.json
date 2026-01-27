@@ -22,13 +22,13 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
-    "@storybook/nextjs-vite": "^10.1.11",
+    "@storybook/nextjs-vite": "^10.2.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.2",
     "typescript": "5.9.2",
-    "vitest": "^4.0.17",
-    "vitest-browser-react": "^2.0.2"
+    "vitest": "^4.0.18",
+    "vitest-browser-react": "^2.0.4"
   },
   "peerDependencies": {
     "react": "^19.2.3",

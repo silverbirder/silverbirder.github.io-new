@@ -11,7 +11,7 @@
     "test": "vitest --run"
   },
   "dependencies": {
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -20,6 +20,6 @@
     "@types/node": "^22.19.7",
     "eslint": "^9.39.2",
     "typescript": "5.9.2",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   }
 }
