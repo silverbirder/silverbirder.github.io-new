@@ -47,5 +47,12 @@ describe("Top", () => {
     expect(textContent).toContain("記事数: 123");
     expect(textContent).toContain("タイムライン");
     expect(textContent).toContain("2026-01-26");
+    expect(textContent).toContain("その他");
+    expect(textContent).toContain("機能リクエストへ");
+
+    const featureRequestLink = document.querySelector(
+      'a[href="https://fequest.vercel.app/9"]',
+    );
+    expect(featureRequestLink).not.toBeNull();
   });
 });

@@ -9,7 +9,7 @@ import {
   Timeline,
   VStack,
 } from "@chakra-ui/react";
-import { MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
+import { Link, MdxClientWrapper, Notebook, ViewTransitionLink } from "@repo/ui";
 import { NOTEBOOK_LINE_HEIGHT } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { FaBookmark, FaCommentDots, FaShareNodes } from "react-icons/fa6";
@@ -74,7 +74,7 @@ export const Top = ({ blogSummary, timelineItems = [] }: Props) => {
               </HStack>
             </VStack>
           </Box>
-          <Box my={NOTEBOOK_LINE_HEIGHT}>
+          <Box mt={NOTEBOOK_LINE_HEIGHT}>
             <Heading as="h2" mt={0}>
               {t("timeline.heading")}
             </Heading>
@@ -124,6 +124,19 @@ export const Top = ({ blogSummary, timelineItems = [] }: Props) => {
                 </Timeline.Item>
               ))}
             </Timeline.Root>
+          </Box>
+          <Box mb={NOTEBOOK_LINE_HEIGHT}>
+            <Heading as="h2" mt={0}>
+              {t("toc.other.title")}
+            </Heading>
+            <VStack alignItems="flex-start" gap={0}>
+              <Link
+                href="https://fequest.vercel.app/9"
+                lineHeight="var(--notebook-line-height)"
+              >
+                {t("toc.other.items.featureRequest")}
+              </Link>
+            </VStack>
           </Box>
         </VStack>
       </Notebook>

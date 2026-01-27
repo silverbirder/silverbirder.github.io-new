@@ -44,6 +44,12 @@
             "blog": "ブログへ",
             "blogStats": "（ 最新更新: {latestDate} / 記事数: {totalCount} ）"
           }
+        },
+        "other": {
+          "title": "その他",
+          "items": {
+            "featureRequest": "機能リクエストへ"
+          }
         }
       },
       "timeline": {
