@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+3:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"MMD6f_EM1muSxXBMwm7nb","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","async":true}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
+2:E{"digest":"NEXT_HTTP_ERROR_FALLBACK;404"}

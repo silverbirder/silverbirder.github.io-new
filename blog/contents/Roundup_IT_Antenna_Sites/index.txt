@@ -1,0 +1,920 @@
+1:"$Sreact.fragment"
+3:I[70353,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"default"]
+4:I[26465,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"default"]
+6:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"ViewportBoundary"]
+b:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"MetadataBoundary"]
+d:I[49808,[],"default"]
+:HL["/silverbirder.github.io-new/_next/static/chunks/84de45cd68b2f3df.css","style"]
+:HL["/silverbirder.github.io-new/_next/static/chunks/670593e846aaad1a.css","style"]
+:HL["/silverbirder.github.io-new/_next/static/media/ad9c66e761fed85a-s.p.bd81a64b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"b":"MMD6f_EM1muSxXBMwm7nb","c":["","blog","contents","Roundup_IT_Antenna_Sites",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["contents",{"children":[["slug","Roundup_IT_Antenna_Sites","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/silverbirder.github.io-new/_next/static/chunks/84de45cd68b2f3df.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/silverbirder.github.io-new/_next/static/chunks/670593e846aaad1a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","async":true,"nonce":"$undefined"}]],"$L2"]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:I[74744,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"Provider"]
+10:I[20233,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"GoogleAnalytics"]
+2:["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"noto_sans_jp_e861366e-module__jE7_sG__className","children":[["$","$Le",null,{"children":"$Lf"}],["$","$L10",null,{"gaId":"G-V6PXKPV3CQ"}]]}]}]
+11:I[34322,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"default"]
+f:["$","$L11",null,{"formats":"$undefined","locale":"ja","messages":{"user":{"blog":{"title":"ブログ","empty":"投稿が見つかりませんでした。","filtersTitle":"絞り込み","filtersAll":"すべて","filtersYear":"年","metaSeparator":"/","searchLabel":"検索","searchEmpty":"検索結果が見つかりませんでした。","shareHeading":"シェアする","shareText":"「{title}」","shareXLabel":"Xでシェア","shareBlueskyLabel":"Blueskyでシェア","shareHatenaLabel":"はてなでシェア","shareLineLabel":"LINEでシェア","shareFacebookLabel":"Facebookでシェア","shareThreadsLabel":"Threadsでシェア","shareWebLabel":"デバイスで共有","shareCopyLabel":"リンクをコピー","shareCopyCopied":"コピーしました","followHeading":"フォローする","followXLabel":"Xをフォロー","followBlueskyLabel":"Blueskyをフォロー","followGithubLabel":"GitHubをフォロー","followThreadsLabel":"Threadsをフォロー","followRssLabel":"RSSをフォロー","paginationLabel":"ページネーション","paginationPrev":"前へ","paginationNext":"次へ"},"top":{"title":"ホーム","welcome":"ようこそ、silverbirder のジブンノートへ！","toc":{"firstTime":{"title":"初めての方","items":{"me":"自己紹介へ"}},"reader":{"title":"読者の方","items":{"blog":"ブログへ","blogStats":"（ 最新更新: {latestDate} / 記事数: {totalCount} ）"}},"other":{"title":"その他","items":{"featureRequest":"機能リクエストへ"}}},"timeline":{"heading":"タイムライン"}},"me":{"title":"自己紹介","name":"silverbirder","handle":"@silverbirder","role":"Webソフトウェアエンジニア","greetingFirst":"はじめまして、","greetingSecond":"よろしくね。","leadFirst":"Webのフロントエンド開発とテストが得意なソフトウェアエンジニアです。","leadSecond":"わくわくするWeb開発が楽しくて仕方がないです。","detailFirst":"穏やかな風景や音を体験したり、美味しいたべものを共有するのが好きです。","detailSecond":"私のお気に入りの写真を<link>コルクボード</link>に載せていますので、よければご覧ください。","photoAlt":"お気に入りの写真の1つ","photoMoreLabel":"写真をもっとみる","followHeading":"フォローしてね！","workHeading":"職歴","workLegendFulltime":"正社員","workLegendContract":"業務委託","artifacts":{"heading":"成果物","booksHeading":"書籍","webServicesHeading":"Webサービス","webServicesLinkLabel":"個人開発で開発したWebサービス一覧","webServicesLink":"https://sites.google.com/view/silverbirders-services","githubHeading":"GitHubプロジェクト","notableContent":{"heading":"過去の活動履歴","moreLabel":"詳細を見る","items":{"cleanArchitecture":{"title":"大規模フロントエンドのクリーンアーキテクチャ化","type":"Presentation","description":"Developers Boost KANSAI (2019.6.15 @Osaka) の発表資料です。"},"techSelection":{"title":"初めての技術選定を頼まれた時に大事だったのは俯瞰的・相対的な考え方だった","type":"Blog","description":"ワークフローエンジンの技術選定についてのブログ記事です。"},"layeredArchitecture":{"title":"Webフロントエンド再設計: レイヤードアーキテクチャの導入 ~ 高品質なコードを実現するために ~","type":"Blog","description":"WebフロントエンドにFeature-Sliced Designというレイヤードアーキテクチャを導入した話です。"},"testPatternGuide":{"title":"Webフロントエンドにおける網羅的テストパターンガイド","type":"Blog","description":"Webフロントエンドにおける機能面、非機能面、そしてUI/UXの視点からのテストパターンガイドを紹介します。"}}},"books":{"introWebComponents":{"title":"はじめてのWeb Components入門"}},"githubProjects":{"oEmbed":{"name":"o-embed","description":"Web Components for oEmbed generated by open-wc"},"ogpMe":{"name":"ogp-me","description":"WebComponent that displays Facebook-like information based on Open Graph Protocol (OGP)"},"googleAccountPhotoApi":{"name":"Google Account Photo API","description":"API that returns the image of your Google account"},"caat":{"name":"CaAT","description":"Google Apps Script Library to calculate assigned time in Google Calendar"},"cotlin":{"name":"Cotlin","description":"Tools that collect links in tweets using the Twitter API (Search Tweets)"},"rMinc":{"name":"rMinc","description":"Google Apps Script Library to register mail in Calendar"},"tiqav2":{"name":"Tiqav2","description":"Platform that provides image search API"},"zoomMeetingCreator":{"name":"zoom-meeting-creator","description":"Google Apps Script for creating Zoom meetings"}}},"skills":{"heading":"お気に入りの技術","items":{"react":{"name":"React","description":"一番使い慣れたコンポーネントベースのライブラリ"},"jest":{"name":"Jest","description":"愛用しているテストフレームワーク"},"playwright":{"name":"Playwright","description":"E2Eテストと言えばこれ"},"storybook":{"name":"Storybook","description":"UIカタログ兼コンポーネント開発環境として重宝"},"figma":{"name":"Figma","description":"デザイナーとの協業に欠かせないツール"},"testcontainers":{"name":"Testcontainers","description":"E2Eテスト環境の構築に必須"}}},"workExperiences":{"systemIntegration":{"company":"System Integration","description":"新卒でWebアプリの開発、保守、運用に従事。設計からリリースまで一貫して経験を積む。"},"eCommerce":{"company":"E-Commerce","description":"フルスタックエンジニアとして、大規模アプリケーションのアーキテクチャ設計とモダナイゼーションに貢献。"},"fintech":{"company":"Fintech","description":"フロントエンドエンジニアとして、プロダクト改善および新機能の開発に携わる。"},"restaurant":{"company":"Restaurant","description":"フロントエンドエンジニアとして、SaaSプロダクトのクロスプラットフォーム開発に携わる。"},"foodDelivery":{"company":"Food Delivery","description":"フルスタックエンジニアとして、宅食サービスのプロダクト開発を担当。"},"media":{"company":"Media","description":"フロントエンドエンジニアとして、メディアサイトの新規開発および改善に携わる。"}}}},"admin":{"home":{"title":"管理ホーム","signedInAs":"{name} としてログイン中","unknownUser":"不明なユーザー","signOut":"サインアウト","postsTitle":"投稿一覧","postsLoading":"投稿一覧を読み込んでいます...","postsError":"投稿一覧の読み込みに失敗しました。","postsEmpty":"投稿が見つかりませんでした。"},"signIn":{"title":"管理画面サインイン","description":"GitHub アカウントで管理ダッシュボードにアクセスします。","action":"GitHub で続ける","loading":"GitHub に接続しています...","support":"アクセスは承認済みの GitHub アカウントに限定されています。","errorForbidden":"このアカウントはアクセス権限がありません。","errorMissingAllowList":"ADMIN_ALLOWED_EMAILS が未設定です。","signOut":"サインアウト"},"postEditor":{"title":"ブログ執筆","description":"Markdown で本文を入力し、プレビューで表示を確認します。","editorTitle":"エディター","previewTitle":"プレビュー","titleLabel":"タイトル","titlePlaceholder":"記事タイトルを入力","contentLabel":"本文 (Markdown)","contentPlaceholder":"ここに Markdown を書いてください。","linkUpdateAction":"リンクテキスト更新","linkUpdateLoading":"リンクテキスト更新中...","createPullRequestAction":"Pull Request 作成","createPullRequestLoading":"Pull Request 作成中...","createPullRequestError":"Pull Request の作成に失敗しました。","previewEmpty":"Markdown を入力するとプレビューが表示されます。","loading":"エディターを準備しています...","error":"プレビューの生成に失敗しました。"}},"ui":{"notebookImage":{"openInNewTabAriaLabel":"別タブで開く"},"notebook":{"headerDate":"DATE","headerNo":"NO.","globalNavigationLabel":"グローバルナビゲーション","globalNavigationTop":"ホーム","globalNavigationMe":"自己紹介","globalNavigationBlog":"ブログ","relatedHeading":"関連する記事","relatedTagHeading":"タグ「{tag}」の記事","navigationLabel":"記事ナビゲーション","navigationPrev":"前のページ","navigationNext":"次のページ","backToBlog":"← ブログ一覧へ"}}},"now":"$undefined","timeZone":"UTC","children":"$L12"}]
+13:"$Sreact.view_transition"
+14:I[65456,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"UserLayout"]
+12:["$","$13",null,{"children":["$","$7",null,{"fallback":null,"children":["$","$L14",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:I[42418,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"IconMark"]
+8:null
+c:[["$","title","0",{"children":"Roundup IT Antenna Sites | ジブンノート"}],["$","meta","1",{"name":"description","content":"背景 今年の9月にPyConJP 2019が開催されます。 https://pycon.jp/2019/ LTの募集があったので、LT応募するためのネタ探しをはじめました"}],["$","meta","2",{"name":"application-name","content":"ジブンノート"}],["$","link","3",{"rel":"manifest","href":"/silverbirder.github.io-new/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"Python,レポート"}],["$","meta","5",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","6",{"name":"creator","content":"silverbirder"}],["$","meta","7",{"name":"publisher","content":"ジブンノート"}],["$","meta","8",{"name":"robots","content":"index"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/"}],["$","meta","11",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","12",{"property":"og:title","content":"Roundup IT Antenna Sites"}],["$","meta","13",{"property":"og:description","content":"背景 今年の9月にPyConJP 2019が開催されます。 https://pycon.jp/2019/ LTの募集があったので、LT応募するためのネタ探しをはじめました"}],["$","meta","14",{"property":"og:url","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/"}],["$","meta","15",{"property":"og:site_name","content":"ジブンノート"}],["$","meta","16",{"property":"og:image:alt","content":"Roundup IT Antenna Sites"}],["$","meta","17",{"property":"og:image:height","content":"630"}],["$","meta","18",{"property":"og:image","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/opengraph-image"}],["$","meta","19",{"property":"og:image:width","content":"1200"}],["$","meta","20",{"property":"og:type","content":"article"}],["$","meta","21",{"property":"article:published_time","content":"2019-07-03"}],["$","meta","22",{"property":"article:tag","content":"Python"}],["$","meta","23",{"property":"article:tag","content":"レポート"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Roundup IT Antenna Sites"}],["$","meta","26",{"name":"twitter:description","content":"背景 今年の9月にPyConJP 2019が開催されます。 https://pycon.jp/2019/ LTの募集があったので、LT応募するためのネタ探しをはじめました"}],["$","meta","27",{"name":"twitter:image","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/opengraph-image"}],["$","link","28",{"rel":"icon","href":"/silverbirder.github.io-new/icon/32","sizes":"32x32"}],["$","link","29",{"rel":"icon","href":"/silverbirder.github.io-new/icon/48","sizes":"48x48"}],["$","link","30",{"rel":"icon","href":"/silverbirder.github.io-new/icon/72","sizes":"72x72"}],["$","link","31",{"rel":"icon","href":"/silverbirder.github.io-new/icon/96","sizes":"96x96"}],["$","link","32",{"rel":"icon","href":"/silverbirder.github.io-new/icon/144","sizes":"144x144"}],["$","link","33",{"rel":"icon","href":"/silverbirder.github.io-new/icon/192","sizes":"192x192"}],["$","link","34",{"rel":"icon","href":"/silverbirder.github.io-new/icon/512","sizes":"512x512"}],["$","link","35",{"rel":"apple-touch-icon","href":"/silverbirder.github.io-new/apple-icon"}],["$","$L15","36",{}]]
+16:I[36926,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js"],"PostArticle"]
+17:Ta4de,"use strict";
+const {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];
+const {useMDXComponents: _provideComponents} = arguments[0];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    blockquote: "blockquote",
+    div: "div",
+    h2: "h2",
+    img: "img",
+    p: "p",
+    span: "span",
+    ..._provideComponents(),
+    ...props.components
+  };
+  return _jsxs(_Fragment, {
+    children: [_jsx(_components.h2, {
+      id: "背景",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#背景",
+        children: "背景"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "今年の 9 月に PyConJP 2019 が開催されます。"
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://pycon.jp/2019/",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "PyCon JP 2019"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "PyCon JPは、Pythonユーザが集まり、PythonやPythonを使ったソフトウェアについて情報交換、交流をするためのカンファレンスです。"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://pycon.jp/2019/favicon.ico",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "pycon.jp"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://pycon.jp/2019/logo.png",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.p, {
+      children: "LT の募集があったので、LT 応募するためのネタ探しをはじめました 😄"
+    }), "\n", _jsx(_components.h2, {
+      id: "it-antennasites",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#it-antennasites",
+        children: "IT Antenna Sites"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "私が普段見ている IT 系のサイトから調べました。\nその時に使ったサイトを紹介します。\n※ 色々な人から参考にさせて貰ってます。 :)"
+    }), "\n", _jsx(_components.h2, {
+      id: "github",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#github",
+        children: "Github"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/trending/python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "Build software better, together"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://github.githubassets.com/assets/github-logo-55c5b9a1fe52.png",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "publickey",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#publickey",
+        children: "PublicKey"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://www.publickey1.jp/mt6/mt-search.cgi?IncludeBlogs=2&tag=Python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "www.publickey1.jp"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://www.google.com/s2/favicons?domain=www.publickey1.jp",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "www.publickey1.jp"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "devto",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#devto",
+        children: "Dev.to"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://dev.to/t/python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "Python"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Python content on DEV Community"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://media2.dev.to/dynamic/image/width=32,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "dev.to"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "reddit",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#reddit",
+        children: "Reddit"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://www.reddit.com/r/Python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "www.reddit.com"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://www.google.com/s2/favicons?domain=www.reddit.com",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "www.reddit.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "hacker-news",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#hacker-news",
+        children: "Hacker News"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://hn.algolia.com/?query=python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "HN Search powered by Algolia"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Hacker News Search, millions articles and comments at your fingertips."
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://hn.algolia.com/public/algolia-mark-rounded-orange.png",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "hn.algolia.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "qiita",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#qiita",
+        children: "Qiita"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://qiita.com/tags/python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "Pythonとは？開発に役立つ使い方、トレンド記事やtips - Qiita"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "タグの概要・特徴Python は、高い可読性と簡潔な文法を特徴とするオープンソースのプログラミング言語であり、1991年に初めてリリースされました。多様な分野で使用され、特にデータ分析、人工知能（AI）、ウェブ開発、スクリプト作成などで広く利用されています。Pythonはインタプリタ型の言語であり、豊富な標準ライブラリとサードパーティライブラリを持ち、迅速な開発が可能です。Pythonはそのシンプルさと柔軟性により、初心者からプロフェッショナルまで、幅広い開発者に支持されています。また、オブジェクト指向、手続き型、関数型プログラミングをサポートし、さまざまなプログラミングスタイルに対応しています。主な用途としては、以下のような分野があります：データ分析と科学計算: NumPy、Pandas、SciPyなどのライブラリを使用してデータ分析や科学計算を行います。人工知能と機械学習: TensorFlow、Keras、PyTorchなどを利用してAIおよび機械学習モデルを構築します。ウェブ開発: DjangoやFlaskを使用してウェブアプリケーションを開発します。自動化とスクリプト作成: ファイル操作やシステム管理の自動化スクリプトを作成します。Pythonの利点可読性の高い文法: シンプルで直感的な文法により、コードの可読性が高く、保守が容易です。豊富なライブラリとフレームワーク: 多数のライブラリとフレームワークが存在し、さまざまなタスクを効率的に実行できます。クロスプラットフォーム: Windows、macOS、Linuxなど、さまざまなプラットフォームで動作します。大規模なコミュニティ: 広範なコミュニティが存在し、サポートやリソースが豊富です。教育用途に最適: 学習しやすいため、プログラミング教育にも広く利用されています。リファレンス公式サイト: PythonWikipedia: Python (プログラミング言語) - Wikipedia関連タグNumPyDjangoTensorFlow"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "qiita.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://qiita-tag-images.imgix.net/https%3A%2F%2Fs3-ap-northeast-1.amazonaws.com%2Fqiita-tag-image%2F050c0f328a785fa1e6ef905c25202a81b95cbce8%2Foriginal.jpg%3F1660803670?ixlib=rb-4.0.0&auto=compress%2Cformat&lossless=0&w=128&h=128&s=461dff611d5317b24c540400cc05b55d",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "hatena",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#hatena",
+        children: "Hatena"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://b.hatena.ne.jp/search/tag?q=Python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "Pythonの人気記事 5435件 - はてなブックマーク"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://b.hatena.ne.jp/favicon.ico",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "b.hatena.ne.jp"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://b.st-hatena.com/0785a2d2d7dd5d8a3fe0d34a1b64929fef2939dd/images/v4/public/logo/logo-global-white.svg",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "medium",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#medium",
+        children: "Medium"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://medium.com/tag/python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "medium.com"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://www.google.com/s2/favicons?domain=medium.com",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "medium.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "ubersuggest",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#ubersuggest",
+        children: "Ubersuggest"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://app.neilpatel.com/jp/ubersuggest/overview?keyword=python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "Ubersuggest"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Sign up for Ubersuggest to access powerful SEO and keyword research tools. Increase your website traffic and improve your rankings today!"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://app.neilpatel.com/favicon.ico",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "app.neilpatel.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "googletrend",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#googletrend",
+        children: "GoogleTrend"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://trends.google.co.jp/trends/explore?q=python",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "trends.google.co.jp"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://www.google.com/s2/favicons?domain=trends.google.co.jp",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "trends.google.co.jp"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsx(_components.p, {
+      children: "他にオススメありましたら教えて下さい。 😆"
+    }), "\n", _jsx(_components.h2, {
+      id: "python-ネタ",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#python-ネタ",
+        children: "Python ネタ"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "次のような技術について知ることができました。"
+    }), "\n", _jsx(_components.h2, {
+      id: "deepfacelab",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#deepfacelab",
+        children: "Deepfacelab"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/iperov/DeepFaceLab",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - iperov/DeepFaceLab: DeepFaceLab is the leading software for creating deepfakes."
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "DeepFaceLab is the leading software for creating deepfakes. - iperov/DeepFaceLab"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/700fa73a0fb9d52c78d60037967372f08cb3b3bb08e851160ca8f6728e386a7a/iperov/DeepFaceLab",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "DeepFaceLab is a tool that utilizes machine learning to replace faces in videos. Includes prebuilt ready to work standalone Windows 7,8,10 binary (look readme.md)."
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "grumpy",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#grumpy",
+        children: "Grumpy"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/google/grumpy",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - google/grumpy: Grumpy is a Python to Go source code transcompiler and runtime."
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Grumpy is a Python to Go source code transcompiler and runtime. - google/grumpy"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/577a93fd0e06c91ded4aa546515162086e18268677fe48aa963f9d8a3dc27b1d/google/grumpy",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "Grumpy is a Python to Go source code transcompiler and runtime."
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "pyodide",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#pyodide",
+        children: "Pyodide"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/iodide-project/pyodide",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - pyodide/pyodide: Pyodide is a Python distribution for the browser and Node.js based on WebAssembly"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Pyodide is a Python distribution for the browser and Node.js based on WebAssembly - pyodide/pyodide"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/ce879861f5b7de099155f511f0c8d14f4a9157dfc43b79f5d938a5fbc3d9c222/pyodide/pyodide",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "The Python scientific stack, compiled to WebAssembly"
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "pyoxidizer",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#pyoxidizer",
+        children: "PyOxidizer"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/indygreg/PyOxidizer",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - indygreg/PyOxidizer: A modern Python application packaging and distribution tool"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "A modern Python application packaging and distribution tool - indygreg/PyOxidizer"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/5f86515b0fb7a7ff748a4f185a68e79f1269ae0ee65df9f2ad9ecc5c19f34e8f/indygreg/PyOxidizer",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "A modern Python application packaging and distribution tool"
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "pyre",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#pyre",
+        children: "Pyre"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/facebook/pyre-check",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - facebook/pyre-check: Performant type-checking for python."
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Performant type-checking for python. Contribute to facebook/pyre-check development by creating an account on GitHub."
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/2a9c1725075b4697597999c83d244c86c3f389bcbe2fc6691df2bf48b26d1767/facebook/pyre-check",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "Performant type-checking for python."
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "pyxel",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#pyxel",
+        children: "Pyxel"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/kitao/pyxel",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - kitao/pyxel: A retro game engine for Python"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "A retro game engine for Python. Contribute to kitao/pyxel development by creating an account on GitHub."
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/e3722c70f26f8f77ba16c8f0f3a9a9373700944d836c64b2ee667402c8f29c2f/kitao/pyxel",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "A retro game engine for Python"
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "scrapydweb",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#scrapydweb",
+        children: "ScrapydWeb"
+      })
+    }), "\n", _jsxs(_components.div, {
+      className: "remark-link-card-plus__container",
+      children: ["\n  ", _jsxs(_components.a, {
+        href: "https://github.com/my8100/scrapydweb",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "remark-link-card-plus__card",
+        children: ["\n    ", _jsxs(_components.div, {
+          className: "remark-link-card-plus__main",
+          children: ["\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__content",
+            children: ["\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__title",
+              children: "GitHub - my8100/scrapydweb: Web app for Scrapyd cluster management, Scrapy log analysis & visualization, Auto packaging, Timer tasks, Monitor & Alert, and Mobile UI. Docs 文档 :point_right:"
+            }), "\n    ", _jsx(_components.div, {
+              className: "remark-link-card-plus__description",
+              children: "Web app for Scrapyd cluster management, Scrapy log analysis & visualization, Auto packaging, Timer tasks, Monitor & Alert, and Mobile UI. Docs 文档 :point_right: - my8100/scrapydweb"
+            }), "\n  "]
+          }), "\n  ", _jsxs(_components.div, {
+            className: "remark-link-card-plus__meta",
+            children: ["\n    ", _jsx(_components.img, {
+              src: "https://github.githubassets.com/favicons/favicon.svg",
+              className: "remark-link-card-plus__favicon",
+              width: "14",
+              height: "14",
+              alt: ""
+            }), "\n    ", _jsx(_components.span, {
+              className: "remark-link-card-plus__url",
+              children: "github.com"
+            }), "\n  "]
+          }), "\n"]
+        }), "\n", _jsxs(_components.div, {
+          className: "remark-link-card-plus__thumbnail",
+          children: ["\n  ", _jsx(_components.img, {
+            src: "https://opengraph.githubassets.com/08ff053209d6ec687484543adc34ee5359f013a2490fe8d267dd73c929188ef9/my8100/scrapydweb",
+            className: "remark-link-card-plus__image",
+            alt: ""
+          }), "\n"]
+        }), "\n  "]
+      }), "\n"]
+    }), "\n", _jsxs(_components.blockquote, {
+      children: ["\n", _jsx(_components.p, {
+        children: "Web app for Scrapyd cluster management, Scrapy log analysis & visualization, Auto packaging, Timer tasks, Email notice, and Mobile UI"
+      }), "\n"]
+    }), "\n", _jsx(_components.h2, {
+      id: "さいごに",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#さいごに",
+        children: "さいごに"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "LT のネタとなるような Python に関する経験が乏しい私は、こういうアプローチでネタを探しました。まだどれを選択するかは決めていませんが、とりあえず応募はしようと思います！ 💪"
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ..._provideComponents(),
+    ...props.components
+  };
+  return MDXLayout ? _jsx(MDXLayout, {
+    ...props,
+    children: _jsx(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+return {
+  default: MDXContent
+};
+5:["$","$L16",null,{"comments":{"shortname":"https-silverbirder-github-io","url":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/"},"compiledSource":"$17","followLinks":{"bluesky":"https://bsky.app/profile/silverbirder.bsky.social","github":"https://github.com/silverbirder","rss":"https://silverbirder.github.io/silverbirder.github.io-new/rss.xml","threads":"https://www.threads.com/@silverbirder","x":"https://x.com/silverbirder"},"meta":{"index":"$undefined","postNumber":27,"publishedAt":"2019-07-03","tags":["Python","レポート"],"title":"Roundup IT Antenna Sites"},"navigation":{"next":{"href":"/blog/contents/frontend_de_kanpai_7","publishedAt":"2019-07-20","title":"【増枠】Frontend de KANPAI! 7 - Going on 令和 - 2019年7月19日参加レポート"},"prev":{"href":"/blog/contents/aws_summit_osaka_2019","publishedAt":"2019-06-29","title":"AWS Summit Osaka 2019 2019年6月27日参加レポート"}},"relatedPosts":[{"posts":[{"publishedAt":"2019-12-16","slug":"gdg_devfest_tokyo_2019_web","summary":"GDG DevFest Tokyo 2019というイベントに参加してきました。最近はプライベートの都合上、中々時間が取れていませんでした。しかし今回、会社の都合上、良い感じに時間を確保できたため、こちらのイベントに参加してきました。`大阪→東京` でわざわざ新幹線を使ってまで参加しましたが、それに見合う発見が多くありました。今回、私が学んだ内容について、報告しようかなと思います。","tags":["レポート","Google","ブラウザ"],"title":"GDG DevFest Tokyo 2019に参加したら、Webの未来にワクワクした"},{"publishedAt":"2019-07-27","slug":"cloud_native_days_tokyo_2019","summary":"今回、東京で開催されましたCloud Native Days Tokyo 2019に2日間とも参加してきましたので、報告しようと思います。セッション毎の報告というより、全体を通した感想を話そうかなと思います。","tags":["レポート","クラウドインフラ"],"title":"Cloud Native Days Tokyo 2019 -2019年7月22-23日参加レポート"},{"publishedAt":"2019-07-20","slug":"frontend_de_kanpai_7","summary":"今回はDeNAさん主催のFrontendのイベントに参加してきましたので、報告しようと思います。hashtagはこちら frokan イベント概要 「Frontend de KANPAI!」（以下、FROKAN）は、フロントエンドエンジニアやフロントエンドに興味がある人が集い、ドリンク片手にゆるく交流・技術交換ができるコミュニティを目指しています。","tags":["レポート","フロントエンド"],"title":"【増枠】Frontend de KANPAI! 7 - Going on 令和 - 2019年7月19日参加レポート"}],"tag":"レポート"}],"shareUrl":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/Roundup_IT_Antenna_Sites/"}]

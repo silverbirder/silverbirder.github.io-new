@@ -1,0 +1,363 @@
+1:"$Sreact.fragment"
+3:I[70353,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"default"]
+4:I[26465,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"default"]
+6:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"ViewportBoundary"]
+b:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"MetadataBoundary"]
+d:I[49808,[],"default"]
+:HL["/silverbirder.github.io-new/_next/static/chunks/84de45cd68b2f3df.css","style"]
+:HL["/silverbirder.github.io-new/_next/static/chunks/670593e846aaad1a.css","style"]
+:HL["/silverbirder.github.io-new/_next/static/media/ad9c66e761fed85a-s.p.bd81a64b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"b":"MMD6f_EM1muSxXBMwm7nb","c":["","blog","contents","mfe",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["contents",{"children":[["slug","mfe","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/silverbirder.github.io-new/_next/static/chunks/84de45cd68b2f3df.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/silverbirder.github.io-new/_next/static/chunks/670593e846aaad1a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","async":true,"nonce":"$undefined"}]],"$L2"]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:I[74744,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"Provider"]
+10:I[20233,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"GoogleAnalytics"]
+2:["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"noto_sans_jp_e861366e-module__jE7_sG__className","children":[["$","$Le",null,{"children":"$Lf"}],["$","$L10",null,{"gaId":"G-V6PXKPV3CQ"}]]}]}]
+11:I[34322,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"default"]
+f:["$","$L11",null,{"formats":"$undefined","locale":"ja","messages":{"user":{"blog":{"title":"ブログ","empty":"投稿が見つかりませんでした。","filtersTitle":"絞り込み","filtersAll":"すべて","filtersYear":"年","metaSeparator":"/","searchLabel":"検索","searchEmpty":"検索結果が見つかりませんでした。","shareHeading":"シェアする","shareText":"「{title}」","shareXLabel":"Xでシェア","shareBlueskyLabel":"Blueskyでシェア","shareHatenaLabel":"はてなでシェア","shareLineLabel":"LINEでシェア","shareFacebookLabel":"Facebookでシェア","shareThreadsLabel":"Threadsでシェア","shareWebLabel":"デバイスで共有","shareCopyLabel":"リンクをコピー","shareCopyCopied":"コピーしました","followHeading":"フォローする","followXLabel":"Xをフォロー","followBlueskyLabel":"Blueskyをフォロー","followGithubLabel":"GitHubをフォロー","followThreadsLabel":"Threadsをフォロー","followRssLabel":"RSSをフォロー","paginationLabel":"ページネーション","paginationPrev":"前へ","paginationNext":"次へ"},"top":{"title":"ホーム","welcome":"ようこそ、silverbirder のジブンノートへ！","toc":{"firstTime":{"title":"初めての方","items":{"me":"自己紹介へ"}},"reader":{"title":"読者の方","items":{"blog":"ブログへ","blogStats":"（ 最新更新: {latestDate} / 記事数: {totalCount} ）"}},"other":{"title":"その他","items":{"featureRequest":"機能リクエストへ"}}},"timeline":{"heading":"タイムライン"}},"me":{"title":"自己紹介","name":"silverbirder","handle":"@silverbirder","role":"Webソフトウェアエンジニア","greetingFirst":"はじめまして、","greetingSecond":"よろしくね。","leadFirst":"Webのフロントエンド開発とテストが得意なソフトウェアエンジニアです。","leadSecond":"わくわくするWeb開発が楽しくて仕方がないです。","detailFirst":"穏やかな風景や音を体験したり、美味しいたべものを共有するのが好きです。","detailSecond":"私のお気に入りの写真を<link>コルクボード</link>に載せていますので、よければご覧ください。","photoAlt":"お気に入りの写真の1つ","photoMoreLabel":"写真をもっとみる","followHeading":"フォローしてね！","workHeading":"職歴","workLegendFulltime":"正社員","workLegendContract":"業務委託","artifacts":{"heading":"成果物","booksHeading":"書籍","webServicesHeading":"Webサービス","webServicesLinkLabel":"個人開発で開発したWebサービス一覧","webServicesLink":"https://sites.google.com/view/silverbirders-services","githubHeading":"GitHubプロジェクト","notableContent":{"heading":"過去の活動履歴","moreLabel":"詳細を見る","items":{"cleanArchitecture":{"title":"大規模フロントエンドのクリーンアーキテクチャ化","type":"Presentation","description":"Developers Boost KANSAI (2019.6.15 @Osaka) の発表資料です。"},"techSelection":{"title":"初めての技術選定を頼まれた時に大事だったのは俯瞰的・相対的な考え方だった","type":"Blog","description":"ワークフローエンジンの技術選定についてのブログ記事です。"},"layeredArchitecture":{"title":"Webフロントエンド再設計: レイヤードアーキテクチャの導入 ~ 高品質なコードを実現するために ~","type":"Blog","description":"WebフロントエンドにFeature-Sliced Designというレイヤードアーキテクチャを導入した話です。"},"testPatternGuide":{"title":"Webフロントエンドにおける網羅的テストパターンガイド","type":"Blog","description":"Webフロントエンドにおける機能面、非機能面、そしてUI/UXの視点からのテストパターンガイドを紹介します。"}}},"books":{"introWebComponents":{"title":"はじめてのWeb Components入門"}},"githubProjects":{"oEmbed":{"name":"o-embed","description":"Web Components for oEmbed generated by open-wc"},"ogpMe":{"name":"ogp-me","description":"WebComponent that displays Facebook-like information based on Open Graph Protocol (OGP)"},"googleAccountPhotoApi":{"name":"Google Account Photo API","description":"API that returns the image of your Google account"},"caat":{"name":"CaAT","description":"Google Apps Script Library to calculate assigned time in Google Calendar"},"cotlin":{"name":"Cotlin","description":"Tools that collect links in tweets using the Twitter API (Search Tweets)"},"rMinc":{"name":"rMinc","description":"Google Apps Script Library to register mail in Calendar"},"tiqav2":{"name":"Tiqav2","description":"Platform that provides image search API"},"zoomMeetingCreator":{"name":"zoom-meeting-creator","description":"Google Apps Script for creating Zoom meetings"}}},"skills":{"heading":"お気に入りの技術","items":{"react":{"name":"React","description":"一番使い慣れたコンポーネントベースのライブラリ"},"jest":{"name":"Jest","description":"愛用しているテストフレームワーク"},"playwright":{"name":"Playwright","description":"E2Eテストと言えばこれ"},"storybook":{"name":"Storybook","description":"UIカタログ兼コンポーネント開発環境として重宝"},"figma":{"name":"Figma","description":"デザイナーとの協業に欠かせないツール"},"testcontainers":{"name":"Testcontainers","description":"E2Eテスト環境の構築に必須"}}},"workExperiences":{"systemIntegration":{"company":"System Integration","description":"新卒でWebアプリの開発、保守、運用に従事。設計からリリースまで一貫して経験を積む。"},"eCommerce":{"company":"E-Commerce","description":"フルスタックエンジニアとして、大規模アプリケーションのアーキテクチャ設計とモダナイゼーションに貢献。"},"fintech":{"company":"Fintech","description":"フロントエンドエンジニアとして、プロダクト改善および新機能の開発に携わる。"},"restaurant":{"company":"Restaurant","description":"フロントエンドエンジニアとして、SaaSプロダクトのクロスプラットフォーム開発に携わる。"},"foodDelivery":{"company":"Food Delivery","description":"フルスタックエンジニアとして、宅食サービスのプロダクト開発を担当。"},"media":{"company":"Media","description":"フロントエンドエンジニアとして、メディアサイトの新規開発および改善に携わる。"}}}},"admin":{"home":{"title":"管理ホーム","signedInAs":"{name} としてログイン中","unknownUser":"不明なユーザー","signOut":"サインアウト","postsTitle":"投稿一覧","postsLoading":"投稿一覧を読み込んでいます...","postsError":"投稿一覧の読み込みに失敗しました。","postsEmpty":"投稿が見つかりませんでした。"},"signIn":{"title":"管理画面サインイン","description":"GitHub アカウントで管理ダッシュボードにアクセスします。","action":"GitHub で続ける","loading":"GitHub に接続しています...","support":"アクセスは承認済みの GitHub アカウントに限定されています。","errorForbidden":"このアカウントはアクセス権限がありません。","errorMissingAllowList":"ADMIN_ALLOWED_EMAILS が未設定です。","signOut":"サインアウト"},"postEditor":{"title":"ブログ執筆","description":"Markdown で本文を入力し、プレビューで表示を確認します。","editorTitle":"エディター","previewTitle":"プレビュー","titleLabel":"タイトル","titlePlaceholder":"記事タイトルを入力","contentLabel":"本文 (Markdown)","contentPlaceholder":"ここに Markdown を書いてください。","linkUpdateAction":"リンクテキスト更新","linkUpdateLoading":"リンクテキスト更新中...","createPullRequestAction":"Pull Request 作成","createPullRequestLoading":"Pull Request 作成中...","createPullRequestError":"Pull Request の作成に失敗しました。","previewEmpty":"Markdown を入力するとプレビューが表示されます。","loading":"エディターを準備しています...","error":"プレビューの生成に失敗しました。"}},"ui":{"notebookImage":{"openInNewTabAriaLabel":"別タブで開く"},"notebook":{"headerDate":"DATE","headerNo":"NO.","globalNavigationLabel":"グローバルナビゲーション","globalNavigationTop":"ホーム","globalNavigationMe":"自己紹介","globalNavigationBlog":"ブログ","relatedHeading":"関連する記事","relatedTagHeading":"タグ「{tag}」の記事","navigationLabel":"記事ナビゲーション","navigationPrev":"前のページ","navigationNext":"次のページ","backToBlog":"← ブログ一覧へ"}}},"now":"$undefined","timeZone":"UTC","children":"$L12"}]
+13:"$Sreact.view_transition"
+14:I[65456,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js"],"UserLayout"]
+12:["$","$13",null,{"children":["$","$7",null,{"fallback":null,"children":["$","$L14",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:I[42418,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"IconMark"]
+8:null
+c:[["$","title","0",{"children":"［覚書］ Micro Frontends | ジブンノート"}],["$","meta","1",{"name":"description","content":"Micro Frontends とは?皆さん、**Micro Fronends**(以下、MFE)をご存知でしょうか。説明をざっくりしますと、Microservicesの考え方をフロントエンドまで拡張した考え方です。Microservicesは、バックエンド側で適用される事例をよく耳にしますが、フロントエンドでの適用事例は、あまり聞いたことがありません。"}],["$","meta","2",{"name":"application-name","content":"ジブンノート"}],["$","link","3",{"rel":"manifest","href":"/silverbirder.github.io-new/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"フロントエンド"}],["$","meta","5",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","6",{"name":"creator","content":"silverbirder"}],["$","meta","7",{"name":"publisher","content":"ジブンノート"}],["$","meta","8",{"name":"robots","content":"noindex"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/"}],["$","meta","11",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","12",{"property":"og:title","content":"［覚書］ Micro Frontends"}],["$","meta","13",{"property":"og:description","content":"Micro Frontends とは?皆さん、**Micro Fronends**(以下、MFE)をご存知でしょうか。説明をざっくりしますと、Microservicesの考え方をフロントエンドまで拡張した考え方です。Microservicesは、バックエンド側で適用される事例をよく耳にしますが、フロントエンドでの適用事例は、あまり聞いたことがありません。"}],["$","meta","14",{"property":"og:url","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/"}],["$","meta","15",{"property":"og:site_name","content":"ジブンノート"}],["$","meta","16",{"property":"og:image:alt","content":"［覚書］ Micro Frontends"}],["$","meta","17",{"property":"og:image:height","content":"630"}],["$","meta","18",{"property":"og:image","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/opengraph-image"}],["$","meta","19",{"property":"og:image:width","content":"1200"}],["$","meta","20",{"property":"og:type","content":"article"}],["$","meta","21",{"property":"article:published_time","content":"2020-11-19"}],["$","meta","22",{"property":"article:tag","content":"フロントエンド"}],["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","24",{"name":"twitter:title","content":"［覚書］ Micro Frontends"}],["$","meta","25",{"name":"twitter:description","content":"Micro Frontends とは?皆さん、**Micro Fronends**(以下、MFE)をご存知でしょうか。説明をざっくりしますと、Microservicesの考え方をフロントエンドまで拡張した考え方です。Microservicesは、バックエンド側で適用される事例をよく耳にしますが、フロントエンドでの適用事例は、あまり聞いたことがありません。"}],["$","meta","26",{"name":"twitter:image","content":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/opengraph-image"}],["$","link","27",{"rel":"icon","href":"/silverbirder.github.io-new/icon/32","sizes":"32x32"}],["$","link","28",{"rel":"icon","href":"/silverbirder.github.io-new/icon/48","sizes":"48x48"}],["$","link","29",{"rel":"icon","href":"/silverbirder.github.io-new/icon/72","sizes":"72x72"}],["$","link","30",{"rel":"icon","href":"/silverbirder.github.io-new/icon/96","sizes":"96x96"}],["$","link","31",{"rel":"icon","href":"/silverbirder.github.io-new/icon/144","sizes":"144x144"}],["$","link","32",{"rel":"icon","href":"/silverbirder.github.io-new/icon/192","sizes":"192x192"}],["$","link","33",{"rel":"icon","href":"/silverbirder.github.io-new/icon/512","sizes":"512x512"}],["$","link","34",{"rel":"apple-touch-icon","href":"/silverbirder.github.io-new/apple-icon"}],["$","$L15","35",{}]]
+16:I[36926,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js"],"PostArticle"]
+17:T4e1f,"use strict";
+const {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];
+const {useMDXComponents: _provideComponents} = arguments[0];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    h2: "h2",
+    img: "img",
+    li: "li",
+    p: "p",
+    strong: "strong",
+    ul: "ul",
+    ..._provideComponents(),
+    ...props.components
+  };
+  return _jsxs(_Fragment, {
+    children: [_jsx(_components.h2, {
+      id: "micro-frontends-とは",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#micro-frontends-とは",
+        children: "Micro Frontends とは?🤔"
+      })
+    }), "\n", _jsxs(_components.p, {
+      children: ["皆さん、", _jsx(_components.strong, {
+        children: "Micro Fronends"
+      }), "(以下、MFE)をご存知でしょうか。説明をざっくりしますと、Microservices の考え方をフロントエンドまで拡張した考え方です。Microservices は、バックエンド側で適用される事例をよく耳にしますが、フロントエンドでの適用事例は、あまり聞いたことがありません。"]
+    }), "\n", _jsx(_components.p, {
+      children: "従来、Web サービス開発ではモノリスな構成からスタートします。そこから、規模が拡大するにつれて様々な理由により、フロントエンドとバックエンドの分離、バックエンドの Microservices 化が行われます。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://micro-frontends-japanese.org/",
+        children: _jsx(_components.img, {
+          src: "https://micro-frontends-japanese.org/resources/monolith-frontback-microservices.png",
+          alt: "[翻訳記事]マイクロフロントエンド > monolith-frontback-microservices"
+        })
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "Microservices 化によって、Scalability、Agility、Independency、Availability の大幅な向上が期待できます。しかし、依然フロントエンドはモノリスなままです。そこで、次の画像のように、Microservices と同様にフロントエンドも縦(専門領域)に分割します。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://micro-frontends-japanese.org/",
+        children: _jsx(_components.img, {
+          src: "https://micro-frontends-japanese.org/resources/verticals-headline.png",
+          alt: "[翻訳記事]マイクロフロントエンド > verticals-headline"
+        })
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "ただし、全ての Web サービスを MFE にする必要はありません。先程の説明にもあった通り、規模が拡大した際に MFE を検討する必要があるため、小・中規模の Web サービスでは時期尚早です。また、次の画像にもある通り、静的ページ(Web サイト,Web ドキュメント)や動的ページ(Web アプリ)の両極端に位置する Web サービスは MFE の適用するのには不向きです(と書いています)。両方の要素が求められる Web サービスに MFE が役立ちます。MFE の適用される Web サービス事例では、EC サイトが挙げられます。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://www.linkedin.com/pulse/microfrontends-approach-building-scalable-web-apps-vinci-rufus",
+        children: _jsx(_components.img, {
+          src: "https://res.cloudinary.com/silverbirder/image/upload/v1613832627/silver-birder.github.io/blog/mfe-web-document-to-web-app.png",
+          alt: "Microfrontends: An approach to building Scalable Web Apps"
+        })
+      })
+    }), "\n", _jsxs(_components.p, {
+      children: ["※ MFE という言葉は、", _jsx(_components.a, {
+        href: "https://www.thoughtworks.com/radar/techniques/micro-frontends",
+        children: "Micro frontends | Technology Radar | ThoughtWorks"
+      }), " の記事より生まれたみたいです。\n※ ", _jsx(_components.a, {
+        href: "https://www.manning.com/books/micro-frontends-in-action",
+        children: "Micro Frontends in Action"
+      }), "にも記載されていますが、この考え方は Web サービスを対象としており、ネイティブアプリは対象としていません。"]
+    }), "\n", _jsx(_components.h2, {
+      id: "導入企業-",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#導入企業-",
+        children: "導入企業 👨‍💼👩‍💼"
+      })
+    }), "\n", _jsxs(_components.p, {
+      children: ["実績企業としては、IKEA、DAZN、Spotify などが挙げられます。他の例は、", _jsx(_components.a, {
+        href: "./think_micro_frontends",
+        children: "Micro Frontends を調べたすべて"
+      }), " にリストアップしていますので、興味がある方はご覧ください。"]
+    }), "\n", _jsx(_components.h2, {
+      id: "メリットデメリット-",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#メリットデメリット-",
+        children: "メリット・デメリット 🔍"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "MFE を導入することによるメリット・デメリットについて、(プロダクション導入経験無しの私が偏見で)簡単に紹介します。Microservices のメリット・デメリットと似ていると思います。"
+    }), "\n", _jsxs(_components.p, {
+      children: ["私が思う最大のメリットは、", _jsx(_components.strong, {
+        children: "Agility"
+      }), "と思います。規模が中・大規模な Web サービスとなると、様々な業務ドメインが詰め込まれます。先程の MFE の例(EC サイト)でいうと、推薦(inspire)、検索(search)、商品(product)、注文(checkout)などにあたります。これらを 1 つのフロントエンドで構築すると、ドメイン設計を適切に分離できたとしても、", _jsx(_components.strong, {
+        children: "開発者の業務ドメイン知識が追いつかず、開発スピードが低下してしまいます"
+      }), "。結果、特定の開発者の属人化が加速し、ボトルネックとなります。\nそこで、それぞれ", _jsx(_components.strong, {
+        children: "業務ドメインを分割することで、開発者はそこだけにフォーカスできます。結果、開発スピードは維持できるはずです"
+      }), "。"]
+    }), "\n", _jsxs(_components.p, {
+      children: ["私が思う最大のデメリットは、", _jsx(_components.strong, {
+        children: "Independency の難しさ"
+      }), "だと思います。例えば、UI/UX の指針となるデザインシステムが Web サービスにあったとして、それをすべてのフロントエンドへ適用しなければいけません。そのため、全体を通した", _jsx(_components.strong, {
+        children: "一貫性のある UI/UX であるかどうか"
+      }), "の品質担保が難しいです。\n他には、あるチームのビルドツールを改善したとしても、他のチームではその恩恵を受けれなかったり、アプリケーション設計における全体共通(アクセス履歴、イベント管理、状態管理など)部分を、どうするか考える必要があります。"]
+    }), "\n", _jsxs(_components.p, {
+      children: ["こちら ", _jsx(_components.a, {
+        href: "./think_micro_frontends#proscons",
+        children: "Micro Frontends を調べたすべて#ProsCons"
+      }), " にも簡単にメリット・デメリットを書いていますので、気になる方はご覧ください。"]
+    }), "\n", _jsx(_components.h2, {
+      id: "統合パターン-",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#統合パターン-",
+        children: "統合パターン 🔮"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "MFE では、各フロントエンドのフラグメント(HTML)を、どのタイミングで統合するのかが重要です。今回はその統合パターンをざっくり紹介します。\n例えば、次の MFE の例で言えば、Team-Product、Team-Checkout、Team-Inspire の 3 つのフロントエンドフラグメント(HTML)があります。これらをどのタイミングで統合するのかがポイントです。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://micro-frontends-japanese.org/",
+        children: _jsx(_components.img, {
+          src: "https://micro-frontends-japanese.org/resources/three-teams.png",
+          alt: "[翻訳記事]マイクロフロントエンド > mfe-three-teams"
+        })
+      })
+    }), "\n", _jsxs(_components.p, {
+      children: ["詳しくは、", _jsx(_components.a, {
+        href: "./think_micro_frontends",
+        children: "Micro Frontends を調べたすべて#統合パターン"
+      }), " をご覧ください。"]
+    }), "\n", _jsx(_components.h2, {
+      id: "ビルド時統合パターン",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#ビルド時統合パターン",
+        children: "ビルド時統合パターン"
+      })
+    }), "\n", _jsxs(_components.p, {
+      children: ["ビルド時統合とは、Web サービスを Publish する前の Build の段階で統合するパターンです。このパターンは、", _jsx(_components.a, {
+        href: "https://bit.dev",
+        children: "bit.dev"
+      }), "がよく使われます。"]
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://bit.dev/",
+        children: _jsx(_components.img, {
+          src: "https://res.cloudinary.com/silverbirder/image/upload/v1693376955/silver-birder.github.io/blog/e74w0sjnj1r0zpzvd5xfvsk7k1bd.png",
+          alt: "bit.dev"
+        })
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "フラグメントを Packaging し、Packaging したライブラリを import させて build(統合)します。あとは、build した静的コンテンツを Publish させるだけになります。"
+    }), "\n", _jsx(_components.h2, {
+      id: "サーバーサイド統合パターン",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#サーバーサイド統合パターン",
+        children: "サーバーサイド統合パターン"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "サーバーサイド統合とは、Web サーバー側の HTML 構築段階で統合するパターンです。このパターンは、SSI や ESI、Podium、Tailor、Ara-Framework などが使われます。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://www.st-andrews.ac.uk/itsnew/web/ssi/index.shtml",
+        children: _jsx(_components.img, {
+          src: "https://res.cloudinary.com/silverbirder/image/upload/v1693376958/silver-birder.github.io/blog/ssi1.jpg",
+          alt: "Server-side includes (SSI)"
+        })
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "フラグメントを提供するサーバーを準備し、それらからフラグメント情報を収集し、全体のページ HTML を構築します。それを SSR としてユーザーへ提供します。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://github.com/silverbirder/micro-frontends-sample-code-5",
+        children: _jsx(_components.img, {
+          src: "https://res.cloudinary.com/silverbirder/image/upload/v1693376972/silver-birder.github.io/blog/overview.svg",
+          alt: "cloudflare-worker"
+        })
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "サーバーサイドのサンプルコードは、次にまとめています。"
+    }), "\n", _jsxs(_components.ul, {
+      children: ["\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./microfrontends",
+          children: "Micro Frontends を学んだすべて"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./ara-framework",
+          children: "Ara-Framework で Micro Frontends with SSR"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./tailor",
+          children: "Zalando tailor で Micro Frontends with ( LitElement & etcetera)"
+        })
+      }), "\n"]
+    }), "\n", _jsx(_components.p, {
+      children: "また、サーバーサイドというより Edge での統合パターンを下記リンクで紹介しています。"
+    }), "\n", _jsxs(_components.ul, {
+      children: ["\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./cloudflare_workers_mfe",
+          children: "Cloudflare Workers (Edge Workers) で Micro Frontends"
+        })
+      }), "\n"]
+    }), "\n", _jsx(_components.p, {
+      children: "※ リッチなインタラクション UI を表現したいなら、サーバーサイドとクライアントの Hydration をする必要があります。"
+    }), "\n", _jsx(_components.h2, {
+      id: "クライアントサイド統合パターン",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#クライアントサイド統合パターン",
+        children: "クライアントサイド統合パターン"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "クライアントサイド統合とは、ブラウザ側レンダリングの段階で統合するパターンです。このパターンは、iframe や WebComponents などが使われます。"
+    }), "\n", _jsx(_components.p, {
+      children: "iframe を使ったページ(フラグメント)埋め込み、全体のページ HTML を統合させたり、WebComponents のようにカスタムエレメントを定義した HTML タグでページを構成したりします。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.a, {
+        href: "https://bluesoft.com/micro-frontends-the-missing-piece-of-the-puzzle-in-feature-teams/",
+        children: _jsx(_components.img, {
+          src: "https://res.cloudinary.com/silverbirder/image/upload/v1693376976/silver-birder.github.io/blog/Micro-Frontends-11.jpg",
+          alt: "Micro Frontends – The Missing Piece Of The Puzzle In Feature Teams | BlueSoft"
+        })
+      })
+    }), "\n", _jsx(_components.h2, {
+      id: "終わりに-",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#終わりに-",
+        children: "終わりに 👨‍💻👩‍💻"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "MFE のアプローチを実際に導入した企業は、国内だとまだ比較的少なく、どういった場面で役立つのかあまり明確ではありません。また、書籍や知見も多くはないため、未知な領域と思います。"
+    }), "\n", _jsx(_components.p, {
+      children: "ただ、依然フロントエンドがモノリスな、中・大規模な Web サービスを運用するならば、特に進化が激しいフロントエンド界隈の中で、サービス提供の速度、品質を維持するのは難しいと思います。フロントエンドも Microservices 化する場面が訪れるかもしれません。そんなときに、この記事を思い出して頂ければ幸いです。"
+    }), "\n", _jsx(_components.p, {
+      children: "※ 独り言ですが、MFE の構築アプローチとして、Edge Worker + Web Components の組み合わせが最近好みです。"
+    }), "\n", _jsx(_components.h2, {
+      id: "関連リンク-",
+      children: _jsx(_components.a, {
+        className: "mdx-heading-anchor",
+        href: "#関連リンク-",
+        children: "関連リンク 🔗"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "私が書いた MFE 関連の記事です。もしよければご覧ください。"
+    }), "\n", _jsxs(_components.ul, {
+      children: ["\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./microfrontends",
+          children: "Micro Frontends を学んだすべて"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./think_micro_frontends",
+          children: "Micro Frontends を調べたすべて"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/think-micro-frontends/blob/master/research/docs/read.md",
+          children: "MFE 関連資料リンク集"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./ara-framework",
+          children: "Ara-Framework で Micro Frontends with SSR"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./tailor",
+          children: "Zalando tailor で Micro Frontends with ( LitElement & etcetera)"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "./cloudflare_workers_mfe",
+          children: "Cloudflare Workers (Edge Workers) で Micro Frontends"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-on-kubernetes",
+          children: "github.com/silverbirder/micro-frontends-on-kubernetes"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://speakerdeck.com/silverbirder/micro-frontends-on-kubernetes-trial",
+          children: "speakerdeck.com/silverbirder/micro-frontends-on-kubernetes-trial"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/think-micro-frontends",
+          children: "github.com/silverbirder/think-micro-frontends"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-sample-code",
+          children: "github.com/silverbirder/micro-frontends-sample-code"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-sample-code-2",
+          children: "github.com/silverbirder/micro-frontends-sample-code-2"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-sample-code-3",
+          children: "github.com/silverbirder/micro-frontends-sample-code-3"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-sample-code-4",
+          children: "github.com/silverbirder/micro-frontends-sample-code-4"
+        })
+      }), "\n", _jsx(_components.li, {
+        children: _jsx(_components.a, {
+          href: "https://github.com/silverbirder/micro-frontends-sample-code-5",
+          children: "github.com/silverbirder/micro-frontends-sample-code-5"
+        })
+      }), "\n"]
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ..._provideComponents(),
+    ...props.components
+  };
+  return MDXLayout ? _jsx(MDXLayout, {
+    ...props,
+    children: _jsx(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+return {
+  default: MDXContent
+};
+5:["$","$L16",null,{"comments":{"shortname":"https-silverbirder-github-io","url":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/"},"compiledSource":"$17","followLinks":{"bluesky":"https://bsky.app/profile/silverbirder.bsky.social","github":"https://github.com/silverbirder","rss":"https://silverbirder.github.io/silverbirder.github.io-new/rss.xml","threads":"https://www.threads.com/@silverbirder","x":"https://x.com/silverbirder"},"meta":{"index":false,"postNumber":56,"publishedAt":"2020-11-19","tags":["フロントエンド"],"title":"［覚書］ Micro Frontends"},"navigation":{"next":{"href":"/blog/contents/arch-unit","publishedAt":"2020-11-28","title":"TypescriptでArchUnitしてみた"},"prev":{"href":"/blog/contents/cloudflare_workers_mfe","publishedAt":"2020-11-15","title":"Cloudflare Workers (Edge Worker) で Micro Frontends"}},"relatedPosts":[{"posts":[{"publishedAt":"2025-11-06","slug":"20251106","summary":"AIが生成するコードは、必ずレビューしましょう。この記事では、AIが生成CSSをレビューする際の7つのポイントを紹介します。CSSのレビューをする際に参考にしてください。","tags":["フロントエンド"],"title":"AIが生成したCSSをレビューしよう"},{"publishedAt":"2025-08-27","slug":"microcopy-microinteractions-and-links","summary":"こんにちは、@silverbirderです。最近、湖県に移住してWebフロントエンドのお仕事をしています。お仕事をしていると、ユーザー体験を良くするためには、大きな改善をせずとも小さな改善だけでも十分な効果があると思い始めました。本記事では、その小さな改善となる、3つのことについて書きたいと思います。","tags":["フロントエンド","ブラウザ"],"title":"マイクロコピー、マイクロインタラクション、そしてリンク"},{"publishedAt":"2025-08-20","slug":"storybook-addon-range-controls","summary":"こんにちは。先日、ちょっとしたきっかけでStorybookのアドオンをはじめて開発しました。本記事では、そのStorybookのアドオン開発の体験を共有したいと思います。","tags":["フロントエンド"],"title":"はじめてのStorybookアドオン開発体験記"}],"tag":"フロントエンド"}],"shareUrl":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/mfe/"}]

@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[3711,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","/silverbirder.github.io-new/_next/static/chunks/6cc55a0995991708.js","/silverbirder.github.io-new/_next/static/chunks/a81c8e1428c2d5c8.js"],"Me"]
+3:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"MMD6f_EM1muSxXBMwm7nb","rsc":["$","$1","c",{"children":[["$","$L2",null,{"followLinks":{"bluesky":"https://bsky.app/profile/silverbirder.bsky.social","github":"https://github.com/silverbirder","rss":"https://silverbirder.github.io/silverbirder.github.io-new/rss.xml","threads":"https://www.threads.com/@silverbirder","x":"https://x.com/silverbirder"}}],[["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/6cc55a0995991708.js","async":true}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/a81c8e1428c2d5c8.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

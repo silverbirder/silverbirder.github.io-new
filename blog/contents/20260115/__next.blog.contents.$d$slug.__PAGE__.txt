@@ -1,0 +1,68 @@
+1:"$Sreact.fragment"
+2:I[36926,["/silverbirder.github.io-new/_next/static/chunks/bf74a39339583e3f.js","/silverbirder.github.io-new/_next/static/chunks/0d4a7a041349640b.js","/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js"],"PostArticle"]
+5:I[49032,["/silverbirder.github.io-new/_next/static/chunks/67e37ec50aac1031.js","/silverbirder.github.io-new/_next/static/chunks/e04b806875559f41.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:Tbe4,"use strict";
+const {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];
+const {useMDXComponents: _provideComponents} = arguments[0];
+function _createMdxContent(props) {
+  const _components = {
+    br: "br",
+    img: "img",
+    p: "p",
+    ..._provideComponents(),
+    ...props.components
+  };
+  return _jsxs(_Fragment, {
+    children: [_jsxs(_components.p, {
+      children: ["普段使っている Macbook の macOS を Tahoe 26 にアップデートしてみました。", _jsx(_components.br, {}), "\nLiquid Glass というガラスっぽいデザインに刷新されていました。", _jsx(_components.br, {}), "\nまだ使用して2日目ぐらいですけど、比較的気に入っています。"]
+    }), "\n", _jsxs(_components.p, {
+      children: ["どこか気に入っているのかと言われると、自然な透過感が良いですね。", _jsx(_components.br, {}), "\n機能が良い悪いというより、違和感なく滑らかに ガラスっぽさが浸透している感じです。"]
+    }), "\n", _jsx(_components.p, {
+      children: "たとえば、Finder を開くと、背景の色に合わせて左メニューのガラスの色が少し変わります。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.img, {
+        src: "https://res.cloudinary.com/silverbirder/image/upload/v1768479536/silver-birder.github.io/blog/wy3sexzv8fxmgejyw2om.png",
+        alt: "Finder"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "上記画像は Finder のスクリーンショットを撮ったのですが、なぜか背景色が反映されたガラス色が写りませんでした。 🤔"
+    }), "\n", _jsx(_components.p, {
+      children: "他には、アプリアイコン の縁が少しキラキラしていて、いいねぇと思います。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.img, {
+        src: "https://res.cloudinary.com/silverbirder/image/upload/v1768480355/silver-birder.github.io/blog/vki8cjiu8dl5r0vjwfjy.png",
+        alt: "Figma"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "あと、入力補助の表示で、グネッとした感があって 不思議でしたね。"
+    }), "\n", _jsx(_components.p, {
+      children: _jsx(_components.img, {
+        src: "https://res.cloudinary.com/silverbirder/image/upload/v1768480791/silver-birder.github.io/blog/k8mted8hqqjflutj8yuk.png",
+        alt: "入力"
+      })
+    }), "\n", _jsx(_components.p, {
+      children: "もうひとつ、全体的に角が丸っぽくなっている気がしますが、これは気のせい？"
+    }), "\n", _jsx(_components.p, {
+      children: "ま、Liquid Glass 気に入りました！"
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ..._provideComponents(),
+    ...props.components
+  };
+  return MDXLayout ? _jsx(MDXLayout, {
+    ...props,
+    children: _jsx(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+return {
+  default: MDXContent
+};
+0:{"buildId":"MMD6f_EM1muSxXBMwm7nb","rsc":["$","$1","c",{"children":[["$","$L2",null,{"comments":{"shortname":"https-silverbirder-github-io","url":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/20260115/"},"compiledSource":"$3","followLinks":{"bluesky":"https://bsky.app/profile/silverbirder.bsky.social","github":"https://github.com/silverbirder","rss":"https://silverbirder.github.io/silverbirder.github.io-new/rss.xml","threads":"https://www.threads.com/@silverbirder","x":"https://x.com/silverbirder"},"meta":{"index":false,"postNumber":228,"publishedAt":"2026-01-15","tags":[],"title":"Mac を Liquid Glass にしてみた"},"navigation":{"next":{"href":"/blog/contents/20260116","publishedAt":"2026-01-16","title":"下呂温泉"},"prev":{"href":"/blog/contents/20260114","publishedAt":"2026-01-14","title":"メインのSNSを、XからBlueskyへ"}},"relatedPosts":[],"shareUrl":"https://silverbirder.github.io/silverbirder.github.io-new/blog/contents/20260115/"}],[["$","script","script-0",{"src":"/silverbirder.github.io-new/_next/static/chunks/2af2c9ac095cc29a.js","async":true}],["$","script","script-1",{"src":"/silverbirder.github.io-new/_next/static/chunks/192ccf60ce702378.js","async":true}]],"$L4"]}],"loading":null,"isPartial":false}
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null
