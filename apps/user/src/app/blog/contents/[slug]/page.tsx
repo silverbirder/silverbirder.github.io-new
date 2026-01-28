@@ -133,6 +133,7 @@ export default async function Page(props: PageProps<"/blog/contents/[slug]">) {
         compiledSource={compiled.compiledSource}
         followLinks={followLinks}
         meta={{
+          index: frontmatter.index,
           postNumber,
           publishedAt: frontmatter.publishedAt ?? "",
           tags: frontmatter.tags ?? [],

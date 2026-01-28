@@ -23,6 +23,7 @@ import { Disqus } from "./disqus";
 import { NotebookDash } from "./notebook-dash";
 import { NotebookPostItem } from "./notebook-post-item";
 import { NOTEBOOK_LINE_HEIGHT, NotebookProse } from "./notebook-prose";
+import { RobotBadge } from "./robot-badge";
 import { ShareButtonBluesky } from "./share-button-bluesky";
 import { ShareButtonCopy } from "./share-button-copy";
 import { ShareButtonFacebook } from "./share-button-facebook";
@@ -42,6 +43,7 @@ type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
     url: string;
   };
   follow?: FollowSection;
+  indexStatus?: "index" | "noindex";
   isBackToBlog?: boolean;
   navigation: {
     next?: {
@@ -107,6 +109,7 @@ export const Notebook = ({
   children,
   comments,
   follow,
+  indexStatus = "index",
   isBackToBlog,
   navigation,
   postNumber,
@@ -499,19 +502,35 @@ export const Notebook = ({
           <NotebookDash height={6} patternWidth={128} />
           <NotebookDash height={3} patternWidth={16} />
         </Box>
-        <Box
+        <Flex
           alignItems="center"
           bottom="0"
-          display="flex"
           h={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
-          justifyContent="center"
-          overflow="hidden"
+          justifyContent="space-between"
           position="absolute"
-          right={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
-          w={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+          px={`calc(${NOTEBOOK_LINE_HEIGHT} / 2)`}
+          right={0}
+          w="full"
         >
-          <Spiral strokeColor="green.muted" />
-        </Box>
+          {indexStatus && (
+            <RobotBadge
+              data-testid="post-article-robot"
+              h={NOTEBOOK_LINE_HEIGHT}
+              status={indexStatus}
+              w={NOTEBOOK_LINE_HEIGHT}
+            />
+          )}
+          <Box
+            alignItems="center"
+            display="flex"
+            h={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+            justifyContent="center"
+            overflow="hidden"
+            w={`calc(${NOTEBOOK_LINE_HEIGHT} * 2)`}
+          >
+            <Spiral strokeColor="green.muted" />
+          </Box>
+        </Flex>
       </Box>
     </VStack>
   );

@@ -79,6 +79,77 @@ return {
     expect(document.body.textContent ?? "").toContain("Test title");
   });
 
+  it("renders the robot badge as indexed by default", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        followLinks={followLinks}
+        meta={{
+          postNumber: 1,
+          publishedAt: "2025-01-02",
+          tags: ["Testing"],
+          title: "Test title",
+        }}
+        navigation={{}}
+        relatedPosts={[]}
+        shareUrl="https://example.com/blog/contents/test/"
+      />,
+    );
+
+    const robotBadge = document.querySelector(
+      '[data-testid="post-article-robot"] [data-index-status]',
+    );
+    expect(robotBadge?.getAttribute("data-index-status")).toBe("index");
+  });
+
+  it("renders the robot badge as noindex when index is false", () => {
+    const compiledSource = `"use strict";
+const {jsx: _jsx} = arguments[0];
+function MDXContent() {
+  return _jsx("p", {
+    children: "hello"
+  });
+}
+return {
+  default: MDXContent
+};
+`;
+
+    renderWithProvider(
+      <PostArticle
+        compiledSource={compiledSource}
+        followLinks={followLinks}
+        meta={{
+          index: false,
+          postNumber: 1,
+          publishedAt: "2025-01-02",
+          tags: ["Testing"],
+          title: "Test title",
+        }}
+        navigation={{}}
+        relatedPosts={[]}
+        shareUrl="https://example.com/blog/contents/test/"
+      />,
+    );
+
+    const robotBadge = document.querySelector(
+      '[data-testid="post-article-robot"] [data-index-status]',
+    );
+    expect(robotBadge?.getAttribute("data-index-status")).toBe("noindex");
+  });
+
   it("renders compiled source via provider wrapper", async () => {
     const compiledSource = `"use strict";
 const {jsx: _jsx} = arguments[0];

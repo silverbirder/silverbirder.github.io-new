@@ -18,6 +18,7 @@ type Props = {
   compiledSource: string;
   followLinks: FollowLinks;
   meta: {
+    index?: boolean;
     postNumber?: number;
     publishedAt: string;
     tags: string[];
@@ -86,13 +87,14 @@ export const PostArticle = ({
     },
     links: followLinks,
   });
-
+  const indexStatus = meta.index === false ? "noindex" : "index";
   return (
     <Box w="full">
       <ScrollProgressBar />
       <Notebook
         comments={comments}
         follow={follow}
+        indexStatus={indexStatus}
         isBackToBlog={true}
         navigation={navigation}
         postNumber={meta.postNumber}
