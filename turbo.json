@@ -18,7 +18,8 @@
     "CONTENT_GITHUB_BASE_BRANCH",
     "CONTENT_GITHUB_REPOSITORY",
     "CONTENT_POSTS_PATH",
-    "IS_TEST"
+    "IS_TEST",
+    "GA_ID"
   ],
   "tasks": {
     "build": {

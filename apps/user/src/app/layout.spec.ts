@@ -46,23 +46,62 @@ describe("RootLayout", () => {
     expect(bodyElement.type).toBe("body");
     expect(bodyElement.props.className).toBe("noto-font");
 
-    const uiProviderElement = bodyElement.props.children;
+    const bodyChildren = React.Children.toArray(bodyElement.props.children);
+    const uiProviderCandidate = bodyChildren[0];
 
+    expect(isValidElement(uiProviderCandidate)).toBe(true);
+    if (!isValidElement(uiProviderCandidate)) {
+      throw new Error("UI Provider element is missing");
+    }
+    const uiProviderElement = uiProviderCandidate as React.ReactElement<{
+      children: ReactNode;
+    }>;
     expect(uiProviderElement.type).toBe(ui.Provider);
 
-    const intlProviderElement = uiProviderElement.props.children;
-
+    const intlProviderCandidate = uiProviderElement.props.children;
+    expect(isValidElement(intlProviderCandidate)).toBe(true);
+    if (!isValidElement(intlProviderCandidate)) {
+      throw new Error("Intl Provider element is missing");
+    }
+    const intlProviderElement = intlProviderCandidate as React.ReactElement<{
+      children: ReactNode;
+    }>;
     expect(intlProviderElement.type).toBe(nextIntl.NextIntlClientProvider);
 
-    const viewTransitionElement = intlProviderElement.props.children;
+    const viewTransitionCandidate = intlProviderElement.props.children;
+    expect(isValidElement(viewTransitionCandidate)).toBe(true);
+    if (!isValidElement(viewTransitionCandidate)) {
+      throw new Error("ViewTransition element is missing");
+    }
+    const viewTransitionElement =
+      viewTransitionCandidate as React.ReactElement<{
+        children: ReactNode;
+      }>;
+    const suspenseCandidate = viewTransitionElement.props.children;
+    expect(isValidElement(suspenseCandidate)).toBe(true);
+    if (!isValidElement(suspenseCandidate)) {
+      throw new Error("Suspense element is missing");
+    }
+    expect(suspenseCandidate.type).toBe(React.Suspense);
 
-    expect(isValidElement(viewTransitionElement)).toBe(true);
-    expect(viewTransitionElement.props.children.type).toBe(React.Suspense);
+    const suspenseElement = suspenseCandidate as React.ReactElement<{
+      children: ReactNode;
+    }>;
+    const userLayoutCandidate = suspenseElement.props.children;
+    expect(isValidElement(userLayoutCandidate)).toBe(true);
+    if (!isValidElement(userLayoutCandidate)) {
+      throw new Error("UserLayout element is missing");
+    }
+    expect(userLayoutCandidate.type).toBe(ui.UserLayout);
 
-    const suspenseElement = viewTransitionElement.props.children;
-    expect(suspenseElement.props.children.type).toBe(ui.UserLayout);
-
-    const userLayoutElement = suspenseElement.props.children;
-    expect(userLayoutElement.props.children.type).toBe("span");
+    const userLayoutElement = userLayoutCandidate as React.ReactElement<{
+      children: ReactNode;
+    }>;
+    const userLayoutChild = userLayoutElement.props.children;
+    expect(isValidElement(userLayoutChild)).toBe(true);
+    if (!isValidElement(userLayoutChild)) {
+      throw new Error("UserLayout child element is missing");
+    }
+    expect(userLayoutChild.type).toBe("span");
   });
 });

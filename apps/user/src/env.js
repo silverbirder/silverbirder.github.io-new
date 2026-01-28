@@ -8,11 +8,15 @@ export const env = createEnv({
   },
   emptyStringAsUndefined: true,
   runtimeEnv: {
+    GA_ID: process.env.GA_ID,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NODE_ENV: process.env.NODE_ENV,
   },
   server: {
-    NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
+    GA_ID: z.string().optional(),
+    NODE_ENV: z
+      .enum(["development", "test", "production"])
+      .default("development"),
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

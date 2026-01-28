@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { createSiteMetadata } from "@repo/metadata";
 import { Provider, UserLayout } from "@repo/ui";
 import { NextIntlClientProvider } from "next-intl";
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }: Props) {
             </ViewTransition>
           </NextIntlClientProvider>
         </Provider>
+        {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
       </body>
     </html>
   );

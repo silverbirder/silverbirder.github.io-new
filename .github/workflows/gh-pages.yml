@@ -45,6 +45,7 @@ jobs:
 
       - name: Build user app (static export)
         env:
+          GA_ID: ${{ secrets.GA_ID }}
           NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH: ${{ env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
@@ -79,6 +80,7 @@ jobs:
 
       - name: Build user app (static export)
         env:
+          GA_ID: ${{ secrets.GA_ID }}
           NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH: ${{ env.NEXT_PUBLIC_GITHUB_PAGES_BASE_PATH }}/pr-${{ github.event.pull_request.number }}
           NEXT_TELEMETRY_DISABLED: "1"
         run: pnpm --filter user build
