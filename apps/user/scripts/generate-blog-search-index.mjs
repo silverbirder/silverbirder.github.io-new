@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,6 +8,10 @@ const repoRoot = path.resolve(__dirname, "..", "..", "..");
 const contentDir = path.resolve(repoRoot, "packages", "content", "posts");
 const outputDir = path.resolve(repoRoot, "apps", "user", "public");
 const outputFile = path.join(outputDir, "blog-search-index.json");
+const outputVersionFile = path.join(
+  outputDir,
+  "blog-search-index.version.json",
+);
 
 const extractFrontmatterBlock = (content) => {
   const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
@@ -93,4 +98,11 @@ const sorted = items
   }));
 
 await mkdir(outputDir, { recursive: true });
-await writeFile(outputFile, JSON.stringify(sorted), "utf8");
+const payload = JSON.stringify(sorted);
+const version = createHash("sha256").update(payload).digest("hex").slice(0, 12);
+await writeFile(outputFile, payload, "utf8");
+await writeFile(
+  outputVersionFile,
+  JSON.stringify({ version }),
+  "utf8",
+);

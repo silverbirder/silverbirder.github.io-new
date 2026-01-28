@@ -23,6 +23,8 @@ type Props = {
 };
 
 const SEARCH_RESULT_LIMIT = 20;
+const SEARCH_INDEX_CACHE_KEY = "blog-search-index";
+const SEARCH_INDEX_VERSION_KEY = "blog-search-index-version";
 
 export const PostSearchPanel = ({ onResultsChange }: Props) => {
   const t = useTranslations("user.blog");
@@ -35,6 +37,10 @@ export const PostSearchPanel = ({ onResultsChange }: Props) => {
   const [searchStatus, setSearchStatus] = useState<SearchStatus>("loading");
   const searchIndexPath = useMemo(
     () => buildSitePath("blog-search-index.json"),
+    [],
+  );
+  const searchIndexVersionPath = useMemo(
+    () => buildSitePath("blog-search-index.version.json"),
     [],
   );
   const trimmedSearchQuery = searchQuery.trim();
@@ -87,26 +93,64 @@ export const PostSearchPanel = ({ onResultsChange }: Props) => {
 
     worker.addEventListener("message", handleMessage);
 
-    fetch(searchIndexPath)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch search index");
+    const loadIndex = async () => {
+      const cache = (() => {
+        try {
+          return {
+            json: localStorage.getItem(SEARCH_INDEX_CACHE_KEY),
+            version: localStorage.getItem(SEARCH_INDEX_VERSION_KEY),
+          };
+        } catch {
+          return { json: null, version: null };
         }
-        return response.text();
-      })
-      .then((json) => {
-        worker.postMessage({ payload: { json }, type: "load" });
-      })
-      .catch(() => {
-        setSearchStatus("error");
-      });
+      })();
+
+      const versionResponse = await fetch(searchIndexVersionPath).catch(
+        () => null,
+      );
+      const versionJson = versionResponse?.ok
+        ? await versionResponse.json().catch(() => null)
+        : null;
+      const latestVersion =
+        versionJson && typeof versionJson.version === "string"
+          ? versionJson.version
+          : null;
+
+      if (latestVersion && cache.version === latestVersion && cache.json) {
+        worker.postMessage({ payload: { json: cache.json }, type: "load" });
+        return;
+      }
+
+      const indexResponse = await fetch(searchIndexPath);
+      if (!indexResponse.ok) {
+        throw new Error("Failed to fetch search index");
+      }
+      const json = await indexResponse.text();
+
+      try {
+        localStorage.setItem(SEARCH_INDEX_CACHE_KEY, json);
+        if (latestVersion) {
+          localStorage.setItem(SEARCH_INDEX_VERSION_KEY, latestVersion);
+        } else {
+          localStorage.removeItem(SEARCH_INDEX_VERSION_KEY);
+        }
+      } catch {
+        // localStorage may be unavailable; skip cache
+      }
+
+      worker.postMessage({ payload: { json }, type: "load" });
+    };
+
+    loadIndex().catch(() => {
+      setSearchStatus("error");
+    });
 
     return () => {
       worker.removeEventListener("message", handleMessage);
       worker.terminate();
       workerRef.current = null;
     };
-  }, [searchIndexPath]);
+  }, [searchIndexPath, searchIndexVersionPath]);
 
   useEffect(() => {
     if (!workerRef.current) {
