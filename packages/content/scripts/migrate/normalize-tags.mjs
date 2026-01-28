@@ -143,11 +143,13 @@ async function main() {
     if (!fm) continue
     const tagsInfo = extractTagsFromFM(fm.body)
     if (!tagsInfo) continue
-    // map tags to canonical names; drop those that don't map
-    const mapped = tagsInfo.tags.map(t => {
-      const key = t.trim().toLowerCase()
-      return variantToCanonical.has(key) ? variantToCanonical.get(key) : null
-    }).filter(Boolean)
+    // map known variants to canonical names; preserve unknown tags as-is
+    const mapped = tagsInfo.tags
+      .map((t) => normalizeTag(t))
+      .filter((t) => t.length > 0)
+    // If JavaScript is present, keep both "フロントエンド" and "JavaScript".
+    const hasJavaScript = tagsInfo.tags.some((t) => t.trim().toLowerCase() === 'javascript')
+    if (hasJavaScript && !mapped.includes('JavaScript')) mapped.push('JavaScript')
     // preserve order but dedupe
     const dedup = [...new Set(mapped)]
     // produce inline YAML array; if empty produce []

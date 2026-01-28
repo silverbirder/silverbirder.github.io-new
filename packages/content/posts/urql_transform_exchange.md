@@ -2,7 +2,7 @@
 title: 'urqlでデータ変換(transform)してみた'
 publishedAt: '2022-08-10'
 summary: 'GraphQL クライアントを使っていると、データを取得後に変換処理がしたくなります。GraphQL クライアントの urql で、データ変換するのに、exchanges が使えそうだったので、それを共有します。'
-tags: ["バックエンド", "JavaScript", "フロントエンド"]
+tags: ["バックエンド", "フロントエンド", "JavaScript"]
 index: false
 ---
 
