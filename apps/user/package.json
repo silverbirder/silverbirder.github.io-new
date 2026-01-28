@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "node ./scripts/generate-blog-search-index.mjs && next build",
     "check-types": "next typegen && tsc --noEmit",
-    "dev": "next dev --port 3000",
+    "dev": "node ./scripts/generate-blog-search-index.mjs && next dev --port 3000",
     "lint": "eslint --max-warnings 0",
     "start": "serve out -l 3000",
     "test": "vitest --run --config vitest.node.config.ts && vitest --run --config vitest.browser.config.ts"

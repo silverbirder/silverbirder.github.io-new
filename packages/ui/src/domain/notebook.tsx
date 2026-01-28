@@ -43,6 +43,7 @@ type Props = Omit<ComponentProps<typeof NotebookProse>, "children"> & {
     url: string;
   };
   follow?: FollowSection;
+  headerRight?: ReactNode;
   indexStatus?: "index" | "noindex";
   isBackToBlog?: boolean;
   navigation: {
@@ -109,6 +110,7 @@ export const Notebook = ({
   children,
   comments,
   follow,
+  headerRight,
   indexStatus = "index",
   isBackToBlog,
   navigation,
@@ -247,6 +249,11 @@ export const Notebook = ({
             w="full"
           >
             {title}
+            {headerRight && (
+              <Box bottom={0} position="absolute" right={0}>
+                {headerRight}
+              </Box>
+            )}
           </Heading>
           <NotebookDash height={6} patternWidth={128} />
           <NotebookDash height={3} patternWidth={16} />

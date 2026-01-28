@@ -826,6 +826,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../ui
+      '@repo/util':
+        specifier: workspace:*
+        version: link:../util
       next:
         specifier: 16.1.0
         version: 16.1.0(@babel/core@7.28.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -838,6 +841,9 @@ importers:
       react-dom:
         specifier: ^19.2.3
         version: 19.2.4(react@19.2.4)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.4)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*

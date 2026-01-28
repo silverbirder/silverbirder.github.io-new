@@ -1,3 +1,4 @@
 .codex/
 .github/
 packages/content/**/*.md
+apps/user/public/blog-search-index.json

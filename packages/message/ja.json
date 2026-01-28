@@ -7,6 +7,8 @@
       "filtersAll": "すべて",
       "filtersYear": "年",
       "metaSeparator": "/",
+      "searchLabel": "検索",
+      "searchEmpty": "検索結果が見つかりませんでした。",
       "shareHeading": "シェアする",
       "shareText": "「{title}」",
       "shareXLabel": "Xでシェア",

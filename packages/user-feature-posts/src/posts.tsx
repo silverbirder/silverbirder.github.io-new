@@ -4,7 +4,13 @@ import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import { Notebook, NotebookPostItem, Tag, ViewTransitionLink } from "@repo/ui";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { useCallback, useMemo, useState } from "react";
 
+import {
+  PostSearchPanel,
+  type SearchResult,
+  type SearchStatus,
+} from "./post-search-panel";
 import {
   filterPosts,
   getAvailableTags,
@@ -23,6 +29,9 @@ type Props = {
 
 export const Posts = ({ posts }: Props) => {
   const searchParams = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searchStatus, setSearchStatus] = useState<SearchStatus>("loading");
 
   const selectedYear = searchParams.get("year") ?? null;
   const selectedTag = searchParams.get("tag") ?? null;
@@ -35,12 +44,18 @@ export const Posts = ({ posts }: Props) => {
   const t = useTranslations("user.blog");
   const metaSeparator = t("metaSeparator");
   const normalizedPosts = normalizePosts(posts);
+  const postsBySlug = useMemo(() => {
+    return new Map(normalizedPosts.map((post) => [post.slug, post]));
+  }, [normalizedPosts]);
   const availableYears = getAvailableYears(normalizedPosts);
   const availableTags = getAvailableTags(normalizedPosts);
   const filteredPosts = filterPosts(normalizedPosts, {
     tag: selectedTag,
     year: selectedYear,
   });
+  const filteredSlugSet = useMemo(() => {
+    return new Set(filteredPosts.map((post) => post.slug));
+  }, [filteredPosts]);
   const pagination = paginatePosts(filteredPosts, currentPage);
   const paginationItems = getPaginationItems(
     pagination.currentPage,
@@ -74,9 +89,24 @@ export const Posts = ({ posts }: Props) => {
     return query ? `/blog?${query}` : "/blog";
   };
 
+  const handleSearchResults = useCallback(
+    (results: SearchResult[], query: string, status: SearchStatus) => {
+      setSearchResults(results);
+      setSearchQuery(query);
+      setSearchStatus(status);
+    },
+    [],
+  );
+
   return (
     <Box w="full">
-      <Notebook navigation={{}} relatedPosts={[]} tags={[]} title={t("title")}>
+      <Notebook
+        headerRight={<PostSearchPanel onResultsChange={handleSearchResults} />}
+        navigation={{}}
+        relatedPosts={[]}
+        tags={[]}
+        title={t("title")}
+      >
         <Stack
           className="not-prose"
           gap="var(--notebook-line-height)"
@@ -103,7 +133,41 @@ export const Posts = ({ posts }: Props) => {
               )}
             </Stack>
           )}
-          {pagination.items.length === 0 ? (
+          {searchQuery.length > 0 ? (
+            searchStatus === "ready" && searchResults.length === 0 ? (
+              <Text>{t("searchEmpty")}</Text>
+            ) : (
+              searchResults
+                .filter((post) => filteredSlugSet.has(post.slug))
+                .map((post) => {
+                  const matchedPost = postsBySlug.get(post.slug);
+                  const postSummary =
+                    matchedPost ??
+                    ({
+                      publishedAt: post.publishedAt,
+                      slug: post.slug,
+                      summary: "",
+                      tags: [],
+                      title: post.title,
+                    } satisfies PostSummary);
+
+                  return (
+                    <NotebookPostItem
+                      buildTagHref={(tag) =>
+                        buildHref({
+                          page: null,
+                          tag: selectedTag === tag ? null : tag,
+                        })
+                      }
+                      key={post.slug}
+                      metaSeparator={metaSeparator}
+                      post={postSummary}
+                      selectedTag={selectedTag}
+                    />
+                  );
+                })
+            )
+          ) : pagination.items.length === 0 ? (
             <Text>{t("empty")}</Text>
           ) : (
             pagination.items.map((post) => (
@@ -122,7 +186,7 @@ export const Posts = ({ posts }: Props) => {
             ))
           )}
         </Stack>
-        {pagination.totalPages > 1 && (
+        {searchQuery.length === 0 && pagination.totalPages > 1 && (
           <Box
             aria-label={t("paginationLabel")}
             className="not-prose"
@@ -176,48 +240,49 @@ export const Posts = ({ posts }: Props) => {
             </Stack>
           </Box>
         )}
-        {(availableYears.length > 0 || availableTags.length > 0) && (
-          <Box pb={"var(--notebook-line-height)"}>
-            <Heading as="h2">{t("filtersTitle")}</Heading>
-            {availableYears.length > 0 && (
-              <Box>
-                <Stack direction="row" gap={0} wrap="wrap">
-                  {availableYears.map((year) => (
-                    <Tag
-                      href={buildHref({
-                        page: null,
-                        year: selectedYear === year ? null : year,
-                      })}
-                      iconType="year"
-                      isSelected={selectedYear === year}
-                      key={year}
-                      mr={2}
-                      tag={year}
-                    />
-                  ))}
-                </Stack>
-              </Box>
-            )}
-            {availableTags.length > 0 && (
-              <Box>
-                <Stack direction="row" gap={0} wrap="wrap">
-                  {availableTags.map((tag) => (
-                    <Tag
-                      href={buildHref({
-                        page: null,
-                        tag: selectedTag === tag ? null : tag,
-                      })}
-                      isSelected={selectedTag === tag}
-                      key={tag}
-                      mr={2}
-                      tag={tag}
-                    />
-                  ))}
-                </Stack>
-              </Box>
-            )}
-          </Box>
-        )}
+        {searchQuery.length === 0 &&
+          (availableYears.length > 0 || availableTags.length > 0) && (
+            <Box pb={"var(--notebook-line-height)"}>
+              <Heading as="h2">{t("filtersTitle")}</Heading>
+              {availableYears.length > 0 && (
+                <Box>
+                  <Stack direction="row" gap={0} wrap="wrap">
+                    {availableYears.map((year) => (
+                      <Tag
+                        href={buildHref({
+                          page: null,
+                          year: selectedYear === year ? null : year,
+                        })}
+                        iconType="year"
+                        isSelected={selectedYear === year}
+                        key={year}
+                        mr={2}
+                        tag={year}
+                      />
+                    ))}
+                  </Stack>
+                </Box>
+              )}
+              {availableTags.length > 0 && (
+                <Box>
+                  <Stack direction="row" gap={0} wrap="wrap">
+                    {availableTags.map((tag) => (
+                      <Tag
+                        href={buildHref({
+                          page: null,
+                          tag: selectedTag === tag ? null : tag,
+                        })}
+                        isSelected={selectedTag === tag}
+                        key={tag}
+                        mr={2}
+                        tag={tag}
+                      />
+                    ))}
+                  </Stack>
+                </Box>
+              )}
+            </Box>
+          )}
       </Notebook>
     </Box>
   );
